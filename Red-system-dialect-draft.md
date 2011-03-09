@@ -1,4 +1,4 @@
-# Red/System Dialect Specification Draft 1
+# Red/System dialect specifications draft 1
 ## Abstract
 ## Syntax
 ## Datatypes
