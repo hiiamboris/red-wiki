@@ -7,9 +7,9 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
 * Global variables initialization proper initialization checking (should be initialized before used as argument)
 * Hex values syntax checking
-* Char! literals as input format for integer! values
+* <strike>Char! literals as input format for integer! values</strike>
 * Pointers literal values
-* Pointers /value syntax support
+* Pointers `/value` syntax support
 * Pointer arithmetic
 * Strings indexes syntax and compilation support
 * Structs members read & write access: implemented but untested
@@ -18,5 +18,5 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Functions return value type checking
 * EXIT and RETURN function specific keywords
 * Redefinition attempt check for reserved keywords
-* Modulo (//) operator
+* Modulo (`//`) operator
 
