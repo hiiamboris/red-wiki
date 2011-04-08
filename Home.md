@@ -11,12 +11,25 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Pointers literal values
 * Pointers `/value` syntax support
 * Pointer arithmetic
+* Pointer paths with indexes support
+* Add "pointer" as reserved keyword
 * Strings indexes syntax and compilation support
+* Rename string! to c-string!
 * Structs members read & write access: implemented but untested
+* Get-word! syntax for getting struct variable address
+* Rename "alias-type" keyword to "alias"
 * Type casting compilation warnings & errors messages
 * Functions call arguments type checking
 * Functions return value type checking
+* Add type inference for functions local variables and return value
+* Get-word! syntax for getting function address
 * EXIT and RETURN function specific keywords
 * Redefinition attempt check for reserved keywords
 * Modulo (`//`) operator
+* Add byte! datatype
+* Move character specific syntax from integer! to byte!
+* Add logic! datatype
+* Add TRUE and FALSE keywords
+* Add NOT operator
+* Extend OR, XOR, AND to support bitwise operations and new logic! type
 
