@@ -8,6 +8,7 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Global variables proper initialization checking (should be initialized before used as argument)
 * Hex values syntax checking
 * <strike>Char! literals as input format for integer! values</strike>
+* Bind char! literals to byte! datatype
 * Pointers literal values
 * Pointers `/value` syntax support
 * Pointer arithmetic
