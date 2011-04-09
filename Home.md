@@ -28,7 +28,6 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Redefinition attempt check for reserved keywords
 * Modulo (`//`) operator
 * Add byte! datatype
-* Move character specific syntax from integer! to byte!
 * Add logic! datatype
 * Add TRUE and FALSE keywords
 * Add NOT operator
