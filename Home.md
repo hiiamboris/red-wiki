@@ -19,7 +19,7 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Rename string! to c-string!
 * Structs members read & write access: implemented but untested
 * Add struct variables arithmetic
-* <strike>Rename "alias-type" keyword to "alias"</strike>
+* Rename "alias-type" keyword to "alias"
 * Type casting compilation warnings & errors messages
 * Functions call arguments type checking
 * Functions return value type checking
