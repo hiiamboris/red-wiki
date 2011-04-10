@@ -9,17 +9,17 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Hex values syntax checking
 * <strike>Char! literals as input format for integer! values</strike>
 * Bind char! literals to byte! datatype
-* Pointers literal values
+* <strike>Support pointers literal values</strike>
 * Pointers `/value` syntax support
 * Pointer arithmetic
 * Pointer paths with indexes support
 * Add "pointer" as reserved keyword
 * C-strings indexes syntax and compilation support
 * Add c-string variables arithmetic
-* Rename string! to c-string!
+* <strike>Rename string! to c-string!</strike>
 * Structs members read & write access: implemented but untested
 * Add struct variables arithmetic
-* Rename "alias-type" keyword to "alias"
+* <strike>Rename "alias-type" keyword to "alias"</strike>
 * Type casting compilation warnings & errors messages
 * Functions call arguments type checking
 * Functions return value type checking
