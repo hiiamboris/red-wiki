@@ -14,10 +14,11 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Pointer arithmetic
 * Pointer paths with indexes support
 * Add "pointer" as reserved keyword
-* Strings indexes syntax and compilation support
+* C-strings indexes syntax and compilation support
+* Add c-string variables arithmetic
 * Rename string! to c-string!
 * Structs members read & write access: implemented but untested
-* Get-word! syntax for getting struct variable address
+* Add struct variables arithmetic
 * Rename "alias-type" keyword to "alias"
 * Type casting compilation warnings & errors messages
 * Functions call arguments type checking
