@@ -29,8 +29,8 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Redefinition attempt check for reserved keywords
 * Modulo (`//`) operator
 * Add byte! datatype
-* Add logic! datatype
-* Add TRUE and FALSE keywords
+* <strike>Add logic! datatype</strike>
+* <strike>Add TRUE and FALSE keywords</strike>
 * Add NOT operator
 * Extend OR, XOR, AND to support bitwise operations and new logic! type
 
