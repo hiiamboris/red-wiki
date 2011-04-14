@@ -31,6 +31,6 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Add byte! datatype
 * <strike>Add logic! datatype</strike>
 * <strike>Add TRUE and FALSE keywords</strike>
-* <strikeAdd NOT operator</strike>
+* <strike>Add NOT operator</strike>
 * Extend OR, XOR, AND to support bitwise operations and new logic! type
 
