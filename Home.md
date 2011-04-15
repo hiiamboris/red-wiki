@@ -24,7 +24,7 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Functions call arguments type checking
 * Functions return value type checking
 * Add type inference for functions local variables and return value
-* Get-word! syntax for getting function address
+* <strike>Get-word! syntax for getting function address</strike>
 * EXIT and RETURN function specific keywords
 * Redefinition attempt check for reserved keywords
 * <strike>Modulo (`//`) operator</strike>
