@@ -3,7 +3,7 @@ Welcome to the Red wiki!
 ### Red/System Todo-list
 
 This section lists all the remaining features to implement to conform to
-from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
+the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
 * Global variables proper initialization checking (should be initialized before used as argument)
 * Hex values syntax checking
