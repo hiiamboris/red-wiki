@@ -27,7 +27,7 @@ from the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * Get-word! syntax for getting function address
 * EXIT and RETURN function specific keywords
 * Redefinition attempt check for reserved keywords
-* Modulo (`//`) operator
+* <strike>Modulo (`//`) operator</strike>
 * Add byte! datatype
 * <strike>Add logic! datatype</strike>
 * <strike>Add TRUE and FALSE keywords</strike>
