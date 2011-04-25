@@ -5,31 +5,34 @@ Welcome to the Red wiki!
 This section lists all the remaining features to implement to conform to
 the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
-* Global variables proper initialization checking (should be initialized before used as argument)
-* Hex values syntax checking
+
 * <strike>Char! literals as input format for integer! values</strike>
 * <strike>Bind char! literals to byte! datatype</strike>
 * <strike>Support pointers literal values</strike>
-* Pointers `/value` syntax support
-* Pointer arithmetic
-* Pointer paths with indexes support
-* Add "pointer" as reserved keyword
-* C-strings indexes syntax and compilation support
-* Add c-string variables arithmetic
 * <strike>Rename string! to c-string!</strike>
-* Structs members read & write access: implemented but untested
-* Add struct variables arithmetic
 * <strike>Rename "alias-type" keyword to "alias"</strike>
-* Type casting compilation warnings & errors messages
-* Functions call arguments type checking
-* Functions return value type checking
-* Add type inference for functions local variables and return value
 * <strike>Get-word! syntax for getting function address</strike>
 * <strike>EXIT and RETURN function specific keywords</strike>
-* Redefinition attempt check for reserved keywords
 * <strike>Modulo (`//`) operator</strike>
 * <strike>Add byte! datatype</strike>
 * <strike>Add logic! datatype</strike>
 * <strike>Add TRUE and FALSE keywords</strike>
 * <strike>Add NOT operator</strike>
 
+Remaining tasks (ordered by priority):
+
+1. C-strings indexes syntax and compilation support
+1. Structs members read & write access: implemented but untested
+1. Pointers `/value` syntax support
+1. Pointer paths with indexes support
+1. Pointer arithmetic
+1. Add struct variables arithmetic
+1. Add c-string variables arithmetic
+1. Functions call arguments type checking
+1. Functions return value type checking
+1. Add type inference for functions local variables and return value
+1. Type casting compilation warnings & errors messages
+1. Redefinition attempt check for reserved keywords
+1. Add "pointer" as reserved keyword
+1. Global variables proper initialization checking (should be initialized before used as argument)
+1. Hex values syntax checking
