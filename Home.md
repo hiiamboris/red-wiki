@@ -22,7 +22,7 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 Remaining features to implement (ordered by priority):
 
 * C-strings indexes syntax and compilation support
-* Structs members read & write access: implemented but untested
+* Structs members read & write access: implemented but <strike>untested</strike>broken
 * Pointers `/value` syntax support
 * Pointer paths with indexes support
 * Pointer arithmetic
