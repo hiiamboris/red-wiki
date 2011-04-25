@@ -19,7 +19,7 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Add TRUE and FALSE keywords</strike>
 * <strike>Add NOT operator</strike>
 
-Remaining tasks (ordered by priority):
+Remaining features to implement (ordered by priority):
 
 * C-strings indexes syntax and compilation support
 * Structs members read & write access: implemented but untested
