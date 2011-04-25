@@ -21,18 +21,18 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
 Remaining tasks (ordered by priority):
 
-1. C-strings indexes syntax and compilation support
-1. Structs members read & write access: implemented but untested
-1. Pointers `/value` syntax support
-1. Pointer paths with indexes support
-1. Pointer arithmetic
-1. Add struct variables arithmetic
-1. Add c-string variables arithmetic
-1. Functions call arguments type checking
-1. Functions return value type checking
-1. Add type inference for functions local variables and return value
-1. Type casting compilation warnings & errors messages
-1. Redefinition attempt check for reserved keywords
-1. Add "pointer" as reserved keyword
-1. Global variables proper initialization checking (should be initialized before used as argument)
-1. Hex values syntax checking
+* C-strings indexes syntax and compilation support
+* Structs members read & write access: implemented but untested
+* Pointers `/value` syntax support
+* Pointer paths with indexes support
+* Pointer arithmetic
+* Add struct variables arithmetic
+* Add c-string variables arithmetic
+* Functions call arguments type checking
+* Functions return value type checking
+* Add type inference for functions local variables and return value
+* Type casting compilation warnings & errors messages
+* Redefinition attempt check for reserved keywords
+* Add "pointer" as reserved keyword
+* Global variables proper initialization checking (should be initialized before used as argument)
+* Hex values syntax checking
