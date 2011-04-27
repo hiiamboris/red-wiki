@@ -33,6 +33,7 @@ Remaining features to implement (ordered by priority):
 * Functions return value type checking
 * Add type inference for functions local variables and return value
 * Type casting compilation warnings & errors messages
+* Check for function's two arguments when `infix` attribute is present
 * Redefinition attempt check for reserved keywords
 * Add "pointer" as reserved keyword
 * Global variables proper initialization checking (should be initialized before used as argument)
