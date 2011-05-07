@@ -20,11 +20,11 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Add NOT operator</strike>
 * <strike>C-strings indexes syntax and compilation support</strike>
 * <strike>Structs members read & write access: implemented but broken</strike>
+* <strike>Pointers `/value` syntax support</strike>
+* <strike>Pointer paths with indexes support</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Pointers `/value` syntax support
-* Pointer paths with indexes support
 * Pointer arithmetic
 * Add struct variables arithmetic
 * Add c-string variables arithmetic
