@@ -22,10 +22,10 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Structs members read & write access: implemented but broken</strike>
 * <strike>Pointers `/value` syntax support</strike>
 * <strike>Pointer paths with indexes support</strike>
+* <strike>Pointer arithmetic</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Pointer arithmetic
 * Add struct variables arithmetic
 * Add c-string variables arithmetic
 * Functions call arguments type checking
