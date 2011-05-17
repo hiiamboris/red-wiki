@@ -25,10 +25,10 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Pointer arithmetic</strike>
 * <strike>Add c-string variables arithmetic</strike>
 * <strike>Add struct variables arithmetic</strike>
+* <strike>Functions call arguments type checking</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Functions call arguments type checking
 * Functions return value type checking
 * Add type inference for functions local variables and return value
 * Type casting compilation warnings & errors messages
