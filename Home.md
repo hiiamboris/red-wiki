@@ -37,4 +37,5 @@ Remaining features to implement (ordered by priority):
 * Add "pointer" as reserved keyword
 * Global variables proper initialization checking (should be initialized before used as argument)
 * Hex values syntax checking
+* Handle all errors in a consistent way
 * Add runtime math overflow/underflow errors catching
