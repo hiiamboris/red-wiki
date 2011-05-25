@@ -27,11 +27,11 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Add struct variables arithmetic</strike>
 * <strike>Functions call arguments type checking</strike>
 * <strike>Functions return value type checking</strike>
+* <strike>Type casting compilation warnings & errors messages</strike>
 
 Remaining features to implement (ordered by priority):
 
 * Add type inference for functions local variables and return value
-* Type casting compilation warnings & errors messages
 * Check for function's two arguments when `infix` attribute is present
 * Redefinition attempt check for reserved keywords
 * Add "pointer" as reserved keyword
