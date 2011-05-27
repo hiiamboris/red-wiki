@@ -39,3 +39,10 @@ Remaining features to implement (ordered by priority):
 * Hex values syntax checking
 * Handle all errors in a consistent way
 * Add runtime math overflow/underflow errors catching
+
+
+Other low-level features to implement (ordered by priority):
+
+* cdecl callbacks support
+* [PIC](http://en.wikipedia.org/wiki/Position-independent_code) code generation support
+* Shared library generation support for current file emitters
