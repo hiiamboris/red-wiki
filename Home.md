@@ -39,7 +39,7 @@ Remaining features to implement (ordered by priority):
 * Hex values syntax checking
 * Handle all errors in a consistent way
 * Add runtime math overflow/underflow errors catching
-
+* Provide a way to write OS-specific code in user programs
 
 Other low-level features to implement (ordered by priority):
 
