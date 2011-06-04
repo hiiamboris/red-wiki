@@ -43,7 +43,7 @@ Remaining features to implement (ordered by priority):
 
 Other low-level features to implement (ordered by priority):
 
-* cdecl callbacks support
+* <strike>cdecl callbacks support</strike>
 * Add runtime math overflow/underflow errors catching
 * [PIC](http://en.wikipedia.org/wiki/Position-independent_code) code generation support
 * Shared library generation support for current file emitters
