@@ -32,7 +32,6 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
 Remaining features to implement (ordered by priority):
 
-* Add type inference for return value
 * Check for function's two arguments when `infix` attribute is present
 * Redefinition attempt check for reserved keywords
 * Add "pointer" as reserved keyword
@@ -41,7 +40,7 @@ Remaining features to implement (ordered by priority):
 * Handle all errors in a consistent way
 * Provide a way to write OS-specific code in user programs
 
-Other low-level features to implement (ordered by priority):
+Additional low-level features to implement (ordered by priority):
 
 * <strike>cdecl callbacks support</strike>
 * Add runtime math overflow/underflow errors catching
