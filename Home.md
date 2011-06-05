@@ -29,10 +29,10 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Functions return value type checking</strike>
 * <strike>Type casting compilation warnings & errors messages</strike>
 * <strike>Add type inference for functions local variables</strike>
+* <strike>Check for function's two arguments when `infix` attribute is present</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Check for function's two arguments when `infix` attribute is present
 * Redefinition attempt check for reserved keywords
 * Add "pointer" as reserved keyword
 * Global variables proper initialization checking (should be initialized before used as argument)
