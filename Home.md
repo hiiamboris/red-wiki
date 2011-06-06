@@ -32,11 +32,10 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Check for function's two arguments when `infix` attribute is present</strike>
 * <strike>Redefinition attempt check for reserved keywords</strike>
 * <strike>Add "pointer" as reserved keyword</strike>
+* <strike>Global variables proper initialization checking (should be initialized before used as argument)</strike>
 
 Remaining features to implement (ordered by priority):
 
-
-* Global variables proper initialization checking (should be initialized before used as argument)
 * Hex values syntax checking
 * Handle all errors in a consistent way
 * Provide a way to write OS-specific code in user programs
