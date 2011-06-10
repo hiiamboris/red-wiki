@@ -34,10 +34,10 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Add "pointer" as reserved keyword</strike>
 * <strike>Global variables proper initialization checking (should be initialized before used as argument)</strike>
 * <strike>Hex values syntax checking</strike>
+* <strike>Handle all errors in a consistent way</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Handle all errors in a consistent way
 * Provide a way to write OS-specific code in user programs
 
 Additional low-level features to implement (ordered by priority):
