@@ -39,7 +39,7 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 
 Remaining features to implement (ordered by priority):
 
--
+(none)
 
 Additional low-level features to implement (ordered by priority):
 
