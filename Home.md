@@ -35,10 +35,11 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Global variables proper initialization checking (should be initialized before used as argument)</strike>
 * <strike>Hex values syntax checking</strike>
 * <strike>Handle all errors in a consistent way</strike>
+* <strike>Provide a way to write OS-specific code in user programs</strike>
 
 Remaining features to implement (ordered by priority):
 
-* Provide a way to write OS-specific code in user programs
+-
 
 Additional low-level features to implement (ordered by priority):
 
