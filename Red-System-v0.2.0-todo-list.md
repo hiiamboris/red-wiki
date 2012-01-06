@@ -34,3 +34,8 @@ the specification draft: [[http://www.red-lang.org/p/documentation.html]]
 * <strike>Hex values syntax checking</strike>
 * <strike>Handle all errors in a consistent way</strike>
 * <strike>Provide a way to write OS-specific code in user programs</strike>
+
+Additional low-level features to implement (ordered by priority):
+
+* <strike>cdecl callbacks support</strike>
+* <strike>Add runtime errors catching</strike>
