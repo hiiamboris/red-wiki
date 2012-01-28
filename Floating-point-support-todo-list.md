@@ -22,6 +22,7 @@ Todo list for supporting floating point datatype in Red/System. The work on floa
 ### float-full branch (not planned yet)
 
 2. Support mixed integers/floats math ops.
+3. Add float support to `stack/push` and `stack/pop` functions.
 8. Add read/write FPU and floats settings to `system` structure.
 8. Provide a good Ulp-based `almost-equal` operator.
 8. Decide on how to handle NaN and INFs.
