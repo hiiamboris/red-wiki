@@ -16,7 +16,7 @@ Todo list for supporting floating point datatype in Red/System. The work on floa
     4. <strike>Support float! to float32! type casting.</strike>
     5. <strike>Support integer! to float32! type casting.</strike>
     5. <strike>Support float32! to integer! type casting.</strike>
-13. Add float datatypes description to language specification document.
+13. <strike>Add float datatypes description to language specification document.</strike>
 12. Add float support to ARM backend.
 
 ### float-full branch (not planned yet)
