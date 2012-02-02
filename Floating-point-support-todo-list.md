@@ -17,11 +17,12 @@ Todo list for supporting floating point datatype in Red/System. The work on floa
     5. <strike>Support integer! to float32! type casting.</strike>
     5. <strike>Support float32! to integer! type casting.</strike>
 13. <strike>Add float datatypes description to language specification document.</strike>
-12. Add float support to ARM backend.
+12. <strike>Add float support to ARM backend.</strike>
 
 ### float-full branch (not planned yet)
 
 2. Support mixed integers/floats math ops.
+2. Improve IA-32 float support code relying more on `width` instead of types testing.
 3. Add float support to `stack/push` and `stack/pop` functions.
 8. Add read/write FPU and floats settings to `system` structure.
 8. Provide a good Ulp-based `almost-equal` operator.
