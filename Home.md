@@ -4,6 +4,7 @@ Current todo lists:
 
 * [Shared library generation](https://github.com/dockimbel/Red/wiki/Shared-library-generation-todo-list)
 * [Floating point support](https://github.com/dockimbel/Red/wiki/Floating-point-support-todo-list)
+* [Red/System v2]()
 
 Completed:
 
