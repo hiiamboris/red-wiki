@@ -6,4 +6,4 @@ This page lists all the features we would like to add to Red/System v2, which wi
 
 * Wish #132 and #142: allow type casting chaining.
 
-* Wish #166: add a `break` keyword.
+* Issue #166: add a `break` keyword.
