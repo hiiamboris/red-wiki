@@ -8,4 +8,6 @@ This page lists all the features we would like to add to Red/System v2, which wi
 
 * Wish [#166](https://github.com/dockimbel/Red/issues/166): add a `break` keyword for early escaping from loops.
 
-* Wish [#297](https://github.com/dockimbel/Red/issues/297): Pointer to enum type name
+* Wish [#297](https://github.com/dockimbel/Red/issues/297): Pointer to enum type name.
+
+* Wish [#318](https://github.com/dockimbel/Red/issues/318): Allow byte! as index.
