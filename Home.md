@@ -1,5 +1,8 @@
 Welcome to the Red wiki!
 
+Decisions:
+* [Pre-processor #define replacement](https://github.com/dockimbel/Red/wiki/Alternatives-to-Red-System-pre-processor-%23define)
+
 Current todo lists:
 
 * [Shared library generation](https://github.com/dockimbel/Red/wiki/Shared-library-generation-todo-list)
