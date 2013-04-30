@@ -1,13 +1,24 @@
-This page lists all the features we would like to add to Red/System v2, which will be rewritten in Red.
+This page lists all the features we would like to add to Red/System v2, which will be rewritten in Red. There are three sections; Included, Requested, Rejected.
 
-* Wish [#8](https://github.com/dockimbel/Red/issues/8): add support for string comparison to `=` operator. `=` would be a case-insensitive comparison, while `==`could be used for a case-sensitive one. Same operators could also be used for almost-equal and strict-equal applied to float values.
+## Included
+These features will be incorporated into Red/System V2.
 
-* Wish [#115](https://github.com/dockimbel/Red/issues/115): stack-local struct values.
+## Requested
+These features have been requested for inclusion in Red/System V2.
 
-* Wish [#132](https://github.com/dockimbel/Red/issues/132) and [#142](https://github.com/dockimbel/Red/issues/142): allow type casting chaining.
+1. Add support for string comparison to `=` operator. `=` would be a case-insensitive comparison, while `==`could be used for a case-sensitive one. (See https://github.com/dockimbel/Red/issues/8)
 
-* Wish [#166](https://github.com/dockimbel/Red/issues/166): add a `break` keyword for early escaping from loops.
+2. The = and == operators should be used for almost-equal and strict-equal for float values.
 
-* Wish [#297](https://github.com/dockimbel/Red/issues/297): Pointer to enum type name.
+3. stack-local struct values. (See https://github.com/dockimbel/Red/issues/115) 
 
-* Wish [#318](https://github.com/dockimbel/Red/issues/318): Allow byte! as index.
+4. Allow type casting chaining. (See https://github.com/dockimbel/Red/issues/132 and https://github.com/dockimbel/Red/issues/142)
+
+5. Add a `break` keyword for early escaping from loops. (See https://github.com/dockimbel/Red/issues/166)
+
+6. Pointer to enum type name. (See https://github.com/dockimbel/Red/issues/297)
+
+7. Allow byte! as index. (https://github.com/dockimbel/Red/issues/318)
+
+## Rejected
+These features will not be incorporated into Red/System V2.
