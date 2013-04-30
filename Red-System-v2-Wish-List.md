@@ -20,5 +20,7 @@ These features have been requested for inclusion in Red/System V2.
 
 7. Allow byte! as index. (https://github.com/dockimbel/Red/issues/318)
 
+8. Replace #define pre-processor construct. The options are explained at [Pre-processor #define replacement](https://github.com/dockimbel/Red/wiki/Alternatives-to-Red-System-pre-processor-%23define)
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
