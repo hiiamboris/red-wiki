@@ -36,6 +36,16 @@ These features have been requested for inclusion in Red/System V2.
 
 15. Extend DocStrings to Alias Struct! & #define. See [issue #329] (https://github.com/dockimbel/Red/issues/329).
 
+16.Change index variable to get-word. See [issue #341] (https://github.com/dockimbel/Red/issues/341).
+
+17. Introduce BREAK and CONTINUE keywords. See [issue #349] (https://github.com/dockimbel/Red/issues/349).
+
+18. Introduce GOTO keyword. See [issue #350] (https://github.com/dockimbel/Red/issues/350).
+
+19. Be able to get the address of a struct pointer, &aStructPointer.See [issue #351] (https://github.com/dockimbel/Red/issues/351).
+
+20. Introduce a union type (a struct whose members share the same memory space). See [issue #352] (https://github.com/dockimbel/Red/issues/352).
+
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
