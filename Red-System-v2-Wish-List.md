@@ -22,5 +22,7 @@ These features have been requested for inclusion in Red/System V2.
 
 8. Replace #define pre-processor construct. The options are explained in [Pre-processor #define replacement](https://github.com/dockimbel/Red/wiki/Alternatives-to-Red-System-pre-processor-%23define).
 
+9. Allow empty struct! definitions. See [issue #194] (https://github.com/dockimbel/Red/issues/194).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
