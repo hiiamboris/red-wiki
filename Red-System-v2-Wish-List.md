@@ -26,5 +26,9 @@ These features have been requested for inclusion in Red/System V2.
 
 10. Reverse the evaluation of function arguments. See [issue #213] (https://github.com/dockimbel/Red/issues/213).
 
+11. Rename #enum to enumerate. See [issue #242] (https://github.com/dockimbel/Red/issues/242).
+
+12. Allow function pointers to be passed as arguments. See [issue #259] (https://github.com/dockimbel/Red/issues/259).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
