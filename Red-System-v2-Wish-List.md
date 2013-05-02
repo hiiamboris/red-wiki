@@ -8,7 +8,7 @@ These features have been requested for inclusion in Red/System V2.
 
 1. Add support for string comparison to `=` operator. `=` would be a case-insensitive comparison, while `==`could be used for a case-sensitive one. See [issue #8] (https://github.com/dockimbel/Red/issues/8).
 
-2. The = and == operators should be used for almost-equal and strict-equal for float values.
+2. The `=` and `==` operators should be used for almost-equal and strict-equal for float values.
 
 3. stack-local struct values. See [issue #115] (https://github.com/dockimbel/Red/issues/115). 
 
