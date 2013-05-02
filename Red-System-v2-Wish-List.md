@@ -30,5 +30,12 @@ These features have been requested for inclusion in Red/System V2.
 
 12. Allow function pointers to be passed as arguments. See [issue #259] (https://github.com/dockimbel/Red/issues/259).
 
+13. Change for 1-based indexing to 0-based. See [issue #264] (https://github.com/dockimbel/Red/issues/264).
+
+14. Add casting from function![...] to logic!. See [issue #301] (https://github.com/dockimbel/Red/issues/301).
+
+15. Extend DocStrings to Alias Struct! & #define. See [issue #329] (https://github.com/dockimbel/Red/issues/329).
+
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
