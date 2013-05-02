@@ -24,5 +24,7 @@ These features have been requested for inclusion in Red/System V2.
 
 9. Allow empty struct! definitions. See [issue #194] (https://github.com/dockimbel/Red/issues/194).
 
+10. Reverse the evaluation of function arguments. See [issue #213] (https://github.com/dockimbel/Red/issues/213).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
