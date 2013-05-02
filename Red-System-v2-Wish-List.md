@@ -46,6 +46,10 @@ These features have been requested for inclusion in Red/System V2.
 
 20. Introduce a union type (a struct whose members share the same memory space). See [issue #352] (https://github.com/dockimbel/Red/issues/352).
 
+21. EITHER expression allowed as an argument to a typed function call. See [issue #192] (https://github.com/dockimbel/Red/issues/192).
+
+
+
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
