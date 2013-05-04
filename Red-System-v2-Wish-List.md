@@ -48,8 +48,7 @@ These features have been requested for inclusion in Red/System V2.
 
 21. EITHER expression allowed as an argument to a typed function call. See [issue #192] (https://github.com/dockimbel/Red/issues/192).
 
-
-
+22. Add .rsrc entry in the data directory of the PE emitter. See [issue #471] (https://github.com/dockimbel/Red/issues/471).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
