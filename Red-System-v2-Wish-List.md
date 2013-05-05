@@ -58,5 +58,11 @@ These features have been requested for inclusion in Red/System V2.
 
 26. Add an array type.
 
+27. Formalise the support of local functions.
+
+28. Add a mechanism for true namespaces including constants.
+
+29. Expose all standard numeric types. [Details] (https://github.com/dockimbel/Red/wiki/Expose-all-standard-numeric-types).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
