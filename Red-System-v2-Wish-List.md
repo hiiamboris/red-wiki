@@ -50,5 +50,7 @@ These features have been requested for inclusion in Red/System V2.
 
 22. Add .rsrc entry in the data directory of the PE emitter. See [issue #471] (https://github.com/dockimbel/Red/issues/471).
 
+23. Add 'FUNCTION definition in addition to 'FUNC. [Details] (https://github.com/dockimbel/Red/wiki/Add-'FUNCTION-definition-in-addition-to-'FUNC).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
