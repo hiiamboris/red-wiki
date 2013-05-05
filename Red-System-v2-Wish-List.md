@@ -52,5 +52,11 @@ These features have been requested for inclusion in Red/System V2.
 
 23. Add 'FUNCTION definition in addition to 'FUNC. [Details] (https://github.com/dockimbel/Red/wiki/Add-'FUNCTION-definition-in-addition-to-'FUNC).
 
+24. Extend type declarations to include initial value. [Details] (https://github.com/dockimbel/Red/wiki/Extend-type-declarations-to-include-initial-value).
+
+25. Provide a simple way to initialise repeating characters in c-string! values. [Details] (https://github.com/dockimbel/Red/wiki/Provide-a-simple-way-to-initialise-repeating-characters-in-strings).
+
+26. Add an array type.
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
