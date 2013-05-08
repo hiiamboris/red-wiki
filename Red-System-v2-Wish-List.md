@@ -58,7 +58,7 @@ These features have been requested for inclusion in Red/System V2.
 
 26. Add array capabilities. See [ideal array capabilities] (https://github.com/dockimbel/Red/wiki/Ideal-array-capabilities).
 
-27. Formalise the support of local functions.
+27. Formalise the support of local functions. See [local functions] (https://github.com/dockimbel/Red/wiki/Local-functions).
 
 28. Add a mechanism for true namespaces including constants.
 
