@@ -83,7 +83,7 @@ b: declare array [2]
 a: [1 2 3 4]
 b: [1 2 3 4]
 a = b						;; compilation error
-``` 
+
 10. iArnold comments:
 ```
 @first I did not see a way to add my comments but to edit them here at the bottom.
