@@ -56,7 +56,7 @@ These features have been requested for inclusion in Red/System V2.
 
 25. Provide a simple way to initialise repeating characters in c-string! values. [Details] (https://github.com/dockimbel/Red/wiki/Provide-a-simple-way-to-initialise-repeating-characters-in-strings).
 
-26. Add an array type.
+26. Add array capabilities. See [ideal array capabilities] (https://github.com/dockimbel/Red/wiki/Ideal-array-capabilities).
 
 27. Formalise the support of local functions.
 
