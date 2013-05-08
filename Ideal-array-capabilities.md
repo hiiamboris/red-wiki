@@ -88,7 +88,7 @@ a = b						;; compilation error
 iArnold comments:
 
 ```
-@first I did not see a way to add my comments but to edit them here at the bottom.
+@first I did not see a better way to add my comments but to edit them here at the bottom.
 @second Good work Peter
 @1 I prefer having array being base-1 indexed
 @1 What about the arr/1 notation to retrieve array elements?
@@ -98,6 +98,6 @@ Even a strange -1..1 can be thinkable. Flexible indeed.
 @5 length? for variable length arrays. So you define an array of say 4 elements and than keep pushing 
 dataelements on the 'stack' even beyond the declared limit?
 @8 a: [1 2 3] b: [4 5 6] sum: a + b ;; sum = [5 7 9]
-cat: append a b ;; cat = [1 2 3 4 5 6]
+and cat: append a b ;; cat = [1 2 3 4 5 6] ?
 ```
 
