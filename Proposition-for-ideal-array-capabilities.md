@@ -1,3 +1,5 @@
+Author: Peter WA Wood
+
 These are the ideal capabilities for arrays in Red/System. They are provided for discussion. Some may be better provided through libraries than incorporated in the language.
 
 1. Support of one-dimensional arrays (vectors) defaulting to zero-based indexing of a single type.
