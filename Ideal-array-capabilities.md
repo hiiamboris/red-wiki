@@ -1,7 +1,6 @@
 These are the ideal capabilities for arrays in Red/System. They are provided for discussion. Some may be better provided through libraries than incorporated in the language.
 
 1. Support of one-dimensional arrays (vectors) defaulting to zero-based indexing of a single type.
-
 ```
 arr: declare array [integer!] [10]		;; array of 10 integers, 0 - 9
 
@@ -9,20 +8,17 @@ a0: arr[0]
 i: 9
 a9: arr[i]
 ```
-
 2. User definable ranges.
 For cases where 1-based indexing is easier to handle than 0-based
 ```
 ar: declare array [char!] [1x10]		;; an array of 10 chars, 1 -10
 ```
-
 3. Ability to define array aliases.
 So that arrays of arrays and structures can be built
 ```
 alar: alias array [integer!] [10] 
 
 ```
-
 4. Ability for arrays of alias! types.
 So that arrays of arrays or structs can me made.
 ```
@@ -36,16 +32,13 @@ st!: alias struct! [
 star: declare array [st!]
 
 ```
-
 5. Length? function
 To be able to loop through variable length arrays (see below).
 ```
 a: declare array [integer!] [10]
 b: length? a								;; b = 10
 ```
-
 6. REBOL block style literal value
-
 ```
 a: declare array [integer!] [4]
 a: [1 2 3 4]
@@ -71,7 +64,6 @@ a: declare array [4]
 a: [1 2 3 4]
 a: a * 3						; a = [3 6 9 12]
 ```
-
 Calculation with of all elements in two arrays. (Controlled through alias! pseudo-type).
 ```
 at!: alias! array [4]
@@ -83,9 +75,7 @@ a: [1 2 3 4]
 b: [4 3 2 1]
 c: a + b							; [5 5 5 5]
 ```
-
 9. No equality test.
-
 ```
 a: declare array [2]
 b: declare array [2]
