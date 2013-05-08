@@ -53,6 +53,7 @@ push a 5						; returns a, a = [1 2 3 5]
 shift a							; returns 1, a = [2 3 5]
 unshift a 0						; returns 
 ```
+More REBOL-like function names could be used such as remove, append, take, and insert.
 (Adding elements through assignment is not required).
 
 8. Vector arithmetic for arrays of numeric types
@@ -83,7 +84,6 @@ a: [1 2 3 4]
 b: [1 2 3 4]
 a = b						;; compilation error
 ``` 
-
 
 
 
