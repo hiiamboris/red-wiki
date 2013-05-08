@@ -84,7 +84,8 @@ a: [1 2 3 4]
 b: [1 2 3 4]
 a = b						;; compilation error
 ``` 
-[iArnold comments:
+10. iArnold comments:
+```
 @first I did not see a way to add my comments but to edit them here at the bottom.
 @second Good work Peter
 @1 I prefer having array being base-1 indexed
@@ -96,6 +97,5 @@ Even a strange -1..1 can be thinkable. Flexible indeed.
 dataelements on the 'stack' even beyond the declared limit?
 @8 a: [1 2 3] b: [4 5 6] sum: a + b ;; sum = [5 7 9]
 cat: append a b ;; cat = [1 2 3 4 5 6]
-]
-
+```
 
