@@ -11,7 +11,7 @@ a9: arr[i]
 2. User definable ranges.
 For cases where 1-based indexing is easier to handle than 0-based
 ```
-ar: declare array [char!] [1x10]		;; an array of 10 chars, 1 -10
+ar: declare array [char!] [1x10]		;; an array of 10 chars, 1 - 10
 ```
 3. Ability to define array aliases.
 So that arrays of arrays and structures can be built
