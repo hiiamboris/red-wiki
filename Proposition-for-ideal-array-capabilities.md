@@ -6,9 +6,9 @@ These are the ideal capabilities for arrays in Red/System. They are provided for
 ```
 arr: declare array [integer!] [10]		;; array of 10 integers, 0 - 9
 
-a0: arr[0]
+a0: arr/0
 i: 9
-a9: arr[i]
+a9: arr/i
 ```
 2. User definable ranges.
 For cases where 1-based indexing is easier to handle than 0-based
