@@ -3,20 +3,24 @@ Intrigué, émoustillé, vous voulez vous engouffrer, tester Red.
 
 Mais voilà, comment faire?
 
-# Pour les Windowsiens
+h1. Pour les Windowsiens
+
 Supposons que vous être sous Windows, et que vous avez déjà installé Rebol sur votre machine :
 
-## Dans un premier temps, étudions red/system :
+h2. Dans un premier temps, étudions red/system :
+
 * chargez Red-Red/System et installez le dans le répertoire `Red`.
 * créez tout de suite un répertoire `mes-progs`, au même niveau que `Red`, pour éviter la tentation de simplement compiler les exemples ...
 * créez dans ce répertoire votre premier programme:
 
-	Red/System [
-	    	Title:   "mon premier programme"
-	    	Author:  "moi"
-	    	File: 	 %hello-1.reds
-	    ]
-	    print "hello, world !" 
+@
+Red/System [
+    	Title:   "mon premier programme"
+    	Author:  "moi"
+    	File: 	 %hello-1.reds
+    ]
+    print "hello, world !"
+@
 
 * compilez:
 
