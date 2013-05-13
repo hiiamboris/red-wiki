@@ -12,7 +12,7 @@ The following maths operators are supported:
 	mod
 
 Calculations that would result in a char! value out of the supported range will be "wrapped" back into the range. For example
-``
+```rebol
 #"^(10FFFFh)" + 1 -> #"^(00h)"
 #"^(00h)" - 1 -> #"^(10FFFFh)"
-``
+```
