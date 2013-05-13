@@ -12,8 +12,7 @@ Supposons que vous être sous Windows, et que vous avez déjà installé Rebol s
 * créez tout de suite un répertoire `mes-progs`, au même niveau que `Red`, pour éviter la tentation de simplement compiler les exemples...
 * créez dans ce répertoire votre premier programme:
 
-<pre><code>
-Red/System [
+<pre><code>Red/System [
         Title:  "mon premier programme"
         Author: "moi"
         File:   %hello-1.reds
@@ -22,8 +21,7 @@ print "hello, world !"
 </code></pre>
 
 * compilez:
-<pre><code>
-do/args %../Red/red-system/rsc.r  "%hello-1.reds"
+<pre><code>do/args %../Red/red-system/rsc.r  "%hello-1.reds"
 </code></pre>
 
 L'exécutable se trouve dans Red\red-system\builds.
