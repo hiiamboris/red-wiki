@@ -7,8 +7,8 @@ Mais voilà, comment faire?
 Supposons que vous être sous Windows, et que vous avez déjà installé Rebol sur votre machine :
 
 ## Dans un premier temps, étudions red/system :
-* chargez Red-Red/System et installez le dans un répertoire de votre choix.
-* créez tout de suite un répertoire "mes-progs", au même niveau que red-master, pour éviter la tentation de simplement compiler les exemples ...
+* chargez Red-Red/System et installez le dans le répertoire `Red`.
+* créez tout de suite un répertoire `mes-progs`, au même niveau que `Red`, pour éviter la tentation de simplement compiler les exemples ...
 * créez dans ce répertoire votre premier programme:
 
 	Red/System [
