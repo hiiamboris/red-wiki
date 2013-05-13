@@ -1,0 +1,137 @@
+Alors voilà: vous avez entendu parler de Rebol depuis longtemps, comme un langage Rebolutionnaire. Peut-être même pratiquez-vous déjà Rebol avec joie?
+Vous avez aussi entendu parler du langage Red, qui reprendrait la syntaxe de Rebol, conçu d'emblée de manière ouverte (libre, open source), qui progresse aujourd'hui (ces lignes s'écrivent au printemps 2013) à grande vitesse.
+Intrigué, émoustillé, vous voulez vous engouffrer, tester Red.
+
+Mais voilà, comment faire?
+
+# Pour les Windowsiens
+Supposons que vous être sous Windows, et que vous avez déjà installé Rebol sur votre machine :
+
+## Dans un premier temps, étudions red/system :
+* chargez Red-Red/System et installez le dans le répertoire `Red`.
+* créez tout de suite un répertoire `mes-progs`, au même niveau que `Red`, pour éviter la tentation de simplement compiler les exemples...
+* créez dans ce répertoire votre premier programme:
+
+<pre><code>
+Red/System [
+        Title:  "mon premier programme"
+        Author: "moi"
+        File:   %hello-1.reds
+]
+print "hello, world !"
+</code></pre>
+
+* compilez:
+<pre><code>
+do/args %../Red/red-system/rsc.r  "%hello-1.reds"
+</code></pre>
+
+L'exécutable se trouve dans Red\red-system\builds.
+
+Le système a compilé un exécutable Dos. Ouvrir une console, et taper "hello-1". Voilà, content ?
+
+
+Toujours sous Windows:
+
+Red/system permet d'utiliser des librairies dynamiques.
+Votre deuxième programme :
+
+	Red/System [
+		Title:   "hello"
+		Author:  "moi"
+		File: 	 %hello-2.reds
+	]
+	
+	; --- lib imports -----
+	
+	#import [
+		"user32.dll" stdcall [
+			MessageBox: "MessageBoxA" [
+				handle		[integer!] ;__in_opt  HWND hWnd,
+				text		[c-string!] ;__in_opt  LPCTSTR lpText,
+				title		[c-string!] ; __in_opt  LPCTSTR lpCaption,
+				type 		[integer!]	; __in      UINT uType
+			return:	[integer!]
+			]
+	  	]
+	]
+	
+	alert: func [txt [c-string!] return: [integer!]][
+		MessageBox 0 txt "alert" 48 
+		]
+		
+	confirm: func [txt [c-string!] return: [integer!] /local rep [integer!]][
+		rep: MessageBox 0 txt "confirm" 4 
+		if rep = 6 [rep: 1]  ; sinon rep = 7
+		rep
+	]
+	
+	rep: 0
+	
+	until [
+		alert "hello, world !"
+		rep: confirm "quitter ?"	
+		rep = 1
+	] 
+	
+
+
+compilez, dégustez
+
+	do/args %../Red/red-system/rsc.r  "%hello-2.reds" 
+
+
+
+La console est gênante ici. Nous allons générer maintenant un exécutable windows :
+
+	do/args %../Red/red-system/rsc.r "-t Windows %hello-2.reds" 
+
+
+
+On peut le lancer directement en cliquant dessus ...
+C'est mieux, comme ça ...
+
+
+# Pour les Linuxiens
+Dans le coin supérieur droit de la page http://www.red-lang.org/ , un bandeau rouge oblique invite à forker.
+
+Suivons ce conseil avisé, qui consiste à récupérer le code source de Red. Soit on suit le lien, soit, en ligne de commande:
+
+      # pierre@autan: ~$        < 2013_04_30__18_37_46 >
+    git clone https://github.com/dockimbel/Red.git
+    Cloning into Red...
+    remote: Counting objects: 13260, done.
+    remote: Compressing objects: 100% (6701/6701), done.
+    remote: Total 13260 (delta 6654), reused 13106 (delta 6510)
+    Receiving objects: 100% (13260/13260), 6.03 MiB | 215 KiB/s, done.
+    Resolving deltas: 100% (6654/6654), done.
+
+
+
+Un répertoire Red a été créé dans le répertoire courant.
+
+Il faut maintenant un exécutable Rebol pour permettre la compilation de Red; je prends ici un Rebol/view 2 pour Linux x86 Libc6, je désarchive le tarball, et je copie l'exécutable là où il convient pour Red:
+
+    # pierre@autan: ~$ < 2013_04_30__18_37_46 >
+    wget http://www.rebol.com/downloads/v278/rebol-view-278-4-2.tar.gz
+    --2013-04-30 21:17:15-- http://www.rebol.com/downloads/v278/rebol-view-278-4-2.tar.gz
+    Résolution de www.rebol.com... 205.134.252.23
+    Connexion vers www.rebol.com|205.134.252.23|:80...connecté.
+    requête HTTP transmise, en attente de la réponse...200 OK
+    Longueur: 653165 (638K) [application/x-gzip]
+    Sauvegarde en : «rebol-view-278-4-2.tar.gz»
+    
+    100%[======================================>] 653,165 168K/s ds 4.2s
+    
+    2013-04-30 21:17:20 (151 KB/s) - «rebol-view-278-4-2.tar.gz» sauvegardé [653165/653165]
+    
+      # pierre@autan: ~$        < 2013_04_30__18_37_46 >
+    tar zxf rebol-view-278-4-2.tar.gz
+       
+      # pierre@autan: ~$        < 2013_04_30__18_37_46 >
+    cp releases/rebol-view/rebol Red/red-system/
+    
+
+Dorénavant, nous avons la même architecture, pour Linuxiens et Windowsiens.
+
+# Pour les Macqueux
