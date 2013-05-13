@@ -11,7 +11,6 @@ Supposons que vous être sous Windows, et que vous avez déjà installé Rebol s
 * créez tout de suite un répertoire "mes-progs", au même niveau que red-master, pour éviter la tentation de simplement compiler les exemples ...
 * créez dans ce répertoire votre premier programme:
 
-
 	Red/System [
 	    	Title:   "mon premier programme"
 	    	Author:  "moi"
@@ -20,6 +19,7 @@ Supposons que vous être sous Windows, et que vous avez déjà installé Rebol s
 	    print "hello, world !" 
 
 * compilez:
+
 	do/args %../Red-master/red-system/rsc.r  "%hello-1.reds"
 
 L'exécutable se trouve dans Red-master\red-system\builds.
