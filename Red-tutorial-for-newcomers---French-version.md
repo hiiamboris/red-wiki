@@ -1,4 +1,4 @@
-Auteur: Pierre (pierrechtux)
+Auteurs: Pierre (pierrechtux), Jocko
 
 Alors voilà: vous avez entendu parler de Rebol depuis longtemps, comme un langage Rebolutionnaire. Peut-être même pratiquez-vous déjà Rebol avec joie?
 Vous avez aussi entendu parler du langage Red, qui reprendrait la syntaxe de Rebol, conçu d'emblée de manière ouverte (libre, open source), qui progresse aujourd'hui (ces lignes s'écrivent au printemps 2013) à grande vitesse.
