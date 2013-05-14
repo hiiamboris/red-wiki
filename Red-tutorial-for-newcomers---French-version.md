@@ -8,7 +8,7 @@ Mais voilà, comment faire?
 Supposons que vous être sous Windows, et que vous avez déjà installé Rebol sur votre machine :
 
 ## Dans un premier temps, étudions red/system :
-* chargez Red-Red/System et installez le dans le répertoire `Red`.
+* chargez le zip de Red-Red/System et installez le dans le répertoire `Red`.
 * créez tout de suite un répertoire `mes-progs`, au même niveau que `Red`, pour éviter la tentation de simplement compiler les exemples...
 * créez dans ce répertoire votre premier programme:
 
@@ -45,10 +45,10 @@ Votre deuxième programme :
 	#import [
 		"user32.dll" stdcall [
 			MessageBox: "MessageBoxA" [
-				handle		[integer!] ;__in_opt  HWND hWnd,
-				text		[c-string!] ;__in_opt  LPCTSTR lpText,
-				title		[c-string!] ; __in_opt  LPCTSTR lpCaption,
-				type 		[integer!]	; __in      UINT uType
+				handle		[integer!] 
+				text		[c-string!] 
+				title		[c-string!]
+				type 		[integer!]
 			return:	[integer!]
 			]
 	  	]
