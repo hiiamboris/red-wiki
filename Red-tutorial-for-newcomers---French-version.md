@@ -29,10 +29,11 @@ L'exécutable se trouve dans Red\red-system\builds.
 Le système a compilé un exécutable Dos. Ouvrir une console, et taper "hello-1". Voilà, content ?
 
 
-Toujours sous Windows:
+Créons maintenant un exécutable Windows:
 
-Red/system permet d'utiliser des librairies dynamiques.
-Votre deuxième programme :
+Red/system permet d'utiliser des librairies dynamiques. Nous allons appeler une dll windows, pour les besoins de notre exemple, sans nous attarder sur la syntaxe.
+
+Voici notre deuxième programme :
 
 	Red/System [
 		Title:   "hello"
@@ -80,10 +81,9 @@ compilez, dégustez
 
 
 
-La console est gênante ici. Nous allons générer maintenant un exécutable windows :
+Nous avons, de nouveau, créé un programme Dos. La console est gênante ici. Nous allons générer maintenant un exécutable windows :
 
 	do/args %../Red/red-system/rsc.r "-t Windows %hello-2.reds" 
-
 
 
 On peut le lancer directement en cliquant dessus ...
