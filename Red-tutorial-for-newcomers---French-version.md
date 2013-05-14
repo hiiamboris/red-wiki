@@ -7,7 +7,7 @@ Intrigué, émoustillé, vous voulez vous engouffrer, tester Red.
 Mais voilà, comment faire?
 
 # Pour les Windowsiens
-Supposons que vous être sous Windows, et que vous avez déjà installé Rebol sur votre machine :
+Supposons que vous êtes sous Windows, et que vous avez déjà installé Rebol sur votre machine :
 
 ## Dans un premier temps, étudions red/system :
 * chargez le zip de Red-Red/System et installez le dans le répertoire `Red`.
