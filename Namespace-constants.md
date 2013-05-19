@@ -1,0 +1,1 @@
+In the first version of Red/System, the #define pre-processor cannot be used to define constants within a namespace. As a result, if library author wants to provide constant values for users of the library, they must do so with global constants. 
