@@ -60,7 +60,7 @@ These features have been requested for inclusion in Red/System V2.
 
 27. Formalise the support of local functions. See [local functions] (https://github.com/dockimbel/Red/wiki/Local-functions).
 
-28. Add a mechanism for true namespaces including constants.
+28. Allow constants to be defined within a namespace. [Details] (https://github.com/dockimbel/Red/wiki/Namespace constants).
 
 29. Expose all standard numeric types. [Details] (https://github.com/dockimbel/Red/wiki/Expose-all-standard-numeric-types).
 
