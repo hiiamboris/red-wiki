@@ -66,7 +66,7 @@ These features have been requested for inclusion in Red/System V2.
 
 30. Allow function specs as an argument in function pointer specs. See [issue #259] (https://github.com/dockimbel/Red/issues/259).
 
-31. Optimise 'DOES. [Details] (https://github.com/dockimbel/Red/wiki/Optimised 'DOES).
+31. Optimise 'DOES. [Details] (https://github.com/dockimbel/Red/wiki/Optimised-'DOES).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
