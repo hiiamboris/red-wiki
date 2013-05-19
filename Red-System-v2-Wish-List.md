@@ -30,7 +30,7 @@ These features have been requested for inclusion in Red/System V2.
 
 12. Allow function pointers to be passed as arguments. See [issue #259] (https://github.com/dockimbel/Red/issues/259).
 
-13. Change for 1-based indexing to 0-based. See [issue #264] (https://github.com/dockimbel/Red/issues/264).
+13. Change 1-based indexing to 0-based. See [issue #264] (https://github.com/dockimbel/Red/issues/264).
 
 14. Add casting from function![...] to logic!. See [issue #301] (https://github.com/dockimbel/Red/issues/301).
 
@@ -65,6 +65,8 @@ These features have been requested for inclusion in Red/System V2.
 29. Expose all standard numeric types. [Details] (https://github.com/dockimbel/Red/wiki/Expose-all-standard-numeric-types).
 
 30. Allow function specs as an argument in function pointer specs. See [issue #259] (https://github.com/dockimbel/Red/issues/259).
+
+31. Optimise 'DOES. [Details] (https://github.com/dockimbel/Red/wiki/Optimised 'DOES).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
