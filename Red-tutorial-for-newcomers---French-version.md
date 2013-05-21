@@ -91,6 +91,86 @@ Nous avons, de nouveau, créé un programme Dos. La console est gênante ici. No
 On peut le lancer directement en cliquant dessus ...
 C'est mieux, comme ça ...
 
+## Abordons maintenant Red:
+
+Voici la version Red de "hello, world!"
+Remarquez l'en-tête ("Red"), et la fonction de retour (quit)
+sauvegardez ce code avec l'extension .red
+
+	Red[
+	        Title:  "hello"
+	        Author: "jocko"
+	        File:   %hello-1.red
+	]
+	print "hello, world !"
+
+	; quit est indispensable dans les programmes compilés sous DOS
+	quit
+
+Si la configuration des répertoires est la même que précédemment, la compilation se fait
+en ouvrant une console rebol dans le répertoire mes-progs, et en tapant :
+
+	do/args %../Red/red.r "%hello-1.red"
+
+L'exécutable se trouve dans le répertoire mes-progs. Le lancer avec une console DOS.
+
+Reprenons maintenant notre second programme, et convertissons-le en programme Red :
+
+	Red[
+			Title:  "hello"
+			Author: "jocko"
+			File:   %hello-2.red
+	]
+	; --- lib imports -----
+	#system[
+		#import [
+			"user32.dll" stdcall [
+				MessageBox: "MessageBoxA" [
+					handle      [integer!] 
+					text        [c-string!] 
+					title       [c-string!]
+					type        [integer!]
+				return: [integer!]
+				]
+			]
+		]
+	]
+
+	; noter la conversion de string en c-string : 
+	; as c-string! string/rs-head txt
+
+	alert: routine [
+				txt [string!] 
+				return: [integer!]][
+			MessageBox 0 as c-string! string/rs-head txt "alert" 48 
+	]
+
+	confirm: routine [
+				txt [string!] 
+				return: [integer!] 
+				/local rep [integer!]][
+			rep: MessageBox 0 as c-string! string/rs-head txt "confirm" 4 
+			if rep = 6 [rep: 1]  ; sinon rep = 7
+			rep
+	]
+
+	rep: 0
+
+	until [
+		alert "hello, world !"
+		rep: confirm "quitter ?"    
+		rep = 1
+	] 
+
+Plusieurs remarques:
+- l'importation de librairies reste du code red/system. Pour le signaler, on utilise la directive #system
+- les fonctions alert et confirm sont maintenant déclarées comme des routines, car elles comportent des appels à des librairies externes
+- il y a une conversion à faire entre la représentation des strings sous red/system (c-string!), et sous Red (string!). D'où ce code ésotérique as c-string! string/rs-head 
+
+Enregistrez sous hello-2.red
+compilez par :
+	do/args %../Red/red.r "-t windows %hello-2.red"
+et vous avez un exécutable windows, que l'on peut lancer en double cliquant dessus
 
 # Pour les Linuxiens
 Dans le coin supérieur droit de la page http://www.red-lang.org/ , un bandeau rouge oblique invite à forker.
