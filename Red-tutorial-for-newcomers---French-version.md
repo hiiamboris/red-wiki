@@ -164,7 +164,7 @@ Reprenons maintenant notre second programme, et convertissons-le en programme Re
 
 Plusieurs remarques:
 - l'importation de librairies reste du code red/system. Pour le signaler, on utilise la directive #system
-- les fonctions alert et confirm sont maintenant déclarées comme des routines, car elles comportent des appels à des librairies externes
+- les fonctions alert et confirm sont maintenant déclarées comme des routines, car elles comportent des appels à des fonctions red/system
 - il y a une conversion à faire entre la représentation des strings sous red/system (c-string!), et sous Red (string!). D'où ce code ésotérique as c-string! string/rs-head 
 
 Enregistrez sous hello-2.red . Compilez par :
@@ -181,11 +181,11 @@ Parmi les exemples fournis dans le répertoire red/tests, il y a une console REP
 
 En attendant, vous êtes maintenant armés pour compiler ... et essayer la console :
 
-supposons que vous êtes toujours dans votre répertoire mes-progs :
+Nous supposons que vous êtes toujours dans votre répertoire mes-progs :
 
 	do/args %../Red/red.r "%../Red/red/tests/console.red"
 
-Vous trouverez l'exe dans ce même répertoire ... entrez des expressions simples, avec la syntaxe rebol ...
+Vous trouverez l'exe dans ce même répertoire ...Lancez-le, une console s'ouvre. Entrez des expressions simples, avec la syntaxe rebol ...
 
 Un dernier mot : soyez sympa, compilez aussi (sous windows !) ce programme pour vos amis, linuxiens invétérés :
 
