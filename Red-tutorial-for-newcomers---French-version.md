@@ -173,6 +173,29 @@ Enregistrez sous hello-2.red . Compilez par :
 
 et vous avez un exécutable windows, que l'on peut lancer en double cliquant dessus.
 
+## REPL, une console d'évaluation interactive:
+
+REPL signifie read-eval-print loop.
+
+Parmi les exemples fournis dans le répertoire red/tests, il y a une console REPL, qui permet d'entrer et de tester de manière interactive des expressions Red. L'intérêt de cet outil justifie qu'on lui dédie (plus tard) une page de wiki.
+
+En attendant, vous êtes maintenant armés pour compiler ... et essayer la console :
+
+supposons que vous êtes toujours dans votre répertoire mes-progs :
+
+	do/args %../Red/red.r "%../Red/red/tests/console.red"
+
+Vous trouverez l'exe dans ce même répertoire ... entrez des expressions simples, avec la syntaxe rebol ...
+
+Un dernier mot : soyez sympa, compilez aussi (sous windows !) ce programme pour vos amis, linuxiens invétérés :
+
+	do/args %../Red/red.r "-t linux %../Red/red/tests/console.red"
+
+Et aussi, pour les heureux possesseurs de Mac :
+
+	do/args %../Red/red.r "-t darwin %../Red/red/tests/console.red"
+
+
 # Pour les Linuxiens
 Dans le coin supérieur droit de la page http://www.red-lang.org/ , un bandeau rouge oblique invite à forker.
 
