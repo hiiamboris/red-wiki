@@ -167,10 +167,11 @@ Plusieurs remarques:
 - les fonctions alert et confirm sont maintenant déclarées comme des routines, car elles comportent des appels à des librairies externes
 - il y a une conversion à faire entre la représentation des strings sous red/system (c-string!), et sous Red (string!). D'où ce code ésotérique as c-string! string/rs-head 
 
-Enregistrez sous hello-2.red
-compilez par :
+Enregistrez sous hello-2.red . Compilez par :
+
 	do/args %../Red/red.r "-t windows %hello-2.red"
-et vous avez un exécutable windows, que l'on peut lancer en double cliquant dessus
+
+et vous avez un exécutable windows, que l'on peut lancer en double cliquant dessus.
 
 # Pour les Linuxiens
 Dans le coin supérieur droit de la page http://www.red-lang.org/ , un bandeau rouge oblique invite à forker.
