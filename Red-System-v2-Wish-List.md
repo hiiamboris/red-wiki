@@ -68,5 +68,9 @@ These features have been requested for inclusion in Red/System V2.
 
 31. Optimise 'DOES. [Details] (https://github.com/dockimbel/Red/wiki/Optimised-'DOES).
 
+32. Provide compile time option to re-define previously defined functions, etc for testing. Placeholder - details to be supplied.
+
+33. Allow aliases of simple types (integer!, byte!, etc.) to give finer control over type checking to the programmer. Placeholder - details to be supplied.
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
