@@ -72,5 +72,7 @@ These features have been requested for inclusion in Red/System V2.
 
 33. Allow aliases of simple types (integer!, byte!, etc.) to give finer control over type checking to the programmer. Placeholder - details to be supplied.
 
+34. Provide a type? function to allow type checking of struct!s and alias!s passed to typed functions. [Details] (https://github.com/dockimbel/Red/wiki/Type?).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
