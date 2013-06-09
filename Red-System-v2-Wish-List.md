@@ -76,5 +76,7 @@ These features have been requested for inclusion in Red/System V2.
 
 35. Add a symbol! type. [Details] (https://github.com/dockimbel/Red/wiki/symbol!).
 
+36. Allow function overloading. [Details] (https://github.com/dockimbel/Red/wiki/Function Overlaoding).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
