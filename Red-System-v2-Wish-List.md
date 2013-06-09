@@ -74,5 +74,7 @@ These features have been requested for inclusion in Red/System V2.
 
 34. Provide a type? function to allow type checking of struct!s and alias!s passed to typed functions. [Details] (https://github.com/dockimbel/Red/wiki/Type?).
 
+35. Add a symbol! type. [Details] (https://github.com/dockimbel/Red/wiki/symbol!).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
