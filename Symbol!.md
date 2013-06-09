@@ -28,7 +28,7 @@ switch response [
 	
 ```
 to be re-written as:
-
+```
 my-func: [
 	i		[integer!]
  	return:		[symbol!]
@@ -40,3 +40,4 @@ my-func: [
 ]
 
 print my-func my-int					;; assuming print omits the '
+```
