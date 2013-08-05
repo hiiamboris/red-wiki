@@ -78,7 +78,7 @@ These features have been requested for inclusion in Red/System V2.
 
 36. Allow function overloading. [Details] (https://github.com/dockimbel/Red/wiki/Function Overlaoding).
 
-37. Additional struct! features. [Details] (https://github.com/dockimbel/Red/wiki/Struct!)
+37. Additional struct! features. [Details] (https://github.com/dockimbel/Red/wiki/Additional-struct!-features)
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
