@@ -16,6 +16,9 @@ But, how to do it?  Where to start?
 
 
 # Pour les Windowsiens
+/*
+# For the poor windows users
+*/
 Supposons que vous êtes sous Windows, et que vous avez déjà installé Rebol sur votre machine :
 
 ## Dans un premier temps, étudions red/system :
@@ -100,6 +103,101 @@ Nous avons, de nouveau, créé un programme Dos. La console est gênante ici. No
 On peut le lancer directement en cliquant dessus ...
 C'est mieux, comme ça ...
 
+
+
+
+/*
+Let's suppose that you paid a windows licence, and that you already have Rebol installed on your machine:
+
+## First of all, let's see red/system :
+* download the .zip containing Red-Red/System and put it in the `Red` directory.
+* create now a directory named 'my-progs', at the same level as `Red`, just not to be tempted of /only compiling examples...
+* create your first Red program in this directory:
+
+<pre><code>Red/System [
+        Title:  "my first program"
+        Author: "me"
+        File:   %hello-1.reds
+]
+print "hello, Red world ! Are you Reddy?"
+</code></pre>
+
+
+* compile it:
+<pre><code>do/args %../Red/red-system/rsc.r  "%hello-1.reds"
+</code></pre>
+
+The executable can be found in Red\red-system\builds.
+
+The system compiled a DOS executable.  Open a console, and type "hello-1".  Happy?
+
+
+
+Now let's do a Windows executable:
+
+Red/system allows to use dynamic libraries.  As an example, We will call a windows dll, without worrying too much about syntax.
+
+Here is our second program :
+
+
+	Red/System [
+		Title:   "hello"
+		Author:  "me"
+		File: 	 %hello-2.reds
+	]
+	
+	; --- lib imports -----
+	
+	#import [
+		"user32.dll" stdcall [
+			MessageBox: "MessageBoxA" [
+				handle		[integer!] 
+				text		[c-string!] 
+				title		[c-string!]
+				type 		[integer!]
+			return:	[integer!]
+			]
+	  	]
+	]
+	
+	alert: func [txt [c-string!] return: [integer!]][
+		MessageBox 0 txt "alert" 48 
+		]
+		
+	confirm: func [txt [c-string!] return: [integer!] /local rep [integer!]][
+		rep: MessageBox 0 txt "confirm" 4 
+		if rep = 6 [rep: 1]  ; sinon rep = 7
+		rep
+	]
+	
+	rep: 0
+	
+	until [
+		alert "hello, Red world !"
+		rep: confirm "quit ?"	
+		rep = 1
+	] 
+	
+
+
+compile, run
+
+	do/args %../Red/red-system/rsc.r  "%hello-2.reds" 
+
+
+
+Again, we made a DOS program; console is a bit in the way.  Now, let's try to do proper windows executable :
+
+	do/args %../Red/red-system/rsc.r "-t Windows %hello-2.reds" 
+
+
+Now you can launch it with a simple click...
+That's better.
+
+*/
+
+
+
 ## Abordons maintenant Red:
 
 Voici la version Red de "hello, world!"
@@ -182,7 +280,96 @@ Enregistrez sous hello-2.red . Compilez par :
 
 et vous avez un exécutable windows, que l'on peut lancer en double cliquant dessus.
 
+
+
+/*
+## Let's talk about Red:
+
+Here is the Red version from "hello, world!"
+Notice the header ("Red"), and the return function (quit).
+Save this code with a .red extension.
+
+	Red[
+	        Title:  "hello"
+	        Author: "jocko"
+	        File:   %hello-1.red
+	]
+	print "hello, world !"
+
+	; quit is mandatory for programs compiled with DOS
+	quit
+
+Provided that the directory hierarchy is the same as previously, compile is done by opening a rebol console in the my-progs directory, and by entering:
+
+	do/args %../Red/red.r "%hello-1.red"
+
+The resulting executable is located in the my-progs directory.  Launch it from a DOS console.
+
+Now let's re-edit our second program, and let's convert it into a Red program:
+
+	Red[
+			Title:  "hello"
+			Author: "jocko"
+			File:   %hello-2.red
+	]
+	; --- lib imports -----
+	#system[
+		#import [
+			"user32.dll" stdcall [
+				MessageBox: "MessageBoxA" [
+					handle      [integer!] 
+					text        [c-string!] 
+					title       [c-string!]
+					type        [integer!]
+				return: [integer!]
+				]
+			]
+		]
+	]
+
+	; note the conversion from string to c-string : 
+	; as c-string! string/rs-head txt
+
+	alert: routine [
+				txt [string!] 
+				return: [integer!]][
+			MessageBox 0 as c-string! string/rs-head txt "alert" 48 
+	]
+
+	confirm: routine [
+				txt [string!] 
+				return: [integer!] 
+				/local rep [integer!]][
+			rep: MessageBox 0 as c-string! string/rs-head txt "confirm" 4 
+			if rep = 6 [rep: 1]  ; otherwise rep = 7
+			rep
+	]
+
+	rep: 0
+
+	until [
+		alert "hello, red world !"
+		rep: confirm "quit ?"    
+		rep = 1
+	] 
+
+A few comments:
+- importing libraries is still red/system code.  To mention this, the #system directive is mentioned.
+- alert and confirm functions are now declared as routines, since they make calls to red/system functions.
+- a conversion must be done between the strings'representation in red/system (c-string!), and in Red (string!).  That's the reason for the esoteric code as c-string! string/rs-head 
+
+Save as hello-2.red . Compile :
+
+	do/args %../Red/red.r "-t windows %hello-2.red"
+
+and you get a windows executable, which you can launch with a double-click.
+
+*/
+
 ## REPL, une console d'évaluation interactive:
+/*
+## REPL, une console d'évaluation interactive:
+*/
 
 REPL signifie read-eval-print loop.
 
