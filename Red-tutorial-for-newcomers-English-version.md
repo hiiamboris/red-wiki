@@ -6,9 +6,9 @@ So you're all excited, you want to bite the bullet and test Red.
 
 But, how to do it?  Where to start?
 
+
 # For the poor windows users
 
-/*
 Let's suppose that you paid a windows licence, and that you already have Rebol installed on your machine:
 
 ## First of all, let's see red/system :
