@@ -20,7 +20,7 @@ Supposons que vous êtes sous Windows, et que vous avez déjà installé Rebol s
         Author: "moi"
         File:   %hello-1.reds
 ]
-print "hello, world !"
+print "Salut, tout le monde!"
 </code></pre>
 
 * compilez:
@@ -77,7 +77,6 @@ Voici notre deuxième programme :
 	] 
 	
 
-
 compilez, dégustez
 
 	do/args %../Red/red-system/rsc.r  "%hello-2.reds" 
@@ -104,7 +103,7 @@ sauvegardez ce code avec l'extension .red
 	        Author: "jocko"
 	        File:   %hello-1.red
 	]
-	print "hello, world !"
+	print "Resalut, tout le monde!"
 
 	; quit est indispensable dans les programmes compilés sous DOS
 	quit
@@ -159,7 +158,7 @@ Reprenons maintenant notre second programme, et convertissons-le en programme Re
 	rep: 0
 
 	until [
-		alert "hello, world !"
+		alert "Reresalut, tout le monde!"
 		rep: confirm "quitter ?"    
 		rep = 1
 	] 
