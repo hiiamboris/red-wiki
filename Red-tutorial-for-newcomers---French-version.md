@@ -1,10 +1,19 @@
 Auteurs: Pierre (pierrechtux), Jocko
 
 Alors voilà: vous avez entendu parler de Rebol depuis longtemps, comme un langage Rebolutionnaire. Peut-être même pratiquez-vous déjà Rebol avec joie?
-Vous avez aussi entendu parler du langage Red, qui reprendrait la syntaxe de Rebol, conçu d'emblée de manière ouverte (libre, open source), qui progresse aujourd'hui (ces lignes s'écrivent au printemps 2013) à grande vitesse.
+Vous avez aussi entendu parler du langage Red, qui reprendrait la syntaxe de Rebol, conçu d'emblée de manière ouverte (libre, open source), qui progresse aujourd'hui (ces lignes s'écrivent au printemps 2013 de l'hémisphère Nord de la Terre) à grande vitesse.
 Intrigué, émoustillé, vous voulez vous engouffrer, tester Red.
 
 Mais voilà, comment faire?
+
+/*English approximate translation:
+So you have heard of Rebol from a long time, your neighbour keeps on telling you it's a Rebolutionary language.  Maybe you are already a happy Reboler?
+You've also heard from Red, a language with the same syntax as Rebol, designed right from the start in an open manner (free-libre, open-souce), which is progressing at a lightning pace now (this is written at the end of summer 2013 from Earth's Northern Hemisphere).
+So you're all excited, you want to bite the bullet and test Red.
+
+But, how to do it?  Where to start?
+*/
+
 
 # Pour les Windowsiens
 Supposons que vous êtes sous Windows, et que vous avez déjà installé Rebol sur votre machine :
