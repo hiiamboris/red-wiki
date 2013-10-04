@@ -4,10 +4,10 @@ If you know how to categorize more unsorted words, please do.
 
 Unsorted
 --------
- body exit return   /local /extern  none  count at   offset   map-each remove-each conds          halt  load source  header stats show info bind context   Red yes on no off tab cr newline lf escape slash sp space null crlf dot quit-return status quit   probe quote s second third fourth fifth  spec-of body-of system version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux else replace pattern pos len  read-argument args-count none-value args args-list str simple-io read-txt item init-console ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper input prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c  do-console red-prompt mode switch-mode eval code result cnt mono block q script
+ body exit return   /local /extern  none  count at   offset   map-each remove-each conds  Red     status quit   probe quote s second third fourth fifth  spec-of body-of system version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux else replace pattern pos len  read-argument args-count none-value args args-list str simple-io read-txt item init-console ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper input prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c  do-console red-prompt mode switch-mode eval code result cnt mono block q script
 
 ###Refinements or arguments - Don't sort these###
-value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out
+value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out source header show info context 
 
 Types
 -----
@@ -20,7 +20,9 @@ Operators
 Values
 ------
 ###Logic###
-true false
+true false yes no on off
+###Character constants###
+tab cr newline lf escape slash sp space null crlf dot
 ###Platforms###
 Windows Syllable MacOSX Linux
 
@@ -29,7 +31,7 @@ Functions
 Use `red>> ?? function-name` to learn about each function.
 
 ###Unsorted###
-make reflect form mold copy reduce compose get set
+make reflect form mold copy reduce compose get set halt load stats bind quit-return
 
 ###IO###
 print prin
