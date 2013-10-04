@@ -4,7 +4,7 @@ Since a Red documentation is not yet available, I ran 'probe system/words', whic
 This section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
 
  spec body words exit return   /local /extern make  none true false type  reflect value field form part limit mold only all flat absolute  add value1 value2 divide multiply negate number power exponent remainder round n to scale even down half-down floor ceiling half-ceiling sub
-tract even? odd? append series series! length dup count at index back clear copy
+tract  append series  length dup count at index back clear copy
  deep types kind find case any with wild skip size last reverse tail match head
 head? index? insert length? next pick poke remove select offset tail? if cond th
 en-blk unless either true-blk false-blk conds while until loop word forall func
@@ -25,10 +25,8 @@ t c escaped? in-comment? do-console red-prompt mode switch-mode eval code result
 
 Types
 -----
-###Unexplained###
-datatype! unset! none! logic! block! string! integer! symbol! context! word! set-word! lit-word! get-word! refinement! char! native! action! op! function! path! lit-path! set-path! get-path! paren! routine! issue! file! error! typeset! binary! closure! object! port! bitset! float! number! any-object! any-type!
-
-###Explained###
+**datatype!** This is the data type of a data type.  
+unset! none! logic! block! string! integer! symbol! context! word! set-word! lit-word! get-word! refinement! char! native! action! op! function! path! lit-path! set-path! get-path! paren! routine! issue! file! error! typeset! binary! closure! object! port! bitset! float! number! any-object! any-type! series!
 
 
 Functions
@@ -36,9 +34,12 @@ Functions
 ###Iteration###
 repeat foreach map-each remove-each
 
+###Queries###
+even? odd? 
+
 Operators
 ---------
-+ - * / = <> == =? < > <= >=
+    + - * / = <> == =? < > <= >=
 
 Platforms
 ---------
