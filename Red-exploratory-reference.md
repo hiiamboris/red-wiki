@@ -22,7 +22,7 @@ Functions
 Use `red>> ?? function-name` to learn about each function.
 
 ###Unsorted###
-make reflect copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q at case 
+make reflect copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q
 
 ###IO###
 print prin input 
@@ -31,14 +31,14 @@ print prin input
 func function does has
 
 ###Flow control###
-if unless either repeat foreach while until loop forall all any switch do 
+if unless either repeat foreach while until loop forall all any case switch do 
 
 ###Math and logic###
 absolute add divide multiply negate power exponent remainder round subtract 
 
 ###Series###
 ####Queries####
-head? index? length? tail? empty? skip find head tail first second third fourth fifth last back next pick select 
+head? index? length? tail? empty? at skip find head tail first second third fourth fifth last back next pick select 
 ####Manipulations####
 append clear insert poke remove 
 
