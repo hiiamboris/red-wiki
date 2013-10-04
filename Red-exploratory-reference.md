@@ -22,7 +22,7 @@ Functions
 Use `red>> ?? function-name` to learn about each function.
 
 ###Unsorted###
-make reflect form mold copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q at case 
+make reflect copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q at case 
 
 ###IO###
 print prin input 
@@ -49,6 +49,10 @@ type? any-series? Windows? escaped? in-comment? zero?
 even? odd? equal? not-equal? lesser? greater? lesser-or-equal? greater-or-equal? same?
 ####Is it this type?####
 block? char? datatype? action? file? function? get-path? get-word? integer? issue? lit-path? lit-word? logic? native? none? op? paren? path? refinement? set-path? set-word? string? unset? word?  
+
+###Misc###
+####To string####
+form mold
 
 Refinements or arguments
 ------------------------
