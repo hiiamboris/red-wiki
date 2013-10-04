@@ -1,13 +1,7 @@
 Since a Red documentation is not yet available, I ran `red>> probe system/words`, which prints any word known to the interpreter, in the hope of figuring out what everything does. The following section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
 
-If you know how to categorize more unsorted words, please do.
-
-Unsorted
---------
- body exit return   /local /extern  none  count at   offset   map-each remove-each conds  Red     status quit   probe quote s second third fourth fifth  spec-of body-of system version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux else replace pattern pos len  read-argument args-count none-value args args-list str simple-io read-txt item init-console ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper input prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c  do-console red-prompt mode switch-mode eval code result cnt mono block q script
-
 ###Refinements or arguments - Don't sort these###
-value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out source header show info context 
+body exit return /local /extern none count at offset map-each remove-each conds Red s else args-count none-value args args-list str simple-io read-txt item  ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c   red-prompt mode switch-mode eval code result cnt mono block script value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out source header show info context status version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux pattern pos len
 
 Types
 -----
@@ -31,10 +25,10 @@ Functions
 Use `red>> ?? function-name` to learn about each function.
 
 ###Unsorted###
-make reflect form mold copy reduce compose get set halt load stats bind quit-return
+make reflect form mold copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q
 
 ###IO###
-print prin
+print prin input 
 
 ###Define###
 func function does has
@@ -47,7 +41,7 @@ absolute add divide multiply negate power exponent remainder round subtract
 
 ###Series###
 ####Queries####
-head? index? length? tail? empty? skip find head tail first last back next pick select 
+head? index? length? tail? empty? skip find head tail first second third fourth fifth last back next pick select 
 ####Manipulations####
 append clear insert poke remove 
 
