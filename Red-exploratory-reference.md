@@ -1,7 +1,4 @@
-Since a Red documentation is not yet available, I ran `red>> probe system/words`, which prints any word known to the interpreter, in the hope of figuring out what everything does. The following section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
-
-###Refinements or arguments - Don't sort these###
-body exit return /local /extern none count at offset map-each remove-each conds Red s else args-count none-value args args-list str simple-io read-txt item  ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c   red-prompt mode switch-mode eval code result cnt mono block script value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out source header show info context status version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux pattern pos len
+Since a Red documentation is not yet available, I ran `red>> probe system/words`, which prints any word known to the interpreter, in the hope of figuring out what everything does. This document categorizes the words known by the Red interpreter in order to supply a basic language reference.
 
 Types
 -----
@@ -52,3 +49,10 @@ type? any-series? Windows? escaped? in-comment? zero?
 even? odd? equal? not-equal? lesser? greater? lesser-or-equal? greater-or-equal? same?
 ####Is it this type?####
 block? char? datatype? action? file? function? get-path? get-word? integer? issue? lit-path? lit-word? logic? native? none? op? paren? path? refinement? set-path? set-word? string? unset? word?  
+
+Refinements or arguments
+------------------------
+The following words are being printed when executing `probe system/words` but they are not globally available, mostly because they are local to built in functions.
+
+body exit return /local /extern none count at offset map-each remove-each conds Red s else args-count none-value args args-list str simple-io read-txt item  ret SetConsoleTitle as  string rs-head print-line rl-bind-key as-integer rl-insert-wrapper prompt buffer allocate ReadConsole stdin null-byte free line read-line add-history count-delimiters list c   red-prompt mode switch-mode eval code result cnt mono block script value field types part limit only flat value1 value2 number n to scale even down half-down floor ceiling half-ceiling deep kind series word words length case with wild size reverse match dup index spec type cond then-blk true-blk false-blk vars cases default into out source header show info context status version platform _context get-words OS SET_RETURN _windows _syllable _macosx _linux pattern pos len
+
