@@ -22,7 +22,7 @@ Functions
 Use `red>> ?? function-name` to learn about each function.
 
 ###Unsorted###
-make reflect copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system replace read-argument init-console do-console q
+make reflect copy reduce compose get set halt load stats bind quit-return quit probe quote spec-of body-of system read-argument init-console do-console q
 
 ###IO###
 print prin input 
@@ -40,7 +40,7 @@ absolute add divide multiply negate power exponent remainder round subtract
 ####Queries####
 head? index? length? tail? empty? at skip find head tail first second third fourth fifth last back next pick select 
 ####Manipulations####
-append clear insert poke remove 
+append clear insert poke remove replace
 
 ###General queries###
 ####Unsorted####
