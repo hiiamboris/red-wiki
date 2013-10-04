@@ -18,11 +18,13 @@ repeat foreach map-each remove-each
 
 ###Queries###
 ####Math and logic####
-even? odd? equal? not-equal? lesser? greater? lesser-or-equal? greater-or-equal?
-####Blocks####
-head? index? length? tail?   
+even? odd? equal? not-equal? lesser? greater? lesser-or-equal? greater-or-equal? same?
+####Series####
+head? index? length? tail? empty?
+####Is it this type?####
+block? char? datatype? action? file? function? get-path? get-word? integer? issue? lit-path? lit-word? logic? native? none? op? paren? path? refinement? set-path? set-word? string? unset? word?  
 
-same? type? empty? action? block? char? datatype? file? function? get-path? get-word? integer? issue? lit-path? lit-word? logic? native? none? op? paren? path? refinement? set-path? set-word? string? unset? word? any-series? zero? Windows? escaped? in-comment?
+ type? any-series? Windows? escaped? in-comment? zero?
 
 ###IO##
 print prin
