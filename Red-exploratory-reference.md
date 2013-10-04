@@ -1,4 +1,4 @@
-Since a Red documentation is not yet available, I ran 'probe system/words', which prints any word known to the interpreter, in the hope of figuring out what everything does. The following section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
+Since a Red documentation is not yet available, I ran `probe system/words`, which prints any word known to the interpreter, in the hope of figuring out what everything does. The following section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
 
 If you know how to categorize more unsorted words, please do.
 
