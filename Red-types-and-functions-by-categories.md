@@ -1,8 +1,8 @@
-Unsorted
---------
 Since a Red documentation is not yet available, I ran 'probe system/words', which prints any word known to the interpreter, in the hope of figuring out what everything does.  
 This section will contain the still unsorted words while the others will contain the types and functions with basic explanation and a logical order.
 
+Unsorted
+--------
  spec body words exit return   /local /extern make  none true false type  reflect value field form part limit mold only all flat absolute  add value1 value2 divide multiply negate number power exponent remainder round n to scale even down half-down floor ceiling half-ceiling sub
 tract  append series  length dup count at index back clear copy
  deep types kind find case any with wild skip size last reverse tail match head
