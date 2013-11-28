@@ -37,4 +37,4 @@ One approach could be to provide refinements to relevant actions. e.g.
 =="edçba"
 ```
 
-Another approach could be to introduce a unicode! datatype ("character-based"), retaining the string! datatype ("code-point-based") and allowing the programmer to switch between the two as they need. 
+Another approach could be to introduce a **unicode!** datatype ("character-based"), retaining the **string!** datatype ("code-point-based") and allowing the programmer to switch between the two as they need. 
