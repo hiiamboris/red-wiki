@@ -25,9 +25,9 @@ Red will enable other case mappings by providing a simple "plug-in" mechanism fo
 It is easy to fall into the trap that a Unicode Code Point is the equivalent of a printable character. It is clearly not as demonstrated by the example in the Normalisation section. For example, the length? function returns the number of code points in a string not the number of characters. Reversing strings containing decomposed characters will produce incorrect results. The string "ç", if encoded by the sequence U+0063 U+0327 when reversed would become "¸c".
 
 ###One Character, Multiple Code Points Proposal.
-It is not felt worth the extra processing to change the default behaviour from treating code points individually. However, refinements will be provided that will take account of multi-code point characters.
+It is not felt worth the extra processing to change the default behaviour from treating code points individually. However, a mechanism that will take account of multi-code point characters will be provided.
 
-For example: 
+One approach could be to provide refinements to relevant actions. e.g. 
 
 ```
 >>reverse "abçde"
@@ -36,3 +36,5 @@ For example:
 >>reverse/decomp "abçde"
 =="edçba"
 ```
+
+Another approach could be to introduce a unicode! datatype ("character-based"), retaining the string! datatype ("code-point-based") and allowing the programmer to switch between the two as they need. 
