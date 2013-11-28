@@ -35,6 +35,4 @@ For example:
 
 >>reverse/decomp "abçde"
 =="edçba"
-
-
-  
+```
