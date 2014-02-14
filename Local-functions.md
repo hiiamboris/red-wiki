@@ -15,7 +15,7 @@ f
 
 A call to a locally defined function from the global scope gives an undefined symbol error.
 
-However the current does not allow a local function to be assigned to a variable which has the same name as a global variable to which a function has been assigned. Declaring a local function with the same name as a global variable does not give a compiler error but doesn't give expected results). These two code examples show this more clearly than my explanation.
+However the current implementation does not allow a local function to be assigned to a variable which has the same name as a global variable to which a function has been assigned. Declaring a local function with the same name as a global variable does not give a compiler error but doesn't give expected results). These two code examples show this more clearly than my explanation.
 
 Code
 ```
