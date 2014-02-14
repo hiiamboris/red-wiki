@@ -1,0 +1,1 @@
+Use case: passing a logic! value pointer as an argument to a function that might change the pointed logic value. It will provide one way to workaround the limitation of returning only one value from a function.
