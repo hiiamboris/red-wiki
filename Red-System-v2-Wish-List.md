@@ -74,11 +74,13 @@ These features have been requested for inclusion in Red/System V2.
 
 34. Provide a type? function to allow type checking of struct!s and alias!s passed to typed functions. [Details] (https://github.com/dockimbel/Red/wiki/Type?).
 
-35. Add a symbol! type. [Details] (https://github.com/dockimbel/Red/wiki/symbol!).
+35. Add a symbol! type. [Details] (https://github.com/red/Red/wiki/symbol!).
 
-36. Allow function overloading. [Details] (https://github.com/dockimbel/Red/wiki/Function Overlaoding).
+36. Allow function overloading. [Details] (https://github.com/red/Red/wiki/Function-Overloading).
 
-37. Additional struct! features. [Details] (https://github.com/dockimbel/Red/wiki/Additional-struct!-features)
+37. Additional struct! features. [Details] (https://github.com/red/Red/wiki/Additional-struct!-features)
+
+38. Implement get-word for logic! values. [Details] (https://github.com/red/Red/wiki/Logic!-Get-Word).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
