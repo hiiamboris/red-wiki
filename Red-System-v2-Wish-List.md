@@ -82,5 +82,11 @@ These features have been requested for inclusion in Red/System V2.
 
 38. Implement get-word for logic! values. [Details] (https://github.com/red/Red/wiki/Logic!-Get-Word). See [issue #534] (https://github.com/red/Red/issues/534).
 
+39. Add binding to external variables. It would be nice to check C variables such as errno.
+
+40. Add a long! (or int64!) type.
+
+41. Function returns struct! by value (found in some C bindings).
+
 ## Rejected
 These features will not be incorporated into Red/System V2.
