@@ -29,9 +29,9 @@ In the Red project, mezzanine code refers to functions, modules, objects and sch
 
 The process for code to be included as Red mezzanine is as follows:
 
-1. Submit the code for inclusion the Red library.
+1. Submit a pull request of the code for inclusion the Red library.
 2. Once the code is included in the Red library, submit a proposal for its inclusion within the Red mezzanine code via a Red project GitHub issue.
-3. If the proposal is accepted the Red project team, submit a pull request with your code included as mezzanine code and a revised set of tests.
+3. If the proposal is accepted by the Red project team, submit a pull request with your code included as mezzanine code and a revised set of tests.
 
 At the current stage of Red's development, mezzanine code is not yet being accepted so please do not submit proposals yet.
 
