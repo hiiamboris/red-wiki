@@ -9,7 +9,7 @@ There are seven different ways to contribute to the Red project:
 * Write and maintain Red and Red/System tests
 * Use Red and Red/System and submit meaningful bug reports
 
-No matter how small, you contribution will be valued and appreciated providing that you follow the guidelines.
+No matter how small, you contribution will be valued and appreciated providing that you follow the guidelines. In particular, isolating bugs so that they can be easily identified and fixed is a great help.
 
 ## General Contribution Guidelines
 1. You should be sure that you own the Intellectual Property Rights(IP) of any contribution you make to the Red project.
@@ -20,5 +20,13 @@ No matter how small, you contribution will be valued and appreciated providing t
 
 ## Coding Standards
 
-## Quick Test Coding Standards
+## Quick Test Standards
 
+## Red and Red/System core and runtimes
+
+## Red mezzanine functions, modules, objects and schemes   
+## Red library functions
+## Red/System library functions
+## Documentation and documentation systems
+## Red and Red/System tests
+## Bug reports
