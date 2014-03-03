@@ -23,18 +23,7 @@ All contributions should adhere to the following coding standards
 
 1. All source code should be UTF-8 encoded.
 2. All indents should be made using tabs not spaces.
-3. Function specifications should follow a vertical layout, e.g.
-
-`my-func: func [
-     arg1     [datatype!]
-     arg2     [datatype!]
-     /local
-         local1   [datatype!]
-         local2   [datatype!]
-][
-…
-]`
-    
+3. Function specifications should follow a vertical layout. Good examples are the prin-byte and _print functions in Red/system/runtime/utils.red
 4. End-of-line comments are preferred over between lines comments. The should be preceded with ";—-" starting at position 57.
 
 ### Quick Test Standards
