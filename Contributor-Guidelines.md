@@ -19,6 +19,23 @@ No matter how small, you contribution will be valued and appreciated providing t
 4. All code submissions should include a reasonable set of tests written with [quick test](http://static.red-lang.org/red-system-quick-test.html).
 
 ### Coding Standards
+All contributions should adhere to the following coding standards
+
+1. All source code should be UTF-8 encoded.
+2. All indents should be made using tabs not spaces.
+3. Function specifications should follow a vertical layout, e.g.
+
+`my-func: func [
+     arg1     [datatype!]
+     arg2     [datatype!]
+     /local
+         local1   [datatype!]
+         local2   [datatype!]
+][
+…
+]`
+    
+4. End-of-line comments are preferred over between lines comments. The should be preceded with ";—-" starting at position 57.
 
 ### Quick Test Standards
 
