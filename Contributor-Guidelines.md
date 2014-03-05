@@ -96,7 +96,8 @@ Red [ … ]
 
 ~~~end-file~~~
 
-
+```
+9. Wherever possible large volume tests should be generated to reduce the work required to maintain the tests. Currently test generators should be written in Rebol 2 and should be capable of being run under Rebol Core 2.7.8. At some point in the future, all test generators will have to be ported to Red. Test generators need to provide a mechanism where by they automatically generate a revised set of tests if the generator has been updated. Please study the mechanisms used in [Red run-all.r](https://github.com/red/red/blob/master/tests/run-all.r), [Red/System run-all.r](https://github.com/red/red/blob/master/system/tests/run-all.r), [Red make-equal-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-equal-auto-test.r), [Red make-interpreter-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-interpreter-auto-test.r) and [Red/System make-dylib-auto-test.r](https://github.com/red/red/blob/master/system/tests/source/units/make-dylib-auto-test.r). 
 
 ### Red and Red/System core and runtimes
 
