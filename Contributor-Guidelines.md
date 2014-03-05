@@ -36,7 +36,7 @@ my-func: func [
 …
 ]
  
-    my-result: my-fantastic-func a b                    ;— my very clever comment
+    my-result: my-fantastic-func a b                    ;-- my very clever comment
 ``` 
 
 
