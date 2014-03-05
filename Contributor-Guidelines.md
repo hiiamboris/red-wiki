@@ -107,6 +107,12 @@ Test generators need to provide a mechanism where by they automatically generate
 Test generators should generate tests into the auto-tests sub-directory of the relevant test source directory.
 
 ### Red and Red/System core and runtimes
+Contributions to the Red and Red/System core and runtimes should:
+
+1. Conform to coding and testing standards.
+2. Use Doc-Strings to document their API.
+3. As much as possible, reflect the coding style of the existing core and runtimes.
+4. Follow the existing core and runtime naming conventions and file locations.
 
 ### Red mezzanine functions, modules, objects and schemes
 In the Red project, mezzanine code refers to functions, modules, objects and schemes written in Red that are included in the Red binary. Library code refers to functions, etc. that are included in the repository but not distributed in the binary versions of Red. They must be specifically included for use in Red programs. (There is not currently a mechanism to do this … but it shouldn't be too long before there is.)
@@ -121,6 +127,7 @@ At the current stage of Red's development, mezzanine code is not yet being accep
 
 ### Red and Red/System library functions
 These are modules, objects, functions and schemes written in Red, Red/System or both, that are included in the official Red repository but not included in the binary distributions. Contributions should:
+
 1. Conform to coding and testing standards.
 2. Use Doc-Strings to document their API.
 3. Reside in Red/library or Red/system/library.
@@ -128,5 +135,13 @@ These are modules, objects, functions and schemes written in Red, Red/System or 
 5. Tests should be generated in Red/tests/source/library/auto-tests or Red/system/tests/source/library/auto-tests. (auto-tests are not part of the repository).
 
 ### Documentation and documentation systems
+At the moment, the content and format of Red has still to be decided, as has the mechanism for automatically generating API documentation from the source. Please contact the Red team if you would like to volunteer. A reliable way to contact the Red team is via the [Red Group](https://groups.google.com/forum/?hl=en#!forum/red-lang).
+
 ### Red and Red/System tests
-### Bug reports
+Writing additional tests is both an easy way to contribute to Red and a good way to learn the finer details of Red and Red/System. All you need to do is find the test file for a feature that you would like to help with add some tests. Nothing could be easier.
+
+
+### Using Red and Red/System and Submitting Bug reports
+The more you use Red and Red/System the more likely you are to find hidden bugs that have smuggled themselves past the tests. Your finding those bugs is very helpful if you can actually isolate the bug. 
+
+A major contribution is submitting bug reports that clearly identify the source of a bug. This requires not only isolating the bug but also writing concise code which demonstrates the bug.
