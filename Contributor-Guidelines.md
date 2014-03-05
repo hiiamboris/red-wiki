@@ -46,14 +46,15 @@ Every code-based contribution should be accompanied by a meaningful set of tests
 The following approach to writing tests should be used:
 
 1. A separate test file should be used for each functional unit included in your code that you submit.
-2. The test must run successfully on Windows, Linux and OS X. 
-3. Tests should be grouped by functionality.
-4. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
-5. Each test should have a unique "name" so that it can be quickly found by searching the test file.
-6. The project coding standards should be followed.
-7. For short tests both the test header and the assert should be written on a single line.
-8. With longer multi-line tests, the assert should be indented from the test header.
-9. The following indentation scheme should be used:
+2. The test must run successfully on Windows, Linux and OS X.
+3. Tests should be written for the compiler in preference to the interpreter.
+4. Tests should be grouped by functionality.
+5. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
+6. Each test should have a unique "name" so that it can be quickly found by searching the test file.
+7. The project coding standards should be followed.
+8. For short tests both the test header and the assert should be written on a single line.
+9. With longer multi-line tests, the assert should be indented from the test header.
+10. The following indentation scheme should be used:
 ```
 Red [ … ]
 #include %<path-to>/quick-test/quick-test.red
