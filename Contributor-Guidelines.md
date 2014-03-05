@@ -72,11 +72,29 @@ Red [ … ]
 
     --test-- "mcf-str-2"
         mcf-str-2-str: "A string"
-        --assert "yes" = my-cont-func string
+        --assert "yes" = my-cont-func mcf-str-2-str
 
        group tidy up code
 
 ===end-group===
+
+===start-group=== "my-cont-func-block"
+
+        group start up code
+
+    --test-- "mcf-blk-1" --assert "no" = my-cont-func [a b c d]
+
+    --test-- "mcf-blk-2"
+        mcf-blk-2-blk: [a b c d]
+        --assert "no" = my-cont-func mcf-blk-2-blk
+
+       group tidy up code
+
+===end-group===
+
+       file tidy up code
+
+~~~end-file~~~
 
 
 
