@@ -22,7 +22,7 @@ No matter how small, you contribution will be valued and appreciated providing t
 All contributions should adhere to the following coding standards
 
 1. All source code should be UTF-8 encoded.
-2. All indents should be made using tabs not spaces.
+2. All indents should be made using tabs not spaces and be 4 characters wide.
 3. Function specifications should follow a vertical layout:
 
 ```
@@ -37,7 +37,12 @@ my-func: func [
 ]
 ```
 
-4. End-of-line comments are preferred over between lines comments. The should be preceded with ";—-" starting at position 57.
+4. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
+
+```
+    my-result: my-fantastic-func a b                    ;— my very clever comment
+``` 
+
 
 ### Test Standards
 Every code-based contribution should be accompanied by a meaningful set of tests. Tests should be written using the quick-test.red or quick-test.reds frameworks. Tests requiring checking console output from your code or 
