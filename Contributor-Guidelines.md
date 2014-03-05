@@ -9,7 +9,7 @@ There are seven different ways to contribute to the Red project:
 * Write and maintain Red and Red/System tests
 * Use Red and Red/System and submit meaningful bug reports
 
-No matter how small, you contribution will be valued and appreciated providing that you follow the guidelines. In particular, isolating bugs so that they can be easily identified and fixed is a great help.
+No matter how small, your contribution will be valued and appreciated providing that you follow the guidelines. In particular, isolating bugs so that they can be easily identified and fixed is a great help.
 
 ### General Contribution Guidelines
 1. You should be sure that you own the Intellectual Property Rights(IP) of any contribution you make to the Red project.
@@ -45,8 +45,7 @@ my-func: func [
 
 
 ### Test Standards
-Every code-based contribution should be accompanied by a meaningful set of tests. Tests should be written using the quick-test.red or quick-test.reds frameworks. Tests requiring checking console output from your code or 
-
+Every code-based contribution should be accompanied by a meaningful set of tests. Tests should be written using the quick-test.red or quick-test.reds frameworks. Tests requiring checking console output from your code or compiler message should be written using quick-test.r. If you are unfamiliar with quick-test, check out the [documentation](http://static.red-lang.org/red-system-quick-test.html).
 
 ### Red and Red/System core and runtimes
 
