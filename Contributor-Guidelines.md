@@ -50,13 +50,14 @@ Every code-based contribution should be accompanied by a meaningful set of tests
 The following approach to writing tests should be used:
 
 1. A separate test file should be used for each functional unit included in your code that you submit.
-2. Tests should be grouped by functionality.
-3. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
-4. Each test should have a unique "name" so that it can be quickly found by searching the test file.
-5. The project coding standards should be followed.
-6. For short tests both the test header and the assert should be written on a single line.
-7. With longer multi-line tests, the assert should be indented from the test header.
-8. The following indentation scheme should be used:
+2. The test must run successfully on Windows, Linux and OS X. 
+3. Tests should be grouped by functionality.
+4. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
+5. Each test should have a unique "name" so that it can be quickly found by searching the test file.
+6. The project coding standards should be followed.
+7. For short tests both the test header and the assert should be written on a single line.
+8. With longer multi-line tests, the assert should be indented from the test header.
+9. The following indentation scheme should be used:
 ```
 Red [ … ]
 #include %<path-to>/quick-test/quick-test.red
@@ -98,7 +99,12 @@ Red [ … ]
 ~~~end-file~~~
 
 ```
-9. Wherever possible large volume tests should be generated to reduce the work required to maintain the tests. Currently test generators should be written in Rebol 2 and should be capable of being run under Rebol Core 2.7.8. At some point in the future, all test generators will have to be ported to Red. Test generators need to provide a mechanism where by they automatically generate a revised set of tests if the generator has been updated. Please study the mechanisms used in [Red run-all.r](https://github.com/red/red/blob/master/tests/run-all.r), [Red/System run-all.r](https://github.com/red/red/blob/master/system/tests/run-all.r), [Red make-equal-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-equal-auto-test.r), [Red make-interpreter-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-interpreter-auto-test.r) and [Red/System make-dylib-auto-test.r](https://github.com/red/red/blob/master/system/tests/source/units/make-dylib-auto-test.r). 
+
+Wherever possible large volume tests should be generated to reduce the work required to maintain the tests. Currently test generators should be written in Rebol 2 and should be capable of being run under Rebol Core 2.7.8. At some point in the future, all test generators will have to be ported to Red.
+
+Test generators need to provide a mechanism where by they automatically generate a revised set of tests if the generator has been updated. Please study the mechanisms used in [Red run-all.r](https://github.com/red/red/blob/master/tests/run-all.r), [Red/System run-all.r](https://github.com/red/red/blob/master/system/tests/run-all.r), [Red make-equal-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-equal-auto-test.r), [Red make-interpreter-auto-test.r](https://github.com/red/red/blob/master/tests/source/units/make-interpreter-auto-test.r) and [Red/System make-dylib-auto-test.r](https://github.com/red/red/blob/master/system/tests/source/units/make-dylib-auto-test.r).
+
+Test generators should generate tests into the auto-tests sub-directory of the relevant test source directory.
 
 ### Red and Red/System core and runtimes
 
@@ -113,8 +119,14 @@ The process for code to be included as Red mezzanine is as follows:
 
 At the current stage of Red's development, mezzanine code is not yet being accepted so please do not submit proposals until they are.
 
-### Red library functions
-### Red/System library functions
+### Red and Red/System library functions
+These are modules, objects, functions and schemes written in Red, Red/System or both, that are included in the official Red repository but not included in the binary distributions. Contributions should:
+1. Conform to coding and testing standards.
+2. Use Doc-Strings to document their API.
+3. Reside in Red/library or Red/system/library.
+4. Hand-written tests and test generators should reside in Red/tests/source/library or Red/system/tests/source/library.
+5. Tests should be generated in Red/tests/source/library/auto-tests or Red/system/tests/source/library/auto-tests. (auto-tests are not part of the repository).
+
 ### Documentation and documentation systems
 ### Red and Red/System tests
 ### Bug reports
