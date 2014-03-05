@@ -48,6 +48,7 @@ my-func: func [
 Every code-based contribution should be accompanied by a meaningful set of tests. Tests should be written using the quick-test.red or quick-test.reds frameworks. Tests requiring checking console output from your code or compiler message should be written using quick-test.r. If you are unfamiliar with quick-test, check out the [documentation](http://static.red-lang.org/red-system-quick-test.html).
 
 The following approach to writing tests should be used:
+
 1. A separate test file should be used for each functional unit included in your code that you submit.
 2. Tests should be grouped by functionality.
 3. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
