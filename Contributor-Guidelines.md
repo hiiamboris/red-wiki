@@ -111,7 +111,7 @@ Contributions to the Red and Red/System core and runtimes should:
 4. Follow the existing core and runtime naming conventions and file locations.
 
 ### Red mezzanine functions, modules, objects and schemes
-In the Red project, mezzanine code refers to functions, modules, objects and schemes written in Red that are included in the Red binary. Library code refers to functions, etc. that are included in the repository but not distributed in the binary versions of Red. They must be specifically included for use in Red programs. (There is not currently a mechanism to do this … but it shouldn't be too long before there is.)
+In the Red project, mezzanine code refers to functions, modules, objects and schemes written in Red that are included in the Red binary. 
 
 The process for code to be included as Red mezzanine is as follows:
 
