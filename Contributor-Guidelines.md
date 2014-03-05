@@ -23,8 +23,8 @@ All contributions should adhere to the following coding standards
 
 1. All source code should be UTF-8 encoded.
 2. All indents should be made using tabs not spaces and be 4 characters wide.
-3. Function specifications should follow a vertical layout:
-
+3. Function specifications should follow a vertical layout.
+4. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
 ```
 my-func: func [
     arg1   [datatype!]
@@ -35,11 +35,7 @@ my-func: func [
 ][
 …
 ]
-```
-
-4. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
-
-```
+ 
     my-result: my-fantastic-func a b                    ;— my very clever comment
 ``` 
 
