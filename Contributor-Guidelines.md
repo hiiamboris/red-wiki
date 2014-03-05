@@ -47,6 +47,39 @@ my-func: func [
 ### Test Standards
 Every code-based contribution should be accompanied by a meaningful set of tests. Tests should be written using the quick-test.red or quick-test.reds frameworks. Tests requiring checking console output from your code or compiler message should be written using quick-test.r. If you are unfamiliar with quick-test, check out the [documentation](http://static.red-lang.org/red-system-quick-test.html).
 
+The following approach to writing tests should be used:
+1. A separate test file should be used for each functional unit included in your code that you submit.
+2. Tests should be grouped by functionality.
+3. Each test should be independent from all other tests. The results of a test should not be dependent upon the results of any other test. (It should be possible to remove any test from a file and the other tests should still all pass).
+4. Each test should have a unique "name" so that it can be quickly found by searching the test file.
+5. The project coding standards should be followed.
+6. For short tests both the test header and the assert should be written on a single line.
+7. With longer multi-line tests, the assert should be indented from the test header.
+8. The following indentation scheme should be used:
+```
+Red [ … ]
+#include %<path-to>/quick-test/quick-test.red
+
+~~~start-file~~~ "my-contribution"
+
+        startup code
+
+===start-group=== "my-cont-func-str"
+
+        group start up code
+
+    --test-- "mcf-str-1" --assert "yes" = my-cont-func "A string"
+
+    --test-- "mcf-str-2"
+        mcf-str-2-str: "A string"
+        --assert "yes" = my-cont-func string
+
+       group tidy up code
+
+===end-group===
+
+
+
 ### Red and Red/System core and runtimes
 
 ### Red mezzanine functions, modules, objects and schemes
