@@ -132,7 +132,7 @@ These are modules, objects, functions and schemes written in Red, Red/System or 
 5. Tests should be generated in Red/tests/source/library/auto-tests or Red/system/tests/source/library/auto-tests. (auto-tests are not part of the repository).
 
 ### Documentation and documentation systems
-At the moment, the content and format of Red has still to be decided, as has the mechanism for automatically generating API documentation from the source. Please contact the Red team if you would like to volunteer. A reliable way to contact the Red team is via the [Red Group](https://groups.google.com/forum/?hl=en#!forum/red-lang).
+At the moment, the content and format of Red documentation has still to be decided, as has the mechanism for automatically generating API documentation from the source. Please contact the Red team if you would like to volunteer. A reliable way to contact the Red team is via the [Red Group](https://groups.google.com/forum/?hl=en#!forum/red-lang).
 
 ### Red and Red/System tests
 Writing additional tests is both an easy way to contribute to Red and a good way to learn the finer details of Red and Red/System. All you need to do is find the test file for a feature that you would like to help with add some tests. Nothing could be easier.
