@@ -23,17 +23,38 @@ All contributions should adhere to the following coding standards
 
 1. All source code should be UTF-8 encoded.
 2. All indents should be made using tabs not spaces and be 4 characters wide.
-3. Function specifications should follow a vertical layout.
-4. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
+3. Functions specifications that don't include the datatypes of the arguments and locals should be kept concise. The specification should be on same line as function name, unless it doesn't fit on a line of around 90 characters. If the specification cannot fit on one line, the arguments and locals should be on different lines. If necessary put refinements on a separate line.
+4. Function specifications that include datatypes should follow a vertical layout.
+5. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
 ```
-my-func: func [
+
+short-spec: func [
+    arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9
+    /refinement1 ref1-arg1 ref1-arg2 /refinement2 ref2-arg2 ref2-arg3
+    /local local1 local2 local3 local4 local5 local6 local7
+][
+    …
+]
+
+shorter-spec: func [
+    arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9 /refinement1 ref1-arg1 ref1-arg2 
+    /local local1 local2 local3 local4 local5 local6 local7
+][
+    …
+]
+
+shortest-spec: func [ arg1 arg2 /refinement ref-arg /local local1 local2] [
+    …
+]
+
+vertical-spec: func [
     arg1   [datatype!]
     arg2   [datatype!]
     /local
         local1    [datatype!]
         local2    [datatype!]     
 ][
-…
+    …
 ]
  
     my-result: my-fantastic-func a b                    ;-- my very clever comment
