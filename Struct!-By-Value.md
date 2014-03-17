@@ -1,0 +1,1 @@
+Some C libraries return structures by value rather than by reference. [CSFML is a good example](https://github.com/LaurentGomila/CSFML/blob/master/include/SFML/Window/VideoMode.h). Having a feature that would allow accepting a structure as a value would make it easier to bind to such functions.
