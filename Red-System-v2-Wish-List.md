@@ -84,9 +84,7 @@ These features have been requested for inclusion in Red/System V2.
 
 39. Add binding to external variables. It would be nice to check C variables such as errno.
 
-40. Add a long! (or int64!) type.
-
-41. Function returns struct! by value (found in some C bindings).
+40. Function returns struct! by value (found in some C bindings). [Details] (https://github.com/red/Red/wiki/Struct!-By-Value).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
