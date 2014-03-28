@@ -1,0 +1,275 @@
+# Reference - CALL function
+
+The CALL function enables RED programs to execute and communicate with the system's shell interface.
+
+Any built-in shell command or application can be launched by CALL.
+
+Shell commands depend on the operating system.
+
+Input and output redirection allows RED to exchange data with shell command.
+
+---
+
+The RED CALL function is slightly different from the REBOL CALL. Read carefully this document to discover differences.
+
+As RED 0.41 doesn't implement types as *file!*, *url!* or *port!*, the call function redirection apply on *string!* or *block!*.
+
+The CALL function is not provided with the default RED implementation.
+Add `#include %system/library/call/call.red` to your source code to include the feature
+or compile the console-call example from the Red directory :
+
+*	`$ red -c tests/console-call.red`	Unix, MacOSX
+*	`C:\Red>red.exe -c tests\console-call.red`	Windows
+
+Linux and MacOSX users run **console-call** from command line.  Windows users run **console-call.exe**.
+
+## Getting help
+
+	red>> help call
+
+	USAGE:
+		call cmd /wait /console /shell /input in /output out /error err
+
+	DESCRIPTION:
+		Executes a shell command to run another process..
+		call is type: function!
+
+	ARGUMENTS:
+		cmd [string! block!] => A shell command, an executable file or a block.
+
+	REFINEMENTS:
+		/wait => Runs command and waits for exit.
+		/console => Runs command with I/O redirected to console.
+		/shell => Forces command to be run from shell.
+		/input
+			in [string! block!] => Redirects in to stdin.
+		/output
+			out [string! block!] => Redirects stdout to out.
+		/error
+			err [string! block!] => Redirects stderr to err.
+
+
+## Call syntax
+
+Default behavior is asynchronous, CALL returns the child's PID (Process ID). No output is printed.
+
+### Basic call
+
+	call cmd
+
+The CALL function accepts one argument, a *string!* or a *block!*. Blocks are formed to a string before being passed as argument.
+
+These examples passes the Unix copy command **cp** with two arguments.
+
+	call "cp source.r dest.r"			; string! command
+	call [ "cp" "source.r" "dest.r" ]	; block! command
+
+If a block contains words, it must be reduced first.
+
+	s: "source.r"
+	d: "dest.r"
+	call reduce [ "cp" s d ]			; block! command
+
+As the *file!* type is not yet implemented, Character "/" used into path values are not translated from RED to windows.
+
+	call "ls mydir/*"		; Unix, OSX
+
+	call "dir mydir\*"		; Windows
+
+The CALL function can launch any GUI application :
+
+	call "explorer"			; Windows, starts windows's explorer
+
+	call {"C:\Program Files\Mozilla Firefox\firefox.exe"}		; Windows, start firefox with full path
+
+	call "firefox"			; Unix, start firefox if found in your PATH
+
+### Refinements
+
+#### **/wait**
+
+Cause CALL to wait for child process is completed. Return -1 if there is an execution error or 0. This value is not a process return code like in REBOL (this may change in the future).
+
+	red>> call "cp source.r dest.r"
+	== 7227					; PID
+	red>> call/wait "cp source.r dest.r"
+	== 0					; Process complete
+	red>>
+
+/input, /output, /error, or /console refinements implicitly set the /wait refinement.
+
+#### **/console**
+
+Cause the process' stdout and stderr to be printed to the console.
+
+With no **/wait** refinement, the process ID is shown first and RED returns to prompt before the command output is printed.
+
+	red>> call/console "ls"
+	== 7946
+	red>> boot.red     build         console-call      lexer.r       README.md  red.r      tests
+	bridges            call-example  console-call.bin  lexer.red     Red        run-all.r  usage.txt
+	BSD-3-License.txt  compiler.r    console-call.exe  pdcurses.dll  red.bin    runtime    utils
+	BSL-License.txt    console       docs              quick-test    red.exe    system     version.r
+
+With **/wait** refinement, the CALL returned value is printed after the command output ended.
+
+	red>> call/console/wait "ls"
+	boot.red           build         console-call      lexer.r       README.md  red.r      tests
+	bridges            call-example  console-call.bin  lexer.red     Red        run-all.r  usage.txt
+	BSD-3-License.txt  compiler.r    console-call.exe  pdcurses.dll  red.bin    runtime    utils
+	BSL-License.txt    console       docs              quick-test    red.exe    system     version.r
+	== 0
+	red>>
+
+#### **/input**
+
+A string or a block can be redirected as input to the launched process.
+
+String examples :
+
+	red>> call/input "cat" {This is a Red world^/}
+	== 0
+	red>> call/input/console "cat" {This is a Red world^/}
+	This is a Red world
+	== 0
+	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
+	== {red^/green^/blue^/magenta^/cyan^/yellow}
+	red>> call/input/console "grep y" data
+	cyan
+	yellow
+	== 0
+	red>>
+
+Block examples :
+
+	red>> call/input/console "cat" [ "This" "is" "a" "Red" "world^/"  ]
+	This is a Red world
+	== 0
+	red>>
+
+	red>> a: "This is"
+	== "This is"
+	red>> b: "Red world"
+	== "Red world"
+	red>> call/input/console "cat" reduce [ a "a" b lf ]
+	This is a Red world
+	== 0
+	red>>
+
+
+#### **/output**
+
+Process output is redirected to a string or a block.
+
+If parameter is a string. CALL insert the redirected output before the beginning of this string :
+
+	red>> out: "" call/output {echo "Welcome Red Language"} out
+	== 0
+	red>> probe out
+	"Welcome Red Language^/"
+	== "Welcome Red Language^/"
+	red>> call/output {echo "Hello Red world"} out
+	== 0
+	red>> probe out
+	"Hello Red world^/Welcome Red Language^/"
+	== "Hello Red world^/Welcome Red Language^/"
+	red>>
+
+If parameter is a block. CALL insert a new item containing redirected output as first item of this block.
+
+	red>> out: [] call/output {echo "Welcome Red Language"} out
+	== 0
+	red>> call/output {echo "Hello Red world"} out
+	== 0
+	red>> probe out
+	["Hello Red world^/" "Welcome Red Language^/"]
+	== ["Hello Red world^/" "Welcome Red Language^/"]
+	red>>
+
+When output is redirected, the /console refinement as no effect.
+
+	red>> out: "" call/output/console {echo "Welcome Red Language"} out
+	== 0
+	red>>
+
+#### **/error**
+
+Same behavior as /output refinement. Parameter can be a string or a block.
+
+	red>> err: "" call/error "cp" err
+	== 0
+	red>> print err
+	cp: missing file arguments Try `cp --help' for more information.
+	red>>
+
+#### **/shell**
+
+Unix and MacOSX only.
+
+RED identify the user shell and uses it to launch command with a "-c" option.
+
+This refinement allows the use of shell's redirections symbols : "<" stdin, ">" stdout and "|" pipe.
+
+	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
+	== {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
+	red>> call/wait/console/shell/input "grep a" data
+	magenta
+	cyan
+	black
+	== 0
+	red>> call/wait/console/shell/input "grep a | sort" data
+	black
+	cyan
+	magenta
+	== 0
+	red>>
+
+### Combining refinements
+
+Redirections can be combined together.
+
+	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
+	== {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
+	red>> out: "" call/input/output "sort" data out
+	== 0
+	red>> probe out
+	{black^/blue^/cyan^/green^/magenta^/red^/white^/yellow^/}
+	== {black^/blue^/cyan^/green^/magenta^/red^/white^/yellow^/}
+	red>>
+
+## Unix parameters expansion
+
+Unix and MacOSX version of CALL use POSIX [wordexp](http://pubs.opengroup.org/onlinepubs/9699919799/functions/wordexp.html) function to perform [wildcards](http://www.tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm) expansion and environment variables substitution.
+
+	red>> call/wait/console "ls *.r"
+	compiler.r  lexer.r  red.r  run-all.r  version.r
+	== 0
+	red>> call/wait/console "ls [rc]*.r"
+	compiler.r  red.r  run-all.r
+	== 0
+	red>> call/wait/console "echo $PATH"
+	/home/local/bin:/usr/local/bin:/usr/bin
+	== 0
+	red>> call/wait/console "echo $SHELL"
+	/bin/bash
+	== 0
+	red>>
+
+Shell redirection is not performed by wordexp. The **/shell** refinement is required.
+
+## Windows issues
+
+Windows' call implementation adds `cmd /u /c ` before the command you ask, **/u** ask for unicode chars,
+**/c** execute command line and exit.
+
+With the **/console** refinement, output is printed to the console with no encoding problem.
+
+When grabbing output with **/output** or **/error** refinements there are a few encoding issues :
+
+Found on http://social.msdn.microsoft.com :
+*The Command Prompt (cmd.exe /U /k) - when used as the child process - which writes out Unicode, but does not accept Unicode.
+Plus, there is the possibility that the child process can skip back and forth between Unicode and Ansi (cmd.exe /U /k ping google.com).
+In that case ping.exe writes out Ansi.  Then when ping.exe exits and releases control to cmd.exe, the prompt returns in Unicode.*
+
+Some commands will return ansi chars. **Call** detect this case and chars greater than #"^(7F)" are translated to space char.
+The **dir** command returns wide-char not translated, the **tree** or **ping** command returns ansi chars translated.
