@@ -88,7 +88,7 @@ The CALL function can launch any GUI application :
 
 #### **/wait**
 
-Cause CALL to wait for child process is completed. Return -1 if there is an execution error or 0. This value is not a process return code like in REBOL (this may change in the future).
+Cause CALL to wait for child process is completed. Return -1 if there is an execution error or child process error code.
 
 	red>> call "cp source.r dest.r"
 	== 7227					; PID
