@@ -197,7 +197,7 @@ When output is redirected, the /console refinement as no effect.
 Same behavior as /output refinement. Parameter can be a string or a block.
 
 	red>> err: "" call/error "cp" err
-	== 0
+	== 1
 	red>> print err
 	cp: missing file arguments Try `cp --help' for more information.
 	red>>
