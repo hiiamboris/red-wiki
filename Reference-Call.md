@@ -88,15 +88,15 @@ The CALL function can launch any GUI application :
 
 #### **/wait**
 
-Cause CALL to wait for child process is completed. Return -1 if there is an execution error or child process error code.
+Cause CALL to wait for child process is completed. Return -1 if there is an execution error or child process exit code.
 
 	red>> call "cp source.r dest.r"
 	== 7227					; PID
 	red>> call/wait "cp source.r dest.r"
-	== 0					; Process complete
+	== 0					; 0 = process complete or error code
 	red>>
 
-/input, /output, /error, or /console refinements implicitly set the /wait refinement.
+/input, /output or /error refinements implicitly set the /wait refinement.
 
 #### **/console**
 
@@ -186,11 +186,25 @@ If parameter is a block. CALL insert a new item containing redirected output as 
 	== ["Hello Red world^/" "Welcome Red Language^/"]
 	red>>
 
+Windows example :
+
+	red>> data: "" call/output {findstr "Nenad" *.r} data
+	== 0
+	red>> print data
+	lexer.r:        Author:  "Nenad Rakocevic"
+	lexer.r:        Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic. All rights reserved."
+	compiler.r:     Author:  "Nenad Rakocevic"
+	compiler.r:     Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic. All rights reserved."
+	red.r:  Author:  "Nenad Rakocevic, Andreas Bolka"
+	red.r:  Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic, Andreas Bolka. All rights reserved."
+	red>>
+
 When output is redirected, the /console refinement as no effect.
 
 	red>> out: "" call/output/console {echo "Welcome Red Language"} out
 	== 0
 	red>>
+
 
 #### **/error**
 
@@ -212,12 +226,12 @@ This refinement allows the use of shell's redirections symbols : "<" stdin, ">" 
 
 	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
 	== {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
-	red>> call/wait/console/shell/input "grep a" data
+	red>> call/console/shell/input "grep a" data
 	magenta
 	cyan
 	black
 	== 0
-	red>> call/wait/console/shell/input "grep a | sort" data
+	red>> call/console/shell/input "grep a | sort" data
 	black
 	cyan
 	magenta
