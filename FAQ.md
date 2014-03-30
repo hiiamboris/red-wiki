@@ -18,4 +18,4 @@ This option was considered at the beginning, but quickly discarded as it would b
 
 * LLVM adds several megabytes (5-10MB AFAICT) to the executable binary, this is something that we definitely want to avoid. We expect Red binary, with the JIT and Red/System compiler, to be in the 100-200KB range. You could think this is not relevant anymore, until you would need to upload your app to your favorite smartphone, pesting at how much time it takes and how much space it wastes, or trying to download such app through a low-band connection (not uncommun outside of the western world). 
 
-* It is still possible to add LLVM as a target in the future, if this provides Red with a feature that we do not want or cannot afford to implement.
+* It is still possible to add LLVM as a target in the future, if this provides Red with a feature that we do not want or cannot afford to implement from scratch (unlikely, but not impossible).
