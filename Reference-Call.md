@@ -12,7 +12,7 @@ Input and output redirection allows RED to exchange data with shell command.
 
 The RED CALL function is slightly different from the REBOL CALL. Read carefully this document to discover differences.
 
-As RED 0.41 doesn't implement types as *file!*, *url!* or *port!*, the call function redirection apply on *string!* or *block!*.
+As RED 0.41 doesn't implement yet types as *url!* or *port!*, and the *file!* type is not fully supported, the call function redirection apply on *string!* or *block!*.
 
 The CALL function is not provided with the default RED implementation.
 Add `#include %system/library/call/call.red` to your source code to include the feature
