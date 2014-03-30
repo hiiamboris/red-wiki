@@ -4,7 +4,7 @@
 
 **Q. What do you mean by "full-stack language"? Isn't JS one?**
 
-The Red tower-of-Hanoi [logo](http://i.stack.imgur.com/4iHfk.png) is a metaphor for the multiple layers of abstraction that Red aims at supporting, from hardware to highest abstractions, like DSL and meta-DSL. We use the _full-stack language_ in this context to describe a programming tool able to cover all the abstraction layers. The "real" _full-stack programmers_ should designate the programmers able to code at any abstraction level (through the vertical software layers stack) rather than the horizontal layer of the web applications. Javascript is a client/server programming language (when a node.js backend is used).
+The Red tower-of-Hanoi [logo](http://i.stack.imgur.com/4iHfk.png) is a metaphor for the multiple layers of abstraction that Red aims at supporting, from hardware to highest abstractions, like DSL and meta-DSL. We use the term _full-stack language_ in this context to describe a programming tool able to cover all the abstraction layers. The "real" _full-stack programmers_ should be enabled to code at any abstraction level (through the vertical software layers stack) rather than the horizontal layer of the web applications. JavaScript primarily only covers the client- and server-side aspects (when a node.js backend is used).
 
 **Q. What about using LLVM as backend?**
 
