@@ -8,7 +8,7 @@ The Red tower-of-Hanoi [logo](http://i.stack.imgur.com/4iHfk.png) is a metaphor 
 
 **Q. What about using LLVM as backend?**
 
-This option was considered at the beginning, but quickly discarded as it would be a bad fit from several perspectives:
+This option was considered at the beginning, but quickly discarded as it would be a bad fit for Red from several perspectives:
 
 * Relying on LLVM, even if it has support for a broad range of features, would have limited the possible choices for Red's architecture and memory management options. 
 
