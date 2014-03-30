@@ -1,4 +1,4 @@
-(NB: Just collecting commonly asked questions at the moment.)
+(NB: Feel free to append new questions at the bottom.)
 
 # Technical
 
