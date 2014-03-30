@@ -61,13 +61,13 @@ The CALL function accepts one argument, a *string!* or a *block!*. Blocks are fo
 
 These examples passes the Unix copy command **cp** with two arguments.
 
-	call "cp source.r dest.r"			; string! command
-	call [ "cp" "source.r" "dest.r" ]	; block! command
+	call "cp source.red dest.red"			; string! command
+	call [ "cp" "source.red" "dest.red" ]	; block! command
 
 If a block contains words, it must be reduced first.
 
-	s: "source.r"
-	d: "dest.r"
+	s: "source.red"
+	d: "dest.red"
 	call reduce [ "cp" s d ]			; block! command
 
 As the *file!* type is not yet implemented, Character "/" used into path values are not translated from RED to windows.
@@ -90,9 +90,9 @@ The CALL function can launch any GUI application :
 
 Cause CALL to wait for child process is completed. Return -1 if there is an execution error or child process exit code.
 
-	red>> call "cp source.r dest.r"
+	red>> call "cp source.red dest.red"
 	== 7227					; PID
-	red>> call/wait "cp source.r dest.r"
+	red>> call/wait "cp source.red dest.red"
 	== 0					; 0 = process complete or error code
 	red>>
 
