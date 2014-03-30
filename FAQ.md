@@ -4,7 +4,7 @@
 
 **Q. What do you mean by "full-stack language"? Isn't JS one?**
 
-
+The Red tower-of-Hanoi [logo](http://i.stack.imgur.com/4iHfk.png) is a metaphor for the multiple layers of abstraction that Red aims at supporting, from hardware to highest abstractions, like DSL and meta-DSL. We use the _full-stack language_ in that context to describe a programming tool able to cover all the abstraction layers. The _real_ "full-stack programmers" should design the programmers able to code at any abstraction level (through the vertical software layers stack) rather than the horizontal layer of the web applications (client/server programming).
 
 **Q. What about using LLVM as backend?**
 
