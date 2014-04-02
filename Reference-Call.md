@@ -70,7 +70,7 @@ If a block contains words, it must be reduced first.
 	d: "dest.red"
 	call reduce [ "cp" s d ]			; block! command
 
-As the *file!* type is not yet implemented, Character "/" used into path values are not translated from RED to windows.
+As the *file!* type is not yet implemented. Character "/" used into path values are not translated from RED to windows.
 
 	call "ls mydir/*"		; Unix, OSX
 
@@ -163,12 +163,12 @@ Process output is redirected to a string or a block.
 
 If parameter is a string. CALL insert the redirected output before the beginning of this string :
 
-	red>> out: "" call/output {echo "Welcome Red Language"} out
+	red>> out: "" call/output {echo Welcome Red Language} out
 	== 0
 	red>> probe out
 	"Welcome Red Language^/"
 	== "Welcome Red Language^/"
-	red>> call/output {echo "Hello Red world"} out
+	red>> call/output {echo Hello Red world} out
 	== 0
 	red>> probe out
 	"Hello Red world^/Welcome Red Language^/"
@@ -177,9 +177,9 @@ If parameter is a string. CALL insert the redirected output before the beginning
 
 If parameter is a block. CALL insert a new item containing redirected output as first item of this block.
 
-	red>> out: [] call/output {echo "Welcome Red Language"} out
+	red>> out: [] call/output {echo Welcome Red Language} out
 	== 0
-	red>> call/output {echo "Hello Red world"} out
+	red>> call/output {echo Hello Red world} out
 	== 0
 	red>> probe out
 	["Hello Red world^/" "Welcome Red Language^/"]
@@ -197,11 +197,12 @@ Windows example :
 	compiler.r:     Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic. All rights reserved."
 	red.r:  Author:  "Nenad Rakocevic, Andreas Bolka"
 	red.r:  Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic, Andreas Bolka. All rights reserved."
+
 	red>>
 
 When output is redirected, the /console refinement as no effect.
 
-	red>> out: "" call/output/console {echo "Welcome Red Language"} out
+	red>> out: "" call/output/console {echo Welcome Red Language} out
 	== 0
 	red>>
 
@@ -212,7 +213,7 @@ Same behavior as /output refinement. Parameter can be a string or a block.
 
 	red>> err: "" call/error "cp" err
 	== 1
-	red>> print err
+	red>> print err		;-- Language dependent message
 	cp: missing file arguments Try `cp --help' for more information.
 	red>>
 
@@ -251,6 +252,17 @@ Redirections can be combined together.
 	== {black^/blue^/cyan^/green^/magenta^/red^/white^/yellow^/}
 	red>>
 
+## Return code
+
+### Posix
+
+With a /wait ot implicit wait refinement.
+
+	red>> call/wait "ls"
+	== 0
+	red>> call/wait "ts"	;-- ts is not a unix command
+	== 255
+
 ## Unix parameters expansion
 
 Unix and MacOSX version of CALL use POSIX [wordexp](http://pubs.opengroup.org/onlinepubs/9699919799/functions/wordexp.html) function to perform [wildcards](http://www.tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm) expansion and environment variables substitution.
@@ -269,7 +281,15 @@ Unix and MacOSX version of CALL use POSIX [wordexp](http://pubs.opengroup.org/on
 	== 0
 	red>>
 
-Shell redirection is not performed by wordexp. The **/shell** refinement is required.
+Shell redirection is not performed by wordexp. The **/shell** refinement is required if you need pipes or redirection to file :
+
+	red>> call/wait/console "ls > ls.txt"
+	Error Red/System call, wordexp parsing command : ls > ls.txt
+	Use of the unquoted characters- <newline>, '|', '&', ';', '<', '>', '(', ')', '{', '}'
+	== 255
+	red>> call/wait/console/shell "ls > ls.txt"
+	== 0
+	red>>
 
 ## Windows issues
 
