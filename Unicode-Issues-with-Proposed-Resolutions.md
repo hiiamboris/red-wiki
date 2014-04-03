@@ -47,4 +47,4 @@ One approach is to provide this functionality as a library rather than to includ
 =="edçba"
 ```
 
-Another approach could be to introduce a **unicode!** datatype ("character-based"), retaining the **string!** datatype ("code-point-based") and allow the programmer to switch between the two as they need. 
+Another approach could be to introduce a **text!** datatype ("character-based"), retaining the **string!** datatype ("code-point-based") and allow the programmer to switch between the two as they need. 
