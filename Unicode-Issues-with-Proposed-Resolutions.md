@@ -35,16 +35,18 @@ There is substantial extra processing in providing full "grapheme cluster" suppo
 
 However, given that many other languages provide very full Unicode support, often based on the Internationalisation Components of Unicode libraries, Red needs to include support for "grapheme cluster" processing.
 
-One approach is to provide this functionality as a library rather than to include in the main Red distribution. This library could either replace or supplement the standard Red string! support. For example,
+It is most likely that this additional functionality will be provided by introducing a **text!** datatype that will act as being "character-based". The **string!** datatype will be retained and continue to act as being "code-point-based". Programmers will be able to switch between the two as they need.
+
+The internal format for both string! and text! will be the same, the difference is the behaviours of how functions act on them. For example:
+
 ```
->>reverse "abçde"               ;; standard replace function
-=="ed¸cba"
+>> my-string: "^(0063)^(0327)"                                      ;; decomposed ç
+== "ç"
+>> head insert next my-string "1"
+== "c1̧"
 
->>reverse/decomp "abçde"        ;; supplemented replace function
-=="edçba"
-
->>reverse "abçde"               ;; supplemented replace function
-=="edçba"
+>> my-text: "^(0063)^(0327)"                                        ;; decomposed ç
+== "ç"
+>> head insert next my-text "1"
+== "ç1"
 ```
-
-Another approach could be to introduce a **text!** datatype ("character-based"), retaining the **string!** datatype ("code-point-based") and allow the programmer to switch between the two as they need. 
