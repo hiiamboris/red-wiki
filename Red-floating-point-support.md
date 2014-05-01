@@ -3,7 +3,7 @@ This is an exhaustive todo-list for adding 64-bit IEEE754 floating point support
 1. Decide on the datatype name: real!, float! or decimal!
 2. Add a proper float datatype definition
 3. Add parsing rules for a float datatype (with support to scientific notation E)
-4. Implement a string to float accurate algorithm (for LOAD action)
+4. Implement an accurate cross-platform string to float algorithm (for LOAD action)
 5. Implement an accurate cross-platform string serialization algorithm with proper rounding (for FORM/MOLD actions)
 6. Implement integer <=> float conversion routines (TO action)
 7. Implement float/float comparison routines with proper rounding 
