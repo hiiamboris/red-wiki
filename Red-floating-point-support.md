@@ -1,6 +1,6 @@
 This is an exhaustive todo-list for adding 64-bit IEEE754 floating point support to Red. 
 
-1. Decide on the datatype: real!, float! or decimal!
+1. Decide on the datatype name: real!, float! or decimal!
 2. Add a proper float datatype definition
 3. Add parsing rules for a float datatype (with support to scientific notation E)
 4. Implement an accurate cross-platform string serialization algorithm with proper rounding (for FORM/MOLD actions)
