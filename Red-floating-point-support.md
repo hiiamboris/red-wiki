@@ -8,6 +8,6 @@ This is an exhaustive todo-list for adding 64-bit IEEE754 floating point support
 6. Implement integer <=> float conversion routines (TO action)
 7. Implement float/float comparison routines with proper rounding 
 8. Implement integer/float comparison routines with proper rounding
-9. Decide on the handling of NaNs and INFs
+9. Decide on the handling of NaNs, INFs and signed zeros.
 
 Some of the following underlying Red/System [features](https://github.com/red/red/wiki/Floating-point-support-todo-list) need also to be implemented for the above tasks.
