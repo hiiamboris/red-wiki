@@ -8,7 +8,7 @@ Reference documentation:
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 
 Todo lists:
-* [Floating point support](https://github.com/dockimbel/Red/wiki/Floating-point-support-todo-list)
+* [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
 
 Future:
