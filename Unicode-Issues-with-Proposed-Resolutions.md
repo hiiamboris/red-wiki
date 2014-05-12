@@ -53,7 +53,7 @@ The internal format for both string! and text! will be the same, the difference 
 
 ## "Out of the Box" Tests
 ### The Tests
-This is a brief set of tests to compare languages "out of the box" Unicode capabilities. Thanks to [Musing Mortoray" blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/#comments) and the comments which provided a base for these tests. 
+This is a brief set of tests to compare languages "out of the box" Unicode capabilities. Thanks to ["Musing Mortoray" blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/) and the comments which provided a base for these tests. 
 
 In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
 ```
