@@ -24,12 +24,12 @@ Red will enable other case mappings by providing a simple "plug-in" mechanism fo
 ##One "Character", Multiple Code Points 
 It is easy to fall into the trap that a Unicode Code Point is the equivalent of a printable character. This is clearly not the case as demonstrated by the simplistic example in the Normalisation section. Within the Unicode standard many Code Points may be needed to represent a displayable character. These multiple code points are known as a "grapheme cluster".
 
-An example of the type of issues that this aspect of Unicode bring is the length? function. It returns the number of code points in a string not the number of displayable characters. Reversing strings containing multi-code point grapheme clusters will produce incorrect results. For example, the string "ç", if encoded by the sequence U+0063 U+0327 when reversed would become "¸c".
-
-Determining the end of one grapheme cluster and the start of the next is not easy. Basically, you have to work out if the next code point is the start of a new grapheme cluster. The [Unicode technical report on text segmentation](http://www.unicode.org/reports/tr29) contains all the gory details. 
+An example of the type of issues that this aspect of Unicode bring is the length? function. It returns the number oeme cluster and the start of the next is not easy. Basically, you have to work out if the next code point is the start of a new grapheme cluster. The [Unicode technical report on text segmentation](http://www.unicode.org/reports/tr29) contains all the gory details. 
 
 It should also be noted that finding word, sentence and paragraph breaks are equally challenging.
+f code points in a string not the number of displayable characters. Reversing strings containing multi-code point grapheme clusters will produce incorrect results. For example, the string "ç", if encoded by the sequence U+0063 U+0327 when reversed would become "¸c".
 
+Determining the end of one graph
 ###One Character, Multiple Code Points Proposal.
 There is substantial extra processing in providing full "grapheme cluster" support that will not be used in the vast majority of programs written in Red. As a result, it is proposed not to change the current default behaviour from treating code points individually.
 
@@ -50,3 +50,63 @@ The internal format for both string! and text! will be the same, the difference 
 >> head insert next my-text "1"
 == "ç1"
 ```
+
+## "Out of the Box" Tests
+### The Tests
+This is a brief set of tests to compare languages "out of the box" Unicode capabilities. Thanks to [Musing Mortoray" blog article] (http://mortoray.com/2013/11/27/the-string-type-is-broken/#comments) and the comments which provided a base for these tests. 
+
+In this context, "out of the box" means capabilities either built-in to the language or its standard libraries that are supplied with the language. (I.E. No additional downloads).
+
+1.  Equality of precomposed and decomposed characters
+    Compare U+00E7 with "c" followed by U+0327
+    The expected result is true.
+
+2.  Non-equality of precomposed and decomposed characters  
+    Compare U+00E7 with "c" followed by U+0327
+    The expected result is false.
+
+    (This test may appear oxymoronic but its purpose is to see if the language provides flexibility)
+
+3.  Correct length of text with decomposed string
+    Length of "noeU+0308l"
+    The expected result is 4.
+
+4.  Reversing a decomposed string
+    Reverse "noeU+0308l"
+    The expected result is "leU+0308on"
+
+5.  Correct substring of a decomposed string
+    Extract the first three characters of "noeU+0308l"
+    The expected result is "noeU+0308"
+
+6.  Correct uppercase of U+FB04
+    Upper case of "baU+FB04e"
+    The expected result is "BAFFLE"
+    The length of the expected result is 6
+
+7.  Correct uppercase of precomposed non-ASCII chars
+    Upper case of "cantU+00F9"
+    The expected result is "CANTU+00D9"
+
+8.  Correct uppercase of decomposed non-ASCII chars
+    Upper case of "cantuU+0300"
+    The expected result is "CANTUU+0300"
+
+9.  Processing above BMP
+    Add 4 to the first character of "U+1D11E - The Treble Clef"
+    Change "Treble" to "Bass"
+    The expected result is "U+1D122 - The Bass Clef"
+
+10. Special Case - Turkish - Upper case "i"
+    Set locale/Language to indicate Turkish 
+    Upper case "i"
+    The expected result is U+0130
+
+11. Special Case - Turkish - Lower case "I"
+    Set locale/Language to indicate Turkish 
+    Lower case "I"
+    The expected result is U+0131
+   
+12. Upper Case sharp s (U+00DF)
+    Upper case "U+00DF"
+    The expected result is U+00DF
