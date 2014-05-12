@@ -65,7 +65,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Compare U+00E7 with "c" followed by U+0327
     The expected result is false.
 
-    (This test may appear oxymoronic but its purpose is to see if the language provides flexibility)
+    (This test is to see if the language provides flexibility)
 
 3.  Correct length of text with decomposed string
     Length of "noeU+0308l"
