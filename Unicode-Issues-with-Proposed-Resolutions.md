@@ -93,7 +93,7 @@ In this context, "out of the box" means capabilities either built-in to the lang
     The expected result is "CANTUU+0300"
 
 9.  Processing above BMP
-    Add 4 to the first character of "U+1D11E - The Treble Clef"
+    Change the treble clef symbol of "U+1D11E - The Treble Clef" to the bass clef symbol(U+1D122)
     Change "Treble" to "Bass"
     The expected result is "U+1D122 - The Bass Clef"
 
