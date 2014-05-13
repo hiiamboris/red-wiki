@@ -112,6 +112,6 @@ In this context, "out of the box" means capabilities either built-in to the lang
     (Requires the ability to indicate that Turkish languages rules should be used.)
    
 12. Upper Case sharp s (U+00DF)
-    Upper case "U+00DF"
-    The expected result is U+00DF
+    Upper case "straU+00DFe"
+    The expected result is "STRASSE"
 ```
