@@ -67,15 +67,15 @@ In this context, "out of the box" means capabilities either built-in to the lang
 
     (This test is to see if the language provides flexibility)
 
-3.  Correct length of text with decomposed string
+3.  Correct length of text containing decomposed characters
     Length of "noeU+0308l"
     The expected result is 4.
 
-4.  Reversing a decomposed string
+4.  Reversing a string containing decomposed characters
     Reverse "noeU+0308l"
     The expected result is "leU+0308on"
 
-5.  Correct substring of a decomposed string
+5.  Correct substring of a string containing decomposed characters
     Extract the first three characters of "noeU+0308l"
     The expected result is "noeU+0308"
 
@@ -84,11 +84,11 @@ In this context, "out of the box" means capabilities either built-in to the lang
     The expected result is "BAFFLE"
     The length of the expected result is 6
 
-7.  Correct uppercase of precomposed non-ASCII chars
+7.  Correct uppercase of precomposed chars
     Upper case of "cantU+00F9"
     The expected result is "CANTU+00D9"
 
-8.  Correct uppercase of decomposed non-ASCII chars
+8.  Correct uppercase of decomposed chars
     Upper case of "cantuU+0300"
     The expected result is "CANTUU+0300"
 
@@ -102,10 +102,14 @@ In this context, "out of the box" means capabilities either built-in to the lang
     Upper case "i"
     The expected result is U+0130
 
+    (This test requires the ability to indicate that Turkish languages rules should be used.)
+
 11. Special Case - Turkish - Lower case "I"
     Set locale/Language to indicate Turkish 
     Lower case "I"
     The expected result is U+0131
+
+    (This test requires the ability to indicate that Turkish languages rules should be used.)
    
 12. Upper Case sharp s (U+00DF)
     Upper case "U+00DF"
