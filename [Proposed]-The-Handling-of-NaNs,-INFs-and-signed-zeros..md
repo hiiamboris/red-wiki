@@ -83,7 +83,7 @@ red>> NaN = NaN
 red>> same? NaN NaN
 == true
 
-red>> NaN != NaN
+red>> NaN <> NaN
 == true
 
 red>> NaN < NaN
