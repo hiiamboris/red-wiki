@@ -67,7 +67,7 @@ red>> 0.0 * INF
 == NaN
 ```
 
-### Comparisions
+### Comparisons
 
 Floating-point numbers are compared according to the IEEE 754 standard:
 
