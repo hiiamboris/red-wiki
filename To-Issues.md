@@ -10,7 +10,7 @@ This perennial question should be asked so that it is clear that a conscious dec
 
 ### Compiler Errors?
 
-Should the compiler raise an error when it can be determined that a conversation cannot be made?
+Should the compiler raise an error when it can be determined that a conversion cannot be made?
 
 ## Integer!
 
