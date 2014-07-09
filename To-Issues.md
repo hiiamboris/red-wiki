@@ -12,6 +12,12 @@ This perennial question should be asked so that it is clear that a conscious dec
 
 Should the compiler raise an error when it can be determined that a conversion cannot be made?
 
+## Action!
+
+### to series! 
+
+Rebol 2 returns variations on "action" in series! datatypes. Wouldn't it be better to return either none or an error?
+
 ## Integer!
 
 ### to binary!
