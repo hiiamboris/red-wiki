@@ -13,6 +13,7 @@ Todo lists:
 
 Proposals:
 * [Case Insensitive Charset Refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
+* [change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
 
 Future:
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
