@@ -12,8 +12,8 @@ Todo lists:
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
 
 Proposals:
-* [Case Insensitive Charset Refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
-* [change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
+* [Case insensitive charset refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
+* [Change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
 
 Future:
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
