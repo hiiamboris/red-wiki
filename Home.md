@@ -12,7 +12,7 @@ Todo lists:
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
 
 Proposals:
-*[Case Insensitive Charset Refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
+* [Case Insensitive Charset Refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
 
 Future:
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
