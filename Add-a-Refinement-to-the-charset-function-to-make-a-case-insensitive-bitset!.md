@@ -1,6 +1,4 @@
-The charset function does not automatically generate "case insensitive" bit sets other than specify both upper case and lower case letters.
-
-Parse itself is case insensitive by default (but only for a-z) so the current behaviour could appear confusing to some users:
+The parse function is case insensitive by default (but only for a-z at the moment) but does not handle bitset!s case insensitively. The current behaviour, mirrored in Rebol 2, could be considered inconsistent.
 
 ```
 >> parse "abc" [some [#"A" | #"B" | #"C"]]
@@ -13,6 +11,6 @@ Parse itself is case insensitive by default (but only for a-z) so the current be
 == false
 ```
 
-A refinement to charset that creates the appropriate bitset! with both the upper and lower case bits would perhaps reduce the confusion. (This would allow a Unicode module to replace a basic charset function with a Unicode aware one too.)
+It is proposed that given Unicode and the design assumption of matching against the bit corresponding to the Unicode codepoint as a given, this matching should still be done with case-folding (effectively case-insensitive) or without case-folding (case-sensitive). In effect, this boils down to two or one checks against the bitset!. (Case sensitive when the /case refinement of parse is specified).
 
-Changing the default behaviour would probably remove the confusion for the new user but would cause inconvenience for long time users.
+Some users have reported using the current behaviour to implement partial case sensitive matching. The proposed (CASE / NO-CASE parse enhancement) [http://www.rebol.net/wiki/Parse_Project#CASE_and_NO-CASE_keyword_pair] seems a far better design, than using charsets as a workaround for this purpose.
