@@ -25,7 +25,7 @@ All contributions should adhere to the following coding standards
 2. All indents should be made using tabs not spaces and be 4 characters wide.
 3. Functions specifications that don't include the datatypes of the arguments and locals should be kept concise. The specification should be on same line as function name, unless it doesn't fit on a line of around 90 characters. If the specification cannot fit on one line, the arguments and locals should be on different lines. If necessary put refinements on a separate line.
 4. Function specifications that include datatypes should follow a vertical layout.
-5. End-of-line comments are preferred over between line comments. The should be preceded with ";—-" starting at position 57.
+5. End-of-line comments are preferred over between line comments. They should be preceded with ";—-" starting at position 57.
 ```
 
 short-spec: func [
@@ -156,7 +156,7 @@ These are modules, objects, functions and schemes written in Red, Red/System or 
 At the moment, the content and format of Red documentation has still to be decided, as has the mechanism for automatically generating API documentation from the source. Please contact the Red team if you would like to volunteer. A reliable way to contact the Red team is via the [Red Group](https://groups.google.com/forum/?hl=en#!forum/red-lang).
 
 ### Red and Red/System tests
-Writing additional tests is both an easy way to contribute to Red and a good way to learn the finer details of Red and Red/System. All you need to do is find the test file for a feature that you would like to help with add some tests. Nothing could be easier.
+Writing additional tests is both an easy way to contribute to Red and a good way to learn the finer details of Red and Red/System. All you need to do is find the test file for a feature that you would like to help with and add some tests. Nothing could be easier.
 
 
 ### Using Red and Red/System and Submitting Bug reports
