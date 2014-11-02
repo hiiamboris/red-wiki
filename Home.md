@@ -6,7 +6,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 
 Reference documentation:
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
-* [Differences of Red to Rebol](https://github.com/red/red/wiki/Differences-of-Red-to-Rebol)
+* [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
 Todo lists:
 * [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
