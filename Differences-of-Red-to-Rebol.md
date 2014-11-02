@@ -13,7 +13,7 @@ Example:
     >> o2/a: 99
 
     >> o1/m
-    == 42                   ;; Both R3 and Red
+    == 42         ;; Both R3 and Red
     
     ;; R3 does not rebind:
     >> o2/m       ;; R3
