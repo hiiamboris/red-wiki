@@ -1,3 +1,9 @@
+# Table of Contents
+
+1. [COPY object](#copy-object)
+2. [FUNCTION vs FUNCT](#function-vs-funct)
+
+
 ## COPY object!
 
 R2: `copy object!` is not supported.
@@ -22,3 +28,20 @@ Example:
     ;; Red rebinds:
     red>> o2/m    ;; Red
     == 99
+
+
+## FUNCTION vs FUNCT
+
+_Summary_: Red's (and R3's) FUNCTION is like R2's FUNCT, they automatically collect /LOCAL words.
+
+R2:
+- FUNCTION is a 3-argument function constructor taking an ARGS block, a VARS (locals) block, and a BODY block.
+- FUNCT is a 2-argument function constructor taking a SPEC block, and a BODY block. SET-WORD!s in BODY are automatically (and deeply) collected as /LOCALs of the function.
+
+R3:
+- FUNCTION is 2-argument auto-localising.
+- FUNCT is an alias for FUNCTION.
+
+Red:
+- FUNCTION is 2-argument auto-localising.
+- FUNCT does not exist.
