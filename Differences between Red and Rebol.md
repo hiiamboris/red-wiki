@@ -47,13 +47,13 @@ Red: `float!` <sup>[2](http://www.red-lang.org/2014/08/043-floating-point-suppor
 _Summary_: Red's (and R3's) FUNCTION is like R2's FUNCT, they automatically collect /LOCAL words.
 
 R2:
-- FUNCTION is a 3-argument function constructor taking an ARGS block, a VARS (locals) block, and a BODY block.
-- FUNCT is a 2-argument function constructor taking a SPEC block, and a BODY block. SET-WORD!s in BODY are automatically (and deeply) collected as /LOCALs of the function.
+- FUNCTION is a 3-argument function constructor taking a SPEC block, a VARS (locals) block, and a BODY block. It is a mezzanine function.
+- FUNCT is a 2-argument function constructor taking a SPEC block, and a BODY block. SET-WORD!s in BODY are automatically (and deeply) collected as /LOCALs of the function. It is a mezzanine function.
 
 R3:
-- FUNCTION is 2-argument auto-localising.
+- FUNCTION is 2-argument auto-localising. It is a mezzanine function.
 - FUNCT is an alias for FUNCTION.
 
 Red:
-- FUNCTION is 2-argument auto-localising.
+- FUNCTION is 2-argument auto-localising. It is a native function.
 - FUNCT does not exist.
