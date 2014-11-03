@@ -1,7 +1,8 @@
 # Table of Contents
 
 1. [COPY object](#copy-object)
-2. [FUNCTION vs FUNCT](#function-vs-funct)
+2. [FLOAT vs DECIMAL](#float-vs-decimal)
+3. [FUNCTION vs FUNCT](#function-vs-funct)
 
 
 ## COPY object!
@@ -28,6 +29,17 @@ Example:
     ;; Red rebinds:
     red>> o2/m    ;; Red
     == 99
+
+
+## FLOAT! vs DECIMAL!
+
+Different name for the datatype implementing the [standard IEEE-754 64-bit binary floating-point format](http://en.wikipedia.org/wiki/Double-precision_floating-point_format).
+
+R2: `decimal!`
+
+R3: `decimal!` <sup>[1](http://www.rebol.com/r3/docs/datatypes/decimal.html)</sup>
+
+Red: `float!` <sup>[2](http://www.red-lang.org/2014/08/043-floating-point-support.html)</sup>
 
 
 ## FUNCTION vs FUNCT
