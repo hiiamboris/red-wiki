@@ -31,4 +31,4 @@ Todo list for supporting floating point datatype in Red/System. The work on floa
 10. Add float constants to runtime.
 11. Add support for decimal! in virtual-struct library (compiler helping lib).
 12. Write enough unit tests to cover all edge cases (NaNs, INFs, +/-0.0, comparisons,...)
-13. Implement hard-float ABI support for ARM backend.
+13. <strike>Implement hard-float ABI support for ARM backend.</strike>
