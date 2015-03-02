@@ -20,3 +20,4 @@ Future:
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
 * [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
 * [Issues Relating to TO] (https://github.com/red/red/wiki/To-Issues)
+* [Case Sensitive Map! Keys] (https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
