@@ -5,6 +5,8 @@ Applying this consistency to the map! datatype implies that values of the word!,
 There is a case that map! keys, especially string! values, should be case sensitive.
 
 ***** PLEASE INSERT THE CASE FOR CASE SENSITIVE MAP! KEYS HERE *****
+A case sensitive key makes it possible to use a base-64 coded string as key.
+***** PLEASE INSERT THE CASE FOR CASE SENSITIVE MAP! KEYS HERE *****
 
 There are a number of options to provide case sensitive map! keys:
 
