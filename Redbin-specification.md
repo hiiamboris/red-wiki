@@ -12,7 +12,21 @@ The _default_ encoding format is optimized for decoding speed, while the _compac
 
 Values are stored in little-endian format.
 
-_Numbers in parens indicate the byte size of the field. Field names followed by equal sign have a fixed value_
+Lexical conventions:
+
+1. _Numbers in parens indicate the byte size of the field._
+
+1. _Field names followed by a datatype name in a block are placeholders for a value of that datatype._
+
+1. _Field names followed by equal sign have a fixed value._
+
+Index:
+[Header](#header)
+[Global section](#Global section)
+[Header](#header)
+[Header](#header)
+[Header](#header)
+[Header](#header)
 
 ### Header
 ```
@@ -163,3 +177,57 @@ Compact:
         TBD
 ```
 
+### Get-word!
+```
+Default:
+	type=18 (4), symbol (4), context (4), index (4)
+Compact:
+        TBD
+```
+
+### Refinement!
+```
+Default:
+	type=19 (4), symbol (4), context (4), index (4)
+Compact:
+        TBD
+```
+
+### Issue!
+```
+Default:
+	type=20 (4), symbol (4)
+Compact:
+        TBD
+```
+
+### Native!
+```
+Default:
+	type=21 (4), ID (4)
+Compact:
+        TBD
+```
+`ID` is an offset into the internal `natives/table` jump table.
+
+
+### Action!
+```
+Default:
+	type=22 (4), ID (4)
+Compact:
+        TBD
+```
+`ID` is an offset into the internal `actions/table` jump table.
+
+### Op!
+TDB
+
+### Function!
+```
+Default:
+	type=24 (4), spec [block!], body [block!]
+Compact:
+        TBD
+```
+`ID` is an offset into the internal `actions/table` jump table.
