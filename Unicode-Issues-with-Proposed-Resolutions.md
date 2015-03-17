@@ -8,6 +8,8 @@ Clearly for comparisons and sorting, Unicode encoded text must use a consistent 
 
 This is a real, not a theoretical, problem. Unicode text originating from Linux systems generally conforms to a precomposed normalisation whilst text originating from OS X systems conforms to a slightly non-standard decomposed normalisation.
 
+Note that there is no guarantee that composed and decomposed forms are communicative; normalizing a combined character to NFC(Normal Form Composed) form, then converting the result back to NFD(Normal Form Decomposed) form does not always result in the same character sequence. The Unicode standard [maintains a list of exceptions](http://www.unicode.org/Public/UCD/latest/ucd/CompositionExclusions.txt); characters on this list are composable, but not decomposable back to their combined form, for various reasons. Also see the documentation on the [Composition Exclusion Table](http://www.unicode.org/reports/tr15/#Primary_Exclusion_List_Table).
+
 ### Encoding Normalisation Proposal
 The choice of whether to normalise Unicode text and the method of normalisation is left to the user programmer. Built-in functions will be provided to normalise Unicode strings to one of the four standard normalisations.
 
