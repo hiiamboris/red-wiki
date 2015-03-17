@@ -37,12 +37,12 @@ Red will enable locale sensitive case mapping by providing a simple "plug-in" me
 ##One "Character", Multiple Code Points 
 It is easy to fall into the trap that a Unicode Code Point is the equivalent of a printable character. This is clearly not the case as demonstrated by the simplistic example in the Normalisation section. Within the Unicode standard many Code Points may be needed to represent a displayable character. These multiple code points are known as a "grapheme cluster".
 
-An example of the type of issues that this aspect of Unicode bring is the length? function. It returns the number oeme cluster and the start of the next is not easy. Basically, you have to work out if the next code point is the start of a new grapheme cluster. The [Unicode technical report on text segmentation](http://www.unicode.org/reports/tr29) contains all the gory details. 
+An example of the type of issues that this aspect of Unicode bring is the length? function. It returns the number of code points in a string not the number of displayable characters. Reversing strings containing multi-code point grapheme clusters will produce incorrect results. For example, the string "ç", if encoded by the sequence U+0063 U+0327 when reversed would become "¸c".
+
+Determining the end of one grapheme cluster and the start of the next is not easy. Basically, you have to work out if the next code point is the start of a new grapheme cluster. The [Unicode technical report on text segmentation](http://www.unicode.org/reports/tr29) contains all the gory details. 
 
 It should also be noted that finding word, sentence and paragraph breaks are equally challenging.
-f code points in a string not the number of displayable characters. Reversing strings containing multi-code point grapheme clusters will produce incorrect results. For example, the string "ç", if encoded by the sequence U+0063 U+0327 when reversed would become "¸c".
 
-Determining the end of one graph
 ###One Character, Multiple Code Points Proposal.
 There is substantial extra processing in providing full "grapheme cluster" support that will not be used in the vast majority of programs written in Red. As a result, it is proposed not to change the current default behaviour from treating code points individually.
 
