@@ -13,15 +13,26 @@ Note that there is no guarantee that composed and decomposed forms are communica
 ### Encoding Normalisation Proposal
 The choice of whether to normalise Unicode text and the method of normalisation is left to the user programmer. Built-in functions will be provided to normalise Unicode strings to one of the four standard normalisations.
 
-## Case Folding (Sensitivity)
-The issue with case folding and case sensitivity is that it is language (or "locale" in Unicode speak) dependent. A simple example, demonstrates this. In English, the lower case equivalent of I (+U0049) is i (+0069). In Turkish, the lower case equivalent of I (+U0049) is ı (+U0131). For a fuller explanation read this Unicode.org [technical report](http://unicode.org/reports/tr21/tr21-5.html).
+## Case Folding and Case Mapping
 
-There are a few other mapping special cases special cases, such as in German the capital of ß being SS whilst a capital ß is defined in Unicode.
+The Unicode standard includes algorithms for case mapping (converting code points to their direct alternative case equivalent) and case folding (converting code points to a common equivalent for comparison purposes For example, the upper case mapping of ß (U+00DF) is SS (two separate characters) whereas using simple case folding it is equivalent to ẞ (U+1E9E).
 
-### Case Folding Proposal
-Red will provide the standard Unicode Case Mapping as defined in [this Unicode.org table](http://www.unicode.org/Public/3.2-Update/CaseFolding-3.2.0.txt) defaulting to English as the language where necessary.
+Normally, case folding is used for "case insensitive" comparison and case mapping is used for text changing functions (lower case, upper case, and title case). 
 
-Red will enable other case mappings by providing a simple "plug-in" mechanism for other specific case mappings.
+One issue with both case folding and case mapping is that it is language (or "locale" in Unicode speak) dependent. A simple example, demonstrates this. In English, the lower case equivalent of I (+U0049) is i (+0069). In Turkish, the lower case equivalent of I (+U0049) is ı (+U0131). For a fuller explanation read this Unicode.org [technical report](http://unicode.org/reports/tr21/tr21-5.html).
+
+There are a few other mapping special cases special cases which are not locale dependent, such as in German the capital of ß being SS. (A little confusingly, there is a capital ß is defined in Unicode which has a special use).
+
+### Case Folding and Mapping Proposal
+Looking at this pragmatically, locale-independent case folding will be sufficient in the vast majority of situations for both case insensitive comparisons and for case changing.
+
+Red will provide the standard locale-independent Unicode Case Folding as defined in [this Unicode.org table](http://www.unicode.org/Public/7.0.0/ucd/CaseFolding.txt) defaulting to English as the language where necessary.
+
+Red will enable locale sensitive case folding  by providing a simple "plug-in" mechanism for other specific locale case folding.
+
+Red will provide a separate library for full locale-independent case mapping. This library will effectively, override the standard case changing functions.
+
+Red will enable locale sensitive case mapping by providing a simple "plug-in" mechanism in the separate library for other specific locale case mappings. 
 
 ##One "Character", Multiple Code Points 
 It is easy to fall into the trap that a Unicode Code Point is the equivalent of a printable character. This is clearly not the case as demonstrated by the simplistic example in the Normalisation section. Within the Unicode standard many Code Points may be needed to represent a displayable character. These multiple code points are known as a "grapheme cluster".
