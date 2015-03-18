@@ -22,7 +22,7 @@ Lexical conventions:
 
 Index:
 * [Header](#header)
-* [Global section](#global section)
+* [Symbol Table](#symbol table)
 * [Padding](#padding)
 * [Datatype!](#datatype!)
 * [Unset!](#unset)
@@ -37,12 +37,24 @@ magic="REDBIN" (6), version=1 (1), flags (1)
 flags (option is enabled if bit is set):
      bit0: compact mode
      bit1: compressed
-     bit2-7: <reserved>
+     bit2: symbol table
+     bit3-7: <reserved>
 ```
 
-### Global section
+### Symbol Table
+The symbol table is following immediatly the header data. It is optional and should only be used if words are present in the rest of the Redbin payload. The symbol table has two sections:
 
-TBD
+* a table of offsets to string representation of each symbol
+* strings buffers, NUL-terminated and concatenated to each other
+
+The position of a symbol in the table is its _index_ (zero-based), and it is used as reference for a symbol in contexts and words. The strings buffers section contains UTF-8 encoded strings with an optional padding at end to ensure 64-bit alignment. The offsets in the table are offsets in bytes from beginning of the strings buffers section to the referred string buffer.
+
+Table encoding:
+```
+Default: length (4), offset1 (4), offset2 (4),...
+Compact: TBD
+```
+`length` field contains the number of entries in the table.
 
 ### Padding
 ```
