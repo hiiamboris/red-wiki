@@ -211,3 +211,9 @@ Compact: TBD
 ```
 The `spec` and `body` blocks just follow each other with no special delimiters.
 
+### Reference!
+```
+Default: type=255 (4), count (4), index1 (4), index2 (4), ...
+Compact: TBD
+```
+This special record type stores a reference to an already loaded value of type any-block! or object!. This makes possible to store cycles in Redbin. The reference is created from a path into the loaded values (assuming that the root values are stored in a block). Each `index` field points to the series or object value to go into, until the last one is reached, pointing to the value to refer to. The `count` field indicates the number of indexes to go through. If one of the indexes has to be applied to an object, it refers to the corresponding object's field (0 => 1st field, 1 => 2nd field,...). All indexes are zero-based.
