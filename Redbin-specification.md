@@ -56,6 +56,8 @@ Compact: TBD
 ```
 `length` field contains the number of entries in the table.
 
+After the Symbol Table, Red values are stored in sequence with no special delimiter or end marker. The loaded values from root level are usually stored in a block! series.
+
 ### Padding
 ```
 Default: type=0 (4)
@@ -137,6 +139,13 @@ Compact: TBD
 ### Float!
 ```
 Default: [padding=0 (4),] type=12 (4), value (8)
+Compact: TBD
+```
+The optional padding field is added to properly align the `value` field offset to a 64-bit value.
+
+### Context!
+```
+Default: type=12 (4), value (8)
 Compact: TBD
 ```
 The optional padding field is added to properly align the `value` field offset to a 64-bit value.
