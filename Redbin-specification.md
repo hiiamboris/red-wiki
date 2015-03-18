@@ -91,35 +91,35 @@ Compact: TBD
 
 ### Block!
 ```
-Default: type=5 (4), length (4), ...
+Default: head (4), type=5 (4), length (4), ...
 Compact: TBD
 ```
-The `length` field contains the number of values to be stored in the block. The block values are simply following the block definition, no separator or end delimiter is required.
+The `head` field indicates the offset of the block reference, using a zero-based integer. The `length` field contains the number of values to be stored in the block. The block values are simply following the block definition, no separator or end delimiter is required.
 
 ### Paren!
 ```
-Default: type=6 (4), length (4), ...
+Default: head (4), type=6 (4), length (4), ...
 Compact: TBD
 ```
 Same encoding rules as block!.
 
 ### String!
 ```
-Default: type=7 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: head (4), type=7 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
 Compact: TBD
 ```
-The `UCS` field indicates the encoding format of the string, only values of 1, 2 and 4 are valid. The `length` field contains the number of codepoints to be stored in the string, up to 16777215 codepoints (2^24 - 1) are supported. The string is encoded in UCS-1, UCS-2 or UCS-4 format. No NUL character is present, nor accounted for in the `length` field.
+`head` field has same meaning as for blocks. The `UCS` field indicates the encoding format of the string, only values of 1, 2 and 4 are valid. The `length` field contains the number of codepoints to be stored in the string, up to 16777215 codepoints (2^24 - 1) are supported. The string is encoded in UCS-1, UCS-2 or UCS-4 format. No NUL character is present, nor accounted for in the `length` field.
 
 ### File!
 ```
-Default: type=8 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: head (4), type=8 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
 Compact: TBD
 ```
 Same encoding rules as string!.
 
 ### Url!
 ```
-Default: type=9 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: head (4), type=9 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
 Compact: TBD
 ```
 Same encoding rules as string!.
