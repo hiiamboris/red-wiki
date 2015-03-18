@@ -20,16 +20,6 @@ Lexical conventions:
 
 1. _Field names followed by equal sign have a fixed value._
 
-Index:
-* [Header](#header)
-* [Symbol Table](#symbol table)
-* [Padding](#padding)
-* [Datatype!](#datatype!)
-* [Unset!](#unset)
-* [None!](#none)
-* [Logic!](#logic)
-* [Block!](#block)
-
 ### Header
 ```
 magic="REDBIN" (6), version=1 (1), flags (1)
@@ -56,7 +46,17 @@ Compact: TBD
 ```
 `length` field contains the number of entries in the table.
 
-After the Symbol Table, Red values are stored in sequence with no special delimiter or end marker. The loaded values from root level are usually stored in a block! series.
+After the Symbol Table, Red values are stored as records in sequence with no special delimiter or end marker. The loaded values from root level are usually stored in a block! series.
+
+## Records definitions
+
+Index:
+* [Padding](#padding)
+* [Datatype!](#datatype!)
+* [Unset!](#unset)
+* [None!](#none)
+* [Logic!](#logic)
+* [Block!](#block)
 
 ### Padding
 ```
