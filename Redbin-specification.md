@@ -1,4 +1,4 @@
-Redbin aims at defining a binary format that accurately represents Red values stored in memory, while enabling fast loading (avoiding the parsing and validation stage of the text representation format). Redbin format is largely inspired by [REBin](http://www.rebol.com/article/0044.html).
+Redbin aims at defining a binary format that accurately represents Red values stored in memory, while enabling fast loading (avoiding the parsing and validation stage of the text representation format). Redbin format is largely inspired by [REBin](http://www.rebol.com/article/0044.html). Redbin can encode binding information for words and can handle cycles in any-block! values.
 
 The user interface for Redbin format access will be provided by `load/binary` and `mold/binary`. Underlying implementation _could_ use the codec sub-system, once available.
 
