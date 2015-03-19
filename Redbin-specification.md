@@ -258,6 +258,26 @@ Compact: TBD
 ```
 The `on-set-idx` field indicates the offset of the `on-change*` in the context values table. The `on-set-arity` stores the arity of that function.
 
+### Typeset!
+```
+Default: type=33 (4), array1 (4), array2 (4), array3 (4)
+Compact: TBD
+```
+
+### Error!
+```
+Default: type=34 (4), context [reference!]
+Compact: TBD
+```
+
+### Vector!
+```
+Default: type=35 (3), unit (1), head (4), length (4), values (unit*length)
+Compact: TBD
+```
+`unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. `values` field holds the list of values. The values needs to be padded with NUL bytes to align next record to 32-bit boundary (if `unit` is equal to 1 or 2).
+
+
 ### Reference!
 ```
 Default: type=255 (4), count (4), index1 (4), index2 (4), ...
