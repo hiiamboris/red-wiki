@@ -243,7 +243,7 @@ Same encoding rules as block!.
 Default: type=30 (4), length (4), bits (length)
 Compact: TBD
 ```
-The bits are memory dumps of the bitset! series buffer. Bytes order is preserved.
+The bits are memory dumps of the bitset! series buffer. Bytes order is preserved. `bits` field needs to be padded with enough NUL bytes to keep the next record 32-bit aligned.
 
 ### Point!
 ```
