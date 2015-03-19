@@ -46,6 +46,8 @@ Compact: TBD
 ```
 `length` field contains the number of entries in the table.
 
+During the decoding process, these symbols are merged within the Red own symbol table and the offsets are replaced by the symbol ID value from Red table. The symbol references in the Redbin records become then an indirect reference to Red's internal symbol table entries.
+
 After the Symbol Table, Red values are stored as records in sequence with no special delimiter or end marker. The loaded values from root level are usually stored in a block! series.
 
 ## Records definitions
