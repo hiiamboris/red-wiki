@@ -91,35 +91,35 @@ Compact: TBD
 
 ### Block!
 ```
-Default: head (4), type=5 (4), length (4), ...
+Default: type=5 (4), head (4), length (4), ...
 Compact: TBD
 ```
 The `head` field indicates the offset of the block reference, using a zero-based integer. The `length` field contains the number of values to be stored in the block. The block values are simply following the block definition, no separator or end delimiter is required.
 
 ### Paren!
 ```
-Default: head (4), type=6 (4), length (4), ...
+Default: type=6 (4), head (4), length (4), ...
 Compact: TBD
 ```
 Same encoding rules as block!.
 
 ### String!
 ```
-Default: head (4), type=7 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: type=7 (3), UCS=1|2|4 (1), head (4), length (4), data (UCS*length)
 Compact: TBD
 ```
 `head` field has same meaning as for blocks. The `UCS` field indicates the encoding format of the string, only values of 1, 2 and 4 are valid. The `length` field contains the number of codepoints to be stored in the string, up to 16777215 codepoints (2^24 - 1) are supported. The string is encoded in UCS-1, UCS-2 or UCS-4 format. No NUL character is present, nor accounted for in the `length` field.
 
 ### File!
 ```
-Default: head (4), type=8 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: type=8 (3), UCS=1|2|4 (1), head (4), length (4), data (UCS*length)
 Compact: TBD
 ```
 Same encoding rules as string!.
 
 ### Url!
 ```
-Default: head (4), type=9 (4), UCS=1|2|4 (1), length (3), data (UCS*length)
+Default: type=9 (3), UCS=1|2|4 (1), head (4), length (4), data (UCS*length)
 Compact: TBD
 ```
 Same encoding rules as string!.
@@ -206,10 +206,57 @@ TDB
 
 ### Function!
 ```
-Default: type=24 (4), spec [block!], body [block!]
+Default: type=24 (4), context [context!], spec [block!], body [block!], args [block!], obj-ctx [context!]
 Compact: TBD
 ```
-The `spec` and `body` blocks just follow each other with no special delimiters.
+
+### Path!
+```
+Default: type=25 (4), head (4), length (4), ...
+Compact: TBD
+```
+Same encoding rules as block!.
+
+### Lit-path!
+```
+Default: type=26 (4), head (4), length (4), ...
+Compact: TBD
+```
+Same encoding rules as block!.
+
+### Set-path!
+```
+Default: type=27 (4), head (4), length (4), ...
+Compact: TBD
+```
+Same encoding rules as block!.
+
+### Get-path!
+```
+Default: type=28 (4), head (4), length (4), ...
+Compact: TBD
+```
+Same encoding rules as block!.
+
+### Bitset!
+```
+Default: type=30 (4), length (4), bits (length)
+Compact: TBD
+```
+The bits are memory dumps of the bitset! series buffer. Bytes order is preserved.
+
+### Point!
+```
+Default:  type=31 (4), x (4), y (4), z (4)
+Compact: TBD
+```
+
+### Object!
+```
+Default: type=32 (4), context [reference!], class-id (4), on-set-idx (4), on-set-arity (4)
+Compact: TBD
+```
+The `on-set-idx` field indicates the offset of the `on-change*` in the context values table. The `on-set-arity` stores the arity of that function.
 
 ### Reference!
 ```
