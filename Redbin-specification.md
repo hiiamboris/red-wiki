@@ -117,7 +117,7 @@ Compact: TBD
 
 ### Logic!
 ```
-Default: type=4 (4)
+Default: type=4 (4), value=0|1 (4)
 Compact: TBD
 ```
 
