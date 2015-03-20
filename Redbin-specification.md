@@ -16,9 +16,9 @@ Values are stored in little-endian format.
 
 Lexical conventions:
 
-1. _Numbers in parens indicate the byte size of the field._
+1. _Numbers in parentheses indicate the byte size of the field._
 
-1. _Field names followed by a datatype name in a block are placeholders for a value of that datatype._
+1. _Field names followed by a datatype name in a block are place-holders for a value of that datatype._
 
 1. _Field names followed by equal sign have a fixed value._
 
@@ -34,7 +34,7 @@ flags (option is enabled if bit is set):
 ```
 
 ### Symbol Table
-The symbol table is following immediatly the header data. It is optional and should only be used if words are present in the rest of the Redbin payload. The symbol table has two sections:
+The symbol table is following immediately the header data. It is optional and should only be used if words are present in the rest of the Redbin payload. The symbol table has two sections:
 
 * a table of offsets to string representation of each symbol
 * strings buffers, NUL-terminated and concatenated to each other
