@@ -89,6 +89,7 @@ Index:
 * [Typeset!](#typeset)
 * [Error!](#error)
 * [Vector!](#vector)
+* [Reference!](#reference)
 
 ### Padding
 ```
