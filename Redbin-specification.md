@@ -43,10 +43,10 @@ The position of a symbol in the table is its _index_ (zero-based), and it is use
 
 Table encoding:
 ```
-Default: length (4), offset1 (4), offset2 (4),...
+Default: length (4), size (4), offset1 (4), offset2 (4),...
 Compact: TBD
 ```
-`length` field contains the number of entries in the table.
+`length` field contains the number of entries in the table. `size` field indicates the size of the string buffer in bytes (including optional tail padding bytes).
 
 During the decoding process, these symbols are merged within Red's own symbol table and the offsets are replaced by the symbol ID value from Red table. That is, the symbol references in the Redbin records are an indirect reference to Red's internal symbol table entries used only during the loading process.
 
