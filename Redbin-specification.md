@@ -56,7 +56,7 @@ After the Symbol Table, Red values are stored as records in sequence with no spe
 
 Index:
 * [Padding](#padding)
-* [Datatype!](#datatype!)
+* [Datatype!](#datatype)
 * [Unset!](#unset!)
 * [None!](#none!)
 * [Logic!](#logic!)
