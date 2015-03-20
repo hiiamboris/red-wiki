@@ -48,7 +48,7 @@ Compact: TBD
 ```
 `length` field contains the number of entries in the table.
 
-During the decoding process, these symbols are merged within Red's own symbol table and the offsets are replaced by the symbol ID value from Red table. The symbol references in the Redbin records become then an indirect reference to Red's internal symbol table entries.
+During the decoding process, these symbols are merged within Red's own symbol table and the offsets are replaced by the symbol ID value from Red table. That is, the symbol references in the Redbin records are an indirect reference to Red's internal symbol table entries used only during the loading process.
 
 After the Symbol Table, Red values are stored as records in sequence with no special delimiter or end marker. The loaded values from root level are usually stored in a block! series.
 
@@ -127,7 +127,7 @@ Compact: TBD
 Default: type=5 (4), head (4), length (4), ...
 Compact: TBD
 ```
-The `head` field indicates the offset of the block reference, using a zero-based integer. The `length` field contains the number of values to be stored in the block. The block values are simply following the block definition, no separator or end delimiter is required.
+The `head` field indicates the offset of the block reference, using a zero-based integer. The `length` field contains the number of values to be stored in the block. The block values simply follow the block definition, no separator or end delimiter is required.
 
 ### Paren!
 ```
@@ -281,7 +281,7 @@ Same encoding rules as block!.
 Default: type=30 (4), length (4), bits (length)
 Compact: TBD
 ```
-The bits are memory dumps of the bitset! series buffer. Bytes order is preserved. `bits` field needs to be padded with enough NUL bytes to keep the next record 32-bit aligned.
+The bits are memory dumps of the bitset! series buffer. Byte order is preserved. `bits` field needs to be padded with enough NUL bytes to keep the next record 32-bit aligned.
 
 ### Point!
 ```
@@ -313,7 +313,7 @@ Compact: TBD
 Default: type=35 (3), unit (1), head (4), length (4), values (unit*length)
 Compact: TBD
 ```
-`unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. `values` field holds the list of values. The values needs to be padded with NUL bytes to align next record to 32-bit boundary (if `unit` is equal to 1 or 2).
+`unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. The `values` field holds the list of values. `values` needs to be padded with NUL bytes to align the next record to a 32-bit boundary (if `uint` is equal to 1 or 2).
 
 
 ### Reference!
@@ -321,4 +321,4 @@ Compact: TBD
 Default: type=255 (4), count (4), index1 (4), index2 (4), ...
 Compact: TBD
 ```
-This special record type stores a reference to an already loaded value of type any-block! or object!. This makes possible to store cycles in Redbin. The reference is created from a path into the loaded values (assuming that the root values are stored in a block). Each `index` field points to the series or object value to go into, until the last one is reached, pointing to the value to refer to. The `count` field indicates the number of indexes to go through. If one of the indexes has to be applied to an object, it refers to the corresponding object's field (0 => 1st field, 1 => 2nd field,...). All indexes are zero-based.
+This special record type stores a reference to an already loaded value of type any-block! or object!. This makes it possible to store cycles in Redbin. The reference is created from a path into the loaded values (assuming that the root values are stored in a block). Each `index` field points to the series or object value to go into, until the last one is reached, pointing to the value to refer to. The `count` field indicates the number of indexes to go through. If one of the indexes has to be applied to an object, it refers to the corresponding object's field (0 => 1st field, 1 => 2nd field,...). All indexes are zero-based.
