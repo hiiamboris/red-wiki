@@ -96,7 +96,7 @@ Index:
 Default: type=0 (4)
 Compact: n/a
 ```
-This empty type slot is used to properly align some 64-bit values.
+This empty type slot is used to properly align 64-bit values.
 
 ### Datatype!
 ```
