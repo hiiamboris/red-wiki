@@ -1,4 +1,4 @@
-_Specification version: 1_
+_Specification version 1_
 
 Redbin is a binary format that accurately represents Red values stored in memory, while enabling fast loading (avoiding the parsing and validation stage of the text representation format). Redbin format is largely inspired by [REBin](http://www.rebol.com/article/0044.html). Redbin can encode binding information for words and can handle cycles in any-block! values.
 
@@ -56,39 +56,39 @@ After the Symbol Table, Red values are stored as records in sequence with no spe
 
 Index:
 * [Padding](#padding)
-* [Datatype!](#datatype)
-* [Unset!](#unset)
-* [None!](#none)
-* [Logic!](#logic)
-* [Block!](#block)
-* [Paren!](#paren)
-* [String!](#string)
-* [File!](#file)
-* [Url!](#url)
-* [Char!](#char)
-* [Integer!](#integer)
-* [Float!](#float)
-* [Context!](#context)
-* [Word!](#word)
-* [Set-word!](#set-word)
-* [Lit-word!](#lit-word)
-* [Get-word!](#get-word)
-* [Refinement!](#refinement)
-* [Issue!](#issue)
-* [Native!](#native)
-* [Action!](#action)
+* [Datatype!](#datatype!)
+* [Unset!](#unset!)
+* [None!](#none!)
+* [Logic!](#logic!)
+* [Block!](#block!)
+* [Paren!](#paren!)
+* [String!](#string!)
+* [File!](#file!)
+* [Url!](#url!)
+* [Char!](#char!)
+* [Integer!](#integer!)
+* [Float!](#float!)
+* [Context!](#context!)
+* [Word!](#word!)
+* [Set-word!](#set-word!)
+* [Lit-word!](#lit-word!)
+* [Get-word!](#get-word!)
+* [Refinement!](#refinement!)
+* [Issue!](#issue!)
+* [Native!](#native!)
+* [Action!](#action!)
 * [Op!](#op!)
-* [Function!](#function)
-* [Path!](#path)
-* [Lit-path!](#lit-path)
-* [Set-path!](#set-path)
-* [Get-path!](#get-path)
-* [Bitset!](#bitset)
-* [Point!](#point)
-* [Object!](#object)
-* [Typeset!](#typeset)
-* [Error!](#error)
-* [Vector!](#vector)
+* [Function!](#function!)
+* [Path!](#path!)
+* [Lit-path!](#lit-path!)
+* [Set-path!](#set-path!)
+* [Get-path!](#get-path!)
+* [Bitset!](#bitset!)
+* [Point!](#point!)
+* [Object!](#object!)
+* [Typeset!](#typeset!)
+* [Error!](#error!)
+* [Vector!](#vector!)
 
 ### Padding
 ```
@@ -180,37 +180,42 @@ The optional padding field is added to properly align the `value` field offset t
 Default: type=14 (4), length (4), symbol1 (4), symbol2 (4),..., value1 [any-type!], value2 [any-type!], ...
 Compact: TBD
 ```
-Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the word in the first table. `length` field indicates the number of entries in the context.
+Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the symbols in the first table. `length` field indicates the number of entries in the context. Context records can only exist at root level, they cannot be nested.
 
 ### Word!
 ```
 Default: type=15 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
+The `context` field is an offset from the beginning of the records section in the Redbin file referring to a context! value. The context needs to be located before the word record in the Redbin records list.
 
 ### Set-word!
 ```
 Default: type=16 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
+Same as word!.
 
 ### Lit-word!
 ```
 Default: type=17 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
+Same as word!.
 
 ### Get-word!
 ```
 Default: type=18 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
+Same as word!.
 
 ### Refinement!
 ```
 Default: type=19 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
+Same as word!.
 
 ### Issue!
 ```
