@@ -313,7 +313,7 @@ Compact: TBD
 Default: type=35 (3), unit (1), head (4), length (4), values (unit*length)
 Compact: TBD
 ```
-`unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. The `values` field holds the list of values. `values` needs to be padded with NUL bytes to align the next record to a 32-bit boundary (if `uint` is equal to 1 or 2).
+`unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. The `values` field holds the list of values. `values` needs to be padded with NUL bytes to align the next record to a 32-bit boundary (if `unit` is equal to 1 or 2).
 
 
 ### Reference!
