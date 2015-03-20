@@ -281,7 +281,7 @@ Same encoding rules as block!.
 Default: type=30 (4), length (4), bits (length)
 Compact: TBD
 ```
-The bits are memory dumps of the bitset! series buffer. Byte order is preserved. `bits` field needs to be padded with enough NUL bytes to keep the next record 32-bit aligned.
+The `length` fields indicates the number of bits stored, rounded to the upper multiple of 8. The bits are memory dumps of the bitset! series buffer. Byte order is preserved. `bits` field needs to be padded with enough NUL bytes to keep the next record 32-bit aligned.
 
 ### Point!
 ```
