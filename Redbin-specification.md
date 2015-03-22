@@ -188,7 +188,7 @@ Contexts are Red values used internally by some datatypes like function!, object
 Default: type=15 (4), symbol (4), context (4), index (4)
 Compact: TBD
 ```
-The `context` field is an offset from the beginning of the records section in the Redbin file referring to a context! value. The context needs to be located before the word record in the Redbin records list.
+The `context` field is an offset from the beginning of the records section in the Redbin file referring to a context! value. The context needs to be located before the word record in the Redbin records list. If `context` equals -1, it refers to global context.
 
 ### Set-word!
 ```
