@@ -178,10 +178,10 @@ The optional padding field is added to properly align the `value` field offset t
 
 ### Context!
 ```
-Default: type=14 (4), length (4), symbol1 (4), symbol2 (4),..., value1 [any-type!], value2 [any-type!], ...
+Default: type=14 (3), flags=0|1 (1), length (4), symbol1 (4), symbol2 (4),..., value1 [any-type!], value2 [any-type!], ...
 Compact: TBD
 ```
-Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the symbols in the first table. `length` field indicates the number of entries in the context. Context records can only exist at root level, they cannot be nested.
+Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the symbols in the first table. `length` field indicates the number of entries in the context. Context records can only exist at root level, they cannot be nested. `flags` field is a bitset of flags. If bit0 is set it means that there are no values following the symbols (empty context). Other bits are reserved for future use.
 
 ### Word!
 ```
