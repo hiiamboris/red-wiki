@@ -25,7 +25,7 @@ Lexical conventions:
 
 ### Header
 ```
-magic="REDBIN" (6), version=1 (1), flags (1), length (4), padding=0 (4)
+magic="REDBIN" (6), version=1 (1), flags (1), length (4), size (4)
 
 flags (option is enabled if bit is set):
      bit0: compact mode
@@ -33,7 +33,8 @@ flags (option is enabled if bit is set):
      bit2: symbol table
      bit3-7: <reserved>
 
-length: number of root records to load.
+length : number of root records to load.
+size   : size of records payload in bytes.
 ```
 
 
