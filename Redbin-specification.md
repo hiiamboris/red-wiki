@@ -25,7 +25,7 @@ Lexical conventions:
 
 ### Header
 ```
-magic="REDBIN" (6), version=1 (1), flags (1), length (4)
+magic="REDBIN" (6), version=1 (1), flags (1), length (4), padding=0 (4)
 
 flags (option is enabled if bit is set):
      bit0: compact mode
