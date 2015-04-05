@@ -25,14 +25,17 @@ Lexical conventions:
 
 ### Header
 ```
-magic="REDBIN" (6), version=1 (1), flags (1)
+magic="REDBIN" (6), version=1 (1), flags (1), length (4)
 
 flags (option is enabled if bit is set):
      bit0: compact mode
      bit1: compressed
      bit2: symbol table
      bit3-7: <reserved>
+
+length: number of root records to load.
 ```
+
 
 ### Symbol Table
 The symbol table is following immediately the header data. It is optional and should only be used if words are present in the rest of the Redbin payload. The symbol table has two sections:
