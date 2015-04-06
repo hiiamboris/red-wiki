@@ -169,13 +169,13 @@ Same encoding rules as block!.
 
 ### String!
 ```
-Default: header (4), head (4), length (4), data (unit*length)
+Default: header (4), head (4), length (4), data (unit*length) [, padding (1-3)]
 Compact: TBD
 
 header/type=7
 header/unit=1|2|4
 ```
-`head` field has same meaning as for blocks. The `unit` sub-field indicates the encoding format of the string, only values of 1, 2 and 4 are valid. The `length` field contains the number of codepoints to be stored in the string, up to 16777215 codepoints (2^24 - 1) are supported. The string is encoded in UCS-1, UCS-2 or UCS-4 format. No NUL character is present, nor accounted for in the `length` field.
+`head` field has same meaning as for blocks. The `unit` sub-field indicates the encoding format of the string, only values of 1, 2 and 4 are valid. The `length` field contains the number of codepoints to be stored in the string, up to 16777215 codepoints (2^24 - 1) are supported. The string is encoded in UCS-1, UCS-2 or UCS-4 format. No NUL character is present, nor accounted for in the `length` field. An optional tail padding of 1 to 3 NUL bytes can be present to align the end of the string! record with a 32-bit boundary.
 
 ### File!
 ```
