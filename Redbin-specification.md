@@ -62,8 +62,10 @@ After the Symbol Table, Red values are stored as records in sequence with no spe
 Each records starts with a 32-bit `header` field defined as:
 ```
 * bit31    : new-line flag
-* bit30    : no-values flag
-* bit29-16 : <reserved>
+* bit30    : no-values flag (for contexts)
+* bit29    : stack? flag    (for contexts)
+* bit28    : self? flag     (for contexts)
+* bit27-16 : <reserved>
 * bit15-8  : unit (used for encoding elements size in a series buffer)
 * bit7-0   : type
 ```
