@@ -229,8 +229,10 @@ Compact: TBD
 
 header/type=14
 header/no-values=0|1
+header/stack?=0|1
+header/self?=0|1
 ```
-Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the symbols in the first table. `length` field indicates the number of entries in the context. Context records can only exist at root level, they cannot be nested. If `no-values` flag is set, it means that there are no values following the symbols (empty context).
+Contexts are Red values used internally by some datatypes like function!, object! and derivative types. A context contains two consecutive tables, the first one is the list of word entries in the context represented as symbol references, the second is the associated values for each of the symbols in the first table. `length` field indicates the number of entries in the context. Context records can only exist at root level, they cannot be nested. If `no-values` flag is set, it means that there are no values following the symbols (empty context). If `stack?` flag is set, then the values are allocated on the stack instead of the heap memory. The `self?` flag is used to indicate that the context is able to handle a self-referencing word (`self` in objects).
 
 ### Word!
 ```
