@@ -65,7 +65,8 @@ Each records starts with a 32-bit `header` field defined as:
 * bit30    : no-values flag (for contexts)
 * bit29    : stack? flag    (for contexts)
 * bit28    : self? flag     (for contexts)
-* bit27-16 : <reserved>
+* bit27    : set? flag      (for words)
+* bit26-16 : <reserved>
 * bit15-8  : unit (used for encoding elements size in a series buffer)
 * bit7-0   : type
 ```
@@ -240,8 +241,11 @@ Default: header (4), symbol (4), context (4), index (4)
 Compact: TBD
 
 header/type=15
+header/set?=0|1
 ```
 The `context` field is an offset from the beginning of the records section in the Redbin file referring to a context! value. The context needs to be located before the word record in the Redbin records list. If `context` equals -1, it refers to global context.
+
+If the `set?` field is defined, this record is followed by an [any-value!] record, and the word will need to be set to that value (in the right context) by the decoder. This forms a name/value couple allowing to encode words' values in an adhoc way, when providing a sequence of values for a given context is too expensive (mostly for name/value couples in global context).
 
 ### Set-word!
 ```
