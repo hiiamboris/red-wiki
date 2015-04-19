@@ -289,7 +289,7 @@ header/type=20
 
 ### Native!
 ```
-Default: header (4), ID (4)
+Default: header (4), ID (4), spec [block!]
 Compact: TBD
 
 header/type=21
@@ -299,7 +299,7 @@ header/type=21
 
 ### Action!
 ```
-Default: header (4), ID (4)
+Default: header (4), ID (4), spec [block!]
 Compact: TBD
 
 header/type=22
@@ -307,7 +307,14 @@ header/type=22
 `ID` is an offset into the internal `actions/table` jump table.
 
 ### Op!
-TDB
+```
+Default: header (4), symbol (4), 
+Compact: TBD
+
+header/type=23
+```
+`symbol` representes the action, native or function name (only from global context) used as the source for that op! value. 
+
 
 ### Function!
 ```
