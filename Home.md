@@ -5,7 +5,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
 Reference documentation:
-* [Redbin format](https://github.com/red/red/wiki/Redbin-specification)
+* [Redbin format specification](https://github.com/red/red/wiki/Redbin-specification)
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
