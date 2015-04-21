@@ -36,7 +36,7 @@ flags (option is enabled if bit is set):
 length : number of root records to load.
 size   : size of records payload in bytes.
 ```
-If compression is applied, the data following the header is the payload to be compressed.
+If compression is applied, the data following the header is the payload to be compressed. Compression algorithm choice is implementation-dependent.
 
 ### Symbol Table
 The symbol table is following immediately the header data. It is optional and should only be used if words are present in the rest of the Redbin payload. The symbol table has two sections:
