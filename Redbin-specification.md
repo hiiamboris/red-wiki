@@ -107,6 +107,7 @@ Index:
 * [Typeset!](#typeset)
 * [Error!](#error)
 * [Vector!](#vector)
+* [Pair!](#pair)
 * [Reference!](#reference)
 
 ### Padding
@@ -416,6 +417,13 @@ header/unit=1|2|4|8
 ```
 `unit` indicates the size of the vector element type size: 1, 2, 4 or 8 bytes. The `values` field holds the list of values. `values` needs to be padded with NUL bytes to align the next record to a 32-bit boundary (if `unit` is equal to 1 or 2).
 
+### Pair!
+```
+Default: header (4), x (4), y (4)
+Compact: TBD
+
+header/type=37
+```
 
 ### Reference!
 ```
