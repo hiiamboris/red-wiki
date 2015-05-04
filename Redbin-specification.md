@@ -108,6 +108,8 @@ Index:
 * [Error!](#error)
 * [Vector!](#vector)
 * [Pair!](#pair)
+* [Percent!](#percent)
+* [Tuple!](#tuple)
 * [Reference!](#reference)
 
 ### Padding
@@ -423,6 +425,23 @@ Default: header (4), x (4), y (4)
 Compact: TBD
 
 header/type=37
+```
+
+### Percent!
+```
+Default: [padding=0 (4),] header (4), value (8)
+Compact: TBD
+
+header/type=12
+```
+The optional padding field is added to properly align the `value` field offset to a 64-bit value.
+
+### Typeset!
+```
+Default: header (4), array1 (4), array2 (4), array3 (4)
+Compact: TBD
+
+header/type=33
 ```
 
 ### Reference!
