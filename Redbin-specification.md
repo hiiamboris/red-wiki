@@ -432,16 +432,16 @@ header/type=37
 Default: [padding=0 (4),] header (4), value (8)
 Compact: TBD
 
-header/type=12
+header/type=38
 ```
 The optional padding field is added to properly align the `value` field offset to a 64-bit value.
 
-### Typeset!
+### Tuple!
 ```
 Default: header (4), array1 (4), array2 (4), array3 (4)
 Compact: TBD
 
-header/type=33
+header/type=39
 ```
 
 ### Reference!
