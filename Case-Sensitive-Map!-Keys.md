@@ -148,9 +148,9 @@ Cons:
 
 Variant of [#2](#2), in order to avoid competing /relaxed/strict refinement explosions.  Already today, it's a nuisance to have to pass through /strict (a.k.a. '/case') to every general utility that might call into something like FIND or PARSE or SELECT.
 
-Alternative idea: give strings the ability to carry a "case matters or not bit".  Default to "case matters", then have something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  Retain original casing in the data, and offer functions for twiddling the bit one way or the other...so that a string created as cased can be made uncased or vice-versa.
+Alternative idea: give strings the ability to carry a "case matters or not bit".  Default to "case matters", then have something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  *(For such a notation, a prerequisite is Plan Minus Four or similar, such that `~"foo bar"` is not interpreted as `~ "foo bar"`.  Also `~=` is much better for "approximately equal" as @rebolek points out.  One of the many benefits of expanded notational possibilities from Plan -4...)*
 
-Letting the value carry the search property would probably take a load off of a lot of situations in terms of needing to pass through /STRICT.
+Retain original casing in the data, and offer functions for twiddling the bit one way or the other...so that a string created as cased can be made uncased or vice-versa.  Letting the value carry the search property would probably take a load off of a lot of situations in terms of needing to pass through /STRICT.
 
     tag: ~<foo>
     assert [tag == <FoO>]
