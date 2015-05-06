@@ -184,6 +184,6 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#2](#2) Another long read, Case sensitive when it makes sense. When Words are case-sensitive, all variables need to be declared and we are back programming in C, so opposed to [#1](#1) - iArnold
 
-[#10](10), [#2](#2).  As @HF had said any of the variants of the "Outer Space" proposal opens up many doors syntax wise, and one of the benefits we can tap into is being able to specify metadata regarding the encoding of the string, or whether when passed around it is either treated as having case sensitivity or not.  But if people don't want to go down that road, I'd definitely support #2. - @iceflow19 
+[#10](10), [#2](#2).  As @HF had said any of the variants of the "Outer Space" proposal opens up many doors syntax wise, and one of the benefits we can tap into is being able to specify metadata regarding the encoding of the string, or whether when passed around it is either treated as having case sensitivity or not.  But if people don't want to go down that road, I'd definitely support #2. - iceflow19
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
