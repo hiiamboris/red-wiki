@@ -176,7 +176,7 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
-[#2] with `~=` -Johnk
+[#2](#2) with `~=` -Johnk
 
 [#10](#10) which I just added, which is based on addressing what I consider the main defect in [#2](#2) *(the only previous option listed I care for at all)*.  I strongly oppose [#1](#1), and not because of any nostalgia or thought that the boat shouldn't be rocked (of course).  I just think making words case-sensitive would be extremely misguided. - @HostileFork
 
