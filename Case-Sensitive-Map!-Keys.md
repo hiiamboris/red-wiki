@@ -149,6 +149,7 @@ Cons:
 ### Votes
 
 [#2](#2), [#1](#1), [#4](#4), [#3](#3) -WiseGenius
+
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
