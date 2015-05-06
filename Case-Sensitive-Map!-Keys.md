@@ -182,4 +182,6 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#1](#1), [#2](#2), [#6](#6)           -gnat
 
+[#2](#2) Another long read, Case sensitive when it makes sense. When Words are case-sensitive, all variables need to be declared and we are back programming in C, so opposed to [#1](#1) - iArnold
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
