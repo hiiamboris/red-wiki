@@ -143,8 +143,31 @@ Cons:
 * Code snippets probably wouldn't be able to be safely copied/pasted from one file to another.
 * Seems like overkill to get the best of both worlds, when the best is probably not what it will provide.
 
-***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
 
+#### 10
+
+Variant of [#2](#2), in order to avoid competing /relaxed/strict refinement explosions.  Already today, it's a nuisance to have to pass through /strict (a.k.a. '/case') to every general utility that might call into something like FIND or PARSE or SELECT.
+
+Alternative idea: give strings the ability to carry a "case matters or not bit".  Default to "case matters", then have something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  Retain original casing in the data, and offer functions for twiddling the bit one way or the other...so that a string created as cased can be made uncased or vice-versa.
+
+Letting the value carry the search property would probably take a load off of a lot of situations in terms of needing to pass through /STRICT.
+
+    tag: ~<foo>
+    assert [tag == <FoO>]
+    set-strict tag
+    assert [tag != <FoO>]
+
+Raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
+
+    >> make map! ["a" 10 "a" 20]
+    == make map! [
+        "a" 20
+    ]
+
+It could be possible to 
+
+
+***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
 
 
 ### Votes
@@ -152,5 +175,7 @@ Cons:
 [#2](#2), [#1](#1), [#4](#4), [#3](#3) -WiseGenius
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
+
+[#10](#10) which I just added, which is based on addressing what I consider the main defect in [#2](#2) *(the only previous option listed I care for at all)*.  I strongly oppose [#1](#1), and not because of any nostalgia or thought that the boat shouldn't be rocked (of course).  I just think making words case-sensitive would be extremely misguided. - @HostileFork
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
