@@ -43,6 +43,7 @@ Pros:
 
 Cons:
 * It's quite a radical change from Rebol, and may receive too much resistance from the already existing community.
+* Would mean that systems that generated file names or URLs to describe Red source would face problems in case-insensitive filesystems, or things like HTML anchors *(which are case insensitive, so if you tried to distinguish `http://help.red-lang.org/append#only` from `http://help.red-lang.org/append#ONLY` you cannot)*.  This is a real problem faced by Doxygen in generating filenames and URLs for C...if **FoOoBAR** and **fooObar** are semantically, then tricks would needed to generate escaped identifiers with things like **-fo-o-b-a-r** vs **foo-obar**.  *(This is actually just a epicycle of the general problems with distinction you would face in describing the names over a Skype call.)*  Being more permissive about legal characters in words, Red would be harder to invent escape strategies for than C.
 
 Note:
 * Most modern languages are like this now.
