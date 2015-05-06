@@ -164,7 +164,7 @@ Raises some questions about how to handle adding an uncased string to a map that
         "a" 20
     ]
 
-It could be possible to 
+Simple idea of a cased variant wiping out a pre-existing uncased variant or uncased wiping out all pre-existing cased variants isn't the worst thing that could be chosen, and is at least easy.
 
 
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
