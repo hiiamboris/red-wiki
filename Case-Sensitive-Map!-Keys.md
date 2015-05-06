@@ -186,4 +186,6 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#10](10), [#2](#2).  As @HF had said any of the variants of the "Outer Space" proposal opens up many doors syntax wise, and one of the benefits we can tap into is being able to specify metadata regarding the encoding of the string, or whether when passed around it is either treated as having case sensitivity or not.  But if people don't want to go down that road, I'd definitely support #2. - iceflow19
 
+[#2](2), [#4](4). - ChrisRG
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
