@@ -28,7 +28,10 @@ Conversely, one could argue that if `map!`'s `string!` keys were case-sensitive 
 Listed below are some ideas for providing case-sensitive `map!` keys. `word!`s, `string!`s and `char!`s are discussed for simplicity, but other datatypes (such as `file!`) will also need to be considered.
 
 
-<a name="1"></a>**1. Throughout the entire Red language, all datatypes (including `word!`s, `string!`s and `char!`s) are case-sensitive.**
+### Ideas
+
+#### 1
+**Throughout the entire Red language, all datatypes (including `word!`s, `string!`s and `char!`s) are case-sensitive.**
 
 Pros:
 * Provides full consistency.
@@ -53,7 +56,9 @@ A question to ask here, is “Is there anyone in the community who actually want
 * So far, most who oppose this option seem to do so based on a fear of a greater opportunity to make typos. In my opinion, this is an irrational fear which is rarely complained about in practice by those using case-sensitive languages. Such typos would be most likely to occur when using camel-case, which from what I've seen, doesn't seem to be a Rebol convention. Most seem to type all in lowercase anyway.
 * Personally, if Red were a brand new language and Rebol didn't exist, then full case-sensitivity would be my first vote, without hesitation. However, because I appreciate the history behind Red, [#2](#2) gets my first vote as seeming slightly more appropriate.
 
-<a name="2"></a>**2. Throughout the entire Red language, all `word!`s are case-insensitive but `string!`s and `char!`s are case-sensitive.**
+
+#### 2
+**Throughout the entire Red language, all `word!`s are case-insensitive but `string!`s and `char!`s are case-sensitive.**
 
 This follows from the observation that:
 * Most of the arguments for case-insensitivity seem to be for `word!`s.
@@ -84,7 +89,8 @@ Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `strin
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
 
 
-<a name="3"></a>**3. All keys in `map`! are the case-sensitive exception.**
+#### 3
+**All keys in `map`! are the case-sensitive exception.**
 
 Pros:
 * Easiest change to implement in short term.
@@ -94,32 +100,38 @@ Cons:
 * Breaks consistency, especially problematic for `word!` keys.
 
 
-<a name="4"></a>**4. `map!`'s `string!` and `char!` keys are the case-sensitive exception.**
+#### 4
+**`map!`'s `string!` and `char!` keys are the case-sensitive exception.**
 
 This is a compromise to make `word!`s consistent, but not `string!`s and `char!`s. This breaks consistency, but only for `string!` keys. The advantage this has over [#3](#3) is that `word!`s are the most important datatype to be consistent in the language, and least necessary datatype to be case-sensitive in `map!`. Unfortunately, this may be more awkward to implement than [#3](#3). Depending on how awkward, we may as well be consistent with `strings!`s and `char!`s throughout the language and go all the way with [#2](#2), which is a much better solution IMO. However, this one is less radical.
 
 
-<a name="5"></a>**5. Like `hash!` and `block!`, `map!` is case-sensitive for storage, but case-insensitive for lookup (by default).**
+#### 5
+**Like `hash!` and `block!`, `map!` is case-sensitive for storage, but case-insensitive for lookup (by default).**
 
 Then which is chosen for adding and modifying keys with a `:`? I would want to be able to use this convenient syntax for case-sensitivity. Great care needs to be taken here, and additional proposals would have to be made to ensure that the advantages of `map!` over `hash!` are not compromised. I see too many opportunities to do this badly for it to be worthwhile. It may not be impossible, but there would be more problems to solve and decisions to make. More has already been discussed about this than I care to touch on here. A separate proposal should probably be made if this were to be seriously considered.
 
 
-<a name="6"></a>**6. There are 2 datatypes: a case-sensitive `strict-map!`, and a case-insensitive `relaxed-map!` (but with better names)**
+#### 6
+**There are 2 datatypes: a case-sensitive `strict-map!`, and a case-insensitive `relaxed-map!` (but with better names)**
 
 If the reason for a `relaxed-map!` is solely consistency, then this has no advantage over [#3](#3), since the existence of a `strict-map!` breaks that consistency anyway. However, there may be other uses for `relaxed-map!` to be included.
 
 
-<a name="7"></a>**7. `map!` has a case-sensitivity property.**
+#### 7
+**`map!` has a case-sensitivity property.**
 
 The first problem I see for this is that it may desimplify the literal syntax for `map!`. Which is the default? Is information lost for the other? Or are there 2 literal non-constructive notations? If so, then this is really just [#6](#6) again.
 
 
-<a name="8"></a>**8. `map!` doesn't have `word!` keys, and all it's keys are case-sensitive.**
+#### 8
+**`map!` doesn't have `word!` keys, and all it's keys are case-sensitive.**
 
 In this scenario, if you want `word!` keys, use `object!`s. I haven't yet thought through the consequences of this one much.
 
 
-<a name="9"></a>**9. Case-sensitivity for the Red language can be set in the header.**
+#### 9
+**Case-sensitivity for the Red language can be set in the header.**
 
 Pros:
 * Could make Red a very interesting language.
