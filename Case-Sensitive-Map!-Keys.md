@@ -188,4 +188,6 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#2](2), [#4](4). - ChrisRG
 
+[#10](10), [#2](#2) - Adrian - I wonder if those who voted for #2 as first or second, before HF's refinement of that into #10, would restate their preference in light of this new option. 
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
