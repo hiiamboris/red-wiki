@@ -159,7 +159,8 @@ Retain original casing in the data, and offer functions for twiddling the bit on
     assert [tag != <FoO>] ; "cased" ANY-STRING! fails even relaxed DIFFERENT?
 
 *(Note: for why @HostileFork proposes `different?` instead of `not-equal?`, contemplate why `unless` isn't called `if-not`, and shouldn't be.)*
-Raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
+
+This concept raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
 
     >> make map! ["a" 10 "a" 20]
     == make map! [
@@ -167,6 +168,8 @@ Raises some questions about how to handle adding an uncased string to a map that
     ]
 
 Simple idea of a cased variant wiping out a pre-existing uncased variant or uncased wiping out all pre-existing cased variants isn't the worst thing that could be chosen, and is at least easy.
+
+In any event, it seems to make this a feature of strings that is uniformly applied instead of trying to wedge the characteristic into a data structure.  There could also be a "strict" word format; though notationally it would have to be something in the construction syntax to get a literal form.
 
 
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
