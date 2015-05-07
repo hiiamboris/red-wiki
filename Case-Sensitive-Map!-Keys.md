@@ -44,6 +44,7 @@ Pros:
 Cons:
 * It's quite a radical change from Rebol, and may receive too much resistance from the already existing community.
 * Would mean that systems that generated file names or URLs to describe Red source would face problems in case-insensitive filesystems, or things like HTML anchors *(which are case insensitive, so if you tried to distinguish `http://help.red-lang.org/append#only` from `http://help.red-lang.org/append#ONLY` you cannot)*.  This is a real problem faced by Doxygen in generating filenames and URLs for C...if **FoOoBAR** and **fooObar** are semantically distinct, then tricks would needed to generate escaped identifiers with things like **-fo-o-b-a-r** vs **foo-obar**.  *(This is actually just a epicycle of the general problems with distinction you would face in describing the names over a Skype call.)*  Being more permissive about legal characters in words, Red would be harder to invent escape strategies for than C.
+* Once case-sensitivity becomes meaningful for words, different modules by different authors would adopt different policies.  Some will try to encode data or meaning into casing of the same words *(`Foo` might be an object type, while `foo` is a variable, and `FOO` something else entirely...modules?  Private vs. public members?  Etc.)*  The current rarity and irrelevance of case would begin to shift, so that the arguments of why it "doesn't-matter-because-typos-are-rare" will become that the problem is precisely because they are *not* typos.  If you give people the "feature" they will use it whether you encourage it or not...which could (<sub>would</sub>) be detrimental to the ecology and unique written-language-style goals of the language.
 
 Note:
 * Most modern languages are like this now.
@@ -178,7 +179,7 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 
 [#2](#2) with `~=` -Johnk
 
-[#10](#10) which I just added, which is based on addressing what I consider the main defect in [#2](#2) *(the only previous option listed I care for at all)*.  I strongly oppose [#1](#1), and not because of any nostalgia or thought that the boat shouldn't be rocked (of course).  I just think making words case-sensitive would be extremely misguided. - @HostileFork
+[#10](#10) was inspired by [#2](#2), as an attempt to address what I consider to be the main defect in #2.  So that's my first and second choice, with no interest in the others.  I strongly oppose [#1](#1) and added notes in the "cons" section.  Canon caselessness (admittedly a complex problem) should be doubled-down upon and done correctly...vs "doing what everyone else does because it's easy".  Passing the buck would take away the important ["freedom from"](http://blog.hostilefork.com/freedom-to-and-freedom-from/) case-sensitivity that is a unique and liberating feature in a like-written-language system.  - @HostileFork
 
 [#1](#1), [#2](#2), [#6](#6)           -gnat
 
@@ -187,7 +188,6 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 [#10](10), [#2](#2).  As @HF had said any of the variants of the "Outer Space" proposal opens up many doors syntax wise, and one of the benefits we can tap into is being able to specify metadata regarding the encoding of the string, or whether when passed around it is either treated as having case sensitivity or not.  But if people don't want to go down that road, I'd definitely support #2. - iceflow19
 
 [#2](2), [#4](4). - ChrisRG
-
 [#10](10), [#2](#2) - Adrian - I wonder if those who voted for #2 as first or second, before HF's refinement of that into #10, would restate their preference in light of this new option. 
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
