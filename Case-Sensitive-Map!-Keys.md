@@ -195,4 +195,6 @@ In any event, it seems to make this a feature of strings that is uniformly appli
 
 [#10](10), [#2](#2) - Adrian - I wonder if those who voted for #2 as first or second, before HF's refinement of that into #10, would restate their preference in light of this new option. 
 
+[#1](#1)           -jacobgood1
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
