@@ -156,7 +156,7 @@ Retain original casing in the data, and offer functions for twiddling the bit on
     tag: ~<foo>
     assert [tag == <FoO>] ;-- "uncased" ANY-STRING! passes even STRICT-EQUAL?
     set-strict tag
-    assert [tag != <FoO>] ;-- "cased" ANY-STRING! will not even pass relaxed DIFFERENT?
+    assert [tag != <FoO>] ;-- "cased" ANY-STRING! fails even relaxed DIFFERENT?
 
 *(Note: for why @HostileFork proposes `different?` instead of `not-equal?`, contemplate why `unless` isn't called `if-not`, and shouldn't be.)*
 Raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
