@@ -154,10 +154,11 @@ Alternative idea which may ease this: give strings the ability to carry a "case 
 Retain original casing in the data, and offer functions for twiddling the bit one way or the other...so that a string created as cased can be made uncased or vice-versa.  Letting the value carry the search property would probably take a load off of a lot of situations in terms of needing to pass through /STRICT.
 
     tag: ~<foo>
-    assert [tag == <FoO>]
+    assert [tag == <FoO>] ;-- "uncased" ANY-STRING! passes even STRICT-EQUAL?
     set-strict tag
-    assert [tag != <FoO>]
+    assert [tag != <FoO>] ;-- "cased" ANY-STRING! will not even pass relaxed DIFFERENT?
 
+*(Note: for why @HostileFork proposes `different?` instead of `not-equal?`, contemplate why `unless` isn't called `if-not`, and shouldn't be.)*
 Raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
 
     >> make map! ["a" 10 "a" 20]
