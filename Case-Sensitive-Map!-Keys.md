@@ -518,7 +518,7 @@ For those wanting `word!`s to be treated as case-sensitive by something like a `
 
 [#1](#1)           -jacobgood1
 
-[#1](#1), [#2](#2) - Andreas - If [#2](#2) is chosen, that still leaves the door open for [#10](#10) or other improvements on the /relaxed /strict situation necessitated by pure #2.
+[#1](#1), [#2](#2) - Andreas (NB: If [#2](#2) is chosen, that still leaves the door open for [#10](#10) or other improvements on the /relaxed /strict situation necessitated by pure #2. As it stands, I think #10 still needs a lot of thorough thinking and design; too much so, for me to be able to endorse it as a preferred solution as it stands.)
 
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
