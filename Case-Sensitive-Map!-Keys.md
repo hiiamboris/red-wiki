@@ -147,18 +147,18 @@ Cons:
 
 #### 10
 
-Variant of [#2](#2), in order to avoid competing /relaxed/strict refinement explosions.  Case-awareness of words will still be necessary for dialects that want to extract that information.  So words will need to be able to be selected with `select/strict` *(suggested as better than /case)*.  Then strings--being biased the other way--will need `select/relaxed`.  It is already a nuisance to deal with the refinements as they are... because utility routines that wrap SELECT or FIND (or similar) need to propagate the `/case` refinement in their interface.
+**Like [#2](#2), but give values a "strictness bit" (true by default for strings, false by default for words).  Allow the bit to be twiddled programmatically, or expressed by alternate literal forms and construction syntaxes.  Comparisons will be done as non-strict if *either* value being compared does not have the strictness bit set...even if /STRICT refinements, ==, !==, etc are used.**
 
-Alternative idea which may ease this: give strings the ability to carry a "case matters or not bit".  Default to "case matters", then have something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  *(For such a notation, a prerequisite is Plan Minus Four or similar, such that `~"foo bar"` is not interpreted as `~ "foo bar"`.  One of the many benefits of expanded notational possibilities Plan -4 provides.  Also `~=` is much better for "approximately equal" as @rebolek points out.)*
+The motivation behind this proposal is to avoid bringing /relaxed into the picture in the matrix of comparison or find operations.  Having STRICT variants of things already explodes [an already non-trivial family of functionality](https://github.com/hostilefork/rebol-proposals/blob/e27964e835f617ecbd9a68b1e416219b6e8400b2/comparison-operators.reb#L266).  This may also be able to push back against a current nuisance for anyone trying to wrap up an operation like SELECT or FIND with having to pass the /STRICT refinement through, by letting the values themselves get a vote.
 
-Retain original casing in the data, and offer functions for twiddling the bit one way or the other...so that a string created as cased can be made uncased or vice-versa.  Letting the value carry the search property would probably take a load off of a lot of situations in terms of needing to pass through /STRICT.
+Literal forms of strings which override the default non-strict-compare might look something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  *(For such a notation, a prerequisite is Plan Minus Four or similar, such that `~"foo bar"` is not interpreted as `~ "foo bar"`.  One of the many benefits of expanded notational possibilities Plan -4 provides.)*  This would line up nicely with `~=` for a non-strict comparison.
 
     tag: ~<foo>
     assert [tag == <FoO>] ; "uncased" ANY-STRING! passes even STRICT-EQUAL?
     set-strict tag
-    assert [tag != <FoO>] ; "cased" ANY-STRING! fails even relaxed DIFFERENT?
+    assert [tag != <FoO>] ; "cased" ANY-STRING! fails "relaxed" DIFFERENT?
 
-*(Note: for why @HostileFork proposes `different?` instead of `not-equal?`, contemplate why `unless` isn't called `if-not`, and shouldn't be.)*
+*(Note: for why @HostileFork proposes a name like `different?` instead of `not-equal?`, contemplate why `unless` isn't called `if-not`.)*
 
 This concept raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
 
@@ -169,8 +169,7 @@ This concept raises some questions about how to handle adding an uncased string 
 
 Simple idea of a cased variant wiping out a pre-existing uncased variant or uncased wiping out all pre-existing cased variants isn't the worst thing that could be chosen, and is at least easy.
 
-In any event, it seems to make this a feature of strings that is uniformly applied instead of trying to wedge the characteristic into a data structure.  There could also be a "strict" word format; though notationally it would have to be something in the construction syntax to get a literal form.
-
+The floor is open for ideas on what a strict notation for WORD! might be.  A construction syntax could look like **word![= "StrictCased"]**
 
 #### 11
 **Like [#2](#2), but extended so that `map!`, hash!`, block!`, and others have a bit whose non-default setting is to allow all operations such as `select` to automatically have a `/relaxed` refinement.**
