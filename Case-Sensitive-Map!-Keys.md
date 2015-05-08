@@ -173,12 +173,12 @@ In any event, it seems to make this a feature of strings that is uniformly appli
 
 
 #### 11
-**Like [#2](#2), but extended so that ´map!´, hash!´, block!´, and others have a bit whose non-default setting is to allow all operations such as ´select´ to automatically have a ´/relaxed´ refinement.**
+**Like [#2](#2), but extended so that `map!`, hash!`, block!`, and others have a bit whose non-default setting is to allow all operations such as `select` to automatically have a `/relaxed` refinement.**
 
 In the examples below, we are assuming:
-* ´~=´ instead of ´~´ from [#2](#2).
-* ´/strict´ instead of ´/case´.
-* ´~[...]´ is a block with the bit switched to the non-default setting.
+* `~=` instead of `~` from [#2](#2).
+* `/strict` instead of `/case`.
+* `~[...]` is a block with the bit switched to the non-default setting.
 
 The following examples work just like in [#2](#2):
 
@@ -219,19 +219,19 @@ Now, we also have:
 	red>> select/relaxed ~["a" 10 "A" 20] "A"
 	== 10
 
-In the second-last example above, we are assuming we can still use ´/strict´ to override. This depends on the implementation, but would be the better choice, I think, since it gives more options/control. A ´map!´ with the bit switched to the non-default setting will effectively behave like ´map!´ from Rebol 3, except that with this choice of implementation, maybe:
-* An initial ´make map! ~["a" 10 "A" 20]´ will not lose any information, and
-* A ´/strict´ refinement can still be used to work with that information.
+In the second-last example above, we are assuming we can still use `/strict` to override. This depends on the implementation, but would be the better choice, I think, since it gives more options/control. A `map!` with the bit switched to the non-default setting will effectively behave like `map!` from Rebol 3, except that with this choice of implementation, maybe:
+* An initial `make map! ~["a" 10 "A" 20]` will not lose any information, and
+* A `/strict` refinement can still be used to work with that information.
 
 Note:
-* This extension of [#2](#2) is different from [#10](#10) in that there is a bit on ´block!´, ´hash!´, ´map!´, etc. rather than on ´string!´.
+* This extension of [#2](#2) is different from [#10](#10) in that there is a bit on `block!`, `hash!`, `map!`, etc. rather than on `string!`.
 * This is similar to [#7](#7), but more sophisticated.
 
 
 #### 12
-**Like [#11](#11), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a ´/strict´ refinement.**
+**Like [#11](#11), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting a word!´s to be treated as case-sensitive by something like a ´block!´, etc. Maybe using something like ´=[...]´ or ´==[...]´. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
+For those wanting `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
 
 
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
