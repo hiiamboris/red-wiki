@@ -149,7 +149,7 @@ Cons:
 
 **Like [#2](#2), but give values a "strictness bit" (true by default for strings, false by default for words).  Allow the bit to be twiddled programmatically, or expressed by alternate literal forms and construction syntaxes.  Comparisons will be done as non-strict if *either* value being compared does not have the strictness bit set...even if /STRICT refinements, ==, !==, etc are used.**
 
-The motivation behind this proposal is to avoid bringing /relaxed into the picture in the matrix of comparison or find operations.  Having STRICT variants of things already explodes [an already non-trivial family of functionality](https://github.com/hostilefork/rebol-proposals/blob/e27964e835f617ecbd9a68b1e416219b6e8400b2/comparison-operators.reb#L266).  This may also be able to push back against a current nuisance for anyone trying to wrap up an operation like SELECT or FIND with having to pass the /STRICT refinement through, by letting the values themselves get a vote.
+The motivation behind this proposal is to avoid bringing /relaxed into the picture in the matrix of comparison or find operations.  Having STRICT variants of things already explodes [a non-trivial family of functionality](https://github.com/hostilefork/rebol-proposals/blob/e27964e835f617ecbd9a68b1e416219b6e8400b2/comparison-operators.reb#L266).  This may also be able to push back against a current nuisance for anyone trying to wrap up an operation like SELECT or FIND with having to pass the /STRICT refinement through, by letting the values themselves get a vote.
 
 Literal forms of strings which override the default non-strict-compare might look something like `~"foo bar"` and `~<div>` for creating uncased strings/tags/etc.  *(For such a notation, a prerequisite is Plan Minus Four or similar, such that `~"foo bar"` is not interpreted as `~ "foo bar"`.  One of the many benefits of expanded notational possibilities Plan -4 provides.)*  This would line up nicely with `~=` for a non-strict comparison.
 
@@ -169,7 +169,7 @@ This concept raises some questions about how to handle adding an uncased string 
 
 Simple idea of a cased variant wiping out a pre-existing uncased variant or uncased wiping out all pre-existing cased variants isn't the worst thing that could be chosen, and is at least easy.
 
-The floor is open for ideas on what a strict notation for WORD! might be.  A construction syntax could look like **word![= "StrictCased"]**
+The floor is open for ideas on what a strict notation for WORD! might be.  A construction syntax could look like `word![= "StrictCased"]`
 
 #### 11
 **Like [#2](#2), but extended so that `map!`, hash!`, block!`, and others have a bit whose non-default setting is to allow all operations such as `select` to automatically have a `/relaxed` refinement.**
