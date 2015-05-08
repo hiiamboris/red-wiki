@@ -172,12 +172,74 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 In any event, it seems to make this a feature of strings that is uniformly applied instead of trying to wedge the characteristic into a data structure.  There could also be a "strict" word format; though notationally it would have to be something in the construction syntax to get a literal form.
 
 
+#### 11
+**Like [#2](#2), but extended so that ´map!´, hash!´, block!´, and others have a bit whose non-default setting is to allow all operations such as ´select´ to automatically have a ´/relaxed´ refinement.**
+
+In the examples below, we are assuming:
+* ´~=´ instead of ´~´ from [#2](#2).
+* ´/strict´ instead of ´/case´.
+* ´~[...]´ is a block with the bit switched to the non-default setting.
+
+The following examples work just like in [#2](#2):
+
+	red>> "a" = "A"
+	== false
+	red>> "a" == "A"
+	== false
+	red>> "a" ~= "A"
+	== true
+
+	red>> 'a = 'A
+	== true
+	red>> 'a == 'A
+	== false
+	red>> 'a ~= 'A
+	== true
+
+	red>> select ["a" 10 "A" 20] "A"
+	== 20
+	red>> select/strict ["a" 10 "A" 20] "A"
+	== 20
+	red>> select/relaxed ["a" 10 "A" 20] "A"
+	== 10
+
+	red>> select [a 10 A 20] 'A
+	== 10
+	red>> select/strict [a 10 A 20] 'A
+	== 20
+	red>> select/relaxed [a 10 A 20] 'A
+	== 10
+
+Now, we also have:
+
+	red>> select ~["a" 10 "A" 20] "A"
+	== 10
+	red>> select/strict ~["a" 10 "A" 20] "A"
+	== 20
+	red>> select/relaxed ~["a" 10 "A" 20] "A"
+	== 10
+
+In the second-last example above, we are assuming we can still use ´/strict´ to override. This depends on the implementation, but would be the better choice, I think, since it gives more options/control. A ´map!´ with the bit switched to the non-default setting will effectively behave like ´map!´ from Rebol 3, except that with this choice of implementation, maybe:
+* An initial ´make map! ~["a" 10 "A" 20]´ will not lose any information, and
+* A ´/strict´ refinement can still be used to work with that information.
+
+Note:
+* This extension of [#2](#2) is different from [#10](#10) in that there is a bit on ´block!´, ´hash!´, ´map!´, etc. rather than on ´string!´.
+* This is similar to [#7](#7), but more sophisticated.
+
+
+#### 12
+**Like [#11](#11), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a ´/strict´ refinement.**
+
+For those wanting a word!´s to be treated as case-sensitive by something like a ´block!´, etc. Maybe using something like ´=[...]´ or ´==[...]´. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
+
+
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
 
 
 ### Votes
 
-[#2](#2), [#1](#1), [#4](#4), [#3](#3) -WiseGenius
+[#11](#11), [#12](#12), [#2](#2), [#1](#1), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
