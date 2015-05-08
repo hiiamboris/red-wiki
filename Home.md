@@ -22,3 +22,4 @@ Future:
 * [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
 * [Issues Relating to TO] (https://github.com/red/red/wiki/To-Issues)
 * [Case Sensitive Map! Keys] (https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
+* [Improved console completion support] (https://github.com/red/red/issues/1165)
