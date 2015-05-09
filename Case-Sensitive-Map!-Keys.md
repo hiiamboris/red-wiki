@@ -86,10 +86,41 @@ Most of the arguments for both `word!`s and `string!`s having the same case sens
 
 Note:
 * Something like `~` might be useful for `char!`s anyway.
+* As many have pointed out, `~=` is a better suggestion for this use than `~`.
 * The `map!` problem may simply be a symptom of a deeper problem with trying to stay consistent with a flawed system. I personally think this proposal is a more powerful system to stay consistent with.
 Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `string!`s.
 * New words and refinements would probably need to be added to `parse`.
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
+
+Examples (using `~=` instead of `~`, and `/strict` instead of `/case`):
+
+	red>> "a" = "A"
+	== false
+	red>> "a" == "A"
+	== false
+	red>> "a" ~= "A"
+	== true
+
+	red>> 'a = 'A
+	== true
+	red>> 'a == 'A
+	== false
+	red>> 'a ~= 'A
+	== true
+
+	red>> select ["a" 10 "A" 20] "A"
+	== 20
+	red>> select/strict ["a" 10 "A" 20] "A"
+	== 20
+	red>> select/relaxed ["a" 10 "A" 20] "A"
+	== 10
+
+	red>> select [a 10 A 20] 'A
+	== 10
+	red>> select/strict [a 10 A 20] 'A
+	== 20
+	red>> select/relaxed [a 10 A 20] 'A
+	== 10
 
 
 #### 3
@@ -173,6 +204,7 @@ Simple idea of a cased variant wiping out a pre-existing uncased variant or unca
 The floor is open for ideas on what a strict notation for WORD! might be.  A construction syntax could look like `word![= "StrictCased"]`
 
 #### 11
+##### 11a
 **Like [#2](#2), but extended so that `map!`, hash!`, block!`, and others have a bit whose non-default setting is to allow all operations such as `select` to automatically have a `/relaxed` refinement.**
 
 In the examples below, we are assuming:
@@ -180,58 +212,65 @@ In the examples below, we are assuming:
 * `/strict` instead of `/case`.
 * `~[...]` is a block with the bit switched to the non-default setting.
 
-The following examples work just like in [#2](#2):
-
-	red>> "a" = "A"
-	== false
-	red>> "a" == "A"
-	== false
-	red>> "a" ~= "A"
-	== true
-
-	red>> 'a = 'A
-	== true
-	red>> 'a == 'A
-	== false
-	red>> 'a ~= 'A
-	== true
-
-	red>> select ["a" 10 "A" 20] "A"
-	== 20
-	red>> select/strict ["a" 10 "A" 20] "A"
-	== 20
-	red>> select/relaxed ["a" 10 "A" 20] "A"
-	== 10
-
-	red>> select [a 10 A 20] 'A
-	== 10
-	red>> select/strict [a 10 A 20] 'A
-	== 20
-	red>> select/relaxed [a 10 A 20] 'A
-	== 10
-
-Now, we also have:
+Now, besides all the examples in [#2](#2), we also have:
 
 	red>> select ~["a" 10 "A" 20] "A"
 	== 10
+
+The question remains whether the `/strict` refinement will override the bias of the collection:
+
 	red>> select/strict ~["a" 10 "A" 20] "A"
 	== 20
-	red>> select/relaxed ~["a" 10 "A" 20] "A"
-	== 10
 
-In the second-last example above, we are assuming we can still use `/strict` to override. This depends on the implementation, but would be the better choice, I think, since it gives more options/control. A `map!` with the bit switched to the non-default setting will effectively behave like `map!` from Rebol 3, except that with this choice of implementation, maybe:
-* An initial `make map! ~["a" 10 "A" 20]` will not lose any information, and
-* A `/strict` refinement can still be used to work with that information.
+Depending on how it's implemented, this may be the same question as has been asked about mixing refinements in [#2](#2):
+
+	red>> select/relaxed/strict ["a" 10 "A" 20] "A"
+	== 20
+
+If `/strict` **does** override a relaxed bias (as in both the examples above):
+* A `map!` with the bit switched to the non-default setting will effectively behave like `map!` from Rebol 3, except that:
+	* An initial `make map! ~["a" 10 "A" 20]` should not lose any information, and
+	* A `/strict` refinement can still be used to work with that information.
+* This gives `/strict` a little more utility.
+* We might be tempted to think about adding yet **another** refinement to override it back to the default, rather than all the way to strict, and that's getting a bit rediculous!
+
+If `/strict` **doesn't** override a relaxed bias:
+* A `map!` with the bit switched to the non-default setting will effectively behave like `map!` from Rebol 3, without exception.
+* This could be a big gotcha!
+* If we have no interest in **ever** overriding (even default bias to `/strict`), we should seriously consider going all the way with [#12b](#12b).
 
 Note:
 * This extension of [#2](#2) is different from [#10](#10) in that there is a bit on `block!`, `hash!`, `map!`, etc. rather than on `string!`.
-* This is similar to [#7](#7), but more sophisticated.
+* This is similar to [#7](#7), but more sophisticated, since it is based on [#2](#2).
+
+
+##### 11b
+**[#11a](#11a) without a `/relaxed` refinement.**
+
+If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need a `/relaxed` refinement, since:
+
+	red>> equal?    select/relaxed ["a" 10 "A" 20] "A"    select ~["a" 10 "A" 20] "A"
+	== true
+
+...and since this is redundant:
+
+	red>> select/relaxed ~["a" 10 "A" 20] "A"
+	== 10
+
+This way, we don't have to worry about what happens when `/relaxed` and `/strict` (or `/case`) refinements are mixed together.
 
 
 #### 12
-**Like [#11](#11), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
+##### 12a
+**Like [#11a](#11a), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
+For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
+
+##### 12b
+**[#12a](#12a) without `/strict` (or `/case`) or `/relaxed` refinements.**
+
+If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need `/strict` (or `/case`) or `/relaxed` refinements. Then we don't have to worry about whether the refinement overrides the set bias of the collection, or what happens when refinements are mixed together.
+
 
 
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
