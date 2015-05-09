@@ -300,6 +300,6 @@ If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used on
 
 [#1](#1), [#2](#2) - Andreas (NB: If [#2](#2) is chosen, that still leaves the door open for [#10](#10) or other improvements on the /relaxed /strict situation necessitated by pure #2. As it stands, I think #10 still needs a lot of thorough thinking and design; too much so, for me to be able to endorse it as a preferred solution as it stands.)
 
-[#2] Arie. Alternatively consider adding a different datatype for case sensitive csstring! / csmap! Under the hood it would work the same I guess.
+[#2](#2), Arie. Alternatively consider adding a different datatype for case sensitive csstring! / csmap! Under the hood it would work the same I guess.
 
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
