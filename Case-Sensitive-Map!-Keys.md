@@ -254,7 +254,7 @@ Note:
 
 If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need a `/relaxed` refinement, since:
 
-	red>> equal?    select/relaxed ["a" 10 "A" 20] "A"    select ~["a" 10 "A" 20] "A"
+	red>> equal?  select/relaxed ["a" 10 "A" 20] "A"  select ~["a" 10 "A" 20] "A"
 	== true
 
 ...and since this is redundant:
@@ -273,7 +273,7 @@ Cons (in addition to [#11a](#11a)):
 ##### 12a
 **Like [#11a](#11a), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting the option for `word!`s to be treated as case-sensitive in `map!`s, `hash!`s, `block!`s, etc.
+For those wanting the option for `word!`s to be treated as case-sensitive in `map!`s, `hash!`s, `block!`s, etc. Maybe using something like `=[...]` to contruct a strict-biassed `block!`, for example.
 
 Pros (in addition to [#11a](#11a)):
 * Allows a `map!` to optionally hold multiple `word!` keys distinguished only by case without the cons of [#9](#9). *(This is the back-breaking straw which allowed [#12](#12) to overtake [#11](#11) as my new top vote.)*
@@ -283,8 +283,7 @@ Cons:
 * Makes `map!`s, `hash!`s, `block!`s, etc. more than a “bit” bigger.
 
 Notes:
-* Maybe using something like `≣[...]`, `=[...]`, `==[...]` or something much much better to contruct strict-biassed `block!`s. The question of syntax here is analogous to what to use for `word!`s in [#10](#10).
-* One way this could work internally is if `map!`s, `hash!`s, `block!`s, etc. have two "strictness bits": the first one for `string!`s, and the second one for `word!`s. In this order, `[..]` would have "strictness bits" `[true false]`, `~[...]` would have bits `[false false]`, something like `≣[...]` would be `[true true]`, and the bit combination `[false true]` couldn't exist.
+* One way this could work internally is if `map!`s, `hash!`s, `block!`s, etc. have two "strictness bits": the first one for `string!`s, and the second one for `word!`s. In this order, `[..]` would have "strictness bits" `[true false]` (and would use `=`), `~[...]` would have bits `[false false]` (and would use `~=`), something like `=[...]` would be `[true true]` (and would use `==`), and the bit combination `[false true]` couldn't exist.
 * This implies that `object!`s should also have a bit to allow them to have case-sensitive `word!`s. However, `object!`s would only need a single bit, because relaxed-biased `object!`s would behave like ordinary `object!`s since they only have `word!`s as keys anyway. Perhaps the relaxed syntax could optionally be used to construct an `object!`, but would return an ordinary `object!` with no difference. Likewise, a `/relaxed` refinement could be used on an `object!`, but would be redundant.
 
 ##### 12b
