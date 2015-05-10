@@ -90,7 +90,7 @@ Note:
 Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `string!`s.
 * New words and refinements would probably need to be added to `parse`.
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
-* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` for historical context for the comments in the [votes](#Votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. Disclaimers were becoming too unwieldly, so I've changed it to `~=` and I've added this note, hoping it substitutes for the context of the comments in the [votes](#Votes).
+* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because I expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` to keep historical context for the comments in the [votes](#Votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. The need for constant clarification when referring to [#2](#2) was becoming too unwieldly. Therefore, I've changed `~` to `~=` in the main suggestion. I've also added this note, hoping it substitutes for the context of the comments in the [votes](#Votes).
 
 
 Examples:
@@ -273,14 +273,19 @@ Cons (in addition to [#11a](#11a)):
 ##### 12a
 **Like [#11a](#11a), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]`, `==[...]` or something better.
+For those wanting the option for `word!`s to be treated as case-sensitive in `map!`s, `hash!`s, `block!`s, etc.
 
 Pros (in addition to [#11a](#11a)):
-* Allows a `map!` to optionally hold multiple `word!` keys distinguished only by case without the cons of [#9](#9). *(This is the straw which allowed [#12](#12) to overtake as [#11](#11) my new top vote.)*
+* Allows a `map!` to optionally hold multiple `word!` keys distinguished only by case without the cons of [#9](#9). *(This is the back-breaking straw which allowed [#12](#12) to overtake [#11](#11) as my new top vote.)*
 * Might be useful for case-sensitive dialects?
 
 Cons:
 * Makes `map!`s, `hash!`s, `block!`s, etc. more than a “bit” bigger.
+
+Notes:
+* Maybe using something like `≣[...]`, `=[...]`, `==[...]` or something much much better to contruct strict-biassed `block!`s. The question of syntax here is analogous to what to use for `word!`s in [#10](#10).
+* One way this could work internally is if `map!`s, `hash!`s, `block!`s, etc. have two "strictness bits": the first one for `string!`s, and the second one for `word!`s. In this order, `[..]` would have "strictness bits" `[true false]`, `~[...]` would have bits `[false false]`, something like `≣[...]` would be `[true true]`, and the bit combination `[false true]` couldn't exist.
+* This implies that `object!`s should also have a bit to allow them to have case-sensitive `word!`s. However, `object!`s would only need a single bit, because relaxed-biased `object!`s would behave like ordinary `object!`s since they only have `word!`s as keys anyway. Perhaps the relaxed syntax could optionally be used to construct an `object!`, but would return an ordinary `object!` with no difference. Likewise, a `/relaxed` refinement could be used on an `object!`, but would be redundant.
 
 ##### 12b
 **[#12a](#12a) without `/strict` (or `/case`) or `/relaxed` refinements.**
