@@ -174,7 +174,8 @@ Cons:
 * A default and inheritance rules would need to be decided upon.
 * Headers would need to be included with snippets of example code.
 * Code snippets probably wouldn't be able to be safely copied/pasted from one file to another.
-* Seems like overkill to get the best of both worlds, when the best is probably not what it will provide.
+* Cannot switch between one way or the other within the same file. All `map!`s, etc. must be one way within a file.
+* Seems like overkill to get the best of both worlds, when that is probably not what it will provide. Rather than best of both in one language, this effectively splits both worlds into 2 languages.
 
 
 #### 10
@@ -264,7 +265,7 @@ This way, we don't have to worry about what happens when `/relaxed` and `/strict
 ##### 12a
 **Like [#11a](#11a), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#7](#7).
+For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#9](#9).
 
 ##### 12b
 **[#12a](#12a) without `/strict` (or `/case`) or `/relaxed` refinements.**
