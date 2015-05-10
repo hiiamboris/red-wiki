@@ -51,13 +51,13 @@ Note:
 * Most modern languages are like this now.
 Scheme effectively went through this change in the revision from R<sup>5</sup>RS to R<sup>6</sup>RS. In this case, however, the community seemed to request it.
 http://www.r6rs.org/final/html/r6rs-rationale/r6rs-rationale-Z-H-2.html#node_toc_node_sec_4.1.2
-* May need to introduce something like `~` from [#2](#2) below.
-* `select`'s `/case` refinement would need to be replaced with something like `/relaxed`, etc.
+* May need to introduce something like `~=` from [#2](#2) below.
+* `select`'s `/case` refinement would need to be dropped as useless, and something like `/relaxed` would need to be added, etc.
 * What new word/s or refinement/s would have to be added to `parse`? Should such be already added anyway?
 * So far, most who prefer this option seem to do so on the grounds of consistency and easier implementation.
 A question to ask here, is “Is there anyone in the community who actually wants case-sensitive words because they miss them from other languages and want to use them?”
 * So far, most who oppose this option seem to do so based on a fear of a greater opportunity to make typos. In my opinion, this is an irrational fear which is rarely complained about in practice by those using case-sensitive languages. Such typos would be most likely to occur when using camel-case, which from what I've seen, doesn't seem to be a Rebol convention. Most seem to type all in lowercase anyway.
-* Personally, if Red were a brand new language and Rebol didn't exist, then full case-sensitivity would be my first vote, without hesitation. However, because I appreciate the history behind Red, [#2](#2) gets my first vote as seeming slightly more appropriate.
+* Personally, if Red were a brand new language and Rebol didn't exist, then full case-sensitivity would be my first vote. However, because I appreciate the history behind Red, [#2](#2) (and some of its varients) gets my first vote as seeming more appropriate.
 
 
 #### 2
@@ -67,7 +67,7 @@ This follows from the observation that:
 * Most of the arguments for case-insensitivity seem to be for `word!`s.
 * Most of the arguments for case-sensitivity seem to be for `string!`s.
 
-One possible way to achieve this might be if `=` were strict for `string!`s and relaxed for `word!`s. Then `==` would be strict for both, and something like `~` would be relaxed for both. Then, for example, `select` would use `=`, `select/case` (or `select/strict`) would use `==`, while something like `select/relaxed` could use `~`.
+One possible way to achieve this might be if `=` were strict for `string!`s and relaxed for `word!`s. Then `==` would be strict for both, and something like `~=` (previously `~`, see last note below) would be relaxed for both. Then, for example, `select` would use `=`, `select/strict` (replacing `select/case`) would use `==`, while something like `select/relaxed` could use `~=`.
 This could be seen as either more or less radical than [#1](#1). It could also be seen as either more or less in line with what Rebol currently is than [#1](#1).
 
 Most of the arguments for both `word!`s and `string!`s having the same case sensitivity are from consistency. However, consider:
@@ -85,14 +85,15 @@ Most of the arguments for both `word!`s and `string!`s having the same case sens
 * `'a = "a"` is `false`.
 
 Note:
-* Something like `~` might be useful for `char!`s anyway.
-* As many have pointed out, `~=` is a better suggestion for this use than `~`.
+* Something like `~=` might be useful for `char!`s anyway.
 * The `map!` problem may simply be a symptom of a deeper problem with trying to stay consistent with a flawed system. I personally think this proposal is a more powerful system to stay consistent with.
 Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `string!`s.
 * New words and refinements would probably need to be added to `parse`.
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
+* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` for historical context for the comments in the [votes](#Votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. Disclaimers were becoming too unwieldly, so I've changed it to `~=` and I've added this note, hoping it substitutes for the context of the comments in the [votes](#Votes).
 
-Examples (using `~=` instead of `~`, and `/strict` instead of `/case`):
+
+Examples:
 
 	red>> "a" = "A"
 	== false
@@ -208,10 +209,7 @@ The floor is open for ideas on what a strict notation for WORD! might be.  A con
 ##### 11a
 **Like [#2](#2), but extended so that `map!`, hash!`, block!`, and others have a bit whose non-default setting is to allow all operations such as `select` to automatically have a `/relaxed` refinement.**
 
-In the examples below, we are assuming:
-* `~=` instead of `~` from [#2](#2).
-* `/strict` instead of `/case`.
-* `~[...]` is a block with the bit switched to the non-default setting.
+In the examples below, we are assuming a possible notation in which `~[...]` represents a block with the bit switched to the non-default setting.
 
 Now, besides all the examples in [#2](#2), we also have:
 
@@ -240,6 +238,12 @@ If `/strict` **doesn't** override a relaxed bias:
 * This could be a big gotcha!
 * If we have no interest in **ever** overriding (even default bias to `/strict`), we should seriously consider going all the way with [#12b](#12b).
 
+Pros:
+* Anticipating that `map!`s, `hash!`s, `block!`s, etc. are likely to only be used one way or the other throughout their lifetimes. This makes use convenient without having to keep specifying a `/relaxed` refinement for the same collection.
+
+Cons:
+* Makes `map!`s, `hash!`s, `block!`s, etc. a “bit” bigger.
+
 Note:
 * This extension of [#2](#2) is different from [#10](#10) in that there is a bit on `block!`, `hash!`, `map!`, etc. rather than on `string!`.
 * This is similar to [#7](#7), but more sophisticated, since it is based on [#2](#2).
@@ -258,19 +262,38 @@ If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used on
 	red>> select/relaxed ~["a" 10 "A" 20] "A"
 	== 10
 
-This way, we don't have to worry about what happens when `/relaxed` and `/strict` (or `/case`) refinements are mixed together.
+Pros (in addition to [#11a](#11a)):
+* No need to worry about what happens when `/relaxed` and `/strict` refinements are mixed together.
+
+Cons (in addition to [#11a](#11a)):
+* Cannot use `/relaxed` spontaneously on a collection set to default, without making a non-default copy of it. *(I personally can't imagine any scenarios requiring this, though.)*
 
 
 #### 12
 ##### 12a
 **Like [#11a](#11a), but extended so that rather than use a simple bit, such datatypes could also be biassed to use a `/strict` refinement.**
 
-For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]` or `==[...]`. Not sure how useful this would be. Maybe for case-sensitive dialects? Doesn't seem to have the cons of [#9](#9).
+For those wanting the option for `word!`s to be treated as case-sensitive by something like a `block!`, etc. Maybe using something like `=[...]`, `==[...]` or something better.
+
+Pros (in addition to [#11a](#11a)):
+* Allows a `map!` to optionally hold multiple `word!` keys distinguished only by case without the cons of [#9](#9). *(This is the straw which allowed [#12](#12) to overtake as [#11](#11) my new top vote.)*
+* Might be useful for case-sensitive dialects?
+
+Cons:
+* Makes `map!`s, `hash!`s, `block!`s, etc. more than a “bit” bigger.
 
 ##### 12b
 **[#12a](#12a) without `/strict` (or `/case`) or `/relaxed` refinements.**
 
-If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need `/strict` (or `/case`) or `/relaxed` refinements. Then we don't have to worry about whether the refinement overrides the set bias of the collection, or what happens when refinements are mixed together.
+If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need `/strict` (or `/case`) or `/relaxed` refinements.
+
+Pros (in addition to [#12a](#12a)):
+* No need to worry about what happens when `/relaxed` and `/strict` refinements are mixed together.
+* No need to worry about whether the refinement overrides the set bias of the collection.
+
+Cons (in addition to [#12a](#12a)):
+* Cannot use `/relaxed` or `/strict` (or `/case`) refinements spontaneously on a collection, without making a differently biased copy of it. *(I personally can't imagine scenarios requiring this, though.)*
+
 
 
 
@@ -279,7 +302,7 @@ If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used on
 
 ### Votes
 
-[#11](#11), [#12](#12), [#2](#2), [#1](#1), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
+[#12](#12), [#11](#11), [#2](#2), [#1](#1), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
