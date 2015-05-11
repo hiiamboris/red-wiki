@@ -1,0 +1,1 @@
+Organization of mezzanines is TBD. The main proposal, right now, is to use gists for individual or groups of mezzanines.
