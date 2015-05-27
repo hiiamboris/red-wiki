@@ -90,7 +90,7 @@ Note:
 Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `string!`s.
 * New words and refinements would probably need to be added to `parse`.
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
-* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because I expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` to keep historical context for the comments in the [votes](#Votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. The need for constant clarification when referring to [#2](#2) was becoming too unwieldly. Therefore, I've changed `~` to `~=` in the main suggestion. I've also added this note, hoping it substitutes for the context of the comments in the [votes](#Votes).
+* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because I expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` to keep historical context for the comments in the [votes](#votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. The need for constant clarification when referring to [#2](#2) was becoming too unwieldly. Therefore, I've changed `~` to `~=` in the main suggestion. I've also added this note, hoping it substitutes for the context of the comments in the [votes](#votes).
 
 
 Examples:
@@ -156,7 +156,7 @@ If the reason for a `relaxed-map!` is solely consistency, then this has no advan
 #### 7
 **`map!` has a case-sensitivity property.**
 
-The first problem I see for this is that it may desimplify the literal syntax for `map!`. Which is the default? Is information lost for the other? Or are there 2 literal non-constructive notations? If so, then this is really just [#6](#6) again.
+The first problem I see for this is that it may desimplify the literal syntax for `map!`. Which is the default? Is information lost for the other? Or are there 2 literal non-constructive notations? If so, then how different is this from [#6](#6)?.
 
 
 #### 8
@@ -246,7 +246,7 @@ Cons:
 
 Note:
 * This extension of [#2](#2) is different from [#10](#10) in that there is a bit on `block!`, `hash!`, `map!`, etc. rather than on `string!`.
-* This is similar to [#7](#7), but more sophisticated, since it is based on [#2](#2).
+* This is similar to [#7](#7), but more sophisticated, since it is based on [#2](#2). Also, unlike [#7](#7), it also affects other datatypes such as `hash!`s and `block!`s.
 
 
 ##### 11b
@@ -299,6 +299,21 @@ Cons (in addition to [#12a](#12a)):
 * Cannot use `/relaxed` or `/strict` (or `/case`) refinements spontaneously on a collection, without making a differently biased copy of it. *(I personally can't imagine scenarios requiring this, though.)*
 
 
+#### 13
+##### 13a
+**`map!`, hash!`, block!`, and others have a case-sensitivity bit whose default setting is to be case-insensitive.**
+
+Notes:
+* This is like [#11a](#11a) and [#12a](#12a), except that it isn't based on [#2](#2), but rather on the way Rebol works now.
+* This is similar to [#7](#7), except that it also affects other datatypes such as `hash!`s and `block!`s.
+* If unsure about (or not ready for) the radical changes of [#2](#2) and it's derivatives, this seems like an easy way to get some of the advantages of [#11](#11) and [#12](#12) without such a radical change, and without breaking much if deciding to switch to one of them later. Maybe even build up to this one too by implementing [#6](#6) and then [#7](#7) first. This would give `map!` full utility in the meantime.
+* If this were the final destination, and if `char!`s were also case-insensitive by default, there would be no need for `~=`.
+
+
+##### 13b
+**[#13a](#13a) without `/strict` (or `/case`) or `/relaxed` refinements.**
+
+Pros and cons: Same ones as [#12b](#12b), but without those of [#2](#2).
 
 
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
@@ -306,7 +321,7 @@ Cons (in addition to [#12a](#12a)):
 
 ### Votes
 
-[#12](#12), [#11](#11), [#2](#2), [#1](#1), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
+[#12](#12), [#11](#11), [#2](#2), [#1](#1), [#13](#13), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
