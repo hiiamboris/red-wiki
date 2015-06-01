@@ -90,7 +90,7 @@ Note:
 Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `string!`s.
 * New words and refinements would probably need to be added to `parse`.
 * Personal note: This is the behaviour I expected when I first used Rebol, initially thinking `=` had a bug until I discovered `==`.
-* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because I expected it to have resistence and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` to keep historical context for the comments in the [votes](#votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. The need for constant clarification when referring to [#2](#2) was becoming too unwieldly. Therefore, I've changed `~` to `~=` in the main suggestion. I've also added this note, hoping it substitutes for the context of the comments in the [votes](#votes).
+* **`~=` rather than `~`:** When I first suggested [#2 in chat](http://chat.stackoverflow.com/transcript/message/21852929#21852929), I was going to suggest `~=` as the `relaxed-equal?` infix operator proposed here, but I wrote `~` because it was easier to type, it was available and I expected someone to come up with an entirely better idea or implementation. When rewriting it here above, I initially kept it as `~` because I expected it to have resistance and wanted to see what others would suggest as a better name. Without any prompting, many have independently pointed out that `~=` is a better choice. I tried to continue to leave it unchanged as `~` to keep historical context for the comments in the [votes](#votes), but then [#10](#10), [#11](#11) and [#12](#12) were added. Each additional idea is an extension of [#2](#2), each one uses `~=` for `relaxed-equal?` and each one additionally uses `~` for something else. The need for constant clarification when referring to [#2](#2) was becoming too unwieldy. Therefore, I've changed `~` to `~=` in the main suggestion. I've also added this note, hoping it substitutes for the context of the comments in the [votes](#votes).
 
 
 Examples:
@@ -144,8 +144,15 @@ This is a compromise to make `word!`s consistent, but not `string!`s and `char!`
 #### 5
 **Like `hash!` and `block!`, `map!` is case-sensitive for storage, but case-insensitive for lookup (by default).**
 
-Then which is chosen for adding and modifying keys with a `:`? I would want to be able to use this convenient syntax for case-sensitivity. Great care needs to be taken here, and additional proposals would have to be made to ensure that the advantages of `map!` over `hash!` are not compromised. I see too many opportunities to do this badly for it to be worthwhile. It may not be impossible, but there would be more problems to solve and decisions to make. More has already been discussed about this than I care to touch on here. A separate proposal should probably be made if this were to be seriously considered.
+Pros:
+* Most compatable with Rebol. Even more compatable than Rebol 3's current `map!`.
 
+Cons:
+* Like `hash!` and `block!`, using `map!` for case-sensitive data misses out on the syntactic sugar of path syntax. However, this doesn't hurt utility, and a new proposal could always be made to add a case-sensitive option for path.
+* Assuming that the case sensitivity of a particular set of data would remain the same throughout its lifetime, having to remember which syntax to use when accessing which set of data **might** be an opportunity for human error. This is some of the reasoning behind [#6](#6), [#7](#7), [#11](#11), [#12](#12) and [#13](#13).
+
+Note:
+* The comments which were originally written here have been removed since they were a mistake, and were intended for an accidentally skipped idea which has now been added as [#14](#14).
 
 #### 6
 **There are 2 datatypes: a case-sensitive `strict-map!`, and a case-insensitive `relaxed-map!` (but with better names)**
@@ -316,12 +323,20 @@ Notes:
 Pros and cons: Same ones as [#12b](#12b), but without those of [#2](#2).
 
 
+#### 14
+**There is no `map!`. `hash!` and `block!` have an attribute to set their default skip value. When attempting to change the value of a non-existent key, it is appended.**
+
+Cons (in addition to [#5](#5)):
+* This type of "map" has properties and functions exceeding its intended use, which could be a source for bugs.
+* Great care needs to be taken here, and additional proposals would have to be made to ensure that the advantages of `map!` over `hash!` are not compromised. I see too many opportunities to do this badly for it to be worthwhile. It may not be impossible, but there would be more problems to solve and decisions to make. More has already been discussed about this than I care to touch on here. A separate proposal should probably be made if this were to be seriously considered.
+
+
 ***** PLEASE INSERT OTHER UNIQUE IDEAS ABOVE HERE *****
 
 
 ### Votes
 
-[#12](#12), [#11](#11), [#2](#2), [#1](#1), [#13](#13), [#10](#10), [#4](#4), [#7](#7), [#6](#6), [#3](#3) -WiseGenius
+[#12](#12), [#11](#11), [#2](#2), [#1](#1), [#13](#13), [#7](#7), [#5](#5), [#10](#10), [#4](#4), [#6](#6), [#3](#3) -WiseGenius
 
 [#1](#1), [#2](#2), [#6](#6)           -Rebolek (also, `~` should be `~=` IMO)
 
