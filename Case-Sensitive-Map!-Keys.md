@@ -360,4 +360,6 @@ Cons (in addition to [#5](#5)):
 
 [#2](#2), Arie. Alternatively consider adding a different datatype for case sensitive csstring! / csmap! Under the hood it would work the same I guess.
 
+[#1](#1) and if not [#2](#2) - Peter Wood - Case insensitivity may be great in an insular environment but becomes a barrier in a more open environment. 
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
