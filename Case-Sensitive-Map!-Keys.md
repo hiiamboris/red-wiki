@@ -362,4 +362,6 @@ Cons (in addition to [#5](#5)):
 
 [#1](#1) and if not [#2](#2) - Peter Wood - Case insensitivity may be great in an insular environment but becomes a barrier in a more open environment. 
 
+[#1](#1), [#2](#2) - Oldes
+
 ***** PLEASE ADD YOUR VOTES ON A LINE ABOVE HERE, IN DESCENDING ORDER OF PREFERENCE, WITH NO GUARANTEE THEY WILL BE COUNTED *****
