@@ -447,12 +447,12 @@ header/type=39
 
 ### Map!
 ```
-Default: header (4), head (4), length (4), ...
+Default: header (4), length (4), ...
 Compact: TBD
 
 header/type=40
 ```
-Same encoding rules as block!.
+The `length` field contains the number of elements (keys + values) to be stored in the map. The map elements simply follow the length definition, no separator or end delimiter is required.
 
 ### Reference!
 ```
