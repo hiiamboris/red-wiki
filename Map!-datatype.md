@@ -14,6 +14,7 @@ Creating a map can be done using the literal form or using `make map! <spec>` wh
     a: 1
     b: 2
 )
+
 make map! [a 1 'b 2 "c" 3]
 == #(
     a: 1
@@ -21,7 +22,7 @@ make map! [a 1 'b 2 "c" 3]
     "c" 3
 )
 ```
-If the key value is of **any-word!** type, the key type is converted to **set-word!** in the map. Accessing words keys can be done using **word!** values, providing a **set-word!** key is not necessary.
+If the key is of **any-word!** type, the key type is converted to **set-word!** in the map. Accessing words keys can be done using **word!** values, providing a **set-word!** key is not necessary.
 
 Like hash! and block!, map! is case-sensitive for storage, but case-insensitive for lookup, by default.
 
