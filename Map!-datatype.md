@@ -2,7 +2,9 @@ Literal syntax:
 ```
     #(<name> <value>...)
 
-   <name>  : hashed key, accepted types are: any-word!, any-string!, integer!, float!, char!
+   <name>  : hashed key, accepted types are:
+                 any-word!, any-string!, integer!, float!, char!
+
    <value> : any-type! except none!
 ```
 Creating a map can be done using the literal form or using `make map! <spec>` where `<spec>` is a block of conforming values. The map body or the spec block have to contain an even number of values or an error will be generated.
