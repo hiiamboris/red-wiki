@@ -110,6 +110,7 @@ Index:
 * [Pair!](#pair)
 * [Percent!](#percent)
 * [Tuple!](#tuple)
+* [Map!](#map)
 * [Reference!](#reference)
 
 ### Padding
@@ -443,6 +444,15 @@ Compact: TBD
 
 header/type=39
 ```
+
+### Map!
+```
+Default: header (4), head (4), length (4), ...
+Compact: TBD
+
+header/type=40
+```
+Same encoding rules as block!.
 
 ### Reference!
 ```
