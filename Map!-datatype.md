@@ -7,7 +7,19 @@ Literal syntax:
 
    <value> : any-type! except none!
 ```
-Creating a map can be done using the literal form or using `make map! <spec>` where `<spec>` is a block of conforming values. The map body or the spec block have to contain an even number of values or an error will be generated.
+Creating a map can be done using the literal form or using `make map! <spec>` where `<spec>` is a block of conforming values. The map body or the spec block have to contain an **even** number of values or an error will be generated. Examples:
+```
+#(a: 1 b: 2)
+== #(
+    a: 1
+    b: 2
+)
+make map! [a 1 'b 2 "c" 3]
+== #(
+    a: 1
+    b: 2
+    "c" 3
+)
 
 If the key value is of **any-word!** type, the key type is converted to **set-word!** in the map. Accessing words keys can be done using **word!** values, providing a **set-word!** key is not necessary.
 
