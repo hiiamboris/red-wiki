@@ -1,6 +1,6 @@
 Literal syntax:
 ```
-    #(<name> <value>...)
+   #(<name> <value>...)
 
    <name>  : hashed key, accepted types are:
                  any-word!, any-string!, integer!, float!, char!
@@ -17,4 +17,6 @@ Reading a value selected by a key:
 ```
 <map>/<key>
 pick <map> <key>
+select <map> <key>
+get '<map>/<key>
 ```
