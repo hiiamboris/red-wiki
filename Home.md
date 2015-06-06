@@ -9,6 +9,9 @@ Reference documentation:
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
+Discussions:
+* [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
+
 Todo lists:
 * [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
