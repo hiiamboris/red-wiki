@@ -15,12 +15,12 @@ A map represents an associative array of key/value pairs. It provides a fast rea
 ```
    make map! <spec>
 
-   <spec> : block of name/value pairs or integer
+   <spec> : block of key/value pairs or an integer value
 ```
 If the _spec_ argument is an integer, an empty map! is created with a pre-allocated number of slots (usually in order to populate the map dynamically).
 
 <u>Notes</u>: 
-* the map body or the spec block have to contain an **even** number of values or an error will be generated. 
+* the map body or the spec block have to contain an **even** number of elements, or else, an error will be generated. 
 * values are not _reduced_, so construction syntax is required for some special values, like logic!.
 
 Examples:
@@ -44,7 +44,7 @@ If the key is of **any-word!** type, the key type is converted to **set-word!** 
 * like hash! and block!, map! is <u>case-sensitive for storage</u>, but <u>case-insensitive for lookup</u> by default.
 * if a `none` value is specified as value, the key will not be created (see "Deleting keys" section).
 
-Another way to create a new map is to `copy` an existing one
+Another way to create a new map is to use the `copy` action on an existing one.
 
 ###Retrieving values
 
@@ -54,7 +54,7 @@ Using paths:
     get '<map>/<key>
 
     <map> : word referring to a map! value
-    <key> : word key to select a value in the map
+    <key> : word key
 ```
 
 Using selecting actions:
@@ -63,7 +63,7 @@ Using selecting actions:
     select <map> <key>
 
     <map> : map value
-    <key> : any valid key value to a select a value in the map
+    <key> : any valid key type
 ```
 All these read accesses are case-insensitive. In order to have a case-sensitive lookup, the `/case` refinement needs to be used where available:
 ```
@@ -177,7 +177,7 @@ Example:
 		"c" 3
 		d: 99
 	)
-        m/b: none
+	m/b: none
 	poke m "c" none
 	append m [d #[none]]
 	m
@@ -187,6 +187,31 @@ Example:
 ```
 <u>Note</u>: construction syntax is required in the above example in order to pass a `none!` value and not a `word!` value (just one way to construct the spec block needed there).
 
+It is also possible to delete all keys at same time using `clear` action:
+```
+clear #(a 1 b 2 c 3)
+== #()
+```
+
 ###Reflection
 
-TBD
+* `length?` returns the number of a key/value pairs in a map.
+```
+length? #(a 123 b 456)
+== 2
+```
+* `keys-of` returns the list of keys from a map in a block (set-words are converted to words).
+```
+keys-of #(a: 123 b: 456)
+== [a b]
+```
+* `values-of` returns the list of values from a map in a block.
+```
+values-of #(a: 123 b: 456)
+== [123 456]
+```
+* `body-of` returns all the key/value pairs from a map in a block.
+```
+body-of #(a: 123 b: 456)
+== [a: 123 b: 456]
+```
