@@ -41,7 +41,7 @@ make map! [a 1 'b 2 "c" 3]
 If the key is of **any-word!** type, the key type is converted to **set-word!** in the map. Accessing words keys can be done using **word!** values, providing a **set-word!** key is not necessary.
 
 <u>Notes</u>: 
-* like hash! and block!, map! is <u>case-sensitive for storage</u>, but <u>case-insensitive for lookup</u> by default.
+* like hash! and block!, map! is <u>case-preserving</u>, and <u>case-insensitive for lookup</u> by default.
 * if a `none` value is specified as value, the key will not be created (see "Deleting keys" section).
 
 Another way to create a new map is to use the `copy` action on an existing one.
