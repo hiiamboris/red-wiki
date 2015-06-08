@@ -95,16 +95,17 @@ Using paths:
     <value> : any value, except unset! value
 ```
 
-Using modifying action:
+Using modifying actions:
 ``` 
     poke <map> <key> <value>
+    modify <map> <key> <value>
 
     <map> : map value
     <key> : any valid key value to a select a value in the map
 ```
 Making bulk changes:
 ```
-    append <map> <spec>
+    extend <map> <spec>
 
     <map>  : a map value
     <spec> : block of name/value pairs (one or more pairs)
@@ -113,8 +114,10 @@ Making bulk changes:
 All these write accesses are case-insensitive. In order to have a case-sensitive lookup, the `/case` refinement needs to be used where available:
 ```
     set/case '<map>/<key> <value>
+    modify/case <map> <key> <value>
+    extend/case <map> <spec>
 ```
-`append` action can accept many keys at the same time, so it is convenient for bulk changes.
+`extend` native can accept many keys at the same time, so it is convenient for bulk changes.
 
 <u>Notes</u>: 
 * setting a key that does not exist previously in the map, <u>will simply create it</u>.
@@ -154,7 +157,7 @@ Examples:
    )
    
    m: #(%cities.red 10)
-   append m [%cities.red 99 %countries.red 7 %states.red 27]
+   extend m [%cities.red 99 %countries.red 7 %states.red 27]
    m
    == #(
 	   %cities.red 99
@@ -178,8 +181,8 @@ Example:
 		d: 99
 	)
 	m/b: none
-	poke m "c" none
-	append m [d #[none]]
+	modify m "c" none
+	extend m [d #[none]]
 	m
 	== #(
 	    a: 1
