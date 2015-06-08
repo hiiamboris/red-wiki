@@ -198,6 +198,11 @@ clear #(a 1 b 2 c 3)
 
 ###Reflection
 
+* `find` checks if a key is defined or not in a map and returns a logic! value.
+```
+find #(a 123 b 456) 'b
+== true
+```
 * `length?` returns the number of a key/value pairs in a map.
 ```
 length? #(a 123 b 456)
