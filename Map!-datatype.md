@@ -45,6 +45,7 @@ If the key is of **any-word!** type, the key type is converted to **set-word!** 
 <u>Notes</u>: 
 * like hash! and block!, map! is <u>case-preserving</u>, and <u>case-insensitive for lookup</u> by default.
 * if a `none` value is specified as value, the key will not be created (see "Deleting keys" section).
+* Any-string! keys and series! values are not copied on creation of the map, the choice is left to the user (this optimizes resources for the common use-case).
 
 Another way to create a new map is to use the `copy` action on an existing one.
 
