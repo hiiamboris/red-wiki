@@ -72,6 +72,8 @@ All these read accesses are case-insensitive. In order to have a case-sensitive 
     get/case '<map>/<key>
     select/case <map> <key>
 ```
+Trying to access a key not defined in a map will return a `none` value.
+
 Examples:
 ```
    m: #(Ab: 2 aB: 5 ab: 10)
