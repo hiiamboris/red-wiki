@@ -9,7 +9,7 @@ A map represents an associative array of key/value pairs. It provides a fast rea
    <key>  : hashed key, accepted types are:
                  any-word!, any-string!, integer!, float!, char!
 
-   <value> : any-type! value, except unset! value
+   <value> : any-type! value
 ```
 ###Creation syntax
 ```
@@ -92,7 +92,7 @@ Using paths:
 
     <map>   : word referring to a map! value
     <key>   : word key to select a value in the map
-    <value> : any value, except unset! value
+    <value> : any value
 ```
 
 Using modifying actions:
