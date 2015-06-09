@@ -40,6 +40,8 @@ make map! [a 1 'b 2 "c" 3]
 ```
 If the key is of **any-word!** type, the key type is converted to **set-word!** in the map. Accessing words keys can be done using **word!** values, providing a **set-word!** key is not necessary.
 
+If the key is of **any-word!** type, the key type is converted to **set-word!** in the map, in order to make the map content look more like pairs of keys with value assigned. Though, in order to access word keys, there is no requirement to provide a set-word, for practical reasons (easier construction, especially in paths), simple words can be used. Similarly, `keys-of` reflector (described in Reflection section below), will return words instead of set-words, as it simplifies further processing (especially matching operations are easier with words rather than set-words).
+
 <u>Notes</u>: 
 * like hash! and block!, map! is <u>case-preserving</u>, and <u>case-insensitive for lookup</u> by default.
 * if a `none` value is specified as value, the key will not be created (see "Deleting keys" section).
