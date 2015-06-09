@@ -198,7 +198,7 @@ clear #(a 1 b 2 c 3)
 
 ###Reflection
 
-* `find` checks if a key is defined or not in a map and returns a logic! value.
+* `find` checks if a key is defined in a map and returns `true` if found, or else `none`.
 ```
 find #(a 123 b 456) 'b
 == true
