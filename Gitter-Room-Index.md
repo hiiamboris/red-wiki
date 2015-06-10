@@ -6,3 +6,6 @@ This room is dedicated for discussing the map! datatype.
 
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
 This room is dedicated for discussion the vector! datatype.
+
+#### [red/red/links](https://gitter.im/red/red/links)
+This room is dedicated for storing useful links.
