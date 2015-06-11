@@ -6,4 +6,5 @@ m: map [[1 2] [3 4]]
 m/[1 2] => [3 4]
 ```
 
+---
 [EDIT] Nenad: blocks are not part of the hashed datatypes, for obvious performance reasons. So, we won't support blocks as keys in maps.
