@@ -103,7 +103,7 @@ Using paths:
 Using modifying actions:
 ``` 
     poke <map> <key> <value>
-    modify <map> <key> <value>
+    put <map> <key> <value>
 
     <map> : map value
     <key> : any valid key value to a select a value in the map
@@ -119,7 +119,7 @@ Making bulk changes:
 All these write accesses are case-insensitive. In order to have a case-sensitive lookup, the `/case` refinement needs to be used where available:
 ```
     set/case '<map>/<key> <value>
-    modify/case <map> <key> <value>
+    put/case <map> <key> <value>
     extend/case <map> <spec>
 ```
 `extend` native can accept many keys at the same time, so it is convenient for bulk changes.
@@ -186,7 +186,7 @@ Example:
 		d: 99
 	)
 	m/b: none
-	modify m "c" none
+	put m "c" none
 	extend m [d #[none]]
 	m
 	== #(
