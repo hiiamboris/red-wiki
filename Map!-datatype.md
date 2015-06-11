@@ -139,7 +139,7 @@ Examples:
       ab: 10
    )
 
-   poke m 'aB "hello"
+   put m 'aB "hello"
    m
    == #(
       Ab: "hello"
