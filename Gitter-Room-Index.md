@@ -9,3 +9,6 @@ This room is dedicated for discussion the vector! datatype.
 
 #### [red/red/links](https://gitter.im/red/red/links)
 This room is dedicated for storing useful links.
+
+#### [ren-data index](https://github.com/Ren-data/Ren/wiki/Gitter-Room-Index)
+A list of the rooms for discussing REN (REadable Notation).
