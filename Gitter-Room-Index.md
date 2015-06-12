@@ -5,7 +5,10 @@ This is the "main" room for general discussions about Red.
 This room is dedicated for discussing the map! datatype.
 
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
-This room is dedicated for discussion the vector! datatype.
+This room is dedicated for discussing the vector! datatype.
+
+#### [red/red/sets](https://gitter.im/red/red/sets)
+This room is dedicated for discussing set operations.
 
 #### [red/red/links](https://gitter.im/red/red/links)
 This room is dedicated for storing useful links.
