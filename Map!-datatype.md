@@ -60,9 +60,8 @@ Using paths:
     <key> : word key
 ```
 
-Using selecting actions:
+Using selecting action:
 ``` 
-    pick <map> <key>
     select <map> <key>
 
     <map> : map value
@@ -100,9 +99,8 @@ Using paths:
     <value> : any value
 ```
 
-Using modifying actions:
+Using modifying action:
 ``` 
-    poke <map> <key> <value>
     put <map> <key> <value>
 
     <map> : map value
