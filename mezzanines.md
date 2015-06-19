@@ -4,5 +4,8 @@ Organization of mezzanines is TBD. The main proposal, right now, is to use gists
 https://gist.github.com/f0471eb0c17c070795f2
 
 ### STRING TO INTEGER conversion
+You can use LOAD to load the value into a variable, but if you need a character by character way to process your input string, here is an example of how it can be done.
+
 https://gist.github.com/d414bbbbc5c3e72fbf6e
+
 
