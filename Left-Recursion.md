@@ -11,6 +11,7 @@ primary:[some digit | "(" expr ")"]
 expr: [  
     expr ["*" | "/"] expr
     | expr ["+" | "-"] expr
+    | expr "**" expr
     | some digit
     | "(" expr ")"
 ] 
