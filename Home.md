@@ -21,7 +21,7 @@ Proposals:
 * [Case insensitive charset refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
 * [Change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
 * <strike>[Use blocks for keys in maps] (https://github.com/red/red/wiki/use-blocks-as-keys)</strike>
-
+* [Left Recursion for Parse] (https://github.com/red/red/wiki/Left-Recursion)
 Future:
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
 * [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
