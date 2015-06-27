@@ -1,3 +1,4 @@
+```
 ;Here is an example of a grammar(ripped from the red page) that parses mathematical syntax preserving precedence.
 
 expr:   [term ["+" | "-"] expr | term]
@@ -20,3 +21,4 @@ expr: expr ('*'|'/') expr
     | INT
     | '(' expr ')'
     ;
+```
