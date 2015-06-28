@@ -1,3 +1,4 @@
+```
 ;example taken from red web page
 
 expr:   [term ["+" | "-"] expr | term]
@@ -20,3 +21,4 @@ expr: expr ('*'|'/') expr
     | INT
     | '(' expr ')'
     ;
+```
