@@ -1,4 +1,4 @@
-This page lists all the features we would like to add to Red/System v2, which will be rewritten in Red. There are three sections; Included, Requested, Rejected.
+This page lists all the wishes various people have expressed for Red/System v2 (which will be rewritten in Red). There are three sections; Included, Requested, Rejected. The reviewing and selection process has not been done yet.
 
 ## Included
 These features will be incorporated into Red/System V2.
