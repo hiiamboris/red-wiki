@@ -111,6 +111,7 @@ Index:
 * [Percent!](#percent)
 * [Tuple!](#tuple)
 * [Map!](#map)
+* [Binary!](#binary)
 * [Reference!](#reference)
 
 ### Padding
@@ -453,6 +454,15 @@ Compact: TBD
 header/type=40
 ```
 The `length` field contains the number of elements (keys + values) to be stored in the map. The map elements simply follow the length definition, no separator or end delimiter is required.
+
+### Binary!
+```
+Default: header (4), head (4), length (4), ...
+Compact: TBD
+
+header/type=41
+```
+Same encoding rules as block!.
 
 ### Reference!
 ```
