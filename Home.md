@@ -8,6 +8,7 @@ Reference documentation:
 * [Redbin format specification](https://github.com/red/red/wiki/Redbin-specification)
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
+* [Coding Style Guide](https://github.com/red/red/Coding-Style-Guide)
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
 Discussions:
