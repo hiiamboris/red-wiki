@@ -169,7 +169,7 @@ blue-fill: func [...		;-- should be fill-blue
 
 There is an exception to those naming rules which applies to OS or non-Red third-party API names. In order to make API-specific function and structures field names easily recognizable, their original name should be used. It visually helps distinguish such imported names from regular Red or Red/System code. For example:
 ```
-agMSG: alias struct! [
+tagMSG: alias struct! [
 	hWnd	[handle!]
 	msg		[integer!]
 	wParam	[integer!]
