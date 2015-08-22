@@ -1,7 +1,7 @@
 * [Introduction](#introduction)
 * [Line of code length](#line-of-code-length)
 * [Indentation](#indentation)
-* [Blocks layouts](#blocks-layouts)
+* [Block layouts](#block-layouts)
 * [Naming conventions](#naming-conventions)
 * [Casing](#casing)
 * [Macros (Red/System)](#macros-redsystem)
