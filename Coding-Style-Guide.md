@@ -4,7 +4,7 @@
 * [Blocks layouts](#blocks-layouts)
 * [Naming conventions](#naming-conventions)
 * [Casing](#casing)
-* [Macros (Red/System)](#macros-red-system)
+* [Macros (Red/System)](#macros-redsystem)
 * [Function definitions](#function-definitions)
 * [Function calls](#function-calls)
 * [Comments](#comments)
