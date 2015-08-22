@@ -17,7 +17,7 @@ Red is an homoiconic language where code is represented as data. A consequence o
 
 This document describes the *official coding style used in the Red source code*, so respecting this coding style is a prerequisite of every pull request submitted to red/red Github repository.
 
-As Red/System is a dialect of Red, it shares very similar syntax and coding style rules. Specific Red/System rules are marked as such.
+As Red/System is a dialect of Red, it shares the same syntax and coding style rules. Specific Red/System rules are marked as such.
 
 The objectives of the following rules are to maximise readability including keeping an optimum number of lines of code visible on-screen while minimizing the need for comments.
 
