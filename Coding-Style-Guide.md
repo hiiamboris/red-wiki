@@ -366,9 +366,13 @@ process-many
 				argument5
 ```
 
-For long expressions with many nested parts, spotting the arity of each function (the number of arguments) can be sometimes difficult. Using parenthesis for grouping a nested call with its arguments is acceptable (but not mandatory).
+For long expressions with many nested parts, spotting the bounds of each expression can be sometimes difficult. Using parenthesis for grouping a nested call with its arguments is acceptable (but not mandatory).
 ```
 head insert (copy/part [1 2 3 4] 2) (length? mold (2 + index? find "Hello" #"o"))
+
+head insert 
+	copy/part [1 2 3 4] 2
+	length? mold (2 + index? find "Hello" #"o")
 ```
 
 ### Comments
