@@ -1,5 +1,19 @@
-Introduction
-------------
+Index:
+* [Introduction](#introduction)
+* [Line of code length](#line-of-code-length)
+* [Indentation](#indentation)
+* [Blocks layouts](#blocks-layouts)
+* [Naming conventions](#naming-conventions)
+* [Casing](#casing)
+* [Macros (Red/System)](#macros-red-system)
+* [Function definitions](#function-definitions)
+* [Function calls](#function-calls)
+* [Comments](#comments)
+* [String syntax](#string-syntax)
+* [New line usage](#new-line-usage)
+
+### Introduction
+
 Red is an homoiconic language where code is represented as data. A consequence of that property is that the language is free-form, in order to cop with all possible ways to format data, as well as being flexible enough for DSL-specific formatting needs. Therefore, the following content is *just one of the possible ways* to format Red code.
 
 This document describes the *official coding style used in the Red source code*, so respecting this coding style is a prerequisite to fulfill for every pull request sent to red/red repo.
@@ -8,13 +22,11 @@ As Red/System is a dialect of Red, it shares its syntax and most of his coding s
 
 The following rules aim at maximizing readability without sacrificing vertical number of visible lines of code (vs empty lines) while minimizing the need for comments.
 
-Line of code length
--------------------
+### Line of code length
 
 There is no strictly-defined maximum number of columns for a single line of code, as it can vary according to the type of the font used (size, proportional vs fixed-width) or highlighting effects. It should be possible to read a full line of code (excluding comments) in an editor occupying at maximum, half of a 1080p monitor width. On the displays we use for Red codebase coding, it is about 100 columns. In the description below, *excessive size* or *too long* expressions will refer to line of code sizes which do not fit the aforementioned criteria.
 
-Indentation
------------
+### Indentation
 
 Red codebase uses tabulations with size of **4** columns to indent the source code. This gives a good trade-off between too small values (like 2 columns) and too big ones (like 8 columns). Using tabs also means that you can adjust it to your personal preference in your editor, while respecting the rule (just pay attention to right alignments using tabs then).
 
@@ -48,8 +60,7 @@ arg2
 ]
 ```
 
-Blocks layouts
---------------
+### Blocks layouts
 
 All the following rules apply to blocks `[]` as well as parenthesis `()`.
 
@@ -114,8 +125,7 @@ while [not tail? series][
 ]
 ```
 
-Naming conventions
-------------------
+### Naming conventions
 
 **Variable names** should be single-word **nouns**. Choose words which are short and capturing the meaning as best as possible. Common words should be used first (*especially if they are already used in existing Red source code in the same context*). If needed, use a [synonyms dictionary](http://www.thesaurus.com/browse/synonym), to find the best word for the usage. Single-letter or cut words (unless that cut word is of common usage) should be avoided as much as possible.
 
@@ -191,23 +201,20 @@ agMSG: alias struct! [
 ]
 ```
 
-Casing
-------
+### Casing
 
 All variable and function names should be lowercase by default, unless there is a good reason for using uppercasing such as:
 
 * name is an acronym
 * name is OS or non-Red third-party API-related
 
-Red/System macros
------------------
+### Macros (Red/System)
 
 Apply the same naming conventions for picking up Red/System macros names. Macros generally use uppercase for names, as a way to visually distinguish them easily from the rest of the code (unless the intention is explicitely to make it look like regular code, like pseudo-custom datatype definitions). When multiple words are used, they are separated by an underscore `_` character to increase even more the difference with regular code.
 
 *(TBD: extract all single-word names used in the Red codebase as examples)*
 
-Function definitions
---------------------
+### Function definitions
 
 The general rule is to keep the spec block on a single line. The body block can be on the same line or over several lines. In case of Red/System, as the spec blocks tend to be longer, most functions spec blocks are wrapped over several lines, so, for sake of visual consistency, often even small spec block are wrapped.
 
@@ -328,8 +335,7 @@ make-world: func ["Build a new World"	;-- should be on a newline
 ]
 ```
 
-Function calls
---------------
+### Function calls
 
 Arguments are following the function call on the same line. If the line becomes too long, arguments can be wrapped over several lines (one argument per line) with an indentation.
 
@@ -366,8 +372,7 @@ For long expressions with many nested parts, spotting the arity of each function
 head insert (copy/part [1 2 3 4] 2) (length? mold (2 + index? find "Hello" #"o"))
 ```
 
-Comments
---------
+### Comments
 
 In Red codebase:
 
@@ -377,8 +382,7 @@ In Red codebase:
 
 The general rule is to put comments on the same line as the beginning of the corresponding code instead on a new line in order to save significant vertical space. Though, if the comment is used for separating chunks of code, then putting it on a new line is fine.
 
-String syntax
--------------
+### String syntax
 
 Use `""` for single-line strings. The `{}` form is reserved for multi-line strings. Respecting this rule ensures:
 
@@ -386,7 +390,6 @@ Use `""` for single-line strings. The `{}` form is reserved for multi-line strin
 * richer convey of meaning
 
 
-New line usage
--------------
+### New line usage
 
 TBD
