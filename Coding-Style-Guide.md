@@ -1,16 +1,15 @@
-Index:
-* [Introduction](#introduction)
-* [Line of code length](#line-of-code-length)
-* [Indentation](#indentation)
-* [Blocks layouts](#blocks-layouts)
-* [Naming conventions](#naming-conventions)
-* [Casing](#casing)
-* [Macros (Red/System)](#macros-red-system)
-* [Function definitions](#function-definitions)
-* [Function calls](#function-calls)
-* [Comments](#comments)
-* [String syntax](#string-syntax)
-* [New line usage](#new-line-usage)
+[Introduction](#introduction)
+[Line of code length](#line-of-code-length)
+[Indentation](#indentation)
+[Blocks layouts](#blocks-layouts)
+[Naming conventions](#naming-conventions)
+[Casing](#casing)
+[Macros (Red/System)](#macros-red-system)
+[Function definitions](#function-definitions)
+[Function calls](#function-calls)
+[Comments](#comments)
+[String syntax](#string-syntax)
+[New line usage](#new-line-usage)
 
 ### Introduction
 
