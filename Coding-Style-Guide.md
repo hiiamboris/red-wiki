@@ -13,13 +13,13 @@
 
 ### Introduction
 
-Red is an homoiconic language where code is represented as data. A consequence of that property is that the language is free-form, in order to cop with all possible ways to format data, as well as being flexible enough for DSL-specific formatting needs. Therefore, the following content is *just one of the possible ways* to format Red code.
+Red is an homoiconic language where code is represented as data. A consequence of that feature is that the language is almost totally free-form, in order to cope with all possible ways to format data, as well as being flexible enough for DSL-specific formatting needs. The following content is *just one of many, many ways* to format Red code.
 
-This document describes the *official coding style used in the Red source code*, so respecting this coding style is a prerequisite to fulfill for every pull request sent to red/red repo.
+This document describes the *official coding style used in the Red source code*, so respecting this coding style is a prerequisite of every pull request submitted to red/red Github repository.
 
-As Red/System is a dialect of Red, it shares its syntax and most of his coding style rules. Specific Red/System rules will be marked as such.
+As Red/System is a dialect of Red, it shares very similar syntax and coding style rules. Specific Red/System rules are marked as such.
 
-The following rules aim at maximizing readability without sacrificing vertical number of visible lines of code (vs empty lines) while minimizing the need for comments.
+The objectives of the following rules are to maximise readability including keeping an optimum number of lines of code visible on-screen while minimizing the need for comments.
 
 ### Line of code length
 
@@ -47,7 +47,7 @@ func [
 	...
 ]
 ```
-Wrong
+Incorrect
 ```
 func [
 arg1					;-- missing indentation!
@@ -59,7 +59,7 @@ arg2
 ]
 ```
 
-### Blocks layouts
+### Block layouts
 
 All the following rules apply to blocks `[]` as well as parenthesis `()`.
 
@@ -104,7 +104,7 @@ b: either a = 1 [
 ]
 ```
 
-Wrong
+Incorrect
 ```
 b: either a = 1 
 	[a + 1]
@@ -126,7 +126,7 @@ while [not tail? series][
 
 ### Naming conventions
 
-**Variable names** should be single-word **nouns**. Choose words which are short and capturing the meaning as best as possible. Common words should be used first (*especially if they are already used in existing Red source code in the same context*). If needed, use a [synonyms dictionary](http://www.thesaurus.com/browse/synonym), to find the best word for the usage. Single-letter or cut words (unless that cut word is of common usage) should be avoided as much as possible.
+**Variable names** should be single-word **nouns**. Choose words which are short and capturing the meaning as best as possible. Common words should be used first (*especially if they are already used in existing Red source code in the same context*). If needed, use a [synonyms dictionary](http://www.thesaurus.com/browse/synonym), to find the best word for the usage. Single-letter or abbreviated words (unless the abbreviated word is in common usage) should be avoided as much as possible.
 
 Names made of multiple words are separated with a dash `-` character. Use a two-words name only when a fitting single-word cannot be found or would be too confusing with already used ones. Variable names made of more than two words should only be used in rare cases. Using single-words as much as possible makes the code horizontally much more compact, improving readability greatly. Avoid useless verbosity.
 
@@ -140,7 +140,7 @@ lost-items: []
 unless tail? list [author: select list index]
 ```
 
-Wrong
+Incorrect
 ```
 code_for_article: 123456
 Mytable: [2 6 8 4 3]
@@ -159,7 +159,7 @@ allow: 	func [...
 crunch: func [...
 ```
 
-Wrong
+Incorrect
 ```
 length:    func [...
 future:    func [...
@@ -204,7 +204,7 @@ tagMSG: alias struct! [
 
 All variable and function names should be lowercase by default, unless there is a good reason for using uppercasing such as:
 
-* name is an acronym
+* name is an acronym e.g. GMT (Greenwich Mean Time)
 * name is OS or non-Red third-party API-related
 
 ### Macros (Red/System)
@@ -232,7 +232,7 @@ increment: func [
 	n + 1
 ]
 ```
-Wrong
+Incorrect
 ```
 do-nothing: func [
 ][
@@ -271,7 +271,7 @@ make-world: func [
 	...
 ]
 ```
-Wrong
+Incorrect
 ```
 make-world: func [
 	[throw] earth [word!]		;-- attributes block not on its own line
@@ -313,7 +313,7 @@ make-world: func [
 	...
 ]
 ```
-Wrong
+Incorrect
 ```
 make-world: func ["Build a new World"	;-- should be on a newline
 	earth	[word!]		"1st element"
@@ -349,7 +349,7 @@ process-many
 	argument4
 	argument5
 ```
-Wrong
+Incorrect
 ```
 foo arg1 arg2 arg3
 	arg4 arg5
@@ -366,7 +366,7 @@ process-many
 				argument5
 ```
 
-For long expressions with many nested parts, spotting the arity of each function can be sometimes difficult. Using parenthesis for grouping a nested call with its arguments is acceptable (but not mandatory).
+For long expressions with many nested parts, spotting the arity of each function (the number of arguments) can be sometimes difficult. Using parenthesis for grouping a nested call with its arguments is acceptable (but not mandatory).
 ```
 head insert (copy/part [1 2 3 4] 2) (length? mold (2 + index? find "Hello" #"o"))
 ```
@@ -376,10 +376,10 @@ head insert (copy/part [1 2 3 4] 2) (length? mold (2 + index? find "Hello" #"o")
 In Red codebase:
 
 * comments are written using the `;-- ` prefix (stronger visual clue)
-* single-line comments start at column 57 (works the best on average, else column 53)
-* multi-line comments are done using several single-line prefixes over `comment {...}` constructions.
+* single-line comments start at column 57 (works best on average, else column 53)
+* multi-line comments are done using several single-line prefixes rather than `comment {...}` constructions.
 
-The general rule is to put comments on the same line as the beginning of the corresponding code instead on a new line in order to save significant vertical space. Though, if the comment is used for separating chunks of code, then putting it on a new line is fine.
+The general rule is to put comments on the same line as the beginning of the corresponding code instead of on a new line in order to save significant vertical space. Though, if the comment is used for separating chunks of code, then putting it on a new line is fine.
 
 ### String syntax
 
