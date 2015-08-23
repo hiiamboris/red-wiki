@@ -1,3 +1,4 @@
+### Table of Contents
 * [Introduction](#introduction)
 * [Line of code length](#line-of-code-length)
 * [Indentation](#indentation)
