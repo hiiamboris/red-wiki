@@ -390,9 +390,9 @@ The general rule is to put comments on the same line as the beginning of the cor
 Use `""` for single-line strings. The `{}` form is reserved for multi-line strings. Respecting this rule ensures:
 
 * a more consistent source representation before and after LOADing code
-* richer convey of meaning
+* better convey of meaning
 
-One exception to the rule is when a single-line string includes the " character itself. In this case, it is preferred to use the '{"}' form rather than escaping the quote "^"" as it is more readable.
+One exception to the rule is when a single-line string includes the " character itself. In this case, it is preferred to use the `{}` form rather than escaping the quote `^"` as it is more readable.
 
 ### New line usage
 
