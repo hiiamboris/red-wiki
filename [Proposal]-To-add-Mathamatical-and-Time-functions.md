@@ -10,3 +10,7 @@
 * Time: decimal, dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
 * Date: Asimov, Hanke-Henry, Leap Week, Thirteen Month
 * Date or month naming system: Positivist, Tranquility or French Revolution
+
+# Binary encoding:
+* Binary to text: to base32, base64, base85, base91
+* Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
