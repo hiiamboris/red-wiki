@@ -17,4 +17,4 @@
 * Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
 
 # Considering (will be removed if redundant):
-Aztec Calendar, Attic Calendar, Babylonian Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Soviet Calendar, Tabular Islamic Calendar, Thai Calendar, Tibetan Calendar, Yoruba Calendar
+Aztec Calendar, Attic Calendar, Babylonian Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Mongolian Calendar, Soviet Calendar, Tabular Islamic Calendar, Thai Calendar, Tibetan Calendar, Yoruba Calendar
