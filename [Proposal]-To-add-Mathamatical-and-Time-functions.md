@@ -12,5 +12,5 @@
 * Date or month naming system: Positivist, Tranquility or French Revolution
 
 # Binary encoding:
-* Binary to text: to base32, base64, base85, base91
+* Binary to text: binary, quaternary, octal, hexadecimal,  base32, base64, base85, base91
 * Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
