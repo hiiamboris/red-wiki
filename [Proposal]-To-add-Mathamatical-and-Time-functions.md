@@ -5,6 +5,7 @@
 * Quotient and Modulo in multiple ways: Truncated, Floored, Eucliedian
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
+* Error Correction: Hamming, Extended Binary Golay, Reed–Solomon
 
 # Time and date:
 * Time: decimal, dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
