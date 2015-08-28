@@ -10,11 +10,11 @@
 # Time and date:
 * Time: decimal, dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
 * Date: Asimov, Hanke-Henry, Leap Week, Thirteen Month
-* Date or month naming system: Positivist, Tranquility or French Revolution
+* Date or month naming system: Positivist, Tranquility or French Republican
 
 # Binary encoding:
 * Binary to text: binary, quaternary, octal, hexadecimal,  base32, base64, base85, base91
 * Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
 
 # Considering (will be removed if redundant):
-Babylonian Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Korean Calendar, Mayan Calendar, Thai Calendar
+Babylonian Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Korean Calendar, Mayan Calendar, Thai Calendar, Tibetan Calendar, Yoruba Calendar
