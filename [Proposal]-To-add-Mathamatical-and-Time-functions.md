@@ -15,3 +15,6 @@
 # Binary encoding:
 * Binary to text: binary, quaternary, octal, hexadecimal,  base32, base64, base85, base91
 * Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
+
+# Considering (will be removed if redundant):
+Babylonian Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Korean Calendar, Mayan Calendar, Thai Calendar
