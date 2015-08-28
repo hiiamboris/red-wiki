@@ -17,4 +17,8 @@
 * Binary to mnemonic: S/KEY, PGP, bubble babble and BIP0039
 
 # Considering (will be removed if redundant):
-Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Calendar, Balinese Saka Calendar, Berber Calendar, Borana Calendar, Burmese Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Mongolian Calendar, Pawukon Calendar, Soviet Calendar, Tabular Islamic Calendar, Thai Calendar, Tibetan Calendar, Yoruba Calendar, Zoroastrian Calendar
+Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Calendar, Balinese Saka Calendar, Berber Calendar, Borana Calendar, Buddhist calendar, Burmese Calendar, Chinese Calendar, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Mongolian Calendar, Pawukon Calendar, Soviet Calendar, Tabular Islamic Calendar, Thai Calendar, Tibetan Calendar, Vira Nirvana Samvat, Yoruba Calendar, Zoroastrian Calendar
+Criteria of calendar:
+1. Not a renamed version of Gregorian or Julian Calendar.
+2. All calendar system with the same properties shall be grouped together.
+3. Non-365 day calendars will always be included.
