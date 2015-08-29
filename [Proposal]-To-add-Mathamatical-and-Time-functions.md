@@ -1,7 +1,7 @@
 # Mathematics (for scientific calculators):
 * Trigonometric functions: sin, cos, tan, asin, acos, atan
 * Hyperbolic function: sinh, cosh, tanh, asinh, acosh, atanh
-* Logarithms: log (for 10/decimal), lg (for 2/binary), lon (for 12/dozenal), ln (for e/natural)
+* Logarithms: log (for decimal), lg (for binary), lon (for duodecimal/dozenal), ln (for natural)
 * Quotient and Modulo in multiple ways: Truncated, Floored, Eucliedian
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
@@ -14,7 +14,7 @@
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 
 # Time and date (for so called "unit/calendar reformation"):
-* Time: decimal, dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
+* Time: decimal, duodecimal/dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
 * Date: Asimov, Hanke-Henry, Leap Week, Thirteen Month
 * Days and months naming system: Positivist, Tranquility or French Republican
 
