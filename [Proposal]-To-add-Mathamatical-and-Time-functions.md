@@ -10,6 +10,7 @@
 # Applied Mathematics (some basics for testing):
 * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
 * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
+* Multicombination or multisubset = M(n,k)=C(n+k-1,k)
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 
 # Time and date (for so called "unit/calendar reformation"):
