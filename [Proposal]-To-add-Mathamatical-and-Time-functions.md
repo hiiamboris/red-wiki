@@ -5,12 +5,12 @@
 * Quotient and Modulo in multiple ways: Truncated, Floored, Eucliedian
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
-* Factorial: n!=n*(n-1)! P(n,r)=n!/(n-r)! C(n,r)=P(n,r)/r!
+* Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 
 # Applied Mathematics (some basics for testing):
 * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
 * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
-* Multicombination or multisubset = M(n,k)=C(n+k-1,k)
+* Multicombination or multisubset or M(n,k)=C(n+k-1,k)
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 
 # Time and date (for so called "unit/calendar reformation"):
