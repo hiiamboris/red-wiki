@@ -5,4 +5,4 @@
 * https://en.wikipedia.org/wiki/Solution_stack
 * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 
-* Allow a golfing-specific script Red/Golf as an "Easter Egg" (similar to Sclipting, Golfscript/Flogscript, APL/J/K, Golfscript, Pyth, Microscript, Owk, Retina, Fourier...)
+* Allow a golfing-specific script Red/Golf as an "Easter Egg" (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Golfscript, Pyth, Microscript, Owk, Retina, Fourier...)
