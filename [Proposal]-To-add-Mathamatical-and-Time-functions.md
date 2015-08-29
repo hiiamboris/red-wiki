@@ -6,6 +6,9 @@
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
+* Factorial: P(n,r)=n!/(n-r)! C(n,r)=P(n,r)/r!
+* Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
+* Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 
 # Time and date:
 * Time: decimal, dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
