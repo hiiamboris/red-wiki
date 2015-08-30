@@ -13,6 +13,7 @@
 * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS as example)
+* 3DES, AES, serpent, blowfish and twofish
 
 # Time and date (for so called "unit/calendar reformation"):
 * Time: decimal, duodecimal/dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
