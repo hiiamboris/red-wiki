@@ -12,6 +12,7 @@
 * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
 * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
+* Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS as example)
 
 # Time and date (for so called "unit/calendar reformation"):
 * Time: decimal, duodecimal/dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
