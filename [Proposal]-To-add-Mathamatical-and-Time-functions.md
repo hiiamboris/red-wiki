@@ -14,7 +14,7 @@
 * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
 * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS )
 * 3DES, AES, serpent, blowfish and twofish
-* Shortest Unit Fraction Algorithm (see https://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fractions/egyptian.html#shortCalc )
+* Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html )
 
 # Time and date (for so called "unit/calendar reformation"):
 * Time: decimal, duodecimal/dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
