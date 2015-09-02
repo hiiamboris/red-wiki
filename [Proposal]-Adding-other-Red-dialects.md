@@ -23,7 +23,7 @@
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
-* [Dialects for Easter Eggs (small bits for giggles)]
+* [Dialects for Easter Eggs (small bits for giggles, only release for celebrations)]
     * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
 * Allow a golfing-specific script Red/Golf as an Easter Egg (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
