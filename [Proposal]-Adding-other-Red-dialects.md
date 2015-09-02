@@ -9,6 +9,7 @@
 * Red/Lisp that acts like Clojure, Haskell, Erlang and Scala
     * Please specify how exactly you think Clojure, Haskell, Erlang and Scala "act" / what they or their approaches have in common and how would you extract it into dialect ?
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
+        * CLisp (featureful and pragmatic) or Scheme (elegant and educational)?
 * [dialects of different internet languages]
 * Having a language that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
