@@ -30,16 +30,18 @@
 * New Chinese: 1 day is 12 new-shi, 1 new-shi is 5 dian, 1 dian is 10 small-ke, 1 small-ke is 10 fen
 * New Earth: 1 day is 360 degrees, 1 degree is 60 minutes, 1 minute is 60 seconds
 
-# Dates ("calendar reformation"):
-* Date: Asimov, Hanke-Henry, Leap Week, Thirteen Month
-* Days and months naming system: Positivist, Tranquility or French Republican
+# Dates ("calendar reformation") with 2001 Janurary 1st being first day of the 400 year cycle:
+* World Season Calendar: a year is divided into 4 seasons, each containing 13 weeks, with an additional "world day" and the "leap day" added 4-100-400 style
+* Thirteen Month Calendar: a year is divided into 13 months, each containing 4 weeks, with an addition "world day" and the "leap day" added 4-100-400 style
+* Leap Week: a year is divided into 52 weeks, and the "leap week" added 5-40-400 style or a much closer style
+* Days and months naming system: Positivist, Tranquility, French Republican, NUCal, Common-Civil-Calendar-and-Time
 
 # Binary encoding (for transferring data through texts or phone calls):
 * Binary to text (paper): binary, quaternary, octal, hexadecimal,  base32, base64, base85, base91
 * Binary to mnemonic (phone): S/KEY, bubble babble, Pretty Good Privacy wordlist (a.k.a biometric word list) and Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
 
 # Considering (will be removed if redundant):
-Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Calendar, Balinese Saka Calendar, Berber Calendar, Borana Calendar, Buddhist calendar, Burmese Calendar, Chinese Calendar, Chula Sakarat, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Mongolian Calendar, Pawukon Calendar, Rapa Nui Calendar, Soviet Calendar, Tabular Islamic Calendar, Tamil Calendar, Thai Calendar, Tibetan Calendar, Vira Nirvana Samvat, Yoruba Calendar, Zoroastrian Calendar, (Dreamspell), (Discordian)
+Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Calendar, Balinese Saka Calendar, Berber Calendar, Borana Calendar, Buddhist calendar, Burmese Calendar, Chinese Calendar, Chula Sakarat, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Ethiopian Calendar, Gaelic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Mongolian Calendar, Pawukon Calendar, Rapa Nui Calendar, Soviet Calendar, Tabular Islamic Calendar, Tamil Calendar, Thai Calendar, Tibetan Calendar, Vikram Samvat, Vira Nirvana Samvat, Yoruba Calendar, Zoroastrian Calendar, (Dreamspell), (Discordian)
 * Criteria of calendar inclusion:
 * Not a renamed version of Gregorian or Julian Calendar.
 * All calendar system with the same properties shall be grouped together (e.g. all calendars with clustered 31 day months will be treated as the same calendar).
