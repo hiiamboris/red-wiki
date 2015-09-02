@@ -18,6 +18,7 @@
 * [Dialects for Easter Eggs]
 * Allow a golfing-specific script Red/Golf as an "Easter Egg" (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
     * Any dialect is "allowed" (write it yourself), not every makes sense in the core
+    * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
 * Allow a brainfuck-like script Red/Brain as an "Easter Egg"
     * ditto for features
 * The last programming language reference https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
