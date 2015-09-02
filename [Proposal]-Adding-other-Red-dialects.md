@@ -2,6 +2,7 @@
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby
         * If one wants to write Ruby, Python or whatever, he/she/it better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on / waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
+        * Since it is said that Red is the first "Full Stack Language", it would be good to at least interest students who learnt Ruby or Python in school to have the incentives to learn Red once they finish their curriculum (if you can do Ruby/Python, it will be even easier to use Red!).
     * Having a Web-App library/framework that is similar to Rails or Django
         * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
         * But it will of course look different and I'd bet it will be more simple (less noise in the templates / code / routing etc.)
@@ -23,16 +24,19 @@
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
-* [Dialects for Easter Eggs (small bits for giggles, only release for celebrations)]
+* [Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)]
     * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
-* Allow a golfing-specific script Red/Golf as an Easter Egg (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
-    * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
-* Allow a brainfuck-like script Red/Brain as an Easter Egg
+* Allow a brainfuck-like script Red/Brain as an Easter Egg (1st milestone)
     * Classical 8-symbol BrainFuck commands (shift pointer, in/de-crement pointer, jumping, In/Out-put)
     * Includes Bitwise and Arithmatic Operators in bytes (add/subtract, multiply/divide, and/or/xor/imply/not)
     * Cutting, Copying, Pasting and Clearing data (like Emo and SPL)
     * Mutiple Tapes (like Nandypants and omnifuck) and  Multiple pointers (like Emo and Hargfak)
         * Cufrab and DoubleFuck contains both concepts
+* Allow a golfing-specific script Red/Golf as an Easter Egg  (2nd milestone)
+    * similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...
+    * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would be more powerful than Rebmu.
+    * Allows for data compression into base32, base64, base85 and/or base 91 to win byte-based competitions.
+
 
 * The last programming language reference (for an idea for what Red could shoot for): https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
 * The Unicode 8.0.0 standards reference: ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
