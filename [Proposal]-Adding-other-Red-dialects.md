@@ -9,6 +9,7 @@
 * Red/Lisp that acts like Clojure, Haskell, Erlang and Scala
     * Please specify how exactly you think Clojure, Haskell, Erlang and Scala "act" / what they or their approaches have in common and how would you extract it into dialect ?
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
+
 * [dialects of different internet languages]
 * Having a language that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
@@ -24,6 +25,7 @@
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+
 * [Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)]
     * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
 * Allow a brainfuck-like script Red/Brain as an Easter Egg (1st milestone)
