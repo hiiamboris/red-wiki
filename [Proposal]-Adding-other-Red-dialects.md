@@ -26,8 +26,8 @@
                 * I assume Red/System ==> Red (+ Red/Script) ==> Red/Web (+ Red/Database ?)
     * Library Integration (mostly JS)
         * What about SQL Libraries?
-    *https://en.wikipedia.org/wiki/Solution_stack
-    *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+    * https://en.wikipedia.org/wiki/Solution_stack
+    * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 
 * [Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)]
     * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
