@@ -21,8 +21,15 @@
 * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
 * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ )
 
-# Time and date (for so called "unit/calendar reformation"):
-* Time: decimal, duodecimal/dozenal, hexadecimal, sexagesimal, Chinese and "New Earth"
+# Time ("time unit reformation"):
+* Traditional: 1 day is 24 hours, 1 hour is 4 quarters, 1 quarter is 15 minutes, 1 minute is 60 seconds
+* Decimal: 1 day has 10 hours, 1 decimal hour has 100 minutes, 1 minute has 100 seconds
+* Duodecimal/Dozenal: 1 day has 12 hours, 1 hour has 144 minutes, 1 minute has 144 seconds
+* Hexadecimal: 1 day has 16 hours, 1 hour has 256 minutes, 1 minute has 256 seconds
+* Old Chinese: 1 day is 12 shi, 1 shi is 5 dian, 1 dian is 10 ke, 1 ke is 10 fen, 1 fen is 10 hao
+* New Earth: 1 day is 360 degrees, 1 degree is 60 minutes, 1 minute is 60 seconds
+
+# Dates ("calendar reformation"):
 * Date: Asimov, Hanke-Henry, Leap Week, Thirteen Month
 * Days and months naming system: Positivist, Tranquility or French Republican
 
