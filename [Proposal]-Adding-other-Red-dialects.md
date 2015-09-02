@@ -6,7 +6,7 @@
     * Please specify how exactly you think Clojure, Haskell, Erlang and Scala "act" / what they or their approaches have in common and how would you extract it into dialect ?
 * [dialects of different internet languages]
 * Having a language that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
-    * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ?
+    * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
 * Having a language that works with or replaces JS, SQL, NoSQL-DB and other languages (see ISO standards) 
     * Red already is a nice dialect for Replacing JS (if someday JS gets added as compilation target).
     * Dialect for SQL generation seems _TRIVIAL_ (write it as learning experience; doesn't IMO belong in core, rather into some SQL DB interfacing lib).
@@ -16,11 +16,12 @@
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+
 * [Dialects for Easter Eggs]
 * Allow a golfing-specific script Red/Golf as an "Easter Egg" (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
     * Any dialect is "allowed" (write it yourself), not every makes sense in the core
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
-* Allow a brainfuck-like script Red/Brain as an "Easter Egg"
+* Allow a brainfuck-like script Red/Brain as an Easter Egg
     * Classical 8-symbol BrainFuck commands (shift pointer, in/de-crement pointer, jumping, In/Out-put)
     * Includes Bitwise and Arithmatic Operators in bytes (add/subtract, multiply/divide, and/or/xor/imply/not)
     * Cutting, Copying, Pasting and Clearing data (like Emo and SPL)
