@@ -23,9 +23,9 @@
     * And what should a "dialect for any other language language" accomplish ?
         * Either Red is comprehensive enough to replace other languages, or is compatible enough to use with other languages.
             * No dialects needed. Red, Red/System. If it is necesary to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
-                * I assume Red/System --> Red (+ Red/Script) --> Red/Web (+ Red/Database ?)
+                * I assume Red/System ==> Red (+ Red/Script) ==> Red/Web (+ Red/Database ?)
     * Library Integration (mostly JS)
-        * What about SQL?
+        * What about SQL Libraries?
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 
