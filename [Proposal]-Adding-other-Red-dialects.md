@@ -2,7 +2,7 @@
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby
         * If one wants to write Ruby, Python or whatever, he/she/it better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on / waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
-        * Since it is said that Red is the first "Full Stack Language", it would be good to at least interest students who learnt Ruby or Python in school to have the incentives to learn Red once they finish their curriculum (if you can do Ruby/Python, it will be even easier to use Red!).
+        * Since it is said that Red is the first "Full Stack Language", it would be good to at least interest students who learnt Ruby or Python in school to have the incentives to learn Red once they finish their curriculum ("If you can do Ruby/Python, you can do Red even better!").
     * Having a Web-App library/framework that is similar to Rails or Django
         * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
         * But it will of course look different and I'd bet it will be more simple (less noise in the templates / code / routing etc.)
@@ -24,7 +24,8 @@
         * Either Red is comprehensive enough to replace other languages, or is compatible enough to use with other languages.
             * No dialects needed. Red, Red/System. If it is necesary to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
                 * I assume Red/System --> Red (+ Red/Script) --> Red/Web (+ Red/Database ?)
-* Library Integration (mostly JS)
+    * Library Integration (mostly JS)
+        * What about SQL?
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 
