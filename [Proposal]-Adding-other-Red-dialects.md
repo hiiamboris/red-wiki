@@ -20,8 +20,10 @@
     * Any dialect is "allowed" (write it yourself), not every makes sense in the core
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
 * Allow a brainfuck-like script Red/Brain as an "Easter Egg"
-    * Classical 8-symbol BrainFuck commands (shift pointer, increment pointer, jumping, Input/Output_
+    * Classical 8-symbol BrainFuck commands (shift pointer, in/de-crement pointer, jumping, In/Out-put)
     * Includes Bitwise and Arithmatic Operators in bytes (add/subtract, multiply/divide, and/or/xor/imply/not)
-    * Mutiple Tapes and pointers (Like Cufrab and DoubleFuck)
+    * Cutting, Copying, Pasting and Clearing data (like Emo and SPL)
+    * Mutiple Tapes (like Nandypants and omnifuck) and  Multiple pointers (like Emo and Hargfak)
+        * Cufrab and DoubleFuck contains both concepts
 * The last programming language reference https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
 * The Unicode 8.0.0 standards reference ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
