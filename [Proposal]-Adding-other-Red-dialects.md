@@ -1,22 +1,30 @@
 * [Dialects of different programming paradigms]
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby
+        * If one wants to write Ruby, Python or whatever, he/she/it better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on / waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
     * Having a Web-App library/framework that is similar to Rails or Django
+        * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
+        * But it will of course look different and I'd bet it will be more simple (less noise in the templates / code / routing etc.)
 * Red/Lisp that acts like Clojure, Haskell, Erlang and Scala
     * Please specify how exactly you think Clojure, Haskell, Erlang and Scala "act" / what they or their approaches have in common and how would you extract it into dialect ?
+    * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
 * [dialects of different internet languages]
 * Having a language that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
+        * As soon as first web frameworks start to appear, we can be sure someone will write them (because HTML & CSS suck ;-)
 * Having a language that works with or replaces JS, SQL, NoSQL-DB and other languages (see ISO standards) 
     * Red already is a nice dialect for Replacing JS (if someday JS gets added as compilation target).
     * Dialect for SQL generation seems _TRIVIAL_ (write it as learning experience; doesn't IMO belong in core, rather into some SQL DB interfacing lib).
     * But what exactly is "NoSQL dialect" supposed to do (http://nosql-database.org/)
+        * But a dialect is basically a notation, a way to describe something (other code can assign it some meaning, or transform it into another form). NoSql is cover-term for a bunch od solutions for persisting data. [Hyper]Graph databases, key/value stores, document databases and [native] object store databases, there IMO cannot be "one dialect to talk to them them all". Start by bindings and dialects for querying concrete nosql stores, and where regularities will arise, you can abstract over them later.
     * And what should a "dialect for any other language language" accomplish ?
         * Either Red is comprehensive enough to replace other languages, or is compatible enough to use with other languages.
+            * No dialects needed. Red, Red/System. If it is necesarry to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 * [Dialects for Easter Eggs (small bits for giggles)]
+    * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
 * Allow a golfing-specific script Red/Golf as an Easter Egg (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
 * Allow a brainfuck-like script Red/Brain as an Easter Egg
