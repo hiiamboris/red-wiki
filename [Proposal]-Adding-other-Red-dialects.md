@@ -16,10 +16,8 @@
 * Library Integration (mostly JS)
     *https://en.wikipedia.org/wiki/Solution_stack
     *https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
-
-* [Dialects for Easter Eggs]
-* Allow a golfing-specific script Red/Golf as an "Easter Egg" (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
-    * Any dialect is "allowed" (write it yourself), not every makes sense in the core
+* [Dialects for Easter Eggs (small bits for giggles)]
+* Allow a golfing-specific script Red/Golf as an Easter Egg (similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...)
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would make it more powerful.
 * Allow a brainfuck-like script Red/Brain as an Easter Egg
     * Classical 8-symbol BrainFuck commands (shift pointer, in/de-crement pointer, jumping, In/Out-put)
