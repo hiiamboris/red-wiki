@@ -2,7 +2,8 @@
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby
         * If one wants to write Ruby/Python/whatever, s/he better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on or waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
-        * Since it is said that Red is the first "Full Stack Language", it would be good to at least give incentives to students who learnt Ruby/Python in school to learn Red once they finish their curriculum ("If you can do Ruby/Python, you can do Red even better!", "REDder and Hotter than Ruby ever wish to be").
+        * Since it is said that Red is the first "Full Stack Language", it would be good to at least give incentives to students who learnt Ruby/Python in school to learn Red once they finish their curriculum.
+        * "If you can do Ruby/Python, you can do Red even better!", "REDder & Hotter than Ruby ever wish to be!"
     * Having a Web-App library/framework that is similar to Rails/Django
         * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
         * But it will of course look different and I'd bet it will be more simple (less noise in the templates/code/routing etc.)
@@ -19,7 +20,7 @@
     * Red already is a nice dialect for Replacing JS (if someday JS gets added as compilation target).
     * Dialect for SQL generation seems _TRIVIAL_ (write it as learning experience; doesn't IMO belong in core, rather into some SQL DB interfacing lib).
     * But what exactly is "NoSQL dialect" supposed to do (http://nosql-database.org/)
-        * But a dialect is basically a notation, a way to describe something (other code can assign it some meaning, or transform it into another form). NoSql is cover-term for a bunch od solutions for persisting data. [Hyper]Graph databases, key/value stores, document databases and [native] object store databases, there IMO cannot be "one dialect to talk to them them all". Start by bindings and dialects for querying concrete nosql stores, and where regularities will arise, you can abstract over them later.
+        * But a dialect is basically a notation, a way to describe something (other code can assign it some meaning, or transform it into another form). NoSql is cover-term for a bunch od solutions for persisting data. [Hyper]Graph databases, key/value stores, document databases and [native] object store databases, there IMO cannot be "one dialect to talk to them them all". Start by bindings and dialects for querying concrete NoSQL stores, and where regularities will arise, you can abstract over them later.
     * And what should a "dialect for any other language language" accomplish ?
         * Either Red is comprehensive enough to replace other languages, or is compatible enough to use with other languages.
             * No dialects needed. Red, Red/System. If it is necesary to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
