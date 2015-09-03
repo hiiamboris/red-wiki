@@ -46,3 +46,7 @@
 
 * The last programming language reference (for an idea for what Red could shoot for): https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
 * The Unicode 8.0.0 standards reference: ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
+
+According to RedMonk
+1st languages: C, C++, C#, Obj. C, Java, JS, PHP, Ruby, Python, CSS, Perl, Shell, Scala, R
+2nd Languages: VB, MatLab, Swift, Haskell, Clojure, Groovy, Go, Lua, Coffeescript, Powershell, XSLT, Assembly, Arduino, Erlang
