@@ -52,7 +52,8 @@
     * Low-end (C, C++, R)
     * Scripting (PHP, Ruby, Python, Perl)
     * Web Languages (JS, CSS)
-* 2nd Languages: (MatLab, Groovy) (VB, Go, Swift, Arduino) (Lua) (Powershell)
+* 2nd Languages: (VB, Go, Swift, Arduino) (Lua) (Powershell)
     * Functional (Scala, Haskell, Clojure, Erlang)
     * Web Languages (XSLT,  Coffeescript)
+    * Database Analysis (MatLab, Groovy)
     * Assembly
