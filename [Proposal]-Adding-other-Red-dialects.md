@@ -49,4 +49,4 @@
 
 * According to RedMonk
 * 1st languages: (C, C++, R) (C#, Obj.C, Java) (JS, CSS) (Shell) (Scala) (PHP, Ruby, Python, Perl)
-* 2nd Languages: VB, MatLab, (Go, Swift, Arduino) (Haskell, Clojure, Erlang) Groovy, Lua, Powershell (XSLT,  Coffeescript) (Assembly) 
+* 2nd Languages: VB, (MatLab, Groovy) (Go, Swift, Arduino) (Haskell, Clojure, Erlang) Lua, Powershell (XSLT,  Coffeescript) (Assembly) 
