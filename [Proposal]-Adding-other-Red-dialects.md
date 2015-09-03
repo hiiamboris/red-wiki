@@ -1,13 +1,13 @@
 * [Dialects of different programming paradigms]
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby
-        * If one wants to write Ruby, Python or whatever, he/she/it better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on / waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
-        * Since it is said that Red is the first "Full Stack Language", it would be good to at least interest students who learnt Ruby or Python in school to have the incentives to learn Red once they finish their curriculum ("If you can do Ruby/Python, you can do Red even better!").
-    * Having a Web-App library/framework that is similar to Rails or Django
+        * If one wants to write Ruby/Python/whatever, s/he better use Ruby, Python or whatever ;-). This would provide no benefit for Red, and most people working on or waiting for Red do so precisely because they appreciate Red is not like Python or Ruby.
+        * Since it is said that Red is the first "Full Stack Language", it would be good to at least give incentives to students who learnt Ruby/Python in school to learn Red once they finish their curriculum ("If you can do Ruby/Python, you can do Red even better!", "REDder and Hotter than Ruby ever wish to be").
+    * Having a Web-App library/framework that is similar to Rails/Django
         * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
-        * But it will of course look different and I'd bet it will be more simple (less noise in the templates / code / routing etc.)
-* Red/Lisp that acts like Clojure, Haskell, Erlang and Scala
-    * Please specify how exactly you think Clojure, Haskell, Erlang and Scala "act" / what they or their approaches have in common and how would you extract it into dialect ?
+        * But it will of course look different and I'd bet it will be more simple (less noise in the templates/code/routing etc.)
+* Red/Lisp that acts like Clojure/Haskell/Erlang/Scala
+    * Please specify how exactly you think Clojure/Haskell/Erlang/Scala "act" i.e. what they or their approaches have in common and how would you extract it into dialect ?
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
     * Is it possible to contain all lisp-like functions from these languages?
 
