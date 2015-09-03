@@ -25,12 +25,12 @@
             * No dialects needed. Red, Red/System. If it is necesary to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
                 * I assume Red/System ==> Red (+ Red/Script) ==> Red/Web (+ Red/Database ?)
     * Library Integration (mostly JS)
-        * What about SQL Libraries?
+        * What about DB Libraries?
     * https://en.wikipedia.org/wiki/Solution_stack
     * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
 
 * [Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)]
-    * excessive easter eggs don't IMO belong into compiler/stack that's trying to be serious(ly small ;-)
+
 * Allow a brainfuck-like script Red/Brain as an Easter Egg (1st milestone)
     * Classical 8-symbol BrainFuck commands (shift pointer, in/de-crement pointer, jumping, In/Out-put)
     * Includes Bitwise and Arithmatic Operators in bytes (add/subtract, multiply/divide, and/or/xor/imply/not)
