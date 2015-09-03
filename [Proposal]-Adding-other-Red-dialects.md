@@ -48,12 +48,14 @@
 * The Unicode 8.0.0 standards reference: ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 
 * According to RedMonk
-* 1st languages: (C#, Obj.C, Java) (Shell) 
+* 1st languages: (Shell) 
     * Low-end (C, C++, R)
+    * Object Oriented (C#, Obj.C, Java)
     * Scripting (PHP, Ruby, Python, Perl)
     * Web Languages (JS, CSS)
-* 2nd Languages: (VB, Go, Swift, Arduino) (Lua) (Powershell)
+* 2nd Languages: (Lua) (Powershell)
     * Functional (Scala, Haskell, Clojure, Erlang)
+    * Object Oriented (VB, Go, Swift, Arduino)
     * Web Languages (XSLT,  Coffeescript)
     * Database Analysis (MatLab, Groovy)
     * Assembly
