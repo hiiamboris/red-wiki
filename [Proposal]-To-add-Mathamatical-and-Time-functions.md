@@ -46,3 +46,8 @@ Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Cal
 * Not a renamed version of Gregorian or Julian Calendar.
 * All calendar system with the same properties shall be grouped together (e.g. all calendars with clustered 31 day months will be treated as the same calendar).
 * Non-365 day calendars, calendars with non-Gregorian leap days and calendars with months more than 13 will not be excluded.
+
+* Resources
+* http://myweb.ecu.edu/mccartyr/calendar-reform.html
+* http://individual.utoronto.ca/kalendis/leap/index.htm
+* http://individual.utoronto.ca/kalendis/kalendis.htm
