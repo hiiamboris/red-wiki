@@ -37,7 +37,7 @@
 * Days and months naming system: Positivist, Tranquility, French Republican, NUCal, Common-Civil-Calendar-and-Time
 
 # Binary encoding (for transferring data through texts or phone calls):
-* Binary to text (paper): binary, quaternary, octal, hexadecimal,  base32, base64, base85, base91
+* Binary to text (paper): binary, quaternary, octal, hexadecimal, base32, base64, base85, base91
 * Binary to mnemonic (phone): S/KEY, bubble babble, Pretty Good Privacy wordlist (a.k.a biometric word list) and Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
 
 # Considering (will be removed if redundant):
