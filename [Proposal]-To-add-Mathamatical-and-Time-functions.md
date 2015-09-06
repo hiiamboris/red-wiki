@@ -11,9 +11,11 @@
 * Classical Cryptography functions
     * Affine cipher (ax+b mod c translated to character table, normal/vigenere option)
     * Transposition cipher (rectangle, triangle, hexagon, zigzag, irregular)
-    * Playfair-like ciphers (Playfair, Twosquare, Foursquare mod c^2)
+    * Square-based ciphers (Playfair, Twosquare, Foursquare mod c^2)
+    * Higher Class ciphers (Chaocipher, Solitare, Book, One-Time-Pad)
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
-    * Code table transformations (N-dimensional polybius, VIC-like option)
+    * Table ciphers (N-dimensional polybius, Straddling checkerboard)
+    * Historical (BATCO, Slidex, RS-44, Jefferson, Reihenschieber, RHV)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
