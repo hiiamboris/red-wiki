@@ -10,9 +10,10 @@
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
     * Affine cipher (ax+b mod c translated to character table, normal/vigenere option)
-    * Matrix-based ciphers (addition, multiplication and transposition)
     * Transposition cipher (rectangle, triangle, hexagon, zigzag, irregular)
-    * Code table transformations
+    * Playfair-like ciphers (Playfair, Twosquare, Foursquare mod c^2)
+    * Matrix-based ciphers (addition, multiplication and transposition mod c)
+    * Code table transformations (N-dimensional polybius, VIC-like option)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
