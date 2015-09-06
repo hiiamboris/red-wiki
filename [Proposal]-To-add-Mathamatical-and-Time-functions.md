@@ -14,7 +14,8 @@
     * 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
-    * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html )
+    * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html)
+    * Conway's audioactive sequence and elements analysis
 * Lottery related Algorithms
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
     * Bernoulli trial (probability of k successes out on n) = C(n,k)*p^k*(1-p)^(n-k)
