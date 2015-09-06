@@ -8,18 +8,18 @@
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 
 # Applied Mathematics (some basics for testing):
-* [Cryptography and Error Correction]
-* Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
-* Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
-* 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
-* [Extra Curriculum Mathematics]
-* Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
-* Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html )
-* [Lottery related Algorithms]
-* Multicombination or multisubset or M(n,k)=C(n+k-1,k)
-* Bernoulli trial (probability of k successes out on n) = C(n,k)*p^k*(1-p)^(n-k)
-* Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
-* co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
+* Cryptography and Error Correction
+    * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
+    * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
+    * 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
+* Extra Curriculum Mathematics
+    * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
+    * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html )
+* Lottery related Algorithms
+    * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
+    * Bernoulli trial (probability of k successes out on n) = C(n,k)*p^k*(1-p)^(n-k)
+    * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
+    * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 
 # Time ("time unit reformation"):
 * Traditional: 1 day is 24 hours, 1 hour is 4 quarters, 1 quarter is 15 minutes, 1 minute is 60 seconds
