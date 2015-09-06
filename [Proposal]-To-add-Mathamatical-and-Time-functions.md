@@ -8,7 +8,11 @@
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 
 # Applied Mathematics (some basics for testing):
-* Cryptography and Error Correction
+* Classical Cryptography functions
+    * Affine cipher (ax+b mod c translated to list of characters)
+    * Matrix-based ciphers (addition, multiplication and shifting)
+    * RSA cipher
+* Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
     * 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
