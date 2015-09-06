@@ -9,9 +9,9 @@
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
-    * Affine cipher (ax+b mod c translated to list of characters)
-    * Matrix-based ciphers (addition, multiplication and shifting)
-    * RSA cipher
+    * Affine cipher (ax+b mod c translated to character table, normal/vigenere option)
+    * Matrix-based ciphers (addition, multiplication and transposition)
+    * Transposition cipher (rectangle, triangle, hexagon, irregular)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
