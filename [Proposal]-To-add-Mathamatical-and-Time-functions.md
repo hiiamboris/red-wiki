@@ -9,10 +9,10 @@
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
-    * Affine cipher (ax+b mod c translated to character table, normal/vigenere option)
+    * Affine cipher (ax+b mod c translated to character table, vigenere options)
     * Transposition cipher (rectangle, triangle, hexagon, zigzag, irregular)
-    * Square-based ciphers (Playfair, Twosquare, Foursquare mod c^2)
-    * Higher Class ciphers (Chaocipher, Solitare, Book, One-Time-Pad)
+    * Square-based ciphers (Playfair, Double-Playfair/Twosquare, Foursquare mod c^2)
+    * Higher Class ciphers (Chaocipher, Solitare/Mirdek/Majestic, Book, One-Time-Pad)
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table ciphers (N-dimensional polybius, Straddling checkerboard)
     * Historical (BATCO, Slidex, RS-44, Jefferson, Reihenschieber, RHV)
