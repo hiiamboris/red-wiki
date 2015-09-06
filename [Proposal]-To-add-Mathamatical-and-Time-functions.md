@@ -11,7 +11,8 @@
 * Classical Cryptography functions
     * Affine cipher (ax+b mod c translated to character table, normal/vigenere option)
     * Matrix-based ciphers (addition, multiplication and transposition)
-    * Transposition cipher (rectangle, triangle, hexagon, irregular)
+    * Transposition cipher (rectangle, triangle, hexagon, zigzag, irregular)
+    * Code table transformations
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
