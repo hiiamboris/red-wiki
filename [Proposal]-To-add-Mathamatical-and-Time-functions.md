@@ -22,7 +22,7 @@
     * Playing card cipher (https://pthree.org/2014/09/15/playing-card-ciphers/)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
-    * Shamir's Secret Sharing Scheme using GF256 (see https://github.com/hbs/PySSSS for example)
+    * Shamir's Secret Sharing Scheme
     * 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
