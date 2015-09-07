@@ -7,6 +7,8 @@
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 * Arbitrary precision arithmatic (in bits, base10, base12, base16 and base60)
+* Complex number arithmatic (i^2=-1 "Gaussian integers" and w^3=1 "Eulerian integers")
+* Number data types: integers(sign*int_A), fractions (sign*int_A/int_B), floating-point (float_A)
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
