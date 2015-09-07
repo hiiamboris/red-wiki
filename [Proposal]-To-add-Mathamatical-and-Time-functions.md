@@ -6,6 +6,7 @@
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
+* Arbitrary precision arithmatic (in bits, base10, base12, base16 and base60)
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
