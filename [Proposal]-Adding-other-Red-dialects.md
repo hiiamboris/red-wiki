@@ -15,7 +15,7 @@
 # dialects of different internet languages
 * Having Red/Web that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
-        * As soon as first web frameworks start to appear, we can be sure someone will write them (because HTML & CSS suck!
+    * As soon as first web frameworks start to appear, we can be sure someone will write them (because HTML & CSS suck)
 * Having Red/Database that works with or replaces JS, SQL, NoSQL-DB and other languages (see ISO standards) 
     * Red already is a nice dialect for Replacing JS (if someday JS gets added as compilation target).
     * Dialect for SQL generation seems _TRIVIAL_ (write it as learning experience; doesn't IMO belong in core, rather into some SQL DB interfacing lib).
