@@ -23,7 +23,7 @@
         * But a dialect is basically a notation, a way to describe something (other code can assign it some meaning, or transform it into another form). NoSql is cover-term for a bunch od solutions for persisting data. [Hyper]Graph databases, key/value stores, document databases and [native] object store databases, there IMO cannot be "one dialect to talk to them them all". Start by bindings and dialects for querying concrete NoSQL stores, and where regularities will arise, you can abstract over them later.
     * Either Red is comprehensive enough to replace other languages, or is compatible enough to use with other languages.
         * No dialects needed. Red, Red/System. If it is necesary to interface leggacy code, there are (or will be) C ABI compatibility, Java/.Net/Cocoa bridges, sockets & protocols, what more is needed ?
-            * I assume Red/System ==> Red (+ Red/Script) ==> Red/Web (+ Red/Database ?)
+            * I assume Red/System ⇒ Red (+ Red/Script) ⇒ Red/Web (+ Red/Database ?)
     * Library Integration (mostly JS)
         * What about SQL and DB Libraries?
     * https://en.wikipedia.org/wiki/Solution_stack
