@@ -15,7 +15,7 @@
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (N-dimensional polybius, Straddling checkerboard)
     * Historical (BATCO, Slidex, RS-44, Jefferson, Reihenschieber, RHV)
-    * Huge data (Book, One-Time-Pad) 
+    * Huge data (Book/Bible/Dictionary, One-Time-Pad) 
     * Playing card cipher (https://pthree.org/2014/09/15/playing-card-ciphers/)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
