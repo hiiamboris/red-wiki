@@ -12,14 +12,14 @@
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
-    * Affine (ax+b mod c translated to character table, autokey and vigenere options)
+    * Affine/Caesar (ax+b mod c translated to character table, autokey and vigenere options)
     * Transposition (square, rectangle, triangle, hexagon, zigzag, irregular, custom)
-    * Square-based (Playfair, Double-Playfair/Twosquare, Foursquare mod c^2)
+    * Square-based (Off-The-Grid, Playfair, Double-Playfair/Twosquare, Foursquare mod c^2)
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
-    * Table (2/3/N-dimensional polybius, Straddling checkerboard)
-    * Historical (BATCO, Slidex, RS-44, Jefferson, Reihenschieber, RHV)
+    * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares, Straddling-Checkerboard)
+    * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
-    * Playing card cipher (https://pthree.org/2014/09/15/playing-card-ciphers/)
+    * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme
