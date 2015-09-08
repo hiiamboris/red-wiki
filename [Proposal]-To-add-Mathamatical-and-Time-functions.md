@@ -50,8 +50,8 @@
     * Thirteen Month Calendar: a year is divided into 13 months, each containing 4 weeks, with an addition "world day" and the "leap day" added 4-100-400 style
 * Leap Week: a year is divided into 52 weeks, and the "leap week" added 5-40-400 style or a much closer style
 * Days and months naming system: Positivist, Tranquility, French Republican, NUCal, Common-Civil-Calendar-and-Time
-* The Revised Julian Calendar sync: every 3600 years, there will be no leap day.
-    * The Revised Julian Calendar adds 218 leap days in 900 years (Having one less day then 3600 Gregorian years)
+* The Milanković Calendar sync: every 3600 years, there will be no leap day.
+    * The Milanković Calendar adds 218 leap days in 900 years (Having one less day then 3600 Gregorian years)
 
 # Binary encoding (for transferring data through texts or phone calls):
 * Binary to text (paper): binary, quaternary, octal, hexadecimal, base32, base64, base85, base91
