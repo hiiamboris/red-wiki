@@ -4,6 +4,9 @@ This is the "main" room for general discussions about Red.
 #### [red/red/links](https://gitter.im/red/red/links)
 This room is dedicated for storing useful links.
 
+#### [red/red/char-datatype](https://gitter.im/red/red/char-datatype)
+This room is dedicated for discussing the char! datatype.
+
 #### [red/red/gui-branch](https://gitter.im/red/red/gui-branch)
 This room is for discussing the gui development branch
 
