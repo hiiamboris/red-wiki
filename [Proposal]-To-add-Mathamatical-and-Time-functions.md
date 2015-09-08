@@ -40,8 +40,10 @@
     * Decimal: 1 day has 10 C-hours, 1 C-hour has 100 C-minutes, 1 C-minute has 100 C-seconds
     * Dozenal: 1 day has 12 Z-hours, 1 Z-hour has 144 Z-minutes, 1 Z-minute has 144 Z-seconds
     * Hexadecimal: 1 day has 16 X-hours, 1 X-hour has 256 X-minutes, 1 X-minute has 256 X-seconds
-* Old Chinese: 1 day is 10 old-shi, 1 old-shi is 10 big-ke, 1 big-ke is 60 fen (1 fen is 100 hao) 
-* New Chinese: 1 day is 12 new-shi, 1 new-shi is 5 dian, 1 dian is 10 small-ke, 1 small-ke is 10 fen (1 fen is 100 hao)
+Chinese Time:
+    * Old Chinese: 1 day is 10 old-shi, 1 old-shi is 10 big-ke, 1 big-ke is 6 small-ke
+    * New Chinese: 1 day is 12 new-shi, 1 new-shi is 5 dian, 1 dian is 10 small-ke
+    * 1 dian is 2 mid-ke, 1 small-ke is 10 fen, 1 fen is 100 hao
 * New Earth: 1 day is 360 degrees, 1 degree is 60 minutes, 1 minute is 60 seconds
 
 # Dates ("calendar reformation") with 2001 Janurary 1st being first day of the 400 year cycle:
