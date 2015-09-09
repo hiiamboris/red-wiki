@@ -46,7 +46,8 @@
     * 1 dian is 2 mid-ke, 1 small-ke is 10 fen, 1 fen is 100 hao
 * New Earth: 1 day is 360 degrees, 1 degree is 60 minutes, 1 minute is 60 seconds
 
-# Dates ("calendar reformation") with 2001 Janurary 1st being first day of the 400 year cycle:
+# Dates ("calendar reformation"):
+* 2001 January 1st being first day (and Monday) of the 400 year cycle
 * 52 week calendars
     * World Season Calendar: a year is divided into 4 seasons, each containing 13 weeks, with an additional "world day" and the "leap day" added 4-100-400 style
     * Thirteen Month Calendar: a year is divided into 13 months, each containing 4 weeks, with an addition "world day" and the "leap day" added 4-100-400 style
