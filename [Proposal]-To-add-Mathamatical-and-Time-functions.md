@@ -14,12 +14,13 @@
 * Classical Cryptography functions
     * Affine/Caesar (ax+b mod c translated to character table, autokey and vigenere options)
     * Transposition (square, rectangle, triangle, hexagon, zigzag, irregular, custom)
-    * Square-based (Off-The-Grid, Playfair, Double-Playfair/Twosquare, Foursquare mod c^2)
+    * Square-based (Playfair, Double-Playfair/Twosquare, Foursquare mod c^2)
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares, Straddling-Checkerboard)
     * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
+    * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme
