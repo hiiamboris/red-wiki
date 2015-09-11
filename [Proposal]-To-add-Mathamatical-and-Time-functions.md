@@ -56,6 +56,10 @@
 * Days and months naming system: Positivist, Tranquility, French Republican, NUCal, Common-Civil-Calendar-and-Time
 * The Milanković Calendar sync: every 3600 years, there will be no leap day.
     * The Milanković Calendar adds 218 leap days in 900 years (Having one less day then 3600 Gregorian years)
+* Special notation for calendar formatting
+    * Days: d means without 0 place holder, dd means in 2 digits
+    * Weeks: w means without 0 place holder, dd means in 2 digits
+    * Months: m means without 0 place holder, mm means in 2 digits, mmm means in 3 letter abbreviation, mmmm means in long form, mmmmm means "special form"
 
 # Binary encoding (for transferring data through texts or phone calls):
 * Binary to text (paper): binary, quaternary, octal, hexadecimal, base32, base64, base85, base91
