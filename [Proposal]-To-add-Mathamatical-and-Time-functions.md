@@ -18,6 +18,8 @@
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares)
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
+    * http://users.telenet.be/d.rijmenants/en/table.htm
+    * scz.bplaced.net/m.html
     * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
