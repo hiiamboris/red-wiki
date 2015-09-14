@@ -40,7 +40,14 @@
     * similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would be more powerful than Rebmu.
     * Allows for data compression into base32, base64, base85 and/or base 91 to win byte-based competitions.
-
+* Allow a cellular automata or Microsoft-Logo-Esque (3rd milestones)
+    * Langton's Ants and Multi-Colored Turmites
+    * Conway's Game Of Life and Life-likes
+    * Elementary Cellular Automations
+    * Wireworld and other advanced CA
+    * (Von Neumann cellular automaton or Nobili cellular automata)
+    * (Codd's cellular automaton or "Collect and Distribute"/"CoDi")
+    * https://play.google.com/store/apps/details?id=be.evs.instinct&hl=en
 
 # References
 * The last programming language reference (for an idea for what Red could shoot for): https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
