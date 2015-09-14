@@ -40,13 +40,14 @@
     * similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would be more powerful than Rebmu.
     * Allows for data compression into base32, base64, base85 and/or base 91 to win byte-based competitions.
-* Allow a cellular automata or Microsoft-Logo-Esque (3rd milestones)
+* Allow a Cellular Automata or Microsoft-Logo-Esque (3rd milestones)
     * Langton's Ants and Multi-Colored Turmites
     * Conway's Game Of Life and Life-likes
-    * Elementary Cellular Automations
-    * Wireworld and other advanced CA
-    * (Von Neumann cellular automaton or Nobili cellular automata)
-    * (Codd's cellular automaton or "Collect and Distribute"/"CoDi")
+    * Elementary Cellular Automata and Second-order Cellular Automata
+    * Wireworld and other advanced Cellular Automata
+    * (Von Neumann Cellular Automata or Nobili Cellular Automata)
+    * (Codd's Cellular Automata or "Collect and Distribute"/"CoDi")
+    * (Block Cellular Automata or Quantum Cellular Automata)
     * https://play.google.com/store/apps/details?id=be.evs.instinct&hl=en
 
 # References
