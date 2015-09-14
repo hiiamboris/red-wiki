@@ -35,7 +35,7 @@
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 
-# Time ("time unit reformation"):
+# Time:
 * Traditional: 1 day is 24 hours, 1 hour is 4 quarters, 1 quarter is 15 minutes, 1 minute is 60 seconds
 * Metric Time
     * Decimal: 1 day has 10 C-hours, 1 C-hour has 100 C-minutes, 1 C-minute has 100 C-seconds
@@ -46,6 +46,7 @@
     * New Chinese: 1 day is 12 new-shi, 1 new-shi is 5 dian, 1 dian is 10 small-ke
     * 1 dian is 2 mid-ke, 1 small-ke is 10 fen, 1 fen is 100 hao
 * New Earth: 1 day is 360 degrees, 1 degree is 60 minutes, 1 minute is 60 seconds
+* Leap Second mechanism: Default style (direct time change), Google Style (1 second spread out through 100 days)
 
 # Dates ("calendar reformation"):
 * 2001 January 1st being first day (and Monday) of the 400 year cycle
