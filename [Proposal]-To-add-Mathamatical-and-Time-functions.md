@@ -26,7 +26,7 @@
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
     * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
     * cryptogram.org/cipher_types.html
-    * 
+    * practicalcryptography.com/ciphers/classical-era/
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme
