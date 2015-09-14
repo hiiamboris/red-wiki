@@ -44,7 +44,7 @@
     * Langton's Ants and Multi-Colored Turmites
     * Conway's Game Of Life and Life-likes
     * Elementary Cellular Automata and Second-order Cellular Automata
-    * Wireworld and other advanced Cellular Automata
+    * Wireworld and Cyclic Cellular Automaton
     * (Von Neumann Cellular Automata or Nobili Cellular Automata)
     * (Codd's Cellular Automata or "Collect and Distribute"/"CoDi")
     * (Block Cellular Automata or Quantum Cellular Automata)
