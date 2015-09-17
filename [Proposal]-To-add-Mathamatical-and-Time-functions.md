@@ -24,13 +24,13 @@
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares)
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
-    * http://scz.bplaced.net/m.html http://users.telenet.be/d.rijmenants/en/table.htm
+        * http://scz.bplaced.net/m.html http://users.telenet.be/d.rijmenants/en/table.htm
     * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
+        * http://users.telenet.be/d.rijmenants/en/onetimepad.htm and http://users.telenet.be/d.rijmenants/en/otp.htm
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
     * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
     * http://cryptogram.org/cipher_types.html and http://practicalcryptography.com/ciphers/classical-era/
-    * http://users.telenet.be/d.rijmenants/en/onetimepad.htm and http://users.telenet.be/d.rijmenants/en/otp.htm
     * http://www.quadibloc.com/crypto/intro.htm
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
