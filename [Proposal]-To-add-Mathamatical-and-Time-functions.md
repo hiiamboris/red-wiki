@@ -12,6 +12,9 @@
 * IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
     * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
     * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
+* Extended precision Floating Point arithmatic
+    * For 5*2^n bit floating point (decimal), there are 2^n-1 exponent bits
+    * For 6*2^n bit floating point (dozenal), there are 2^n-1 exponent bits
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
