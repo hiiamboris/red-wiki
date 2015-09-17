@@ -11,6 +11,7 @@
     * Gaussian integers (where N=a+bi, i^2+1=0 and i^4=1)
     * Eulerian integers (where N=a+bw, w^2+w+1=0 and w^3=1)
     * Polar Coordinates (where N={r,phi}, r is integer and phi=fraction)
+    * Gaussian/Eulerian integer and fraction arithmetic
 * Number data types: boolean, integers(int_A), fractions (int_A / int_B), floating-point (frac_A * exp_A)
 * IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
     * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
@@ -72,9 +73,10 @@
 * The Milanković Calendar sync: every 3600 years, there will be no leap day.
     * The Milanković Calendar adds 218 leap days in 900 years (Having one less day then 3600 Gregorian years)
 * Special notation for calendar formatting
-    * Days: d means without 0 place holder, dd means in 2 digits
-    * Weeks: w means without 0 place holder, dd means in 2 digits
-    * Months: m means without 0 place holder, mm means in 2 digits, mmm means in 3 letter abbreviation, mmmm means in long form, mmmmm means "special form"
+    * Days: d means without 0 place holder, dd means in 2 digits, ddd means 3 letter abbreviation of weekday/dayname, dddd means long form of weekday/dayname, ddddd means "special abbreviation" format 
+    * Weeks: w means without 0 place holder, ww means in 2 digits, www means in 3 letter abbreviation, wwww means in long form, wwwww means in "special abbreviation" format
+    * Months: m means without 0 place holder, mm means in 2 digits, mmm means in 3 letter abbreviation, mmmm means in long form, mmmmm means "special abbreviation" format
+    * Years: y means without 0 place holder, yy means in 2 digits, yyy means in 3 digits, yyyy means in 4 digits, yyyyy means in "Cycle-Year" format
 
 # Binary encoding (for transferring data through texts or phone calls):
 * Binary to text (paper): binary, quaternary, octal, hexadecimal, base32, base64, base85, base91
