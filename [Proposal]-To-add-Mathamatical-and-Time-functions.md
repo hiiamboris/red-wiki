@@ -1,7 +1,7 @@
 # Mathematics (for scientific calculators):
 * Trigonometric functions: sin, cos, tan, asin, acos, atan
 * Hyperbolic function: sinh, cosh, tanh, asinh, acosh, atanh
-* Logarithms: log (for decimal), lg (for binary), lon (for duodecimal/dozenal), ln (for natural)
+* Logarithms: log (for decimal), lg (for binary), lon (for dozenal), ln (for natural)
 * Quotient and Modulo in multiple ways: Truncated, Floored, Eucliedian
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
@@ -13,8 +13,8 @@
     * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
     * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
 * Extended precision Floating Point arithmatic
-    * For 5*2^n bit floating point (decimal), there are 2^n-1 exponent bits
-    * For 6*2^n bit floating point (dozenal), there are 2^n-1 exponent bits
+    * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
+    * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
