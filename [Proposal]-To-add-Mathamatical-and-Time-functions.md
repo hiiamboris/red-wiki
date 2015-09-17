@@ -7,8 +7,11 @@
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 * Arbitrary precision arithmatic (in bits, base10, base12, base16 and base60)
-* Complex number arithmatic (i^2=-1 "Gaussian integers" and w^3=1 "Eulerian integers")
+* Complex number arithmetic (i^2=-1 "Gaussian integers", w^3=1 "Eulerian integers" and Polar Coordinates)
 * Number data types: boolean, integers(int_A), fractions (int_A / int_B), floating-point (frac_A * exp_A)
+* IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
+    * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
+    * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
