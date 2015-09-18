@@ -39,7 +39,8 @@
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme
-    * 3DES, AES, serpent, blowfish and twofish in multiple modes of operation
+    * 3DES, AES, blowfish, serpent and twofish in multiple modes of operation
+    * Camellia, CAST-128, IDEA, RC2, RC5, SEED, ARIA, Skipjack, TEA and XTEA if possible
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
     * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html)
