@@ -16,7 +16,7 @@
 https://en.wikipedia.org/wiki/Image_file_formats
 
 * Document Formats
-    *
+    * DOC
 https://en.wikipedia.org/wiki/Document_file_format
 
 https://en.wikipedia.org/wiki/List_of_document_markup_languages
