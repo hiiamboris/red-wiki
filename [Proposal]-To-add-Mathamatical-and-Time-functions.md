@@ -79,9 +79,18 @@
     * Months: m means without 0 place holder, mm means in 2 digits, mmm means in 3 letter abbreviation, mmmm means in long form, mmmmm means "special abbreviation" format
     * Years: y means without 0 place holder, yy means in 2 digits, yyy means in 3 digits, yyyy means in 4 digits, yyyyy means in "Cycle-Year" format
 
-# Binary encoding (for transferring data through texts or phone calls):
-* Binary to text (paper): binary, quaternary, octal, hexadecimal, base32, base64, base85, base91
-* Binary to mnemonic (phone): S/KEY, bubble babble, Pretty Good Privacy wordlist (a.k.a biometric word list) and Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
+# Binary encoding
+* Binary to text (for transferring data through printed texts and writings on paper):
+    * Small 2^n: binary, quaternary, octal
+    * Large 2^n: hexadecimal, base32, base64
+    * Non-2^n based encoding: base85, base91
+* Binary to mnemonic (for transferring data through phone call and voice recordings):
+    * Bubble Babble: https://github.com/rsaarelm/teratogen/tree/master/src/teratogen/babble
+    * Vorud: https://github.com/rsaarelm/vorud
+    * S/KEY: https://tools.ietf.org/html/rfc2289 (P.18-23)
+    * Pretty Good Privacy wordlist (a.k.a biometric word list)
+    * Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
+
 
 # Considering (will be removed if redundant):
 * Akan Calendar, Armenian Calendar, Aztec Calendar, Attic Calendar, Babylonian Calendar, Balinese Saka Calendar, Berber Calendar, Borana Calendar, Buddhist calendar, Burmese Calendar, Chinese Calendar, Chula Sakarat, Coligny Calendar, Coptic Calendar, Egyptian Calendar, Enoch calendar, Ethiopian Calendar, Gaelic Calendar, Hellenic Calendar, Hindu Calendar, Igbo Calendar, Iranian Calendar, Japanese Calendar, Javanese Calendar, Korean Calendar, Kurdish Calendar, Mayan Calendar, Macedonian Calendar, Mongolian Calendar, Pawukon Calendar, Rapa Nui Calendar, Roman calendar, Soviet Calendar, Tabular Islamic Calendar, Tamil Calendar, Thai Calendar, Tibetan Calendar, Vikram Samvat, Vira Nirvana Samvat, Yoruba Calendar, Zoroastrian Calendar, (Dreamspell), (Discordian)
