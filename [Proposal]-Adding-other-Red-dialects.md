@@ -55,16 +55,23 @@
 * The Unicode 8.0.0 standards reference: ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 
 * According to RedMonk
-* 1st languages:
-    * Low-end (C, C++, R)
-    * Object Oriented (C#, Obj.C, Java)
-    * Scripting (PHP, Ruby, Python, Perl)
-    * Web Languages (JS, CSS)
-    * Others (Shell)
-* 2nd Languages:
-    * Functional (Scala, Haskell, Clojure, Erlang, Lua)
-    * Object Oriented (VB, Go, Swift, Arduino)
-    * Web Languages (XSLT,  Coffeescript)
-    * Database Analysis (MatLab, Groovy)
-    * Assembly
-    * Others (Powershell)
+    * 1st languages:
+        * Low-end (C, C++, R)
+        * Object Oriented (C#, Obj.C, Java)
+        * Scripting (PHP, Ruby, Python, Perl)
+        * Web Languages (JS, CSS)
+        * Others (Shell)
+    * 2nd Languages:
+        * Functional (Scala, Haskell, Clojure, Erlang, Lua)
+        * Object Oriented (VB, Go, Swift, Arduino)
+        * Web Languages (XSLT,  Coffeescript)
+        * Database Analysis (MatLab, Groovy)
+        * Others (Powershell)
+    * Multi-target ASM (Example):
+        * GNU Assembler (Gas)
+        * ASxxxx Cross Assembler
+        * Vasm Portable & Retargetable Assembler
+        * Amsterdam Compiler Kit (ACK)
+    * Other ASM languages:
+        * https://en.wikipedia.org/wiki/Comparison_of_assemblers
+        * http://www.freebyte.com/programming/assembler/
