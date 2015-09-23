@@ -49,7 +49,10 @@
     * (Codd's Cellular Automata or "Collect and Distribute"/"CoDi")
     * (Block Cellular Automata or Quantum Cellular Automata)
     * https://play.google.com/store/apps/details?id=be.evs.instinct&hl=en
-* https://en.wikipedia.org/wiki/Category:Educational_abstract_machines (4th milestone)
+* Other Machines (4th milestone)
+    * https://en.wikipedia.org/wiki/Category:Educational_programming_languages
+    * https://en.wikipedia.org/wiki/Category:Educational_abstract_machines
+    * https://en.wikipedia.org/wiki/Category:Turing_machine
 
 # References
 * The last programming language reference (for an idea for what Red could shoot for): https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
