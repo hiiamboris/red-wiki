@@ -7,6 +7,7 @@
     * Having a Web-App library/framework that is similar to Rails/Django
         * In the sense of capable-enough solution, it will only take a "moderately finished" Red and some time before it will start happening (more accessible to general [coder] population)
         * But it will of course look different and I'd bet it will be more simple (less noise in the templates/code/routing etc.)
+    * There has been an example of such a language, but in a smaller scale http://rubol.hostilefork.com/
 * Red/Lisp that acts like Clojure/Haskell/Erlang/Scala
     * Please specify how exactly you think Clojure/Haskell/Erlang/Scala "act" i.e. what they or their approaches have in common and how would you extract it into dialect ?
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
@@ -55,8 +56,11 @@
     * https://en.wikipedia.org/wiki/Category:Turing_machine
 
 # References
-* The last programming language reference (for an idea for what Red could shoot for): https://skillsmatter.com/skillscasts/2323-bobs-last-language http://lambda-the-ultimate.org/node/4312
-* The Unicode 8.0.0 standards reference: ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
+* The last programming language reference (for an idea for what Red could shoot for): 
+    * https://skillsmatter.com/skillscasts/2323-bobs-last-language 
+    * http://lambda-the-ultimate.org/node/4312
+* The Unicode 8.0.0 standards reference: 
+    * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 
 * According to RedMonk
     * 1st languages:
