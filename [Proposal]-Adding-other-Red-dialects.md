@@ -77,7 +77,3 @@
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * http://c2.com/cgi/wiki?LearningAssemblyLanguage
         * http://asm.sourceforge.net/
-        * http://www.gnu.org/software/binutils/
-        * http://shop-pdp.net/ashtml/asxxxx.htm
-        * http://sun.hasenbraten.de/vasm/
-        * http://tack.sourceforge.net/
