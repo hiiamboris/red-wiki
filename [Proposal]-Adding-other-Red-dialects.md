@@ -77,3 +77,6 @@
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * http://c2.com/cgi/wiki?LearningAssemblyLanguage
         * http://asm.sourceforge.net/
+        * http://www.int80h.org/
+        * http://www.nasm.us/
+        * http://www.plantation-productions.com/Webster/
