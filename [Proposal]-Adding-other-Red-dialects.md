@@ -72,10 +72,12 @@
         * Database Analysis (MatLab, Groovy)
         * Others (Powershell)
     * ASM languages:
-        * https://en.wikipedia.org/wiki/Comparison_of_assemblers
-        * http://www.freebyte.com/programming/assembler/
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
-        * http://c2.com/cgi/wiki?LearningAssemblyLanguage
+        * https://en.wikipedia.org/wiki/Comparison_of_assemblers
+        * https://en.wikipedia.org/wiki/Microassembler/
+        * http://c2.com/cgi/wiki?LearningAssemblyLanguage/
+        * http://www.freebyte.com/programming/assembler/
+        * http://www.cs.cornell.edu/talc/
         * http://asm.sourceforge.net/
         * http://www.int80h.org/
         * http://www.nasm.us/
