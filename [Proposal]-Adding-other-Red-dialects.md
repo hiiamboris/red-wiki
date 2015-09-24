@@ -61,8 +61,7 @@
     * http://lambda-the-ultimate.org/node/4312
 * The Unicode 8.0.0 standards reference: 
     * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
-
-* According to RedMonk
+* Top Programming Languages According to RedMonk:
     * 1st languages:
         * Low-end (C, C++, R)
         * Object Oriented (C#, Obj.C, Java)
