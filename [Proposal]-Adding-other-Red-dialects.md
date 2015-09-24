@@ -13,7 +13,7 @@
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
     * Is it possible to contain all lisp-like functions from these languages?
 
-# dialects of different internet languages
+# Dialects of different internet languages
 * Having Red/Web that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
     * As soon as first web frameworks start to appear, we can be sure someone will write them (because HTML & CSS suck)
@@ -56,6 +56,10 @@
     * https://en.wikipedia.org/wiki/Category:Turing_machine
 
 # References
+* Office file formats
+    * http://neowiki.neooffice.org/index.php/NeoOffice_File_Formats
+    * https://wiki.openoffice.org/wiki/Documentation/OOo3_User_Guides/Getting_Started/File_formats
+    * https://wiki.documentfoundation.org/Main_Page
 * The last programming language reference (for an idea for what Red could shoot for): 
     * https://skillsmatter.com/skillscasts/2323-bobs-last-language 
     * http://lambda-the-ultimate.org/node/4312
