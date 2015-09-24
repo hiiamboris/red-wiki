@@ -71,11 +71,13 @@
         * Web Languages (XSLT,  Coffeescript)
         * Database Analysis (MatLab, Groovy)
         * Others (Powershell)
-    * Multi-target ASM (Example):
-        * GNU Assembler (Gas)
-        * ASxxxx Cross Assembler
-        * Vasm Portable & Retargetable Assembler
-        * Amsterdam Compiler Kit (ACK)
-    * Other ASM languages:
+    * ASM languages:
         * https://en.wikipedia.org/wiki/Comparison_of_assemblers
         * http://www.freebyte.com/programming/assembler/
+        * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
+        * http://c2.com/cgi/wiki?LearningAssemblyLanguage
+        * http://asm.sourceforge.net/
+        * http://www.gnu.org/software/binutils/
+        * http://shop-pdp.net/ashtml/asxxxx.htm
+        * http://sun.hasenbraten.de/vasm/
+        * http://tack.sourceforge.net/
