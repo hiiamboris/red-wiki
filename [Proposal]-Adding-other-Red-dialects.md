@@ -31,6 +31,14 @@
         * What about SQL and DB Libraries?
     * https://en.wikipedia.org/wiki/Solution_stack
     * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+* Intergration and unification
+* Text Chatroom protocol: IRC and XMPP
+* Email protocol: SMTP, IMAP and POP3
+* VoIP protocol: SIP/SIMPLE and Mumble
+* Secure protocol: TOX/DHT, Textsecure and Zephyr
+* Routing protocol: TOR, I2P and Freenet
+
+* Unification of wikis: AsciiDoc, Creole, Markdown, MediaWiki, Org-Mode, Pod, RDoc, Textile, StructuredText
 
 # Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)
 * Allow a brainfuck-like script Red/Brain as an Easter Egg (1st milestone)
