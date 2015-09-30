@@ -59,7 +59,7 @@
 * Office file formats
     * http://neowiki.neooffice.org/index.php/NeoOffice_File_Formats
     * https://wiki.openoffice.org/wiki/Documentation/OOo3_User_Guides/Getting_Started/File_formats
-    * https://wiki.documentfoundation.org/Main_Page
+    * https://wiki.documentfoundation.org/Main_Page and https://en.wikipedia.org/wiki/LibreOffice#Supported_file_formats
 * The last programming language reference (for an idea for what Red could shoot for): 
     * https://skillsmatter.com/skillscasts/2323-bobs-last-language 
     * http://lambda-the-ultimate.org/node/4312
