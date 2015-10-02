@@ -60,7 +60,7 @@
     * Blum Blum Shub, , Blum–Micali, Lehmer, Naor-Reingold, Generalized Inversive Congruential
     * Wichmann-Hill like RNGs based on LCG, ICG, MWC, CMWC and LFG
     * Others: Self Shrinking Generator and Shrinking Generator, Feedback with Carry Shift Registers
-    * DieHarder and TestU01 for testing out binary sequences
+    * NIST, TestU01 and DieHarder for testing out binary sequences
 
 # Time:
 * Traditional: 1 day is 24 hours, 1 hour is 4 quarters, 1 quarter is 15 minutes, 1 minute is 60 seconds
