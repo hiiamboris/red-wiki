@@ -50,6 +50,14 @@
     * Bernoulli trial (probability of k successes out on n) = C(n,k)*p^k*(1-p)^(n-k)
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
+* Random Number Generators
+    * Mersenne Twisters (MT)
+    * Well Equidistributed Long-period Linear (WELL)
+    * Single-instruction-multiple-data-oriented Fast Mersenne Twister (SFMT)
+    * XorShift and XSAdd (http://xorshift.di.unimi.it/ http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/)
+    * http://maths-people.anu.edu.au/~brent/random.html and http://dl.acm.org/citation.cfm?doid=2714064.2660195
+    * BBS, Lehmer, Blum-Micali and Naor-Reingold
+    * Wichmann-Hill like RNGs based on LCG, ICG, MWC, CMWC and LFG
 
 # Time:
 * Traditional: 1 day is 24 hours, 1 hour is 4 quarters, 1 quarter is 15 minutes, 1 minute is 60 seconds
