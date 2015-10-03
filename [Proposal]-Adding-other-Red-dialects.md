@@ -81,13 +81,16 @@
         * Object Oriented (C#, Obj.C, Java)
         * Scripting (PHP, Ruby, Python, Perl)
         * Web Languages (JS, CSS)
-        * Others (Shell)
+        * Others (Scala, Shell)
     * 2nd Languages:
-        * Functional (Scala, Haskell, Clojure, Erlang, Lua)
+        * Functional (Haskell, Clojure, Erlang, Lua)
         * Object Oriented (VB, Go, Swift, Arduino)
-        * Web Languages (XSLT,  Coffeescript)
+        * Web Languages (XSLT, Coffeescript)
         * Database Analysis (MatLab, Groovy)
         * Others (Powershell)
+    * 3rd Languages:
+        * SQL, XML, Delphi, ColdFusion, ASP, F#, Prolog, Dart, Fortran, Truescript, Tcl, OCaml, Processing, Rust, D, Puppet, Actionscript, TeX
+        * Lisps (EmacsLisp, CommonLisp, Scheme)
     * ASM languages:
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * https://en.wikipedia.org/wiki/Comparison_of_assemblers
