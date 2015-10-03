@@ -36,9 +36,6 @@
 * Email protocol: SMTP, IMAP and POP3
 * VoIP protocol: SIP/SIMPLE and Mumble
 * Secure protocol: TOX/DHT, Textsecure and Zephyr
-* Routing protocol: TOR, I2P and Freenet
-* File protocol: Torrent, ED2K, IPFS
-* (Others?: ICANN, BitSwap, Ethereum, ZeroNet, MaidSafe)
 
 * Unification of wikis: AsciiDoc, Creole, Markdown, MediaWiki, Org-Mode, Pod, RDoc, Textile, StructuredText
 
