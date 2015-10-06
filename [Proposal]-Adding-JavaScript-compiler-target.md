@@ -9,4 +9,5 @@ of time costs and technical risks of diving completely into some unknown technol
 # Challenges
 * optimally mapping Red objects, function call protocols etc. to JavaScript so as to simplify the use of JavaScript frameworks without additional overhead
 * mapping Red implemented functions and objects back to JavaScript code so as to simplify their use in other languages and JavaScript itself
-* making the Red compiler emitted JavaScript code easily readable the way CoffeeScript does efficiently mapping Red built-in vocabulary to JavaScript
+* making the Red compiler emitted JavaScript code easily readable the way CoffeeScript does 
+* efficiently mapping Red built-in vocabulary to JavaScript
