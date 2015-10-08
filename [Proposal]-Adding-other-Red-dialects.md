@@ -38,7 +38,24 @@
     * Secure protocol: TOX/DHT, Textsecure and Zephyr
     * IPFS?
 
-* Unification of wikis: AsciiDoc, Creole, Markdown, MediaWiki, Org-Mode, Pod, RDoc, Textile, StructuredText
+* Unification of Lightweight/Humane/Simple document markup languages:
+    * AsciiDoc:http://www.methods.co.nz/asciidoc/
+    * Creole: http://www.wikicreole.org/
+    * JemDoc: http://jemdoc.jaboc.net/
+    * Markdown: http://daringfireball.net/projects/markdown/
+    * Markdown Extra
+    * MediaWiki: https://www.mediawiki.org/wiki/Help:Formatting
+    * Multimarkdown: http://fletcherpenney.net/multimarkdown/
+    * Org-Mode: http://orgmode.org/
+    * Pod: https://www.mediawiki.org/wiki/MediaWiki
+    * PmWiki: http://www.pmwiki.org/wiki/PmWiki/PmWiki
+    * RDoc: http://docs.seattlerb.org/rdoc/ 
+    * Textile: https://en.wikipedia.org/wiki/Textile_%28markup_language%29
+    * Texy: http://texy.info/en/
+    * Txt2tags: http://txt2tags.org/
+    * StructuredText: http://docutils.sourceforge.net/rst.html
+    * AFT, deplate and KARAS
+
 
 # Dialects for Easter Eggs (relatively small bits for giggles, only release for milestones)
 * Allow a brainfuck-like script Red/Brain as an Easter Egg (1st milestone)
