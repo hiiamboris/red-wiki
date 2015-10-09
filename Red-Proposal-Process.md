@@ -13,8 +13,8 @@ There are five stages in the Red proposal process, namely:
 * Stage 1 - Proposal Development
 * Stage 2 - Indication of Community Support
 * Stage 3 - Proposal Evaluation
-* Stage 4 - Proposal Implementation Scheduling
-* Stage 5 - Proposal Implementation
+* Stage 4 - Proposal Implementation
+* Stage 5 - Proposal Implemented
 
 ## Stage 1 - Proposal Development
 Anyone requesting a change or audition to Red should prepare a proposal on a new page on the Red Github wiki. There should be a separate proposal for each change or addition requested.
@@ -41,10 +41,10 @@ Once a proposal in Stage 2 has the required level of support, it will be moved t
 ## Stage 3 - Proposal Evaluation
 Proposals will be evaluated and if accepted will be scheduled for implementation. For the time being, it is likely that proposals will only be evaluated in the period shortly after a new Alpha release has been made.
 
-## Stage 4 - Proposal Implementation Scheduling
-Proposals will be scheduled in a future Red release. Once scheduled they may be reschedule according to the needs of the project.
+## Stage 4 - Proposal Implementation
+Proposals will be scheduled in a future Red release. Once scheduled they may be rescheduled according to the needs of the project.
 
-## Stage 5 - Proposal Implementation
-The proposal will be implemented as part of a defined release. This is the time that the proposer's support will be needed.
+## Stage 5 - Proposal Implemented
+The proposal has been implemented.
 
 
