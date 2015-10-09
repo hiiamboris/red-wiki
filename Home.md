@@ -19,6 +19,7 @@ Todo lists:
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
 
 Design Deliberations:
+
 From time to time, some structured deliberations are needed to allow the best design decisions to be made.
 * [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
 * [Handling NotANumber, Infinity, & Signed Zero](https://github.com/red/red/wiki/%5BProposal%5D-The-Handling-of-NaNs,-INFs-and-signed-zeros.)
