@@ -31,13 +31,20 @@
         * What about SQL and DB Libraries?
     * https://en.wikipedia.org/wiki/Solution_stack
     * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+
+# Unification
+* Allowance of Virtual Machines
+    * Common Language Runtime (CLR)
+    * Java virtual machine (JVM)
+    * Low Level Virtual Machine (LLVM)
+    * Mono, DotGNU or Portable.NET
+    * Parrot virtual machine
 * Intergration and unification
     * Text Chatroom protocol: IRC and XMPP
     * Email protocol: SMTP, IMAP and POP3
     * VoIP protocol: SIP/SIMPLE and Mumble
     * Secure protocol: TOX/DHT, Textsecure and Zephyr
     * IPFS?
-
 * Unification of Lightweight/Humane/Simple document markup languages:
     * AsciiDoc:http://www.methods.co.nz/asciidoc/
     * Creole: http://www.wikicreole.org/
