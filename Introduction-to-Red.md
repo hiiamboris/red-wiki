@@ -1,7 +1,7 @@
 Welcome, my friend! So you wanna learn red, huh? Well okay. I'm here.
 But before we get really silly here, we have to make one simple rule.
 You never put "red" with Capital "R" in the introduction. NEVER.
-Got that? Good. My name is Brad. And THIS is LearnRed version 9001.
+Got that? Good. My name is Brad. And THIS is Learn-red version 9001.
 It is under the Creative Commons Attribution License currently.
 Maybe GNU Free Document License in the future? I don't know.
 Every program is allowed to have long introductions until we see
