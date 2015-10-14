@@ -14,6 +14,7 @@
     * Please specify how exactly you think Clojure/Haskell/Erlang/Scala "act" i.e. what they or their approaches have in common and how would you extract it into dialect ?
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
     * Is it possible to contain all lisp-like functions from these languages?
+* Mobile Programming Languages that goes or compete with Haxe, Vala or Monkey
 
 # Dialects of different internet languages
 * Having Red/Web that works with or replaces HTML, CSS and XML families (see W3C Recommendations)
