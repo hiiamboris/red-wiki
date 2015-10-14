@@ -51,7 +51,7 @@
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
-    * PRNG like Fortuna/Yarrow, ISSAC, NIST SP 800-90A, Dual_EC_DRBG, CryptGenRandom
+    * CSPRNG like Fortuna/Yarrow, ISSAC, NIST SP 800-90A, Dual_EC_DRBG, CryptGenRandom
     * Mersenne Twisters (MT)
     * Well Equidistributed Long-period Linear (WELL)
     * Single-instruction-multiple-data-oriented Fast Mersenne Twister (SFMT)
