@@ -10,7 +10,7 @@
 * Complex number arithmetic
     * Gaussian integers (where N=a+bi, i^2+1=0 and i^4=1)
     * Eulerian integers (where N=a+bw, w^2+w+1=0 and w^3=1)
-    * Polar Coordinates (where N={r,phi}, r is integer and phi=fraction)
+    * Polar Coordinates (where N={r,θ}, r is integer and θ=fraction)
     * Gaussian/Eulerian integer and fraction arithmetic
 * Number data types: boolean, integers(int_A), fractions (int_A / int_B), floating-point (frac_A * exp_A)
 * IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
