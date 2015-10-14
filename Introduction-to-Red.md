@@ -1,4 +1,3 @@
-<code>
 Welcome, my friend! So you wanna learn red, huh? Well okay. I'm here.
 But before we get really silly here, we have to make one simple rule.
 You never put "red" with Capital "R" in the introduction. NEVER.
@@ -42,8 +41,6 @@ My name is Elliot Alderson
 print ["My name is " my-name lf]
 My name is Elliot Alderson
 ; And this is how you do things the lazy way
-
-</code>
 
 # External Links
 http://learnxinyminutes.com/docs/red/
