@@ -10,6 +10,7 @@ Reference documentation:
 * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
 * [Coding Style Guide](https://github.com/red/red/wiki/Coding-Style-Guide)
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
+* [Introduction to Red] (https://github.com/BED822/LearnRed/blob/master/Introduction.red)
 
 Discussions:
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
