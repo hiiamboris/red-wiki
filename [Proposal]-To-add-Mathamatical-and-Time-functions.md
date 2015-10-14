@@ -114,3 +114,10 @@
 * http://individual.utoronto.ca/kalendis/leap/index.htm
 * http://individual.utoronto.ca/kalendis/kalendis.htm
 * http://www.calendarzone.com/Reform/
+
+# Compression
+* mattmahoney.net/dc/text.html
+* mattmahoney.net/dc/mingw.html
+* mattmahoney.net/dc/silesia.html
+* mattmahoney.net/dc/zpaq.html
+* mattmahoney.net/dc/#barf
