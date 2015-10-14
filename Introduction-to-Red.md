@@ -21,8 +21,9 @@ comment{
 }
 
 ; Look at this! I am Elliot! Haha... but seriously, Mr. Robot is cool.
-; So you can see now that we can comment anywhere as long as we have
-; <== This symbol (called a semi-colon)
+; Anyway, you can see now that we can comment as long as we have
+; <== This symbol (called a semi-colon) or using "comment{" and "}".
+; Remember, when you use curly, the comments need a tab space.
 
 # External Links
 http://learnxinyminutes.com/docs/red/
