@@ -11,3 +11,7 @@ of time costs and technical risks of diving completely into some unknown technol
 * mapping Red implemented functions and objects back to JavaScript code so as to simplify their use in other languages and JavaScript itself
 * making the Red compiler emitted JavaScript code easily readable the way CoffeeScript does 
 * efficiently mapping Red built-in vocabulary to JavaScript
+
+# Questions
+* Is it possible to include a wider variety of JS frameworks and libraries?
+* If JS has integration, will XSLT, XML and CSS have intergration too?
