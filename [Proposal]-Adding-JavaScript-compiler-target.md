@@ -15,3 +15,4 @@ of time costs and technical risks of diving completely into some unknown technol
 # Questions
 * Is it possible to include a wider variety of JS frameworks and libraries?
 * If JS has integration, will XSLT, XML and CSS have integration too?
+* (see https://github.com/red/red/wiki/%5BProposal%5D-Adding-other-Red-dialects for details)
