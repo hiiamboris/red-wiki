@@ -61,6 +61,7 @@
     * similar to Sclipting, Golfscript/Flogscript, CJam, APL/J/K, Pyth, Microscript, Owk, Retina, Fourier...
     * http://rebmu.hostilefork.com/ has done an example, but the Easter Egg would be more powerful than Rebmu.
     * Allows for data compression into base32, base64, base85 and/or base 91 to win byte-based competitions.
+    * Short String Compression Functions like: [Shoco] (https://github.com/Ed-von-Schleck/shoco) [Skort] (https://github.com/jstepien/skrot) [smaz] (https://github.com/antirez/smaz)
 * Allow a Cellular Automata or Microsoft-Logo-Esque (3rd milestone)
     * Langton's Ants and Multi-Colored Turmites
     * Conway's Game Of Life and Life-likes
