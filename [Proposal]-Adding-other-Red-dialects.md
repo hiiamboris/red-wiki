@@ -118,3 +118,31 @@
         * http://www.int80h.org/
         * http://www.nasm.us/
         * http://www.plantation-productions.com/Webster/
+* List of distro families
+    * Debian-based ditros
+        * Debian
+        * Ubuntu
+        * Knoppix & sub-family
+            * Knoppix
+            * DamnSmall
+            * Kanotix
+            * Morphix
+            * Kurumin
+    * Slackware-based distros
+        * Slackware
+        * Gentoo
+        * SuSE
+        * Slax
+    * Arch-based distros
+        * Arch
+    * Redhat-based distros
+        * Redhat
+        * Fedora
+        * Mandriva
+        * CentOS
+    * Other minor miscellaneous distros
+        * Smoothwall
+        * FREESCO
+        * Sorcerer
+        * Puppy
+        * Ututo
