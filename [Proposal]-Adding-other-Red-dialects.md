@@ -118,7 +118,7 @@
         * http://www.int80h.org/
         * http://www.nasm.us/
         * http://www.plantation-productions.com/Webster/
-* List of distro families
+* List of major distro families
     * Debian-based ditros
         * Debian
         * Ubuntu
@@ -140,7 +140,7 @@
         * Fedora
         * Mandriva
         * CentOS
-    * Other minor miscellaneous distros
+* Other minor miscellaneous distros
         * Smoothwall
         * FREESCO
         * Sorcerer
