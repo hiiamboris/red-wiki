@@ -101,11 +101,13 @@
     * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 * Top Programming Languages According to RedMonk:
     * 1st languages:
-        * Low-end (C, C++, R)
+        * Low-end (C, C++)
         * Object Oriented (C#, Obj.C, Java)
         * Scripting (PHP, Ruby, Python, Perl)
         * Web Languages (JS, CSS)
-        * Others (Scala, Shell)
+        * Database Analysis (R)
+        * Functional (Scala)
+        * Shell
     * 2nd Languages:
         * Functional (Haskell, Clojure, Erlang, Lua)
         * Object Oriented (VB, Go, Swift, Arduino)
@@ -113,8 +115,11 @@
         * Database Analysis (MatLab, Groovy)
         * Others (Powershell)
     * 3rd Languages:
-        * SQL, XML, Delphi, ColdFusion, ASP, F#, Prolog, Dart, Fortran, Truescript, Tcl, OCaml, Processing, Rust, D, Puppet, Actionscript, TeX
+        * Lower Level (Rust, D)
+        * Functional (F#, OCaml, Prolog)
+        * Database Analysis (Fortran)
         * Lisps (EmacsLisp, CommonLisp, Scheme)
+        * SQL, XML, Delphi, ColdFusion, ASP, Dart, Truescript, Tcl, Processing, Puppet, Actionscript, TeX
     * ASM languages:
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * https://en.wikipedia.org/wiki/Comparison_of_assemblers
