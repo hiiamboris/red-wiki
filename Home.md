@@ -39,3 +39,5 @@ Proposals:
 
 Mezzanines:
 * [Mezz contributions](https://github.com/red/red/wiki/mezzanines)
+
+*Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
