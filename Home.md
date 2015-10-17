@@ -3,7 +3,6 @@ Welcome to the Red wiki!
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red .
 
 * [FAQ](https://github.com/red/red/wiki/FAQ)
-* [Kid's Introduction to Red] (https://github.com/BED822/LearnRed/blob/master/Introduction.red)
 
 Reference documentation:
 * [Redbin format specification](https://github.com/red/red/wiki/Redbin-specification)
