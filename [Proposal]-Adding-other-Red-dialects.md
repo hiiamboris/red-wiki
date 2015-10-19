@@ -149,4 +149,4 @@
         * Ututo
 
 * https://news.ycombinator.com/item?id=540048 http://neo4j.com/docs/stable/short-strings.html http://www.pal-blog.de/entwicklung/perl/compressing-test-for-short-strings.html https://rubygems.org/gems/rsmaz/versions/0.0.4 http://wiki.snappy-java.googlecode.com/hg/apidocs/org/xerial/snappy/Snappy.html http://journal.thobe.org/2011/02/better-support-for-short-strings-in.html http://www.gzip.org/algorithm.txt
-https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2013176814 http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081414 https://www.elastic.co/blog/store-compression-in-lucene-and-elasticsearch http://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch33s08.html 
+https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2013176814 http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081414 https://www.elastic.co/blog/store-compression-in-lucene-and-elasticsearch http://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch33s08.html http://www.academia.edu/1360173/A_Short_Text_Compression_Scheme_based_on_Arithmetic_Coding
