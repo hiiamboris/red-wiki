@@ -16,6 +16,9 @@
             * sign: if the value of a number is smaller than 0, it's "1", or else "0"
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
+    * Fraction mathematics
+        * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc) [unsimplified]
+        * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
     * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
         * gaussInt! where a and b are both int! datatypes
         * gaussFrac! where a and b are both frac! datatypes
@@ -29,13 +32,17 @@
         * polarFrac! where r is frac! datatype
         * polarFloat! where r is float! datatype
     * Gaussian/Eulerian integer and fraction arithmetic
-        * gaussInt!/gaussFrac!/gaussFloat! ==> eulerFloat!/polarFloat!
-        * eulerInt!/eulerFrac!/eulerFloat! ==> gaussFloat!/polarFloat!
-        * polarInt!/polarFrac!/polarFloat! ==> gaussFloat!/eulerFloat!
-        * (a+bi)+(c+di)=(a+c)+(b+d)i and (a+bw)+(c+dw)=(a+c)+(b+d)w
-        * (a+bi)(c+di)=(ac-bd)+(ad+bc)i and (a+bw)(c+dw)=(ac-bd)+(bc+ad-bd)w
-        * (a+bi)/(c+di)=((ac-bd)/(c^2+d^2))+((ad+bc)/(c^2+d^2))i
-        * (a+bw)/(c+dw)=((ac-bd)/(c^2-cd+d^2))+((bc+ad-bd)/(c^2-cd+d^2))w
+        * gaussInt! or gaussFrac! or gaussFloat! ==> eulerFloat! or polarFloat!
+        * eulerInt! or eulerFrac! or eulerFloat! ==> gaussFloat! or polarFloat!
+        * polarInt! or polarFrac! or polarFloat! ==> gaussFloat! or eulerFloat!
+        * Gaussian mathematics
+            * (a+bi)+(c+di)=(a+c)+(b+d)i [addition]
+            * (a+bi)(c+di)=(ac-bd)+(ad+bc)i [multiplication]
+            * (a+bi)/(c+di)=((ac-bd)/(c^2+d^2))+((ad+bc)/(c^2+d^2))i [division]
+        * Eulerian mathematics
+            * (a+bw)+(c+dw)=(a+c)+(b+d)w [addition]
+            * (a+bw)(c+dw)=(ac-bd)+(bc+ad-bd)w [multiplication]
+            * (a+bw)/(c+dw)=((ac-bd)/(c^2-cd+d^2))+((bc+ad-bd)/(c^2-cd+d^2))w [division]
     * IEEE754 compatible Floating point arithmetic (for n>1):
         * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
         * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
