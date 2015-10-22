@@ -16,15 +16,15 @@
             * sign: if the value of a number is smaller than 0, it's "1", or else "0"
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
-    * Gaussian numbers (where N=a+bi and i^2+1=0)
+    * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
         * gaussInt! where a and b are both int! datatypes
         * gaussFrac! where a and b are both frac! datatypes
         * gaussFloat! where a and b are both float! datatypes
-    * Eulerian numbers (where N=a+bw and w^2+w+1=0)
+    * Eulerian numbers (where N=a+bw and w^2+w+1=0) (w^2=-(1+w))
         * eulerInt! where a and b are both int! datatypes
         * eulerFrac! where a and b are both frac! datatypes
         * eulerFloat! where a and b are both float! datatypes
-    * Polar Coordinates (where N={r,θ}, r is integer and θ is fraction)
+    * Polar Coordinates (where N={r,θ}, θ is frac! with sign=0 size=1)
         * polarInt! where r is int! datatype
         * polarFrac! where r is frac! datatype
         * polarFloat! where r is float! datatype
@@ -32,9 +32,13 @@
         * gaussInt!/gaussFrac!/gaussFloat! ==> eulerFloat!/polarFloat!
         * eulerInt!/eulerFrac!/eulerFloat! ==> gaussFloat!/polarFloat!
         * polarInt!/polarFrac!/polarFloat! ==> gaussFloat!/eulerFloat!
+        * (a+bi)+(c+di)=(a+c)+(b+d)i and (a+bw)+(c+dw)=(a+c)+(b+d)w
+        * (a+bi)(c+di)=(ac-bd)+(ad+bc)i and (a+bw)(c+dw)=(ac-bd)+(bc+ad-bd)w
+        * (a+bi)/(c+di)=((ac-bd)/(c^2+d^2))+((ad+bc)/(c^2+d^2))i
+        * (a+bw)/(c+dw)=((ac-bd)/(c^2-cd+d^2))+((bc+ad-bd)/(c^2-cd+d^2))w
     * IEEE754 compatible Floating point arithmetic (for n>1):
-        * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
-        * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
+        * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
+        * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
     * Extended precision Floating Point arithmetic
         * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
         * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
