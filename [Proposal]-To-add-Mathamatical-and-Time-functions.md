@@ -29,12 +29,15 @@
         * polarFrac! where r is frac! datatype
         * polarFloat! where r is float! datatype
     * Gaussian/Eulerian integer and fraction arithmetic
-* IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
-    * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
-    * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
-* Extended precision Floating Point arithmetic
-    * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
-    * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
+        * gaussInt!/gaussFrac!/gaussFloat! ==> eulerFloat!/polarFloat!
+        * eulerInt!/eulerFrac!/eulerFloat! ==> gaussFloat!/polarFloat!
+        * polarInt!/polarFrac!/polarFloat! ==> gaussFloat!/eulerFloat!
+    * IEEE754 compatible Floating point arithmetic (for n>1):
+        * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
+        * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
+    * Extended precision Floating Point arithmetic
+        * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
+        * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
