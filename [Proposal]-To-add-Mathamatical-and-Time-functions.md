@@ -6,17 +6,33 @@
 * Modulo 1: FRACtion (fractional part), SAWtooth (y minus floor of y)
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
-* Arbitrary precision arithmatic (in bits, base10, base12, base16 and base60)
-* Complex number arithmetic
-    * Gaussian integers (where N=a+bi, i^2+1=0 and i^4=1)
-    * Eulerian integers (where N=a+bw, w^2+w+1=0 and w^3=1)
-    * Polar Coordinates (where N={r,θ}, r is integer and θ=fraction)
+* Arbitrary precision arithmetic (in bits, base10, base12, base16 and base60)
+* Number arithmetic
+    * Real numbers (N=a)
+        * int! where a is an integer
+        * frac! where a is a data set containing either:
+            * a sign bit, a numerator part and a denominator part (easier to implement)
+            * a sign bit, a size bit, a large part and a small part (better for arithmetic)
+            * sign: if the value of a number is smaller than 0, it's "1", or else "0"
+            * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
+        * float! where a is a data set containing a sign bit, a fraction part and an exponent part
+    * Gaussian numbers (where N=a+bi and i^2+1=0)
+        * gaussInt! where a and b are both int! datatypes
+        * gaussFrac! where a and b are both frac! datatypes
+        * gaussFloat! where a and b are both float! datatypes
+    * Eulerian numbers (where N=a+bw and w^2+w+1=0)
+        * eulerInt! where a and b are both int! datatypes
+        * eulerFrac! where a and b are both frac! datatypes
+        * eulerFloat! where a and b are both float! datatypes
+    * Polar Coordinates (where N={r,θ}, r is integer and θ is fraction)
+        * polarInt! where r is int! datatype
+        * polarFrac! where r is frac! datatype
+        * polarFloat! where r is float! datatype
     * Gaussian/Eulerian integer and fraction arithmetic
-* Number data types: boolean, integers(int_A), fractions (int_A / int_B), floating-point (frac_A * exp_A)
 * IEEE754 compatible Floating point arithmetic (for n>1, with 1 bit as sign):
     * For 2^(2n) bit floating point, there are n^2+n-1 exponent bits
     * For 2^(2n+1) bit floating point, there are n^2+2n exponent bits
-* Extended precision Floating Point arithmatic
+* Extended precision Floating Point arithmetic
     * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
     * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
 
