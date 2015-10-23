@@ -54,6 +54,9 @@
     * Goldstein function if n=0 then G=b+1, if b=0 (n=1 then G=a) (n=2 then G=0) (n>2 then G=1)
     * Ackermann function if n=0 then G=a+b, if b=0 (n=1 then G=0) (n=2 then G=1) (n>2 then G=a)
     * Clenshaw function if n=0 then G=b+1, if (b=0 & n>0) then G=0
+    * Lower function
+        * Lower[n](a,b)=Lower[n-1](Lower[n](a,b-1),a)
+        * if n=1 then G=a+b, if (n=2 & b=0) then G=0, if (n>2 7 b=1) then G=a
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
