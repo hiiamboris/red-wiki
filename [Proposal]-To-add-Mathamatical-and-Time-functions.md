@@ -49,6 +49,11 @@
     * Extended precision Floating Point arithmetic
         * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
         * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
+* Hyper-operations
+    * Hyper[n](a,b)=Hyper[n-1](a,Hyper[n](a,b-1))
+    * Goldstein function if n=0 then G=b+1, if b=0 (n=1 then G=a) (n=2 then G=0) (n>2 then G=1)
+    * Ackermann function if n=0 then G=a+b, if b=0 (n=1 then G=0) (n=2 then G=1) (n>2 then G=a)
+    * Clenshaw function if n=0 then G=b+1, if (b=0 & n>0) then G=0
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
