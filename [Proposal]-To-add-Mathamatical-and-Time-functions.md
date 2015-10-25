@@ -43,6 +43,10 @@
             * (a+bw)+(c+dw)=(a+c)+(b+d)w [addition]
             * (a+bw)(c+dw)=(ac-bd)+(bc+ad-bd)w [multiplication]
             * (a+bw)/(c+dw)=((ac-bd)/(c^2-cd+d^2))+((bc+ad-bd)/(c^2-cd+d^2))w [division]
+        * Gauss-Euler combination mathematics [p=sqrt(3)]
+            * a+bi=a+0p+bi+0ip and a+bw=(a-(b/2))+0p+0i+(b/2)ip
+            * (a+bp+ci+dip)+(e+fp+gi+hip)=(a+e)+(b+f)p+(c+g)i+(d+h)ip [addition]
+            * (a+bp+ci+dip)(e+fp+gi+hip)=(ae+3bf-cg-3dh)+(af+be-ch-dg)p+(ag+bh+ce+df)i+(ah+bg+cf+de)ip
     * IEEE754 compatible Floating point arithmetic (for n>1):
         * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
         * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
