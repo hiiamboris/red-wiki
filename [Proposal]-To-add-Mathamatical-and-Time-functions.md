@@ -53,12 +53,12 @@
             * base prime is 1+i
             * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
             * if b=0, prime(abs(a))=true, abs(a)%4=3 then a is prime
-            * if one of [±(x+yi) ±(y+xi) ±(x-yi) ±(y-xi)] is prime, all others are prime
+            * if one of [±(x+yi) ±(y+xi) ±(x-yi) ±(y-xi)] is prime, all others are prime (for x>y>0)
         * Eulerian Primes (a+bi)
             * base prime is 2+w
             * if a!=0, b!=0, prime(a^2+ab+b^2) and (a^2+ab+b^2)%3=1 then a+bw is prime
             * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
-            * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime
+            * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime (for 2x>y>0)
     * IEEE754 compatible Floating point arithmetic (for n>1):
         * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
         * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
