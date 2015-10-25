@@ -17,7 +17,7 @@
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
     * Fraction mathematics
-        * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc) [unsimplified]
+        * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
         * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
     * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
         * gaussInt! where a and b are both int! datatypes
@@ -47,6 +47,18 @@
             * a+bi=a+0p+bi+0ip and a+bw=(a-(b/2))+0p+0i+(b/2)ip
             * (a+bp+ci+dip)+(e+fp+gi+hip)=(a+e)+(b+f)p+(c+g)i+(d+h)ip [addition]
             * (a+bp+ci+dip)(e+fp+gi+hip)=(ae+3bf-cg-3dh)+(af+be-ch-dg)p+(ag+bh+ce+df)i+(ah+bg+cf+de)ip
+    * Normal, Gaussian and Eulerian prime determination
+        * Normal Prime determination function prime()
+        * Gaussian Primes
+            * base prime is 1+i
+            * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
+            * if b=0, prime(abs(a))=true, abs(a)%4=3 then a is prime
+            * if one of [±(x+yi) ±(y+xi) ±(x-yi) ±(y-xi)] is prime, all others are prime
+        * Eulerian Primes (a+bi)
+            * base prime is 2+w
+            * if a!=0, b!=0, prime(a^2+ab+b^2) and (a^2+ab+b^2)%3=1 then a+bw is prime
+            * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
+            * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime
     * IEEE754 compatible Floating point arithmetic (for n>1):
         * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
         * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
