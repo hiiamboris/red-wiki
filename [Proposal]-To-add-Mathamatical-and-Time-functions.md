@@ -46,7 +46,11 @@
         * Gauss-Euler combination mathematics [p=sqrt(3)]
             * a+bi=a+0p+bi+0ip and a+bw=(a-(b/2))+0p+0i+(b/2)ip
             * (a+bp+ci+dip)+(e+fp+gi+hip)=(a+e)+(b+f)p+(c+g)i+(d+h)ip [addition]
-            * (a+bp+ci+dip)(e+fp+gi+hip)=(ae+3bf-cg-3dh)+(af+be-ch-dg)p+(ag+bh+ce+df)i+(ah+bg+cf+de)ip
+            * (a+bp+ci+dip)(e+fp+gi+hip)=(ae+3bf-cg-3dh)+(af+be-ch-dg)p+(ag+bh+ce+df)i+(ah+bg+cf+de)ip [multiplication]
+        * Polar Mathematics
+            * {r,θ}+{l,φ}= [addition]
+            * {r,θ}{l,φ}={r*l,θ+φ} [multiplication]
+            * {r,θ}/{l,φ}={r/l,θ-φ} [division]
     * Normal, Gaussian and Eulerian prime determination
         * Normal Prime determination function prime()
         * Gaussian Primes
