@@ -69,6 +69,7 @@
 		* a=b means that Jacobi(a|n) = Jacobi(b|n)
 		* Jacobi(ab|n)=Jacobi(a|n)*Jacobi(b|n)
 		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x^2 (mod p) for some x][ =-1 if no x]
+        * Other tests: Baillie-PSW, Quadratic Frobenius, Miller-Rabins, Agrawal–Kayal–Saxena, Adleman–Pomerance–Rumely
         * Gaussian Primes
             * base prime is 1+i
             * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
