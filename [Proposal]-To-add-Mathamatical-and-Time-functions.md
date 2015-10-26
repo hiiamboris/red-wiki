@@ -198,3 +198,16 @@
 * mattmahoney.net/dc/#barf
 
 http://dlmf.nist.gov/
+
+Test to check large primes:
+	Lehmer-Power’s Continued Fraction (CFrac)
+	John Pollard’s Monte Carlo Method (RHO)
+	Hendrick Lestra’s Elliptic Curve Method (ECM)
+	Carl Pomermco’s Quadratic Sieve (QS)
+	General Public’s Number Field Sieve (NFS)
+Other methods
+	Dixon’s Factorization Method
+	Euler’s Factorization Method
+	Fermat’s Factorization Method
+	Shank’s Square Forms
+	Trial Division
