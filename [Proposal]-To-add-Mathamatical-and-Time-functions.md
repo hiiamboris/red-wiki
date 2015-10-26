@@ -58,7 +58,17 @@
             * {r,θ}{l,φ}={r*l,θ+φ} [multiplication]
             * {r,θ}/{l,φ}={r/l,θ-φ} [division]
     * Normal, Gaussian and Eulerian prime determination
-        * Normal Prime determination function prime()
+        * Normal Prime determination function prime(p)
+            * Agoh-Giuga: Σ[i=1 to p-1] (i^(p-1)) = -1 (mod p)
+            * Wilson: (p-1)! = -1 (mod p)
+            * Agoh-Guiga & Wilson: Π[i=1 to p-1] (i^(p-1)) = 1 and Σ[i=1 to p-1] (i^(p-1)) = -1 (mod p)
+        * Non-deterministic prime test with primeTest(p,a) a is witness
+	    * Fermat test: a^(p-1) = 1 (mod p)
+	    * Lucas: fermat test but a^((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
+	    * Solovay–Strassen: a^((n-1)/2) = Jacobi(a|n) (mod n) where:
+		* a=b means that Jacobi(a|n) = Jacobi(b|n)
+		* Jacobi(ab|n)=Jacobi(a|n)*Jacobi(b|n)
+		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x^2 (mod p) for some x][ =-1 if no x]
         * Gaussian Primes
             * base prime is 1+i
             * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
