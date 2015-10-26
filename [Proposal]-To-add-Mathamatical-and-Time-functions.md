@@ -16,6 +16,12 @@
             * sign: if the value of a number is smaller than 0, it's "1", or else "0"
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
+        * angle! 
+            * turn, cycle, revolution/rev, and rotation/rot, τ
+            * 1 full circle = 2π Radian/rad = 360 Degrees/deg = 400 Gradians/grad
+            * = 4 Quadrant = 6 Sextant = 24 Hour-angle = 32 Point-wind = 60 Hexacontade = 144/180 Pechus
+            * 1 Degree = 60 Minutes, 1 Minute = 60 Seconds, 1 Grad = 100 Decigrads, 1 rad = 1000 Milliradian
+            * Milliemes: = 6000 USSR-mil = 6283 Trig-mil = 6300 Swed-mil = 6400 NATO-mil
     * Fraction mathematics
         * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
         * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
@@ -27,7 +33,7 @@
         * eulerInt! where a and b are both int! datatypes
         * eulerFrac! where a and b are both frac! datatypes
         * eulerFloat! where a and b are both float! datatypes
-    * Polar Coordinates (where N={r,θ}, θ is frac! with sign=0 size=1)
+    * Polar Coordinates (where N={r,θ}, θ is angle!)
         * polarInt! where r is int! datatype
         * polarFrac! where r is frac! datatype
         * polarFloat! where r is float! datatype
