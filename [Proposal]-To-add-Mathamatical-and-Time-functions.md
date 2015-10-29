@@ -133,7 +133,7 @@
     * Mersenne Twisters (MT)
     * Well Equidistributed Long-period Linear (WELL)
     * Single-instruction-multiple-data-oriented Fast Mersenne Twister (SFMT)
-    * (XorShift)[http://xorshift.di.unimi.it/] and (XSAdd)[http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/]
+    * [XorShift](http://xorshift.di.unimi.it/) and [XSAdd](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/)
     * http://maths-people.anu.edu.au/~brent/random.html and http://dl.acm.org/citation.cfm?doid=2714064.2660195
     * Blum Blum Shub, , Blum–Micali, Lehmer, Naor-Reingold, Generalized Inversive Congruential
     * Wichmann-Hill like RNGs based on LCG, ICG, MWC, CMWC and LFG
