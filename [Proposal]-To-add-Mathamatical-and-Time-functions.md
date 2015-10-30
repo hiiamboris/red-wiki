@@ -25,11 +25,11 @@
     * Fraction mathematics
         * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
         * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
-    * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
+    * Gaussian numbers (where N=a+bi and i**2+1=0) (i**2=-1)
         * gaussInt! where a and b are both int! datatypes
         * gaussFrac! where a and b are both frac! datatypes
         * gaussFloat! where a and b are both float! datatypes
-    * Eulerian numbers (where N=a+bw and w^2+w+1=0) (w^2=-(1+w))
+    * Eulerian numbers (where N=a+bw and w**2+w+1=0) (w**2=-(1+w))
         * eulerInt! where a and b are both int! datatypes
         * eulerFrac! where a and b are both frac! datatypes
         * eulerFloat! where a and b are both float! datatypes
@@ -59,25 +59,25 @@
             * {r,θ}/{l,φ}={r/l,θ-φ} [division]
     * Normal, Gaussian and Eulerian prime determination
         * Normal Prime determination function prime(p)
-            * Agoh-Giuga: Σ[i=1 to p-1] (i^(p-1)) = -1 (mod p)
+            * Agoh-Giuga: Σ i=1 to p-1 (i**(p-1)) = -1 (mod p)
             * Wilson: (p-1)! = -1 (mod p)
-            * Agoh-Guiga & Wilson: Π i=1 to p-1 (i^(p-1)) = 1 and Σi= 1 to p-1 (i^(p-1)) = -1 (mod p)
+            * Agoh-Guiga & Wilson: Π i=1 to p-1 (i**(p-1)) = 1 and Σ i= 1 to p-1 (i^(p-1)) = -1 (mod p)
         * Non-deterministic prime test with primeTest(p,a) a is witness
-	    * Fermat test: a^(p-1) = 1 (mod p)
-	    * Lucas: fermat test but a^((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
-	    * Solovay–Strassen: a^((n-1)/2) = Jacobi(a|n) (mod n) where:
+	    * Fermat test: a**(p-1) = 1 (mod p)
+	    * Lucas: fermat test but a**((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
+	    * Solovay–Strassen: a**((n-1)/2) = Jacobi(a|n) (mod n) where:
 		* a=b means that Jacobi(a|n) = Jacobi(b|n)
 		* Jacobi(ab|n)=Jacobi(a|n)*Jacobi(b|n)
-		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x^2 (mod p) for some x][ =-1 if no x]
+		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x**2 (mod p) for some x][ =-1 if no x]
         * Other tests: Baillie-PSW, Quadratic Frobenius, Miller-Rabins, Agrawal–Kayal–Saxena, Adleman–Pomerance–Rumely
         * Gaussian Primes
             * base prime is 1+i
-            * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
+            * if a!=0, b!=0, prime(a**2+b**2) and (a**2+b**2)%2=1 then a+bi is prime
             * if b=0, prime(abs(a))=true, abs(a)%4=3 then a is prime
             * if one of [±(x+yi) ±(y+xi) ±(x-yi) ±(y-xi)] is prime, all others are prime (for x>y>0)
         * Eulerian Primes (a+bi)
             * base prime is 2+w
-            * if a!=0, b!=0, prime(a^2+ab+b^2) and (a^2+ab+b^2)%3=1 then a+bw is prime
+            * if a!=0, b!=0, prime(a**2+ab+b**2) and (a**2+ab+b**2)%3=1 then a+bw is prime
             * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
             * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime (for 2x>y>0)
     * IEEE754 compatible Floating point arithmetic (for n>1):
@@ -131,8 +131,8 @@
     * Conway's audioactive sequence and elements analysis
 * Lottery related Algorithms
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
-    * Bernoulli trial (probability of k successes out on n) = C(n,k)*p^k*(1-p)^(n-k)
-    * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=(P!(B-P)!(P-W)!)^2/(W!B!(B-2P+W)!)
+    * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p**k)*((1-p)**(n-k))
+    * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=((P!(B-P)!(P-W)!)**2)/(W!B!(B-2P+W)!)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
     * CSPRNG like Fortuna/Yarrow, ISSAC, NIST SP 800-90A, Dual_EC_DRBG, CryptGenRandom
@@ -169,16 +169,29 @@
 * The Milanković Calendar sync: every 3600 years, there will be no leap day.
     * The Milanković Calendar adds 218 leap days in 900 years (Having one less day then 3600 Gregorian years)
 * Special notation for calendar formatting
-    * Days: d means without 0 place holder, dd means in 2 digits, ddd means 3 letter abbreviation of weekday/dayname, dddd means long form of weekday/dayname, ddddd means "special abbreviation" format 
-    * Weeks: w means without 0 place holder, ww means in 2 digits, www means in 3 letter abbreviation, wwww means in long form, wwwww means in "special abbreviation" format
-    * Months: m means without 0 place holder, mm means in 2 digits, mmm means in 3 letter abbreviation, mmmm means in long form, mmmmm means "special abbreviation" format
-    * Years: y means without 0 place holder, yy means in 2 digits, yyy means in 3 digits, yyyy means in 4 digits, yyyyy means in "Cycle-Year" format
+    * Days: 
+        * d means without 0 place holder, dd means in 2 digits
+        * ddd means 3 letter abbreviation of weekday/dayname
+        * dddd means long form of weekday/dayname, 
+        * ddddd means "special abbreviation" format 
+    * Weeks: 
+        * w means without 0 place holder, ww means in 2 digits
+        * www means in 3 letter abbreviation, wwww means in long form
+        * wwwww means in "special abbreviation" format
+    * Months: 
+        * m means without 0 place holder, mm means in 2 digits
+        * mmm means in 3 letter abbreviation, mmmm means in long form
+        * mmmmm means "special abbreviation" format
+    * Years: 
+        * y means without 0 place holder, yy means in 2 digits
+        * yyy means in 3 digits, yyyy means in 4 digits (full format)
+        * yyyyy means in "Cycle-Year" format
 
 # Binary encoding
 * Binary to text (for transferring data through printed texts and writings on paper):
-    * Small 2^n: binary, quaternary, octal
-    * Large 2^n: hexadecimal, base32, base64
-    * Non-2^n based encoding: base85, base91
+    * Small 2**n: binary, quaternary, octal
+    * Large 2**n: hexadecimal, base32, base64
+    * Non-2**n based encoding: base85, base91
 * Binary to mnemonic (for transferring data through phone call and voice recordings):
     * Bubble Babble: https://github.com/rsaarelm/teratogen/tree/master/src/teratogen/babble
     * Vorud: https://github.com/rsaarelm/vorud
