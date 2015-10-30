@@ -25,11 +25,11 @@
     * Fraction mathematics
         * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
         * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
-    * Gaussian numbers (where N=a+bi and i**2+1=0) (i**2=-1)
+    * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
         * gaussInt! where a and b are both int! datatypes
         * gaussFrac! where a and b are both frac! datatypes
         * gaussFloat! where a and b are both float! datatypes
-    * Eulerian numbers (where N=a+bw and w**2+w+1=0) (w**2=-(1+w))
+    * Eulerian numbers (where N=a+bw and w^2+w+1=0) (w^2=-(1+w))
         * eulerInt! where a and b are both int! datatypes
         * eulerFrac! where a and b are both frac! datatypes
         * eulerFloat! where a and b are both float! datatypes
@@ -72,12 +72,12 @@
         * Other tests: Baillie-PSW, Quadratic Frobenius, Miller-Rabins, Agrawal–Kayal–Saxena, Adleman–Pomerance–Rumely
         * Gaussian Primes
             * base prime is 1+i
-            * if a!=0, b!=0, prime(a**2+b**2) and (a**2+b**2)%2=1 then a+bi is prime
+            * if a!=0, b!=0, prime(a^2+b^2) and (a^2+b^2)%2=1 then a+bi is prime
             * if b=0, prime(abs(a))=true, abs(a)%4=3 then a is prime
             * if one of [±(x+yi) ±(y+xi) ±(x-yi) ±(y-xi)] is prime, all others are prime (for x>y>0)
         * Eulerian Primes (a+bi)
             * base prime is 2+w
-            * if a!=0, b!=0, prime(a**2+ab+b**2) and (a**2+ab+b**2)%3=1 then a+bw is prime
+            * if a!=0, b!=0, prime(a^2+ab+b^2) and (a^2+ab+b^2)%3=1 then a+bw is prime
             * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
             * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime (for 2x>y>0)
     * IEEE754 compatible Floating point arithmetic (for n>1):
@@ -131,7 +131,7 @@
     * Conway's audioactive sequence and elements analysis
 * Lottery related Algorithms
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
-    * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p**k)*((1-p)**(n-k))
+    * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p^k)*((1-p)^(n-k))
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=((P!(B-P)!(P-W)!)**2)/(W!B!(B-2P+W)!)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
