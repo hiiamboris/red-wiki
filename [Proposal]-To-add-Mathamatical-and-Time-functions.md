@@ -61,7 +61,7 @@
         * Normal Prime determination function prime(p)
             * Agoh-Giuga: Σ[i=1 to p-1] (i^(p-1)) = -1 (mod p)
             * Wilson: (p-1)! = -1 (mod p)
-            * Agoh-Guiga & Wilson: Π[i=1 to p-1] (i^(p-1)) = 1 and Σ[i=1 to p-1] (i^(p-1)) = -1 (mod p)
+            * Agoh-Guiga & Wilson: Π i=1 to p-1 (i^(p-1)) = 1 and Σi= 1 to p-1 (i^(p-1)) = -1 (mod p)
         * Non-deterministic prime test with primeTest(p,a) a is witness
 	    * Fermat test: a^(p-1) = 1 (mod p)
 	    * Lucas: fermat test but a^((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
@@ -81,19 +81,25 @@
             * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
             * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime (for 2x>y>0)
     * IEEE754 compatible Floating point arithmetic (for n>1):
-        * 2^(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
-        * 2^(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
+        * 2**(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
+        * 2**(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
     * Extended precision Floating Point arithmetic
-        * For 10*2^(n-1) bit floating point (decimal), there are 2^n exponent bits
-        * For 12*2^(n-1) bit floating point (dozenal), there are 2^n exponent bits
+        * For 10*(2**(n-1)) bit floating point (decimal), there are 2^n exponent bits
+        * For 12*(2**(n-1)) bit floating point (dozenal), there are 2^n exponent bits
 * Hyper-operations
-    * Hyper[n](a,b)=Hyper[n-1](a,Hyper[n](a,b-1))
+    * Hyper(n,a,b) could be represented by "a[n]b" a.k.a Square bracket notation
+    * Hyper(n,a,b)=Hyper(n-1,a,Hyper(n,a,b-1))
     * Goldstein function if n=0 then G=b+1, if b=0 (n=1 then G=a) (n=2 then G=0) (n>2 then G=1)
     * Ackermann function if n=0 then G=a+b, if b=0 (n=1 then G=0) (n=2 then G=1) (n>2 then G=a)
     * Clenshaw function if n=0 then G=b+1, if (b=0 & n>0) then G=0
     * Lower function
-        * Lower[n](a,b)=Lower[n-1](Lower[n](a,b-1),a)
+        * Lower(n,a,b)=Lower(n-1,Lower(n,a,b-1),a)
         * if n=1 then G=a+b, if (n=2 & b=0) then G=0, if (n>2 7 b=1) then G=a
+    * Conway chained arrow notation
+        * a→b = a**b and X, are sub-chains
+        * X→1→Y = X (since 1→Y = 1)
+        * X→(p+1)→(q+1) = X→(X→p→(q+1))→q
+        * 2→2→Y = 4, X→2→2 = X→(X)
 
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
