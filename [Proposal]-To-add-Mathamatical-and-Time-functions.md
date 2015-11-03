@@ -101,6 +101,9 @@
         * X→(p+1)→(q+1) = X→(X→p→(q+1))→q
         * 2→2→Y = 4, X→2→2 = X→(X)
 
+# List of potential Computer Algebra System collabs
+* Cadabra CoCoA-5 GAP Macaulay2 MathHandbook Mathics (Mathematic) Maxima OpenAxiom PARI/GP Sage SINGULAR SyMAT SymbolicC++ Symbolism CSymPy/Symengine Xcas/Giac Yacas
+
 # Applied Mathematics (some basics for testing):
 * Classical Cryptography functions
     * Affine/Caesar (ax+b mod c translated to character table, autokey and vigenere options)
