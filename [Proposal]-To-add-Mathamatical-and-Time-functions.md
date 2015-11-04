@@ -17,10 +17,11 @@
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
         * angle! 
-            * turn, cycle, revolution/rev, and rotation/rot, τ
+            * full circle's alternate name: turn, cycle, revolution/rev, and rotation/rot, τ
             * 1 full circle = 2π Radian/rad = 360 Degrees/deg = 400 Gradians/grad
             * = 4 Quadrant = 6 Sextant = 24 Hour-angle = 32 Point-wind = 60 Hexacontade = 144/180 Pechus
-            * 1 Degree = 60 Minutes, 1 Minute = 60 Seconds, 1 Grad = 100 Decigrads, 1 rad = 1000 Milliradian
+            * 1 Degree = 60 Minutes, 1 Minute = 60 Seconds, 1 Second = 60 Thirds, 1 Third = 60 Fourths
+            * 1 grad = 10 Decigrads,  1 rad = 1000 Milliradians
             * Milliemes: = 6000 USSR-mil = 6283 Trig-mil = 6300 Swed-mil = 6400 NATO-mil
     * Fraction mathematics
         * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
