@@ -59,16 +59,16 @@
             * {r,θ}/{l,φ}={r/l,θ-φ} [division]
     * Normal, Gaussian and Eulerian prime determination
         * Normal Prime determination function prime(p)
-            * Agoh-Giuga: Σ i=1 to p-1 (i**(p-1)) = -1 (mod p)
+            * Agoh-Giuga: Σ i=1 to p-1 (i^(p-1)) = -1 (mod p)
             * Wilson: (p-1)! = -1 (mod p)
-            * Agoh-Guiga & Wilson: Π i=1 to p-1 (i**(p-1)) = 1 and Σ i= 1 to p-1 (i^(p-1)) = -1 (mod p)
+            * Agoh-Guiga & Wilson: Π i=1 to p-1 (i^(p-1)) = 1 and Σ i= 1 to p-1 (i^(p-1)) = -1 (mod p)
         * Non-deterministic prime test with primeTest(p,a) a is witness
-	    * Fermat test: a**(p-1) = 1 (mod p)
-	    * Lucas: fermat test but a**((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
-	    * Solovay–Strassen: a**((n-1)/2) = Jacobi(a|n) (mod n) where:
+	    * Fermat test: a^(p-1) = 1 (mod p)
+	    * Lucas: fermat test but a^((n-1)/x) != 1 (mod p) for all prime factors of n-1 as x
+	    * Solovay–Strassen: a^((n-1)/2) = Jacobi(a|n) (mod n) where:
 		* a=b means that Jacobi(a|n) = Jacobi(b|n)
 		* Jacobi(ab|n)=Jacobi(a|n)*Jacobi(b|n)
-		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x**2 (mod p) for some x][ =-1 if no x]
+		* Jacobi(a|n) [=0 if a=0 (mod p)][=1 if a=x^2 (mod p) for some x][ =-1 if no x]
         * Other tests: Baillie-PSW, Quadratic Frobenius, Miller-Rabins, Agrawal–Kayal–Saxena, Adleman–Pomerance–Rumely
         * Gaussian Primes
             * base prime is 1+i
@@ -80,12 +80,16 @@
             * if a!=0, b!=0, prime(a^2+ab+b^2) and (a^2+ab+b^2)%3=1 then a+bw is prime
             * if b=0, prime(abs(a))=true, abs(a)%3=2 then a is prime
             * if one of [±(x+yw) ±(x+(x-y)w) ±((x-y)+xw) ±(x-yw) ±(x-(x-y)w) ±((x-y)-xw)] is prime, all others are prime (for 2x>y>0)
-    * IEEE754 compatible Floating point arithmetic (for n>1):
-        * 2**(2n) bit float! contains n^2+n-1 exponent bits, with the others being fraction bits
-        * 2**(2n+1) bit float! contains n^2+2n exponent bits, with the others being fraction bits
+    * IEEE754 compatible Floating point arithmetic (for n>1, having one sign bit):
+        * 2^(2n) bit float! contains n^2+n-1 exponent bits and 2^(2n)-n^2-n fraction bits
+        * 2^(2n+1) bit float! contains n^2+2n exponent bits and 2^(2n+1)-n^2-2n-1 fraction bits
+        * 2^(2n) bit decimal! contains round((2^(2n)-n^2-n)*ln2/ln10) fraction bits
+        * 2^(2n+1) bit decimal! contains round((2^(2n+1)-n^2-2n-1)*ln2/ln10) fraction bits
+        * 2^(2n) bit dozenal! contains round((2^(2n)-n^2-n)*ln2/ln12) fraction bits
+        * 2^(2n+1) bit dozenal! contains round((2^(2n+1)-n^2-2n-1)*ln2/ln12) fraction bits
     * Extended precision Floating Point arithmetic
-        * For 10*(2**(n-1)) bit floating point (decimal), there are 2^n exponent bits
-        * For 12*(2**(n-1)) bit floating point (dozenal), there are 2^n exponent bits
+        * For 10*(2^(n-1)) bit floating point (decimal), there are 2^n exponent bits
+        * For 12*(2^(n-1)) bit floating point (dozenal), there are 2^n exponent bits
 * Hyper-operations
     * Hyper(n,a,b) could be represented by "a[n]b" a.k.a Square bracket notation
     * Hyper(n,a,b)=Hyper(n-1,a,Hyper(n,a,b-1))
@@ -96,7 +100,7 @@
         * Lower(n,a,b)=Lower(n-1,Lower(n,a,b-1),a)
         * if n=1 then G=a+b, if (n=2 & b=0) then G=0, if (n>2 7 b=1) then G=a
     * Conway chained arrow notation
-        * a→b = a**b and X, are sub-chains
+        * a→b = a^b and X, are sub-chains
         * X→1→Y = X (since 1→Y = 1)
         * X→(p+1)→(q+1) = X→(X→p→(q+1))→q
         * 2→2→Y = 4, X→2→2 = X→(X)
@@ -192,9 +196,9 @@
 
 # Binary encoding
 * Binary to text (for transferring data through printed texts and writings on paper):
-    * Small 2**n: binary, quaternary, octal
-    * Large 2**n: hexadecimal, base32, base64
-    * Non-2**n based encoding: base85, base91
+    * Small 2^n: binary, quaternary, octal
+    * Large 2^n: hexadecimal, base32, base64
+    * Non-2^n based encoding: base85, base91
 * Binary to mnemonic (for transferring data through phone call and voice recordings):
     * Bubble Babble: https://github.com/rsaarelm/teratogen/tree/master/src/teratogen/babble
     * Vorud: https://github.com/rsaarelm/vorud
