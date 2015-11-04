@@ -87,9 +87,13 @@
         * 2^(2n+1) bit decimal! contains round((2^(2n+1)-n^2-2n-1)*ln2/ln10) fraction bits
         * 2^(2n) bit dozenal! contains round((2^(2n)-n^2-n)*ln2/ln12) fraction bits
         * 2^(2n+1) bit dozenal! contains round((2^(2n+1)-n^2-2n-1)*ln2/ln12) fraction bits
+    * Encoding Methods
+        * Binary Integer Decimal: https://en.wikipedia.org/wiki/Binary_Integer_Decimal
+        * Densely Packed Decimal: https://en.wikipedia.org/wiki/Densely_packed_decimal
+        * Chen-Ho Encoding: https://en.wikipedia.org/wiki/Chen%E2%80%93Ho_encoding
     * Extended precision Floating Point arithmetic
-        * For 10*(2^(n-1)) bit floating point (decimal), there are 2^n exponent bits
-        * For 12*(2^(n-1)) bit floating point (dozenal), there are 2^n exponent bits
+        * For 10*(2^(n-1)) bit floating point, there are 2^n exponent bits
+        * For 12*(2^(n-1)) bit floating point, there are 2^n exponent bits
 * Hyper-operations
     * Hyper(n,a,b) could be represented by "a[n]b" a.k.a Square bracket notation
     * Hyper(n,a,b)=Hyper(n-1,a,Hyper(n,a,b-1))
