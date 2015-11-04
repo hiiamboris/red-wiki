@@ -135,7 +135,7 @@
 * Lottery related Algorithms
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
     * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p^k)*((1-p)^(n-k))
-    * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)=((P!(B-P)!(P-W)!)**2)/(W!B!(B-2P+W)!)
+    * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
     * CSPRNG like Fortuna/Yarrow, ISSAC, NIST SP 800-90A, Dual_EC_DRBG, CryptGenRandom
