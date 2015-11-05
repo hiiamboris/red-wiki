@@ -122,14 +122,14 @@
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares)
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
-        * http://scz.bplaced.net/m.html http://users.telenet.be/d.rijmenants/en/table.htm
+        * https://scz.bplaced.net/m.html https://users.telenet.be/d.rijmenants/en/table.htm
     * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
-        * http://users.telenet.be/d.rijmenants/en/onetimepad.htm and http://users.telenet.be/d.rijmenants/en/otp.htm
+        * https://users.telenet.be/d.rijmenants/en/onetimepad.htm and https://users.telenet.be/d.rijmenants/en/otp.htm
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
     * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
-    * http://cryptogram.org/cipher_types.html and http://practicalcryptography.com/ciphers/classical-era/
-    * http://www.quadibloc.com/crypto/intro.htm
+    * https://cryptogram.org/cipher_types.html and https://practicalcryptography.com/ciphers/classical-era/
+    * https://www.quadibloc.com/crypto/intro.htm
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme
@@ -146,14 +146,14 @@
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
     * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p^k)*((1-p)^(n-k))
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)
-    * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and http://www.jjj.de/fxt/fxtbook.pdf)
+    * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and https://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
     * CSPRNG like Fortuna/Yarrow, ISSAC, NIST SP 800-90A, Dual_EC_DRBG, CryptGenRandom
     * Mersenne Twisters (MT)
     * Well Equidistributed Long-period Linear (WELL)
     * Single-instruction-multiple-data-oriented Fast Mersenne Twister (SFMT)
-    * [XorShift](http://xorshift.di.unimi.it/) and [XSAdd](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/)
-    * http://maths-people.anu.edu.au/~brent/random.html and http://dl.acm.org/citation.cfm?doid=2714064.2660195
+    * [XorShift](https://xorshift.di.unimi.it/) and [XSAdd](https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/)
+    * https://maths-people.anu.edu.au/~brent/random.html and https://dl.acm.org/citation.cfm?doid=2714064.2660195
     * Blum Blum Shub, , Blum–Micali, Lehmer, Naor-Reingold, Generalized Inversive Congruential
     * Wichmann-Hill like RNGs based on LCG, ICG, MWC, CMWC and LFG
     * Others: Self Shrinking Generator and Shrinking Generator, Feedback with Carry Shift Registers
@@ -220,19 +220,19 @@
 * All calendar system with the same properties shall be grouped together (e.g. all calendars with clustered 31 day months will be treated as the same calendar).
 * Non-365 day calendars, calendars with non-Gregorian leap days and calendars with months more than 13 will not be excluded.
 * Resources
-* http://myweb.ecu.edu/mccartyr/calendar-reform.html
-* http://individual.utoronto.ca/kalendis/leap/index.htm
-* http://individual.utoronto.ca/kalendis/kalendis.htm
-* http://www.calendarzone.com/Reform/
+* https://myweb.ecu.edu/mccartyr/calendar-reform.html
+* https://individual.utoronto.ca/kalendis/leap/index.htm
+* https://individual.utoronto.ca/kalendis/kalendis.htm
+* https://www.calendarzone.com/Reform/
 
 # Compression
-* mattmahoney.net/dc/text.html
-* mattmahoney.net/dc/mingw.html
-* mattmahoney.net/dc/silesia.html
-* mattmahoney.net/dc/zpaq.html
-* mattmahoney.net/dc/#barf
+* https://mattmahoney.net/dc/text.html
+* https://mattmahoney.net/dc/mingw.html
+* https://mattmahoney.net/dc/silesia.html
+* https://mattmahoney.net/dc/zpaq.html
+* https://mattmahoney.net/dc/#barf
 
-http://dlmf.nist.gov/
+https://dlmf.nist.gov/
 
 Test to check large primes:
 	Lehmer-Power’s Continued Fraction (CFrac)
