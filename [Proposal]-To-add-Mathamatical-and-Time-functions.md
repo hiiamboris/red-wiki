@@ -91,6 +91,8 @@
     * Encoding Methods (10^3~10bits) (12^5~18bits)
         * Binary Integer Decimal: https://en.wikipedia.org/wiki/Binary_Integer_Decimal
         * Densely Packed Decimal: https://en.wikipedia.org/wiki/Densely_packed_decimal
+        * Binary Integer Dozenal
+        * Densely Packed Dozenal (in development)
     * Extended precision Floating Point arithmetic
         * For 10*(2^(n-1)) bit floating point, there are 2^n exponent bits
         * For 12*(2^(n-1)) bit floating point, there are 2^n exponent bits
