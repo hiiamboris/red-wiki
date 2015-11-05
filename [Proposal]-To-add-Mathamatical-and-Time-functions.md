@@ -156,7 +156,7 @@
     * Well Equidistributed Long-period Linear (WELL)
     * Single-instruction-multiple-data-oriented Fast Mersenne Twister (SFMT)
     * [XorShift](https://xorshift.di.unimi.it/) and [XSAdd](https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/XSADD/)
-    * https://maths-people.anu.edu.au/~brent/random.html and https://dl.acm.org/citation.cfm?doid=2714064.2660195
+    * [Xorgens, Ranut and Rannw](https://maths-people.anu.edu.au/~brent/random.html) and [SplitMix and DotMix](https://dl.acm.org/citation.cfm?doid=2714064.2660195)
     * Blum Blum Shub, , Blum–Micali, Lehmer, Naor-Reingold, Generalized Inversive Congruential
     * Wichmann-Hill like RNGs based on LCG, ICG, MWC, CMWC and LFG
     * Others: Self Shrinking Generator and Shrinking Generator, Feedback with Carry Shift Registers
