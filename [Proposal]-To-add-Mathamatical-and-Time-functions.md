@@ -24,8 +24,11 @@
             * 1 grad = 10 Decigrads,  1 rad = 1000 Milliradians
             * Milliemes: = 6000 USSR-mil = 6283 Trig-mil = 6300 Swed-mil = 6400 NATO-mil
     * Fraction mathematics
-        * a/b+c/d=(ad+bc)/(bd), (a/b)(c/d)=(ac)/(bd), (a/b)/(c/d)=(ad)/(bc)
-        * a/b=(a/gcd(a,b))/(b/gcd(a,b)) [simplification]
+        * a/b+c/d=(ad/gcd)/lcm+(bc/gcd)/lcm where gcd(b,d)
+        * a/b+c/d=((ad+bc)/gcd)/(bd/gcd) where gcd(ad+bc,bd)
+        * Simplification: a/b=(a/gcd)/(b/gcd) where gcd(a,b)
+        * (a/b)(c/d)=(ac/gcd)/(bd/gcd) where gcd(ac,bd)
+        * (a/b)/(c/d)=(ad/gcd)/(bc/gcd) where gcd(ad,bc)
     * Gaussian numbers (where N=a+bi and i^2+1=0) (i^2=-1)
         * gaussInt! where a and b are both int! datatypes
         * gaussFrac! where a and b are both frac! datatypes
@@ -232,17 +235,17 @@
 * https://mattmahoney.net/dc/zpaq.html
 * https://mattmahoney.net/dc/#barf
 
-https://dlmf.nist.gov/
+* https://dlmf.nist.gov/
 
-Test to check large primes:
-	Lehmer-Power’s Continued Fraction (CFrac)
-	John Pollard’s Monte Carlo Method (RHO)
-	Hendrick Lestra’s Elliptic Curve Method (ECM)
-	Carl Pomermco’s Quadratic Sieve (QS)
-	General Public’s Number Field Sieve (NFS)
-Other methods
-	Dixon’s Factorization Method
-	Euler’s Factorization Method
-	Fermat’s Factorization Method
-	Shank’s Square Forms
-	Trial Division
+* Test to check large primes:
+    * Lehmer-Power’s Continued Fraction (CFrac)
+    * John Pollard’s Monte Carlo Method (RHO)
+    * Hendrick Lestra’s Elliptic Curve Method (ECM)
+    * Carl Pomermco’s Quadratic Sieve (QS)
+    * General Public’s Number Field Sieve (NFS)
+* Other methods
+    * Dixon’s Factorization Method
+    * Euler’s Factorization Method
+    * Fermat’s Factorization Method
+    * Shank’s Square Forms
+    * Trial Division
