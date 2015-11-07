@@ -20,3 +20,5 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * e.g. "We are the ProGrammer Nazi"
 * using Augmented Reality Games to gain mythical/fictional narrative
     * e.g. ...
+
+https://speakerdeck.com/mosky/beyond-the-style-guides
