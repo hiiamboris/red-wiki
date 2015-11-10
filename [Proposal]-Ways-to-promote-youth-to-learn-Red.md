@@ -26,6 +26,7 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 # Designing Mascots and Comic/Animation for Red
 
 * naming
+
 |English|French (♀)|German |Italian  |Spanish   |
 |:-----:|:--------:|:-----:|:-------:|:--------:|
 |Red    |Rogue     |Rot    |Rosso    |Rojo      |
