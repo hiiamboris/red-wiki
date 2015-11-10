@@ -24,8 +24,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 https://speakerdeck.com/mosky/beyond-the-style-guides
 
 # Designing Mascots and Comic/Animation for Red
-
-* naming
+* naming the characters
 
 |English|French (♀)|German |Italian  |Spanish   |
 |:-----:|:--------:|:-----:|:-------:|:--------:|
