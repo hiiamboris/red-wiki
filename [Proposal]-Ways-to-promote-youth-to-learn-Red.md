@@ -22,3 +22,16 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * e.g. ...
 
 https://speakerdeck.com/mosky/beyond-the-style-guides
+
+|English|French (♀)|German |Italian  |Spanish   |
+|-------|----------|-------|---------|----------|
+|Red    |Rogue     |Rot    |Rosso    |Rojo      |
+|Orange |Orange    |Orange |Arancione|Anaranjado|
+|Yellow |Juane     |Gelb   |Giallo   |Amarillo  |
+|Green  |Vert(e)   |Grün   |Verde    |Verde     |
+|Blue   |Bleu(e)   |Blau   |Azzurro  |Azul      |
+|Purple |Violet(te)|Violett|Viola    |Violet    |
+|-------|----------|-------|---------|----------|
+|Black  |Noir(e)   |Schwarz|Nero     |Negro     |
+|Grey   |Gris(e)   |Grau   |Grigo    |Gris      |
+|White  |Blanc(he) |Weiß   |Bianco   |Blanco    |
