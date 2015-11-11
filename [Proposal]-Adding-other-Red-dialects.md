@@ -31,6 +31,7 @@
         * What about SQL and DB Libraries?
     * https://en.wikipedia.org/wiki/Solution_stack
     * https://en.wikipedia.org/wiki/List_of_Apache–MySQL–PHP_packages
+    * http://sixrevisions.com/web-technology/web-languages-decoded/
 
 # Unification
 * Allowance of Virtual Machines
