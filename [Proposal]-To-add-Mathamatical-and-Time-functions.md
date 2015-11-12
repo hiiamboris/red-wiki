@@ -145,6 +145,7 @@
         * addition mod(2^n) is squared plus, subtraction mod(2^n) is squared minus
         * multiplication mod(2^n+1) is circled dot, xor is circled plus
         * Bitshift Operations and Not
+    * Kay derivation: PBKDF2 < bcrypt < scrypt (safest), Crypt(C)
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
     * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html)
