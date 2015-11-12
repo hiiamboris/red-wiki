@@ -94,6 +94,17 @@
 * The Unicode 8.0.0 standards reference: 
     * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 * Top Programming Languages According to RedMonk:
+|            |       First Grade       |         Second Grade        |                               Third Grade                              |
+|:----------:|:-----------------------:|:---------------------------:|:----------------------------------------------------------------------:|
+|   Low-end  |          C, C++         |                             |                                 Rust, D                                |
+| Functional |          Scala          |   Clojure, Haskell, Erlang  |                            F#, OCaml, Prolog                           |
+|  Scripting | PHP, Ruby, Python, Perl |                             |                                                                        |
+|     Web    |     Javascript, CSS     |      Coffeescript, XSLT     |                              SQL, XML, TeX                             |
+|   Lispers  |                         |                             |                      EmacsLisp, CommonLisp, Scheme                     |
+|     OO?    |      C#, ObjC, Java     | VB, Go, Swift, Arduino, Lua |                                                                        |
+|  Database? |      MatLab, Groovy     |                             |                             Fortran, Delphi                            |
+|   Shell?   |          Shell          |          Powershell         |                                                                        |
+|   Others?  |                         |                             | ColdFusion, ASP, DartTcl, Processing, Puppet, Actionscript, Truescript |
     * ASM languages:
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * https://en.wikipedia.org/wiki/Comparison_of_assemblers
