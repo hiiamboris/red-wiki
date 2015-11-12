@@ -105,9 +105,8 @@
 |     OO?    |      C#, ObjC, Java     | VB, Go, Swift, Arduino, Lua |                               |
 |  Database? |      MatLab, Groovy     |                             |        Fortran, Delphi        |
 |   Shell?   |          Shell          |          Powershell         |                               |
-|   Others?  |                         |                             |     ASP, Dart, Tcl, Puppet    |
-|   Others?  |                         |                             |     ColdFusion, Processing    |
-|   Others?  |                         |                             |    Actionscript, Truescript   |
+|   Others?  |                         |                             |     ASP, Dart, Tcl, Puppet, ColdFusion, Processing, Actionscript, Truescript   |
+
 
     * ASM languages:
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
