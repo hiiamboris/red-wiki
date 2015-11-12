@@ -94,7 +94,7 @@
 * The Unicode 8.0.0 standards reference: 
     * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 * Top Programming Languages According to RedMonk:
-|Category|First Grade              |Second Grade               |Third Grade                  |
+|Category  |First Grade            |Second Grade               |Third Grade                  |
 |:--------:|:---------------------:|:-------------------------:|:---------------------------:|
 |Low-end   |C, C++                 |                           |Rust, D                      |
 |OO?       |C#, ObjC, Java         |VB, Go, Swift, Arduino, Lua|                             | <==
