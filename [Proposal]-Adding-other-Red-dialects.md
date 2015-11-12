@@ -97,16 +97,16 @@
 |Category  |First Grade            |Second Grade               |Third Grade                  |
 |:--------:|:---------------------:|:-------------------------:|:---------------------------:|
 |Low-end   |C, C++                 |                           |Rust, D                      |
-|OO?       |C#, ObjC, Java         |VB, Go, Swift, Arduino, Lua|                             | <==
+|OO?       |C#, ObjC, Java         |VB, Go, Swift, Arduino, Lua|                             |
 |Scripting |PHP, Ruby, Python, Perl|                           |                             |
 |Web       |JS, CSS                |Coffeescript, XSLT         |SQL, XML, TeX                |
 |Functional|Scala                  |Clojure, Haskell, Erlang   |F#, OCaml, Prolog            |
-|Shell?    |Shell                  |Powershell                 |                             | <==
-|Database? |MatLab, Groovy         |                           |Fortran, Delphi              | <==
+|Shell?    |Shell                  |Powershell                 |                             |
+|Database? |MatLab, Groovy         |                           |Fortran, Delphi              |
 |Lispers   |                       |                           |EmacsLisp, CommonLisp, Scheme|
-|Others?   |                       |                           |ColdFusion, ASP, Dart        | <==
-|Others?   |                       |                           |Tcl, Processing, Puppet      | <==
-|Others?   |                       |                           |Actionscript, Truescript     | <==
+|Others?   |                       |                           |ColdFusion, ASP, Dart        |
+|Others?   |                       |                           |Tcl, Processing, Puppet      |
+|Others?   |                       |                           |Actionscript, Truescript     |
 
 , 
     * ASM languages:
