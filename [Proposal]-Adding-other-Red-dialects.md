@@ -20,6 +20,8 @@
     * Thirdly, understand the characteristics of speciality and commonality of the language.
     * Fourthly, see what are the conditions that will make them switch programming languages.
 
+https://en.wikipedia.org/wiki/Cross-platform#Cross-platform_programming_toolkits_and_environments
+
 # Dialects of different internet languages
 * Having Red/Web that works with or replaces HTML, CSS, XSLT, XML etc. (see W3C Recommendations)
     * Dialects for HTML ands CSS should be relatively simple . But are they necessary in (especially pre 1.0) core ? (in the future, I hope)
