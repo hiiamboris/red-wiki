@@ -14,6 +14,11 @@
     * also, Red is lispy-enough already (dialects/PARSE/different evaluation modes for arguments)
     * Is it possible to contain all lisp-like functions from these languages?
 * Mobile Programming Languages that goes or compete with Haxe
+* The Research Process
+    * Firstly, seek input from relevant communities, and see what them a part of the category, 
+    * Secondly, from the same community, see and what makes each language special or superior.
+    * Thirdly, understand the characteristics of speciality and commonality of the language.
+    * Fourthly, see what are the conditions that will make them switch programming languages.
 
 # Dialects of different internet languages
 * Having Red/Web that works with or replaces HTML, CSS, XSLT, XML etc. (see W3C Recommendations)
@@ -89,26 +94,21 @@
 * The Unicode 8.0.0 standards reference: 
     * ftp://unicode.org/Public/8.0.0/charts/CodeCharts.pdf
 * Top Programming Languages According to RedMonk:
-    * 1st languages:
-        * Low-end (C, C++)
-        * Object Oriented (C#, Obj.C, Java)
-        * Scripting (PHP, Ruby, Python, Perl)
-        * Web Languages (JS, CSS)
-        * Database Analysis (R)
-        * Functional (Scala)
-        * Shell
-    * 2nd Languages:
-        * Functional (Haskell, Clojure, Erlang, Lua)
-        * Object Oriented (VB, Go, Swift, Arduino)
-        * Web Languages (XSLT, Coffeescript)
-        * Database Analysis (MatLab, Groovy)
-        * Others (Powershell)
-    * 3rd Languages:
-        * Lower Level (Rust, D)
-        * Functional (F#, OCaml, Prolog)
-        * Database Analysis (Fortran)
-        * Lisps (EmacsLisp, CommonLisp, Scheme)
-        * SQL, XML, Delphi, ColdFusion, ASP, Dart, Truescript, Tcl, Processing, Puppet, Actionscript, TeX
+|Category|First Grade              |Second Grade               |Third Grade                  |
+|:--------:|:---------------------:|:-------------------------:|:---------------------------:|
+|Low-end   |C, C++                 |                           |Rust, D                      |
+|OO?       |C#, ObjC, Java         |VB, Go, Swift, Arduino, Lua|                             | <==
+|Scripting |PHP, Ruby, Python, Perl|                           |                             |
+|Web       |JS, CSS                |Coffeescript, XSLT         |SQL, XML, TeX                |
+|Functional|Scala                  |Clojure, Haskell, Erlang   |F#, OCaml, Prolog            |
+|Shell?    |Shell                  |Powershell                 |                             | <==
+|Database? |MatLab, Groovy         |                           |Fortran, Delphi              | <==
+|Lispers   |                       |                           |EmacsLisp, CommonLisp, Scheme|
+|Others?   |                       |                           |ColdFusion, ASP, Dart        | <==
+|Others?   |                       |                           |Tcl, Processing, Puppet      | <==
+|Others?   |                       |                           |Actionscript, Truescript     | <==
+
+, 
     * ASM languages:
         * https://en.wikibooks.org/wiki/X86_Assembly/x86_Assemblers
         * https://en.wikipedia.org/wiki/Comparison_of_assemblers
