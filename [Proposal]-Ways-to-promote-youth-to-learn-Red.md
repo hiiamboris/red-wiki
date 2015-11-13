@@ -19,6 +19,10 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
 * using a simplified versions of the the Git system
 
+# Real-life correspondence
+* Beaglebone Black or Arduino, or Clones of RaspberryPi
+* Collaboration with LittleBits and other similar projects
+
 # Creating promotional works and campaigns to pitch Red
 * create a cultural distinction between Red and other languages
     * e.g. "Redder and Hotter than Ruby"
