@@ -135,8 +135,8 @@
     * https://www.quadibloc.com/crypto/intro.htm
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
-    * Shamir's Secret Sharing Scheme
-    * 3DES, AES, blowfish, serpent and twofish in multiple modes of operation
+    * Shamir's Secret Sharing Scheme or SSSS
+    * AES, Serpent and Twofish (3DES and Blowfish are weak) in multiple modes of operation
     * Camellia, CAST-128, IDEA, RC2, RC5, SEED, ARIA, Skipjack, TEA and XTEA if possible
     * Bitshift Operations: Arithmetic, Logical, Rotate (without carry AND through carry)
     * Absolute Bitwise Operations: And, Or, Xor, Not-Implies
@@ -145,7 +145,7 @@
         * addition mod(2^n) is squared plus, subtraction mod(2^n) is squared minus
         * multiplication mod(2^n+1) is circled dot, xor is circled plus
         * Bitshift Operations and Not
-    * Kay derivation: PBKDF2 < bcrypt < scrypt (safest), Crypt(C)
+    * Kay derivation: Crypt(C) < PBKDF2 < bcrypt < scrypt (safest)
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
     * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html)
