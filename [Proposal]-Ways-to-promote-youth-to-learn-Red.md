@@ -9,6 +9,11 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 # Easy to access online interpreter and learning
 * using http://repl.it/ as an example
     * Allows command line on one side, and copying scripts on the other
+    * Syntax-highlighting help kids to identify code and errors
+    * Code Assistance and Context Completion makes typing fast
+        * Code Assistance provides a list of plausible terms
+        * Context Completion uses existing training data sets
+    * Spell-checking helps kids with bad spelling skills to code
 * using htts://www.codecademy.com/ as an example
     * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
 * using a simplified versions of the the Git system
