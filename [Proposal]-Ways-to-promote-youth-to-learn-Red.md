@@ -7,13 +7,14 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * https://en.wikipedia.org/wiki/List_of_educational_programming_languages
 
 # Easy to access online interpreter and learning
-* using http://repl.it/ as an example
-    * Allows command line on one side, and copying scripts on the other
+* http://repl.it/ like websites
+    * Allows terminal/command-line and IDE/text-editor on split screen
     * Syntax-highlighting help kids to identify code and errors
     * Code Assistance and Context Completion makes typing fast
         * Code Assistance provides a list of plausible terms
         * Context Completion uses existing training data sets
     * Spell-checking helps kids with bad spelling skills to code
+    * Debuggers to show the exact line of error
 * using htts://www.codecademy.com/ as an example
     * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
 * using a simplified versions of the the Git system
