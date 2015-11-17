@@ -54,7 +54,7 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 |White  |Blanc(he) |Weiß   |Bianco   |Blanco    |
 
 # The future devices
-http://www.puzzlephone.com/
-http://www.projectara.com/
-https://www.fairphone.com/
-http://one.laptop.org/
+* [Puzzlephone](http://www.puzzlephone.com/)
+* [Project Ara](http://www.projectara.com/)
+* [Fairphone](https://www.fairphone.com/)
+* [One Laptop](http://one.laptop.org/)
