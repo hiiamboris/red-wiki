@@ -22,10 +22,11 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 # Real-life correspondence
 * Beaglebone Black or Arduino, or Clones of RaspberryPi
     * Put focus on RaspberryPi's official languages
-        * Python, Ruby, Perl, SqueakSmalltalk
+        * Python, Ruby, Perl, Squeak-Smalltalk
         * C, C++, Java, BBC BASIC
     * Collaborate with (Pi Top)[http://www.pi-top.com/]
 * Collaboration with LittleBits and other similar projects
+    * (LittleBits)[http://littlebits.cc/]
 
 # Creating promotional works and campaigns to pitch Red
 * create a cultural distinction between Red and other languages
@@ -51,3 +52,9 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 |Black  |Noir(e)   |Schwarz|Nero     |Negro     |
 |Grey   |Gris(e)   |Grau   |Grigo    |Gris      |
 |White  |Blanc(he) |Weiß   |Bianco   |Blanco    |
+
+# The future devices
+http://www.puzzlephone.com/
+http://www.projectara.com/
+https://www.fairphone.com/
+http://one.laptop.org/
