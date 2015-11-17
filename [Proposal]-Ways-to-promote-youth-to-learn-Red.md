@@ -24,9 +24,9 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Put focus on RaspberryPi's official languages
         * Python, Ruby, Perl, Squeak-Smalltalk
         * C, C++, Java, BBC BASIC
-    * Collaborate with (Pi Top)[http://www.pi-top.com/]
+    * Collaborate with [Pi Top](http://www.pi-top.com/)
 * Collaboration with LittleBits and other similar projects
-    * (LittleBits)[http://littlebits.cc/]
+    * [LittleBits](http://littlebits.cc/)
 
 # Creating promotional works and campaigns to pitch Red
 * create a cultural distinction between Red and other languages
