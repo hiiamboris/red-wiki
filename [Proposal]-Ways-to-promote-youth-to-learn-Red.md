@@ -21,6 +21,10 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 
 # Real-life correspondence
 * Beaglebone Black or Arduino, or Clones of RaspberryPi
+    * Put focus on RaspberryPi's official languages
+        * Python, Ruby, Perl, SqueakSmalltalk
+        * C, C++, Java, BBC BASIC
+    * Collaborate with (Pi Top)[http://www.pi-top.com/]
 * Collaboration with LittleBits and other similar projects
 
 # Creating promotional works and campaigns to pitch Red
