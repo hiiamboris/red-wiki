@@ -58,6 +58,7 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [Puzzlephone](https://www.puzzlephone.com/)
     * [Project Ara](https://www.projectara.com/)
     * [Fairphone](https://www.fairphone.com/)
+    * [RePhone](http://www.seeed.cc/rephone/)
 * Laptops
     * [Ben NanoNote](https://en.qi-hardware.com/wiki/Ben_NanoNote)
     * [Novena](http://www.kosagi.com/w/index.php?title=Novena_Main_Page)
