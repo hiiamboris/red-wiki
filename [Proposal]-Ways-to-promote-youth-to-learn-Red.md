@@ -54,8 +54,11 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 |White  |Blanc(he) |Weiß   |Bianco   |Blanco    |
 
 # The future devices
-* [Ben NanoNote](http://en.qi-hardware.com/wiki/Ben_NanoNote)
-* [Puzzlephone](http://www.puzzlephone.com/)
-* [Project Ara](http://www.projectara.com/)
-* [Fairphone](https://www.fairphone.com/)
-* [OLPC](http://one.laptop.org/)
+* Phones
+    * [Puzzlephone](https://www.puzzlephone.com/)
+    * [Project Ara](https://www.projectara.com/)
+    * [Fairphone](https://www.fairphone.com/)
+* Laptops
+    * [Ben NanoNote](https://en.qi-hardware.com/wiki/Ben_NanoNote)
+    * [Novena](http://www.kosagi.com/w/index.php?title=Novena_Main_Page)
+    * [OLPC](http://one.laptop.org/)
