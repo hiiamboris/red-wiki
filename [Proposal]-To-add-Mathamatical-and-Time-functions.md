@@ -220,6 +220,7 @@
     * S/KEY: https://tools.ietf.org/html/rfc2289 (P.18-23)
     * Pretty Good Privacy wordlist (a.k.a biometric word list)
     * Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
+    * Mnemonicode
 
 
 # Considering (will be removed if redundant):
