@@ -57,4 +57,4 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 * [Puzzlephone](http://www.puzzlephone.com/)
 * [Project Ara](http://www.projectara.com/)
 * [Fairphone](https://www.fairphone.com/)
-* [One Laptop](http://one.laptop.org/)
+* [OLPC](http://one.laptop.org/)
