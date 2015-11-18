@@ -26,6 +26,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Python, Ruby, Perl, Squeak-Smalltalk
         * C, C++, Java, BBC BASIC
 * Collaboration with LittleBits and other similar projects
+    * [BeagleBone](http://beagleboard.org/)
     * [LittleBits](https://littlebits.cc/)
     * [Arduino](https://www.arduino.cc/)
 
