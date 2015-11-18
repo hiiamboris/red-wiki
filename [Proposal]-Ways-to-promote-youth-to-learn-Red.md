@@ -64,3 +64,5 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [Novena](http://www.kosagi.com/w/index.php?title=Novena_Main_Page)
     * [SOLE](http://solenotebook.com/)
     * [OLPC](http://one.laptop.org/)
+* Accessories
+    * [Ergodox](http://ergodox.org/)
