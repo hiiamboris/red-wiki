@@ -215,12 +215,12 @@
     * Large 2^n: hexadecimal, base32, base64
     * Non-2^n based encoding: base85, base91
 * Binary to mnemonic (for transferring data through phone call and voice recordings):
-    * Bubble Babble: https://github.com/rsaarelm/teratogen/tree/master/src/teratogen/babble
-    * Vorud: https://github.com/rsaarelm/vorud
-    * S/KEY: https://tools.ietf.org/html/rfc2289 (P.18-23)
-    * Pretty Good Privacy wordlist (a.k.a biometric word list)
-    * Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)
-    * Mnemonicode https://github.com/DonaldTsang/Mnemonicode/
+    * [Bubble Babble](https://github.com/rsaarelm/teratogen/tree/master/src/teratogen/babble)
+    * [Vorud](https://github.com/rsaarelm/vorud)
+    * [S/KEY (P.18-23)](https://tools.ietf.org/html/rfc2289)
+    * [Pretty Good Privacy wordlist (a.k.a biometric word list)](https://en.wikipedia.org/wiki/PGP_word_list)
+    * [Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)](https://github.com/bitcoin/bips/tree/master/bip-0039)
+    * [Mnemonicode](https://github.com/DonaldTsang/Mnemonicode/)
 
 
 # Considering (will be removed if redundant):
