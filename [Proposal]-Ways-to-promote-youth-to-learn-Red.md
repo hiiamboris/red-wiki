@@ -7,7 +7,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * https://en.wikipedia.org/wiki/List_of_educational_programming_languages
 
 # Easy to access online interpreter and learning
-* http://repl.it/ like websites
+* https://repl.it/ like websites
     * Allows terminal/command-line and IDE/text-editor on split screen
     * Syntax-highlighting help kids to identify code and errors
     * Code Assistance and Context Completion makes typing fast
@@ -15,7 +15,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Context Completion uses existing training data sets
     * Spell-checking helps kids with bad spelling skills to code
     * Debuggers to show the exact line of error
-* using htts://www.codecademy.com/ as an example
+* using https://www.codecademy.com/ as an example
     * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
 * using a simplified versions of the the Git system
 
@@ -24,9 +24,9 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Put focus on RaspberryPi's official languages
         * Python, Ruby, Perl, Squeak-Smalltalk
         * C, C++, Java, BBC BASIC
-    * Collaborate with [Pi Top](http://www.pi-top.com/)
+    * Collaborate with [Pi Top](https://www.pi-top.com/)
 * Collaboration with LittleBits and other similar projects
-    * [LittleBits](http://littlebits.cc/)
+    * [LittleBits](https://littlebits.cc/)
 
 # Creating promotional works and campaigns to pitch Red
 * create a cultural distinction between Red and other languages
