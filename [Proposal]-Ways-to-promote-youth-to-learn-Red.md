@@ -60,8 +60,8 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [Fairphone](https://www.fairphone.com/)
     * [RePhone](http://www.seeed.cc/rephone/)
 * Laptops
-    * [DragonBox Pyra](https://pyra-handheld.com/) and [OpenPandora](https://openpandora.org/)
-    * [Ben NanoNote](https://en.qi-hardware.com/wiki/Ben_NanoNote)
+    * [DragonBox Pyra](https://boards.openpandora.org/pyramain/main/)
+    * [Ben NanoNote](https://en.qi-hardware.com/wiki/Ben_NanoNote/)
     * [Novena](http://www.kosagi.com/w/index.php?title=Novena_Main_Page)
     * [SOLE](http://solenotebook.com/)
     * [OLPC](http://one.laptop.org/)
