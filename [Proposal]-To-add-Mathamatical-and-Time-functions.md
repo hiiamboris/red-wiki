@@ -221,6 +221,7 @@
     * [Pretty Good Privacy wordlist (a.k.a biometric word list)](https://en.wikipedia.org/wiki/PGP_word_list)
     * [Bitcoin Improvement Proposal 39 wordlist (a.k.a. BIP39 wordlist, Electrum 2 wordlist)](https://github.com/bitcoin/bips/tree/master/bip-0039)
     * [Mnemonicode](https://github.com/DonaldTsang/Mnemonicode/)
+    * http://bitcoin-development.narkive.com/HrfJs1XS/bitcoin-development-bip39-word-list
 
 
 # Considering (will be removed if redundant):
