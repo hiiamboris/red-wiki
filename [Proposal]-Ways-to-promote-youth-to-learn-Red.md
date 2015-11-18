@@ -20,13 +20,14 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 * using a simplified versions of the the Git system
 
 # Real-life correspondence
-* Beaglebone Black or Arduino, or Clones of RaspberryPi
+* Collaborate RaspberryPi and it's clones
+    * Collaborate with [Pi Top](https://www.pi-top.com/)
     * Put focus on RaspberryPi's official languages
         * Python, Ruby, Perl, Squeak-Smalltalk
         * C, C++, Java, BBC BASIC
-    * Collaborate with [Pi Top](https://www.pi-top.com/)
 * Collaboration with LittleBits and other similar projects
     * [LittleBits](https://littlebits.cc/)
+    * [Arduino](https://www.arduino.cc/)
 
 # Creating promotional works and campaigns to pitch Red
 * create a cultural distinction between Red and other languages
