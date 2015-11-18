@@ -58,13 +58,15 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [Puzzlephone](https://www.puzzlephone.com/)
     * [Project Ara](https://www.projectara.com/)
     * [Fairphone](https://www.fairphone.com/)
-    * [RePhone](http://www.seeed.cc/rephone/)
+    * [RePhone](https://www.seeed.cc/rephone/)
 * Laptops
     * [DragonBox Pyra](https://boards.openpandora.org/pyramain/main/)
     * [Ben NanoNote](https://en.qi-hardware.com/wiki/Ben_NanoNote)
-    * [Novena](http://www.kosagi.com/w/index.php?title=Novena_Main_Page)
-    * [SOLE](http://solenotebook.com/)
-    * [OLPC](http://one.laptop.org/)
+    * [Novena](https://www.kosagi.com/w/index.php?title=Novena_Main_Page)
+    * [SOLE](https://solenotebook.com/)
 * Accessories
-    * [Keyboardio](http://shop.keyboard.io/)
-    * [Ergodox](http://ergodox.org/)
+    * [Keyboardio](https://shop.keyboard.io/)
+    * [Ergodox](https://ergodox.org/)
+* Ideologies
+    * [Phonebloks](http://phonebloks.com/)
+    * [OLPC](https://one.laptop.org/)
