@@ -65,4 +65,5 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [SOLE](http://solenotebook.com/)
     * [OLPC](http://one.laptop.org/)
 * Accessories
+    * [Keyboardio](http://shop.keyboard.io/)
     * [Ergodox](http://ergodox.org/)
