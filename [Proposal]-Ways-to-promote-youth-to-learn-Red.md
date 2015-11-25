@@ -55,7 +55,7 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 |Grey   |Gris(e)   |Grau   |Grigo    |Gris      |
 |White  |Blanc(he) |Weiß   |Bianco   |Blanco    |
 
-# The future devices
+# Device projects we can collaborate on
 * Phones
     * [Puzzlephone](https://www.puzzlephone.com/)
     * [Project Ara](https://www.projectara.com/)
