@@ -17,6 +17,8 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Debuggers to show the exact line of error
 * using https://www.codecademy.com/ as an example
     * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
+* using https://www.pythontutor.com/ as an example
+    * Allows step-by-step analysis on the code
 * using a simplified versions of the the Git system
 
 # Real-life correspondence
