@@ -16,7 +16,10 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Spell-checking helps kids with bad spelling skills to code
     * Debuggers to show the exact line of error
 * using https://www.codecademy.com/ as an example
-    * Allows a 1-to-1 like tutorial, and records progress on the cloud or offline
+    * Allows a 1-to-1 like tutorial
+    * Automatically records progress on the cloud or offline
+        * Might require a big server to store the data
+        * If it is stored in the client, would it expand uncontrollably?
 * using https://www.pythontutor.com/ as an example
     * Allows step-by-step analysis on the code
 * using a simplified versions of the the Git system
