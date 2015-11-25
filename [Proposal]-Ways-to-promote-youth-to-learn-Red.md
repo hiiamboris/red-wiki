@@ -21,7 +21,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Might require a big server to store the data
         * If it is stored in the client, would it expand uncontrollably?
 * using https://www.pythontutor.com/ as an example
-    * Allows step-by-step analysis on the code
+    * Allows step-by-step analysis on the code with diagram GUIs
 * using a simplified versions of the the Git system
 
 # Real-life correspondence
