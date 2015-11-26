@@ -72,7 +72,9 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [Novena](https://www.kosagi.com/w/index.php?title=Novena_Main_Page)
     * [SOLE](https://solenotebook.com/)
 * Accessories
+    * [King's Assembly](http://solidartlabs.com/)
     * [Keyboardio](https://shop.keyboard.io/)
+    * [KeyMouse](http://www.keymouse.com/)
     * [Ergodox](https://ergodox.org/)
 * Ideologies
     * [Phonebloks](http://phonebloks.com/)
