@@ -77,5 +77,6 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [KeyMouse](http://www.keymouse.com/)
     * [Ergodox](https://ergodox.org/)
 * Ideologies
+* Create a series of koans ala http://clojurekoans.com/ to gently lead a new user to red mastery via TDD.
     * [Phonebloks](http://phonebloks.com/)
     * [OLPC](https://one.laptop.org/)
