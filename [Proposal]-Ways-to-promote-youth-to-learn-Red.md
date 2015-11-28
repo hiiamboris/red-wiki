@@ -5,6 +5,10 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 * Creating a red dialect for absolute programming beginners
     * Think "Learn Red in Minutes" but easier to use
     * https://en.wikipedia.org/wiki/List_of_educational_programming_languages
+* using https://www.pythontutor.com/ as an example
+    * Allows step-by-step analysis on the code with diagram GUIs
+* using https://clojurekoans.com/ as an example
+    * Create a series of "koans" to gently lead a new user to red mastery via TDD.
 
 # Easy to access online interpreter and learning
 * https://repl.it/ like websites
@@ -20,8 +24,6 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * Automatically records progress on the cloud or offline
         * Might require a big server to store the data
         * If it is stored in the client, would it expand uncontrollably?
-* using https://www.pythontutor.com/ as an example
-    * Allows step-by-step analysis on the code with diagram GUIs
 * using a simplified versions of the the Git system
 
 # Real-life correspondence
@@ -77,6 +79,5 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
     * [KeyMouse](http://www.keymouse.com/)
     * [Ergodox](https://ergodox.org/)
 * Ideologies
-* Create a series of koans ala http://clojurekoans.com/ to gently lead a new user to red mastery via TDD.
     * [Phonebloks](http://phonebloks.com/)
     * [OLPC](https://one.laptop.org/)
