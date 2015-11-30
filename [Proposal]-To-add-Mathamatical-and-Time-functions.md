@@ -137,6 +137,7 @@
     * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
     * https://cryptogram.org/cipher_types.html and https://practicalcryptography.com/ciphers/classical-era/
     * https://www.quadibloc.com/crypto/intro.htm
+    * http://users.telenet.be/d.rijmenants/ ???
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
