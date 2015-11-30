@@ -131,6 +131,7 @@
         * [Jefferson disk] (https://en.wikipedia.org/wiki/Jefferson_disk)
         * [Rasterschlüssel-44](http://users.telenet.be/d.rijmenants/en/rasterschlussel44.htm)
         * [examples](http://www.slugsite.com/archives/957)
+        * [examples](https://cryptome.org/2015/09/deniability-cipher.pdf)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
         * https://users.telenet.be/d.rijmenants/en/onetimepad.htm and https://users.telenet.be/d.rijmenants/en/otp.htm
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
@@ -144,6 +145,7 @@
     * http://ciphermachines.com/index ???
     * https://www.schneier.com/blog/archives/2014/05/new_al_qaeda_en_1.html https://www.schneier.com/blog/archives/2014/08/the_security_of_9.html
     * http://www.winterdragon.org/index.php?page=ciphers ???
+    * http://www.groundline.net/ARGarbage/ ???
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
