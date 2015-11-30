@@ -138,6 +138,8 @@
     * https://cryptogram.org/cipher_types.html and https://practicalcryptography.com/ciphers/classical-era/
     * https://www.quadibloc.com/crypto/intro.htm
     * http://users.telenet.be/d.rijmenants/ ???
+    * http://cryptogram.org/cipher_types.html ???
+    * http://www.sniperflashcards.com/cryptography.php ???
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
