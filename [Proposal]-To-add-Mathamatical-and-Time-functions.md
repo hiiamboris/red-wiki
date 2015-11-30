@@ -140,6 +140,9 @@
     * http://users.telenet.be/d.rijmenants/ ???
     * http://cryptogram.org/cipher_types.html ???
     * http://www.sniperflashcards.com/cryptography.php ???
+    * http://www.quadibloc.com/crypto/jscrypt.htm ???
+    * http://ciphermachines.com/index ???
+    * https://www.schneier.com/blog/archives/2014/05/new_al_qaeda_en_1.html https://www.schneier.com/blog/archives/2014/08/the_security_of_9.html
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
