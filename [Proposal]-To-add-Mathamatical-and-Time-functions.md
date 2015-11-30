@@ -127,7 +127,7 @@
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
         * https://scz.bplaced.net/m.html https://users.telenet.be/d.rijmenants/en/table.htm
         * How to create a set to conversion tables
-    * Historical (BATCO, Slidex, Reihenschieber, Reservehandverfahren)
+    * Historical (BATCO, Slidex, Reihenschieber, Reservehandverfahren, Floradora)
         * [Jefferson disk] (https://en.wikipedia.org/wiki/Jefferson_disk)
         * [Rasterschlüssel-44](http://users.telenet.be/d.rijmenants/en/rasterschlussel44.htm)
         * [examples](http://www.slugsite.com/archives/957)
