@@ -126,7 +126,11 @@
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares)
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
         * https://scz.bplaced.net/m.html https://users.telenet.be/d.rijmenants/en/table.htm
-    * Historical (BATCO, Slidex, Rasterschlüssel-44, Jefferson, Reihenschieber, Reservehandverfahren)
+        * How to create a set to conversion tables
+    * Historical (BATCO, Slidex, Reihenschieber, Reservehandverfahren)
+        * [Jefferson disk] (https://en.wikipedia.org/wiki/Jefferson_disk)
+        * [Rasterschlüssel-44](http://users.telenet.be/d.rijmenants/en/rasterschlussel44.htm)
+        * [examples](http://www.slugsite.com/archives/957)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
         * https://users.telenet.be/d.rijmenants/en/onetimepad.htm and https://users.telenet.be/d.rijmenants/en/otp.htm
     * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
@@ -136,8 +140,8 @@
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
-    * AES, Serpent and Twofish (3DES and Blowfish are weak) in multiple modes of operation
-    * Camellia, CAST-128, IDEA, RC2, RC5, SEED, ARIA, Skipjack, TEA and XTEA if possible
+    * AES, Camellia, Serpent and Twofish (are weak) in multiple modes of operation
+    * 3DES, Blowfish, CAST-128, IDEA, RC2, RC5, SEED, ARIA, Skipjack, TEA and XTEA if possible
     * Bitshift Operations: Arithmetic, Logical, Rotate (without carry AND through carry)
     * Absolute Bitwise Operations: And, Or, Xor, Not-Implies
     * Limited Bitwise Operations: Not, Nand, Nor, Xnor, Implies
