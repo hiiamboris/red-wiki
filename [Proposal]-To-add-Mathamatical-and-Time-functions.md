@@ -125,15 +125,19 @@
     * Matrix-based ciphers (addition, multiplication and transposition mod c)
     * Table (ADFGVX, Bifid, Trifid, N-dimensional-Polybius-Squares)
     * Straddling-Checkerboard (CT, VIC, SECOM, Snowfall)
-        * https://scz.bplaced.net/m.html https://users.telenet.be/d.rijmenants/en/table.htm
+        * [Full German collection of checkerboards](http://scz.bplaced.net/m.html)
+        * [Scattered checkerboard variations](http://users.telenet.be/d.rijmenants/en/table.htm)
         * How to create a set to conversion tables
-    * Historical (BATCO, Slidex, Reihenschieber, Reservehandverfahren, Floradora)
+    * Historical (BATCO, Slidex, Floradora)
         * [Jefferson disk] (https://en.wikipedia.org/wiki/Jefferson_disk)
         * [Rasterschlüssel-44](http://users.telenet.be/d.rijmenants/en/rasterschlussel44.htm)
-        * [examples](http://www.slugsite.com/archives/957)
-        * [examples](https://cryptome.org/2015/09/deniability-cipher.pdf)
+        * [FBI Nazi code](http://www.slugsite.com/archives/957)
+        * [Schultz code](https://cryptome.org/2015/09/deniability-cipher.pdf)
+        * [Reihenschieber](http://jproc.ca/crypto/reihenschieber.html)
+        * [Reservehandverfahren](http://www.enigma.hoerenberg.com/index.php?cat=Reservehandverfahren)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
-        * https://users.telenet.be/d.rijmenants/en/onetimepad.htm and https://users.telenet.be/d.rijmenants/en/otp.htm
+        * https://users.telenet.be/d.rijmenants/en/onetimepad.htm
+        * https://users.telenet.be/d.rijmenants/en/otp.htm
     * [Playing cards ciphers](https://pthree.org/2014/09/15/playing-card-ciphers/)
     * [GRC-OTG](https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
     * [Sniper cipher](https://www.sniperflashcards.com/cryptography.php)
