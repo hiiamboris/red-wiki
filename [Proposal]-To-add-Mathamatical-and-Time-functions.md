@@ -134,18 +134,19 @@
         * [examples](https://cryptome.org/2015/09/deniability-cipher.pdf)
     * Huge data (Book/Bible, Dictionary, Telegraph-Codebook, One-Time-Pad) 
         * https://users.telenet.be/d.rijmenants/en/onetimepad.htm and https://users.telenet.be/d.rijmenants/en/otp.htm
-    * Playing cards (Solitare, https://pthree.org/2014/09/15/playing-card-ciphers/)
-    * GRC-OTG (https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
-    * https://cryptogram.org/cipher_types.html and https://practicalcryptography.com/ciphers/classical-era/
+    * [Playing cards ciphers](https://pthree.org/2014/09/15/playing-card-ciphers/)
+    * [GRC-OTG](https://atechblogger.wordpress.com/2011/08/27/a-suggestion-for-enhancing-steve-gibsons-off-the-grid-secure-password-generator/)
+    * [Sniper cipher](https://www.sniperflashcards.com/cryptography.php)
+    * https://practicalcryptography.com/ciphers/classical-era/
     * https://www.quadibloc.com/crypto/intro.htm
-    * http://users.telenet.be/d.rijmenants/ ???
-    * http://cryptogram.org/cipher_types.html ???
-    * http://www.sniperflashcards.com/cryptography.php ???
-    * http://www.quadibloc.com/crypto/jscrypt.htm ???
-    * http://ciphermachines.com/index ???
-    * https://www.schneier.com/blog/archives/2014/05/new_al_qaeda_en_1.html https://www.schneier.com/blog/archives/2014/08/the_security_of_9.html
-    * http://www.winterdragon.org/index.php?page=ciphers ???
-    * http://www.groundline.net/ARGarbage/ ???
+    * [Cipher machines emulation](https://users.telenet.be/d.rijmenants/)
+    * [American Cryptogram Association List](https://cryptogram.org/cipher_types.html)
+    * https://www.quadibloc.com/crypto/jscrypt.htm ???
+    * [Cipher machine database](https://ciphermachines.com/index)
+    * [Terrorist Cipher Article](https://www.schneier.com/blog/archives/2014/05/new_al_qaeda_en_1.html)
+    * [Terrorist Cipher article](https://www.schneier.com/blog/archives/2014/08/the_security_of_9.html)
+    * [Cipher Tool Meta-lists](https://www.winterdragon.org/index.php?page=ciphers)
+    * [Cipher list](http://www.groundline.net/ARGarbage/)
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
