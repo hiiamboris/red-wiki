@@ -92,8 +92,8 @@
         * 2^(2n) bit dozenal! contains round((2^(2n)-n^2-n)*ln2/ln12) fraction bits
         * 2^(2n+1) bit dozenal! contains round((2^(2n+1)-n^2-2n-1)*ln2/ln12) fraction bits
     * Encoding Methods (10^3~10bits) (12^5~18bits)
-        * Binary Integer Decimal: https://en.wikipedia.org/wiki/Binary_Integer_Decimal
-        * Densely Packed Decimal: https://en.wikipedia.org/wiki/Densely_packed_decimal
+        * [Binary Integer Decimal](https://en.wikipedia.org/wiki/Binary_Integer_Decimal)
+        * [Densely Packed Decimal](https://en.wikipedia.org/wiki/Densely_packed_decimal)
         * Binary Integer Dozenal
         * Densely Packed Dozenal (in development)
     * Extended precision Floating Point arithmetic
