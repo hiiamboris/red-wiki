@@ -241,7 +241,7 @@
     * [Bitcoin Improvement Proposal 39 wordlist](https://github.com/bitcoin/bips/tree/master/bip-0039)
     * [Electrum 2 wordlist](https://github.com/spesmilo/electrum/tree/master/lib/wordlist)
     * [Mnemonicode](https://github.com/DonaldTsang/Mnemonicode/)
-    * http://bitcoin-development.narkive.com/HrfJs1XS/bitcoin-development-bip39-word-list
+    * [Wordlist development](http://bitcoin-development.narkive.com/HrfJs1XS/bitcoin-development-bip39-word-list)
 
 
 # Considering (will be removed if redundant):
