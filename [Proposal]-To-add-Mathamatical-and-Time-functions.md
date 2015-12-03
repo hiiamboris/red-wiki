@@ -59,7 +59,9 @@
             * (a+bp+ci+dip)+(e+fp+gi+hip)=(a+e)+(b+f)p+(c+g)i+(d+h)ip [addition]
             * (a+bp+ci+dip)(e+fp+gi+hip)=(ae+3bf-cg-3dh)+(af+be-ch-dg)p+(ag+bh+ce+df)i+(ah+bg+cf+de)ip [multiplication]
         * Polar Mathematics
-            * {r,θ}+{l,φ}= [addition]
+            * {r,θ}+{l,φ}={sqrt(r^2+l^2+2rl*cos(abs(θ-φ))),atan2((rsinθ+lsinφ)/(rcosθ+lcosφ))} [addition]
+                 * abs is done in angle! in binary angle/radian mods
+                 * [atan2](https://en.wikipedia.org/wiki/Atan2) is a function to find θ with x and y
             * {r,θ}{l,φ}={r*l,θ+φ} [multiplication]
             * {r,θ}/{l,φ}={r/l,θ-φ} [division]
     * Normal, Gaussian and Eulerian prime determination
