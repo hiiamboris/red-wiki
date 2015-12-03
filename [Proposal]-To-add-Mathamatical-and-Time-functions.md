@@ -7,6 +7,7 @@
 * Rounding: Ceiling, Floor, Truncate, Round Half up, Round Half down, Round half zero
 * Factorial or n!=n*(n-1)! Permutation or P(n,r)=n!/(n-r)! Combination or C(n,r)=P(n,r)/r!
 * Arbitrary precision arithmetic (in bits, base10, base12, base16 and base60)
+     * [Q-format as example](https://en.wikipedia.org/wiki/Q_%28number_format%29)
 * Number arithmetic
     * Real numbers (N=a)
         * int! where a is an integer
