@@ -162,13 +162,15 @@
     * Bitshift Operations: Arithmetic, Logical, Rotate (without carry AND through carry)
     * Absolute Bitwise Operations: And, Or, Xor, Not-Implies
     * Limited Bitwise Operations: Not, Nand, Nor, Xnor, Implies
-    * Special addition and subtraction functions (modulo 2^n)
-    * Special multiplication functions (modulo 2^n+1) (2^n is translated to all zeros in binary)
     * Flow Diagram
         * addition mod(2^n) is squared plus, subtraction mod(2^n) is squared minus
         * multiplication mod(2^n+1) is circled dot, xor is circled plus
         * Bitshift Operations and Not
-    * Kay derivation: Crypt(C) < PBKDF2 < bcrypt < scrypt (safest)
+    * Cipher parameters
+        * Nano-ciphers (key=128 block=64)
+        * Mini-cipher (key=256 block=128)
+        * AES-cipher (key=128/192/256 block=128)
+    * Key derivation: Crypt(C) < PBKDF2 < bcrypt < scrypt (safest)
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
     * Shortest Unit Fraction Algorithm (see https://www.ics.uci.edu/~eppstein/numth/egypt/intro.html)
