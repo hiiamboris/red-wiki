@@ -16,7 +16,7 @@
             * sign: if the value of a number is smaller than 0, it's "1", or else "0"
             * size: if the absolute of a number is smaller than 1, it's "1", or else "0"
         * float! where a is a data set containing a sign bit, a fraction part and an exponent part
-        * angle! 
+        * [angle!](https://en.wikipedia.org/wiki/Binary_scaling#Binary_angles)
             * full circle's alternate name: turn, cycle, revolution/rev, and rotation/rot, τ
             * 1 full circle = 2π Radian/rad = 360 Degrees/deg = 400 Gradians/grad
             * = 4 Quadrant = 6 Sextant = 24 Hour-angle = 32 Point-wind = 60 Hexacontade = 144/180 Pechus
