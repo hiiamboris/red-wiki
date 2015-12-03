@@ -162,6 +162,8 @@
     * Bitshift Operations: Arithmetic, Logical, Rotate (without carry AND through carry)
     * Absolute Bitwise Operations: And, Or, Xor, Not-Implies
     * Limited Bitwise Operations: Not, Nand, Nor, Xnor, Implies
+    * Special addition and subtraction functions (modulo 2^n)
+    * Special multiplication functions (modulo 2^n+1) (2^n is translated to all zeros in binary)
     * Flow Diagram
         * addition mod(2^n) is squared plus, subtraction mod(2^n) is squared minus
         * multiplication mod(2^n+1) is circled dot, xor is circled plus
