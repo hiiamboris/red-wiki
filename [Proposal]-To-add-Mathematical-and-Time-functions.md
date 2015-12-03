@@ -157,8 +157,6 @@
 * Modern Cryptography and Error Correction
     * Error Correction: Extended Hamming, Extended Binary Golay and Reed–Solomon
     * Shamir's Secret Sharing Scheme or SSSS
-    * AES, Camellia, Serpent and Twofish (are weak) in multiple modes of operation
-    * 3DES, Blowfish, CAST-128, IDEA, RC2, RC5, SEED, ARIA, Skipjack, TEA and XTEA if possible
     * Bitshift Operations: Arithmetic, Logical, Rotate (without carry AND through carry)
     * Absolute Bitwise Operations: And, Or, Xor, Not-Implies
     * Limited Bitwise Operations: Not, Nand, Nor, Xnor, Implies
@@ -168,8 +166,26 @@
         * Bitshift Operations and Not
     * Cipher parameters
         * Nano-ciphers (key=128 block=64)
+            * TEA, XTEA and XXTEA (medium priority)
+            * IDEA and IDEA-NXT-128 (medium priority)
+            * MISTY1 (medium priority)
+            * KHAZAD (low priority)
         * Mini-cipher (key=256 block=128)
+            * IDEA-NXT-256 (medium priority)
         * AES-cipher (key=128/192/256 block=128)
+            * AES, Camellia, Serpent and Twofish (high priority)
+            * ARIA (medium priority)
+            * RC6 (low prioirty)
+        * variable parameter
+            * Blowfish (medium priority)
+            * CAST-128 (medium priority)
+            * RC2, RC5 (medium priority)
+            * SHACAL (low priority)
+            * NUSH (low priority)
+        * static parameter
+            * 3DES (key=168 block=64) (medium priority)
+            * SEED (key=128 block=128) (medium priority)
+            * Skipjack (key=80 block=64) (medium priority)
     * Key derivation: Crypt(C) < PBKDF2 < bcrypt < scrypt (safest)
 * Extra Curriculum Mathematics
     * Non-transitive Dice: Miwin's Dice, Efron's Dice, Grime's Dice, 3-Player Dice
