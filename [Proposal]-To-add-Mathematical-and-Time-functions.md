@@ -148,7 +148,7 @@
     * https://www.quadibloc.com/crypto/intro.htm
     * [Cipher machines emulation](https://users.telenet.be/d.rijmenants/)
     * [American Cryptogram Association List](https://cryptogram.org/cipher_types.html)
-    * https://www.quadibloc.com/crypto/jscrypt.htm ???
+    * http://www.quadibloc.com/crypto/jscrypt.htm ???
     * [Cipher machine database](https://ciphermachines.com/index)
     * [Terrorist Cipher Article](https://www.schneier.com/blog/archives/2014/05/new_al_qaeda_en_1.html)
     * [Terrorist Cipher article](https://www.schneier.com/blog/archives/2014/08/the_security_of_9.html)
