@@ -205,7 +205,7 @@
     * Dice! Function for https://wiki.roll20.net/Dice_Reference
 * Lottery related Algorithms
     * Multicombination or multisubset or M(n,k)=C(n+k-1,k)
-    * Bernoulli trial (probability of k successes out on n) = C(n,k)*(p^k)*((1-p)^(n-k))
+    * Bernoulli trial (probability of k successes out on n) = C(n,k)(p^k)((1-p)^(n-k))
     * Lotto(Ball,Pick,Win)=C(P,W)*C(B-P,P-W)/C(B,P)
     * co-lexicographic ordering of the combinations, for lottery tickets (see https://computationalcombinatorics.wordpress.com/2012/09/10/ranking-and-unranking-of-combinations-and-permutations/ and https://www.jjj.de/fxt/fxtbook.pdf)
 * Random Number Generators
