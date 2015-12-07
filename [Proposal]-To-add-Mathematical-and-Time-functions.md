@@ -173,6 +173,7 @@
             * CS-Cipher (low priority)
             * KHAZAD (low priority)
             * Nimbus (low priority)
+            * CIPHERUNICORN-E (low priority)
         * Micro-cipher (key=128 block=128)
             * SEED (medium priority)
             * Grand Cru (low priority)
@@ -185,6 +186,7 @@
             * SC2000 (medium priority)
             * Q (low priority)
             * CIPHERUNICORN-A (low priority)
+            * CLEFIA (low priority)
         * variable parameter
             * IDEA-NXT-256 (medium priority)
             * Blowfish (medium priority)
