@@ -188,7 +188,7 @@
         * variable parameter
             * IDEA-NXT-256 (medium priority)
             * Blowfish (medium priority)
-            * CAST-128 (medium priority)
+            * CAST-128, CAST-256 (medium priority)
             * RC2, RC5 (medium priority)
             * SAFER (medium priority)
             * SHACAL (low priority)
