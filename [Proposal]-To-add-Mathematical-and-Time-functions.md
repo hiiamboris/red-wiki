@@ -192,7 +192,7 @@
             * Blowfish (medium priority)
             * CAST-128, CAST-256 (medium priority)
             * RC2, RC5 (medium priority)
-            * SAFER (medium priority)
+            * SAFER+, SAFER++ (medium priority)
             * SHACAL (low priority)
             * NUSH (low priority)
             * Anubis (low priority)
