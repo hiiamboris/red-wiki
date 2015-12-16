@@ -5,7 +5,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
 Reference documentation:
-* [Redbin format specification](https://github.com/red/red/wiki/docs/Redbin-specification)
+* [[Redbin format specification|Redbin-specification]]
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
 * [Coding Style Guide](https://github.com/red/red/wiki/Coding-Style-Guide)
