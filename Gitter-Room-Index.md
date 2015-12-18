@@ -1,6 +1,12 @@
 #### [red/red](https://gitter.im/red/red)
 This is the "main" room for general discussions about Red.
 
+#### [red/red/France](https://github.com/red/red/France)
+French speaking room.
+
+#### [red/red/Chinese](https://github.com/red/red/Chinese)
+Chinese speaking room.
+
 #### [red/red/links](https://gitter.im/red/red/links)
 This room is dedicated for storing useful links.
 
