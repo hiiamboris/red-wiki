@@ -32,7 +32,7 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
 
 
 # Real-life correspondence
-* Collaborate RaspberryPi and it's clones
+* Collaborate RaspberryPi and its clones
     * Collaborate with [Pi Top](https://www.pi-top.com/)
     * Put focus on RaspberryPi's official languages
         * Python, Ruby, Perl, Squeak-Smalltalk
