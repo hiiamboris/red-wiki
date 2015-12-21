@@ -6,7 +6,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 
 Reference documentation:
 * Red/View
-    * Overview
+    * [Overview](https://github.com/red/red/wiki/Red-View-architecture)
     * View engine
     * VID dialect
     * Draw dialect
