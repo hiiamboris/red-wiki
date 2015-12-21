@@ -31,6 +31,6 @@ An internal API allows to implement as many backends as required for the View en
 
 
 ***
-Disclamer
+Disclaimer
 
 VID, Draw and most of View design (except for the reactive parts) were created by Carl Sassenrath in Rebol. Red makes a new implementation of them, with some improvements when desirable and possible.
