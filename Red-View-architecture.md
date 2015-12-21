@@ -15,7 +15,7 @@ The GUI code engine contains several parts:
 
 React
 -----
-Reactive actions can be defined directly in VID (with automatic attachement to nearest face) or can be specified directly using the REACT function.
+Reactive actions can be defined directly from VID dialect or can be specified directly using the REACT function.
 
 Draw
 ----
