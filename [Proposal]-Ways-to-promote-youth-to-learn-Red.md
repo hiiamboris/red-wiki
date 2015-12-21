@@ -25,6 +25,11 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Might require a big server to store the data
         * If it is stored in the client, would it expand uncontrollably?
 * using a simplified versions of the the Git system
+* for young non-English native speakers, make a translation of Red words to the native langugage
+    * first, the child gets the logic of programming; he codes in Fred (French Red), Chred (Chinese Red), Spred (Spanish Red), etc.
+    * then, he is shown the *real* Red words,
+    * once he knows/understand English, he can code in regular Red code, he can even keeps on mixing his native language with normal Red as he learns English.
+
 
 # Real-life correspondence
 * Collaborate RaspberryPi and it's clones
@@ -52,9 +57,9 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 
 |English|French (♀)|German |Italian  |Spanish   |
 |:-----:|:--------:|:-----:|:-------:|:--------:|
-|Red    |Rogue     |Rot    |Rosso    |Rojo      |
+|Red    |Rouge     |Rot    |Rosso    |Rojo      |
 |Orange |Orange    |Orange |Arancione|Anaranjado|
-|Yellow |Juane     |Gelb   |Giallo   |Amarillo  |
+|Yellow |Jaune     |Gelb   |Giallo   |Amarillo  |
 |Green  |Vert(e)   |Grün   |Verde    |Verde     |
 |Blue   |Bleu(e)   |Blau   |Azzurro  |Azul      |
 |Purple |Violet(te)|Violett|Viola    |Violet    |
