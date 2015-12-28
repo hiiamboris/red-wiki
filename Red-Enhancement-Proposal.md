@@ -8,7 +8,7 @@ This process itself is at the alpha stage and is likely to change frequently as 
 # Red Design Decisions
 Red is not designed by committee. Nenad makes all design decisions. Having said that Nenad has demonstrated that he does not make design decisions in isolation. He frequently consults people on design decisions and has clearly taken their views into account. 
 
-# The Red Proposal Process
+# The Red Enhancement Proposal Process
 There are five stages in the Red proposal process, namely:
 * Stage 1 - Proposal Development
 * Stage 2 - Indication of Community Support
@@ -17,26 +17,26 @@ There are five stages in the Red proposal process, namely:
 * Stage 5 - Proposal Implemented
 
 ## Stage 1 - Proposal Development
-Anyone requesting a change or audition to Red should prepare a proposal on a new page on the Red Github wiki. There should be a separate proposal for each change or addition requested.
+Anyone requesting a change or audition to Red should prepare a proposal on a new page on the Red Github wiki based on the Red Enhancement Proposal Template. There should be a separate proposal for each change or addition requested. 
 
 The proposal should include the following information:
 ### Description
 A clear, concise description of the change/addition to Red that is being requested.
 ### Use Case
 An example or examples of how the change/addition would be used if it was implemented.
-### Benefit
-A short statement of the benefit to the Red project of implementing the change/addition.
+### Benefits
+An extensive explanation of all the benefits to the Red project supported by the rationale behind each benefit.
+### Consequences
+Every enhancement, no matter how beneficial, will have some consequences that will need to be addressed. These range from requiring changes to existing documentation through to breaking all previous code (and probably beyond).
 ### Assistance
-Details of any assistance the proposer(s) is will to give to implement the change/addition. This could be in the form of code, written tests, documentation or a donation.
+Details of any assistance the proposer(s) is willing to give to implement the change/addition. This could be in the form of code, written tests, documentation or a donation.
 
-Once the proposal has been completed, a link to it should be added to the list of Stage 1 Proposals on the front page of the Red Github wiki.
-
-If the proposal is considered to contain sufficient information, it will be moved to the list of Stage 2 Proposal by a member of the Red team.
+Once the proposal has been completed, a request should be made in the Red/Red Gitter forum for a member of the Red team to review it for completeness. If it is considered complete, it will be allocated a Red Enhancement Proposal number and a link to its wiki page will be added to the list of Stage 1 Proposals on the front page of the Red Github wiki.
 
 ## Stage 2 - Indication of Community Support
 One factor that will be taken into account in evaluating proposals will be the level of support that they have in the Red community. As the community is still quite small, though starting to grow quickly, to start with support of five people will be sufficient to indicate that the proposal is of interest to the community. This should be indicated by listing their names on the proposal.
 
-Once a proposal in Stage 2 has the required level of support, it will be moved to Stage 3 by a member of the Red team.
+Once a proposal has the required level of support, it will be moved to Stage 2 by a member of the Red team.
 
 ## Stage 3 - Proposal Evaluation
 Proposals will be evaluated and if accepted will be scheduled for implementation. For the time being, it is likely that proposals will only be evaluated in the period shortly after a new Alpha release has been made.
@@ -46,5 +46,3 @@ Proposals will be scheduled in a future Red release. Once scheduled they may be 
 
 ## Stage 5 - Proposal Implemented
 The proposal has been implemented.
-
-
