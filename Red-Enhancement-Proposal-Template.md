@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td>Date Last Actioned:</td>
-    <td>&lt;Leave blankl&gt;</td>
+    <td>&lt;Leave blank&gt;</td>
   </tr>
 </table>
 
@@ -43,3 +43,29 @@
 
 ##Assistance
 \<Details of any assistance the proposer(s) is willing to give to implement the change/addition. This could be in the form of code, written tests, documentation or a donation.\>
+
+##Community Support
+__Do not complete until initial draft has been accepted.__
+
+The following people support the proposal in its entirety. 
+<table>
+  <tr>
+    <th>Real Name</th>
+    <th>Github Account</th>
+  </tr>
+  <tr>
+    <td>&lt;Real Name&gt;</td>
+    <td>&lt;Link to Github Account&gt;</td>
+  </tr>
+</table>
+
+##Debate
+The purpose of this section is to allow members of the community to succinctly express either (or both) the pros and cons of the proposal. Links to supporting information should be included. __This section will be curated by the Red Team.__
+
+Author: \<The real name of the author.\>
+
+Date: \<The date added to the proposal.\>
+
+Point: \<The succinct reasons in support of or against the proposal.\>
+
+
