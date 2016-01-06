@@ -25,10 +25,10 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Might require a big server to store the data
         * If it is stored in the client, would it expand uncontrollably?
 * using a simplified versions of the the Git system
-* for young non-English native speakers, make a translation of Red words to the native langugage
+* for young non-English native speakers, make a translation of Red words to the native language
     * first, the child gets the logic of programming; he codes in Fred (French Red), Chred (Chinese Red), Spred (Spanish Red), etc.
     * then, he is shown the *real* Red words,
-    * once he knows/understand English, he can code in regular Red code, he can even keeps on mixing his native language with normal Red as he learns English.
+    * once he knows/understands English, he can code in regular Red code, he can even keeps on mixing his native language with normal Red as he learns English.
 
 
 # Real-life correspondence
