@@ -49,6 +49,9 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * e.g. "We are the ProGrammer Nazi"
 * using Augmented Reality Games to gain mythical/fictional narrative
     * e.g. ...
+* writing articles in magazines, this method proved to be effective, at least in France, to spread the Rebol word, a while ago
+    * e.g. copy+paste all Olivier Auverlot's articles, substituting Rebol with Red (of course with Olivier's approval, or even better, participation)
+
 
 https://speakerdeck.com/mosky/beyond-the-style-guides
 
