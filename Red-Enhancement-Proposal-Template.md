@@ -60,12 +60,15 @@ The following people support the proposal in its entirety.
 </table>
 
 ##Debate
-The purpose of this section is to allow members of the community to succinctly express either (or both) the pros and cons of the proposal. Links to supporting information should be included. __This section will be curated by the Red Team.__
+The purpose of this section is to allow members of the community to succinctly express either (or both) the pros and cons of the proposal. Links to supporting information should be included.
+
+This is not the place for long, discussion related to the proposal. The best place for such discussions would be the [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang) as the conversations can be linked to from the proposal. Such discussions can also be held on [Red Gitter Chat](https://gitter.im/red/red) though they will not be preserved in such a convenient form as the mailing list.
+
+ __This section will be curated by the Red Team.__
 
 Author: \<The real name of the author.\>
 
 Date: \<The date added to the proposal.\>
 
 Point: \<The succinct reasons in support of or against the proposal.\>
-
 
