@@ -1,10 +1,10 @@
-Welcome to the Red wiki!
+##Welcome to the Red wiki!
 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red .
 
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
-Reference documentation:
+###Reference documentation:
 * Red/View
     * [Overview](https://github.com/red/red/wiki/Red-View-architecture)
     * View engine
@@ -17,14 +17,14 @@ Reference documentation:
 * [Coding Style Guide](https://github.com/red/red/wiki/Coding-Style-Guide)
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
-Discussions:
+###Discussions:
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
 
-Todo lists:
+###Todo lists:
 * [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
 * <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
 
-Design Deliberations:
+###Design Deliberations:
 
 From time to time, some structured deliberations are needed to allow the best design decisions to be made.
 * [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
@@ -33,7 +33,32 @@ From time to time, some structured deliberations are needed to allow the best de
 * [Issues Relating to TO] (https://github.com/red/red/wiki/To-Issues)
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
 
-Proposals:
+###Red Enhancement Proposals:
+
+Proposals related to Red follow [The Red Enhancement Proposal Process](https://github.com/red/red/wiki/Red-Enhancement-Proposal-Process).
+
+####Stage 1 - Developed Proposals
+
+None so far.
+
+####Stage 2 - Community Supported Proposals
+
+None so far.
+
+####Stage 3 - Proposals For Evaluation
+
+None so far.
+
+####Stage 4 - Proposals Scheduled To Be Implemented
+
+None so far.
+
+####Stage 5 - Implemented Proposals
+
+None so far.
+
+The following proposals were developed before the Red Enhancement Proposal process was introduced. They need to be re-formatted according to the Red Enhancement Proposal process.
+
 * [Case insensitive charset refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
 * [Change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
 * <strike>[Use blocks for keys in maps] (https://github.com/red/red/wiki/use-blocks-as-keys)</strike>
@@ -44,7 +69,7 @@ Proposals:
 * [Improved console completion support] (https://github.com/red/red/issues/1165)
 * [Macros system] (https://github.com/red/red/wiki/Macros%28SPEL%3A-semantic-programming-enhancement-logic%29)
 
-Mezzanines:
+###Mezzanines:
 * [Mezz contributions](https://github.com/red/red/wiki/mezzanines)
 
 *Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
