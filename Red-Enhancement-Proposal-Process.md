@@ -17,7 +17,7 @@ There are five stages in the Red proposal process, namely:
 * Stage 5 - Proposal Implemented
 
 ## Stage 1 - Proposal Development
-Anyone requesting a change or audition to Red should prepare a proposal on a new page on the Red Github wiki based on the Red Enhancement Proposal Template. There should be a separate proposal for each change or addition requested. 
+Anyone requesting a change or audition to Red should prepare a proposal on a new page on the Red Github wiki based on the [Red Enhancement Proposal Template](https://github.com/red/red/wiki/Red-Enhancement-Proposal-Template). There should be a separate proposal for each change or addition requested. 
 
 The proposal should include the following information:
 ### Description
