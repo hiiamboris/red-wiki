@@ -46,7 +46,7 @@ There is a lot of overhead here.  The pattern matching, the consing, etc.  Would
 
 (max 1 (max 2 (max 3 4)))
 
-Where max here refers to the original definition?
+Where max here refers to the original definition.
 
 It would also be nice if the syntax could be (max 1 2 3 4) instead of introducing and constructing a list.
 
@@ -131,9 +131,9 @@ spel max [loop length? code [insert code 'max-helper]] ;this defines a macro
 
 max [1 2 3] =>
  
-[loop length? code [insert code 'max-helper]] =>
+[loop length? code [insert code 'max-helper] code] =>
 
-code: [max-helper max-helper 1 2 3] => spel pops block and we get
+[max-helper max-helper 1 2 3] => spel pops block and we get
 
 max-helper max-helper 1 2 3
 
