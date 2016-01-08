@@ -126,7 +126,8 @@ Current Proposal:
 max would now work something like this...
 
 max-helper: func [x y] [either x > y [x][y]]
-spel max [loop length? code [insert code 'max-helper]]
+
+spel max [loop length? code [insert code 'max-helper]] ;this defines a macro
 
 max [1 2 3] =>
  
