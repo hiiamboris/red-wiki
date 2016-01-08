@@ -44,7 +44,7 @@ If we were to use a list we would have something like this:
 
 There is a lot of overhead here.  The pattern matching, the consing, etc.  Would it not be nice if we could have something like...
 
-(max 1 (max 2 (max 3 (max 4))))
+(max 1 (max 2 (max 3 4)))
 
 Where max here refers to the original definition?
 
