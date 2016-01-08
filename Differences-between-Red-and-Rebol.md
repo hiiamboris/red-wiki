@@ -61,8 +61,8 @@ Red:
 
 ## LOCAL CONTEXTS FOR LOOPS
 
-R2: Loops with counters or iterated values have a local context for them.
+R2: Loops with words for counters or iterated values have a local context for them.
 
-R3: Loops with counters or iterated values have a local context for them.
+R3: Loops with words counters or iterated values have a local context for them.
 
 Red: Does not provide a local context for loops, as it has an associated high runtime cost. It requires re-BINDing (and eventually COPYing the whole body block) each time the loop is about to be evaluated.
