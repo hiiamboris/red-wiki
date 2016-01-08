@@ -63,7 +63,7 @@ The following proposals were developed before the Red Enhancement Proposal proce
 * [Change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
 * <strike>[Use blocks for keys in maps] (https://github.com/red/red/wiki/use-blocks-as-keys)</strike>
 * [Left Recursion for Parse] (https://github.com/red/red/wiki/Left-Recursion)
-* [To add Mathamatical and Time functions] (https://github.com/red/red/wiki/%5BProposal%5D-To-add-Mathamatical-and-Time-functions)
+* [To add Mathematical and Time functions] (https://github.com/red/red/wiki/%5BProposal%5D-To-add-Mathematical-and-Time-functions)
 * [Adding other Red dialects] (https://github.com/red/red/wiki/%5BProposal%5D-Adding-other-Red-dialects)
 * [Case Sensitive Map! Keys] (https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
 * [Improved console completion support] (https://github.com/red/red/issues/1165)
