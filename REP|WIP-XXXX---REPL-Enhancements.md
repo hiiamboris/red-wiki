@@ -9,7 +9,7 @@
   </tr>
   <tr>
     <td>Author(s):</td>
-    <td>Neelesh Chandola @nc-x, [@x8x https://github.com/red/red/issues/1165 ]</td>
+    <td>Neelesh Chandola @nc-x,<br> [@x8x https://github.com/red/red/issues/1165 ]</td>
   </tr>
   <tr>
     <td>Status:</td>
