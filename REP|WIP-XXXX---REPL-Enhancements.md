@@ -50,7 +50,7 @@ red>> complement complement? complete-from-path
 red>> compl
 ```
 
-It would be better if *further* TAB pressed would cycle thru the proposed words until the ENTER key is pressed.
+It would be better if *__further__* TAB pressed would cycle thru the proposed words until the ENTER key is pressed.
 
 TAB should move in a cyclic way and should come back to start once all the autocompletions have been shown and continue the chain.
 
