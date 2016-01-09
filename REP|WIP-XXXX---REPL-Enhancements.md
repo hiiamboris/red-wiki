@@ -5,7 +5,7 @@
   </tr>
   <tr>
     <td>Title:</td>
-    <td>&lt;REPL Enhancements&gt;</td>
+    <td>REPL Enhancements</td>
   </tr>
   <tr>
     <td>Author(s):</td>
