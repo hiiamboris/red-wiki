@@ -27,7 +27,7 @@
 
 ## Summary
 
-As of now, Red is too dull. Let's make it colourful.
+As of now, Red is not red. Red is white, red is black. Red is dull. Let's make Red Red. Let's make it colourful.
 
 ## Description
 
