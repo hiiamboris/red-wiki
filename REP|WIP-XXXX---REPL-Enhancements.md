@@ -84,6 +84,8 @@ sum: function [
 If you type the above code in the console, you cannot go up and edit the mistake.
 Therefore, there should be a key combination - (CTRL + up-arrow) to move to the upper lines without losing the code on the current line (and (CTRL + down-arrow) to move to the next line) and continue editing.
 
+Also, it would be good to get rid of the trailing `[` and replace it with ` ` (space) on multi line blocks, as all they do is hinder copy-and-paste.
+
 ### Syntax Highlighting
 
 There should be an optional (hidden behind a switch) syntax highlighting support in the REPL.
