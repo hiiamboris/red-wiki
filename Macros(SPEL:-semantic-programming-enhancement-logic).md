@@ -1,3 +1,10 @@
+To follow this tutorial/proposal download Shen.
+
+Shen instructions(windows):
+
+1. dl Shen http://www.shenlanguage.org/Download/ShenCL.zip
+2. unzip shen and follow these pics https://www.scribd.com/doc/294979900/Instructions
+
 First of all, I advocate we call macros SPELs in order to get rid of the confusion when people come from other languages.  This will also allow people who want to write tutorials about such a feature to easily(or more easily) google the word SPEL over macro.  My recommendation of SPEL is not my own idea it comes from Conrad Barski: http://www.lisperati.com/no_macros.html
 
 Shen, a dialect of lisp, will be what is used for spel examples.  I will try to explain the syntax in order for readers of this wiki to be able to absorb the idea of spels.  Come to this channel for questions, comments, approvals, disapprovals, or whatever else: https://gitter.im/red/red/lisp
