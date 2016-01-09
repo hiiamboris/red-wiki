@@ -27,7 +27,7 @@
 
 ## Summary
 
-The current REPL is extremely basic. The user experience can be improved by improving the autocompletions and line editing support. Also extremely useful would be syntax highlighting.
+The current REPL (Read–Eval–Print Loop, the interactive console) is extremely basic. The user experience can be improved by improving the autocompletions and line editing support. Also extremely useful would be syntax highlighting.
 
 ## Description
 
@@ -66,7 +66,7 @@ TAB TAB TAB TAB ENTER:
 red>> complement 
 ```
 
-Also required would be a new key combination to cycle backwards (Maybe CTRL+TAB). This would be especially useful if by mistake you pressed an extra TAB and if you do not want to waste time to go through the whole cycle.
+Also required would be a new key combination to cycle backwards (Maybe CTRL+TAB, or SHIFT+TAB). This would be especially useful if by mistake you pressed an extra TAB and if you do not want to waste time to go through the whole cycle.
 
 ### Line Editing 
 
@@ -92,7 +92,7 @@ There should be an optional (hidden behind a switch) syntax highlighting support
 
 ## Benefits
 
-Easy to use REPL would lead to better UX and will be helpful for beginners to get started with Red.
+Easy to use REPL would lead to better UX (User eXperience) and will be helpful for beginners to get started with Red.
 
 ## Consequences
 
