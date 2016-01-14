@@ -159,7 +159,7 @@ Faces are organized in a tree which maps to the graphic components hierarchy on 
 * `pane` facet: list one of more child face(s) in a block.
 * `parent` facet: reference to parent face.
 
-Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is displayed behind every over face, face at tail is displayed in front of every over ones).
+Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is displayed behind all other faces, the face at tail is displayed on top of all others).
 
 The root of a face tree is a `screen` face. A `screen` face can only display `window` faces from its `pane` block.
 
