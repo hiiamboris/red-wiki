@@ -759,7 +759,7 @@ Word | Description
 
 # Including View component
 
-View componenent is not loaded by default. To enable it, the main Red script have to declare the dependency in the header using the `Needs` field:
+View component is not loaded by default. To enable it, the main Red script have to declare the dependency in the header using the `Needs` field:
 
     Red [
     	Needs: 'View
