@@ -692,7 +692,7 @@ Other returned values have no effect.
 
 Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is triggering handlers starting from window face, traversing all parent faces before triggering the front face handlers.
 
-*<insert graphic here>*
+![](images/event-bubbling.png)
 
 Typical event bubbling path:
 
