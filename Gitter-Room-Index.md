@@ -10,6 +10,9 @@ Chinese speaking room.
 #### [red/red/links](https://gitter.im/red/red/links)
 This room is dedicated for storing useful links.
 
+#### [red/red/lisp](https://gitter.im/red/red/lisp)
+This room is for discussing the current and possible future influence of Lisp own Red.
+
 #### [red/red/char-datatype](https://gitter.im/red/red/char-datatype)
 This room is dedicated for discussing the char! datatype.
 

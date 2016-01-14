@@ -25,9 +25,14 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
         * Might require a big server to store the data
         * If it is stored in the client, would it expand uncontrollably?
 * using a simplified versions of the the Git system
+* for young non-English native speakers, make a translation of Red words to the native language
+    * first, the child gets the logic of programming; he codes in Fred (French Red), Chred (Chinese Red), Spred (Spanish Red), etc.
+    * then, he is shown the *real* Red words,
+    * once he knows/understands English, he can code in regular Red code, he can even keeps on mixing his native language with normal Red as he learns English.
+
 
 # Real-life correspondence
-* Collaborate RaspberryPi and it's clones
+* Collaborate RaspberryPi and its clones
     * Collaborate with [Pi Top](https://www.pi-top.com/)
     * Put focus on RaspberryPi's official languages
         * Python, Ruby, Perl, Squeak-Smalltalk
@@ -44,6 +49,9 @@ _This is a public proposal, everyone is allowed to add suggestion to this_
     * e.g. "We are the ProGrammer Nazi"
 * using Augmented Reality Games to gain mythical/fictional narrative
     * e.g. ...
+* writing articles in magazines, this method proved to be effective, at least in France, to spread the Rebol word, a while ago
+    * e.g. copy+paste all Olivier Auverlot's articles, substituting Rebol with Red (of course with Olivier's approval, or even better, participation)
+
 
 https://speakerdeck.com/mosky/beyond-the-style-guides
 
@@ -52,9 +60,9 @@ https://speakerdeck.com/mosky/beyond-the-style-guides
 
 |English|French (♀)|German |Italian  |Spanish   |
 |:-----:|:--------:|:-----:|:-------:|:--------:|
-|Red    |Rogue     |Rot    |Rosso    |Rojo      |
+|Red    |Rouge     |Rot    |Rosso    |Rojo      |
 |Orange |Orange    |Orange |Arancione|Anaranjado|
-|Yellow |Juane     |Gelb   |Giallo   |Amarillo  |
+|Yellow |Jaune     |Gelb   |Giallo   |Amarillo  |
 |Green  |Vert(e)   |Grün   |Verde    |Verde     |
 |Blue   |Bleu(e)   |Blau   |Azzurro  |Azul      |
 |Purple |Violet(te)|Violett|Viola    |Violet    |
