@@ -7,7 +7,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 ###Reference documentation:
 * Red/View
     * [Overview](https://github.com/red/red/wiki/Red-View-architecture)
-    * View engine
+    * [View engine](https://github.com/red/red/wiki/Red-View-Graphic-System)
     * VID dialect
     * Draw dialect
 * [[Redbin format specification|Redbin-specification]]
