@@ -165,7 +165,7 @@ The root of a face tree is a `screen` face. A `screen` face can only display `wi
 
 In order for any face to be displayed on screen, it *must* be connected to a `screen` face directly (for windows) or indirectly (for other face types).
 
-*(insert graphic here)*
+![](images/face-tree.png)
 
 ***
 
@@ -785,4 +785,3 @@ Word | Description
 *To be added:*
 * Two-way binding description
 * Image! datatype description
-
