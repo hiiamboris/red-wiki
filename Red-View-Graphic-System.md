@@ -222,7 +222,7 @@ Facet | Description
 ----- | -----------
 `type`	| `'check`
 `text`	| Caption text.
-`para`	| The `align` field controls is the text is displayed on the `left` or on the `right` side.
+`para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
 Event type | Handler | Description
@@ -239,7 +239,7 @@ Facet | Description
 ----- | -----------
 `type`	| `'radio`
 `text`	| Caption text.
-`para`	| The `align` field controls is the text is displayed on the `left` or on the `right` side.
+`para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
 Event type | Handler | Description
