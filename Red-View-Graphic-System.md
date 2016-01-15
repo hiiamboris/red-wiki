@@ -752,7 +752,7 @@ Word | Description
 `reactors` | Internal associative table for reactive faces and their action blocks.
 `evt-names` | Internal table for event to actor names conversion.
 `init` | View engine initialization function, can be called by user if required.
-`awake` | Main high-level events entry point fuunction.
+`awake` | Main high-level events entry point function.
 `auto-sync?` | `yes` = realtime faces updates (default), `no` = deferred faces updates.
 `debug?` | `yes` = output verbose logs of View internal events (default to `no`).
 
