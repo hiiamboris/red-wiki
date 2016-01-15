@@ -691,10 +691,11 @@ Actors are handler functions for View events. They are defined in an free-form o
 
     on-<event>: func [face [object!] event [event!]]
     
-    face  : face object which receives the event
-    event : event value.
+    <event> : any valid event name (from above table)
+    face    : face object which receives the event
+    event   : event value.
 
-It is possible to define an actor which will be called when the face is shown for the first time, just before system resources are allocated for it. For that, just define an `on-create` actor.
+In addition to the GUI events, it is possible to define an `on-create` actor which will be called when the face is shown for the first time, just before system resources are allocated for it.
 
 **Return value**
 
