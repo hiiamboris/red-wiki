@@ -611,4 +611,195 @@ Name | Input type | Cause
 `resize`		| mouse | A window has been resized.
 `moving`		| mouse | A window is been moved.
 `resizing`		| mouse | A window is been resized.
-`zoom`			| touch | A zooming gesture (pinching) has 
+`zoom`			| touch | A zooming gesture (pinching) has been recognized.
+`pan`			| touch | A panning gesture (sweeping) has been recognized.
+`rotate`		| touch | A panning gesture (sweeping) has been recognized.
+`two-tap`		| touch | A double tapping gesture has been recognized.
+`press-tap`		| touch | A press-and-tap gesture has been recognized.
+`key`			| keyboard | A key is pressed down.
+`key-up`		| keyboard | A pressed key is released.
+`select`		| any 	| A selection is made in a face with multiple choices.
+`change`		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
+`menu`			| any 	| A menu entry is picked.
+`close`			| any 	| A window is closing.
+
+
+Notes:
+* touch events are not available for Windows XP.
+* One or more `moving` events always precedes a `move` one.
+* One or more `resizing` events always precedes a `resize` one.
+
+### Event! datatype
+
+An event value is an opaque object holding all the information about a given event. You access the event fields using path notation.
+
+Field | Returned value
+----- | -----
+`type`		| Event type (word!).
+`face`		| Face object where the event occured (object!).
+`offset`	| Offset of mouse cursor relative to the face object when the event occured (pair!). For gestures events, returns the center point coordinates.
+`key`		| Key pressed (char! word!).
+`picked`	| New item selected in a face (integer! percent!). For zooming gesture, it returns a percent value representing the relative increase/decrease.
+`flags`		| Returns a list of one or more flags (see list below) (block!).
+`away?`		| Returns `true` if the mouse cursor exits the face boundaries (logic!). Applies only if `over` event is active. 
+`down?`		| Returns `true` if the mouse left button was pressed (logic!).
+`mid-down?`	| Returns `true` if the mouse middle button was pressed (logic!).
+`alt-down?`	| Returns `true` if the mouse right button was pressed (logic!).
+`ctrl?`		| Returns `true` if the CTRL key was pressed (logic!).
+`shift?`	| Returns `true` if the SHIFT key was pressed (logic!).
+
+List of possible flags from `event/flags`:
+* `away`
+* `down`
+* `mid-down`
+* `alt-down`
+* `aux-down`
+* `control`
+* `shift`
+
+Notes:
+* All fields (except `type`) are read-only. Setting `type` is only used internally by the View engine.
+* `face` can refer to 
+
+Here is the list of special keys returned as words by `event/key`:
+* `page-up`
+* `page-down`
+* `end`
+* `home`
+* `left`
+* `up`
+* `right`
+* `down`
+* `insert`
+* `delete`
+* `F1`
+* `F2`
+* `F3`
+* `F4`
+* `F5`
+* `F6`
+* `F7`
+* `F8`
+* `F9`
+* `F10`
+* `F11`
+* `F12`
+
+# Actors
+
+Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) refered by `actors` facet. All actors have the same specification block.
+
+**Syntax**
+
+    on-<event>: func [face [object!] event [event!]]
+    
+    face  : face object which receives the event
+    event : event value.
+
+It is possible to define an actor which will be called when the face is shown for the first time, just before system resources are allocated for it. For that, just define an `on-create` actor.
+
+**Return value**
+
+	'stop : exit the event loop.
+	'done : stops event bubbling.
+
+Other returned values have no effect.
+
+
+# Global event handlers
+
+Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is triggering handlers starting from window face, traversing all parent faces before triggering the front face handlers.
+
+![](images/event-bubbling.png)
+
+Typical event bubbling path:
+
+1. A click event is generated on the button
+2. The window gets the event first. Global handlers are processed. Window's actor(s) get called.
+3. The panel gets the event next. Panel's actor(s) get called.
+4. The button gets the event last. Button's actor(s) get called.
+
+
+#### insert-event-func
+
+**Syntax**
+
+    insert-event-func <handler>
+
+	<handler> : a handler function or block of code for pre-processing event(s).
+    
+    Handler's function specification: func [face [object!] event [event!]]
+    
+**Return value**
+
+   The newly added handler function (function!).
+    
+**Description**
+
+Installs a global handler function, which can pre-process events before they reach the face handlers. All global handlers are called on each event, so the handler body code needs to optimize speed and memory usage. If a block is provided as argument, it will be converted to a function using the `function` constructor.
+
+The return value of the handler function:
+* `none`  : the event can be processed by other handlers (none!).
+* `'done` : other global handlers are skipped but event is propagated to child faces (word!).
+* `'stop` : exit the event loop (word!).
+
+A reference to the handler function is returned and should be saved if it needs to be removed later.
+
+#### remove-event-func
+
+**Syntax**
+
+    remove-event-func <handler>
+
+	<handler> : a previously installed event handler function.
+
+**Description**
+
+Disables a previously installed global event handler by removing it from the internal list.
+
+# System/view object
+
+Word | Description
+----- | ------------
+`screens` | List of screen faces representing connected displays.
+`event-port` | *reserved for future use*
+`metrics` | *reserved for future use*
+`platform` | View engine low-level platform code (includes backend code).
+`VID` | VID processing code.
+`handlers` | List of global event handlers
+`reactors` | Internal associative table for reactive faces and their action blocks.
+`evt-names` | Internal table for event to actor names conversion.
+`init` | View engine initialization function, can be called by user if required.
+`awake` | Main high-level events entry point function.
+`auto-sync?` | `yes` = realtime faces updates (default), `no` = deferred faces updates.
+`debug?` | `yes` = output verbose logs of View internal events (default to `no`).
+
+
+# Including View component
+
+View component is not loaded by default. To enable it, the main Red script have to declare the dependency in the header using the `Needs` field:
+
+    Red [
+    	Needs: 'View
+    ]
+
+
+# Extra functions
+
+Function | Description
+----- | ------------
+**view** | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `/no-wait` **refinement** is used.
+**unview** | Destroy one or more windows.
+**layout** | Convert a block of VID code into a face tree.
+**center&#8209;face** | Center a face relatively to its parent.
+**dump&#8209;face** | Output a compact description of a face tree structure (debugging purpose).
+**do&#8209;actor** | Evaluate a face actor manually.
+**do&#8209;events** | Launch an event loop (optionally just process pending events and return).
+**draw** | Render a Draw dialect block onto an image.
+**to&#8209;image** | Convert any rendered face to an image.
+
+***
+
+*To be added:*
+* Image! datatype description
+* Reactive programming model
