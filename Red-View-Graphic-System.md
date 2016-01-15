@@ -659,7 +659,6 @@ List of possible flags from `event/flags`:
 
 Notes:
 * All fields (except `type`) are read-only. Setting `type` is only used internally by the View engine.
-* `face` can refer to 
 
 Here is the list of special keys returned as words by `event/key`:
 * `page-up`
