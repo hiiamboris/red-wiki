@@ -769,7 +769,7 @@ View component is not loaded by default. To enable it, the main Red script have 
 # Extra functions
 
 Word | Description
------ | ------------
+:----- | ------------
 `view` | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `no-wait` refinement is used.
 `unview` | Destroy one or more windows.
 `layout` | Convert a block of VID code into a face tree.
