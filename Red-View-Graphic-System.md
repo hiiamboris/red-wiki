@@ -180,6 +180,7 @@ Facet | Description
 `type`	| `'base`
 `image`	| An image! value can be specified, alpha channel is supported.
 `color`	| A background color can be specified, alpha channel is supported.
+`text`  | An optional text to be displayed inside the face.
 `draw`	| Transparency is fully supported for Draw primitives.
 
 Notes:
