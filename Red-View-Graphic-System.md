@@ -592,7 +592,7 @@ Example:
 ### Event names
 
 Name | Input type | Cause
------ | :-------: | -----------
+----- | --------- | -----------
 **down**	| mouse | Left mouse button pressed.	
 **up**		| mouse | Left mouse button released.
 **middle&#8209;down**	| mouse | Middle mouse button pressed.
