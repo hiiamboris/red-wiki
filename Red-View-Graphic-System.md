@@ -592,37 +592,36 @@ Example:
 ### Event names
 
 Name | Input type | Cause
------ | --------- | -----------
-`down`			| mouse | Left mouse button pressed.	
-`up`			| mouse | Left mouse button released.
-`middle-down`	| mouse | Middle mouse button pressed.
-`middle-up`		| mouse | Middle mouse button released.
-`alt-down`		| mouse | Right mouse button pressed.
-`alt-up`		| mouse | Right mouse button released.
-`aux-down`		| mouse | Auxiliary mouse button pressed.
-`aux-up`		| mouse | Auxiliary mouse button released.
-`drag-start`	| mouse | A face dragging starts.
-`drag`			| mouse | A face is been dragged.
-`drop`			| mouse | A dragged face has been dropped.			
-`click`			| mouse | Left mouse click (button widgets only).
-`double-click`	| mouse | Left mouse double-click.
-`over`			| mouse | Mouse cursor passing over a face. This event is produced only if `flags` facet contains `all-over` flag.
-`move`			| mouse | A window has moved.
-`resize`		| mouse | A window has been resized.
-`moving`		| mouse | A window is been moved.
-`resizing`		| mouse | A window is been resized.
-`zoom`			| touch | A zooming gesture (pinching) has been recognized.
-`pan`			| touch | A panning gesture (sweeping) has been recognized.
-`rotate`		| touch | A panning gesture (sweeping) has been recognized.
-`two-tap`		| touch | A double tapping gesture has been recognized.
-`press-tap`		| touch | A press-and-tap gesture has been recognized.
-`key`			| keyboard | A key is pressed down.
-`key-up`		| keyboard | A pressed key is released.
-`select`		| any 	| A selection is made in a face with multiple choices.
-`change`		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
-`menu`			| any 	| A menu entry is picked.
-`close`			| any 	| A window is closing.
-
+----- | :-------: | -----------
+**down**	| mouse | Left mouse button pressed.	
+**up**		| mouse | Left mouse button released.
+**middle&#8209;down**	| mouse | Middle mouse button pressed.
+**middle&#8209;up**	| mouse | Middle mouse button released.
+**alt&#8209;down**	| mouse | Right mouse button pressed.
+**alt&#8209;up**	| mouse | Right mouse button released.
+**aux&#8209;down**	| mouse | Auxiliary mouse button pressed.
+**aux&#8209;up**	| mouse | Auxiliary mouse button released.
+**drag&#8209;start**	| mouse | A face dragging starts.
+**drag**		| mouse | A face is been dragged.
+**drop**		| mouse | A dragged face has been dropped.			
+**click**		| mouse | Left mouse click (button widgets only).
+**double&#8209;click**	| mouse | Left mouse double-click.
+**over**		| mouse | Mouse cursor passing over a face. This event is produced only if `flags` facet contains **all&#8209;over** flag.
+**move**		| mouse | A window has moved.
+**resize**		| mouse | A window has been resized.
+**moving**		| mouse | A window is been moved.
+**resizing**		| mouse | A window is been resized.
+**zoom**		| touch | A zooming gesture (pinching) has been recognized.
+**pan**			| touch | A panning gesture (sweeping) has been recognized.
+**rotate**		| touch | A panning gesture (sweeping) has been recognized.
+**two&#8209;tap**	| touch | A double tapping gesture has been recognized.
+**press&#8209;tap**	| touch | A press-and-tap gesture has been recognized.
+**key**			| keyboard | A key is pressed down.
+**key&#8209;up**	| keyboard | A pressed key is released.
+**select**		| any 	| A selection is made in a face with multiple choices.
+**change**		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
+**menu**		| any 	| A menu entry is picked.
+**close**		| any 	| A window is closing.
 
 Notes:
 * touch events are not available for Windows XP.
