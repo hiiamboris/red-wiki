@@ -27,6 +27,7 @@ Table of Content:
 * [Face life cycle](#face-life-cycle)
 * [SHOW function](#show-function)
 * [Realtime vs deferred updating](#realtime-vs-deferred-updating)
+* [Two-way binding](#two-way-binding)
 * [Events](#events)
   * [Event names](#event-names)
   * [Event! datatype](#event!-datatype)
@@ -570,6 +571,22 @@ Deferred mode updates many changes at the same time on screen in order to avoid 
 Notes:
 * This is a big difference with the Rebol/View engine which only has deferred mode support.
 
+# Two-way binding
+
+Face objects rely on the Red ownership system to bind the object with the series used in facets, so that any change in one of the facet (even a deep change) is detected by the face object and processed according to the current synchronization mode (realtime or deferred).
+
+On the other side, changes made to the rendered graphic objects are reflected instantly in the corresponding facets. For example, typing in a `field` face will reflect the input in the `text` facet in live.
+
+This two-way binding simplifies the interaction with the graphic objects for the programmer, without the need of any specific API. Modifying the facets using the core Red series actions is enough.
+
+Example:
+
+    view [
+    	list: text-list data ["John" "Bob" "Alice"]
+    	button "Add" [append list/data "Sue"]
+    	button "Change" [lowercase list/data/1]
+    ]
+
 # Events
 
 ### Event names
@@ -784,5 +801,5 @@ Function | Description
 ***
 
 *To be added:*
-* Two-way binding description
 * Image! datatype description
+* Reactive programming model
