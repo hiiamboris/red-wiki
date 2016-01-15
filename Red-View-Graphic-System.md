@@ -204,7 +204,7 @@ This type represents a simple button.
 
 Facet | Description
 ----- | -----------
-`type`	| `'text`
+`type`	| `'button`
 `text`	| Button's caption text.
 `image`	| The image will be displayed inside the button. Can be combined with a text.
 
