@@ -30,7 +30,7 @@ Table of Content:
 * [Two-way binding](#two-way-binding)
 * [Events](#events)
   * [Event names](#event-names)
-  * [Event! datatype](#event!-datatype)
+  * [Event! datatype](#event--datatype)
 * [Actors](#actors)
 * [Global event handlers](#global-event-handlers)
   * [insert-event-func](#insert-event-func)
