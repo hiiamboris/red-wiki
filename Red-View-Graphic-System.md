@@ -59,29 +59,29 @@ Face objects are clones of `face!` template object. A field in face object is ca
 List of available facets:
 
 Facet | Datatype | Mandatory? | Applicability | Description
------ | -------- | ---------- | ------------- | -----------
-type		| word!			| yes	|  all	| Type of graphic component (see below for a list).
-offset		| pair!			| yes	|  all	| Offset position from parent top-left origin.
-size		| pair!			| yes	|  all	| Size of the face.
-text		| string!		| no	|  all	| Caption text displayed in the face.
-image		| image!		| no	|  some	| Image displayed in the face background.
-color		| tuple!		| no	|  some	| Background color of the face in R.G.B or R.G.B.A format.
-menu		| block! 		| no	|  all	| Menu bar or contextual menu.
-data		| any-type!		| no	|  all	| Content data of the face.
-enable?		| logic!		| yes	|  all	| Enable or disable input events on the face.
-visible?	| logic!		| yes	|  all	| Display or hide the face.
-selected	| integer! 		| no	|  some	| For lists types, index of currently selected element.
-flags		| block! 		| no	|  some	| List of special keywords altering the display or behavior of the face.
-options		| block! 		| no	|  some	| Extra face properties in a [name: value] format.
-parent		| object! 		| no	|  all	| Back-reference to parent face (if any).
-pane		| block! 		| no	|  some	| List of child face(s) displayed inside the face.
-state		| block! 		| no	|  all	| Internal face state info *(used by View engine only)*.
-edge		| object! 		| no	|  all	| *(reserved for future use)*
-para		| object! 		| no	|  all	| Para object reference for text positioning.
-font		| object! 		| no	|  all	| Font object reference for setting text facet's font properties.
-actors		| object!		| no	|  all	| User-provided events handlers.
-extra		| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
-draw		| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
+----- | -------- | :--------: | :-----------: | -----------
+**type**	| word!			| yes	|  all	| Type of graphic component (see below for a list).
+**offset**	| pair!			| yes	|  all	| Offset position from parent top-left origin.
+**size**	| pair!			| yes	|  all	| Size of the face.
+**text**	| string!		| no	|  all	| Caption text displayed in the face.
+**image**	| image!		| no	|  some	| Image displayed in the face background.
+**color**	| tuple!		| no	|  some	| Background color of the face in R.G.B or R.G.B.A format.
+**menu**	| block! 		| no	|  all	| Menu bar or contextual menu.
+**data**	| any-type!		| no	|  all	| Content data of the face.
+**enable?**	| logic!		| yes	|  all	| Enable or disable input events on the face.
+**visible?**	| logic!		| yes	|  all	| Display or hide the face.
+**selected**	| integer! 		| no	|  some	| For lists types, index of currently selected element.
+**flags**	| block! 		| no	|  some	| List of special keywords altering the display or behavior of the face.
+**options**	| block! 		| no	|  some	| Extra face properties in a [name: value] format.
+**parent**	| object! 		| no	|  all	| Back-reference to parent face (if any).
+**pane**	| block! 		| no	|  some	| List of child face(s) displayed inside the face.
+**state**	| block! 		| no	|  all	| Internal face state info *(used by View engine only)*.
+**edge**	| object! 		| no	|  all	| *(reserved for future use)*
+**para**	| object! 		| no	|  all	| Para object reference for text positioning.
+**font**	| object! 		| no	|  all	| Font object reference for setting text facet's font properties.
+**actors**	| object!		| no	|  all	| User-provided events handlers.
+**extra**	| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
+**draw**	| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
 
 Notes:
 * Non-mandatory facets can be set to `none`.
@@ -109,16 +109,16 @@ Option | Description
 Font objects are clones of `font!` template object. One font object can be referenced by one or more faces, allowing to control font properties of a group of faces from a single place.
 
 Field | Datatype | Mandatory? | Description
------ | -------- | ---------- | -----------
-name		| string!			| no	| Valid font name installed on the OS.
-size		| integer!			| no	| Font size in points.
-style		| word!, block!		| no	| Styling mode or block of styling modes.
-angle		| integer!			| yes	| Text writing angle in degrees (default is `0`).
-color		| tuple!			| yes	| Font color in R.G.B or R.G.B.A format.
-anti-alias?	| logic!, word!		| no	| Anti-aliasing mode (active/inactive or special mode). 
-shadow		| *(reserved)*		| no	| *(reserved for future use)*
-state		| block!			| no	| Internal face state info *(used by View engine only)*.
-parent		| block!			| no	| Internal back reference to parent face(s) *(used by View engine only)*.
+----- | -------- | :--------: | -----------
+**name**	| string!		| no	| Valid font name installed on the OS.
+**size**	| integer!		| no	| Font size in points.
+**style**	| word!, block!		| no	| Styling mode or block of styling modes.
+**angle**	| integer!		| yes	| Text writing angle in degrees (default is `0`).
+**color**	| tuple!		| yes	| Font color in R.G.B or R.G.B.A format.
+**anti-alias?**	| logic!, word!		| no	| Anti-aliasing mode (active/inactive or special mode). 
+**shadow**	| *(reserved)*		| no	| *(reserved for future use)*
+**state**	| block!		| no	| Internal face state info *(used by View engine only)*.
+**parent**	| block!		| no	| Internal back reference to parent face(s) *(used by View engine only)*.
 
 Notes:
 * Non-mandatory facets can be set to `none`.
@@ -142,13 +142,13 @@ Para objects are clones of `para!` template object. One para object can be refer
 
 Field | Datatype |  Description
 ----- | -------- |  -----------
-origin		| *(reserved)*		| *(reserved for future use)*
-padding		| *(reserved)*		| *(reserved for future use)*
-scroll		| *(reserved)*		| *(reserved for future use)*
-align		| word!				| Control horizontal text alignment: `left`, `center`, `right`.
-v-align		| *(reserved)*		| Control vertical text alignment: `top`, `middle`, `bottom`.
-wrap?		| logic!			| Enable/disable text wrapping in the face(s).
-parent		| block!			| Internal back reference to parent face(s) *(used by View engine only)*.
+**origin**	| *(reserved)*		| *(reserved for future use)*
+**padding**	| *(reserved)*		| *(reserved for future use)*
+**scroll**	| *(reserved)*		| *(reserved for future use)*
+**align**	| word!			| Control horizontal text alignment: `left`, `center`, `right`.
+**v-align**	| *(reserved)*		| Control vertical text alignment: `top`, `middle`, `bottom`.
+**wrap?**	| logic!		| Enable/disable text wrapping in the face(s).
+**parent**	| block!		| Internal back reference to parent face(s) *(used by View engine only)*.
 
 Notes:
 * Any para fields can be set to `none`.
@@ -768,17 +768,17 @@ View component is not loaded by default. To enable it, the main Red script have 
 
 # Extra functions
 
-Word | Description
-:----- | ------------
-`view` | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `no-wait` refinement is used.
-`unview` | Destroy one or more windows.
-`layout` | Convert a block of VID code into a face tree.
-`center-face` | Center a face relatively to its parent.
-`dump-face` | Output a compact description of a face tree structure (debugging purpose).
-`do-actor` | Evaluate a face actor manually.
-`do-events` | Launch an event loop (optionally just process pending events and return).
-`draw` | Render a Draw dialect block onto an image.
-`to-image` | Convert any rendered face to an image.
+Function | Description
+----- | ------------
+**view** | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `no-wait` **refinement** is used.
+**unview** | Destroy one or more windows.
+**layout** | Convert a block of VID code into a face tree.
+**center&#8209;face** | Center a face relatively to its parent.
+**dump&#8209;face** | Output a compact description of a face tree structure (debugging purpose).
+**do&#8209;actor** | Evaluate a face actor manually.
+**do&#8209;events** | Launch an event loop (optionally just process pending events and return).
+**draw** | Render a Draw dialect block onto an image.
+**to&#8209;image** | Convert any rendered face to an image.
 
 ***
 
