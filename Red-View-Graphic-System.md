@@ -102,7 +102,7 @@ Options facet holds optional facets which are used for specific behaviors:
 
 Option | Description
 ----- | ------------
-`drag-on` | Can be one of: `'down`, `'mid-down`, `'alt-down`, `'aux-down`. Used for enabling a drag'n drop operation.
+**drag&#8209;on** | Can be one of: `'down`, `'mid-down`, `'alt-down`, `'aux-down`. Used for enabling a drag'n drop operation.
 
 	
 # Font object
