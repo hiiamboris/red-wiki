@@ -4,6 +4,7 @@
 2. [FLOAT vs DECIMAL](#float-vs-decimal)
 3. [FUNCTION vs FUNCT](#function-vs-funct)
 4. [LOCAL CONTEXTS FOR LOOPS](#local-contexts-for-loops)
+5. [BINDING TO SELF](#binding-to-self)
 
 
 ## COPY object!
@@ -66,3 +67,11 @@ R2: Loops with words for counters or iterated values have a local context for th
 R3: Loops with words counters or iterated values have a local context for them.
 
 Red: Does not provide a local context for loops, as it has an associated high runtime cost. It requires re-BINDing (and eventually COPYing the whole body block) each time the loop is about to be evaluated.
+
+## BINDING TO SELF
+
+R2: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
+
+R3: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
+
+Red: R2: You can use only ```self``` when binding a word or block to the context of an object.
