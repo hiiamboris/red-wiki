@@ -72,7 +72,7 @@ Facet | Datatype | Mandatory? | Applicability | Description
 **enable?**	| logic!		| yes	|  all	| Enable or disable input events on the face.
 **visible?**	| logic!		| yes	|  all	| Display or hide the face.
 **selected**	| integer! 		| no	|  some	| For lists types, index of currently selected element.
-**flags**	| block! 		| no	|  some	| List of special keywords altering the display or behavior of the face.
+**flags**	| block!, word!		| no	|  some	| List of special keywords altering the display or behavior of the face.
 **options**	| block! 		| no	|  some	| Extra face properties in a [name: value] format.
 **parent**	| object! 		| no	|  all	| Back-reference to parent face (if any).
 **pane**	| block! 		| no	|  some	| List of child face(s) displayed inside the face.
