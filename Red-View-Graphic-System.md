@@ -64,7 +64,7 @@ Facet | Datatype | Mandatory? | Applicability | Description
 **type**	| word!			| yes	|  all	| Type of graphic component (see below for a list).
 **offset**	| pair!			| yes	|  all	| Offset position from parent top-left origin.
 **size**	| pair!			| yes	|  all	| Size of the face.
-**text**	| string!		| no	|  all	| Caption text displayed in the face.
+**text**	| string!		| no	|  all	| Label text displayed in the face.
 **image**	| image!		| no	|  some	| Image displayed in the face background.
 **color**	| tuple!		| no	|  some	| Background color of the face in R.G.B or R.G.B.A format.
 **menu**	| block! 		| no	|  all	| Menu bar or contextual menu.
@@ -205,7 +205,7 @@ This type represents a simple button.
 Facet | Description
 ----- | -----------
 `type`	| `'button`
-`text`	| Button's caption text.
+`text`	| Button's label text.
 `image`	| The image will be displayed inside the button. Can be combined with a text.
 
 Event type | Handler | Description
@@ -216,12 +216,12 @@ Event type | Handler | Description
 
 #### Check
 
-This type represents a check box, with an optional caption text, displayed on left or right side.
+This type represents a check box, with an optional label text, displayed on left or right side.
 
 Facet | Description
 ----- | -----------
 `type`	| `'check`
-`text`	| Caption text.
+`text`	| Label text.
 `para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
@@ -233,12 +233,12 @@ Event type | Handler | Description
 
 #### Radio
 
-This type represents a radio button, with an optional caption text, displayed on left or right side. Only one radio button per pane is allowed to be checked.
+This type represents a radio button, with an optional label text, displayed on left or right side. Only one radio button per pane is allowed to be checked.
 
 Facet | Description
 ----- | -----------
 `type`	| `'radio`
-`text`	| Caption text.
+`text`	| Label text.
 `para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
