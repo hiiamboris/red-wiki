@@ -800,5 +800,6 @@ Function | Description
 ***
 
 *To be added:*
+* menu facet specification
 * Image! datatype description
 * Reactive programming model
