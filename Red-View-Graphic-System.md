@@ -303,7 +303,7 @@ This type represents a vertical list of text strings, displayed in a fixed frame
 Facet | Description
 ----- | -----------
 `type`	| `'text-list`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 
@@ -327,7 +327,7 @@ This type represents a vertical list of text strings, displayed in a foldable fr
 Facet | Description
 ----- | -----------
 `type`	| `'drop-list`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
@@ -353,7 +353,7 @@ This type represents an edit field with a vertical list of text strings displaye
 Facet | Description
 ----- | -----------
 `type`	| `'drop-down`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
