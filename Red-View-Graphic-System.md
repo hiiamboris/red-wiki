@@ -557,7 +557,7 @@ Notes:
 
 The View engine has two different modes for updating the display after changes are done to the face tree:
 
-* Realtime updating: any change to a face is immediatly rendered on screen.
+* Realtime updating: any change to a face is immediately rendered on screen.
 
 * Deferred updating: all changes to a face are not propagated on screen, until `show` is called on the face, or on the parent face.
 
@@ -623,7 +623,7 @@ Name | Input type | Cause
 **key&#8209;up**	| keyboard | A pressed key is released.
 **enter**		| keyboard | Enter key is pressed down.
 **select**		| any 	| A selection is made in a face with multiple choices.
-**change**		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
+**change**		| any 	| A change occurred in a face accepting user inputs (text input or selection in a list).
 **menu**		| any 	| A menu entry is picked.
 **close**		| any 	| A window is closing.
 
@@ -639,8 +639,8 @@ An event value is an opaque object holding all the information about a given eve
 Field | Returned value
 ----- | -----
 `type`		| Event type (word!).
-`face`		| Face object where the event occured (object!).
-`offset`	| Offset of mouse cursor relative to the face object when the event occured (pair!). For gestures events, returns the center point coordinates.
+`face`		| Face object where the event occurred (object!).
+`offset`	| Offset of mouse cursor relative to the face object when the event occurred (pair!). For gestures events, returns the center point coordinates.
 `key`		| Key pressed (char! word!).
 `picked`	| New item selected in a face (integer! percent!). For `menu` event, it returns the corresponding menu ID (word!). For zooming gesture, it returns a percent value representing the relative increase/decrease. For other gestures, its value is system-dependent for now (Windows: `ullArguments` field from [GESTUREINFO](https://msdn.microsoft.com/en-us/library/windows/desktop/dd353232(v=vs.85).aspx)).
 `flags`		| Returns a list of one or more flags (see list below) (block!).
@@ -689,7 +689,7 @@ Here is the list of special keys returned as words by `event/key`:
 
 # Actors
 
-Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) refered by `actors` facet. All actors have the same specification block.
+Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) referred by `actors` facet. All actors have the same specification block.
 
 **Syntax**
 
