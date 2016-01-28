@@ -267,6 +267,10 @@ Notes:
 Event type | Handler | Description
 ---------- | ------- | -----------
 `enter` | `on-enter` | Occurs each time the Enter key is pressed down in the field.
+---------- | ------- | -----------
+`change` | `on-change` | Occurs each time an input is made in the field.
+---------- | ------- | -----------
+`key` | `on-key` | Occurs each time a key is pressed down in the field.
 
 
 ***
@@ -291,6 +295,8 @@ Notes:
 Event type | Handler | Description
 ---------- | ------- | -----------
 `change` | `on-change` | Occurs each time an input is made in the area.
+---------- | ------- | -----------
+`key` | `on-key` | Occurs each time a key is pressed down in the field.
 
 ***
 
