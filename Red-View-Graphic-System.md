@@ -266,7 +266,7 @@ Notes:
 
 Event type | Handler | Description
 ---------- | ------- | -----------
-`change` | `on-change` | Occurs each time an input is made in the field.
+`enter` | `on-enter` | Occurs each time the Enter key is pressed down in the field.
 
 
 ***
@@ -618,6 +618,7 @@ Name | Input type | Cause
 **press&#8209;tap**	| touch | A press-and-tap gesture has been recognized.
 **key**			| keyboard | A key is pressed down.
 **key&#8209;up**	| keyboard | A pressed key is released.
+**enter**		| keyboard | Enter key is pressed down.
 **select**		| any 	| A selection is made in a face with multiple choices.
 **change**		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
 **menu**		| any 	| A menu entry is picked.
