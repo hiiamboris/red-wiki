@@ -31,10 +31,11 @@ Table of Content:
 * [Events](#events)
   * [Event names](#event-names)
   * [Event! datatype](#event!-datatype)
-* [Actors](#actors)
-* [Global event handlers](#global-event-handlers)
-  * [insert-event-func](#insert-event-func)
-  * [remove-event-func](#remove-event-func)
+  * [Actors](#actors)
+  * [Event flow](#event-flow)
+  * [Global event handlers](#global-event-handlers)
+    * [insert-event-func](#insert-event-func)
+    * [remove-event-func](#remove-event-func)
 * [System/view object](#system-view-object)
 * [Including View component](#including-view-component)
 * [Extra functions](#extra-functions)
@@ -697,7 +698,7 @@ Here is the list of special keys returned as words by `event/key`:
 * `F11`
 * `F12`
 
-# Actors
+### Actors
 
 Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) referred by `actors` facet. All actors have the same specification block.
 
@@ -714,24 +715,39 @@ In addition to the GUI events, it is possible to define an `on-create` actor whi
 **Return value**
 
 	'stop : exit the event loop.
-	'done : stops event bubbling.
+	'done : stops the event from flowing to the next face.
 
 Other returned values have no effect.
 
+### Event flow
 
-# Global event handlers
+Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is travelling from one face to another in the ancestors hierarchy in two directions commonly known as:
 
-Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is triggering handlers starting from window face, traversing all parent faces before triggering the front face handlers.
+* event **capturing**: event goes from window face down to the front face where the event originated. For each face, a `detect` event is generated and the corresponding handler called if provided.
 
-![](images/event-bubbling.png)
+* event **bubbling**: event goes front face to parent window. For each face, the local event handler is called.
 
-Typical event bubbling path:
+![](images/event-flow.png)
 
-1. A click event is generated on the button
-2. The window gets the event first. Global handlers are processed. Window's actor(s) get called.
-3. The panel gets the event next. Panel's actor(s) get called.
-4. The button gets the event last. Button's actor(s) get called.
+Typical event flow path:
 
+0. A click event is generated on the button, global handlers are processed (see next section).
+1. Event capturing stage starts:
+    1. The window gets the event first, its `on-detect` handler gets called.
+    2. The panel gets the event next. Panel's `on-detect` handler gets called.
+    3. The button gets the event last. Button's `on-detect` gets called.
+2. Event bubbling stage starts:
+    1. The button gets the event first, its `on-click` handler gets called.
+    2. The panel gets the event next. Panel's `on-click` handler gets called.
+    3. The window gets the event last, its `on-click` handler gets called.
+
+Notes:
+* Event cancellation is achieved by returning `'done` word from any event handler.
+* Event capturing is not enabled by default for performance reasons. Set `system/view/capturing?: yes` to enable it.
+
+### Global event handlers
+
+Before entering the event flow path, specific pre-processing can be achieved using the so-called "global event handlers". Following API is provided for adding and removing them.
 
 #### insert-event-func
 
