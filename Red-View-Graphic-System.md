@@ -84,6 +84,14 @@ Facet | Datatype | Mandatory? | Applicability | Description
 **extra**	| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
 **draw**	| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
 
+List of globally usable flags for `flags` facet:
+
+Flag | Description
+----- | -----------
+**all-over** | Send all `over` events to the face.
+
+Other face types specific flags are documented in their respective sections.
+
 Notes:
 * Non-mandatory facets can be set to `none`.
 * `offset` and `size` are specified in screen pixels.
@@ -609,7 +617,7 @@ Name | Input type | Cause
 **drop**		| mouse | A dragged face has been dropped.			
 **click**		| mouse | Left mouse click (button widgets only).
 **double&#8209;click**	| mouse | Left mouse double-click.
-**over**		| mouse | Mouse cursor passing over a face. This event is produced only if `flags` facet contains **all&#8209;over** flag.
+**over**		| mouse | Mouse cursor passing over a face. This event is produced once when the mouse enters the face and once when it exits. If `flags` facet contains **all&#8209;over** flag, then all intermediary events are produced too.
 **move**		| mouse | A window has moved.
 **resize**		| mouse | A window has been resized.
 **moving**		| mouse | A window is been moved.
