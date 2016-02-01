@@ -784,6 +784,7 @@ Word | Description
 `evt-names` | Internal table for event to actor names conversion.
 `init` | View engine initialization function, can be called by user if required.
 `awake` | Main high-level events entry point function.
+`capturing?` | `yes` = enables event capturing stage and `detect` events generation (default to `no`).
 `auto-sync?` | `yes` = realtime faces updates (default), `no` = deferred faces updates.
 `debug?` | `yes` = output verbose logs of View internal events (default to `no`).
 
