@@ -84,7 +84,7 @@ Facet | Datatype | Mandatory? | Applicability | Description
 **extra**	| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
 **draw**	| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
 
-List of globally usable flags for `flags` facet:
+List of globally-usable flags for `flags` facet:
 
 Flag | Description
 ----- | -----------
@@ -479,12 +479,14 @@ Facet | Description
 `pane` 	| List of faces to display inside the window (block!).
 
 **Supported flags:**
+* `modal`: makes the window modal, disabling all previously opened windows.
 * `resize`: enable window resizing (default is fixed size, not resizeable).
 * `no-title`: do not display a window title text.
 * `no-border`: remove window's frame decorations.
 * `no-min`: remove minimize button from window's drag bar.
 * `no-max`: remove maximize button from window's drag bar.
 * `no-buttons`: remove all buttons from window's drag bar.
+* `popup`: alternative smaller frame decoration (Windows only).
 
 Notes:
 * Using the `popup` keyword at the beginning of the menu specification block will force a contextual menu in the window, instead of a menu bar by default.
