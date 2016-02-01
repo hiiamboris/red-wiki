@@ -13,12 +13,12 @@ Table of Content:
   * [Radio](#radio)
   * [Field](#field)
   * [Area](#area)
-  * [Text-list](#Text-list)
-  * [Drop-list](#Drop-list)
-  * [Drop-down](#Drop-down)
-  * [Progress](#Progress)
-  * [Slider](#Slider)
-  * [Camera](#Camera)
+  * [Text-list](#text-list)
+  * [Drop-list](#drop-list)
+  * [Drop-down](#drop-down)
+  * [Progress](#progress)
+  * [Slider](#slider)
+  * [Camera](#camera)
   * [Panel](#panel)
   * [Tab-panel](#tab-panel)
   * [Window](#window)
@@ -27,6 +27,7 @@ Table of Content:
 * [Face life cycle](#face-life-cycle)
 * [SHOW function](#show-function)
 * [Realtime vs deferred updating](#realtime-vs-deferred-updating)
+* [Two-way binding](#two-way-binding)
 * [Events](#events)
   * [Event names](#event-names)
   * [Event! datatype](#event!-datatype)
@@ -34,7 +35,7 @@ Table of Content:
 * [Global event handlers](#global-event-handlers)
   * [insert-event-func](#insert-event-func)
   * [remove-event-func](#remove-event-func)
-* [System/view object](#System-view-object)
+* [System/view object](#system-view-object)
 * [Including View component](#including-view-component)
 * [Extra functions](#extra-functions)
 
@@ -59,29 +60,37 @@ Face objects are clones of `face!` template object. A field in face object is ca
 List of available facets:
 
 Facet | Datatype | Mandatory? | Applicability | Description
------ | -------- | ---------- | ------------- | -----------
-type		| word!			| yes	|  all	| Type of graphic component (see below for a list).
-offset		| pair!			| yes	|  all	| Offset position from parent top-left origin.
-size		| pair!			| yes	|  all	| Size of the face.
-text		| string!		| no	|  all	| Caption text displayed in the face.
-image		| image!		| no	|  some	| Image displayed in the face background.
-color		| tuple!		| no	|  some	| Background color of the face in R.G.B or R.G.B.A format.
-menu		| block! 		| no	|  all	| Menu bar or contextual menu.
-data		| any-type!		| no	|  all	| Content data of the face.
-enable?		| logic!		| yes	|  all	| Enable or disable input events on the face.
-visible?	| logic!		| yes	|  all	| Display or hide the face.
-selected	| integer! 		| no	|  some	| For lists types, index of currently selected element.
-flags		| block! 		| no	|  some	| List of special keywords altering the display or behavior of the face.
-options		| block! 		| no	|  some	| Extra face properties in a [name: value] format.
-parent		| object! 		| no	|  all	| Back-reference to parent face (if any).
-pane		| block! 		| no	|  some	| List of child face(s) displayed inside the face.
-state		| block! 		| no	|  all	| Internal face state info *(used by View engine only)*.
-edge		| object! 		| no	|  all	| *(reserved for future use)*
-para		| object! 		| no	|  all	| Para object reference for text positioning.
-font		| object! 		| no	|  all	| Font object reference for setting text facet's font properties.
-actors		| object!		| no	|  all	| User-provided events handlers.
-extra		| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
-draw		| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
+----- | -------- | :--------: | :-----------: | -----------
+**type**	| word!			| yes	|  all	| Type of graphic component (see below for a list).
+**offset**	| pair!			| yes	|  all	| Offset position from parent top-left origin.
+**size**	| pair!			| yes	|  all	| Size of the face.
+**text**	| string!		| no	|  all	| Label text displayed in the face.
+**image**	| image!		| no	|  some	| Image displayed in the face background.
+**color**	| tuple!		| no	|  some	| Background color of the face in R.G.B or R.G.B.A format.
+**menu**	| block! 		| no	|  all	| Menu bar or contextual menu.
+**data**	| any-type!		| no	|  all	| Content data of the face.
+**enable?**	| logic!		| yes	|  all	| Enable or disable input events on the face.
+**visible?**	| logic!		| yes	|  all	| Display or hide the face.
+**selected**	| integer! 		| no	|  some	| For lists types, index of currently selected element.
+**flags**	| block!, word!		| no	|  some	| List of special keywords altering the display or behavior of the face.
+**options**	| block! 		| no	|  some	| Extra face properties in a [name: value] format.
+**parent**	| object! 		| no	|  all	| Back-reference to parent face (if any).
+**pane**	| block! 		| no	|  some	| List of child face(s) displayed inside the face.
+**state**	| block! 		| no	|  all	| Internal face state info *(used by View engine only)*.
+**edge**	| object! 		| no	|  all	| *(reserved for future use)*
+**para**	| object! 		| no	|  all	| Para object reference for text positioning.
+**font**	| object! 		| no	|  all	| Font object reference for setting text facet's font properties.
+**actors**	| object!		| no	|  all	| User-provided events handlers.
+**extra**	| any-type!		| no	|  all	| Optional user data attached to the face (free usage).
+**draw**	| block! 		| no	|  all	| List of Draw commands to be drawn on the face.
+
+List of globally-usable flags for `flags` facet:
+
+Flag | Description
+----- | -----------
+**all-over** | Send all `over` events to the face.
+
+Other face types specific flags are documented in their respective sections.
 
 Notes:
 * Non-mandatory facets can be set to `none`.
@@ -101,7 +110,7 @@ Options facet holds optional facets which are used for specific behaviors:
 
 Option | Description
 ----- | ------------
-`drag-on` | Can be one of: `'down`, `'mid-down`, `'alt-down`, `'aux-down`. Used for enabling a drag'n drop operation.
+**drag&#8209;on** | Can be one of: `'down`, `'mid-down`, `'alt-down`, `'aux-down`. Used for enabling a drag'n drop operation.
 
 	
 # Font object
@@ -109,16 +118,16 @@ Option | Description
 Font objects are clones of `font!` template object. One font object can be referenced by one or more faces, allowing to control font properties of a group of faces from a single place.
 
 Field | Datatype | Mandatory? | Description
------ | -------- | ---------- | -----------
-name		| string!			| no	| Valid font name installed on the OS.
-size		| integer!			| no	| Font size in points.
-style		| word!, block!		| no	| Styling mode or block of styling modes.
-angle		| integer!			| yes	| Text writing angle in degrees (default is `0`).
-color		| tuple!			| yes	| Font color in R.G.B or R.G.B.A format.
-anti-alias?	| logic!, word!		| no	| Anti-aliasing mode (active/inactive or special mode). 
-shadow		| *(reserved)*		| no	| *(reserved for future use)*
-state		| block!			| no	| Internal face state info *(used by View engine only)*.
-parent		| block!			| no	| Internal back reference to parent face(s) *(used by View engine only)*.
+----- | -------- | :--------: | -----------
+**name**	| string!		| no	| Valid font name installed on the OS.
+**size**	| integer!		| no	| Font size in points.
+**style**	| word!, block!		| no	| Styling mode or block of styling modes.
+**angle**	| integer!		| yes	| Text writing angle in degrees (default is `0`).
+**color**	| tuple!		| yes	| Font color in R.G.B or R.G.B.A format.
+**anti-alias?**	| logic!, word!		| no	| Anti-aliasing mode (active/inactive or special mode). 
+**shadow**	| *(reserved)*		| no	| *(reserved for future use)*
+**state**	| block!		| no	| Internal face state info *(used by View engine only)*.
+**parent**	| block!		| no	| Internal back reference to parent face(s) *(used by View engine only)*.
 
 Notes:
 * Non-mandatory facets can be set to `none`.
@@ -142,13 +151,13 @@ Para objects are clones of `para!` template object. One para object can be refer
 
 Field | Datatype |  Description
 ----- | -------- |  -----------
-origin		| *(reserved)*		| *(reserved for future use)*
-padding		| *(reserved)*		| *(reserved for future use)*
-scroll		| *(reserved)*		| *(reserved for future use)*
-align		| word!				| Control horizontal text alignment: `left`, `center`, `right`.
-v-align		| *(reserved)*		| Control vertical text alignment: `top`, `middle`, `bottom`.
-wrap?		| logic!			| Enable/disable text wrapping in the face(s).
-parent		| block!			| Internal back reference to parent face(s) *(used by View engine only)*.
+**origin**	| *(reserved)*		| *(reserved for future use)*
+**padding**	| *(reserved)*		| *(reserved for future use)*
+**scroll**	| *(reserved)*		| *(reserved for future use)*
+**align**	| word!			| Control horizontal text alignment: `left`, `center`, `right`.
+**v-align**	| *(reserved)*		| Control vertical text alignment: `top`, `middle`, `bottom`.
+**wrap?**	| logic!		| Enable/disable text wrapping in the face(s).
+**parent**	| block!		| Internal back reference to parent face(s) *(used by View engine only)*.
 
 Notes:
 * Any para fields can be set to `none`.
@@ -159,7 +168,7 @@ Faces are organized in a tree which maps to the graphic components hierarchy on 
 * `pane` facet: list one of more child face(s) in a block.
 * `parent` facet: reference to parent face.
 
-Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is displayed behind every over face, face at tail is displayed in front of every over ones).
+Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is displayed behind all other faces, the face at tail is displayed on top of all others).
 
 The root of a face tree is a `screen` face. A `screen` face can only display `window` faces from its `pane` block.
 
@@ -180,6 +189,7 @@ Facet | Description
 `type`	| `'base`
 `image`	| An image! value can be specified, alpha channel is supported.
 `color`	| A background color can be specified, alpha channel is supported.
+`text`  | An optional text to be displayed inside the face.
 `draw`	| Transparency is fully supported for Draw primitives.
 
 Notes:
@@ -202,8 +212,8 @@ This type represents a simple button.
 
 Facet | Description
 ----- | -----------
-`type`	| `'text`
-`text`	| Button's caption text.
+`type`	| `'button`
+`text`	| Button's label text.
 `image`	| The image will be displayed inside the button. Can be combined with a text.
 
 Event type | Handler | Description
@@ -214,13 +224,13 @@ Event type | Handler | Description
 
 #### Check
 
-This type represents a check box, with an optional caption text, displayed on left or right side.
+This type represents a check box, with an optional label text, displayed on left or right side.
 
 Facet | Description
 ----- | -----------
 `type`	| `'check`
-`text`	| Caption text.
-`para`	| The `align` field controls is the text is displayed on the `left` or on the `right` side.
+`text`	| Label text.
+`para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
 Event type | Handler | Description
@@ -231,13 +241,13 @@ Event type | Handler | Description
 
 #### Radio
 
-This type represents a radio button, with an optional caption text, displayed on left or right side. Only one radio button per pane is allowed to be checked.
+This type represents a radio button, with an optional label text, displayed on left or right side. Only one radio button per pane is allowed to be checked.
 
 Facet | Description
 ----- | -----------
 `type`	| `'radio`
-`text`	| Caption text.
-`para`	| The `align` field controls is the text is displayed on the `left` or on the `right` side.
+`text`	| Label text.
+`para`	| The `align` field controls if the text is displayed on the `left` or on the `right` side.
 `data`	| `true`: checked, `false`: unchecked (default).
 
 Event type | Handler | Description
@@ -264,7 +274,9 @@ Notes:
 
 Event type | Handler | Description
 ---------- | ------- | -----------
+`enter` | `on-enter` | Occurs each time the Enter key is pressed down in the field.
 `change` | `on-change` | Occurs each time an input is made in the field.
+`key` | `on-key` | Occurs each time a key is pressed down in the field.
 
 
 ***
@@ -289,6 +301,7 @@ Notes:
 Event type | Handler | Description
 ---------- | ------- | -----------
 `change` | `on-change` | Occurs each time an input is made in the area.
+`key` | `on-key` | Occurs each time a key is pressed down in the field.
 
 ***
 
@@ -301,7 +314,7 @@ This type represents a vertical list of text strings, displayed in a fixed frame
 Facet | Description
 ----- | -----------
 `type`	| `'text-list`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 
@@ -325,7 +338,7 @@ This type represents a vertical list of text strings, displayed in a foldable fr
 Facet | Description
 ----- | -----------
 `type`	| `'drop-list`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
@@ -351,7 +364,7 @@ This type represents an edit field with a vertical list of text strings displaye
 Facet | Description
 ----- | -----------
 `type`	| `'drop-down`
-`data`	| List of strings to display.
+`data`	| List of strings to display (block! hash!).
 `selected` | Index of selected string or none value if no selection (read/write).
 
 The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
@@ -466,12 +479,14 @@ Facet | Description
 `pane` 	| List of faces to display inside the window (block!).
 
 **Supported flags:**
+* `modal`: makes the window modal, disabling all previously opened windows.
 * `resize`: enable window resizing (default is fixed size, not resizeable).
 * `no-title`: do not display a window title text.
 * `no-border`: remove window's frame decorations.
 * `no-min`: remove minimize button from window's drag bar.
 * `no-max`: remove maximize button from window's drag bar.
 * `no-buttons`: remove all buttons from window's drag bar.
+* `popup`: alternative smaller frame decoration (Windows only).
 
 Notes:
 * Using the `popup` keyword at the beginning of the menu specification block will force a contextual menu in the window, instead of a menu bar by default.
@@ -552,7 +567,7 @@ Notes:
 
 The View engine has two different modes for updating the display after changes are done to the face tree:
 
-* Realtime updating: any change to a face is immediatly rendered on screen.
+* Realtime updating: any change to a face is immediately rendered on screen.
 
 * Deferred updating: all changes to a face are not propagated on screen, until `show` is called on the face, or on the parent face.
 
@@ -569,42 +584,58 @@ Deferred mode updates many changes at the same time on screen in order to avoid 
 Notes:
 * This is a big difference with the Rebol/View engine which only has deferred mode support.
 
+# Two-way binding
+
+Face objects rely on the Red ownership system to bind the object with the series used in facets, so that any change in one of the facet (even a deep change) is detected by the face object and processed according to the current synchronization mode (realtime or deferred).
+
+On the other side, changes made to the rendered graphic objects are reflected instantly in the corresponding facets. For example, typing in a `field` face will reflect the input in the `text` facet in live.
+
+This two-way binding simplifies the interaction with the graphic objects for the programmer, without the need of any specific API. Modifying the facets using the series actions is enough.
+
+Example:
+
+    view [
+    	list: text-list data ["John" "Bob" "Alice"]
+    	button "Add" [append list/data "Sue"]
+    	button "Change" [lowercase list/data/1]
+    ]
+
 # Events
 
 ### Event names
 
 Name | Input type | Cause
 ----- | --------- | -----------
-`down`			| mouse | Left mouse button pressed.	
-`up`			| mouse | Left mouse button released.
-`middle-down`	| mouse | Middle mouse button pressed.
-`middle-up`		| mouse | Middle mouse button released.
-`alt-down`		| mouse | Right mouse button pressed.
-`alt-up`		| mouse | Right mouse button released.
-`aux-down`		| mouse | Auxiliary mouse button pressed.
-`aux-up`		| mouse | Auxiliary mouse button released.
-`drag-start`	| mouse | A face dragging starts.
-`drag`			| mouse | A face is been dragged.
-`drop`			| mouse | A dragged face has been dropped.			
-`click`			| mouse | Left mouse click (button widgets only).
-`double-click`	| mouse | Left mouse double-click.
-`over`			| mouse | Mouse cursor passing over a face. This event is produced only if `flags` facet contains `all-over` flag.
-`move`			| mouse | A window has moved.
-`resize`		| mouse | A window has been resized.
-`moving`		| mouse | A window is been moved.
-`resizing`		| mouse | A window is been resized.
-`zoom`			| touch | A zooming gesture (pinching) has been recognized.
-`pan`			| touch | A panning gesture (sweeping) has been recognized.
-`rotate`		| touch | A panning gesture (sweeping) has been recognized.
-`two-tap`		| touch | A double tapping gesture has been recognized.
-`press-tap`		| touch | A press-and-tap gesture has been recognized.
-`key`			| keyboard | A key is pressed down.
-`key-up`		| keyboard | A pressed key is released.
-`select`		| any 	| A selection is made in a face with multiple choices.
-`change`		| any 	| A change occured in a face accepting user inputs (text input or selection in a list).
-`menu`			| any 	| A menu entry is picked.
-`close`			| any 	| A window is closing.
-
+**down**	| mouse | Left mouse button pressed.	
+**up**		| mouse | Left mouse button released.
+**middle&#8209;down**	| mouse | Middle mouse button pressed.
+**middle&#8209;up**	| mouse | Middle mouse button released.
+**alt&#8209;down**	| mouse | Right mouse button pressed.
+**alt&#8209;up**	| mouse | Right mouse button released.
+**aux&#8209;down**	| mouse | Auxiliary mouse button pressed.
+**aux&#8209;up**	| mouse | Auxiliary mouse button released.
+**drag&#8209;start**	| mouse | A face dragging starts.
+**drag**		| mouse | A face is been dragged.
+**drop**		| mouse | A dragged face has been dropped.			
+**click**		| mouse | Left mouse click (button widgets only).
+**double&#8209;click**	| mouse | Left mouse double-click.
+**over**		| mouse | Mouse cursor passing over a face. This event is produced once when the mouse enters the face and once when it exits. If `flags` facet contains **all&#8209;over** flag, then all intermediary events are produced too.
+**move**		| mouse | A window has moved.
+**resize**		| mouse | A window has been resized.
+**moving**		| mouse | A window is been moved.
+**resizing**		| mouse | A window is been resized.
+**zoom**		| touch | A zooming gesture (pinching) has been recognized.
+**pan**			| touch | A panning gesture (sweeping) has been recognized.
+**rotate**		| touch | A panning gesture (sweeping) has been recognized.
+**two&#8209;tap**	| touch | A double tapping gesture has been recognized.
+**press&#8209;tap**	| touch | A press-and-tap gesture has been recognized.
+**key**			| keyboard | A key is pressed down.
+**key&#8209;up**	| keyboard | A pressed key is released.
+**enter**		| keyboard | Enter key is pressed down.
+**select**		| any 	| A selection is made in a face with multiple choices.
+**change**		| any 	| A change occurred in a face accepting user inputs (text input or selection in a list).
+**menu**		| any 	| A menu entry is picked.
+**close**		| any 	| A window is closing.
 
 Notes:
 * touch events are not available for Windows XP.
@@ -618,10 +649,10 @@ An event value is an opaque object holding all the information about a given eve
 Field | Returned value
 ----- | -----
 `type`		| Event type (word!).
-`face`		| Face object where the event occured (object!).
-`offset`	| Offset of mouse cursor relative to the face object when the event occured (pair!). For gestures events, returns the center point coordinates.
+`face`		| Face object where the event occurred (object!).
+`offset`	| Offset of mouse cursor relative to the face object when the event occurred (pair!). For gestures events, returns the center point coordinates.
 `key`		| Key pressed (char! word!).
-`picked`	| New item selected in a face (integer! percent!). For zooming gesture, it returns a percent value representing the relative increase/decrease.
+`picked`	| New item selected in a face (integer! percent!). For `menu` event, it returns the corresponding menu ID (word!). For zooming gesture, it returns a percent value representing the relative increase/decrease. For other gestures, its value is system-dependent for now (Windows: `ullArguments` field from [GESTUREINFO](https://msdn.microsoft.com/en-us/library/windows/desktop/dd353232(v=vs.85).aspx)).
 `flags`		| Returns a list of one or more flags (see list below) (block!).
 `away?`		| Returns `true` if the mouse cursor exits the face boundaries (logic!). Applies only if `over` event is active. 
 `down?`		| Returns `true` if the mouse left button was pressed (logic!).
@@ -641,7 +672,6 @@ List of possible flags from `event/flags`:
 
 Notes:
 * All fields (except `type`) are read-only. Setting `type` is only used internally by the View engine.
-* `face` can refer to 
 
 Here is the list of special keys returned as words by `event/key`:
 * `page-up`
@@ -669,16 +699,17 @@ Here is the list of special keys returned as words by `event/key`:
 
 # Actors
 
-Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) refered by `actors` facet. All actors have the same specification block.
+Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) referred by `actors` facet. All actors have the same specification block.
 
 **Syntax**
 
     on-<event>: func [face [object!] event [event!]]
     
-    face  : face object which receives the event
-    event : event value.
+    <event> : any valid event name (from above table)
+    face    : face object which receives the event
+    event   : event value.
 
-It is possible to define an actor which will be called when the face is shown for the first time, just before system resources are allocated for it. For that, just define an `on-create` actor.
+In addition to the GUI events, it is possible to define an `on-create` actor which will be called when the face is shown for the first time, just before system resources are allocated for it.
 
 **Return value**
 
@@ -692,7 +723,7 @@ Other returned values have no effect.
 
 Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is triggering handlers starting from window face, traversing all parent faces before triggering the front face handlers.
 
-*<insert graphic here>*
+![](images/event-bubbling.png)
 
 Typical event bubbling path:
 
@@ -752,36 +783,39 @@ Word | Description
 `reactors` | Internal associative table for reactive faces and their action blocks.
 `evt-names` | Internal table for event to actor names conversion.
 `init` | View engine initialization function, can be called by user if required.
-`awake` | Main high-level events entry point fuunction.
+`awake` | Main high-level events entry point function.
+`capturing?` | `yes` = enables event capturing stage and `detect` events generation (default to `no`).
 `auto-sync?` | `yes` = realtime faces updates (default), `no` = deferred faces updates.
 `debug?` | `yes` = output verbose logs of View internal events (default to `no`).
 
 
 # Including View component
 
-View componenent is not loaded by default. To enable it, the main Red script have to declare the dependency in the header using the `Needs` field:
+View component is not included by default on *compiling*. To include it, the main Red script have to declare the dependency in the header using the `Needs` field:
 
     Red [
     	Needs: 'View
     ]
 
+Note: Using consoles auto-generated by `red` binary will include the View componenet on platforms where it is available, `Needs` header field is therefore not required in user scripts run from those consoles.
 
 # Extra functions
 
-Word | Description
+Function | Description
 ----- | ------------
-`view` | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `no-wait` refinement is used.
-`unview` | Destroy one or more windows.
-`layout` | Convert a block of VID code into a face tree.
-`center-face` | Center a face relatively to its parent.
-`dump-face` | Output a compact description of a face tree structure (debugging purpose).
-`do-actor` | Evaluate a face actor manually.
-`do-events` | Launch an event loop (optionally just process pending events and return).
-`draw` | Render a Draw dialect block onto an image.
-`to-image` | Convert any rendered face to an image.
+**view** | Render on screen a window from a face tree or a block of VID code. Enters an event loop unless `/no-wait` **refinement** is used.
+**unview** | Destroy one or more windows.
+**layout** | Convert a block of VID code into a face tree.
+**center&#8209;face** | Center a face relatively to its parent.
+**dump&#8209;face** | Output a compact description of a face tree structure (debugging purpose).
+**do&#8209;actor** | Evaluate a face actor manually.
+**do&#8209;events** | Launch an event loop (optionally just process pending events and return).
+**draw** | Render a Draw dialect block onto an image.
+**to&#8209;image** | Convert any rendered face to an image.
 
 ***
 
 *To be added:*
-* Two-way binding description
+* menu facet specification
 * Image! datatype description
+* Reactive programming model
