@@ -1,3 +1,30 @@
+<table>
+  <tr>
+    <td>REP:</td>
+    <td>XXXX</td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td>Ways to promote youth to learn Red</td>
+  </tr>
+  <tr>
+    <td>Author(s):</td>
+    <td>Donald Tsang</td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td>Draft</td>
+  </tr>
+  <tr>
+    <td>Date Created:</td>
+    <td>?????</td>
+  </tr>
+  <tr>
+    <td>Date Last Actioned:</td>
+    <td></td>
+  </tr>
+</table>
+
 _This is a public proposal, everyone is allowed to add suggestion to this_
 
 # Creating a simplified dialect
