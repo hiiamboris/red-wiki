@@ -616,15 +616,15 @@ Name | Input type | Cause
 **aux&#8209;down**	| mouse | Auxiliary mouse button pressed.
 **aux&#8209;up**	| mouse | Auxiliary mouse button released.
 **drag&#8209;start**	| mouse | A face dragging starts.
-**drag**		| mouse | A face is been dragged.
+**drag**		| mouse | A face is being dragged.
 **drop**		| mouse | A dragged face has been dropped.			
 **click**		| mouse | Left mouse click (button widgets only).
 **double&#8209;click**	| mouse | Left mouse double-click.
 **over**		| mouse | Mouse cursor passing over a face. This event is produced once when the mouse enters the face and once when it exits. If `flags` facet contains **all&#8209;over** flag, then all intermediary events are produced too.
 **move**		| mouse | A window has moved.
 **resize**		| mouse | A window has been resized.
-**moving**		| mouse | A window is been moved.
-**resizing**		| mouse | A window is been resized.
+**moving**		| mouse | A window is being moved.
+**resizing**		| mouse | A window is being resized.
 **zoom**		| touch | A zooming gesture (pinching) has been recognized.
 **pan**			| touch | A panning gesture (sweeping) has been recognized.
 **rotate**		| touch | A panning gesture (sweeping) has been recognized.
