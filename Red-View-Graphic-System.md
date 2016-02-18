@@ -609,8 +609,8 @@ Name | Input type | Cause
 ----- | --------- | -----------
 **down**	| mouse | Left mouse button pressed.	
 **up**		| mouse | Left mouse button released.
-**middle&#8209;down**	| mouse | Middle mouse button pressed.
-**middle&#8209;up**	| mouse | Middle mouse button released.
+**mid&#8209;down**	| mouse | Middle mouse button pressed.
+**mid&#8209;up**	| mouse | Middle mouse button released.
 **alt&#8209;down**	| mouse | Right mouse button pressed.
 **alt&#8209;up**	| mouse | Right mouse button released.
 **aux&#8209;down**	| mouse | Auxiliary mouse button pressed.
@@ -619,7 +619,7 @@ Name | Input type | Cause
 **drag**		| mouse | A face is being dragged.
 **drop**		| mouse | A dragged face has been dropped.			
 **click**		| mouse | Left mouse click (button widgets only).
-**double&#8209;click**	| mouse | Left mouse double-click.
+**dbl&#8209;click**	| mouse | Left mouse double-click.
 **over**		| mouse | Mouse cursor passing over a face. This event is produced once when the mouse enters the face and once when it exits. If `flags` facet contains **all&#8209;over** flag, then all intermediary events are produced too.
 **move**		| mouse | A window has moved.
 **resize**		| mouse | A window has been resized.
