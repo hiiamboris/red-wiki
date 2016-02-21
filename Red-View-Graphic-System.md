@@ -322,8 +322,8 @@ Facet | Description
 
 Event type | Handler | Description
 ---------- | ------- | -----------
-`select` | `on-select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
-`change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
+`select` | `on&#8209;select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
+`change` | `on&#8209;change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
 * number of visible items cannot be yet defined by user.
@@ -348,8 +348,8 @@ The `data` facet accepts arbitrary values, but only string values will be added 
 
 Event type | Handler | Description
 ---------- | ------- | -----------
-`select` | `on-select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
-`change`	| `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
+`select` | `on&#8209;select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
+`change` | `on&#8209;change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
 * number of visible items cannot be yet defined by user.
@@ -374,8 +374,8 @@ The `data` facet accepts arbitrary values, but only string values will be added 
 
 Event type | Handler | Description
 ---------- | ------- | -----------
-`select` | `on-select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
-`change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
+`select` | `on&#8209;select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
+`change` | `on&#8209;change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
 * number of visible items cannot be yet defined by user.
@@ -658,8 +658,8 @@ Field | Returned value
 `flags`		| Returns a list of one or more flags (see list below) (block!).
 `away?`		| Returns `true` if the mouse cursor exits the face boundaries (logic!). Applies only if `over` event is active. 
 `down?`		| Returns `true` if the mouse left button was pressed (logic!).
-`mid-down?`	| Returns `true` if the mouse middle button was pressed (logic!).
-`alt-down?`	| Returns `true` if the mouse right button was pressed (logic!).
+`mid&#8209;down?`	| Returns `true` if the mouse middle button was pressed (logic!).
+`alt&#8209;down?`	| Returns `true` if the mouse right button was pressed (logic!).
 `ctrl?`		| Returns `true` if the CTRL key was pressed (logic!).
 `shift?`	| Returns `true` if the SHIFT key was pressed (logic!).
 
