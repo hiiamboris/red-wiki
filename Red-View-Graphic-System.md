@@ -630,7 +630,8 @@ Name | Input type | Cause
 **rotate**		| touch | A panning gesture (sweeping) has been recognized.
 **two&#8209;tap**	| touch | A double tapping gesture has been recognized.
 **press&#8209;tap**	| touch | A press-and-tap gesture has been recognized.
-**key**			| keyboard | A key is pressed down.
+**key&#8209;down**	| keyboard | A key is pressed down.
+**key**			| keyboard | A character was input or a special key has been pressed (except control, shift and menu keys).
 **key&#8209;up**	| keyboard | A pressed key is released.
 **enter**		| keyboard | Enter key is pressed down.
 **select**		| any 	| A selection is made in a face with multiple choices.
@@ -697,6 +698,15 @@ Here is the list of special keys returned as words by `event/key`:
 * `F10`
 * `F11`
 * `F12`
+
+The following extra key names can be returned by `event/key` only for `key-down` and `key-up` messages:
+* `left-control`
+* `right-control`
+* `left-shift`
+* `right-shift`
+* `left-menu`
+* `right-menu`
+
 
 ### Actors
 
