@@ -838,6 +838,7 @@ Function | Description
 **do&#8209;events** | Launch an event loop (optionally just process pending events and return).
 **draw** | Render a Draw dialect block onto an image.
 **to&#8209;image** | Convert any rendered face to an image.
+**size&#8209;text** | Measure the size in pixels of a text in a face (taking the selected font into account).
 
 ***
 
