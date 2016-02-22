@@ -473,11 +473,12 @@ Facet | Description
 ----- | -----------
 `type`	| `'window`
 `text`	| Title of the window (string!).
-`offset`	| Offset from top-left corner of the desktop screen, not counting the window's frame decorations. (pair!)
+`offset` | Offset from top-left corner of the desktop screen, not counting the window's frame decorations. (pair!)
 `size`	| Size of the window, not counting the window's frame decorations. (pair!)
 `flags`	| Turn on/off some special window features (block!).
 `menu`	| Displays a menu bar in the window (block!).
 `pane` 	| List of faces to display inside the window (block!).
+`selected` | Select the face which will get the focus (object!).
 
 **Supported flags:**
 * `modal`: makes the window modal, disabling all previously opened windows.
