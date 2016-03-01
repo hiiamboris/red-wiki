@@ -1,3 +1,30 @@
+<table>
+  <tr>
+    <td>REP:</td>
+    <td>XXXX</td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td>Add mathematical and time functions</td>
+  </tr>
+  <tr>
+    <td>Author(s):</td>
+    <td>Donald Tsang</td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td>Draft</td>
+  </tr>
+  <tr>
+    <td>Date Created:</td>
+    <td>?????</td>
+  </tr>
+  <tr>
+    <td>Date Last Actioned:</td>
+    <td></td>
+  </tr>
+</table>
+
 # Mathematics (for scientific calculators):
 * Trigonometric functions: sin, cos, tan, asin, acos, atan
 * Hyperbolic function: sinh, cosh, tanh, asinh, acosh, atanh

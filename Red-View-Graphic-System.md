@@ -31,10 +31,11 @@ Table of Content:
 * [Events](#events)
   * [Event names](#event-names)
   * [Event! datatype](#event!-datatype)
-* [Actors](#actors)
-* [Global event handlers](#global-event-handlers)
-  * [insert-event-func](#insert-event-func)
-  * [remove-event-func](#remove-event-func)
+  * [Actors](#actors)
+  * [Event flow](#event-flow)
+  * [Global event handlers](#global-event-handlers)
+    * [insert-event-func](#insert-event-func)
+    * [remove-event-func](#remove-event-func)
 * [System/view object](#system-view-object)
 * [Including View component](#including-view-component)
 * [Extra functions](#extra-functions)
@@ -348,7 +349,7 @@ The `data` facet accepts arbitrary values, but only string values will be added 
 Event type | Handler | Description
 ---------- | ------- | -----------
 `select` | `on-select` | Occurs when an entry in the list is selected. `selected` facet refers to **old** selected entry index.
-`change`	| `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
+`change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
 * number of visible items cannot be yet defined by user.
@@ -472,11 +473,12 @@ Facet | Description
 ----- | -----------
 `type`	| `'window`
 `text`	| Title of the window (string!).
-`offset`	| Offset from top-left corner of the desktop screen, not counting the window's frame decorations. (pair!)
+`offset` | Offset from top-left corner of the desktop screen, not counting the window's frame decorations. (pair!)
 `size`	| Size of the window, not counting the window's frame decorations. (pair!)
 `flags`	| Turn on/off some special window features (block!).
 `menu`	| Displays a menu bar in the window (block!).
 `pane` 	| List of faces to display inside the window (block!).
+`selected` | Select the face which will get the focus (object!).
 
 **Supported flags:**
 * `modal`: makes the window modal, disabling all previously opened windows.
@@ -608,28 +610,29 @@ Name | Input type | Cause
 ----- | --------- | -----------
 **down**	| mouse | Left mouse button pressed.	
 **up**		| mouse | Left mouse button released.
-**middle&#8209;down**	| mouse | Middle mouse button pressed.
-**middle&#8209;up**	| mouse | Middle mouse button released.
+**mid&#8209;down**	| mouse | Middle mouse button pressed.
+**mid&#8209;up**	| mouse | Middle mouse button released.
 **alt&#8209;down**	| mouse | Right mouse button pressed.
 **alt&#8209;up**	| mouse | Right mouse button released.
 **aux&#8209;down**	| mouse | Auxiliary mouse button pressed.
 **aux&#8209;up**	| mouse | Auxiliary mouse button released.
 **drag&#8209;start**	| mouse | A face dragging starts.
-**drag**		| mouse | A face is been dragged.
+**drag**		| mouse | A face is being dragged.
 **drop**		| mouse | A dragged face has been dropped.			
 **click**		| mouse | Left mouse click (button widgets only).
-**double&#8209;click**	| mouse | Left mouse double-click.
+**dbl&#8209;click**	| mouse | Left mouse double-click.
 **over**		| mouse | Mouse cursor passing over a face. This event is produced once when the mouse enters the face and once when it exits. If `flags` facet contains **all&#8209;over** flag, then all intermediary events are produced too.
 **move**		| mouse | A window has moved.
 **resize**		| mouse | A window has been resized.
-**moving**		| mouse | A window is been moved.
-**resizing**		| mouse | A window is been resized.
+**moving**		| mouse | A window is being moved.
+**resizing**		| mouse | A window is being resized.
 **zoom**		| touch | A zooming gesture (pinching) has been recognized.
 **pan**			| touch | A panning gesture (sweeping) has been recognized.
 **rotate**		| touch | A panning gesture (sweeping) has been recognized.
 **two&#8209;tap**	| touch | A double tapping gesture has been recognized.
 **press&#8209;tap**	| touch | A press-and-tap gesture has been recognized.
-**key**			| keyboard | A key is pressed down.
+**key&#8209;down**	| keyboard | A key is pressed down.
+**key**			| keyboard | A character was input or a special key has been pressed (except control, shift and menu keys).
 **key&#8209;up**	| keyboard | A pressed key is released.
 **enter**		| keyboard | Enter key is pressed down.
 **select**		| any 	| A selection is made in a face with multiple choices.
@@ -697,7 +700,16 @@ Here is the list of special keys returned as words by `event/key`:
 * `F11`
 * `F12`
 
-# Actors
+The following extra key names can be returned by `event/key` only for `key-down` and `key-up` messages:
+* `left-control`
+* `right-control`
+* `left-shift`
+* `right-shift`
+* `left-menu`
+* `right-menu`
+
+
+### Actors
 
 Actors are handler functions for View events. They are defined in an free-form object (no prototype provided) referred by `actors` facet. All actors have the same specification block.
 
@@ -714,24 +726,39 @@ In addition to the GUI events, it is possible to define an `on-create` actor whi
 **Return value**
 
 	'stop : exit the event loop.
-	'done : stops event bubbling.
+	'done : stops the event from flowing to the next face.
 
 Other returned values have no effect.
 
+### Event flow
 
-# Global event handlers
+Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is travelling from one face to another in the ancestors hierarchy in two directions commonly known as:
 
-Events are usually generated at a specific screen position and assigned to the closest front face. However, the event is triggering handlers starting from window face, traversing all parent faces before triggering the front face handlers.
+* event **capturing**: event goes from window face down to the front face where the event originated. For each face, a `detect` event is generated and the corresponding handler called if provided.
 
-![](images/event-bubbling.png)
+* event **bubbling**: event goes front face to parent window. For each face, the local event handler is called.
 
-Typical event bubbling path:
+![](images/event-flow.png)
 
-1. A click event is generated on the button
-2. The window gets the event first. Global handlers are processed. Window's actor(s) get called.
-3. The panel gets the event next. Panel's actor(s) get called.
-4. The button gets the event last. Button's actor(s) get called.
+Typical event flow path:
 
+0. A click event is generated on the button, global handlers are processed (see next section).
+1. Event capturing stage starts:
+    1. The window gets the event first, its `on-detect` handler gets called.
+    2. The panel gets the event next. Panel's `on-detect` handler gets called.
+    3. The button gets the event last. Button's `on-detect` gets called.
+2. Event bubbling stage starts:
+    1. The button gets the event first, its `on-click` handler gets called.
+    2. The panel gets the event next. Panel's `on-click` handler gets called.
+    3. The window gets the event last, its `on-click` handler gets called.
+
+Notes:
+* Event cancellation is achieved by returning `'done` word from any event handler.
+* Event capturing is not enabled by default for performance reasons. Set `system/view/capturing?: yes` to enable it.
+
+### Global event handlers
+
+Before entering the event flow path, specific pre-processing can be achieved using the so-called "global event handlers". Following API is provided for adding and removing them.
 
 #### insert-event-func
 
@@ -812,6 +839,7 @@ Function | Description
 **do&#8209;events** | Launch an event loop (optionally just process pending events and return).
 **draw** | Render a Draw dialect block onto an image.
 **to&#8209;image** | Convert any rendered face to an image.
+**size&#8209;text** | Measure the size in pixels of a text in a face (taking the selected font into account).
 
 ***
 

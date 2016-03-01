@@ -1,3 +1,30 @@
+<table>
+  <tr>
+    <td>REP:</td>
+    <td>XXXX</td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td>Adding other Red dialects</td>
+  </tr>
+  <tr>
+    <td>Author(s):</td>
+    <td>Donald Tsang</td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td>Draft</td>
+  </tr>
+  <tr>
+    <td>Date Created:</td>
+    <td>?????</td>
+  </tr>
+  <tr>
+    <td>Date Last Actioned:</td>
+    <td></td>
+  </tr>
+</table>
+
 # Dialects of different programming paradigms
 * Red/Script that acts like Python-Django, Ruby-Rails, PHP and Perl
     * A programming dialect that has the syntax structure of Python or Ruby

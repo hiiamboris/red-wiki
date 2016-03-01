@@ -1,3 +1,30 @@
+<table>
+  <tr>
+    <td>REP:</td>
+    <td>XXXX</td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td>Adding JavaScript compiler target</td>
+  </tr>
+  <tr>
+    <td>Author(s):</td>
+    <td>Donald Tsang</td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td>Draft</td>
+  </tr>
+  <tr>
+    <td>Date Created:</td>
+    <td>?????</td>
+  </tr>
+  <tr>
+    <td>Date Last Actioned:</td>
+    <td></td>
+  </tr>
+</table>
+
 # Benefits
 
 * being able to use Node.js with its extensive set of ready to use frameworks for creation of web servers and other stuff. Targeting Android natively is good, but as it is a language does need extensive framework developers' support and the Red community obviously can't provide that kind of support to the extent of the JavaScript community with active members like Facebook. Targeting JavaScript would allow to "cheat" and use those frameworks in the manner CoffeScript or Dart uses them without having to re-implement anything in Red
