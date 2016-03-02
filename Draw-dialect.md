@@ -38,7 +38,7 @@ Most drawing commands require coordinates to be specified. The used 2D coordinat
 * x axis: increasing from left to right of the display.
 * y axis: increasing from up to bottom of the display.
 
-*(insert graphic here)*
+![](images/coord-system.png)
 
 ## Line
 
@@ -279,7 +279,7 @@ Sets the new line joining mode for line operations. Following values are accepte
 * `bevel`
 * `miter-bevel`
 
-*(include graphic)*
+![](images/line-join.png)
 
 ## Line-cap
 
@@ -296,7 +296,7 @@ Sets the new line's ending cap mode for line operations. Following values are ac
 * `square`
 * `round`
 
-*(include graphic)*
+![](images/line-cap.png)
 
 ## Anti-alias
 
