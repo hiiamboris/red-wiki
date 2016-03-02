@@ -318,10 +318,10 @@ When a new Draw session starts, the following default values are used:
 
 Property | Value
 ----- | --------
-background	|  `white`
+background	| `white`
 pen color	| `black`
 filling		| `off`
-anti-alias	| `off`
+anti-alias	| `on`
 font		| `none`
 line width	| `1`
 line join	| `miter`
