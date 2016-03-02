@@ -353,3 +353,65 @@ It is possible to render a Draw block directly to an image using the `draw` func
 **Description**
 
 Renders the provided Draw commands to an existing or a new image. The image value is returned by the function.
+
+# Graphics source code
+
+Here is the source code used for generating the graphics in this documentation (you can copy/paste it in a Red console to try/play/improve it):
+
+	Red [
+		Title:	"Graphics generator for Draw documentation"
+		Author: "Nenad Rakocevic"
+		Needs:	View
+	]
+
+	Arial: make font! [name: "Consolas" style: 'bold]
+	small: make font! [size: 9 name: "Consolas" style: 'bold]
+
+	save %line-cap.png draw 240x240 [
+		font Arial
+		text 20x220  "Flat"
+		text 90x220  "Square"
+		text 180x220 "Round"
+
+		line-width 20 pen gray
+		line-cap flat	line 40x40  40x200
+		line-cap square line 120x40 120x200
+		line-cap round	line 200x40 200x200
+
+		line-width 1 pen black
+		line 20x40  220x40
+		line 20x200 220x200
+	]
+
+	save %line-join.png draw 500x100 [
+		font Arial
+		text 10x20  "Miter"
+		text 170x20 "Square"
+		text 330x20 "Round"
+
+		line-width 20 pen gray
+		line-join miter line 140x20 40x80 140x80
+		line-join round line 300x20 200x80 300x80
+		line-join bevel line 460x20 360x80 460x80
+
+		line-join miter
+		line-width 1 pen black
+		line 140x20 40x80  140x80
+		line 300x20 200x80 300x80
+		line 460x20 360x80 460x80
+	]
+
+	save %coord-system.png draw 240x240 [
+		font small
+		text 5x5 "0x0"
+		line-width 2
+		line 20x20 200x20 195x16
+		line 200x20 195x24
+
+		line 20x20 20x200 16x195
+		line 20x200 24x195
+
+		font Arial
+		text 205x12 "X"
+		text 12x205 "Y"
+	]
