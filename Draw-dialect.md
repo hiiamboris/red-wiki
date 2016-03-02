@@ -108,7 +108,7 @@ Draws a polygon using the provided edges. The last point does not need to be the
     
 **Description**
 
-Draws a circle from the provided center and radius values. The circle can be distorted to form an ellipse by adding an optional integer indicating the radius along Y axis (the other radius argument becomes the X radius then).
+Draws a circle from the provided center and radius values. The circle can be distorted to form an ellipse by adding an optional integer indicating the radius along Y axis (the other radius argument then becomes the radius along X).
 
 ## Ellipse
 
