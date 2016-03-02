@@ -356,11 +356,12 @@ Renders the provided Draw commands to an existing or a new image. The image valu
 
 # Graphics source code
 
-Here is the source code used for generating the graphics in this documentation (you can copy/paste it in a Red console to try/play/improve it):
+The graphics in this documentation are generated using Red and Draw dialect, here is the source code (you can copy/paste it in a Red console to try/play/improve it):
 
 	Red [
 		Title:	"Graphics generator for Draw documentation"
 		Author: "Nenad Rakocevic"
+		File:   %draw-graphics.red
 		Needs:	View
 	]
 
