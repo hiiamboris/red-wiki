@@ -23,6 +23,7 @@ Table of Content:
 * [Sub blocks](#sub-blocks)
 * [Source position](#source-position)
 * [Draw function](#draw-function)
+* [Graphics source code](#graphics-source-code)
 
 # Abstract
 
@@ -282,6 +283,8 @@ Sets the new line joining mode for line operations. Following values are accepte
 * `miter-bevel`
 
 ![](images/line-join.png)
+
+_Note_: `miter-bevel` mode selects automatically one or the other joining mode depending on the miter length (See [this](https://msdn.microsoft.com/en-us/library/windows/desktop/ms534148(v=vs.85).aspx) for detailed explanation).
 
 ## Line-cap
 
