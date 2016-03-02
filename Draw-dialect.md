@@ -27,17 +27,19 @@ Table of Content:
 
 # Abstract
 
-Draw is a dialect (DSL) of Red language, which purpose is to provide a simple declarative way to specify 2D drawing operations. Such operations are expressed as lists of ordered commands (using blocks of values), which can be freely constructed and changed at run-time.
+Draw is a dialect (DSL) of Red language that provides a simple declarative way to specify 2D drawing operations. Such operations are expressed as lists of ordered commands (using blocks of values), which can be freely constructed and changed at run-time.
 
-Draw blocks can be rendered directly on an image using the `draw` function, or inside a View face using the `draw` facet (see [View documentation](https://github.com/red/red/wiki/Red-View-Graphic-System)).
+Draw blocks can be rendered directly on top of an image using the `draw` function, or inside a View face using the `draw` facet (see [View documentation](https://github.com/red/red/wiki/Red-View-Graphic-System)).
 
 # Commands
 
-Commands can be drawing instructions or settings for the drawing instructions. When a mode is set, it will affect all subsequent operations in the current Draw session.
+Commands can be drawing instructions or settings for the drawing instructions. When a mode is set, it will affect all subsequent operations in the current Draw session (or until changed).
 
-Most drawing commands require coordinates to be specified. The used 2D coordinate system is:
+Most drawing commands require coordinates to be specified. The 2D coordinate system used is:
 * x axis: increasing from left to right of the display.
 * y axis: increasing from up to bottom of the display.
+
+Some drawing commands require lengths to be specified. The length required is number of pixels.
 
 ![](images/coord-system.png)
 
@@ -61,11 +63,13 @@ Draws a line between two points. If more points are specified, additional lines 
 
     triangle <point> <point> <point>
     
-    <point> : coordinates of an edge (pair!).
+    <point> : coordinates of a vertex of the triangle (pair!).
+
+_(Note: A vertex is the point at which two lines meet. They are points where edges join.)_ 
     
 **Description**
 
-Draws a triangle from the three edges.
+Draws a triangle with edges between the supplied vertices.
 
 ## Box
 
@@ -80,7 +84,7 @@ Draws a triangle from the three edges.
     
 **Description**
 
-Draws a box using the top-left (first argument) and bottom-right (second argument) edge points. An optional radius can be provided for making the corners round.
+Draws a box using the top-left (first argument) and bottom-right (second argument) vertices. An optional radius can be provided for making round corners.
 
 ## Polygon
 
@@ -88,11 +92,11 @@ Draws a box using the top-left (first argument) and bottom-right (second argumen
 
     polygon <point> <point> ...
     
-    <point> : coordinates of an edge point (pair!).
+    <point> : coordinates of a vertex (pair!).
     
 **Description**
 
-Draws a polygon using the provided edges. The last point does not need to be the starting point, an extra line will be drawn anyway to close the polygon. Minimal number of points to be provided is 3.
+Draws a polygon using the provided vertices. The last point does not need to be the starting point, an extra line will be drawn anyway to close the polygon. Minimal number of points to be provided is 3.
 
 ## Circle
 
@@ -117,11 +121,11 @@ Draws a circle from the provided center and radius values. The circle can be dis
     ellipse <center> <radius>
     
     <center> : coordinates of the ellipse's center (pair!).
-    <radius> : radiuses of the circle (pair!).
+    <radius> : radii of the ellipse (pair!).
     
 **Description**
 
-Draws an ellipse from the provided center and radius values. The second pair argument combines radius along X and Y axes using a pair! value. 
+Draws an ellipse from the provided center and radii values. The second pair argument combines radius along X and radius along the Y axes using a pair! value. 
 
 _Note_: `ellipse` provide a more compact way to specify an ellipse compared to `circle`.
 
@@ -135,7 +139,7 @@ _Note_: `ellipse` provide a more compact way to specify an ellipse compared to `
     <center> : coordinates of the circle's center (pair!).
     <radius> : radius of the circle (integer!).
     <begin>  : starting angle in degrees (integer!).
-    <begin>  : ending angle in degrees (integer!).
+    <end>  : ending angle in degrees (integer!).
     
 **Description**
 
@@ -172,7 +176,7 @@ Four points allow more complex curves to be created.
 
 **Description**
 
-Draws a B-Spline curve from a sequence of points. At least 3 points are required to produce a spline. The optional `closed` keyword will draw an extra segment from end point to start point, in order to close the spline.
+Draws a B-Spline curve from a sequence of points. At least 3 points are required to produce a spline. The optional `closed` keyword will draw an extra segment from the end point to the start point, in order to close the spline.
 
 _Note_: 2 points are accepted, but they will produce only a straight line.
 
