@@ -33,7 +33,7 @@ Draw blocks can be rendered directly on an image using the `draw` function, or i
 
 # Commands
 
-Commands can be drawing instructions or options/modes setting for the drawing instructions. When a mode is set, it will affect all subsequent operations in the current Draw session.
+Commands can be drawing instructions or settings for the drawing instructions. When a mode is set, it will affect all subsequent operations in the current Draw session.
 
 Most drawing commands require coordinates to be specified. The used 2D coordinate system is:
 * x axis: increasing from left to right of the display.
@@ -53,7 +53,7 @@ List of Draw commands:
     
 **Description**
 
-Draws a line between two or more points.
+Draws a line between two points. If more points are specified, additional lines are drawn, connecting each point in the provided order.
 
 ## Triangle
 
@@ -61,11 +61,11 @@ Draws a line between two or more points.
 
     triangle <point> <point> <point>
     
-    <point> : coordinates of an edge point (pair!).
+    <point> : coordinates of an edge (pair!).
     
 **Description**
 
-Draws a triangle from the three edges provided.
+Draws a triangle from the three edges.
 
 ## Box
 
@@ -75,7 +75,7 @@ Draws a triangle from the three edges provided.
     box <top-left> <bottom-right> <corner>
     
     <top-left>     : coordinates of the top-left of the box (pair!).
-    <bottom-right> : coordinates of the top-left of the box (pair!).
+    <bottom-right> : coordinates of the bottom-right of the box (pair!).
     <corner>       : (optional) radius of the arc used to draw a round corner (integer!).
     
 **Description**
@@ -92,7 +92,7 @@ Draws a box using the top-left (first argument) and bottom-right (second argumen
     
 **Description**
 
-Draws a polygon using the provided edges. The last point does not need to be the starting point, an extra vertice will be drawn anyway to close the polygon. Minimal number of points to be provided is 3.
+Draws a polygon using the provided edges. The last point does not need to be the starting point, an extra line will be drawn anyway to close the polygon. Minimal number of points to be provided is 3.
 
 ## Circle
 
