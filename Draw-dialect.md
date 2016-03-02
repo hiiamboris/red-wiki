@@ -40,6 +40,8 @@ Most drawing commands require coordinates to be specified. The used 2D coordinat
 
 ![](images/coord-system.png)
 
+List of Draw commands:
+
 ## Line
 
 **Syntax**
