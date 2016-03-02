@@ -391,7 +391,7 @@ The graphics in this documentation are generated using Red and Draw dialect, her
 		text 330x20 "Round"
 
 		line-width 20 pen gray
-		line-join miter line 140x20 40x80 140x80
+		line-join miter line 140x20 40x80  140x80
 		line-join round line 300x20 200x80 300x80
 		line-join bevel line 460x20 360x80 460x80
 
