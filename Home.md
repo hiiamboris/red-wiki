@@ -9,7 +9,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
     * [Overview](https://github.com/red/red/wiki/Red-View-architecture)
     * [View engine](https://github.com/red/red/wiki/Red-View-Graphic-System)
     * VID dialect
-    * Draw dialect
+    * [Draw dialect](https://github.com/red/red/wiki/Draw-dialect)
 * [[Redbin format specification|Redbin-specification]]
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
