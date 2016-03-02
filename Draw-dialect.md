@@ -392,8 +392,8 @@ The graphics in this documentation are generated using Red and Draw dialect, her
 	save %line-join.png draw 500x100 [
 		font Arial
 		text 10x20  "Miter"
-		text 170x20 "Square"
-		text 330x20 "Round"
+		text 170x20 "Round"
+		text 330x20 "Bevel"
 
 		line-width 20 pen gray
 		line-join miter line 140x20 40x80  140x80
