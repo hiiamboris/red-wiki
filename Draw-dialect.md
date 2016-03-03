@@ -239,7 +239,7 @@ Selects the font to be used for text printing. The font object is a clone of `fo
 
     pen <color>
     
-    <color> : new color to use for drawing (object! word!).
+    <color> : new color to use for drawing (tuple! word!).
 
 **Description**
 
@@ -252,7 +252,7 @@ Selects the color to be used for line drawing operations.
     fill-pen <color>
     fill-pen off
     
-    <color> : new color to use for filling (object! word!).
+    <color> : new color to use for filling (tuple! word!).
 
 **Description**
 
