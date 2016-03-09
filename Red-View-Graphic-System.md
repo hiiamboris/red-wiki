@@ -721,7 +721,7 @@ Actors are handler functions for View events. They are defined in an free-form o
     face    : face object which receives the event
     event   : event value.
 
-In addition to the GUI events, it is possible to define an `on-create` actor which will be called when the face is shown for the first time, just before system resources are allocated for it.
+In addition to the GUI events, it is possible to define an `on-create` actor which will be called when the face is shown for the first time, just before system resources are allocated for it. Unlike other actors, `on-create` has only one argument, `face`.
 
 **Return value**
 
