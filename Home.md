@@ -1,4 +1,4 @@
-##Welcome to the Red wiki!
+##Welcome to the Red language wiki!
 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red .
 
