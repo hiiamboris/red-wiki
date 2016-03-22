@@ -559,7 +559,7 @@ An actor can be hooked to a face by specifying a literal block value or an actor
 
 **Description**
 
-It is possible to specify actors in a simplified way by providing just the body block of the actor, the spec block been implicit. The actor function gets constructed then and added to the face's `actor` facet. Several actors can be specified that way.
+It is possible to specify actors in a simplified way by providing just the body block of the actor, the spec block being implicit. The actor function gets constructed then and added to the face's `actor` facet. Several actors can be specified that way.
 
 The created actor function full specification is:
 
