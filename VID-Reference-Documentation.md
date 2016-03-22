@@ -433,7 +433,7 @@ Wrap the face's text when displaying.
 
 **Syntax**
 
-    wrap
+    no-wrap
     
 **Description**
 
