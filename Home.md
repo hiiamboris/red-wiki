@@ -10,6 +10,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
     * [View engine](https://github.com/red/red/wiki/Red-View-Graphic-System)
     * [VID dialect](https://github.com/red/red/wiki/VID-Reference-Documentation)
     * [Draw dialect](https://github.com/red/red/wiki/Draw-dialect)
+    * Reactive GUI programming
 * [[Redbin format specification|Redbin-specification]]
 * [CALL function](https://github.com/red/red/wiki/Reference-Call)
 * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
