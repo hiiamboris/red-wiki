@@ -127,7 +127,11 @@ Defaults:
 * spacing: `10x10`
 * direction: `across`
 
-(insert graphic here)
+This is how faces are laid out in `across` mode:
+![](images/across.png)
+
+This is how faces are laid out in `below` mode:
+![](images/below.png)
 
 ***
 ## across
