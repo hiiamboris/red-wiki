@@ -42,6 +42,10 @@ Table of Contents:
     * [disabled](#disabled)
   * [Datatypes](#datatypes)
   * [Actors](#actors)
+* [Panels](#panels)
+  * [panel](#panel)
+  * [group-box](#group-box)
+  * [tab-panel](#tab-panel)
 * [Styling](#styling)
   * [style](#style)
   
@@ -576,6 +580,61 @@ The valid list of event names can be found [here](https://github.com/red/red/wik
 
 When a block is passed without any actor name prefix, the default actor for the face type is created according to the definitions [here](https://github.com/red/red/blob/master/modules/view/styles.red).
 
+# Panels
+
+It is possible to define child panels for grouping faces together, and eventually applying specific styles. The panel-class face types from View are supported in VID with a specific syntax:
+
+## panel
+
+**Syntax**
+
+    panel <divider> <options> [<body>]
+
+    <divider> : optional number of row or columns (integer!).
+    <options> : optional list of settings for the panel.
+    <body>    : panel's VID content description (block!).
+	
+**Description**
+
+Constructs a child panel inside the current container, where the content is another VID block. A divider argument can be provided, setting a grid-mode layout:
+* if the direction is `across`, divider represents number of columns.
+* if the direction is `below`, divider represents number of rows.
+
+***
+## group-box
+
+**Syntax**
+
+    group-box <divider> <options> [<body>]
+
+    <divider> : optional number of row or columns (integer!).
+    <options> : optional list of settings for the panel.
+    <body>    : panel's VID content description (block!).
+	
+**Description**
+
+Constructs a child group-box panel inside the current container, where the content is another VID block. A divider argument can be provided, setting a grid-mode layout:
+* if the direction is `across`, divider represents number of columns.
+* if the direction is `below`, divider represents number of rows.
+
+_Note_: Providing a string! value as option will set the group-box title text.
+
+***
+## tab-panel
+
+**Syntax**
+
+    tab-panel <options> [<name> <body>...]
+
+    <options> : optional list of settings for the panel.
+    <name>    : a tab's title (string!).
+    <body>    : a tab's content as VID description (block!).
+	
+**Description**
+
+Constructs a tab-panel panel inside the current container. The spec block must contain a pair of name and content description for each tab. Each tab's content body is a new child panel face, acting as any other panels.
+
+***
 # Styling
 
 ## style
