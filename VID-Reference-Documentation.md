@@ -564,7 +564,7 @@ tuple!		| Specifies the color of the face's background (where applicable).
 string!		| Specifies the text to be displayed by the face.
 percent!	| Sets the `data` facet (useful for `progress` and `slider` types).
 image!		| Sets the image to be displayed as face's background (where applicable).
-url!		| Loads the resource pointed to by the URL.
+url!		| Loads the resource pointed to by the URL, then process the resource according to its loaded type.
 block!		| Sets the action for the default event of the face. For panels, specifies their content.
 char!		| *(reserved for future use)*.
 
