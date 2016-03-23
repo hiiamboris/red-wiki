@@ -492,7 +492,19 @@ Sets the current font name for the face's text.
 ***
 ### react
 
-*to be documented*
+This keyword can be used both as a face option or as a global keyword. Arbitrary number of `react` instances can be used.
+
+**Syntax**
+
+    react [<body>]
+
+    <body> : regular Red code (block!).
+    
+**Description**
+
+Creates a new reactor from the body block. When `react` is used as a face option, the body can refer to the current face using `face` word. When `react` is used globally, target faces need to be accessed using a name.
+
+_Note_: Reactors are part of the reactive programming support in View, which documentation is pending. In a nutshell, the body block can describe one or more relations between faces properties using paths. Set-path setting a face property are processed as *target* of the reactor (the face to update), while path accessing a face property are processed as *source* of the reactor (a change on a source triggers a refresh of the reactor's code).
 
 ***
 ### loose
