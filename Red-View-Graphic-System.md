@@ -326,7 +326,7 @@ Event type | Handler | Description
 `change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
-* number of visible items cannot be yet defined by user.
+* number of visible items cannot yet be defined by user.
 
 ***
 
@@ -352,7 +352,7 @@ Event type | Handler | Description
 `change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
-* number of visible items cannot be yet defined by user.
+* number of visible items cannot yet be defined by user.
 
 ***
 
@@ -378,7 +378,7 @@ Event type | Handler | Description
 `change` | `on-change` | Occurs after a `select` event. `selected` facet refers to the **new** selected entry index.
 
 Notes:
-* number of visible items cannot be yet defined by user.
+* number of visible items cannot yet be defined by user.
 
 ***
 
