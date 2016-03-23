@@ -590,7 +590,7 @@ Notes:
 
 Face objects rely on the Red ownership system to bind the object with the series used in facets, so that any change in one of the facet (even a deep change) is detected by the face object and processed according to the current synchronization mode (realtime or deferred).
 
-On the other side, changes made to the rendered graphic objects are reflected instantly in the corresponding facets. For example, typing in a `field` face will reflect the input in the `text` facet in live.
+On the other side, changes made to the rendered graphic objects are reflected instantly in the corresponding facets. For example, typing in a `field` face will reflect the input in the `text` facet in live mode.
 
 This two-way binding simplifies the interaction with the graphic objects for the programmer, without the need of any specific API. Modifying the facets using the series actions is enough.
 
