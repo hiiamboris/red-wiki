@@ -239,11 +239,14 @@ A face can be inserted in the layout, at the current position, by just using the
 
 **Syntax**
 
-	<name> <options>
+	<name>: <type> <options>
 	
-	<name>    : a valid face type or style name (word!).
+	<name>    : optional name for the new component (set-word!).
+	<type>    : a valid face type or style name (word!).
 	<options> : optional list of options.
-	
+
+If a name is provided, the word will reference the `face!` object created by VID from the face description.
+
 Default values are provided for each face type or style, so a new face can be used without having to specify any option. When options are required, the following sections are describing the different types of accepted options:
 
 * Keywords
