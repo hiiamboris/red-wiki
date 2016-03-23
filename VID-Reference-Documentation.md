@@ -14,7 +14,7 @@ Table of Content:
   * [at](#at)
   * [pad](#pad)
   * [do](#do)
-* [Faces definition](faces-definition)
+* [Faces definition](#faces-definition)
   * [Keywords](#keywords)
     * [left](#left)
     * [center](#center)
