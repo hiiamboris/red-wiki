@@ -124,7 +124,7 @@ By default, VID places the faces in the container face according to simple rules
 
 Defaults:
 * origin: `10x10`
-* spacing: `10x10`
+* space: `10x10`
 * direction: `across`
 
 This is how faces are laid out in `across` mode:
