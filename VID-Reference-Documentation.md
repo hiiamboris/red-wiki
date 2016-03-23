@@ -1,4 +1,4 @@
-Table of Content:
+Table of Contents:
 * [Overview](#overview)
 * [Code structure](#code-structure)
 * [Panel settings](#panel-settings)
@@ -71,9 +71,9 @@ Typical VID block of code has the following structure:
 
 * **panel settings**: settings which affect the container object (could be a panel or a window).
 
-* **layout description**: layout positionning commands, styles definition and faces description.
+* **layout description**: layout positioning commands, style definitions and face descriptions.
 
-_Note_: All sections are optional, there is no mandatory content to provide in a VID block.
+_Note_: All sections are optional, there is no mandatory content that must be provided in a VID block.
 
 # Panel settings
 
@@ -164,7 +164,7 @@ Sets the layout direction to vertical, from top to bottom.
     
 **Description**
 
-Returns the position to the next row or column of faces, depending of the current layout direction.
+Moves the position to the next row or column of faces, depending of the current layout direction.
 
 ***
 ## space
@@ -298,7 +298,7 @@ Aligns the face's text to right side.
     
 **Description**
 
-Align vertically the face's text to `top`.
+Vertically align the face's text to `top`.
 
 ***
 ### middle
@@ -309,7 +309,7 @@ Align vertically the face's text to `top`.
     
 **Description**
 
-Align vertically the face's text to `middle`.
+Vertically align the face's text to `middle`.
 
 ***
 ### bottom
@@ -320,7 +320,7 @@ Align vertically the face's text to `middle`.
     
 **Description**
 
-Align vertically the face's text to `bottom`.
+Vertically align the face's text to `bottom`.
 
 ***
 ### bold
