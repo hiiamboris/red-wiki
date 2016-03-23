@@ -104,7 +104,7 @@ Sets the title text of the container face.
     
 **Description**
 
-Sets the size of the container face.
+Sets the size of the container face. If the size is not explicitly provided, the container's size is automatically calculated according to fit its content.
 
 ***
 ## backdrop
@@ -582,7 +582,9 @@ When a block is passed without any actor name prefix, the default actor for the 
 
 # Panels
 
-It is possible to define child panels for grouping faces together, and eventually applying specific styles. The panel-class face types from View are supported in VID with a specific syntax:
+It is possible to define child panels for grouping faces together, and eventually applying specific styles. The size of the new panel, if not specified explicitly, is automatically calculated according to fit its content.
+
+The panel-class face types from View are supported in VID with a specific syntax:
 
 ## panel
 
