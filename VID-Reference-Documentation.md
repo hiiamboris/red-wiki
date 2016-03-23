@@ -1,7 +1,7 @@
 Table of Contents:
 * [Overview](#overview)
 * [Code structure](#code-structure)
-* [Panel settings](#panel-settings)
+* [Container settings](#container-settings)
   * [title](#title)
   * [size](#size)
   * [backdrop](#backdrop)
@@ -69,17 +69,17 @@ _Note_: use `help view` and `help layout` from Red's console to see how to proce
 Typical VID block of code has the following structure:
 
 	[
-	    <panel settings>
+	    <container settings>
 	    <layout description>
 	]
 
-* **panel settings**: settings which affect the container object (could be a panel or a window).
+* **container settings**: settings which affect the container object (could be a panel or a window).
 
 * **layout description**: layout positioning commands, style definitions and face descriptions.
 
 _Note_: All sections are optional, there is no mandatory content that must be provided in a VID block.
 
-# Panel settings
+# Container settings
 
 ## title
 
