@@ -5,7 +5,7 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
 ###Reference documentation:
-*Disclaimer: following documents are "for reference", to be used by code contributors and writers to produce user-oriented documentations.*
+*Disclaimer: following documents are "for reference", to be used by code contributors and writers to produce user-oriented documentation and tutorials.*
 
 * Red/Core language
     * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
