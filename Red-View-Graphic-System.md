@@ -599,7 +599,7 @@ Example:
     view [
     	list: text-list data ["John" "Bob" "Alice"]
     	button "Add" [append list/data "Sue"]
-    	button "Change" [lowercase list/data/1]
+    	button "Change" [list/data/1: lowercase list/data/1]
     ]
 
 # Events
