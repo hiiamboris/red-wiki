@@ -259,6 +259,8 @@ Default values are provided for each face type or style, so a new face can be us
 
 All options can be specified in arbitrary order, following the face or style name. A new face name or a layout keyword marks the end of the options list for a given face.
 
+_Note_: `window` cannot be used as a face type.
+
 ## Keywords
 
 ### left
