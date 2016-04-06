@@ -12,3 +12,8 @@ https://gist.github.com/d414bbbbc5c3e72fbf6e
 Join and reduce strings
 
 https://gist.github.com/iArnold/a9e947cee25d73d4c2a2
+
+### ALERT Window example
+Create a modal popup window 
+
+https://gist.github.com/iArnold/fb64c0c27cef99675c0cdf87a495ab31
