@@ -607,7 +607,7 @@ The panel-class face types from View are supported in VID with a specific syntax
     panel <divider> [<options>] [<body>]
 
     <divider> : optional number of row or columns (integer!).
-    <options> : optional list of settings for the panel.
+    <options> : optional list of settings for the panel (block!).
     <body>    : panel's VID content description (block!).
 	
 **Description**
