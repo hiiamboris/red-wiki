@@ -604,17 +604,18 @@ The panel-class face types from View are supported in VID with a specific syntax
 
 **Syntax**
 
-    panel <divider> <options> [<body>]
+    panel <options> [<content>]
 
-    <divider> : optional number of row or columns (integer!).
     <options> : optional list of settings for the panel.
-    <body>    : panel's VID content description (block!).
-	
+    <content> : panel's VID content description (block!).
+
 **Description**
 
-Constructs a child panel inside the current container, where the content is another VID block. A divider argument can be provided, setting a grid-mode layout:
-* if the direction is `across`, divider represents number of columns.
-* if the direction is `below`, divider represents number of rows.
+Constructs a child panel inside the current container, where the content is another VID block. In addition to other face options, an integer divider option can be provided, setting a grid-mode layout:
+
+* if the direction is across, divider represents number of columns.
+* if the direction is below, divider represents number of rows.
+
 
 ***
 ## group-box
