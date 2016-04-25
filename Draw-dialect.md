@@ -118,16 +118,16 @@ Draws a circle from the provided center and radius values. The circle can be dis
 
 **Syntax**
 
-    ellipse <center> <radius>
+    ellipse <top-left> <size>
     
-    <center> : coordinates of the ellipse's center (pair!).
-    <radius> : radii of the ellipse (pair!).
+    <top-left> : coordinates of the ellipse's bounding box top-left point (pair!).
+    <size>     : size of the bounding box (pair!).
     
 **Description**
 
-Draws an ellipse from the provided center and radii values. The second pair argument combines radius along X and radius along the Y axes using a pair! value. 
+Draws an ellipse from the specified bounding box. The `size` argument represents the X and Y diameters of the ellipse.
 
-_Note_: `ellipse` provide a more compact way to specify an ellipse compared to `circle`.
+_Note_: `ellipse` provide a more compact and box-oriented way to specify a circle/ellipse compared to `circle` command.
 
 ## Arc
 
