@@ -137,7 +137,7 @@ _Note_: `ellipse` provide a more compact and box-oriented way to specify a circl
     arc <center> <radius> <begin> <end> closed
     
     <center> : coordinates of the circle's center (pair!).
-    <radius> : radius of the circle (integer!).
+    <radius> : radius of the circle (pair!).
     <begin>  : starting angle in degrees (integer!).
     <end>  : ending angle in degrees (integer!).
     
