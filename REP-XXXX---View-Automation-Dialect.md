@@ -203,6 +203,44 @@ The dialect would provide the ability to fully script Red View layouts. It would
       </span>
     </td>
   </tr>
+  <tr>
+    <td>scroll &lt;face-type&gt; &lt;word&gt; up|down|right|left &lt;number&gt;</td>
+    <td>
+      <p>&lt;face-type&gt;     - the type of face e.g. slider </p> 
+      <span>&lt;word&gt;       - word containing a reference to the face</span>
+      <span>&lt;number&gt;     - number of pixels to scroll</span>
+    </td>
+    <td>
+      <span>
+        Scroll the specified face in the specified direction.
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>scroll &lt;face-type&gt; &lt;word&gt; to top|bottom|right|left edge</td>
+    <td>
+      <p>&lt;face-type&gt;     - the type of face e.g. slider</p> 
+      <span>&lt;word&gt;       - word containing a reference to the face</span>
+    </td>
+    <td>
+      <span>
+        Scroll the specified face to the specified edge.
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>perform &lt;gesture&gt; over &lt;face-type&gt; &lt;word&gt;</td>
+    <td>
+      <p>&lt;gesture&gt;     - the type of gesture e.g. pinch zoom</p>
+      <p>&lt;face-type&gt;     - the type of face e.g. image</p> 
+      <span>&lt;word&gt;       - word containing a reference to the face</span>
+    </td>
+    <td>
+      <span>
+        Simulates the gesture over the specified face.
+      </span>
+    </td>
+  </tr>
 </table>
 
 ##Use Case
