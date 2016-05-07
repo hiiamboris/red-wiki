@@ -2,24 +2,9 @@
 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red .
 
-* [FAQ](https://github.com/red/red/wiki/FAQ)
+[FAQ](https://github.com/red/red/wiki/FAQ)
 
-###Reference documentation:
-*Disclaimer: following documents are "for reference", to be used by code contributors and writers to produce user-oriented documentation and tutorials.*
-
-* Red/Core language
-    * [Map! datatype](https://github.com/red/red/wiki/Map!-datatype)
-* Red/View
-    * [Overview](https://github.com/red/red/wiki/Red-View-architecture)
-    * [View engine](https://github.com/red/red/wiki/Red-View-Graphic-System)
-    * [VID dialect](https://github.com/red/red/wiki/VID-Reference-Documentation)
-    * [Draw dialect](https://github.com/red/red/wiki/Draw-dialect)
-    * Reactive GUI programming
-* [[Redbin format specification|Redbin-specification]]
-* [CALL function](https://github.com/red/red/wiki/Reference-Call)
-* Ownership system
-* [Coding Style Guide](https://github.com/red/red/wiki/Coding-Style-Guide)
-* [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
+[Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 
 ###Discussions:
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
