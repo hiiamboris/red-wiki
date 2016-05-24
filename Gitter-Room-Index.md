@@ -13,8 +13,11 @@ This room is dedicated for storing useful links.
 #### [red/red/code](https://gitter.im/red/red/code)
 This is the room for discussions relating to the Red/Code repository.
 
-#### [red/red/lisp](https://gitter.im/red/red/lisp)
-This room is for discussing the current and possible future influence of Lisp on Red.
+#### [red/mezz](https://gitter.im/red/mezz)
+This is the room for discussing mezzanine functions.
+
+#### [red/docs](https://gitter.im/red/docs)
+This is the room for discussing all about documenting Red.
 
 #### [red/red/char-datatype](https://gitter.im/red/red/char-datatype)
 This room is dedicated for discussing the char! datatype.
@@ -33,6 +36,9 @@ This room is dedicated for discussing set operations.
 
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
 This room is dedicated for discussing the vector! datatype.
+
+#### [red/red/lisp](https://gitter.im/red/red/lisp)
+This room is for discussing the current and possible future influence of Lisp on Red.
 
 #### [ren-data index](https://github.com/Ren-data/Ren/wiki/Gitter-Room-Index)
 A list of the rooms for discussing REN (REadable Notation).
