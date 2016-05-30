@@ -22,12 +22,249 @@ It might be nice to note (maybe we need tags we can easily list for various purp
 
 # Accepted
 
+    apply           ; But, PLEASE, a better way to propagate refinements
+    array           ; I rarely use this myself
+    build-markup    ; More general interpolation this is built on
+    call
+    collect-words
+    decode-cgi      ; when the time comes
+    delta-time      ; some form of profiling
+    echo 
+    forskip 
+    map-each 
+    now 
+    remove-each 
+    repend          ; Already implemented, R2-like.
+    sign? 
+    split           ; advanced version
+    Usage 
+    use 
+    get-env 
+    get-modes 
+    list-env 
+    set-env 
+    set-modes
+    open 
+    close
+    delete 
+    delete-dir 
+    exists? 
+    make-dir 
+    modified? 
+    query 
+    rename 
+    to-red-file     ; Already implemented
+    update 
+    deline 
+    enline 
+    cp 
+    dt
+    strict-not-equal?
+    bound?
+    browse
+    compress
+    decompress 
+    detab
+    entab 
+    free  
+    hsv-to-rgb      ; (NR) in View module       
+    input?          ; (NR) possible in a post 0.7.0 release
+    protect         ; (NR) will wait until module system is designed
+    unprotect       ; (NR) will wait until module system is designed
+    recycle 
+    rgb-to-hsv      ; (NR) in View module
+    script?
+    secure 
+    trace           ; (NR) probably with different options and output format(s)
+    closure 
+    closure?
+    more 
+    to-<datatype>
+    <datatype>?
+    confirm
+    editor 			; (NR) in GUI console
+    span?			; (NR) in View module
+    stylize 		; (NR) in View module
+
 # Potential
 
-abs             ; just an alias
+    abs             ; just an alias
+    assert
+    build-tag       ; (NR) I would rather support it in `to-tag`.
+    decode-url      ; (NR) I'm considering having such feature built in url! type.
+    default
+    dispatch        ; (NR) Not part of Rebol?
+    for             ; (NR) A better alternative would be welcome
+    found? 
+    in-dir          ; (NR) Never ever used it...use-cases?
+    join
+    maximum-of      ; rename to at-max or find-max
+    minimum-of      ; rename to at-min or find-min
+    mod 
+    reform 
+    rejoin 
+    remold 
+    throw-error 
+    throw-on-error 
+    info? 
+    size? 
+    dump-obj 
+    maximum     alias for max 
+    minimum     alias for min
+    alias
+    connected?      ; (NR) unsure this can be implemented in a reliable way
+    create-link     ; (NR) needs better API, maybe incorporate this feature in file:// and dir:// ports
+    decloak 
+    do-browser
+    encloak 
+    last?           ; (NR) should be renamed to `single?` or something better...
+    launch          ; (NR) API for running external executables might be redesigned (launch/run/call/...)
+    run             ; (NR) API for running external executables might be redesigned (launch/run/call/...)
+    native 
+    read-io
+    write-io
+    unbind          ; (NR) will wait until module system is designed
+    ajoin
+    invalid-utf? 
+    latin1?
+    license  
+    speed?
+    true?
+    utf?
+    sixth 
+    seventh 
+    eighth 
+    ninth 
+    tenth
+    parse-header 
+    parse-header-date 
+    parse-xml 
+    protect-system
+    get-net-info 
+    read-cgi 
+    read-net 
+    set-net 
+    to-idate        ; FORMAT will do this
+    to-itime        ; FORMAT will do this
+    to-relative-file 
+    upgrade        ; (NR) feature will probably be moved to command-line option and console's menu.
+
+    *-thru          ; (NR) very useful, though might need a nicer API?
+
+    alert
+    brightness?
+    caret-to-offset
+    offset-to-caret
+    clear-fields
+    confine
+    edge-size?
+    emailer
+    find-window
+    flash
+    notify 
+    get-style
+    in-window?
+    inform  
+    make-face
+    request 
+    request-color 
+    request-date 
+    request-download 
+    request-list 
+    request-pass 
+    request-text 
+    screen-offset?
+    set-font 
+    set-para 
+    set-style
+    win-offset?
 
 # Rejected
 
+    include         ; (NR) removed from this list as it's premature before module system is designed
+    access-os       ; (NR) needs a different user API, too Unix-specific
+    path            ; undefined in Rebol
+    dump-obj        ; (NR) feature already offered by `help`
+    send            ; (NR) word reserved for another use, also irrelevant until (E)SMTP gets added
+    build-attach-body ; (NR) irrelevant until (E)SMTP gets added, then probably supported with a different API
+
+    dh-compute-key          ; (NR) Features rather supported through a crypt:// port or a better API
+    dh-generate-key 
+    dh-make-key 
+    dsa-generate-key 
+    dsa-make-key 
+    dsa-make-signature 
+    dsa-verify-signature 
+    rsa-encrypt 
+    rsa-generate-key 
+    rsa-make-key
+
+    bind?              ; (NR) useless alias to `bound?`
+    crypt-strength?    ; (NR) irrelevant to Red
+    disarm             ; (NR) irrelevant in Red (removed from R3 too)
+
+    local-request-file ; (NR) irrevelant in Red, feature already offered by `request-file`
+
+    reb-launch         ; undefined in Rebol
+    textinfo           ; (NR) irrelevant in Red
+    as-binary          ; (NR) irrelevant in Red
+    as-string          ; (NR) irrelevant in Red
+    component?         ; (NR) irrelevant in Red
+    net-error          ; (NR) Rebol-specific
+    open-events        ; (NR) Rebol-specific
+    resolve            ; (NR) features available already using SET native
+    title-of           ; (NR) Rebol-specific (no clue what this does...)
+
+    ! 
+    != 
+    !== 
+    ++ 
+    -- 
+    cvs-date           ; (NR) irrelevant in Red
+    cvs-version        ; (NR) irrelevant in Red
+    do-boot            ; (NR) Rebol-specific
+    first+ 
+    funct              ; (NR) available as `function`
+    import-email 
+    install            ; (NR) Rebol-specific
+    link-app?          ; (NR) Rebol-specific
+    link-relative-path ; (NR) Rebol-specific
+    link?              ; (NR) Rebol-specific
+    parse-email-addrs  ; (NR) Rebol-specific, should be handled by Red through email! datatype
+    save-user          ; (NR) Rebol-specific
+    set-user-name      ; (NR) Rebol-specific
+    uninstall          ; (NR) Rebol-specific
+    write-user         ; (NR) Rebol-specific
+
+    choose             ; (NR) Rebol-specific
+    clear-face         ; (NR) Rebol-specific
+    deflag-face        ; (NR) Rebol-specific
+    desktop            ; (NR) Rebol-specific
+    do-face            ; (NR) Rebol-specific
+    do-face-alt        ; (NR) Rebol-specific
+    dump-pane          ; (NR) feature provided already with `dump-face`
+    find-key-face      ; (NR) Rebol-specific
+    flag-face          ; (NR) Rebol-specific
+    flag-face?         ; (NR) Rebol-specific
+    focus              ; (NR) Rebol-specific
+    get-face           ; (NR) Rebol-specific
+    hide               ; (NR) Rebol-specific
+    hide-popup         ; (NR) Rebol-specific
+    hilight-all        ; (NR) Rebol-specific
+    hilight-text       ; (NR) Rebol-specific
+    inside?            ; (NR) feature provided already with `within?`
+    outside?           ; (NR) feature provided already with `not overlap?`
+    reset-face         ; (NR) Rebol-specific
+    resize-face        ; (NR) Rebol-specific
+    scroll-drag        ; (NR) Rebol-specific
+    scroll-face        ; (NR) Rebol-specific
+    scroll-para        ; (NR) Rebol-specific
+    set-face           ; (NR) Rebol-specific
+    show-popup         ; (NR) Rebol-specific
+    unfocus            ; (NR) Rebol-specific
+    unlight-text       ; (NR) Rebol-specific
+    viewed?            ; (NR) Rebol-specific
+    viewtop            ; (NR) Rebol-specific
 
 ----------------------------------------------------------------
 
