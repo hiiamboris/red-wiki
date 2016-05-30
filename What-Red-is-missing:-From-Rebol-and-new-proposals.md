@@ -24,6 +24,8 @@ It might be nice to note (maybe we need tags we can easily list for various purp
 
 # Potential
 
+abs             ; just an alias
+
 # Rejected
 
 
