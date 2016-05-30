@@ -23,7 +23,7 @@ It might be nice to note (maybe we need tags we can easily list for various purp
 # Accepted
 
     apply           ; But, PLEASE, a better way to propagate refinements
-    array           ; I rarely use this myself
+    array           ; (GI) I rarely use this myself
     build-markup    ; More general interpolation this is built on
     call
     collect-words
@@ -94,9 +94,9 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     decode-url      ; (NR) I'm considering having such feature built in url! type.
     default
     dispatch        ; (NR) Not part of Rebol?
-    for             ; (NR) A better alternative would be welcome
+    for             ; (NR) A better alternative would be welcome. (GI) I will work on a proposal.
     found? 
-    in-dir          ; (NR) Never ever used it...use-cases?
+    in-dir          ; (NR) Never ever used it...use-cases? (GI) Batch file processing and searching.
     join
     maximum-of      ; rename to at-max or find-max
     minimum-of      ; rename to at-min or find-min
