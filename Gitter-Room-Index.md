@@ -34,6 +34,9 @@ This room is dedicated for discussing RIF file format.
 #### [red/red/sets](https://gitter.im/red/red/sets)
 This room is dedicated for discussing set operations.
 
+#### [red/tests](https://gitter.im/red/tests)
+The Red tests and Quick-Test.
+
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
 This room is dedicated for discussing the vector! datatype.
 
