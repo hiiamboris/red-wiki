@@ -27,3 +27,7 @@ https://gist.github.com/iArnold/fb64c0c27cef99675c0cdf87a495ab31
 Reduces and joins a block of values into a new string.
 
 https://gist.github.com/Dobeash/21e474a407ae2f2bce6adea5e12c9e24
+
+### ENTAB/DETAB
+
+https://gist.github.com/greggirwin/c56da21b5d2b5536424acff1fdc258a5
