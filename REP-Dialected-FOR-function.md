@@ -10,7 +10,7 @@
   </tr>
   <tr>
     <td>Author(s):</td>
-    <td>Gregg Irwin(s)</td>
+    <td>Gregg Irwin</td>
   </tr>
   <tr>
     <td>Status:</td>
