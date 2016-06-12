@@ -1,4 +1,4 @@
-#REP XXXX - \<FOR function\>
+#REP XXXX - \<FOR loop function\>
 <table>
   <tr>
     <td>REP:</td>
@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td>Title:</td>
-    <td>FOR function</td>
+    <td>FOR loop function</td>
   </tr>
   <tr>
     <td>Author(s):</td>
