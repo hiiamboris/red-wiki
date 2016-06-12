@@ -272,6 +272,11 @@ The purpose of this section is to allow members of the community to succinctly e
 This is not the place for long, discussion related to the proposal. The best place for such discussions would be the [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang) as the conversations can be linked to from the proposal. Such discussions can also be held on [Red Gitter Chat](https://gitter.im/red/red) though they will not be preserved in such a convenient form as the mailing list.
 
  __This section will be curated by the Red Team.__
+Author: Arnold van Hofwegen
+
+Date: 12 June 2016
+
+Point: Not against the proposal. The FOR you suggest is like a Swiss Army knife. Used for too many a thing. The LOOP and REPEAT loops are great in a sense that they are a perfect fit for their looping tasks. I agree a FOR type loop is missing in Red, but it is possible to use WHILE to work around this now. Also the first block of the WHILE could be put more to use. The FOR [X 1 10 2][] I can support. Though the suggested [X = 5 from 5 to 10 step 10] I think is 'bad'. It is bad because X = 5 suggest a C style assignment, where in Red and Rebol X = 5 will result in TRUE or FALSE (or maybe a none) giving rise to confusion to the very newcomers that will be pleased to find Red has a FOR. Just my 2 cents.
 
 Author: \<The real name of the author.\>
 
