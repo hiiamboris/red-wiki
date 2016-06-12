@@ -1,4 +1,4 @@
-#REP XXXX - \<Dialected FOR function\>
+#REP XXXX - \<FOR function\>
 <table>
   <tr>
     <td>REP:</td>
@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td>Title:</td>
-    <td>Dialected FOR function</td>
+    <td>FOR function</td>
   </tr>
   <tr>
     <td>Author(s):</td>
