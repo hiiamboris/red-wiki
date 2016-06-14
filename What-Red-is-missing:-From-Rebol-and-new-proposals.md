@@ -39,10 +39,10 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     split           ; advanced version
     Usage 
     use 
-    get-env 
+    get-env         ; DONE
     get-modes 
-    list-env 
-    set-env 
+    list-env        ; DONE
+    set-env         ; DONE
     set-modes
     open 
     close
@@ -53,7 +53,7 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     modified? 
     query 
     rename 
-    to-red-file     ; Already implemented
+    to-red-file     ; DONE
     update 
     deline 
     enline 
