@@ -5,7 +5,7 @@
 3. [FUNCTION vs FUNCT](#function-vs-funct)
 4. [LOCAL CONTEXTS FOR LOOPS](#local-contexts-for-loops)
 5. [BINDING TO SELF](#binding-to-self)
-
+6. [INVALID BLOCK SELECTOR RETURNS NONE](#invalid-block-selector-returns-none)
 
 ## COPY object!
 
@@ -75,3 +75,39 @@ R2: You can use either ```'self``` or ```self``` when binding a word or block to
 R3: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
 
 Red: R2: You can use only ```self``` when binding a word or block to the context of an object.
+
+
+## INVALID BLOCK SELECTOR RETURNS NONE
+
+Under Rebol, using an invalid index selector in a path throws an error, under Red it returns `none`. This is normally very helpful, but be careful if you're using words mapped to indexes and forget to make them a `get-word!` in the path. Used in calculations, e.g. following a `-` op, it can lead to error messages that aren't obvious:
+
+```
+*** Script error: none! type is not allowed here
+*** Where: -
+```
+
+R2/R3:
+```
+>> blk: [image img 100x100 300x300]
+== [image img 100x100 300x300]
+>> IDX_TL: 3
+== 3
+>> blk/IDX_TL
+** Script Error: Invalid path value: IDX_TL
+** Near: blk/IDX_TL
+>> blk/:IDX_TL
+== 100x100
+```
+
+Red:
+```
+red>> blk: [image img 100x100 300x300]
+== [image img 100x100 300x300]
+red>> IDX_TL: 3
+== 3
+red>> blk/IDX_TL
+== none
+red>> blk/:IDX_TL
+== 100x100
+```
+
