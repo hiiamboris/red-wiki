@@ -18,4 +18,6 @@ There are also the /push functions (mostly used by the compiler), which are hand
 
 Some natives have a `*` decoration added to their names. It's used when the word could conflict with an existing R/S definition, in such case, a decorated/undecorated pair needs to be added to `process-typecheck-directive` in %compiler.r.
 
+# Interrupting Tests
 
+If you interrupt the testing framework before it completes, you need to manually kill the remaining tasks before starting it again.
