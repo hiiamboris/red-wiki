@@ -21,3 +21,7 @@ Some natives have a `*` decoration added to their names. It's used when the word
 # Interrupting Tests
 
 If you interrupt the testing framework before it completes, you need to manually kill the remaining tasks before starting it again.
+
+# REBOL version during bootstrap phase
+
+If you're running Red tests and building Red from source, you may want to use 2.7.6 instead of 2.7.8. 2.7.8 has some `call` problems that the Red team tried to work around, but may still hang.
