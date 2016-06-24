@@ -25,3 +25,30 @@ If you interrupt the testing framework before it completes, you need to manually
 # REBOL version during bootstrap phase
 
 If you're running Red tests and building Red from source, you may want to use 2.7.6 instead of 2.7.8. 2.7.8 has some `call` problems that the Red team tried to work around, but may still hang.
+
+# Red compiler and dialects
+
+As of 0.6.0, the Red compiler can't process dialects. The interpreter doesn't have this issue, and the compiler will, correctly, complain.
+
+```
+quit?:  none
+canvas: none    ;<== Add this to get it to compile
+
+win: layout/tight [
+    size win-size
+    origin 0x0
+    canvas: base win-size 10.10.255 draw draw-blk
+]
+win/actors: context [
+	on-close:    ACTOR [quit?: yes]
+	on-resize:   ACTOR [] ;@@ Do what you want when face resized
+	on-resizing: ACTOR [] ;@@ Do what you want when face resizing
+]
+view/flags/no-wait win [resize]
+until [
+    ;@@ Update canvas draw block
+    show canvas
+    do-events/no-wait
+    quit?
+]
+```
