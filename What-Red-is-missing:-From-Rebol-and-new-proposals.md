@@ -38,7 +38,7 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     sign? 
     split           ; advanced version
     Usage 
-    use 
+    use             ; (GI) Condsider the value of this, name generality, and possible enhancements (e.g. spec block for 'words arg)
     get-env         ; DONE
     get-modes 
     list-env        ; DONE
