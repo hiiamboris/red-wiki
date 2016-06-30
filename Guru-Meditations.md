@@ -52,3 +52,8 @@ until [
     quit?
 ]
 ```
+
+# Reactive Cycles
+
+Reactions are pushed on a stack just before they are evaluated, so the engine can detect cycles in chained reactions and break them before they loop. So, it can update all the nodes in "graph D" without looping, regardless of which node triggers the change.
+
