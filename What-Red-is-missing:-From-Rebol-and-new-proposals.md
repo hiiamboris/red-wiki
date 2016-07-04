@@ -32,10 +32,10 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     echo 
     forskip 
     map-each 
-    now 
-    remove-each 
-    repend          ; Already implemented, R2-like.
-    sign? 
+    now             ; NOW/TIME DONE
+    remove-each     ; DONE
+    repend          ; DONE
+    sign?           ; DONE
     split           ; advanced version
     Usage 
     use             ; (GI) Condsider the value of this, name generality, and possible enhancements (e.g. spec block for 'words arg)
