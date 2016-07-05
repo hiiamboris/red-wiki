@@ -48,8 +48,8 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     close
     delete 
     delete-dir 
-    exists? 
-    make-dir 
+    exists?         ; DONE
+    make-dir        ; DONE
     modified? 
     query 
     rename 
