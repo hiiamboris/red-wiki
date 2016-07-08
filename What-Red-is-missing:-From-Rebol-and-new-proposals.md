@@ -102,7 +102,7 @@ It might be nice to note (maybe we need tags we can easily list for various purp
     minimum-of      ; rename to at-min or find-min
     mod 
     reform 
-    rejoin 
+    rejoin          ; DONE
     remold 
     throw-error 
     throw-on-error 
