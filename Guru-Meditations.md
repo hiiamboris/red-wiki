@@ -57,3 +57,18 @@ until [
 
 Reactions are pushed on a stack just before they are evaluated, so the engine can detect cycles in chained reactions and break them before they loop. So, it can update all the nodes in "graph D" without looping, regardless of which node triggers the change.
 
+# Define infix operators
+
+To create an infix function, you first need to make a prefix function with 2 arguments. Then you make an `op!` from that function.
+
+```
+make-range: function [a [integer!] b [integer!]][
+    collect [i: a - 1 until [keep i: i + 1 i = b]]
+]
+->: make op! :make-range
+
+2 -> 7
+== [2 3 4 5 6 7]
+```
+
+You can use any valid word as the the infix function name.
