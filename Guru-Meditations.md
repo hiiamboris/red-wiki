@@ -72,3 +72,24 @@ make-range: function [a [integer!] b [integer!]][
 ```
 
 You can use any valid word as the the infix function name.
+
+# Hide the cmd window under Windows, when running %.red scripts
+
+*From Steeve*
+
+*This will likely change as Red matures.*
+
+```
+console: system/view/screens/1/pane/-1
+console/visible?: false
+```
+
+The console is hidden, but still running. If you don't use `quit` to shut down your app, the attached cmd process is still alive. 
+
+To shut down properly when the user clicks the close box [x] on the window, you can use the `on-close` actor:
+
+```
+view/options [text "hi"][
+    actors: object [ on-close: func [face event][quit] ]
+]
+```
