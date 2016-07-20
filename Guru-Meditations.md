@@ -93,3 +93,9 @@ view/options [text "hi"][
     actors: object [ on-close: func [face event][quit] ]
 ]
 ```
+
+# Exposing Red/System macros in Red
+
+> I have some macro constants defined in Red/System. How can I reuse them in Red without redefining them again, in Red? 
+
+You can't re-use macros. They get inlined and disappear during compilation. Maybe, with some clever code, you could create a literal array containing your macros constants and have a function that converts them to a `red-block!` on startup. Then you expose that to Red. You would still need to write and maintain that literal array of macros manually (but you could put them close to your macros definitions in R/S).
