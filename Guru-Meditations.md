@@ -94,6 +94,11 @@ view/options [text "hi"][
 ]
 ```
 
+# Getting output in a shell when running a Red script
+
+Use `red --cli <scriptname>` to redirect output to the shell. By default, Red uses its own GUI console, not the system shell. `--cli` forces it to use the system shell.
+
+
 # Exposing Red/System macros in Red
 
 > I have some macro constants defined in Red/System. How can I reuse them in Red without redefining them again, in Red? 
