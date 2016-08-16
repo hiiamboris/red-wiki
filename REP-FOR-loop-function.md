@@ -58,6 +58,10 @@ Interface:
 
 ##Use Case
 
+The use case of a ```for``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
+
+Examples of how it would be used are:
+
 ```
 a: 1
 b: 5
@@ -242,11 +246,10 @@ b: 5
 - Easy to support date!, time!, and money! values when those are available
 
 ##Consequences
-- Not Rebol compatible (close, but args are passed in a block)
-- More complex interface
-- Complex implementation (~85 non-comment lines currently)
+- Reduces Rebol compatibility (close, but args are passed in a block)
+- May result in requests for more complexity in current function interfaces 
 - Could lead to lengthy debate on the dialect other design aspects
-- Harder to provide detailed dialect help in a short doc string
+- Hard to provide detailed dialect help in a short doc string
 
 ##Assistance
 I have an implementation and manual test suite to get the ball rolling.
