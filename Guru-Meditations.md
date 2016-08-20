@@ -104,3 +104,20 @@ Use `red --cli <scriptname>` to redirect output to the shell. By default, Red us
 > I have some macro constants defined in Red/System. How can I reuse them in Red without redefining them again, in Red? 
 
 You can't re-use macros. They get inlined and disappear during compilation. Maybe, with some clever code, you could create a literal array containing your macros constants and have a function that converts them to a `red-block!` on startup. Then you expose that to Red. You would still need to write and maintain that literal array of macros manually (but you could put them close to your macros definitions in R/S).
+
+
+# Modifying data before `load`ing it (Lisp reader macros)
+
+While you will normally use loadable Red data, there may be times where modifying the data before it's loaded will help. In Lisp, these are called *reader macros*. In Red, the way to do this is to patch the `load` function's body with logic that transforms the incoming data to the form you want when loaded. It may turn non-loadable data into loadable data, but it may also transform loadable data somehow.
+
+**Needs to be updated for recent builds.**
+
+```
+pre-load: func [src part][
+    parse src [any [remove comma insert #" " | skip]]
+]
+load: func spec-of :load body: body-of :load
+insert find body 'case bind [pre-load source part] :load
+
+[1,2,3,abd,"hello"]
+```
