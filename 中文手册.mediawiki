@@ -4,7 +4,7 @@
 [code]
 Red []
 print "hello　world"
-[code]
+[/code]
 
 高级语言:red 
 
