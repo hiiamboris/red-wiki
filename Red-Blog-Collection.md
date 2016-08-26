@@ -1,1 +1,1 @@
-* http://www.bitbegin.com/
+* http://www.bitbegin.com/  潮汐猎人的博客，Red的初级学习教程 
