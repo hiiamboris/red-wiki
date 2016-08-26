@@ -64,4 +64,4 @@ The following proposals were developed before the Red Enhancement Proposal proce
 *Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
 
 ##lang branch
-* 中文 [https://github.com/red/red/wiki/lang_simple_chinese]
+* 中文 (https://github.com/red/red/wiki/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C)
