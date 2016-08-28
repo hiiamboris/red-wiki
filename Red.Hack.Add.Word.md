@@ -39,8 +39,47 @@ libcall: make native! [[
 	#get-definition NAT_LIBCALL
 ]
 ```
-
-* 3. runtime/nativers.reds  增加用red/system编写的函数，然后注册到表中去
+* ３. runtime/nativers.reds 增加red/system的实现函数
 ```
+	; add by tomac
+	libopen*: func [ libname [c-string!]  return: [integer!] /local handle [integer!] ][
+		handle: _dlopen libname 0
+		handle
+	]
+
+	libclose*: func[ handle [integer!] return:[integer!] /local retval [integer!] ][
+		retval: _dlclose handle
+		retval
+	]
+
+	libcall*: func[ 
+				[variadic] 
+				symbol [c-string!]
+				count [integer!] list [int-ptr!] 
+				return: [integer!] /local retval [integer!] 
+		] 
+	[
+		handler
+		retval: _dlsym handle symbol 
+		retval
+	]
+
+	liberror*: func[ return:[red-string!] /local retval [c-string!] str [red-string!] ][
+		retval: _dlerror
+		str: as red-string! retval
+    	str
+	]
+	; end add by tomac
+
+```
+
+* ４. runtime/nativers.reds  注册到表中去
+```
+			; add by tomac
+			:libopen*
+			:libclose*
+			:libcall*
+			; end add by tomac
+
 ```
 
