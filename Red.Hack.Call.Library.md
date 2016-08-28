@@ -288,6 +288,53 @@ libcall: make native! [[
 
 ```
 
+6.使用样例  以下代码保存为  test.red
+```
+Red []
+handler: -1
+handler: libopen "libmysqlclient.so"
+
+print ["libopen=" handler lf]
+
+
+
+MYSQL: libcall handler "mysql_init" [ 0 ] 
+print ["mysql_init=" MYSQL lf]
+
+
+MYSQL2: libcall handler "mysql_real_connect" [ MYSQL "localhost" "root" "root" "mysql" 0 0 0 ]
+print ["mysql_real_connect=" MYSQL2 lf]
+
+
+i: libcall handler "mysql_close" [ MYSQL ]
+print ["mysql_close=" i lf]
+
+
+handler: libclose handler
+print ["libclose=" handler lf]
+```
+
+
 * 说明1：以上仅为实验性代码,未处理utf8等格式的字符串，实际还需要检测Red是运行在什么的字符集上，才能更稳定地工作。
 * 说明2: 要测试以让代码，在64环境中需要安装32位mysql运行库  apt install libmysqlclinet-dev:i386
-* 说明3:
+* 说明3: 可与我具体探讨 QQ:5379823  AUTHOR:tomac
+* 说明4: 以上代码基于  red-0.6.1 源码，下载该版本代码解压后，按上面的步骤修改，安装rebol解释器，在red源码目录运行以下指令
+```
+rebol %red.r "%environment/console/console.red" 
+./console test.red
+```
+
+所得的效果为
+```
+tomac-HP-ProBook-440-G3 red # ./console test.red
+libopen= 162265888         <= dlopen获得的句柄
+mysql_init= 162351600      <= mysql_init 产生的内存块
+mysql_real_connect= 162351600   <= 连接成功后，与输入同样的MYSQL结构指针
+mysql_close= 1                  <=  mysql_close 本身是void 此处返回值无意义
+libclose= 0                     <= 关闭运行库成功
+
+```
+
+
+
+
