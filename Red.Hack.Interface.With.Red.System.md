@@ -5,7 +5,7 @@ Red语言和Red/System之间的交互
 * Red和Red/System交互时，用red-XXX来交互
 * 用来交互的类型在  runtime/datatypes/structures.reds 中进行了定义
 * 原则：在R/S中使用 red-XXXX 类型来和  Red 中的数据类型相对应
-* 问题：不定参数也可以么？
+* 问题：不定参数也可以么？ 是的，可以但没有argc变量，可以用列表参数传入
 
 
 # 常见的数据类型
