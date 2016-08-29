@@ -68,7 +68,7 @@ libcall: make native! [[
 		r: as red-integer! libname
 		r/value: h
 		r/header: TYPE_INTEGER
-		r 
+		stack/set-last r 
 	]
 
 
@@ -86,7 +86,7 @@ libcall: make native! [[
 		h: _dlclose handle/value ; system/runtime/dl.reds
 		;利用输入的内存作返回
 		handle/value: h
-		handle
+		stack/set-last handle
 	]
 
 
@@ -249,7 +249,7 @@ libcall: make native! [[
 				print [ "ERROR: libcall only support max 8 params ." lf ]
 			]
 		] ; end of case 
-		r
+		stack/set-last r 
 	]
 
 
