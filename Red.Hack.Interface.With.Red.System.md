@@ -18,4 +18,16 @@ red-string!: alias struct! [
 	cache	[c-string!];-- UTF-8 cached version of the string (experimental)
 ]
 
+myfunc: routine [  
+    check? [logic!]
+    return: [red-string!]
+    /local
+        rstr [red-string!]
+        cstr [c-string!]
+
+][
+    rstr: alias red-string!  stack/arguments  ; 从参数栈中取得首个参数
+    cstr: alias c-string! string/rs_head  cstr ; 取得里面的数据
+    stack/set-last rstr
+]
 ```
