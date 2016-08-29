@@ -1,4 +1,4 @@
-1. 增加符号序列@runtime/macros.reds 第241行 插入以下内容
+* 1. 增加符号序列@runtime/macros.reds 第241行 插入以下内容
 ```
 	; add by tomac
 	NAT_LIBOPEN
@@ -9,7 +9,7 @@
 ```
 
 
-2. 增加Red中的Word声明@environment/natives.red  第860行即文件尾部插入以下内容
+* 2. 增加Red中的Word声明@environment/natives.red  第860行即文件尾部插入以下内容
 ```
 libopen: make native! [[
 		"打开共享库"
@@ -37,7 +37,7 @@ libcall: make native! [[
 ]
 ```
 
-3. 增加到词汇表 @ runtime/natives.reds 行 2853 插入以下内容
+* 3. 增加到词汇表 @ runtime/natives.reds 行 2853 插入以下内容
 ```
 			; add by tomac
 			:libopen*
@@ -47,7 +47,7 @@ libcall: make native! [[
 ```
 
 
-4. 增加Red/System的功能实现 @ runtime/natives.reds 尾部的!!!!中括号前!!!!插入以下内容
+* 4. 增加Red/System的功能实现 @ runtime/natives.reds 尾部的!!!!中括号前!!!!插入以下内容
 ```
 	; add by tomac
 	libopen*: func [ 
@@ -262,7 +262,7 @@ libcall: make native! [[
 ```
 
 
-5. 增加libdl的导入@system/runtime/libc.reds 尾部插入
+* 5. 增加libdl的导入@system/runtime/libc.reds 尾部插入
 ```
 #import [
     "libdl.so" stdcall [
@@ -288,7 +288,7 @@ libcall: make native! [[
 
 ```
 
-6.使用样例  以下代码保存为  test.red
+* 6.使用样例  以下代码保存为  test.red
 ```
 Red []
 handler: -1
