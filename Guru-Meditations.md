@@ -121,3 +121,26 @@ insert find body 'case bind [pre-load source part] :load
 
 [1,2,3,abd,"hello"]
 ```
+
+# Compiled versus interpreted behaviors
+
+From @SteeveGit, for fun, based on chat about a Factor-like `fry` func, produced a nice example. It shows how you can replace a compiled func with an interpreted one, to change certain behaviors.
+
+`Fry` using replace. Funny attempt. Replace can take the result of a function as substitution value. So in theory we could write.
+```
+fry: func [in out] [replace/all copy out '_ does [take in]]
+```
+Problem:
+```
+red>> fry [a b c][_ + _ - _ ]
+= [func [][take in] + func [][take in] - func [][take in]]
+```
+The function is not evaluated at each iteration as hoped (like Rebol). The reason is that Red uses a compiled version of the replace function. Compiled functions don't evaluate functions passed as arguments inside their body code, like interpreted functions do. Reconstructing replace from its source "activates" interpreted mode.
+```
+replace: func spec-of :replace body-of :replace
+```
+Now, we get the expected behavior:
+```
+red>> fry [a b c][_ + _ - _]
+== [a + b - c]
+```
