@@ -34,6 +34,8 @@ http://www.rebol.com/r3/docs/guide/code-loops.html shows that Rebol has a number
 
 The idea is to support *mainly* numeric loop constructs. Working like `foreach` and `forskip` is also possible, but the current implementation doesn't work correctly under Red. It is also not meant to be used in place of `forever`.
 
+*Note: I originally proposed this for Rebol under the name `loop`, because that is what it does, and it was designed to be interface compatible with Rebol's `loop` func.*
+
 Interface:
 
 - LOOP compatible
