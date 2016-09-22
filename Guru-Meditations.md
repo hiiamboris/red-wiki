@@ -147,6 +147,6 @@ red>> fry [a b c][_ + _ - _]
 
 # Keeping the CLI console open
 
-> My test.red has only one line halt. When I execute `red.exe --cli test.red` output is "(halted)" but console quits. If I execute the gui console red.exe it stays open as expected.
+> My test.red has only one line halt. When I execute `red.exe --cli test.red` output is "(halted)" but the console closes. If I execute the Red GUI console it stays open as expected.
 
-Add `--catch` on command-line, it will force the console to stay open, even on errors. It's designed that way so you can run Red scripts through the interpreter from shell scripts, without being annoyed by the console staying open on errors. The GUI console lives in a different environment, where it needs to stay open, otherwise you can't see error messages.
+Add `--catch` on the command-line, it will force the console to stay open, even on errors. It's designed that way so you can run Red scripts through the interpreter from shell scripts, without being annoyed by the console staying open on errors. The GUI console lives in a different environment, where it needs to stay open, otherwise you can't see error messages.
