@@ -1,6 +1,8 @@
 ##Welcome to the Red programming language wiki!
 
-Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red .
+Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
+
+Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
 
 [FAQ](https://github.com/red/red/wiki/FAQ)
 
