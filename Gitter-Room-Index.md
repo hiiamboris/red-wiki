@@ -53,10 +53,6 @@ This room is dedicated for discussing the char! datatype.
 This room is dedicated for discussing the map! datatype.
 
 
-
-#### [red/red/sets](https://gitter.im/red/red/sets)
-This room is dedicated for discussing set operations.
-
 #### [red/tests](https://gitter.im/red/tests)
 The Red tests and Quick-Test.
 
