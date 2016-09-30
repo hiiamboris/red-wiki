@@ -37,8 +37,12 @@ The motivation for this seems to be to ease adoption for people from other progr
 # TODO
 (Convert this to a range article?)
 ## Ranges
-Carl Sass: http://www.rebol.net/cgi-bin/r3blog.r?view=0058
-
+Carl Sassenrath: http://www.rebol.net/cgi-bin/r3blog.r?view=0058
+Gregg Irwin: http://www.rebol.org/ml-display-message.r?m=rmlGGHC
+### As a shortcut syntax
+Multiple data types?
+### Interval arithmetic
+Complex intervals
 ## Loops / collections at a higher level
 Catamorphisms anamorphisms..
 ```
