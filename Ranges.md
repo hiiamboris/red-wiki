@@ -33,3 +33,17 @@ Is very much different. It transparently handles the cases for multiple dimensio
 It doesn't have explicit looping, but uses other simple operators to get the result you want. It is an extreme case of trying to simplify things (which I personally like)
 ## Use case
 The motivation for this seems to be to ease adoption for people from other programming languages? I think @PeterWAWood and @iArnold raises good points. Would this help adoption like @greggirwin says or introduce more complexities? I'm more inclined to agree with Peter here. I myself am a bit conflicted. I'd still use `loop 5 [code]`, but perhaps `for` for most others, and others to operate on `series!`
+
+# TODO
+(Convert this to a range article?)
+## Ranges
+Carl Sass: http://www.rebol.net/cgi-bin/r3blog.r?view=0058
+
+## Loops / collections at a higher level
+Catamorphisms anamorphisms..
+```
+a -> [a]          ; create range/collection
+[a] -> a          ; fold / reduce
+a -> [a] -> a     ; map? (this can be optimized in some cases)
+[a] -> a -> [a]   ; or is this map? if so, what is the previous?
+```
