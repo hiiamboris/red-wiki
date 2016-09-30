@@ -28,9 +28,9 @@ From time to time, some structured deliberations are needed to allow the best de
 
 Proposals related to Red follow [The Red Enhancement Proposal Process](https://github.com/red/red/wiki/Red-Enhancement-Proposal-Process).
 
-####Stage 1 - Developed Proposals
+####Stage 1 - Submitted Proposals
 
-None so far.
+REP 0101 - [For Loop](https://github.com/red/red/wiki/REP-0101---For-loop-function)
 
 ####Stage 2 - Community Supported Proposals
 
