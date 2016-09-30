@@ -283,3 +283,10 @@ Author: \<The real name of the author.\>
 Date: \<The date added to the proposal.\>
 
 Point: \<The succinct reasons in support of or against the proposal.\>
+
+Author: Arnold van Hofwegen
+
+Date: 30 sep 2016
+
+Point: First I want to express the fact that I appreciate the work and thought Gregg has put into this proposal. Nevertheless I consider adding the FOR loop to be a bad addition. As mentioned there are plenty good alternatives available that do the job and invite the (new) user to come closer to the language and its proper use. FOR would be (mis)used in almost all cases where the existing alternatives should be used. I have the feeling the wish for FOR is given in by the wish to please developers coming from C / Java / name-it background. While it is good to have good adaptation for Red, this is not the way to achieve that. You might as well introduce IF/THEN/ELSE and remove EITHER next. Pleasing others is opening the way for complexity and bloatware mindedness again. I believe the adaption of Red should come from its own strengths, the "killer" apps we will make as soon as even more functionality will be embedded in the language. 
+Sorry, for the lengthy posting.
