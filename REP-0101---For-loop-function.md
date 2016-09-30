@@ -1,8 +1,8 @@
-#REP XXXX - \<FOR loop function\>
+#REP 0101 - For loop function
 <table>
   <tr>
     <td>REP:</td>
-    <td>&lt;Leave Blank&gt;</td>
+    <td>0101</td>
   </tr>
   <tr>
     <td>Title:</td>
@@ -14,15 +14,15 @@
   </tr>
   <tr>
     <td>Status:</td>
-    <td>Draft</td>
+    <td>Submitted</td>
   </tr>
   <tr>
     <td>Date Created:</td>
-    <td>&lt;Leave blank&gt;</td>
+    <td>30-Sep-2016</td>
   </tr>
   <tr>
     <td>Date Last Actioned:</td>
-    <td>&lt;Leave blank&gt;</td>
+    <td>30-Sep-2016</td>
   </tr>
 </table>
 
