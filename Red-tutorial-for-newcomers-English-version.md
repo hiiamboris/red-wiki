@@ -21,7 +21,7 @@ Let's suppose that you paid a windows licence, and that you already have Rebol i
         Author: "me"
         File:   %hello-1.reds
 ]
-print "hello, Red world ! Are you Reddy?"
+print "Hello, Red world! Are you Ready?"
 </code></pre>
 
 
@@ -179,9 +179,9 @@ Save as hello-2.red . Compile :
 and you get a windows executable, which you can launch with a double-click.
 
 
-## REPL, une console d'évaluation interactive:
+## REPL, taking control with the interactive console:
 
-REPL stands for read-eval-print loop.  An acronymic name for an interactive interpreter.  Like the Rebol console, yes.
+REPL stands for read-eval-print-loop.  An acronymic name for an interactive interpreter.  Like the Rebol console, yes.
 
 Among examples provided in the red/tests directory, there is a REPL console, which allows to enter and interactively test Red expressions.  This tool is so valuable that it deserves a whole wiki page (later on).
 
@@ -203,7 +203,7 @@ And also, for the happy Mac users :
 
 
 # For GNU/Linux users
-In the upper right corner of http://www.red-lang.org/ wabpage, a Red oblique sign invites you to fork.
+In the upper left corner of http://www.red-lang.org/ webpage, a Red oblique sign invites you to fork.
 
 Just follow this wise advice, which makes you get Red source code.  Either you follow the link, or, on the command line :
 
