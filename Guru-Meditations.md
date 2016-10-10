@@ -154,3 +154,27 @@ Add `--catch` on the command-line, it will force the console to stay open, even 
 # Cloning Objects
 
 `Make` clones referenced series (e.g., block! is a series) in an object, because this behavior best covers the common use-cases. Objects and maps are heavy datatypes. You most often want to keep a reference to those, not clone them. You can clone them manually using copy when you really need it. Trees of deep-copied objects or maps come from trying to bend the language to work in a purely OOP way. If Red you should model such trees using blocks.
+
+# libRed 
+
+As of 10-Oct-2016 the libRed branch has been merged to Master. The toolchain now behaves differently. Here is a brief overview:
+- Compilation of Red scripts now has two modes: development and release.
+
+- Development mode ("dev mode") is the default. Release mode is achieved with an extra `-r` or `--release` compilation option.
+
+- Dev mode first builds the Red runtime as a shared library (libRedRT) and then reuses it across compilations. It puts it in the working folder, along with some other temporary libRedRT* files. You can freely delete them at any time.
+
+- Dev mode provides much faster compilation, by compiling only user code and not the Red runtime library.
+If your Red script contains R/S code and relies on the Red runtime API, you should compile once with the `-u` option, to force a custom update of libRedRT (which takes a bit of time), then you can compile as usual and enjoy fast compilation.
+
+- Pure R/S scripts are unaffected by those changes, so they are handled as usual.
+
+- There are still some details to work on, but it is very usable already.
+
+Notes:
+
+LibRedRT is only for Red's runtime code + modules. Currently the list of modules is fixed, but it will be possible to set it manually soon. On Windows, you get View module precompiled in libRedRT.
+
+If you want to get back to old toolchain behavior, just specify `-r` on command-line.
+
+The Red GUI console can only be compiled in release mode (`-r`) right now. It cannot use libRedRT, due to some tight coupling with the runtime library (printing functions mutual dependencies).
