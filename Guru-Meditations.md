@@ -199,3 +199,4 @@ view [
     do [win: self win/selected: f1]
 ]
 ```
+Bonus information: `event/window` gives you a reference to the current window face in all event handlers.
