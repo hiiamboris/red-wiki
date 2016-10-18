@@ -178,3 +178,24 @@ LibRedRT is only for Red's runtime code + modules. Currently the list of modules
 If you want to get back to old toolchain behavior, just specify `-r` on command-line.
 
 The Red GUI console can only be compiled in release mode (`-r`) right now. It cannot use libRedRT, due to some tight coupling with the runtime library (printing functions mutual dependencies).
+
+# How to reference the current View container
+
+`Self` references the current face container from do blocks in `view`:
+```
+view [
+    f1: field on-enter [face/parent/selected: f2]
+    f2: field on-enter [face/parent/selected: f3]
+    f3: field
+    do [self/selected: f1]
+]
+```
+You can also set a word to that self reference for later use:
+```
+view [
+    f1: field on-enter [win/selected: f2]
+    f2: field on-enter [win/selected: f3]
+    f3: field
+    do [win: self win/selected: f1]
+]
+```
