@@ -200,3 +200,9 @@ view [
 ]
 ```
 Bonus information: `event/window` gives you a reference to the current window face in all event handlers.
+
+# Compiling with the debug flag
+
+> If I compile with the debug flag how can I make use of it?
+
+The debugging compilation mode is currently limited to Red/System (as of Oct 2016). When enabled, you get stack traces and more detailed error info on crashing. It also enables assert expressions and additional debugging functions for Red/System code: `dump4`, `dump1` or `hex-dump` for various hex dumps. Moreover, it also enables extra verbose outputs, for parts of the runtime where verbose is set to a value > 0 (e.g. for [interpreter](https://github.com/red/red/blob/master/runtime/interpreter.reds#L88), or [parse](https://github.com/red/red/blob/master/runtime/parse.reds#L14)). You can search in the Red source code for `#if debug?` pattern to see all the features unlocked by debugging mode.
