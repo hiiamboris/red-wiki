@@ -214,3 +214,9 @@ The debugging compilation mode is currently limited to Red/System (as of Oct 201
 `Word!` in Red is case insensitive. The word/symbol is the unique ID of a word, and calling `symbol/resolve word/symbol` we get the alias ID (the original ID) of a word. For example, we create a new word `abc`, it gets an ID, let's say 1000. Here `abc/symbol = 1000`. Then we create another word `ABC`, it also gets an ID, maybe 1001. So `ABC/symbol = 1001` because it's an alias of word `abc`, `symbol/resolve val/symbol` will get the alias ID which is 1000.
 
 If you don't want to do strict comparison, use `symbol/resolve val/symbol`.
+
+# Global vars in Red /System routines
+
+> When using routines is there a way to have 'global' variables? Accessible between routines or between functions within a routine?
+
+Use `#system` if you want your code to be under the internal Red namespace, or `#system-global` otherwise.
