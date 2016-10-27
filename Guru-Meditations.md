@@ -206,3 +206,11 @@ Bonus information: `event/window` gives you a reference to the current window fa
 > If I compile with the debug flag how can I make use of it?
 
 The debugging compilation mode is currently limited to Red/System (as of Oct 2016). When enabled, you get stack traces and more detailed error info on crashing. It also enables assert expressions and additional debugging functions for Red/System code: `dump4`, `dump1` or `hex-dump` for various hex dumps. Moreover, it also enables extra verbose outputs, for parts of the runtime where verbose is set to a value > 0 (e.g. for [interpreter](https://github.com/red/red/blob/master/runtime/interpreter.reds#L88), or [parse](https://github.com/red/red/blob/master/runtime/parse.reds#L14)). You can search in the Red source code for `#if debug?` pattern to see all the features unlocked by debugging mode.
+
+# symbol/resolve and val/symbol (in Red/System)
+
+> What's the difference between `val/symbol` and `symbol/resolve val/symbol`?
+
+`Word!` in Red is case insensitive. The word/symbol is the unique ID of a word, and calling `symbol/resolve word/symbol` we get the alias ID (the original ID) of a word. For example, we create a new word `abc`, it gets an ID, let's say 1000. Here `abc/symbol = 1000`. Then we create another word `ABC`, it also gets an ID, maybe 1001. So `ABC/symbol = 1001` because it's an alias of word `abc`, `symbol/resolve val/symbol` will get the alias ID which is 1000.
+
+If you don't want to do strict comparison, use `symbol/resolve val/symbol`.
