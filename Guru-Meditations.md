@@ -220,3 +220,9 @@ If you don't want to do strict comparison, use `symbol/resolve val/symbol`.
 > When using routines is there a way to have 'global' variables? Accessible between routines or between functions within a routine?
 
 Use `#system` if you want your code to be under the internal Red namespace, or `#system-global` otherwise.
+
+# Using Red/System contexts in Red routines
+
+You may write apps that are a combination of Red and Red/System code. They can be combined in various ways. For example, let's say you want to write use Red/System code inside a Red app. You can write a `routine`. The routine body is written in Red/System, not Red, and is able to access Red/System contexts (e.g. `_random`). You don't have to include those separately, as they are already included in the runtime.
+
+Rather than referencing them in a routine, you can put them in `#system-global`. If you do, you MUST prefix them with `red/` because the runtime library is enclosed in the `red/` context. You could also use a `#system` directive, which will place your code under the `red/` context for you.
