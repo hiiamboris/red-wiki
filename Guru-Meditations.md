@@ -8,7 +8,7 @@ tl;dr is that you should compile with `-d` for debug mode, and that simple tools
 
 # Red/System Boxing
 
-Boxing is the way to transform primitive R/S values into Red values, which are stored in 128-bit slots. The %runtime/datatype/structure.reds file gives you the slot layout for every Red datatype.
+Boxing is the way to transform primitive R/S values into Red values, which are stored in 128-bit slots. The %runtime/datatype/structures.reds file gives you the slot layout for every Red datatype.
 
 Every datatype has a way to "box" a primitive value into the higher-level type. The "/box" functions, which are present in some datatypes (but not all) give you a simple way to achieve it. Other types use /make-in or /make-at, but they are lower-level and require you to provide the destination slot pointer as argument.
 
