@@ -226,3 +226,25 @@ Use `#system` if you want your code to be under the internal Red namespace, or `
 You may write apps that are a combination of Red and Red/System code. They can be combined in various ways. For example, let's say you want to write use Red/System code inside a Red app. You can write a `routine`. The routine body is written in Red/System, not Red, and is able to access Red/System contexts (e.g. `_random`). You don't have to include those separately, as they are already included in the runtime.
 
 Rather than referencing them in a routine, you can put them in `#system-global`. If you do, you MUST prefix them with `red/` because the runtime library is enclosed in the `red/` context. You could also use a `#system` directive, which will place your code under the `red/` context for you.
+
+# What is the format for the `request-file` `/filter` refinement?
+
+```
+[
+    description-1 file-extensions-1
+    description-2 file-extensions-2
+    ......
+]
+description: (string!) Describes the filter (for example, "Text Files")
+file-extensions: (string!) Specifies the filter pattern (for example, "*.TXT"). 
+To specify multiple filter patterns for a single display string, 
+use a semicolon to separate the patterns (for example, "*.TXT;*.DOC;*.BAK")
+```
+
+For example:
+```
+request-file/filter [
+    "All Pictures Files" "*.jpg;*.png;*.gif"
+    "Red Source Files (red;reds)" "*.red;*.reds"
+]
+```
