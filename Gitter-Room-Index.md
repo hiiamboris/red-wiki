@@ -46,9 +46,6 @@ This room is for discussing the current and possible future influence of Lisp on
 
 ## Datatype Rooms
 
-#### [red/red/char-datatype](https://gitter.im/red/red/char-datatype)
-This room is dedicated for discussing the char! datatype.
-
 #### [red/red/map-datatype](https://gitter.im/red/red/map-datatype)
 This room is dedicated for discussing the map! datatype.
 
