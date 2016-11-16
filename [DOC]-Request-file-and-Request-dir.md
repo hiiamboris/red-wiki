@@ -25,8 +25,8 @@ You can provide file list filters to show only specific files.
     ......
 ]
 ```
-* description: (string!) Describes the filter (for example, "`Text Files`")
-* file-extensions: (string!) Specifies the filter pattern (for example, "`*.TXT`"). To specify multiple filter patterns for a single display string, use a semicolon to separate the patterns (for example, "`*.TXT;*.DOC;*.BAK`")
+* description: (**string!**) Describes the filter (for example, "`Text Files`")
+* file-extensions: (**string!**) Specifies the filter pattern (for example, "`*.TXT`"). To specify multiple filter patterns for a single display string, use a semicolon to separate the patterns (for example, "`*.TXT;*.DOC;*.BAK`")
 
 For example:
 
