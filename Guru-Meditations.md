@@ -248,3 +248,9 @@ request-file/filter [
     "Red Source Files (red;reds)" "*.red;*.reds"
 ]
 ```
+
+# Red/System native! values, #typecheck, and macros
+
+> In process-typecheck-directive in the compiler, certain built-ins are protected from macro replacement: unless, forever, does, prin, positive?, negative?, max, min. Why just these?
+
+Because the compiler needs them untouched in order to identify the function's name. In the future the R/S compiler could know the function's name, and pass it through the #typecheck directive. Only native! functions are use #typecheck directives and, among those, only the few above collide with existing macros.
