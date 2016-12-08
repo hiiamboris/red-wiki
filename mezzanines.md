@@ -10,12 +10,6 @@ You can use LOAD to load the value into a variable, but if you need a character 
 
 https://gist.github.com/d414bbbbc5c3e72fbf6e
 
-### REJOIN
-
-Join and reduce strings
-
-https://gist.github.com/iArnold/a9e947cee25d73d4c2a2
-
 ### ALERT Window example
 
 Create a modal popup window 
