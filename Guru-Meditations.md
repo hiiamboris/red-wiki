@@ -254,3 +254,11 @@ request-file/filter [
 > In process-typecheck-directive in the compiler, certain built-ins are protected from macro replacement: unless, forever, does, prin, positive?, negative?, max, min. Why just these?
 
 Because the compiler needs them untouched in order to identify the function's name. In the future the R/S compiler could know the function's name, and pass it through the #typecheck directive. Only native! functions are use #typecheck directives and, among those, only the few above collide with existing macros.
+
+# Calling Red from Red/System
+
+You can't use arbitrary Red code in a #call directive, e.g., `#call [make image! compose [(size) 255.255.255.255]]`. You can only call a single Red function, passing Red value pointers as arguments.
+
+# How do I get the address of a struct! member as a pointer! type?
+
+Red/System doesn't have that feature yet. Currently, you need to do manual pointer arithmetic to get the address.
