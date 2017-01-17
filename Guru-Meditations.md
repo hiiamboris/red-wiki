@@ -262,3 +262,15 @@ You can't use arbitrary Red code in a #call directive, e.g., `#call [make image!
 # How do I get the address of a struct! member as a pointer! type?
 
 Red/System doesn't have that feature yet. Currently, you need to do manual pointer arithmetic to get the address.
+
+# Why are contexts static?
+
+If you could remove words from contexts, bound words could refer to contexts where they are not defined anymore. For example:
+```
+obj: context [a: 2 b: [a + 1]]
+```
+If you remove `a` from that obj context, `[a + 1]` could not be evaluated. It would crash, unless you manually rebound `a` to another context.
+
+Moreover, the position of a word in the context symbol table is widely used internally, in both Red and Rebol implementations, so it would not be feasible to remove that "slot". In other words, you could "delete" the word from the object but the entry in the object's symbol table needs to stay or everything would collapse.
+
+For adding words, you can do that already using `make` to create a new, extended object. If you need a data structure where you can freely add/remove key/value pairs, object! is not the right type. Block!, map! or hash! are much better suited for that.
