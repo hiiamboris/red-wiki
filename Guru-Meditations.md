@@ -274,3 +274,7 @@ If you remove `a` from that obj context, `[a + 1]` could not be evaluated. It wo
 Moreover, the position of a word in the context symbol table is widely used internally, in both Red and Rebol implementations, so it would not be feasible to remove that "slot". In other words, you could "delete" the word from the object but the entry in the object's symbol table needs to stay or everything would collapse.
 
 For adding words, you can do that already using `make` to create a new, extended object. If you need a data structure where you can freely add/remove key/value pairs, object! is not the right type. Block!, map! or hash! are much better suited for that.
+
+# (GUI) Getting the tab-index of the selected tab inside a tab-panel
+
+In `on-change`, the `face/selected` property contains the previously selected tab index and `event/picked` contains the newly selected tab index. If the previous and new tab-index are the same, `event/picked` is 0.
