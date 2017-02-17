@@ -301,3 +301,14 @@ Here's the command to compile it:
 ```
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
 ```
+
+# Why is Red 32-bit only?
+
+Red is still in the alpha stage (as of early 2017). 64-bit support will come, but it will probably happen after 1.0 because of the effort needed. For 64-bit support, Red needs:
+
+1. A 64-bit emitter for x64 and ARM64.
+2. Support for 64-bit integers and pointers in Red/System.
+3. Changes to the value slots, which are 128 bits currently, to cope with 64-bit pointers.
+4. 64-bit executable file format support.
+
+1 & 4 would be trashed once we start working on Red 2.0, so it's not worth investing time in that right now. 2 could be partially implemented before 1.0. 3 requires significant changes in the runtime code, and an elegant solution to handle both 32 and 64-bit models within the same codebase.
