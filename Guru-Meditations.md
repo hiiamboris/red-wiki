@@ -279,3 +279,25 @@ For adding words, you can do that already using `make` to create a new, extended
 # (GUI) Getting the tab-index of the selected tab inside a tab-panel
 
 In `on-change`, the `face/selected` property contains the previously selected tab index and `event/picked` contains the newly selected tab index. If the previous and new tab-index are the same, `event/picked` is 0.
+
+# Call libRed from C (Mac OS)
+
+> Credit to Peter WA Wood
+
+As libRed is 32-bit, you must use gcc to compile the program so it can call libRed. 
+
+`red-in-c.c`
+```
+#include "<path to>/libRed/red.h"
+
+int main(int argc, const char * argv[]) {
+    redOpen();
+    redDo("print {Hello Red}");
+    redClose();
+    return 0;
+}
+```
+Here's the command to compile it:
+```
+$ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
+```
