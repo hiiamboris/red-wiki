@@ -36,6 +36,11 @@ RubyRed::redDo "print {Hello Ruby, I'm Red}"
 RubyRed::redClose
 ```
 
+# .NET CS binding (@koba-yu)
+
+https://github.com/koba-yu/LibRedSharp
+
+
 # Why is LIBRed 32-bit only?
 
 Red is still in the alpha stage (as of early 2017). 64-bit support will come, but it will probably happen after 1.0 because of the effort needed. It will come, though, because we need to be able to call libRed from 64-bit tools and language implementations. For 64-bit support, Red needs:
