@@ -280,7 +280,7 @@ For adding words, you can do that already using `make` to create a new, extended
 
 In `on-change`, the `face/selected` property contains the previously selected tab index and `event/picked` contains the newly selected tab index. If the previous and new tab-index are the same, `event/picked` is 0.
 
-# Call libRed from C (Mac OS)
+# Call libRed from C (Mac OS) and Ruby (Unbuntu32)
 
 > Credit to Peter WA Wood
 
@@ -300,6 +300,24 @@ int main(int argc, const char * argv[]) {
 Here's the command to compile it:
 ```
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
+```
+
+Here's an example of calling libRed from Ruby using the FFI Gem.
+
+```
+require 'ffi'
+
+module RubyRed
+  extend FFI::Library
+  ffi_lib "./libRed.so"
+  attach_function :redOpen, [], :void
+  attach_function :redClose, [], :void
+  attach_function :redDo, [ :string ], :pointer
+end
+
+RubyRed::redOpen
+RubyRed::redDo "print {Hello Ruby, I'm Red}"
+RubyRed::redClose
 ```
 
 # Why is Red 32-bit only?
