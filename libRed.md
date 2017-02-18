@@ -2,7 +2,7 @@
 
 As libRed is 32-bit, you must use gcc to compile the program so it can call libRed. 
 
-`red-in-c.c`
+`%red-in-c.c`
 ```
 #include "<path to>/libRed/red.h"
 
