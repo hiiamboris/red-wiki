@@ -40,6 +40,9 @@ RubyRed::redClose
 
 https://github.com/koba-yu/LibRedSharp
 
+# Testing libRed from LINQPad (@dander)
+
+https://gist.github.com/dander/a02c8837e12e70ec24396da3a18b1168
 
 # Why is LIBRed 32-bit only?
 
