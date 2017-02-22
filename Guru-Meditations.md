@@ -330,3 +330,29 @@ Red is still in the alpha stage (as of early 2017). 64-bit support will come, bu
 4. 64-bit executable file format support.
 
 1 & 4 would be trashed once we start working on Red 2.0, so it's not worth investing time in that right now. 2 could be partially implemented before 1.0. 3 requires significant changes in the runtime code, and an elegant solution to handle both 32 and 64-bit models within the same codebase.
+
+# PARSE COLLECT/KEEP options combined with TO/THRU rules
+
+- `keep` by itself collects a single value or a list of values in range-capturing mode
+- `keep pick` collects all the matched values separately
+- `keep copy <word>` collects all the matched values as a series (of same type as the input)
+
+For example:
+```
+red>> parse [x -- ] [collect [keep to '-- ]]
+== [x]
+red>> parse [x y -- ] [collect [keep to '-- ]]
+== [[x y]]
+
+red>> parse [x -- ] [collect [keep pick to '-- ]]
+== [x] 
+red>> parse [x y -- ] [collect [keep pick to '-- ]]
+== [x y]
+
+red>> parse [x -- ] [collect [keep copy _ to '-- ]]
+== [[x]]
+red>> parse [x y -- ] [collect [keep copy _ to '-- ]]
+== [[x y]]
+```
+
+> Note: `_` is just a word. Any word would do. Here the underscore signifies that we don't care about that word or its value, as it is immediately collected by keep.
