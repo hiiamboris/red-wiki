@@ -108,18 +108,35 @@ You can't re-use macros. They get inlined and disappear during compilation. Mayb
 
 # Modifying data before `load`ing it (Lisp reader macros)
 
-While you will normally use loadable Red data, there may be times where modifying the data before it's loaded will help. In Lisp, these are called *reader macros*. In Red, the way to do this is to patch the `load` function's body with logic that transforms the incoming data to the form you want when loaded. It may turn non-loadable data into loadable data, but it may also transform loadable data somehow.
-
-**Needs to be updated for recent builds.**
+While you will normally use loadable Red data, there may be times where modifying the data before it's loaded will help. In Lisp, these are called *reader macros*. Red has macros now as well, but if your needs are simple, you can use the `lexer/pre-load` feature to do it:
 
 ```
-pre-load: func [src part][
+; Remove commas
+system/lexer/pre-load: func [src part][
     parse src [any [remove comma insert #" " | skip]]
 ]
-load: func spec-of :load body: body-of :load
-insert find body 'case bind [pre-load source part] :load
 
-[1,2,3,abd,"hello"]
+>> [1,2,3,abd,"hello"]
+== [1 2 3 abd "hello"]
+```
+```
+; French-enabled console:
+system/lexer/pre-load: function [src part][
+    parse src [
+        any [
+            s: [
+                "affiche"         (new: "print")
+                | "si"              (new: "if")
+                | "tant que"    (new: "while")
+                | "pair?"        (new: "even?")
+                | "impair?"        (new: "odd?")
+            ] e: (s: change/part s new e) :s
+            | skip
+        ]
+    ]
+]
+
+i: 10 tant que [i > 0][si impair? i [affiche i] i: i - 1]
 ```
 
 # Compiled versus interpreted behaviors
