@@ -376,7 +376,8 @@ red>> parse [x y -- ] [collect [keep copy _ to '-- ]]
 
 # Bind, In, Contexts, and Words versus Symbols
 
-`Bind` or `in` rebind the argument value, other words (with same symbol) are unaffected. Each word is an instance of a symbol (internal symbol! type), and exists independently of all others. `Bind` and `in` return their arguments bound. You to use that rebound value:
+`Bind` or `in` rebind the argument value, other words (with same symbol) are unaffected. Each word is an instance of a symbol (internal `symbol!` type), and exists independently of all others. `Bind` and `in` return their arguments bound. 
+
 ```
 c: context [a: 2]
 new: bind 'a (context? in c 'a)
@@ -384,11 +385,12 @@ new: bind 'a (context? in c 'a)
 print get new      ; == 2
 print get in c 'a  ; == 2
 ```
+
 Also, you can use `:c` instead of `context? in c 'a`. They are strictly equivalent.
 
 You can picture a context as a table with two columns, the left one for symbols, the right one with value slots. `Word`s can exist in any value container (blocks for example). `Word` = `symbol + a context pointer`. Symbols are context-free, words are context-bound.
 
-> But why I can't change context pointer part to point to some different context, leaving older context entry as it was?
+> Why I can't change context pointer part to point to some different context, leaving older context entry as it was?
 Say, `a: 1` and `a: 2` are entries in different contexts. When I encounter a word which refers to `a: 1`, why can't I alter it to point to `a: 2`, leaving `a: 1` as it was without any changes?
 
 You can, you just need to pass a block instead of a single word value to bind. Words are scalar values, and are "passed by value" on the evaluation stack. If you bind a word directly, you are binding its instance on the stack, nothing else. When you pass a block, the words in the block are rebound. If you keep a reference to that block, you can then use the rebound words.
