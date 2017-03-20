@@ -397,7 +397,7 @@ You can, you just need to pass a block instead of a single word value to bind. W
 
 `Bind` called on a block traverses a block looking for `any-word!` values for which symbols exist in a context and binds these words to the context.
 
-`Bind` is simple, it simply processes the argument you provide on the stack. Since you can only get the return value back from the stack, if you pass a scalar value (`word!` value in this case) and do not use the returned value (rebound new word), your `bind` call will have no effect. If you want to keep it side-effect free on a `block!` argument, you can use `copy` or `bind/copy` (which avoids an extra internal copy).
+`Bind` is simple, it just processes the argument you provide on the stack. Since you can only get the return value back from the stack, if you pass a scalar value (`word!` value in this case) and do not use the returned value (rebound new word), your `bind` call will have no effect. If you want to keep it side-effect free on a `block!` argument, you can use `copy` or `bind/copy` (which avoids an extra internal copy).
 
 ```
 red>> a: 1
@@ -411,7 +411,7 @@ red>> get bind 'a ctx
 red>> a
 == 1
 ```
-`bind 'a ctx` returns a "new" `a bound to `ctx`, but has no other effect. The first 'a (`a: 1`) is still bound to the system context. `a` and `a` are two different words, which share the same symbol. Words are instances of symbols. A new word bound to the global context by default, no matter what you did to a previous word with the same spelling. 
+`bind 'a ctx` returns a "new" `a bound to ctx`, but has no other effect. The first 'a (`a: 1`) is still bound to the system context. `a` and `a` are two different words, which share the same symbol. Words are instances of symbols. A new word bound to the global context by default, no matter what you did to a previous word with the same spelling. 
 
 # Scalars and value slots
 
