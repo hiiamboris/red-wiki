@@ -373,3 +373,47 @@ red>> parse [x y -- ] [collect [keep copy _ to '-- ]]
 ```
 
 > Note: `_` is just a word. Any word would do. Here the underscore signifies that we don't care about that word or its value, as it is immediately collected by keep.
+
+# Bind, In, Contexts, and Words versus Symbols
+
+`Bind` or `in` rebind the argument value, other words (with same symbol) are unaffected. Each word is an instance of a symbol (internal symbol! type), and exists independently of all others. `Bind` and `in` return their arguments bound. You to use that rebound value:
+```
+c: context [a: 2]
+new: bind 'a (context? in c 'a)
+; 'new now refers to 'a in context c
+print get new      ; == 2
+print get in c 'a  ; == 2
+```
+Also, you can use `:c` instead of `context? in c 'a`. They are strictly equivalent.
+
+You can picture a context as a table with two columns, the left one for symbols, the right one with value slots. `Word`s can exist in any value container (blocks for example). `Word` = `symbol + a context pointer`. Symbols are context-free, words are context-bound.
+
+> But why I can't change context pointer part to point to some different context, leaving older context entry as it was?
+Say, `a: 1` and `a: 2` are entries in different contexts. When I encounter a word which refers to `a: 1`, why can't I alter it to point to `a: 2`, leaving `a: 1` as it was without any changes?
+
+You can, you just need to pass a block instead of a single word value to bind. Words are scalar values, and are "passed by value" on the evaluation stack. If you bind a word directly, you are binding its instance on the stack, nothing else. When you pass a block, the words in the block are rebound. If you keep a reference to that block, you can then use the rebound words.
+
+`Bind` called on a block traverses a block looking for `any-word!` values for which symbols exist in a context and binds these words to the context.
+
+`Bind` is simple, it simply processes the argument you provide on the stack. Since you can only get the return value back from the stack, if you pass a scalar value (`word!` value in this case) and do not use the returned value (rebound new word), your `bind` call will have no effect. If you want to keep it side-effect free on a `block!` argument, you can use `copy` or `bind/copy` (which avoids an extra internal copy).
+
+```
+red>> a: 1
+== 1
+red>> ctx: context [a: 2]
+== make object! [
+    a: 2
+]
+red>> get bind 'a ctx
+== 2
+red>> a
+== 1
+```
+`bind 'a ctx` returns a "new" `a bound to `ctx`, but has no other effect. The first 'a (`a: 1`) is still bound to the system context. `a` and `a` are two different words, which share the same symbol. Words are instances of symbols. A new word bound to the global context by default, no matter what you did to a previous word with the same spelling. 
+
+# Scalars and value slots
+
+Scalar values can fit in a value slot entirely (128-bits). Non-scalar values cannot, so they have a "value slot" part and one or several extra buffers. Those extra buffers are shared by default.
+
+Values in Red cannot exist outside a value container (`block!`, `paren!`, `map!`, `hash!`, `context!`, ...), even what you write in the console, the input is `load`ed as a block.
+
