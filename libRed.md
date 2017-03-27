@@ -18,7 +18,7 @@ Here's the command to compile it:
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
 ```
 
-#Call libRed from Ruby (Ubuntu32) using the FFI Gem
+# Call libRed from Ruby (Ubuntu32) using the FFI Gem
 
 ```
 require 'ffi'
