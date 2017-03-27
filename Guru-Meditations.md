@@ -419,3 +419,6 @@ Scalar values can fit in a value slot entirely (128-bits). Non-scalar values can
 
 Values in Red cannot exist outside a value container (`block!`, `paren!`, `map!`, `hash!`, `context!`, ...), even what you write in the console, the input is `load`ed as a block.
 
+# Red/System `either` as expression
+
+`Either` was never meant to be used as an expression, just a statement. The rules were relaxed it a bit, but the compiler can't handle it properly, so it will generate incorrect code in some cases (especially on ARM). It has to do with register allocation handling, so is not easily fixed. It would require a re-design of the entire code emitter, so it will have to wait for R/S 2.0. In the meantime, avoid typecasting on returned value from `either`. To be really safe, only use it as a statement, not an expression.
