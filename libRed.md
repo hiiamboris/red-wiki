@@ -1,6 +1,4 @@
-# Call libRed from C (macOS)
-
-As libRed is 32-bit, you must use gcc to compile the program so it can call libRed. 
+# Call libRed from C 
 
 `%red-in-c.c`
 ```
@@ -13,9 +11,21 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 ```
-Here's the command to compile it:
+
+## macOS
+Here's the command to compile it on macOS (As libRed is 32-bit, you must use gcc to compile the program so it can call libRed) :
 ```
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
+```
+
+## ubuntu32
+```
+gcc red-in-c.c -L ./ -l Red -I <path to>/libRed -o red-in-c
+```
+
+## Windows using the Tiny C Compiler
+```
+tcc red-in-c.c -L <path-to-dir-containing-libRed.dll>\ -lRed -o red-in-c.exe
 ```
 
 # Call libRed from Ruby (Ubuntu32) using the FFI Gem
