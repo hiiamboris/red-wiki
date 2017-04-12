@@ -28,6 +28,57 @@ gcc red-in-c.c -L ./ -l Red -I <path to>/libRed -o red-in-c
 tcc red-in-c.c -L <path-to-dir-containing-libRed.dll>\ -lRed -o red-in-c.exe
 ```
 
+# Call libRed dynamically from C (not linking to libRed)
+
+## macOS
+
+### Code
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <dlfcn.h>
+
+int main(int argc, const char *argv[]) {
+    
+    void *handle;
+    char *error;
+    void (*redOpen)();
+    void (*redDoFile)(char *);
+    void (*redClose)();
+    
+    handle = dlopen("<absolute-path-to>/libRed.dylib", RTLD_LAZY);
+    if (!handle) {
+        fputs(dlerror(), stderr);
+        exit(1);
+    }
+    redOpen = dlsym(handle, "redOpen");
+    if ((error = dlerror()) != NULL) {
+        fputs(error, stderr);
+        exit(1);
+    } 
+    redDoFile = dlsym(handle, "redDoFile");
+    if ((error = dlerror()) != NULL) {
+        fputs(error, stderr);
+        exit(1);
+    } 
+    redClose = dlsym(handle, "redClose");
+    if ((error = dlerror()) != NULL) {
+        fputs(error, stderr);
+        exit(1);
+    } 
+    
+    (*redOpen)();
+    (*redDoFile)("<path-to>/<file>.red");
+    (*redClose)();
+    
+    return(0);
+}
+```
+### Compilation (gcc)
+```text
+gcc -m32 -o <executable-filename> <source-file>.c -ldl
+
+```
 # Call libRed from Ruby (Ubuntu32) using the FFI Gem
 
 ```
