@@ -30,7 +30,7 @@ tcc red-in-c.c -L <path-to-dir-containing-libRed.dll>\ -lRed -o red-in-c.exe
 
 # Call libRed dynamically from C (not linking to libRed)
 
-## macOS
+## macOS & Ubuntu32
 
 ### Code
 ```c
@@ -46,7 +46,7 @@ int main(int argc, const char *argv[]) {
     void (*redDoFile)(char *);
     void (*redClose)();
     
-    handle = dlopen("<absolute-path-to>/libRed.dylib", RTLD_LAZY);
+    handle = dlopen("<absolute-path-to>/libRed.<dylib|so>", RTLD_LAZY);
     if (!handle) {
         fputs(dlerror(), stderr);
         exit(1);
