@@ -422,3 +422,37 @@ Values in Red cannot exist outside a value container (`block!`, `paren!`, `map!`
 # Red/System `either` as expression
 
 `Either` was never meant to be used as an expression, just a statement. The rules were relaxed it a bit, but the compiler can't handle it properly, so it will generate incorrect code in some cases (especially on ARM). It has to do with register allocation handling, so is not easily fixed. It would require a re-design of the entire code emitter, so it will have to wait for R/S 2.0. In the meantime, avoid typecasting on returned value from `either`. To be really safe, only use it as a statement, not an expression.
+
+# Return `logic!` when using `parse` with `collect`
+
+If you use a named collect as top collector, i.e., `collect set name`, `parse` will return the logic value and not the collected list:
+```
+html: {
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <div>
+      <u>Hello</u><b>World</b>
+    </div>
+  </body>
+</html>
+}
+
+ws: charset " ^-^/"
+tags: [
+    any [
+        ws
+        | "</" thru ">" break
+        | "<" copy name to ">" skip keep (load name) opt collect tags
+        | keep to "<"
+    ]
+]
+```
+```
+>> parse html [collect set result tags]
+== true
+>> result
+== [html [head [title ["Test"]] body [div [u ["Hello"] b ["World"]]]]]
+```
