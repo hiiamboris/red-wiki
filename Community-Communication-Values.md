@@ -16,12 +16,12 @@ Values members of the Red community should aspire to when communicating within t
 The following actions are explicitly forbidden:
 
 * Insulting, demeaning, hateful, or threatening remarks.
-* Discrimination based on age, disability, gender, nationality, race, religion,   sexuality, or similar personal characteristic.
+* Discrimination based on age, disability, gender, nationality, race, religion, sexuality, or similar personal characteristic.
 * Bullying or systematic harassment.
 * Unwelcome sexual advances.
 * Incitement to any of these.
 
-The Red communication channels are moderated, unrespectful behavior will lead to banning.
+The Red communication channels are moderated, disrespectful behavior will lead to banning.
 
-##Acknowledgements
+## Acknowledgements
 This document was based on the Code of Conduct from the Elixir and Go projects with parts derived from Django's Code of Conduct, Rust's Code of Conduct and the Contributor Covenant.
