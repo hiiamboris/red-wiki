@@ -21,9 +21,6 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Red by Example](http://www.red-by-example.org/index.html) at red-by-example.org
 * [Community Code Library](https://github.com/red/code)
 
-### Libraries
-* [SQLite](https://github.com/kealist/RS-fossil-mirror/tree/master/SQLite/) by @kealist
-
 ### Further Reading
 * [Red Language Blog](http://redlanguageblog.blogspot.co.uk/) by Mike Parr
 * [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
@@ -41,6 +38,9 @@ To read these feeds, you will need an RSS reader. There is a [Chrome Plugin](htt
 
 ### Contributing 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
+
+### Libraries
+* [SQLite](https://github.com/kealist/RS-fossil-mirror/tree/master/SQLite/) by @kealist
 
 ### Todo lists:
 * [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
