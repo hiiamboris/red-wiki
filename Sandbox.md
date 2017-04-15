@@ -22,19 +22,22 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Community Code Library](https://github.com/red/code)
 
 ### Further Reading
-* [Red Language Blog](http://redlanguageblog.blogspot.co.uk/) by Mike Parr
+* [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard) by Arie
 * [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
+* [Red/System](http://static.red-lang.org/red-system-specs-light.html)
 
 ### Reference Material
 * [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
 * [Coding Style Guide](https://doc.red-lang.org/v/v0.6.0/Coding-Style-Guide.html)
 * [Interview with Nenad Rakocevic about Red](https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c)
 
-### RSS Feeds
-To read these feeds, you will need an RSS reader. There is a [Chrome Plugin](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en) available too.
-* [Red Wiki](https://github.com/red/red/wiki.atom)
-* [Red Language](http://www.red-lang.org/feeds/posts/default)
+### News Feeds
+* [@red-lang](https://twitter.com/red_lang?lang=en) on Twitter
+* [Red Wiki](https://github.com/red/red/wiki.atom) - RSS Feed
+* [Red Language](http://www.red-lang.org/feeds/posts/default) - RSS Feed
+
+To read the RSS feeds, you will need an RSS reader. There is a [Chrome Plugin](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en) available.
 
 ### Contributing 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
