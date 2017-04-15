@@ -1,6 +1,9 @@
 
 ## Main Rooms 
 
+#### [red/welcome](https://gitter.im/red/red/welcome)
+This is the welcome page for beginners.
+
 #### [red/red](https://gitter.im/red/red)
 This is the "main" room for general discussions about Red.
 
