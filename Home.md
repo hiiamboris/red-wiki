@@ -1,15 +1,49 @@
 ## Welcome to the Red programming language wiki!
+### Installation
+* [Download and Install](http://www.red-lang.org/p/download.html)
 
+### Beginners Guides
+Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
+* [Getting started with Red](http://redprogramming.com/Getting%20Started.html) at RedProgramming.com
+* [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/) at LearnXinYminutes.com
+* [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming) at mycode4fun.co.uk
+
+### Discussions
+* [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
+* [Questions Tagged Red](http://stackoverflow.com/questions/tagged/red) at Stackoverflow.com
+* [FAQ](https://github.com/red/red/wiki/FAQ)
+
+### Rebol
+* [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
+* [Rebol Forum](http://rebolforum.com/index.cgi?f=printtopic&topicnumber=48&archiveflag=new) 
+
+### Examples
+* [Red by Example](http://www.red-by-example.org/index.html) at red-by-example.org
+* [Community Code Library](https://github.com/red/code)
+
+### Further Reading
+* [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard) by Arie
+* [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
+* [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
+* [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)
+
+### Reference Material
+* [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
+* [Coding Style Guide](https://doc.red-lang.org/v/v0.6.0/Coding-Style-Guide.html)
+* [Interview with Nenad Rakocevic about Red](https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c)
+
+### News Feeds
+* [@red-lang](https://twitter.com/red_lang?lang=en) on Twitter
+* [Red Wiki](https://github.com/red/red/wiki.atom) - RSS Feed
+* [Red Language](http://www.red-lang.org/feeds/posts/default) - RSS Feed
+
+To read the RSS feeds, you will need an RSS reader. There is a [Chrome Plugin](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en) available.
+
+### Contributing 
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
 
-Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
-
-[FAQ](https://github.com/red/red/wiki/FAQ)
-
-[Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
-
-### Discussions:
-* [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
+### Libraries
+* [SQLite](https://github.com/kealist/RS-fossil-mirror/tree/master/SQLite/) by @kealist
 
 ### Todo lists:
 * [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
@@ -63,6 +97,7 @@ The following proposals were developed before the Red Enhancement Proposal proce
 ### Mezzanines:
 * [Mezz contributions](https://github.com/red/red/wiki/mezzanines)
 
+_____
 *Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
 
 ## lang branch
