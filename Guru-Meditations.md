@@ -456,3 +456,16 @@ tags: [
 >> result
 == [html [head [title ["Test"]] body [div [u ["Hello"] b ["World"]]]]]
 ```
+
+# Can I use functions in functions?
+
+Yes, but the nested functions will be rebuilt each time the outer function is called.
+```
+>> fn-a: func [][fn-b: does [] fn-c: does []]
+>> ctx: context [fn-b: does [] fn-c: does [] set 'fn-aa func [][]]
+
+>> time-it/count [fn-a] 100000
+== 0:00:00.155000001
+>> time-it/count [fn-aa] 100000
+== 0:00:00.004000001
+```
