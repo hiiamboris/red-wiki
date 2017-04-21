@@ -19,3 +19,11 @@ This option was considered at the beginning, but quickly discarded as it would b
 * LLVM adds several megabytes (5-10MB AFAICT) to the executable binary, this is something that we definitely want to avoid. We expect Red binary, with the JIT and Red/System compiler, to be in the 100-200KB range. You could think this is not relevant anymore, until you would need to upload your app to your favorite smartphone, pesting at how much time it takes and how much space it wastes, or trying to download such app through a low-band connection (not uncommon outside of the western world). 
 
 * It is still possible to add LLVM as a target in the future, if this provides Red with a feature that we do not want or cannot afford to implement from scratch (unlikely, but not impossible).
+
+# Why does `append` flatten its `value` argument?
+
+For example, why does `append a [3 4]` produce `[1 23 4]` instead of `[1 2 [3 4]]`?
+
+The default behavior of append (and other series actions) WRT to block arguments is useful because Red relies on fixed-arity functions. Specifying "several values" (to simulated variable arity) can only be done by passing a block (or a `any-block!` container, like `paren!`). Such usage is common enough to deserve to be the default behavior. When you want a container type to be treated as a single value, just use `append/only`. You'll see `/only` used with other functions as well.
+
+
