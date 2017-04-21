@@ -22,7 +22,7 @@ This option was considered at the beginning, but quickly discarded as it would b
 
 # Why does `append` flatten its `value` argument?
 
-For example, why does `append a [3 4]` produce `[1 23 4]` instead of `[1 2 [3 4]]`?
+For example, why does `append a [3 4]` produce `[1 2 3 4]` instead of `[1 2 [3 4]]`?
 
 The default behavior of append (and other series actions) WRT to block arguments is useful because Red relies on fixed-arity functions. Specifying "several values" (to simulated variable arity) can only be done by passing a block (or a `any-block!` container, like `paren!`). Such usage is common enough to deserve to be the default behavior. When you want a container type to be treated as a single value, just use `append/only`. You'll see `/only` used with other functions as well.
 
