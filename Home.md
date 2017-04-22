@@ -26,6 +26,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
 * [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)
+* [Boleslav Březovský blog](http://red.qyz.cz/)
 
 ### Reference Material
 * [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
