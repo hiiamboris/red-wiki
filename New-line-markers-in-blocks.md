@@ -51,6 +51,7 @@ Line markers at the tail are a special case because of how the feature is implem
 
 It's a nice feature, and new-line is very handy when analyzing data sometimes, and when generating code or data. Let's say you want to break up a block of data into 3 columns. You could build up a string yourself, inserting line breaks, or you can just insert line markers and `mold` the result. The big difference is that your block is now "formatted" this way in Red. Without newline markers, a block would always display as single line. You can also use this to help visualize data and debug. It lets you generate formatted data to exchange.
 
+````
 >> new-line/skip [1 2 3 4 5 6 7 8 9 10 11 12] on 3
 == [
     1 2 3 
@@ -58,6 +59,7 @@ It's a nice feature, and new-line is very handy when analyzing data sometimes, a
     7 8 9 
     10 11 12
 ]
+````
 
 In the context of a data exchange language, formatting has value. That is, when you exchange information, formatting  matters. Sometimes very much. Remember, we're not just exchanging data with machines, but with other people. And while tools could address this to some extent, that means every recipient of the data then has to have those tools.
 
