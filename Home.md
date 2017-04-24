@@ -4,6 +4,7 @@
 
 ### Beginners Guides
 Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
+* [Red tutorial for newcomers](https://github.com/red/red/wiki/Red-tutorial-for-newcomers-English-version)
 * [Getting started with Red](http://redprogramming.com/Getting%20Started.html) at RedProgramming.com
 * [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/) at LearnXinYminutes.com
 * [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming) at mycode4fun.co.uk
@@ -27,6 +28,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
 * [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)
 * [Boleslav Březovský blog](http://red.qyz.cz/)
+* [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations#why-are-contexts-static) by Gregg Irwin
 
 ### Reference Material
 * [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
