@@ -22,7 +22,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Community Code Library](https://github.com/red/code)
 
 ### Further Reading
-* [Red tutorial for newcomers](https://github.com/red/red/wiki/Red-tutorial-for-newcomers-English-version)
+* [Red/System tutorial for newcomers](https://github.com/red/red/wiki/Red-System-tutorial-for-newcomers-English-version)
 * [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard) by Arie
 * [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
