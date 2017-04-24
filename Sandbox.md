@@ -10,6 +10,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 
 ### Discussions
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
+** something
 * [Questions Tagged Red](http://stackoverflow.com/questions/tagged/red) at Stackoverflow.com
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
