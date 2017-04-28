@@ -275,7 +275,7 @@ Because the compiler needs them untouched in order to identify the function's na
 
 # Calling Red from Red/System
 
-You can't use arbitrary Red code in a #call directive, e.g., `#call [make image! compose [(size) 255.255.255.255]]`. You can only call a single Red function, passing Red value pointers as arguments.
+You can't use arbitrary Red code in a #call directive, e.g., `#call [make image! compose [(size) 255.255.255.255]]`. You can only call a single Red function, passing Red value pointers as arguments.See http://static.red-lang.org/red-system-specs-light.html#section-16.8 for details.
 
 # How do I get the address of a struct! member as a pointer! type?
 
