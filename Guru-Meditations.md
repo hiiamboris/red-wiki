@@ -475,3 +475,7 @@ Yes, but the nested functions will be rebuilt each time the outer function is ca
 All immediate types (`? immediate!`) are passed by value, because they fit entirely in a value slot.. For other types, they are passed by reference (not entirely accurate, but a good approximation).
 
 Here is a deeper explanation on that last part. `Series` for example, have a "value slot" part (including the position) and a series buffer part (which is external and shared by all series created from the original). Some functions can change the info in the value slot, like changing the position (`next`, `back`, `skip`, ...). In such cases, the series will behave as if it were passed by value. Other functions will modify the series buffer (`append`, `insert`, `remove`, ...). In those cases, the series will behave as if passed by reference. This is why you need to `copy` series values passed to funcs to prevent their modification to the referenced series.
+
+# Compiled vs interpreted macros
+
+Compiled macros run on Rebol2 (until Red is self-hosted), interpreted macros run on Red. Therefore, your macros need to be written in the common subset between both languages if you want them to run in both situations.
