@@ -114,7 +114,7 @@ red>> blk/:IDX_TL
 
 ## OBJECT INTROSPECTION
 
-In Rebol2, an object! was inspected using the ```first```, ```second``` and ```third``` functions. ```first``` provided a block containing the words of the object including ```self``` as the first entry. ```second``` provided a block containing the values of the object again including the value of ```self``` as the beginning of the block. (The value of ```self``` being ```make object! [<object spec>]```.) ```third``` returns block counting the object body and does not include ```self```.
+In Rebol2, an object! was inspected using the ```first```, ```second``` and ```third``` functions. ```first``` provided a block containing the words of the object including ```self``` as the first entry. ```second``` provided a block containing the values of the object again including the value of ```self``` as the beginning of the block. (The value of ```self``` being ```make object! [<object body>]```.) ```third``` returns block containing the object body and does not include ```self```.
 
 The ```first```, ```second``` and ```third``` functions do not work on object! values in Rebol3 or Red. They were replaced by the ```words-of```, ```values-of``` and ```body-of``` functions that return a block of words, a block of values and the object's body respectively. They do not include ```self```.
 
