@@ -74,7 +74,7 @@ R2: You can use either ```'self``` or ```self``` when binding a word or block to
 
 R3: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
 
-Red: R2: You can use only ```self``` when binding a word or block to the context of an object.
+Red: You can use only ```self``` when binding a word or block to the context of an object.
 
 
 ## INVALID BLOCK SELECTOR RETURNS NONE
