@@ -1,12 +1,12 @@
 ## Table of Contents
 
-1. [Debugging](#Debugging)
-2. [Red/System Boxing](#Red/System-Boxing)
-3. [Decorated Native Names](#Decorated-Native-Names)
-4. [REBOL version during bootstrap phase](#REBOL-version-during-bootstrap-phase)
-5. [Red compiler and dialects](#Red-compiler-and-dialects)
-6. [Reactive Cycles](#Reactive-Cycles)
-7. [Define infix operators](#Define-infix-operators)
+1. [Debugging](#debugging)
+2. [Red/System Boxing](#red/system-boxing)
+3. [Decorated Native Names](#decorated-native-names)
+4. [REBOL version during bootstrap phase](#rebol-version-during-bootstrap-phase)
+5. [Red compiler and dialects](#red-compiler-and-dialects)
+6. [Reactive Cycles](#reactive-cycles)
+7. [Define infix operators](#define-infix-operators)
 8. [Hide the cmd window under Windows, when running %.red scripts](#Hide-the-cmd-window-under-Windows,-when-running-%.red -scripts)
 9. [Compiled vs interpreted macros](#Compiled-vs-interpreted-macros)
 10. [Getting output in a shell when running a Red script](#Getting-output-in-a-shell-when-running-a-Red-script)
@@ -34,7 +34,7 @@
 32. [Return `logic!` when using `parse` with `collect`](#Return-`logic!`-when-using-`parse`-with-`collect`)
 33. [Can I use functions in functions?](#Can-I-use-functions-in-functions?)
 34. [Are args passed by reference or by value?](#Are-args-passed-by-reference-or-by-value?)
-35. [](#)
+35. [Interrupting Tests](#Interrupting-Tests)
 36. [](#)
 37. [](#)
 38. [](#)
@@ -60,10 +60,6 @@ There are also the /push functions (mostly used by the compiler), which are hand
 # Decorated Native Names
 
 Some natives have a `*` decoration added to their names. It's used when the word could conflict with an existing R/S definition, in such case, a decorated/undecorated pair needs to be added to `process-typecheck-directive` in %compiler.r.
-
-# Interrupting Tests
-
-If you interrupt the testing framework before it completes, you need to manually kill the remaining tasks before starting it again.
 
 # REBOL version during bootstrap phase
 
@@ -524,3 +520,7 @@ Yes, but the nested functions will be rebuilt each time the outer function is ca
 All immediate types (`? immediate!`) are passed by value, because they fit entirely in a value slot.. For other types, they are passed by reference (not entirely accurate, but a good approximation).
 
 Here is a deeper explanation on that last part. `Series` for example, have a "value slot" part (including the position) and a series buffer part (which is external and shared by all series created from the original). Some functions can change the info in the value slot, like changing the position (`next`, `back`, `skip`, ...). In such cases, the series will behave as if it were passed by value. Other functions will modify the series buffer (`append`, `insert`, `remove`, ...). In those cases, the series will behave as if passed by reference. This is why you need to `copy` series values passed to funcs to prevent their modification to the referenced series.
+
+# Interrupting Tests
+
+If you interrupt the testing framework before it completes, you need to manually kill the remaining tasks before starting it again.
