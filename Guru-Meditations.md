@@ -1,3 +1,46 @@
+## Table of Contents
+
+1. [Debugging](#Debugging)
+2. [Red/System Boxing](#Red/System-Boxing)
+3. [Decorated Native Names](#Decorated-Native-Names)
+4. [REBOL version during bootstrap phase](#REBOL-version-during-bootstrap-phase)
+5. [Red compiler and dialects](#Red-compiler-and-dialects)
+6. [Reactive Cycles](#Reactive-Cycles)
+7. [Define infix operators](#Define-infix-operators)
+8. [Hide the cmd window under Windows, when running %.red scripts](#Hide-the-cmd-window-under-Windows,-when-running-%.red -scripts)
+9. [Compiled vs interpreted macros](#Compiled-vs-interpreted-macros)
+10. [Getting output in a shell when running a Red script](#Getting-output-in-a-shell-when-running-a-Red-script)
+11. [Exposing Red/System macros in Red](#Exposing-Red/System-macros-in-Red)
+12. [Modifying data before `load`ing it (Lisp reader macros)](#Modifying-data-before-`load`ing-it-(Lisp-reader-macros))
+13. [Compiled versus interpreted behaviors](#Compiled-versus-interpreted-behaviors)
+14. [Keeping the CLI console open](#Keeping-the-CLI-console-open)
+15. [Cloning Objects](#Cloning-Objects)
+16. [libRed and libRedRT](#libRed-and-libRedRT)
+17. [How to reference the current View container](#How-to-reference-the-current-View-container)
+18. [Compiling with the debug flag](#Compiling-with-the-debug-flag)
+19. [symbol/resolve and val/symbol (in Red/System)](#symbol/resolve-and-val/symbol-(in-Red/System))
+20. [Using Red/System contexts in Red routines](#Using Red/System-contexts-in-Red-routines)
+21. [What is the format for the `request-file` `/filter` refinement?](#What-is-the-format-for-the-`request-file`-`/filter`-refinement?)
+22. [Red/System native! values, #typecheck, and macros](#Red/System-native!-values,-#typecheck,-and-macros)
+23. [Calling Red from Red/System](#Calling-Red-from-Red/System)
+24. [Why are Contexts Static?](#Why-are-Contexts-Static?)
+25. [(GUI) Getting the tab-index of the selected tab inside a tab-panel](#(GUI)-Getting-the-tab-index-of-the-selected-tab inside-a-tab-panel)
+26. [Call libRed from C (Mac OS) and Ruby (Unbuntu32)](#Call-libRed-from-C-(Mac-OS)-and-Ruby-(Unbuntu32))
+27. [Why is Red 32-bit only?](#Why-is-Red-32-bit-only?)
+28. [PARSE COLLECT/KEEP options combined with TO/THRU rules](#PARSE-COLLECT/KEEP-options-combined-with-TO/THRU-rules)
+29. [Bind, In, Contexts, and Words versus Symbols](#Bind,-In,-Contexts,-and-Words-versus-Symbols)
+30. [Scalars and value slots](#Scalars-and-value-slots)
+31. [Red/System `either` as expression](#Red/System-`either`-as-expression)
+32. [Return `logic!` when using `parse` with `collect`](#Return-`logic!`-when-using-`parse`-with-`collect`)
+33. [Can I use functions in functions?](#Can-I-use-functions-in-functions?)
+34. [Are args passed by reference or by value?](#Are-args-passed-by-reference-or-by-value?)
+35. [](#)
+36. [](#)
+37. [](#)
+38. [](#)
+39. [](#)
+40. [](#)
+
 # Debugging
 
 @SteeveGit hit a crashing bug under 0.6.0: `view [button "crash" [type?/word event]]`
@@ -93,6 +136,12 @@ view/options [text "hi"][
     actors: object [ on-close: func [face event][quit] ]
 ]
 ```
+
+
+# Compiled vs interpreted macros
+
+Compiled macros run on Rebol2 (until Red is self-hosted), interpreted macros run on Red. Therefore, your macros need to be written in the common subset between both languages if you want them to run in both situations.
+
 
 # Getting output in a shell when running a Red script
 
@@ -475,7 +524,3 @@ Yes, but the nested functions will be rebuilt each time the outer function is ca
 All immediate types (`? immediate!`) are passed by value, because they fit entirely in a value slot.. For other types, they are passed by reference (not entirely accurate, but a good approximation).
 
 Here is a deeper explanation on that last part. `Series` for example, have a "value slot" part (including the position) and a series buffer part (which is external and shared by all series created from the original). Some functions can change the info in the value slot, like changing the position (`next`, `back`, `skip`, ...). In such cases, the series will behave as if it were passed by value. Other functions will modify the series buffer (`append`, `insert`, `remove`, ...). In those cases, the series will behave as if passed by reference. This is why you need to `copy` series values passed to funcs to prevent their modification to the referenced series.
-
-# Compiled vs interpreted macros
-
-Compiled macros run on Rebol2 (until Red is self-hosted), interpreted macros run on Red. Therefore, your macros need to be written in the common subset between both languages if you want them to run in both situations.
