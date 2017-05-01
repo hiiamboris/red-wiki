@@ -6,6 +6,7 @@
 4. [LOCAL CONTEXTS FOR LOOPS](#local-contexts-for-loops)
 5. [BINDING TO SELF](#binding-to-self)
 6. [INVALID BLOCK SELECTOR RETURNS NONE](#invalid-block-selector-returns-none)
+7. [OBJECT INTROSPECTION](#object-introspection)
 
 ## COPY object!
 
@@ -111,3 +112,10 @@ red>> blk/:IDX_TL
 == 100x100
 ```
 
+## OBJECT INTROSPECTION
+
+In Rebol2, an object! was inspected using the ```first```, ```second``` and ```third``` functions. ```first``` provided a block containing the words of the object including ```self``` as the first entry. ```second``` provided a block containing the values of the object again including the value of ```self``` as the beginning of the block. (The value of ```self``` being ```make object! [<object spec>]```.) ```third``` returns block counting the object body and does not include ```self```.
+
+The ```first```, ```second``` and ```third``` functions do not work on object! values in Rebol3 or Red. They were replaced by the ```words-of```, ```values-of``` and ```body-of``` functions that return a block of words, a block of values and the object's body respectively. They do not include ```self```.
+
+Later versions of Rebol2 include ```words-of```, ```values-of``` and ```body-of``` though retain object introspection through ```first```, ```second``` and ```third```.  
