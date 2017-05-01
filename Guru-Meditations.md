@@ -7,7 +7,7 @@
 5. [Red compiler and dialects](#red-compiler-and-dialects)
 6. [Reactive Cycles](#reactive-cycles)
 7. [Define infix operators](#define-infix-operators)
-8. [Hide the cmd window under Windows, when running %.red scripts](#hide-the-cmd-window-under-windows-when-running-red -scripts)
+8. [Hide the cmd window under Windows, when running %.red scripts](#hide-the-cmd-window-under-windows-when-running-red-scripts)
 9. [Compiled vs interpreted macros](#compiled-vs-interpreted-macros)
 10. [Getting output in a shell when running a Red script](#getting-output-in-a-shell-when-running-a-red-script)
 11. [Exposing Red/System macros in Red](#exposing-redsystem-macros-in-red)
