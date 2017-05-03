@@ -35,7 +35,7 @@
 33. [Can I use functions in functions?](#can-i-use-functions-in-functions)
 34. [Are args passed by reference or by value?](#are-args-passed-by-reference-or-by-value)
 35. [Interrupting Tests](#interrupting-tests)
-36. [](#)
+36. [Calling variadic C functions](#calling-variadic-c-functions)
 37. [](#)
 38. [](#)
 39. [](#)
@@ -524,3 +524,22 @@ Here is a deeper explanation on that last part. `Series` for example, have a "va
 # Interrupting Tests
 
 If you interrupt the testing framework before it completes, you need to manually kill the remaining tasks before starting it again.
+
+# Calling variadic C functions
+
+Let's say, that you have imported function defined as:
+```
+sqlite3_mprintf: "sqlite3_mprintf" [[variadic]
+    return: [c-string!]
+]
+```
+You can use it in Red/System like this:
+```
+str: sqlite3_mprintf ["INSERT INTO table VALUES(%Q, %d)" "Fo'o" 42]
+```
+
+But you can't interface with it from Red, because Red deals with Red values on the Red stack, while this C function expects a list of C-level types pushed on the native stack. It's not even apples and oranges, it's apples and the planets in our solar system. 
+
+You could write code for converting some Red types (just a few would work) into low-level values, and manually push them on the native stack. That's complex, error-prone (you have to deal with low-level ABI constraints, like proper argument alignment on the stack), and would not be an elegant solution.
+
+The C language has no knowledge or understanding of 128-bit Red cells. There is no way that copying `red-*` cells on the native stack could work. Moreover, it's unsafe to have Red cells outside Red-allocated memory regions, as they would escape from the GC. The [variadic] attribute does not do anything other than tell the R/S compiler that the imported function can handle a variable number of arguments. Arguments are still C-level values.
