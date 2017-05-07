@@ -1,6 +1,10 @@
+THIS IS A SANDBOX USED BY @Scaremonger
+IT IS NOT STATIC AND WILL BE ERASED/REPLACED WITHOUT NOTICE AT ANY TIME
+
 ## Welcome to the Red programming language wiki!
 ### Installation
 * [Download and Install](http://www.red-lang.org/p/download.html)
+** [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
 
 ### Beginners Guides
 Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
