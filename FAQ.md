@@ -26,4 +26,6 @@ For example, why does `append a [3 4]` produce `[1 2 3 4]` instead of `[1 2 [3 4
 
 The default behavior of append (and other series actions) WRT to block arguments is useful because Red relies on fixed-arity functions. Specifying "several values" (to simulated variable arity) can only be done by passing a block (or a `any-block!` container, like `paren!`). Such usage is common enough to deserve to be the default behavior. When you want a container type to be treated as a single value, just use `append/only`. You'll see `/only` used with other functions as well.
 
+# Why is the header case sensitive? That is, you have to use `Red`, not `red`.
 
+`Red` followed by a block (square brackets) is used by the lexer to find the beginning of a Red script, ignoring everything before it. You have the same feature in Rebol. But Rebol, being a unique name, reduces the odds you will find it in random text followed square brackets. In Red's case, `red` is a common word, so the risk of false positives are higher. Capitalizing the first letter is a way to reduce that risk.
