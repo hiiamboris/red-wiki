@@ -59,4 +59,4 @@ The Red tests and Quick-Test.
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
 This room is dedicated for discussing the vector! datatype.
 
-
+# [Suggestions for future](https://github.com/red/red/wiki/Room-suggestions)
