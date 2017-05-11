@@ -1,5 +1,19 @@
-# Rooms suggestions
-Gitter favors rooms based on github repos. We could re-organize code according to
+# Rationale
+There had been discussions about gitter rooms. Gitter naturally organizes rooms based on github repos. Altho it does allow creating custom rooms, this does lead to confusion of which room is what, especially due to gitter's limitations:
+
+1. No threaded conversations
+2. Welcome message can't be displayed afterwards
+3. Renaming rooms not based on repos are impossible(?)
+4. Cannot move messages from one room to the next
+5. No enforceability of rules (how can you do this anyway?)
+
+# Possible Solutions
+1. Gitter Topics was supposed to alleviate this, but it's still in beta
+2. Most other programming languages have a single room
+3. Use another chat service
+4. Re-organize rooms (which this is about :)
+
+We could re-organize rooms according to the following:
 
 ## Audience based
 1. Beginners to redbol `welcome`, also could be *learn*, *hello (world)*, only intro (no large code here, more Q&A, point to docs and SO)
@@ -30,3 +44,5 @@ Gitter favors rooms based on github repos. We could re-organize code according t
 
 Note: `+` is room suggestions
 What I don't know is how to gently enforce rules. Maybe a bot?
+
+Based on gitter chat [May 11, 2017 7:18 PM](https://gitter.im/red/red/welcome?at=591472988a05641b1170bfde)
