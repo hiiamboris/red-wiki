@@ -515,6 +515,17 @@ Yes, but the nested functions will be rebuilt each time the outer function is ca
 == 0:00:00.004000001
 ```
 
+# Can I compile functions in functions?
+
+Not until `dyn-stack` branch, but you can workaround by wrapping with `do`:
+Functions in functions compilation is not officially supported yet, the compiler can handle some simple cases, but not all of them for now. [doc] plans to work on that when we'll get to HOF support.
+In such case, wrap your whole code in a `do`, so that the interpreter takes over it, and you won't be limited by the compiler. `Dyn-stack` branch should solve most (maybe all those cases), though, performances will suffer from it, for use cases like that (closer to interpreted performances than compiled ones). No ETA, they are too many other higher priority tasks for now.
+
+sources: [
+  https://github.com/red/red/issues/2511#issuecomment-290033663
+  https://gitter.im/red/bugs?at=591899bd331deef464691306
+]
+
 # Are args passed by reference or by value?
 
 All immediate types (`? immediate!`) are passed by value, because they fit entirely in a value slot.. For other types, they are passed by reference (not entirely accurate, but a good approximation).
