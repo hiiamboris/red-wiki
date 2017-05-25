@@ -37,9 +37,18 @@
 35. [Are args passed by reference or by value?](#are-args-passed-by-reference-or-by-value)
 36. [Interrupting Tests](#interrupting-tests)
 37. [Calling variadic C functions](#calling-variadic-c-functions)
-38. [](#)
+38. [Can it happen that a word has no context?](#can-it-happen-that-a-word-has-no-context)
 39. [](#)
 40. [](#)
+41. [](#)
+42. [](#)
+43. [](#)
+44. [](#)
+45. [](#)
+46. [](#)
+47. [](#)
+48. [](#)
+49. [](#)
 
 # Debugging
 
@@ -554,3 +563,7 @@ But you can't interface with it from Red, because Red deals with Red values on t
 You could write code for converting some Red types (just a few would work) into low-level values, and manually push them on the native stack. That's complex, error-prone (you have to deal with low-level ABI constraints, like proper argument alignment on the stack), and would not be an elegant solution.
 
 The C language has no knowledge or understanding of 128-bit Red cells. There is no way that copying `red-*` cells on the native stack could work. Moreover, it's unsafe to have Red cells outside Red-allocated memory regions, as they would escape from the GC. The [variadic] attribute does not do anything other than tell the R/S compiler that the imported function can handle a variable number of arguments. Arguments are still C-level values.
+
+# Can it happen that a word has no context?
+
+Words always have a context (this might change when module support is added). In some cases it can refer to a context which is not accessible anymore, which will trigger an error when trying to access the referred-to value.
