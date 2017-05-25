@@ -29,3 +29,8 @@ The default behavior of `append` (and other series actions) with regard to block
 # Why is the header case sensitive? That is, you have to use `Red`, not `red`.
 
 `Red` followed by a block (square brackets) is used by the lexer to find the beginning of a Red script, ignoring everything before it. You have the same feature in Rebol. But Rebol, being a unique name, reduces the odds you will find it in random text followed square brackets. In Red's case, `red` is a common word, so the risk of false positives are higher. Capitalizing the first letter is a way to reduce that risk.
+
+# How do I make it so that compiled GUI programs on Windows don't spawn a parent console on startup?
+
+compile with `-t Windows`
+
