@@ -38,8 +38,8 @@
 36. [Interrupting Tests](#interrupting-tests)
 37. [Calling variadic C functions](#calling-variadic-c-functions)
 38. [Can it happen that a word has no context?](#can-it-happen-that-a-word-has-no-context)
-39. [](#)
-40. [](#)
+39. [How to compile `ask`?](#how-to-compile-ask)
+40. [Compiler vs. interpreter behavior](#compiler-vs-interpreter-behavior)
 41. [](#)
 42. [](#)
 43. [](#)
@@ -49,6 +49,7 @@
 47. [](#)
 48. [](#)
 49. [](#)
+50. [](#)
 
 # Debugging
 
@@ -567,3 +568,27 @@ The C language has no knowledge or understanding of 128-bit Red cells. There is 
 # Can it happen that a word has no context?
 
 Words always have a context (this might change when module support is added). In some cases it can refer to a context which is not accessible anymore, which will trigger an error when trying to access the referred-to value.
+
+# How to compile `ask`?
+
+Add `#include %environment/console/input.red` to your source file and compile in release mode (`-r` option).
+
+# Compiler vs. interpreter behavior
+
+Why does the folowing code failing to compile, but works in interpreter?
+```Red
+direction: "south"
+set to-word direction 4
+probe south 
+; == 4
+```
+```Red
+** script error: undefined word south
+```
+
+In `probe south`, you are passing the `south` word which was not defined before, or at least, the compiler does not see where it is defined, so it will signal an error. 
+
+The compiler does a static checking of your source code, while the interpreter processes the code on-the-fly. The compiler can detect some simple errors that way and generate better code. So, you can either make the compiler happy by declaring a south word before (like `south: none`), or disable such checks by the compiler by adding the following entry inside your `Red [...]` header: 
+`Config: [red-strict-check?: no]`.
+
+A compiler reads and tries to make sense of your code in advance, an interpreter figures it out while evaluating it.
