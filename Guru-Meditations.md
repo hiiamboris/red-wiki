@@ -39,7 +39,7 @@
 37. [Calling variadic C functions](#calling-variadic-c-functions)
 38. [Can it happen that a word has no context?](#can-it-happen-that-a-word-has-no-context)
 39. [How to compile `ask`?](#how-to-compile-ask)
-40. [Compiler vs. interpreter behavior](#compiler-vs-interpreter-behavior)
+40. [](#)
 41. [](#)
 42. [](#)
 43. [](#)
@@ -79,7 +79,7 @@ If you're running Red tests and building Red from source, you may want to use 2.
 
 As of 0.6.0, the Red compiler can't process dialects. The interpreter doesn't have this issue, and the compiler will, correctly, complain.
 
-```
+```Red
 quit?:  none
 canvas: none    ;<== Add this to get it to compile
 
@@ -110,7 +110,7 @@ Reactions are pushed on a stack just before they are evaluated, so the engine ca
 
 To create an infix function, you first need to make a prefix function with 2 arguments. Then you make an `op!` from that function.
 
-```
+```Red
 make-range: function [a [integer!] b [integer!]][
     collect [i: a - 1 until [keep i: i + 1 i = b]]
 ]
@@ -128,7 +128,7 @@ You can use any valid word as the the infix function name.
 
 *This will likely change as Red matures.*
 
-```
+```Red
 console: system/view/screens/1/pane/-1
 console/visible?: false
 ```
@@ -137,7 +137,7 @@ The console is hidden, but still running. If you don't use `quit` to shut down y
 
 To shut down properly when the user clicks the close box [x] on the window, you can use the `on-close` actor:
 
-```
+```Red
 view/options [text "hi"][
     actors: object [ on-close: func [face event][quit] ]
 ]
@@ -165,7 +165,7 @@ You can't re-use macros. They get inlined and disappear during compilation. Mayb
 
 While you will normally use loadable Red data, there may be times where modifying the data before it's loaded will help. In Lisp, these are called *reader macros*. Red has macros now as well, but if your needs are simple, you can use the `lexer/pre-load` feature to do it:
 
-```
+```Red
 ; Remove commas
 system/lexer/pre-load: func [src part][
     parse src [any [remove comma insert #" " | skip]]
@@ -174,7 +174,7 @@ system/lexer/pre-load: func [src part][
 >> [1,2,3,abd,"hello"]
 == [1 2 3 abd "hello"]
 ```
-```
+```Red
 ; French-enabled console:
 system/lexer/pre-load: function [src part][
     parse src [
@@ -199,23 +199,43 @@ i: 10 tant que [i > 0][si impair? i [affiche i] i: i - 1]
 From @SteeveGit, for fun, based on chat about a Factor-like `fry` func, produced a nice example. It shows how you can replace a compiled func with an interpreted one, to change certain behaviors.
 
 `Fry` using replace. Funny attempt. Replace can take the result of a function as substitution value. So in theory we could write.
-```
+```Red
 fry: func [in out] [replace/all copy out '_ does [take in]]
 ```
 Problem:
-```
+```Red
 red>> fry [a b c][_ + _ - _ ]
 = [func [][take in] + func [][take in] - func [][take in]]
 ```
 The function is not evaluated at each iteration as hoped (like Rebol). The reason is that Red uses a compiled version of the replace function. Compiled functions don't evaluate functions passed as arguments inside their body code, like interpreted functions do. Reconstructing replace from its source "activates" interpreted mode.
-```
+```Red
 replace: func spec-of :replace body-of :replace
 ```
 Now, we get the expected behavior:
-```
+```Red
 red>> fry [a b c][_ + _ - _]
 == [a + b - c]
 ```
+
+_another take on compiler vs. interpreter_
+> Why does the folowing code failing to compile, but works in interpreter?
+
+```Red
+direction: "south"
+set to-word direction 4
+probe south 
+; == 4
+```
+```Red
+** script error: undefined word south
+```
+
+In `probe south`, you are passing the `south` word which was not defined before, or at least, the compiler does not see where it is defined, so it will signal an error. 
+
+The compiler does a static checking of your source code, while the interpreter processes the code on-the-fly. The compiler can detect some simple errors that way and generate better code. So, you can either make the compiler happy by declaring a south word before (like `south: none`), or disable such checks by the compiler by adding the following entry inside your `Red [...]` header: 
+`Config: [red-strict-check?: no]`.
+
+A compiler reads and tries to make sense of your code in advance, an interpreter figures it out while evaluating it.
 
 # Keeping the CLI console open
 
@@ -255,7 +275,7 @@ The Red GUI console can only be compiled in release mode (`-r`) right now. It ca
 # How to reference the current View container
 
 `Self` references the current face container from do blocks in `view`:
-```
+```Red
 view [
     f1: field on-enter [face/parent/selected: f2]
     f2: field on-enter [face/parent/selected: f3]
@@ -264,7 +284,7 @@ view [
 ]
 ```
 You can also set a word to that self reference for later use:
-```
+```Red
 view [
     f1: field on-enter [win/selected: f2]
     f2: field on-enter [win/selected: f3]
@@ -302,7 +322,7 @@ Rather than referencing them in a routine, you can put them in `#system-global`.
 
 # What is the format for the `request-file` `/filter` refinement?
 
-```
+```Red
 [
     description-1 file-extensions-1
     description-2 file-extensions-2
@@ -315,7 +335,7 @@ use a semicolon to separate the patterns (for example, "*.TXT;*.DOC;*.BAK")
 ```
 
 For example:
-```
+```Red
 request-file/filter [
     "All Pictures Files" "*.jpg;*.png;*.gif"
     "Red Source Files (red;reds)" "*.red;*.reds"
@@ -339,7 +359,7 @@ Red/System doesn't have that feature yet. Currently, you need to do manual point
 # Why are contexts static?
 
 If you could remove words from contexts, bound words could refer to contexts where they are not defined anymore. For example:
-```
+```Red
 obj: context [a: 2 b: [a + 1]]
 ```
 If you remove `a` from that obj context, `[a + 1]` could not be evaluated. It would crash, unless you manually rebound `a` to another context.
@@ -359,7 +379,7 @@ In `on-change`, the `face/selected` property contains the previously selected ta
 As libRed is 32-bit, you must use gcc to compile the program so it can call libRed. 
 
 `red-in-c.c`
-```
+```C
 #include "<path to>/libRed/red.h"
 
 int main(int argc, const char * argv[]) {
@@ -370,13 +390,13 @@ int main(int argc, const char * argv[]) {
 }
 ```
 Here's the command to compile it:
-```
+```Bash
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
 ```
 
 Here's an example of calling libRed from Ruby using the FFI Gem.
 
-```
+```Ruby
 require 'ffi'
 
 module RubyRed
@@ -410,7 +430,7 @@ Red is still in the alpha stage (as of early 2017). 64-bit support will come, bu
 - `keep copy <word>` collects all the matched values as a series (of same type as the input)
 
 For example:
-```
+```Red
 red>> parse [x -- ] [collect [keep to '-- ]]
 == [x]
 red>> parse [x y -- ] [collect [keep to '-- ]]
@@ -433,7 +453,7 @@ red>> parse [x y -- ] [collect [keep copy _ to '-- ]]
 
 `Bind` or `in` rebind the argument value, other words (with same symbol) are unaffected. Each word is an instance of a symbol (internal `symbol!` type), and exists independently of all others. `Bind` and `in` return their arguments bound. 
 
-```
+```Red
 c: context [a: 2]
 new: bind 'a (context? in c 'a)
 ; 'new now refers to 'a in context c
@@ -454,7 +474,7 @@ You can, you just need to pass a block instead of a single word value to bind. W
 
 `Bind` is simple, it just processes the argument you provide on the stack. Since you can only get the return value back from the stack, if you pass a scalar value (`word!` value in this case) and do not use the returned value (rebound new word), your `bind` call will have no effect. If you want to keep it side-effect free on a `block!` argument, you can use `copy` or `bind/copy` (which avoids an extra internal copy).
 
-```
+```Red
 red>> a: 1
 == 1
 red>> ctx: context [a: 2]
@@ -481,7 +501,7 @@ Values in Red cannot exist outside a value container (`block!`, `paren!`, `map!`
 # Return `logic!` when using `parse` with `collect`
 
 If you use a named collect as top collector, i.e., `collect set name`, `parse` will return the logic value and not the collected list:
-```
+```Red
 html: {
 <html>
   <head>
@@ -505,7 +525,7 @@ tags: [
     ]
 ]
 ```
-```
+```Red
 >> parse html [collect set result tags]
 == true
 >> result
@@ -515,7 +535,7 @@ tags: [
 # Can I use functions in functions?
 
 Yes, but the nested functions will be rebuilt each time the outer function is called.
-```
+```Red
 >> fn-a: func [][fn-b: does [] fn-c: does []]
 >> ctx: context [fn-b: does [] fn-c: does [] set 'fn-aa func [][]]
 
@@ -530,12 +550,12 @@ Yes, but the nested functions will be rebuilt each time the outer function is ca
 Not until `dyn-stack` branch, but you can workaround by wrapping with `do`:
 Functions in functions compilation is not officially supported yet, the compiler can handle some simple cases, but not all of them for now. [doc] plans to work on that when we'll get to HOF support.
 In such case, wrap your whole code in a `do`, so that the interpreter takes over it, and you won't be limited by the compiler. `Dyn-stack` branch should solve most (maybe all those cases), though, performances will suffer from it, for use cases like that (closer to interpreted performances than compiled ones). No ETA, they are too many other higher priority tasks for now.
-
+```Red
 sources: [
   https://github.com/red/red/issues/2511#issuecomment-290033663
   https://gitter.im/red/bugs?at=591899bd331deef464691306
 ]
-
+```
 # Are args passed by reference or by value?
 
 All immediate types (`? immediate!`) are passed by value, because they fit entirely in a value slot.. For other types, they are passed by reference (not entirely accurate, but a good approximation).
@@ -549,13 +569,13 @@ If you interrupt the testing framework before it completes, you need to manually
 # Calling variadic C functions
 
 Let's say, that you have imported function defined as:
-```
+```Red
 sqlite3_mprintf: "sqlite3_mprintf" [[variadic]
     return: [c-string!]
 ]
 ```
 You can use it in Red/System like this:
-```
+```Red
 str: sqlite3_mprintf ["INSERT INTO table VALUES(%Q, %d)" "Fo'o" 42]
 ```
 
@@ -572,23 +592,3 @@ Words always have a context (this might change when module support is added). In
 # How to compile `ask`?
 
 Add `#include %environment/console/input.red` to your source file and compile in release mode (`-r` option).
-
-# Compiler vs. interpreter behavior
-
-Why does the folowing code failing to compile, but works in interpreter?
-```Red
-direction: "south"
-set to-word direction 4
-probe south 
-; == 4
-```
-```Red
-** script error: undefined word south
-```
-
-In `probe south`, you are passing the `south` word which was not defined before, or at least, the compiler does not see where it is defined, so it will signal an error. 
-
-The compiler does a static checking of your source code, while the interpreter processes the code on-the-fly. The compiler can detect some simple errors that way and generate better code. So, you can either make the compiler happy by declaring a south word before (like `south: none`), or disable such checks by the compiler by adding the following entry inside your `Red [...]` header: 
-`Config: [red-strict-check?: no]`.
-
-A compiler reads and tries to make sense of your code in advance, an interpreter figures it out while evaluating it.
