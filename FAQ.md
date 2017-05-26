@@ -34,3 +34,19 @@ The default behavior of `append` (and other series actions) with regard to block
 
 compile with `-t Windows`
 
+# How can I make the compiler accept more dynamic code?
+
+Code like this runs fine in the interpreter, but won't compile:
+```
+direction: "south"
+set to-word direction 4
+probe south
+== 4
+```
+```
+** script error: undefined word south
+```
+
+A compiler reads and tries to make sense of your code in advance, an interpreter figures it out while evaluating it.
+
+In `probe south`, the `south` word is not defined explicitly. That is, the compiler does not see where it is defined; so it will signal an error. The compiler does a static check of the source code, while the interpreter processes the code on-the-fly. This way, the compiler can detect some simple errors and generate better code. In cases like this, you can either make the compiler happy by declaring `south` (like `south: none`), or disable compiler checks by adding the following entry inside your code's header: e.g. `Red [Config: [red-strict-check?: no]]`.
