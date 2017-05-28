@@ -15,6 +15,12 @@ Chinese speaking room.
 
 ## More Specific Red Topic Rooms
 
+#### [red/red/help](https://gitter.im/red/red/help)
+This is the room to request help in programming in Red.
+
+#### [red/bugs](https://gitter.im/red/bugs)
+Room to confirm regressions in red before reporting
+
 #### [red/red/code](https://gitter.im/red/red/code)
 This is the room for discussions relating to the Red/Code repository.
 
@@ -23,9 +29,6 @@ This is the room for discussing all about documenting Red.
 
 #### [red/red/gui-branch](https://gitter.im/red/red/gui-branch)
 This room is for discussing Red View and Vid.
-
-#### [red/red/help](https://gitter.im/red/red/help)
-This is the room to request help in programming in Red.
 
 #### [red/mezz](https://gitter.im/red/mezz)
 This is the room for discussing mezzanine functions.
@@ -47,14 +50,11 @@ This room is dedicated for storing useful links.
 #### [red/red/lisp](https://gitter.im/red/red/lisp)
 This room is for discussing the current and possible future influence of Lisp on Red.
 
+
 ## Datatype Rooms
 
 #### [red/red/map-datatype](https://gitter.im/red/red/map-datatype)
 This room is dedicated for discussing the map! datatype.
-
-
-#### [red/tests](https://gitter.im/red/tests)
-The Red tests and Quick-Test.
 
 #### [red/red/vector-datatype](https://gitter.im/red/red/vector-datatype)
 This room is dedicated for discussing the vector! datatype.
