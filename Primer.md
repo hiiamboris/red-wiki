@@ -23,3 +23,31 @@ Everything else, 0, empty strings, etc. is truthy.
 # `Return:` typeset is `any-type!`, not `default!`
 
 `Default!` doesn't include `unset!`.
+
+# Word: assigns a word to a value (not initialize to a constant)
+
+The `set-word!` behaves a bit differently than an assignment operator in most languages. It actually links the word to the data that follows it. So when you modify a series or other modifiable value inside a function, the function itself is changed.
+
+```Red
+>> f: function [][
+[    test: ""
+[    append test length? test
+[    ]
+== func [/local test][
+    test: "" 
+    append test length? test
+]
+>> f
+== "0"
+>> f
+== "01"
+>> f
+== "012"
+>> body-of :f
+== [
+    test: "012" 
+    append test length? test
+]
+```
+
+If you want to initialize a new series each time, you would typically do `test: copy ""`.
