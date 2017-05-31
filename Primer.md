@@ -2,7 +2,7 @@ When starting with a new language, there will be new things to learn, and things
 
 # Words evaluate by default
 
-```
+```Red
 >> 'a
 == a
 >> a
@@ -19,3 +19,7 @@ When starting with a new language, there will be new things to learn, and things
 # Only `false` and `none` are falsey
 
 Everything else, 0, empty strings, etc. is truthy.
+
+# `Return:` typeset is `any-type!`, not `default!`
+
+`Default!` doesn't include `unset!`.
