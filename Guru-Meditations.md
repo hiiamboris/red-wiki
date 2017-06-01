@@ -39,7 +39,7 @@
 37. [Calling variadic C functions](#calling-variadic-c-functions)
 38. [Can it happen that a word has no context?](#can-it-happen-that-a-word-has-no-context)
 39. [How to compile `ask`?](#how-to-compile-ask)
-40. [](#)
+40. [Why does `unset!` exist?](#why-does-unset-exist)
 41. [](#)
 42. [](#)
 43. [](#)
@@ -592,3 +592,7 @@ Words always have a context (this might change when module support is added). In
 # How to compile `ask`?
 
 Add `#include %environment/console/input.red` to your source file and compile in release mode (`-r` option).
+
+# Why does `unset!` exist?
+
+Redbol languages are based on denotational semantics, where the meaning of every expression needs to have a representation in the language itself. Every expression needs to return a value. Without `unset!` there would be a hole in the language and several fundamental semantic rules would collapse. E.g. `reduce [1 print ""] => [1]` (reducing 2 expressions would return 1 expression).
