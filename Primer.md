@@ -18,7 +18,14 @@ When starting with a new language, there will be new things to learn, and things
 
 # Only `false` and `none` are falsey
 
-Everything else, 0, empty strings, etc. is truthy.
+Everything else, 0, empty strings, etc. is truthy. In addition, `to` and `make` don't have the same semantics when creating logic values. e.g.:
+
+```Red
+>> to logic! 0
+== true
+>> make logic! 0
+== false
+```
 
 # `Return:` typeset is `any-type!`, not `default!`
 
