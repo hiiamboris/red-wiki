@@ -596,3 +596,5 @@ Add `#include %environment/console/input.red` to your source file and compile in
 # Why does `unset!` exist?
 
 Redbol languages are based on denotational semantics, where the meaning of every expression needs to have a representation in the language itself. Every expression needs to return a value. Without `unset!` there would be a hole in the language and several fundamental semantic rules would collapse. E.g. `reduce [1 print ""] => [1]` (reducing 2 expressions would return 1 expression).
+
+See also: http://www.rebol.net/r3blogs/0318.html
