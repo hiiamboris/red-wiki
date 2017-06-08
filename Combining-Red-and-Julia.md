@@ -1,20 +1,23 @@
-# References
+There are different ways how to combine Red and Julia programs.  They are explored here.
 
-https://docs.julialang.org/en/release-0.4/manual/embedding/
+# Embedding Julia Code in Red (FFI)
 
-# Bindings
+Bindings for embedding `libjulia` into a Red program have already been contributed.
 
 https://gist.github.com/Oldes/61444afa55a0395fde60002a5b345518
 
 > The above gist includes a path to Julia that you'll need to change.
 
-# Notes
+Unfortunately, Red is currently 32-bit only, so you can't use it with 64-bit Julia.  It is possible to use 32-bit Julia now, or to wait till Red is 64-bit as well.
 
-Red is currently 32-bit only, so you can't use it with 64-bit Julia.
+## References
 
-# Call
+How to embed Julia (Julia documentation):
+https://docs.julialang.org/en/release-0.5/manual/embedding/
 
-You can use `call` to integrate with Julia as well.
+# Calling Julia
+
+You can use `call` in Red to integrate with Julia as well.  The `/input` refinement of `call` is useful to input Julia code. 
 
 # Sockets
 
