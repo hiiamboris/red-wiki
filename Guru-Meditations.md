@@ -42,7 +42,7 @@
 40. [Why does `unset!` exist?](#why-does-unset-exist)
 41. [How to make HTTP requests?](#how-to-make-http-requests)
 42. [Access binary data from an external source](#access-binary-data-from-an-external-source)
-43. [](#)
+43. [](#rgb-image-data-via-ffi)
 44. [](#)
 45. [](#)
 46. [](#)
@@ -615,8 +615,6 @@ Where `<METHOD>` is HTTP method name, and data is specified in the following for
 
 # RGB image data via FFI
 
-> Access binary data from an external source
-
 A `redBinary()` function was added to the libRed API (see the example in %tests/libRed/test.c). You can use it to pass a binary buffer to Red, from which you can construct an image using following code (assuming your binary! value is referenced by `buffer`):
 ```
 img: make image! 50x50        ;-- set the right image size here
@@ -627,7 +625,10 @@ view [image img]              ;-- visualize the image
 ```
 If your input buffer is in RGB format, you need to use `/rgb`. If it's in RGBA format, use `/argb`. 
 
-Another way to do it, from François Jouen and Qingtian Xie:
+# Access binary data from an external source
+
+> from François Jouen and Qingtian Xie:
+
 ```
 getBinaryValue: routine [
     addr [integer!] "Data address"
