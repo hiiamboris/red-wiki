@@ -8,6 +8,8 @@ https://gist.github.com/Oldes/61444afa55a0395fde60002a5b345518
 
 > The above gist includes a path to Julia that you'll need to change.
 
+You may need to copy the binary to the same path as the bin folder in julia
+
 Unfortunately, Red is currently 32-bit only, so you can't use it with 64-bit Julia.  It is possible to use 32-bit Julia now, or to wait till Red is 64-bit as well.
 
 ## References
