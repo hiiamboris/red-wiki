@@ -21,6 +21,11 @@ https://docs.julialang.org/en/release-0.5/manual/embedding/
 
 You can use `call` in Red to integrate with Julia as well.  The `/input` refinement of `call` is useful to input Julia code. 
 
+# Calling Red from Julia
+
+A Julia package to call Red from Julia https://github.com/joa-quim/Red.jl
+Currently calling graphical functions fail quietly
+
 # Sockets
 
 Waiting for full I/O in Red.
