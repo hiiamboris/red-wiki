@@ -1,4 +1,4 @@
-Organization of mezzanines is TBD. The main proposal, right now, is to use gists for individual or groups of mezzanines.
+Organization of mezzanines is TBD. The main proposal, right now, is to use gists for individual or groups of mezzanines. There is also a [room](https://gitter.im/red/mezz) which collects mezzanines.
 
 ### FOUND?
 
