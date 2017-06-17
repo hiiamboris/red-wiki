@@ -26,6 +26,27 @@ You can use `call` in Red to integrate with Julia as well.  The `/input` refinem
 A Julia package to call Red from Julia https://github.com/joa-quim/Red.jl
 Currently calling graphical functions fail quietly
 
+#Calling a Julia function from a Red GUI
+
+```
+using Red
+
+function blabla()
+    println("Blabla")
+    return redInteger(0)
+end
+
+cf = cfunction(blabla, Ptr{Void}, (),);
+redOpen()
+redRoutine(redWord("blabla"), "[]", cf);
+
+cmd = "view [backdrop yellow  t: text  yellow {Hello World !}
+    button {Click} [blabla] 
+]"
+
+redDo(cmd)
+```
+
 # Sockets
 
 Waiting for full I/O in Red.
