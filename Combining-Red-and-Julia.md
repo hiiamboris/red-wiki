@@ -26,7 +26,7 @@ You can use `call` in Red to integrate with Julia as well.  The `/input` refinem
 A Julia package to call Red from Julia https://github.com/joa-quim/Red.jl
 Currently calling graphical functions fail quietly
 
-#Calling a Julia function from a Red GUI
+# Calling a Julia function from a Red GUI defined in Julia
 
 ```
 using Red
