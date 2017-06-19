@@ -16,7 +16,13 @@ When starting with a new language, there will be new things to learn, and things
 == unset!
 ```
 # Words are evaluated before they are passed to a function.
-`value? bflmpsv` will throw an error, because bflmpsvz gets evaluated and the result of the evaluation is passed to `value?`
+For example: `value? bflmpsv` will throw an error, because bflmpsvz gets evaluated and the result of the evaluation is passed to `value?`
+```Red
+>> value? bflmpsv
+*** Script Error: bflmpsv has no value
+*** Where: value?
+*** Stack:
+```
 
 Check for unset! with `get/any`:
 ```Red
