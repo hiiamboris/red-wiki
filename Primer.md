@@ -15,6 +15,19 @@ When starting with a new language, there will be new things to learn, and things
 >> type? :a
 == unset!
 ```
+# Words are evaluated before they are passed to a function.
+`value? bflmpsv` will throw an error, because bflmpsvz gets evaluated and the result of the evaluation is passed to `value?`
+
+Check for unset! with `get/any`:
+```Red
+>> type? get/any 'bflmpsvz
+== unset!
+```
+If you want to catch general "no value" errors, use `attempt`:
+```Red
+>> attempt [value? sdfdfsfg]
+== none
+```
 
 # Only `false` and `none` are falsey
 
