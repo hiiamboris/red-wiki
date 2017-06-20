@@ -8,9 +8,11 @@ There had been discussions about gitter rooms. Gitter naturally organizes rooms 
 5. No enforceability of rules (how can you do this anyway?)
 
 # Possible Solutions
-1. Gitter Topics was supposed to alleviate this, but it's still in beta
+1. [Gitter Topics](https://gitter.im/gitterHQ/home) was supposed to alleviate this, but:
+   1. it's still in [beta](https://gitter.im/gitterHQ/topics/topic/58cac9e6f7f7d4810423d98f/when-will-topics-be-added-to-gitter-communities)
+   2. not like threads in other chat software as you'd expect
 2. Most other programming languages have a single room
-3. Use another chat service
+3. Use another chat service(again? :p )
 4. Re-organize rooms (which this is about :)
 
 One can look at the problem of organizing from 3 different perspectives:
@@ -32,7 +34,7 @@ Red for programmers of X ( we have  `lisp`, why not others)? altho, I think we s
 1. +Dialects and parse. `dialecting`
 2. ++Metaprogramming `lisp` room sometimes has discussions a bit like this
 3. VID `red-guibranch`?
-4. +Draw
+4. +Draw `graphics`?
 5. +Red concepts `concepts` semantics, syntactically invisible things like *context*, theory, etc
 6. Tests `tests`? currently dedicated to quicktest and tests in red system
 7. Random `sandbox`
@@ -40,7 +42,7 @@ Red for programmers of X ( we have  `lisp`, why not others)? altho, I think we s
 9. Data types and formats, currently we have lots of these `RIF`, `vector-datatype`, etc
 
 ### Other topics
-@Geeky personally feels more topical rooms would be useful, if not for the problem of introducing clutter of ever more rooms.
+@Geeky personally feels more topical rooms would be useful, except for the problem of introducing clutter of ever more rooms.
 Could be further subdivided into the following:
 - Red design & concepts
 (editors and IDE, debugging, performance, tests)
