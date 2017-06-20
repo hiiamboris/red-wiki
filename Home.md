@@ -30,6 +30,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Boleslav Březovský blog](http://red.qyz.cz/)
 * [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations#why-are-contexts-static) by Gregg Irwin
 * [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
+* [Red Docker](https://github.com/eranws/red-docker)
 
 ### Reference Material
 * [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
