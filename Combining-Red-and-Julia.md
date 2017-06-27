@@ -47,6 +47,31 @@ cmd = "view [backdrop yellow  t: text  yellow {Hello World !}
 redDo(cmd)
 ```
 
+# Establish communication between Red and Julia. Julia callback updates text in Red Window.
+
+```
+using Red
+
+function blabla(t)
+    face_text = redPath(redWord("t"), redWord("text"))
+    println(unsafe_string(redCString(redGetPath(face_text))))
+
+    id = redSymbol("text");
+    redSetField(t, id, redString("BlaBla"))
+    redProbe(redGetField(t, id));
+    return redUnset()
+end
+
+cf = cfunction(blabla, Ptr{Void}, (Ptr{Void},));
+redOpen()
+redRoutine(redWord("blabla"), "[obj [object!]]", cf);
+
+cmd = "view [backdrop yellow  t: text  yellow {Hello World!}
+    button {Click} [blabla t] 
+]"
+redDo(cmd)
+```
+
 # Sockets
 
 Waiting for full I/O in Red.
