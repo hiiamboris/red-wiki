@@ -10,7 +10,8 @@ That is, not written in red
 
 ### Sublime-text
 
-### Howl
+### [Howl](https://howl.io/)
+[rokf/howl-red](https://github.com/rokf/howl-red)
 
 ## Red Native
 
