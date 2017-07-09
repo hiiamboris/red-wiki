@@ -13,7 +13,7 @@ Once Red was past the concept stage and started to materialise, Nenad was able t
 
 ## Project Roadmap and Planning
 
-Fullstack's commercial goals are understandably private but are clearly highly dependant on the success of the Red language. Whilst in the longer term, the commercial goals for Fullstack and the technical goals for Red are completely aligned, in the short term the commercial goals may need to take preference.
+Fullstack's commercial goals are understandably private but are clearly highly dependent on the success of the Red language. Whilst in the longer term, the commercial goals for Fullstack and the technical goals for Red are completely aligned, in the short term the commercial goals may need to take preference.
 
 A roadmap for Red, free of any commercial constraints, would undoubtedly have been different from the roadmap being followed. The Red language would have been much more complete before work started on the GUI dialects.
 
