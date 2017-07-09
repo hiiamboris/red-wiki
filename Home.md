@@ -93,7 +93,7 @@ The following proposals were developed before the Red Enhancement Proposal proce
 * [Adding other Red dialects] (https://github.com/red/red/wiki/%5BProposal%5D-Adding-other-Red-dialects)
 * [Case Sensitive Map! Keys] (https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
 * [Improved console completion support] (https://github.com/red/red/issues/1165)
-* [Macros system] (https://github.com/red/red/wiki/Macros%28SPEL%3A-semantic-programming-enhancement-logic%29)
+
 
 ### Mezzanines:
 * [Mezz contributions](https://github.com/red/red/wiki/mezzanines)
