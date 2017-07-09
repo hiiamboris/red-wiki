@@ -50,10 +50,6 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 ### Libraries
 * [SQLite](https://github.com/kealist/RS-fossil-mirror/tree/master/SQLite/) by @kealist
 
-### Todo lists:
-* [Floating point support](https://github.com/red/red/wiki/Red-floating-point-support)
-* <strike>[Red/System v0.2.0](https://github.com/dockimbel/Red/wiki/Red-System-v0.2.0-todo-list)</strike>
-
 ### Design Deliberations:
 
 From time to time, some structured deliberations are needed to allow the best design decisions to be made.
