@@ -14,10 +14,10 @@ Once Red was past the concept stage and started to materialise, Nenad was able t
 ## Project Roadmap and Planning
 
 Fullstack's commercial goals are understandably private but are clearly highly dependant on the success of the Red language. Whilst in the longer term, the commercial goals for Fullstack and the technical goals for Red are completely aligned, in the short term the commercial goals may need to take preference.
-rk started on the GUI dialects.
 
-Roadmaps cannot be cast in stone, they need to change to reflect changes in their environment. Red i
-A roadmap for Red, free of any commercial constraints, would undoubtedly have been different from the roadmap being followed. The Red language would have been much more complete before wos in a fast-changing environment, its roadmap needs to be flexible.
+A roadmap for Red, free of any commercial constraints, would undoubtedly have been different from the roadmap being followed. The Red language would have been much more complete before work started on the GUI dialects.
+
+Roadmaps cannot be cast in stone, they need to change to reflect changes in their environment. Red is in a fast-changing environment, its roadmap needs to be flexible.
 
 Red's roadmap has been developed by identifying the major components of the Red programming language and ordering their development in a practical manner. The team then uses a "rolling-wave" approach to plan the components as their development becomes imminent. During detailed planning, the team takes into account the feedback and requests from the community, language evolution and, of course, the commercial environment.
 
