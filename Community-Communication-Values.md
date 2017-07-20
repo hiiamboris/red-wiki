@@ -21,7 +21,7 @@ The following actions are explicitly forbidden:
 * Unwelcome sexual advances.
 * Incitement to any of these.
 
-The Red communication channels are moderated, disrespectful behavior will lead to banning.
+The Red communication channels are moderated, disrespectful behavior will lead to exclusion from the communication channel.
 
 ## Acknowledgements
 This document was based on the Code of Conduct from the Elixir and Go projects with parts derived from Django's Code of Conduct, Rust's Code of Conduct and the Contributor Covenant.
