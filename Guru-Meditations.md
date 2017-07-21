@@ -43,7 +43,7 @@
 41. [How to make HTTP requests?](#how-to-make-http-requests)
 42. [RGB image data via FFI](#rgb-image-data-via-ffi)
 43. [Access binary data from an external source](#access-binary-data-from-an-external-source)
-44. [](#)
+44. [Compile Red/System with no runtime](#compile-redsystem-with-no-runtime)
 45. [](#)
 46. [](#)
 47. [](#)
@@ -637,4 +637,27 @@ getBinaryValue: routine [
 ][
     as red-binary! stack/set-last as red-value! binary/load as byte-ptr! addr size
 ]
+```
+
+# Compile Red/System with no runtime
+
+If you don't use the runtime (compile with `--no-runtime`), you need to provide a few elements in order to generate a valid executable:
+
+- At least one static allocation to avoid a data segment of size 0 (which will cause a crash)
+
+- A call to a system exit function (on non-Windows systems, otherwise it will segfault).
+
+Here is a minimal Red/System program which compiles without a runtime and run properly (on Windows per the import used):
+
+```
+Red/System []
+
+#import [
+    "kernel32.dll" stdcall [
+        quit: "ExitProcess" [code [integer!]]
+    ]
+]
+
+ret: 0
+quit ret
 ```
