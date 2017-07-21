@@ -643,9 +643,9 @@ getBinaryValue: routine [
 
 If you don't use the runtime (compile with `--no-runtime`), you need to provide a few elements in order to generate a valid executable:
 
-- At least one static allocation to avoid a data segment of size 0 (which will cause a crash)
+* At least one static allocation to avoid a data segment of size 0 (which will cause a crash)
 
-- A call to a system exit function (on non-Windows systems, otherwise it will segfault).
+* A call to a system exit function (on non-Windows systems, otherwise it will segfault).
 
 Here is a minimal Red/System program which compiles without a runtime and run properly (on Windows per the import used):
 
@@ -660,4 +660,31 @@ Red/System []
 
 ret: 0
 quit ret
+```
+
+More details:
+
+* `--no-runtime` on Linux still generates an ELF executable with at least code and data segments, so just to be clear, it's not an object file in the C sense (`.o`).
+
+* `--no-runtime` has only been used so far (as of Jul-2017) for a prototype Arduino support, internally linked by Red's toolchain to a tiny pre-compiled binary runtime (less than a kilobyte).
+
+* On Windows, we built specific support for compiling Windows drivers for a commercial project. We had plans for also supporting Linux kernel modules, but didn't have a use-case for it, so it wasn't built.
+
+Regarding EXE image format, with the currently emitted ELF file, you may also need to:
+
+* Turn PIC mode on, to avoid generating absolute addresses in code segment
+
+* Set the base address for the code segment manually.
+
+Here is how you can do set that from the header (will eventually also work as command line options):
+```
+Red/System [
+    config: [
+        PIC?: yes
+        base-address: 32768               ; 8000h
+    ]
+]
+
+a: 1
+if a < 2 [ a: 2 ]
 ```
