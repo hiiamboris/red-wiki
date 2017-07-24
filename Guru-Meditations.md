@@ -44,7 +44,7 @@
 42. [RGB image data via FFI](#rgb-image-data-via-ffi)
 43. [Access binary data from an external source](#access-binary-data-from-an-external-source)
 44. [Compile Red/System with no runtime](#compile-redsystem-with-no-runtime)
-45. [](#)
+45. [Load code into REPL on startup](#load-code-into-repl-on-startup)
 46. [](#)
 47. [](#)
 48. [](#)
@@ -688,3 +688,18 @@ Red/System [
 a: 1
 if a < 2 [ a: 2 ]
 ```
+
+# Load code into REPL on startup
+
+>  I'd like to run a script at start-up of the REPL to load a bunch of words and have the REPL stay up afterward. How is this done in Red? I know how it is done in REBOL.
+
+(Answered by @rebolek)
+Red does not support something like `%user.red`. You need to compile your own REPL that will either include stuff you want, or will load such a file on startup. 
+
+Just add your stuff [here](https://github.com/red/red/blob/master/environment/console/console.red) (after `#includes`), or in `%gui-console.red`, if you are on an OS that supports the View GUI system. Something like this should do it:
+
+```
+    if exists? %loader.red [do %loader.red]
+```
+
+Then compile the console. That's all you need to do.
