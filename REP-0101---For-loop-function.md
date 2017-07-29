@@ -1,4 +1,4 @@
-#REP 0101 - For loop function
+# REP 0101 - For loop function
 <table>
   <tr>
     <td>REP:</td>
@@ -26,10 +26,10 @@
   </tr>
 </table>
 
-##Summary
+## Summary
 A general purpose `for` loop is useful and well known (https://en.wikipedia.org/wiki/For_loop). It makes sense to include one in Red, even if there are specific, optimized loop constructs that handle subsets of its functionality.
      
-##Description
+## Description
 http://www.rebol.com/r3/docs/guide/code-loops.html shows that Rebol has a number of loop constructs, which Red has inherited. Rebol also has a `for` function, but its use was discouraged under R2, mainly for performance reasons. It also suffered due to the large-ish number of args which were not optional or named. More importantly, it could end up in an infinite loop and the cycle test behavior was not always clear. There was extensive discussion on CureCode about how to address these issues: http://issue.cc/r3/1993
 
 The idea is to support *mainly* numeric loop constructs. Working like `foreach` and `forskip` is also possible, but the current implementation doesn't work correctly under Red. It is also not meant to be used in place of `forever`.
@@ -57,8 +57,9 @@ Interface:
 	for [i = 5 to 10 step by 2] [print i]
 ```
 
+As an example, see the macro implemented in [Entering the World of Macros](http://www.red-lang.org/2016/12/entering-world-of-macros.html).
 
-##Use Case
+## Use Case
 
 The use case of a ```for``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
 
@@ -236,7 +237,7 @@ b: 5
     9
 ```
 
-##Benefits
+## Benefits
 - General, subsuming many other loop constructs
 - Flexible, with optional args and complete control over the loop cycle
 - Shows how dialects can be built to wrap other functionality
@@ -247,16 +248,16 @@ b: 5
 - See http://issue.cc/r3/1993 for details on the design goals
 - Easy to support date!, time!, and money! values when those are available
 
-##Consequences
+## Consequences
 - Reduces Rebol compatibility (close, but args are passed in a block)
 - May result in requests for more complexity in current function interfaces 
 - Could lead to lengthy debate on the dialect other design aspects
 - Hard to provide detailed dialect help in a short doc string
 
-##Assistance
+## Assistance
 I have an implementation and manual test suite to get the ball rolling.
 
-##Community Support
+## Community Support
 __Do not complete until initial draft has been accepted.__
 
 The following people support the proposal in its entirety. 
@@ -271,7 +272,7 @@ The following people support the proposal in its entirety.
   </tr>
 </table>
 
-##Debate
+## Debate
 The purpose of this section is to allow members of the community to succinctly express either (or both) the pros and cons of the proposal. Links to supporting information should be included.
 
 This is not the place for long, discussion related to the proposal. The best place for such discussions would be the [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang) as the conversations can be linked to from the proposal. Such discussions can also be held on [Red Gitter Chat](https://gitter.im/red/red) though they will not be preserved in such a convenient form as the mailing list.
