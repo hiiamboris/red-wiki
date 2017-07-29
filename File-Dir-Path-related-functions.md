@@ -14,7 +14,7 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 | `dirize`          | Add #"/" to the end of the value if not already there. Does not interact with file system.| 
 | `exists?`         | Returns true file file or dir exists in the file system. Uses Red file path.| 
 | `file?`           | Returns true if Red value is a `file!` type. Does not interact with file system.| 
-| `get-current-dir` | Return current dir, as an OS-local filename. Not normalized.| 
+| `get-current-dir`  | Return current dir, as an OS-local filename. Not normalized.| 
 | `list-dir`        | List files and directories from given folder. Uses Red file path. Arg required.| 
 | `ll`              | Shortcut alias for `list-dir` (single column). Handy in the console. Arg optional.| 
 | `ls`              | Shortcut alias for `list-dir`. Handy in the console. Arg optional.| 
