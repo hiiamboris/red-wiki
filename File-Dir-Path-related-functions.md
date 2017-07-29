@@ -8,7 +8,7 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 | `cd`              | Shortcut alias for `change-dir`. Handy in the console.| 
 | `change-dir`      | Changes the active directory path, relative or absolute, using a Red file path.| 
 | `clean-path`      | [See below](#clean-path) | 
-| `create-dir`      | OS level routine to create a directory in the file system.| 
+| `create-dir`      | OS level routine to create a directory in the file system. Use `make-dir` instead.| 
 | `dir`             | Shortcut alias for `list-dir`. Handy in the console. Arg optional.| 
 | `dir?`            | Returns true file value ends with #"/". Does not interact with file system.| 
 | `dirize`          | Add #"/" to the end of the value if not already there. Does not interact with file system.| 
