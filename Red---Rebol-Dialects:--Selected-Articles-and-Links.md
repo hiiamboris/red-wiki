@@ -6,7 +6,7 @@
 >
 >["TUI Dialect - A dialect to print ASCII sequences"](http://rebol2.blogspot.com/2012/01/tui-dialect-dialect-to-print-ascii.html) (Hohmann 2001)
 
-**Community Topics & Discussions**
+**Community Topics and Archived Discussions**
 
 > ["a REBOL dialect is usually limited..."](http://www.rebol.org/ml-display-thread.r?m=rmlGRXJ) (Nov 2002)
 >
@@ -18,11 +18,13 @@
 >
 > ["Rebol refinements vs. dialects vs. objects"](https://softwareengineering.stackexchange.com/questions/297886/rebol-refinements-vs-dialects-vs-objects) (Ross-Gill 2015)
 >
+> ["Building evaluative dialects"](https://forum.rebol.info/t/building-evaluative-dialects/157) (Handley 2017)
+>
 > [Rebol.org Scripts Tagged with: Dialect](http://www.rebol.org/st-topic-details.r?tag=type//dialect) (Search results)
 >
 > [RebolForum.com Search](http://www.rebolforum.com/index.cgi?f=home) (Refer to site search feature)
 
-**Source Code / Examples**
+**Source Code and Examples**
 
 > [File globbing module and dialect](http://www.rebol.org/view-script.r?script=file-list.r) (Irwin 2006)
 >
