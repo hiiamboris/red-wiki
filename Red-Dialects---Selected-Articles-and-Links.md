@@ -1,0 +1,13 @@
+*[Mailing List: "a REBOL dialect is usually limited..." (Nov 2002)](http://www.rebol.org/ml-display-thread.r?m=rmlGRXJ)
+*[Mailing List: "Dialects - Bane or Blessing?" (Sep 2002)](http://www.rebol.org/ml-display-thread.r?m=rmlKCCJ)
+*[Article: Kealist.com "Designing Dialects for Control and Communication" (2017)](http://www.kealist.com/)
+*[Source-Code: "Rebol/Flash Dialect" (Oldes 2012)](http://rebol.desajn.net/rswf/)
+*[Source-Code: "BASIC Interpreter" (Niclasen 2007)](http://rebol2.blogspot.com/2012/02/basic-intepreter.html)
+*[Source-Code: "Euler1 dialecting example" (Marø 2011)](https://gist.github.com/tormaroe/1497179)
+*[Tutorial: "Rebol Dialects and Other Features" (Antonaccio 2013)](http://re-bol.com/starting_computer_programming_with_rebol.html#section-3)
+*[Blog Comments: "Rebol - Dialects, Spreadsheets" (Lambda the Ultimate 2006)](http://lambda-the-ultimate.org/node/1240)
+*[Tutorial: "TUI Dialect - A dialect to print ASCII sequences" (Hohmann 2001)(http://rebol2.blogspot.com/2012/01/tui-dialect-dialect-to-print-ascii.html)
+*[Blog Comments: "dialects" (Handley 2006)](http://www.codeconscious.com/rebol/dialects.html)
+http://web.archive.org/web/20120510120959/http://www.rebolforces.com/zine/rzine-1-02.html#sect7.
+*[StackExchange: "Rebol refinements vs. dialects vs. objects" (Ross-Gill 2015)](https://softwareengineering.stackexchange.com/questions/297886/rebol-refinements-vs-dialects-vs-objects)
+*[Source-Code: "File globbing module and dialect" (Irwin 2006)](http://www.rebol.org/view-script.r?script=file-list.r)
