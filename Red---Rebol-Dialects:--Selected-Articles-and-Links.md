@@ -23,6 +23,8 @@
 > [Rebol.org Scripts Tagged with: Dialect](http://www.rebol.org/st-topic-details.r?tag=type//dialect) (Search results)
 >
 > [RebolForum.com Search](http://www.rebolforum.com/index.cgi?f=home) (Refer to site search feature)
+>
+> [Forum.rebol.info](https://forum.rebol.info/)
 
 **Source Code and Examples**
 
