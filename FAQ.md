@@ -20,6 +20,9 @@ This option was considered at the beginning, but quickly discarded as it would b
 
 * It is still possible to add LLVM as a target in the future, if this provides Red with a feature that we do not want or cannot afford to implement from scratch (unlikely, but not impossible).
 
+
+
+
 # Why does `append` flatten its `value` argument?
 
 For example, why does `append a [3 4]` produce `[1 2 3 4]` instead of `[1 2 [3 4]]`?
