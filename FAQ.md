@@ -20,8 +20,9 @@ This option was considered at the beginning, but quickly discarded as it would b
 
 * It is still possible to add LLVM as a target in the future, if this provides Red with a feature that we do not want or cannot afford to implement from scratch (unlikely, but not impossible).
 
+**Q. Why don't you use Sphynx like in kernel.org instead of Asciidoc?**
 
-
+Github supports Asciidoc and it appear that there's a bitbucket plugin for it too. The [LWN kernelorg article](https://lwn.net/Articles/692704/) prefers sphynx over asciidoc not for any better flexibility in sphynx's syntax but rather that it's written in python compared to asciidoctor's ruby and there doesn't already exist ruby code in the kernel tree. The article points out that asciidoc should be a better choice in the future, but sphynx is a better choice (for their needs) now. I think Red should stick with asciidoc. There hasn't been mention here of the Red documentation project suffering from a lack of functionality in asciidoctor's syntax or toolchain. Changing just for changing's sake is not wise.
 
 # Why does `append` flatten its `value` argument?
 
