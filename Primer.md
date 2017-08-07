@@ -53,3 +53,34 @@ Everything else, 0, empty strings, etc. is truthy. In addition, `to` and `make` 
 # Series types should usually be copied inside functions
 
 Otherwise your function may behave differently on each call. See the topic: [[Why do I have to copy series values?]]
+
+# What're the differences between `as` and `to`
+
+`To` and `as` are both _type-adapting_ functions, but with different behavior. The difference may seem subtle, but is very important. `To` creates a new value, copying the underlying buffers if any. `As` just coerces a series type to another compatible type in the same type class, and underlying buffers are shared. `To` is defined for almost all types, while `as` is only defined for any-string! and any-block! type classes. You can see the difference in the following example.
+
+```
+>> s: "abc"
+== "abc"
+>> f: to file! s
+== %abc
+>> append s #"d"
+== "abcd"
+>> f
+== %abc
+
+
+>> s: "abc"
+== "abc"
+>> f: as file! s
+== %abc
+>> append s #"d"
+== "abcd"
+>> f
+== %abcd
+
+>> remove f
+== %bcd
+>> s
+== "bcd"
+
+```
