@@ -57,8 +57,6 @@ Interface:
 	for [i = 5 to 10 step by 2] [print i]
 ```
 
-As an example, see the macro implemented in [Entering the World of Macros](http://www.red-lang.org/2016/12/entering-world-of-macros.html).
-
 ## Use Case
 
 The use case of a ```for``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
