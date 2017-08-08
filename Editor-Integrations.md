@@ -7,6 +7,9 @@ TODO: add feature table (syntax highlight, autocomplete, inline docs; see also r
 That is, not written in red
 
 ### VS-code
+Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=red-auto.red), or from VS Code itself: `ctrl+shift+P`, `> ext install red-auto.red`
+
+[Sources](https://github.com/red/VScode-extension)
 
 ### Sublime-text
 
