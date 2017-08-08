@@ -13,6 +13,10 @@ That is, not written in red
 ### [Howl](https://howl.io/)
 [rokf/howl-red](https://github.com/rokf/howl-red)
 
+### [EditPadPro](https://www.editpadpro.com/)
+[Syntax Coloring](https://www.editpadpro.com/cgi-bin/cscsdl4.pl?id=282)
+
+
 ## Red Native
 
 Editors written in Red itself
