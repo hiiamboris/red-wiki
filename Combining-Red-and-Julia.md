@@ -1,6 +1,12 @@
 There are different ways how to combine Red and Julia programs.  They are explored here.
 
-# Embedding Julia Code in Red (FFI)
+# From Red side
+
+## Calling Julia as a command
+
+You can use `call` in Red to integrate with Julia as well.  The `/input` refinement of `call` is useful to input Julia code. 
+
+## Embedding Julia Code in Red (FFI)
 
 Bindings for embedding `libjulia` into a Red program have already been contributed.
 
@@ -12,21 +18,20 @@ You may need to copy the binary to the same path as the bin folder in julia
 
 Unfortunately, Red is currently 32-bit only, so you can't use it with 64-bit Julia.  It is possible to use 32-bit Julia now, or to wait till Red is 64-bit as well.
 
-## References
+### References
 
 How to embed Julia (Julia documentation):
 https://docs.julialang.org/en/release-0.5/manual/embedding/
 
-# Calling Julia
 
-You can use `call` in Red to integrate with Julia as well.  The `/input` refinement of `call` is useful to input Julia code. 
+# From Julia
 
-# Calling Red from Julia
+## Embedding Red Code in Julia (FFI)
 
 A Julia package to call Red from Julia https://github.com/joa-quim/Red.jl
 Calling graphical functions works fine.
 
-# Calling a Julia function from a Red GUI defined in Julia
+### Example: Calling a Julia function from a Red GUI defined in Julia
 
 ```
 using Red
@@ -47,7 +52,9 @@ cmd = "view [backdrop yellow  t: text  yellow {Hello World !}
 redDo(cmd)
 ```
 
-# Establish communication between Red and Julia. Julia callback updates text in Red Window.
+### Example: Establish communication between Red and Julia.
+
+Julia callback updates text in Red Window.
 
 ```
 using Red
@@ -72,6 +79,7 @@ cmd = "view [backdrop yellow  t: text  yellow {Hello World!}
 redDo(cmd)
 ```
 
-# Sockets
+# Two way communication
+## Sockets
 
-Waiting for full I/O in Red.
+Waiting for full I/O support in Red.
