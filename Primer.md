@@ -84,3 +84,12 @@ Otherwise your function may behave differently on each call. See the topic: [[Wh
 == "bcd"
 
 ```
+
+# Macros in Red vs Red/System
+
+This may seem an advanced topic for a primer, but so many new Reducers (Red Users) jump right in and start using these features, that it's worth mentioning here.
+
+Red and Red/System (R/S) use two different preprocessors which have little in common, as the live in very different abstraction layers. "Macros" in Red are Lisp-like, while in R/S, they are C-like. `#define` is the name used because of its meaning in C, the behavior, and the fact that R/S is a C-levle language. While it might seem like using `#macro` as the name in R/S would help, to match Red, it would probably create confusion, as R/S macros have little in common with those in Red. R/S macros are optionally parametrized templates, while Red macros are functions.
+
+While R/S is a dialect of Red, you need to remember that they are two very different languages semantically.
+
