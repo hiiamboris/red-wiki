@@ -93,5 +93,5 @@ Red and Red/System (R/S) use two different preprocessors which have little in co
 
 While R/S is a dialect of Red, you need to remember that they are two very different languages semantically.
 
-[http://static.red-lang.org/red-system-specs.html#section-16](Red/System Preprocessor)
-[https://doc.red-lang.org/en/preprocessor.html](Red preprocessor)
+- [http://static.red-lang.org/red-system-specs.html#section-16](#Red/System Preprocessor)
+- [https://doc.red-lang.org/en/preprocessor.html](#Red preprocessor)
