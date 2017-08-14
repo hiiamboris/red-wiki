@@ -5,6 +5,7 @@ Typesets are groupings of datatypes with shared characteristics...
 - Pseudo-type  
 An informal name for `typeset`.
 
+# 
 - Action  
 One of a fixed set of functions all datatypes may support. Not all datatypes support all actions.
 - Native  
@@ -16,6 +17,7 @@ A function with an infix interface, where the first arg appears to the left of t
 - Mezzanine  
 Another name for a Red function.
 
+# 
 - Block  
 - List  
 - String  
@@ -23,6 +25,8 @@ Another name for a Red function.
 - Word  
 - Path  
 - Number  
+
+# 
 
 - series!  
 - any-type!  
@@ -41,12 +45,16 @@ Another name for a Red function.
 - external!  
 - default!  
 
+# 
+
 - Compiler  
 - Interpreter  
 - Runtime  
 - Toolchain  
 - Console  
 - libRed  
+
+# 
 
 - View  
 - VID  
