@@ -7,6 +7,7 @@
 5. [BINDING TO SELF](#binding-to-self)
 6. [INVALID BLOCK SELECTOR RETURNS NONE](#invalid-block-selector-returns-none)
 7. [OBJECT INTROSPECTION](#object-introspection)
+8. [DIR? FUNCTION](#dir-function)
 
 ## COPY object!
 
@@ -119,3 +120,7 @@ In Rebol2, an object! was inspected using the ```first```, ```second``` and ```t
 The ```first```, ```second``` and ```third``` functions do not work on object! values in Rebol3 or Red. They were replaced by the ```words-of```, ```values-of``` and ```body-of``` functions that return a block of words, a block of values and the object's body respectively. They do not include ```self```.
 
 Later versions of Rebol2 include ```words-of```, ```values-of``` and ```body-of``` though retain object introspection through ```first```, ```second``` and ```third```.  
+
+## DIR? FUNCTION
+
+Under R2, `dir?` returns true based on whether the target is an actual directory on disk. Under Red, it returns true if the target *looks like* a directory, because the name ends with a path separator.
