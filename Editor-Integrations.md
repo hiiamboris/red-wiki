@@ -19,6 +19,8 @@ Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemNa
 ### [EditPadPro](https://www.editpadpro.com/)
 [Syntax Coloring](https://www.editpadpro.com/cgi-bin/cscsdl4.pl?id=282)
 
+### Emacs
+[Emacs mode for Red](https://github.com/unchartedworks/red-mode)
 
 ## Red Native
 
