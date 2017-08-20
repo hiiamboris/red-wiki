@@ -20,3 +20,16 @@ Red[]
 print "Content-type: text/html^/"
 print rejoin ["Post data: " mold input]
 ```
+
+## Under IIS 8.5
+
+To use Red as CGI under IIS, follow the instructions below:
+
+* Find the compiled console executable (mostly under `C:\ProgramData\Red`)
+* Copy and rename the Red console application to somewhere that IIS can reach and execute
+* Open Internet Information Services Manager, go to your site settings, select `Handler Mappings` and select `Add Module Mapping`
+* Type `*.red` to `Request Path`, `<path>\redconsole.exe "%s"` to `Executable`, `Red` to `Name`
+* Select `Yes` for `allow this ISAPI extension?` question
+* Under `CGI`, set `Use New Console For Each Invocation` to `true`. Otherwise you get `502.2 - Bad Gateway. SetConsoleTitle failed!` error.
+
+If you use `red.exe` instead of compiled red console application, then don't forget to put `--cli` for `Executable` settings: `<path>\red.exe --cli "%s"`. Otherwise you get `502.2 - Bad Gateway. ""` (empty header error)
