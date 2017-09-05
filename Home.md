@@ -53,10 +53,10 @@ Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-G
 ### Design Deliberations:
 
 From time to time, some structured deliberations are needed to allow the best design decisions to be made.
-* [Unicode Issues with Proposed Resolutions] (https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
+* [Unicode Issues with Proposed Resolutions](https://github.com/red/red/wiki/Unicode-Issues-with-Proposed-Resolutions)
 * [Handling NotANumber, Infinity, & Signed Zero](https://github.com/red/red/wiki/The-Handling-of-NaNs,-INFs-and-signed-zeros.)
 * [Vector element by element arithmetic ](https://github.com/red/red/wiki/Vector-Element-by-Element-Arithmetic)
-* [Issues Relating to TO] (https://github.com/red/red/wiki/To-Issues)
+* [Issues Relating to TO](https://github.com/red/red/wiki/To-Issues)
 * [Red/System v2](https://github.com/dockimbel/Red/wiki/Red-System-v2-Wish-List)
 
 ### Red Enhancement Proposals:
@@ -86,13 +86,13 @@ None so far.
 The following proposals were developed before the Red Enhancement Proposal process was introduced. They need to be re-formatted according to the Red Enhancement Proposal process.
 
 * [Case insensitive charset refinement](https://github.com/red/red/wiki/Add-a-Refinement-to-the-charset-function-to-make-a-case-insensitive-bitset!)
-* [Change /local to local:] (https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
-* <strike>[Use blocks for keys in maps] (https://github.com/red/red/wiki/use-blocks-as-keys)</strike>
-* [Left Recursion for Parse] (https://github.com/red/red/wiki/Left-Recursion)
-* [REP XXXX Add mathematical and time functions] (https://github.com/red/red/wiki/%5BProposal%5D-To-add-Mathematical-and-Time-functions)
-* [Adding other Red dialects] (https://github.com/red/red/wiki/%5BProposal%5D-Adding-other-Red-dialects)
-* [Case Sensitive Map! Keys] (https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
-* [Improved console completion support] (https://github.com/red/red/issues/1165)
+* [Change /local to local:](https://github.com/red/red/wiki/Change-convention-of--LOCAL-to-use-LOCAL:-instead)
+* <strike>[Use blocks for keys in maps](https://github.com/red/red/wiki/use-blocks-as-keys)</strike>
+* [Left Recursion for Parse](https://github.com/red/red/wiki/Left-Recursion)
+* [REP XXXX Add mathematical and time functions](https://github.com/red/red/wiki/%5BProposal%5D-To-add-Mathematical-and-Time-functions)
+* [Adding other Red dialects](https://github.com/red/red/wiki/%5BProposal%5D-Adding-other-Red-dialects)
+* [Case Sensitive Map! Keys](https://github.com/red/red/wiki/Case-Sensitive-Map!-Keys)
+* [Improved console completion support](https://github.com/red/red/issues/1165)
 
 
 ### Mezzanines:
