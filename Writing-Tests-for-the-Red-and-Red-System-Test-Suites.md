@@ -13,7 +13,7 @@ The implementation of the test running dialect is in quick-test.r
 
 The vast majority of tests are written using quick-test.red and quick-test.reds. There are very few Rebol unit tests. A few tests of compiler features are written using quick-test.r as each test requires separate compilation. 
 
-This remainder of this document currently relates only to tests written using quick-test.red and quick-test.reds.
+The remainder of this document currently relates only to tests written using quick-test.red and quick-test.reds.
 
 ### Test Location
     red/
