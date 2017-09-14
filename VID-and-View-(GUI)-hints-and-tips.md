@@ -51,6 +51,8 @@ view/options [
 
 # How can I disable the standard context menu for a face?
 
+Set its menu facet to an empty block. For example:
+
 ```
 view [a: area do [a/menu: []]]
 ```
