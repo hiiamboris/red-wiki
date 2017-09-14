@@ -33,3 +33,19 @@ The remainder of this document currently relates only to tests written using qui
 
 
 The tests are stored in sub-directories of the red/tests/ and red/system/tests/ directories
+
+WIP
+Nenad likes the --test-- line to stand out in the tests so that he can spot them quickly. So we use two formats - concise tests (which fit on one line) and standard tests.
+The basic format for a concise test is
+<one tab>--test-- "test-name"<a few tabs>--assert
+Concise tests are written without a new line behind them.
+
+The basic format for a standard test is:
+<empty line>
+<one tab>--test-- "test-name"
+<two tabs><test code>
+<two tabs><--assert>
+<two tabs><more test code>
+<two tabs><--assert>
+<empty line>
+I try to keep all the tests completely independent so avoid sharing set up code. I want to avoid the risk of one test possibly affecting another. In my own code I even go to the extent of not reusing words used in other tests. (Perhaps this is verging on paranoia about tests falsely passing because of the content of a value set by a previous test)
