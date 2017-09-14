@@ -48,3 +48,9 @@ view/options [
     ]
 ]
 ```
+
+# How can I disable the standard context menu for a face?
+
+```
+view [a: area do [a/menu: []]]
+```
