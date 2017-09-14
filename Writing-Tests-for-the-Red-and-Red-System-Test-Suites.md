@@ -3,9 +3,9 @@ The Red Language currently has two test suites, one for Red, the other for Red/S
 
 The implementations of the test writing dialect are:
 
-*quick-test.red for testing Red code
-*quick-test.reds for testing Red/System code
-*quick-unit-test.r for testing Rebol code
+* quick-test.red for testing Red code
+* quick-test.reds for testing Red/System code
+* quick-unit-test.r for testing Rebol code
 
 The implementation of the test running dialect is in quick-test.r
 
