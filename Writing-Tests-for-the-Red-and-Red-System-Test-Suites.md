@@ -15,7 +15,7 @@ The vast majority of tests are written using quick-test.red and quick-test.reds.
 
 The remainder of this document currently relates only to tests written using quick-test.red and quick-test.reds.
 
-### Test Location
+### Test Locations
     red/
         tests/
               source/
@@ -34,18 +34,61 @@ The remainder of this document currently relates only to tests written using qui
 
 The tests are stored in sub-directories of the red/tests/ and red/system/tests/ directories
 
-WIP
-Nenad likes the --test-- line to stand out in the tests so that he can spot them quickly. So we use two formats - concise tests (which fit on one line) and standard tests.
-The basic format for a concise test is
-<one tab>--test-- "test-name"<a few tabs>--assert
-Concise tests are written without a new line behind them.
+### Writing Tests
+1. A test file should contain tests for either a single datatype or a single function. There are a few exceptions to this rule where functions have very similar roles.
+1. A test file should include:
+    1. A Red Header
+    1. A #include of quick-test.red or quick-test.reds as appropriate
+    1. \~\~\~start-file\~\~\~ "<test file name>"
+    1. one or more ===start-group=== "<group name>"
+    1. single or multiple line tests
+    1. ===end-group===
+    1. \~\~\~end-file\~\~\~
+    1. see [bitset-test.red](https://github.com/red/red/blob/master/tests/source/units/bitset-test.red) for an example
+1. The test files should follow the [Red Coding Guidelines](https://github.com/red/red/wiki/Coding-Style-Guide).
+1. Each test should be independent of all other tests.
+1. Tests should be given a unique name so that they can be easily identified (by searching the test source).
+1. Tests should be written in either concise (single line) or standard (multi line) format (see below).
+
+#### Test Format
+The --test-- line should stand out in the tests so that they can be seen at a glance.
+
+The basic format for a concise test is:
+```text
+    <one tab>--test-- "test-name"<one or more tabs>--assert
+```
+Concise tests are written without a new line between them.
+
+Example of concise tests:
+```text
+    --test-- "basic-1"	--assert "make bitset! #{00}" = mold make bitset! 1
+    --test-- "basic-2"	--assert "make bitset! #{00}" = mold charset ""
+    --test-- "basic-3"	--assert "make bitset! #{00}" = mold charset []
+```
 
 The basic format for a standard test is:
-<empty line>
-<one tab>--test-- "test-name"
-<two tabs><test code>
-<two tabs><--assert>
-<two tabs><more test code>
-<two tabs><--assert>
-<empty line>
-I try to keep all the tests completely independent so avoid sharing set up code. I want to avoid the risk of one test possibly affecting another. In my own code I even go to the extent of not reusing words used in other tests. (Perhaps this is verging on paranoia about tests falsely passing because of the content of a value set by a previous test)
+```text
+    <empty line>
+    <one tab>--test-- "test-name"
+    <two tabs><test code>
+    <two tabs><--assert>
+    <two tabs><more test code>
+    <two tabs><--assert>
+    <empty line>
+```
+Example of standard tests:
+```text
+    --test-- "basic-14"
+        bs: make bitset! [255 256]
+        --assert 264 = length? bs
+        --assert true = pick bs 255
+        --assert true = pick bs 256
+		
+    --test-- "basic-15"
+        bs: make bitset! [00010000h]
+        --assert 65544 = length? bs
+        --assert true = pick bs 00010000h
+```
+
+## Questions?
+Please ask any questions in the [Red Gitter Tests Room](https://gitter.im/red/tests).
