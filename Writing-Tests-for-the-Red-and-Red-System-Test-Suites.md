@@ -48,6 +48,7 @@ The tests are stored in sub-directories of the red/tests/ and red/system/tests/ 
 1. The test files should follow the [Red Coding Guidelines](https://github.com/red/red/wiki/Coding-Style-Guide).
 1. Each test should be independent of all other tests.
 1. Tests should be given a unique name so that they can be easily identified (by searching the test source).
+1. Tests should be written to work both when compiled and interpreted.
 1. Tests should be written in either concise (single line) or standard (multi line) format (see below).
 
 #### Test Format
