@@ -39,8 +39,8 @@ The tests are stored in sub-directories of the red/tests/ and red/system/tests/ 
 1. A test file should include:
     1. A Red Header
     1. A #include of quick-test.red or quick-test.reds as appropriate
-    1. \~\~\~start-file\~\~\~ "<test file name>"
-    1. one or more ===start-group=== "<group name>"
+    1. \~\~\~start-file\~\~\~ "\<test file name\>"
+    1. one or more ===start-group=== "\<group name>\"
     1. single or multiple line tests
     1. ===end-group===
     1. \~\~\~end-file\~\~\~
