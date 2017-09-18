@@ -56,3 +56,28 @@ Set its menu facet to an empty block. For example:
 ```
 view [a: area do [a/menu: []]]
 ```
+
+# How to handle `wheel` events
+
+```
+view [
+    size 200x400
+    base
+        on-wheel [face/offset/y: face/offset/y + (5 * event/picked)]
+        on-created [set-focus face]
+]
+```
+
+The key part is giving focus to the face where you define the `on-wheel` handler, so that it will receive the wheel events. By default, the window receivs those events, so you can also put an handler there:
+
+```
+view/options [size 200x400 b: base][
+    actors: object [
+        on-wheel: func [face event][
+            b/offset/y: b/offset/y + (5 * event/picked)
+        ]
+    ]
+]
+```
+
+See also: https://doc.red-lang.org/en/view.html#_event_datatype
