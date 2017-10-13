@@ -127,7 +127,7 @@ if any [
 
 `send` is not defined in Red.
 
-`send luke@rebol.com page` can not be used.
+`send luke@rebol.com page` cannot be used.
 
 ### 11. Files
 
@@ -177,28 +177,6 @@ print remold [1 + 2  3 + 4]
 
 Currently, Red has no `protect` or `unprotect` functions.
 
-### 6.2 Any and All
-
-```
-size: 50
-if any [size < 10 size > 90] [
-    print "Size is out of range."
-]
-```
-Should be:
-```
-size: 50
-if not any [size < 10 size > 90] [
-    print "Size is out of range."
-]
-```
-Or:
-```
-size: 50
-unless any [size < 10 size > 90] [
-    print "Size is out of range."
-]
-```
 
 ### 7.3 For
 
