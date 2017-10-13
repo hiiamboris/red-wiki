@@ -1,4 +1,4 @@
-## Rebol/Core    Chapter 3
+## Rebol/Core    Chapter 3 - Quick Tour
 
 http://www.rebol.com/docs/core23/rebolcore-3.html
 
@@ -138,6 +138,231 @@ if any [
 ### 12. Networking
 
 Currently, only HTTP is available in Red.
+
+
+***
+
+## REBOL/Core Chapter 4 - Expressions
+
+http://www.rebol.com/docs/core23/rebolcore-4.html
+
+### 4.3 Evaluating Blocks
+
+REBOL`
+```
+if time > 12:30 [print "past noon"]
+```
+
+Red
+```
+if now/time > 12:30 [print "past noon"]
+```
+
+### 4.4 Reducing Blocks
+
+```
+print reform [1 + 2  3 + 4]
+3 7
+print remold [1 + 2  3 + 4]
+[3 7]
+```
+
+`reform` and `remold` do not exist in Red.
+
+### 5. Words
+
+`zero` is not defined in Red by default.
+
+### 5.7 Protecting Words
+
+Currently, Red has no `protect` or `unprotect` functions.
+
+### 6.2 Any and All
+
+```
+size: 50
+if any [size < 10 size > 90] [
+    print "Size is out of range."
+]
+```
+Should be:
+```
+size: 50
+if not any [size < 10 size > 90] [
+    print "Size is out of range."
+]
+```
+Or:
+```
+size: 50
+unless any [size < 10 size > 90] [
+    print "Size is out of range."
+]
+```
+
+### 7.3 For
+
+There is no `for` function in Red.
+
+### 7.4 Foreach
+
+```
+movies: [
+     8:30 "Contact"      $4.95
+    10:15 "Ghostbusters" $3.25
+    12:45 "Matrix"       $4.25
+]
+
+foreach [time title price] movies [
+    print ["watch" title "at" time "for" price]
+]
+watch Contact at 8:30 for $4.95
+watch Ghostbusters at 10:15 for $3.25
+watch Matrix at 12:45 for $4.25
+```
+
+There is no `money!` datatype in Red. Use `float`, instead. 
+
+```
+movies: [
+     8:30 "Contact"      4.95
+    10:15 "Ghostbusters" 3.25
+    12:45 "Matrix"       4.25
+]
+
+foreach [time title price] movies [
+    print ["watch" title "at" time "for" price]
+]
+watch Contact at 8:30 for 4.95
+watch Ghostbusters at 10:15 for 3.25
+watch Matrix at 12:45 for 4.25
+```
+
+### 7.5 Forall and Forskip
+
+"When forall returns, the color index is at the tail of the series."
+
+The series is set back to `head` before `forall` exits.
+
+```
+>> forall colors [print first colors]
+red
+green
+blue
+>> probe colors
+[red green blue]
+== [red green blue]
+>> 
+```
+
+There is no `forskip` in Red.
+
+### 8.2 Switch
+
+```
+str: copy "right "
+
+print switch 22 [
+    11 [join str "here"]
+    22 [join str "there"]
+]
+```
+Since Red currently has no `join` function, equivalent code would be:
+
+```
+str: copy "right "
+
+print switch 22 [
+    11 [append str "here"]
+    22 [append str "there"]
+]
+```
+
+```
+person: 123
+switch type?/word [
+    string! [print "a string"]
+    binary! [print "a binary"]
+    integer! [print "an integer number"]
+    decimal! [print "a decimal number"]
+]
+```
+
+Appears to be wrong. Should be?:
+
+```
+person: 123
+switch type?/word person [
+    string! [print "a string"]
+    binary! [print "a binary"]
+    integer! [print "an integer number"]
+    decimal! [print "a decimal number"]
+]
+```
+
+`send` is not defined in Red. The following example will not work.
+
+```
+time: 12:30
+switch time [
+     8:00 [send wendy@domain.dom "Hey, get up"]
+    12:30 [send cindy@rebol.dom "Join me for lunch."]
+    16:00 [send group@every.dom "Dinner anyone?"]
+]
+```
+
+### 8.2.2 Common Cases
+
+This code:
+```
+case1: [print length? url]   ; the common block
+
+url: http://www.rebol.com
+switch url [
+    http://www.rebol.com case1
+    http://www.cnet.com [print "there"]
+    ftp://ftp.rebol.org case1
+]
+```
+
+Should be:
+
+```
+case1: [print length? url]   ; the common block
+
+url: http://www.rebol.com
+switch url [
+    http://www.rebol.com [do case1]
+    http://www.cnet.com [print "there"]
+    ftp://ftp.rebol.org [do case1]
+]
+```
+
+### 9. Stopping Evaluation
+
+```
+if time > 12:00 [halt]
+```
+
+Should be:
+
+```
+if now/time > 12:00 [halt]
+```
+
+### 10. Trying Blocks
+
+```
+for num 5 0 -1 [
+    if error? try [print 10 / num] [print "error"]
+]
+```
+
+`for` does not exist in Red.
+
+
+
+
 
 
 
