@@ -1,3 +1,10 @@
+__****Through the follow sections the aim is to list differences between Red and Rebol and to provide a way for the Rebol Guide examples to run correctly, if possible, when there is an issue in Rebol/Red compatibility.****__
+
+
+__****Not all examples are run-able in the Rebol guide, even by Rebol. They are examples as in, 'For example', or 
+just to illustrate a point.****__
+
+
 ## Rebol/Core    Chapter 3 - Quick Tour
 
 http://www.rebol.com/docs/core23/rebolcore-3.html
@@ -6,6 +13,7 @@ http://www.rebol.com/docs/core23/rebolcore-3.html
 
 "Seconds can include a decimal sub-second. Times can also include AM and PM appended without intervening spaces:
 12:35PM 9:15AM"
+
 AM and PM do not work in Red.
 
 ### 2.3 Dates
@@ -17,7 +25,7 @@ No money! datatype in Red.
 
 ### 2.5 Tuples
 
-2.3.0   ==  tuple!
+`2.3.0   ==  tuple!`
 
 2.3. 
 ```
