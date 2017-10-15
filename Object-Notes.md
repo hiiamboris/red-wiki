@@ -66,4 +66,15 @@ Here is a way to achieve the same result with compose:
 ]
 ```
 
+# `Return` in spec blocks
+
+`Context`, by design, processes a call to `return` in the spec block. It returns the argument value of the called return instead of the object.
+
+```
+>> o: context [x: 5 return 2 + x]
+== 7
+>> probe o
+7
+== 7
+```
 
