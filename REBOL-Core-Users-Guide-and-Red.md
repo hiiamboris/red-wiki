@@ -348,6 +348,145 @@ for num 5 0 -1 [
 
 
 
+***
+
+## REBOL/Core Chapter 6 - Series
+
+
+
+### 1.1 Traversing a Series
+
+```
+print first colors
+** Script Error: Out of range or past end.
+** Where: print first colors
+```
+
+Red
+
+```
+>> print first colors
+none
+```
+
+### 4.1 Length?
+
+Typo in: 
+```
+color: next color
+print length? color
+```
+
+Should be:
+```
+colors: next colors
+print length? colors
+```
+
+### 4.5 Offset?
+
+Typo:
+```
+data: [1 2 3 4]
+data1: next data
+data2: back tail data
+print offset? data1 data2
+4
+```
+
+Result should be 2.
+
+
+### 5. Making and Copying Series
+
+`list: make list! 128`
+There is no list! datatype in Red.
+
+### 6.3 Forall Loop
+
+```
+colors: [red green blue yellow orange]
+forall colors [print first colors]
+```
+
+"The forall advances the variable position through the series, so when it returns the variable is left at its tail:"
+```
+print tail? colors
+true
+```
+"Therefore, the variable must be reset before it is used again:
+colors: head colors"
+
+This is not true in latest version of Rebol 2, and is not true in Red.
+The position is set back to head before `forall` exits.
+```
+>> forall colors [print first colors]
+red
+green
+blue
+yellow
+orange
+>> tail? colors
+== false
+>> head? colors
+== true
+```
+
+### 6.4 Forskip Loop
+
+There is no `forskip` in Red.
+
+### 7.2 Refinement Summary
+
+Red has a few different refinements for `find` than Rebol.
+
+Consult `help find`
+
+### 7.3 Partial Searches
+
+" find/part takes either a count or an ending position."
+
+In Red `find/part` takes:
+```
+/part        => Limit the length of the search.
+        length       [number! series!] 
+```
+
+This Rebol example will fail:
+```
+colors: [red green blue yellow blue orange gold]
+probe find/part colors 'blue
+```
+
+### 7.6 Repeated Searches
+
+These examples are for illustrative purposes, or "for instance".
+Not run-able without modification.
+
+### 7.8 Wilcard Searches
+Wildcard searches with `/any` are not yet implemented for Red.
+
+### 7.10 Search and Replace
+
+```
+probe replace data 4 `four
+```
+
+Back-tick in text should be single quote `'`
+
+
+### 11.2 Only
+
+```
+insert/only (find blk 5) [$1 $2 $3]
+probe blk
+```
+
+`$` symbols must be removed to run example. Red currently has no money! type.
+
+
+
+
 
 
 
