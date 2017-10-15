@@ -1,4 +1,4 @@
-__****Through the follow sections, the aim is to list differences between Red and Rebol and to provide a way for the Rebol Guide examples to run correctly, if possible, when there is an issue in Rebol/Red compatibility.****__
+____****Through the follow sections, the aim is to list differences between Red and Rebol and to provide a way for the Rebol Guide examples to run correctly, if possible, when there is an issue in Rebol/Red compatibility.****__
 
 
 __****Not all examples are run-able in the Rebol guide, even by Rebol. They are examples as in, 'For example', or 
