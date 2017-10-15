@@ -352,6 +352,7 @@ for num 5 0 -1 [
 
 ## REBOL/Core Chapter 6 - Series
 
+http://www.rebol.com/docs/core23/rebolcore-6.html
 
 
 ### 1.1 Traversing a Series
