@@ -175,7 +175,7 @@ print remold [1 + 2  3 + 4]
 [3 7]
 ```
 
-`reform` and `remold` do not exist in Red.
+`reform` and `remold` do not exist in Red. Use `form reduce` and `mold reduce` instead.
 
 ### 5. Words
 
