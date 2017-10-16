@@ -357,13 +357,14 @@ http://www.rebol.com/docs/core23/rebolcore-6.html
 
 ### 1.1 Traversing a Series
 
+If the series position is set to `tail`in Rebol, trying to access the first element is an error.
 ```
 print first colors
 ** Script Error: Out of range or past end.
 ** Where: print first colors
 ```
 
-Red
+In Red it returns `none`.
 
 ```
 >> print first colors
