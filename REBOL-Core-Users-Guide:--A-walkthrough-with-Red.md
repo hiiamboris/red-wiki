@@ -55,7 +55,7 @@ Decimal is Float in Red:
 ### 4. Blocks
 
 The examples are not all run-able. They are examples as in, 'For example'.
-`if time > 10:30 [send jim news]` will produce an error.
+`if time > 10:30 [send jim news]` will produce an error. Note that some of the examples will also produce errors in Rebol.  They are not meant to run, just to illustrate a point.
 
 ```
 foreach [site action] sites [
