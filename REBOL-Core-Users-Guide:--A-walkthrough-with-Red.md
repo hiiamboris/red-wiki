@@ -156,12 +156,12 @@ http://www.rebol.com/docs/core23/rebolcore-4.html
 
 ### 4.3 Evaluating Blocks
 
-REBOL`
 ```
 if time > 12:30 [print "past noon"]
 ```
 
-Red
+Should be:
+
 ```
 if now/time > 12:30 [print "past noon"]
 ```
@@ -485,6 +485,107 @@ probe blk
 ```
 
 `$` symbols must be removed to run example. Red currently has no money! type.
+
+
+***
+
+## Chapter 7 - Block Series
+http://www.rebol.com/docs/core23/rebolcore-7.html
+
+### 3. Arrays
+
+```
+arr: [
+    [1   2   3  ]
+    [a   b   c  ]
+    [$10 $20 $30]
+]
+*** Syntax Error: missing #"]" at "$10 $20 $30]]"
+*** Where: do
+*** Stack: load
+```
+
+There is no money! dataype in Red. Change from $10 $20 $30 to 10 20 30 to run example.
+
+### 3.1 Creating Arrays
+
+There is currently no `array!` type in Red. Use `block!` or `vector!`
+
+`b: make block! 5` 			Make a `block!` with room for 5 elements.
+
+Make `vector!`  of size `n`. Initial values are `0`.
+```
+>> arr: make vector! 5 
+== make vector! [0 0 0 0 0]
+
+>> arr/1
+== 0
+```
+
+Here is a port of the Rebol `array` function by Gregg Irwin, which you can use for the examples in this section:
+
+```
+array: function [
+    "Makes and initializes a block of of values (NONE by default)"
+    size [integer! block!] "Size or block of sizes for each dimension"
+    /initial "Specify an initial value for elements"
+        value "For each item: called if a func, deep copied if a series"
+][
+    if block? size [
+        if tail? more-sizes: next size [more-sizes: none]
+        size: first size
+        if not integer? size [
+            ; throw error, integer expected
+            cause-error 'script 'expect-arg reduce ['array 'size type? get/any 'size]
+        ]
+    ]
+    result: make block! size
+    case [
+        block? more-sizes [
+            loop size [append/only result array/initial more-sizes :value]
+        ]
+        series? :value [
+            loop size [append/only result copy/deep value]
+        ]
+        any-function? :value [
+            loop size [append/only result value]
+        ]
+        'else [
+            append/dup result value size
+        ]
+    ]
+    result
+]
+```
+
+### 4. Composing Blocks
+
+Rebol example:
+```
+probe compose/deep [a b [c (d e)]]
+[a b [c d e]]
+```
+
+Red:
+```
+>> probe compose/deep [a b [c (d e)]]
+*** Script Error: d has no value
+*** Where: compose
+*** Stack: probe  
+```
+
+There seems to be some slight differences with Reds compose.
+Consult `help compose`.
+
+For the above example to behave the same as Rebols compose/deep, use `compose/only`.
+
+```
+>> probe compose/only [a b [c (d e)]]
+[a b [c (d e)]]
+== [a b [c (d e)]]
+```
+
+
 
 
 
