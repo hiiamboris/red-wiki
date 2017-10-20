@@ -586,6 +586,178 @@ For the above example to behave the same as Rebols compose/deep, use `compose/on
 ```
 
 
+***
+
+## Chapter 8 - String Series
+http://www.rebol.com/docs/core23/rebolcore-8.html
+
+For a list of Red string related datatypes, type: `help any-string`
+
+The following string functions are not predefined in Red:
+
+`join`
+`reform`
+`remold`
+
+We can use Rebol 2 source to add our own versions of these functions:
+
+`join`
+
+```
+join: func [
+    "Concatenates values."
+    value "Base value"
+    rest "Value or block of values"
+][
+    value: either series? :value [copy value] [form :value]
+    repend value :rest
+]
+```
+
+`reform`
+
+```
+reform: func [
+    "Forms a reduced block and returns a string."
+    value "Value to reduce and form"
+][
+    form reduce :value
+]
+```
+
+`remold`
+
+```
+remold: func [
+    "Molds a reduced block and returns a string."
+    value "Value to reduce and mold"
+][
+    mold reduce :value
+]
+```
+
+"This chapter will also describes these string functions:"
+
+The following functions do not currently exist in Red:
+
+`detab`
+
+`entab`
+
+`compress`
+
+### 2.1 Join
+
+```
+print join $11 " dollars"
+```
+
+There is no `money!` dataype in Red. Change $11 to 11 for example to run.
+
+### 2.3 Form
+There is no money type in Red. Change $1.50 to 1.50 to run examples.
+
+### 2.5 Mold
+
+```
+money: $11.11
+sub-blk: [inside another block mold this is unevaluated]
+probe mold [$22.22 money "-- unevaluated block:" sub-blk]
+```
+
+Red does not currently have a `money!` datatype. Remove `$` symbol to run examples.
+
+```
+money: 11.11
+sub-blk: [inside another block mold this is unevaluated]
+probe mold [22.22 money "-- unevaluated block:" sub-blk]
+```
+
+### 2.7.2 Detab and Entab
+
+ `detab` and `entab` functions do not exist  in Red.
+
+### 2.8 Uppercase and Lowercase
+
+Typo in uppercase example.  Word uppercase has three `p`s.
+
+```
+print upppercase/part "ukiah" 1
+```
+
+Should be:
+
+```
+print uppercase/part "ukiah" 1
+```
+
+### 2.9 Checksum
+
+"By default, the CRC checksum is computed"
+"CRC	24 bit circular redundancy checksum"
+
+```
+print checksum "hello"
+52719
+print checksum (read http://www.rebol.com/)
+356358
+```
+
+Red `checksum`  requires method argument.
+
+```
+ARGUMENTS:
+     data         [binary! string! file!] 
+     method       [word!] {MD5 SHA1 SHA256 SHA384 SHA512 CRC32 TCP ADLER32 hash}.
+```
+
+In Red:
+
+```
+>> print checksum "hello" 'md5
+#{5D41402ABC4B2A76B9719D911017C592}
+```
+
+Checksum has different refinments in Red. Consult `help checksum`.
+
+### 2.10 Compression and Decompression
+
+```
+print [size? str "bytes"]
+306 bytes
+```
+
+In Red `size` takes `file!` as its argument.
+
+There is currently no `compress` in Red.
+
+__Need solutions to make examples run-able.__
+
+
+### 2.11 Number Base Conversion
+
+Will not work as written:
+
+```
+b-line: debase e-line
+print type? b-line
+binary
+probe b-line
+#{4E6F2120546865726527732061206C616E6421}
+print to-string b-line
+No! There's a land!
+```
+
+You can use these to enable the code to be run-able:
+```
+line: "No! There's a land!"
+e-line: enbase line
+b-line: debase e-line
+```
+
+
+
+
 
 
 
