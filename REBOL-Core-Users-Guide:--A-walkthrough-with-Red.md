@@ -755,6 +755,17 @@ e-line: enbase line
 b-line: debase e-line
 ```
 
+***
+
+## Chapter 15 - Parsing
+http://www.rebol.com/docs/core23/rebolcore-15.html
+
+There are some key differences between Rebol `parse` and Reds `parse`.
+
+The very first examples in the Rebol Guide will not work, as there is no `none` option for splitting strings.
+
+[See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
+
 
 
 
