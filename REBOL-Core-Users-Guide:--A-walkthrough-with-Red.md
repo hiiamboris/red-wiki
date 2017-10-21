@@ -1,13 +1,19 @@
-****Throughout the following sections the aim is to list differences between Red and Rebol and to provide a way for Rebol Guide examples to run in Red when there is an issue in Rebol/Red compatibility.****
+****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
 
-__****Not all examples are run-able in the Rebol guide, even by Rebol. They are examples as in, 'For example', or 
-just to illustrate a point.****__
+Note:
+
+__Not all examples are run-able in the Rebol guide, even by Rebol. Some examples are, 'For example', or 
+just to illustrate a point.__
+
+
+***
 
 
 ## Rebol/Core    Chapter 3 - Quick Tour
 
 http://www.rebol.com/docs/core23/rebolcore-3.html
+
 
 ### 2.2 Times
 
@@ -16,25 +22,31 @@ http://www.rebol.com/docs/core23/rebolcore-3.html
 
 AM and PM do not work in Red.
 
+
 ### 2.3 Dates
 
 [Red date! documentation](https://doc.red-lang.org/en/date.html)
 
+
 ### 2.4
 No money! datatype in Red.
+
 
 ### 2.5 Tuples
 
 `2.3.0   ==  tuple!`
 
+A trailing `.` is an error in Red:
+
 2.3. 
+
 ```
 *** Syntax Error: invalid float! at "2.3."
 *** Where: do
 *** Stack: load 
 ```
 
-Decimal is Float in Red:
+Decimal in Rebol is `float!` in Red:
 ```
 >> type? 2.3
 == float!
@@ -42,20 +54,24 @@ Decimal is Float in Red:
 
 ### 2.13 Binary
 
-"Binary values are byte strings of any length. They can be encoded directly as hexadecimal or base-64. For example:
-    #{42652061205245424F4C}
-    64#{UkVCT0wgUm9ja3Mh}
-"
-(check Red rules)
-  
+```
+Binary values are byte strings of any length. They can be encoded directly as hexadecimal or base-64. 
+
+For example:
+
+#{42652061205245424F4C}
+
+64#{UkVCT0wgUm9ja3Mh}
+```
+
+Consult `help` in the Red cosole for `enbase` and `debase` specifics.
+
 `help enbase`
 
 `help debase`
 
-### 4. Blocks
 
-The examples are not all run-able. They are examples as in, 'For example'.
-`if time > 10:30 [send jim news]` will produce an error. Note that some of the examples will also produce errors in Rebol.  They are not meant to run, just to illustrate a point.
+### 4. Blocks
 
 ```
 foreach [site action] sites [
@@ -65,11 +81,12 @@ foreach [site action] sites [
 ```
 Will freeze the Red GUI Console.
 
+
 ### 6. Evaluation
 
 `if current-time > snack-time [print snack-time]`
 
-Produces an error: 
+This code is just an example and will produce an error if you attempt to run it: 
 ```
 *** Script Error: current-time has no value
 *** Where: >
@@ -82,9 +99,9 @@ loop 20 [
     send friend@rebol.com read http://www.cnn.com
 ]
 ```
-(Do not run unless you want your terminal to hang)
 
 `send` is not defined in Red.
+
 
 ### 7. Functions
 
@@ -109,10 +126,12 @@ average: function [series] [total] [
 *** Stack: average  
 ```
 
+
 ### 9. Object
 
 No money! type in Red. Examples have to be modified in order to run.
 For example, use `balance: 100` instead of `balance: $100`
+
 
 ### 10. Scripts
 
@@ -137,11 +156,13 @@ if any [
 
 `send luke@rebol.com page` cannot be used.
 
+
 ### 11. Files
 
 `print modified? %file.txt`
 
 `modified?` is not defined in Red.
+
 
 ### 12. Networking
 
@@ -153,6 +174,7 @@ Currently, only HTTP is available in Red.
 ## REBOL/Core Chapter 4 - Expressions
 
 http://www.rebol.com/docs/core23/rebolcore-4.html
+
 
 ### 4.3 Evaluating Blocks
 
@@ -166,6 +188,7 @@ Should be:
 if now/time > 12:30 [print "past noon"]
 ```
 
+
 ### 4.4 Reducing Blocks
 
 ```
@@ -177,9 +200,11 @@ print remold [1 + 2  3 + 4]
 
 `reform` and `remold` do not exist in Red. Use `form reduce` and `mold reduce` instead.
 
+
 ### 5. Words
 
 `zero` is not defined in Red by default.
+
 
 ### 5.7 Protecting Words
 
@@ -189,6 +214,7 @@ Currently, Red has no `protect` or `unprotect` functions.
 ### 7.3 For
 
 There is no `for` function in Red.
+
 
 ### 7.4 Foreach
 
@@ -242,6 +268,7 @@ blue
 ```
 
 There is no `forskip` in Red.
+
 
 ### 8.2 Switch
 
@@ -297,6 +324,7 @@ switch time [
 ]
 ```
 
+
 ### 8.2.2 Common Cases
 
 This code:
@@ -323,6 +351,7 @@ switch url [
     ftp://ftp.rebol.org [do case1]
 ]
 ```
+
 
 ### 9. Stopping Evaluation
 
@@ -358,6 +387,7 @@ http://www.rebol.com/docs/core23/rebolcore-6.html
 ### 1.1 Traversing a Series
 
 If the series position is set to `tail`in Rebol, trying to access the first element is an error.
+
 ```
 print first colors
 ** Script Error: Out of range or past end.
@@ -385,6 +415,7 @@ colors: next colors
 print length? colors
 ```
 
+
 ### 4.5 Offset?
 
 Typo:
@@ -403,6 +434,7 @@ Result should be 2.
 
 `list: make list! 128`
 There is no list! datatype in Red.
+
 
 ### 6.3 Forall Loop
 
@@ -438,11 +470,13 @@ orange
 
 There is no `forskip` in Red.
 
+
 ### 7.2 Refinement Summary
 
-Red has a few different refinements for `find` than Rebol.
+There are some differences in the refinements for `find` in Red.
 
-Consult `help find`
+Consult `help find` for details.
+
 
 ### 7.3 Partial Searches
 
@@ -460,13 +494,16 @@ colors: [red green blue yellow blue orange gold]
 probe find/part colors 'blue
 ```
 
+
 ### 7.6 Repeated Searches
 
 These examples are for illustrative purposes, or "for instance".
 Not run-able without modification.
 
+
 ### 7.8 Wildcard Searches
 Wildcard searches with `/any` are not yet implemented for Red.
+
 
 ### 7.10 Search and Replace
 
@@ -492,6 +529,7 @@ probe blk
 ## Chapter 7 - Block Series
 http://www.rebol.com/docs/core23/rebolcore-7.html
 
+
 ### 3. Arrays
 
 ```
@@ -506,6 +544,7 @@ arr: [
 ```
 
 There is no money! datatype in Red. Change from $10 $20 $30 to 10 20 30 to run example.
+
 
 ### 3.1 Creating Arrays
 
@@ -557,6 +596,7 @@ array: function [
     result
 ]
 ```
+
 
 ### 4. Composing Blocks
 
@@ -654,8 +694,10 @@ print join $11 " dollars"
 
 There is no `money!` datatype in Red. Change $11 to 11 for example to run.
 
+
 ### 2.3 Form
 There is no money type in Red. Change $1.50 to 1.50 to run examples.
+
 
 ### 2.5 Mold
 
@@ -721,6 +763,7 @@ In Red:
 
 Checksum has different refinements in Red. Consult `help checksum`.
 
+
 ### 2.10 Compression and Decompression
 
 ```
@@ -732,7 +775,7 @@ In Red `size` takes `file!` as its argument.
 
 There is currently no `compress` in Red.
 
-__Need solutions to make examples run-able.__
+(todo: Need solutions to make examples run-able here)
 
 
 
@@ -825,6 +868,7 @@ make-account: func [
 ]
 ```
 
+
 ### 6. Prototype Objects
 
 Once an object  has been created, it can be used as a prototype for other objects. 
@@ -842,6 +886,7 @@ You can extend the cloned object by adding new words in the block:
     z: 1
 ]
 ```
+
 
 ### 8. Encapsulation
 
@@ -870,6 +915,7 @@ Bank: make object! [
 ```
 
 Should be:
+
 ```
 bank-account: make object! [
 
@@ -894,6 +940,7 @@ bank-account: make object! [
 ```
 
 `bob: make-account "Bob" "Baker" 4000`
+
 
 ### 9. Reflective Properties
 
