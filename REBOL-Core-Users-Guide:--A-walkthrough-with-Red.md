@@ -1,4 +1,4 @@
-****Through the follow sections, the aim is to list differences between Red and Rebol and to provide a way for the Rebol Guide examples to run correctly, if possible, when there is an issue in Rebol/Red compatibility.****
+****Throughout the following sections the aim is to list differences between Red and Rebol and to provide a way for Rebol Guide examples to run in Red when there is an issue in Rebol/Red compatibility.****
 
 
 __****Not all examples are run-able in the Rebol guide, even by Rebol. They are examples as in, 'For example', or 
@@ -465,7 +465,7 @@ probe find/part colors 'blue
 These examples are for illustrative purposes, or "for instance".
 Not run-able without modification.
 
-### 7.8 Wilcard Searches
+### 7.8 Wildcard Searches
 Wildcard searches with `/any` are not yet implemented for Red.
 
 ### 7.10 Search and Replace
@@ -505,13 +505,13 @@ arr: [
 *** Stack: load
 ```
 
-There is no money! dataype in Red. Change from $10 $20 $30 to 10 20 30 to run example.
+There is no money! datatype in Red. Change from $10 $20 $30 to 10 20 30 to run example.
 
 ### 3.1 Creating Arrays
 
 There is currently no `array!` type in Red. Use `block!` or `vector!`
 
-`b: make block! 5` 			Make a `block!` with room for 5 elements.
+`b: make block! 5` Make a block with room for 5 elements.
 
 Make `vector!`  of size `n`. Initial values are `0`.
 ```
@@ -652,7 +652,7 @@ The following functions do not currently exist in Red:
 print join $11 " dollars"
 ```
 
-There is no `money!` dataype in Red. Change $11 to 11 for example to run.
+There is no `money!` datatype in Red. Change $11 to 11 for example to run.
 
 ### 2.3 Form
 There is no money type in Red. Change $1.50 to 1.50 to run examples.
@@ -676,6 +676,7 @@ probe mold [22.22 money "-- unevaluated block:" sub-blk]
 ### 2.7.2 Detab and Entab
 
  `detab` and `entab` functions do not exist  in Red.
+
 
 ### 2.8 Uppercase and Lowercase
 
@@ -718,7 +719,7 @@ In Red:
 #{5D41402ABC4B2A76B9719D911017C592}
 ```
 
-Checksum has different refinments in Red. Consult `help checksum`.
+Checksum has different refinements in Red. Consult `help checksum`.
 
 ### 2.10 Compression and Decompression
 
@@ -732,6 +733,7 @@ In Red `size` takes `file!` as its argument.
 There is currently no `compress` in Red.
 
 __Need solutions to make examples run-able.__
+
 
 
 ### 2.11 Number Base Conversion
@@ -748,7 +750,7 @@ print to-string b-line
 No! There's a land!
 ```
 
-You can use these to enable the code to be run-able:
+You can use these lines to make the examples run-able:
 ```
 line: "No! There's a land!"
 e-line: enbase line
@@ -765,6 +767,178 @@ There are some key differences between Rebol `parse` and Reds `parse`.
 The very first examples in the Rebol Guide will not work, as there is no `none` option for splitting strings.
 
 [See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
+
+
+***
+
+## Chapter 10 - Objects
+http://www.rebol.com/docs/core23/rebolcore-10.html
+
+Red has a shortcut for make object!. `example: object [x: 1 y: 2]`
+
+There is no `money!` datatype in Red. 
+Remove `$` symbols and use `float!` or `number!` datatypes in function examples to make them run.
+
+For example:
+
+Rebol
+
+```
+last-account: 89431
+bank-bonus: $10.00
+
+make-account: func [
+    "Returns a new account object"
+    f-name [string!] "First name"
+    l-name [string!] "Last name"
+    start-balance [money!] "Starting balance"
+][
+    last-account: last-account + 1
+    make bank-account [
+        first-name: f-name
+        last-name: l-name
+        account: last-account
+        balance: start-balance + bank-bonus
+    ]
+]
+```
+
+Red
+
+```
+last-account: 89431
+bank-bonus: 10.00
+
+make-account: func [
+    "Returns a new account object"
+    f-name [string!] "First name"
+    l-name [string!] "Last name"
+    start-balance [number!] "Starting balance"
+][
+    last-account: last-account + 1
+    make bank-account [
+        first-name: f-name
+        last-name: l-name
+        account: last-account
+        balance: start-balance + bank-bonus
+    ]
+]
+```
+
+### 6. Prototype Objects
+
+Once an object  has been created, it can be used as a prototype for other objects. 
+
+Create a prototype object:  `my-prototype: object [x: 3 y: 2]`
+
+Clone the prototype object: `example1: make my-prototype []`
+
+You can extend the cloned object by adding new words in the block:
+```
+>> example2: make my-prototype [z: 1]
+== make object! [
+    x: 3
+    y: 2
+    z: 1
+]
+```
+
+### 8. Encapsulation
+
+Typo in example:
+```
+Bank: make object! [
+
+    last-account: 89431
+    bank-bonus: $10.00
+
+    set 'make-account func [
+        "Returns a new account object"
+        f-name [string!] "First name"
+        l-name [string!] "Last name"
+        start-balance [money!] "Starting balance"
+    ][
+        last-account: last-account + 1
+        make bank-account [
+            first-name: f-name
+            last-name: l-name
+            account: last-account
+            balance: start-balance + bank-bonus
+        ]
+    ]
+]
+```
+
+Should be:
+```
+bank-account: make object! [
+
+    last-account: 89431
+    bank-bonus: 10.00
+
+    set 'make-account func [
+        "Returns a new account object"
+        f-name [string!] "First name"
+        l-name [string!] "Last name"
+        start-balance [number!] "Starting balance"
+    ][
+        last-account: last-account + 1
+        make bank-account [
+            first-name: f-name
+            last-name: l-name
+            account: last-account
+            balance: start-balance + bank-bonus
+        ]
+    ]
+]
+```
+
+`bob: make-account "Bob" "Baker" 4000`
+
+### 9. Reflective Properties
+
+Red uses *-of functions for object reflection instead of `first` and `next first`.
+
+```
+>> probe first luke
+*** Script Error: first does not allow object! for its s argument
+*** Where: first
+*** Stack: probe first  
+```
+
+`body-of`
+```
+>> body-of luke
+== [last-account: 89433 bank-bonus: 10.0 first-name: "Luke" last-name: "Lakeswimmer" account: 89431 balance: 1204.52]
+```
+
+`class-of`
+
+```
+>> class-of luke
+== 1000006
+```
+
+`keys-of`
+
+```
+>> keys-of luke
+== [last-account bank-bonus first-name last-name account balance]
+```
+
+`values-of`
+
+```
+>> values-of luke
+== [89433 10.0 "Luke" "Lakeswimmer" 89431 1204.52]
+```
+
+`words-of`
+
+```
+>> words-of luke
+== [last-account bank-bonus first-name last-name account balance]
+```
 
 
 
