@@ -9,6 +9,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming) at mycode4fun.co.uk
 
 ### Discussions
+* [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang)
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
 * [Questions Tagged Red](http://stackoverflow.com/questions/tagged/red) at Stackoverflow.com
 * [FAQ](https://github.com/red/red/wiki/FAQ)
