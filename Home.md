@@ -49,7 +49,7 @@ To read the RSS feeds, you will need an RSS reader. There is a [Chrome Plugin](h
 Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
 
 ### Libraries
-* [SQLite](https://github.com/kealist/RS-fossil-mirror/tree/master/SQLite/) by @kealist
+There are a number of libraries in the [Red/Code repository](https://github.com/red/code/tree/master/Library). 
 
 ### Design Deliberations:
 
