@@ -22,6 +22,9 @@ Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemNa
 ### Emacs
 [Emacs mode for Red](https://github.com/unchartedworks/red-mode)
 
+### Notepad++
+[Syntax Coloring](https://github.com/Ungaretti/Notepad-config-file-for-Red-Language)
+
 ## Red Native
 
 Editors written in Red itself
