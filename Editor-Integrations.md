@@ -24,6 +24,7 @@ Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemNa
 
 ### Notepad++
 [Syntax Coloring](https://github.com/Ungaretti/Notepad-config-file-for-Red-Language)
+[Makeshift IDE for RED Language development](https://ungaretti.github.io/)
 
 ## Red Native
 
