@@ -1,10 +1,10 @@
 ****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
 
-Note:
+****Note:****
 
-__Not all examples are run-able in the Rebol guide, even by Rebol. Some examples are, 'For example', or 
-just to illustrate a point.__
+Not all examples are run-able in the Rebol guide, even by Rebol. Some examples are, 'For example', or 
+just to illustrate a point.
 
 
 ***
@@ -968,18 +968,6 @@ b-line: debase e-line
 
 ***
 
-## Chapter 15 - Parsing
-http://www.rebol.com/docs/core23/rebolcore-15.html
-
-There are some key differences between Rebol `parse` and Reds `parse`.
-
-The very first examples in the Rebol Guide will not work, as there is no `none` option for splitting strings.
-
-[See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
-
-
-***
-
 ## Chapter 10 - Objects
 http://www.rebol.com/docs/core23/rebolcore-10.html
 
@@ -1152,6 +1140,135 @@ Red uses *-of functions for object reflection instead of `first` and `next first
 >> words-of luke
 == [last-account bank-bonus first-name last-name account balance]
 ```
+
+***
+
+## Chapter 11 - Math
+
+http://www.rebol.com/docs/core23/rebolcore-11.html
+
+Note: There is no money data type in Red. 
+Remove `$` characters where necessary to run examples.
+
+
+### 2. Scalar Data Types
+
+Red has the following numerical data types:
+`integer!`
+
+`float!`
+
+`time!`
+
+`print - 2:20` will produce an error. 
+There must be no space between `-` and the number in Red.
+Should be: `print -2:20`
+
+`date!`
+
+
+`pair!`
+
+The `//` operator does not work with `pair!` in Red.
+
+```
+>> print 101x32 // 10x3
+*** Script Error: cannot compare 1x2 with 0
+*** Where: <
+*** Stack: mod 
+```
+
+```
+>> print 101x32 // 10
+*** Script Error: cannot compare 1x2 with 0
+*** Where: <
+*** Stack: mod 
+```
+
+`tuple!`
+
+### 4.1 Absolute
+
+There is no `abs` function in Red, but you can set a word to use the same data as absolute.
+`abs: :absolute`
+
+
+### 4.3 complement
+
+`compliment` does not accept numbers with decimal points in Red.
+The following data types are accepted:
+
+```
+ARGUMENTS:
+     value        [logic! integer! bitset! typeset! binary!] 
+```
+
+### 4.6 negate
+
+To negate a number, there must be no space between `-` and the number in Red.
+
+Incorrect: `print - 2`
+
+Correct: `print -2`
+
+
+### 4.8 remainder
+
+`//` is not an alias for `remainder` in Red.
+
+From `help //`:
+
+```
+Wrapper for MOD that handles errors like REMAINDER. Negligible values (compared to A and B) are rounded to zero. 
+```
+
+Examples must be:
+
+`print remainder 11 2`
+
+`print remainder 11.22.33 10`
+
+`print remainder 11x22 2`
+
+
+### 6.9 strict-not-equal
+
+`strict-not-equal` is not defined in Red.
+
+### 10.2 Math or number overflow
+
+`1E+300 + 1E+400`
+
+Returns `== 1.#INF` in Red.
+
+### 10.3 Positive number required
+
+`log-10 -1`
+
+Returns `== 1.#NaN` in Red.
+
+### 10.4 Cannot use operator on datatype! value
+
+This is "type is not allowed here" error in Red:
+
+```
+>> 10:30 + 1.2.3
+*** Script Error: time! type is not allowed here
+*** Where: +
+*** Stack:
+```
+
+***
+
+## Chapter 15 - Parsing
+http://www.rebol.com/docs/core23/rebolcore-15.html
+
+There are some key differences between Rebol `parse` and Reds `parse`.
+
+The very first examples in the Rebol Guide will not work, as there is no `none` option for splitting strings.
+
+[See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
+
 
 
 
