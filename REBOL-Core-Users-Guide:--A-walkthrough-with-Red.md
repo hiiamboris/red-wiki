@@ -375,6 +375,172 @@ for num 5 0 -1 [
 
 `for` does not exist in Red.
 
+***
+
+## Chapter 5 - Scripts
+
+http://www.rebol.com/docs/core23/rebolcore-5.html
+
+
+### 2. Prefaced Scripts
+
+"Text that appears before the header is called the preface and is ignored during evaluation."
+
+```
+The text that appears before the header is ignored
+by REBOL and can be used for comments, email headers,
+HTML tags, etc.
+
+REBOL [
+  Title:   "Preface Example"
+  Date:    8-Jul-1999
+]
+
+print "This file has a preface before the header"
+```
+
+"," is one of the invalid `word` characters in Rebol and Red, so an Error will occur if  `load` is used:
+```
+*** Syntax Error: invalid value at ", email headers,HTML tags, etc.Red ["
+*** Where: do
+*** Stack: load 
+```
+
+Remove commas from the Preface and change the header to `Red []` if you want to load it.
+
+
+### Embedded Scripts
+
+```
+Here is some text before the script.
+[
+    Red [
+        Title:   "Embedded Example"
+        Date:    8-Nov-1777
+    ]
+    print "done"
+]
+Here is some text after the script.
+```
+
+Error in Red whe `do` is used:
+
+```
+*** Syntax Error: invalid value at "]Here is some text after the script."
+*** Where: do
+*** Stack: do-file expand-directives load  
+```
+
+Embedded scripts are not supported in Red yet.
+
+### 3. Script Arguments
+
+The `system/script` object for Red contains the following fields:
+
+`title`
+
+`header`
+
+`parent`
+
+`path`
+
+`args`
+
+### 3.1 Program Options
+
+To better see the `system/options` object, use `help`.
+
+```
+>> help system/options
+     boot             string!       {C:\ProgramData\Red\gui-console-2017-10-19-24878.exe}
+     home             none!         none
+     path             file!         %/C/ProgramData/Red/
+     script           none!         none
+     cache            file!         %/C/ProgramData/Red/
+     thru-cache       none!         none
+     args             none!         none
+     do-arg           none!         none
+     debug            none!         none
+     secure           none!         none
+     quiet            logic!        false
+     binary-base      integer!      16
+     decimal-digits   integer!      15
+     module-paths     block!        length: 0  []
+     file-types       none!         none
+     float            object!       [pretty? full? on-change*]
+     on-change*       function!     [word old new]
+     on-deep-change*  function!     [owner word target action new index part]
+```
+
+### 4. Running Scripts
+
+`red script.red` Or `red --cli script.red`
+
+### 4.1 Loading Scripts
+
+Red script extensions are `.red` by convention.
+`load` in Red accepts the following types:
+
+`file!`, `url!`, `string!`, `binary!`
+
+`load/header` is not yet impleneted for Red.
+
+`load/markup` is not available in Red at this time.
+
+Consult `help load`
+
+
+### 4.2 Saving Scripts
+
+Red has no `money!` datatype. Remove the `$` from the example.
+```
+>> data: [Buy 100 shares at 20.00 per share]
+== [Buy 100 shares at 20.0 per share]
+>> save %data.red data
+```
+
+Loaded later with:
+```
+>> data: load %data.red
+== [Buy 100 shares at 20.0 per share]
+```
+
+```
+>> save %date.red now
+>> stamp: load %date.red
+== 27-Oct-2017/22:57:10-06:00
+```
+
+```
+>> save/header %data.red data header
+>> load %data.red
+== [Red [
+    Title: "This is an example"
+] 
+    Buy 100 shares at 20.0 per share
+]
+```
+
+### 5.1.1 Indent Content for Clarity
+
+The examples in this section are only for illustrative purposes.
+
+### 5.1.3
+
+`detab` and `entab` are not available in Red.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ***
