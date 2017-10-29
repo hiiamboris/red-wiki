@@ -1,3 +1,5 @@
+[Chapter 3](#chap3)  [Chapter 4](#chap4)  [Chapter 5](#chap5)  [Chapter 6](#chap6)  [Chapter 7](#chap7)  [Chapter 8](#chap8)  [Chapter 10](#chap10)  [Chapter 15](#chap15)
+
 ****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
 
@@ -10,7 +12,7 @@ just to illustrate a point.
 ***
 
 
-## Rebol/Core    Chapter 3 - Quick Tour
+## <a name="chap3">Rebol/Core    Chapter 3 - Quick Tour
 
 http://www.rebol.com/docs/core23/rebolcore-3.html
 
@@ -171,7 +173,7 @@ Currently, only HTTP is available in Red.
 
 ***
 
-## REBOL/Core Chapter 4 - Expressions
+## <a name="chap4"> REBOL/Core Chapter 4 - Expressions
 
 http://www.rebol.com/docs/core23/rebolcore-4.html
 
@@ -377,7 +379,7 @@ for num 5 0 -1 [
 
 ***
 
-## Chapter 5 - Scripts
+## <a name="chap5">Chapter 5 - Scripts
 
 http://www.rebol.com/docs/core23/rebolcore-5.html
 
@@ -545,7 +547,7 @@ The examples in this section are only for illustrative purposes.
 
 ***
 
-## REBOL/Core Chapter 6 - Series
+## <a name="chap6">REBOL/Core Chapter 6 - Series
 
 http://www.rebol.com/docs/core23/rebolcore-6.html
 
@@ -692,7 +694,7 @@ probe blk
 
 ***
 
-## Chapter 7 - Block Series
+## <a name="chap7">Chapter 7 - Block Series
 http://www.rebol.com/docs/core23/rebolcore-7.html
 
 
@@ -794,7 +796,7 @@ For the above example to behave the same as Rebols compose/deep, use `compose/on
 
 ***
 
-## Chapter 8 - String Series
+## <a name="chap8">Chapter 8 - String Series
 http://www.rebol.com/docs/core23/rebolcore-8.html
 
 For a list of Red string related datatypes, type: `help any-string`
@@ -968,7 +970,7 @@ b-line: debase e-line
 
 ***
 
-## Chapter 10 - Objects
+## <a name="chap10">Chapter 10 - Objects
 http://www.rebol.com/docs/core23/rebolcore-10.html
 
 Red has a shortcut for make object!. `example: object [x: 1 y: 2]`
@@ -1260,7 +1262,7 @@ This is "type is not allowed here" error in Red:
 
 ***
 
-## Chapter 15 - Parsing
+## <a name="chap15">Chapter 15 - Parsing
 http://www.rebol.com/docs/core23/rebolcore-15.html
 
 There are some key differences between Rebol `parse` and Reds `parse`.
