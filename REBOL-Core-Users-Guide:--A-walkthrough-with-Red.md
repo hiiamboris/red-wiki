@@ -1,5 +1,4 @@
-<a name="top">
-[Chapter 3](#chap3)  [Chapter 4](#chap4)  [Chapter 5](#chap5)  [Chapter 6](#chap6)  [Chapter 7](#chap7)  [Chapter 8](#chap8)  [Chapter 10](#chap10)  [Chapter 15](#chap15)
+<a name="top">[Chapter 3](#chap3)  [Chapter 4](#chap4)  [Chapter 5](#chap5)  [Chapter 6](#chap6)  [Chapter 7](#chap7)  [Chapter 8](#chap8)  [Chapter 10](#chap10)  [Chapter 15](#chap15)
 
 ****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
