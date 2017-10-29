@@ -172,7 +172,6 @@ if any [
 
 Currently, only HTTP is available in Red.
 
-[Top](#top)
 
 ***
 
@@ -382,7 +381,6 @@ for num 5 0 -1 [
 
 `for` does not exist in Red.
 
-[Top](#top)
 
 ***
 
@@ -541,8 +539,6 @@ The examples in this section are only for illustrative purposes.
 
 `detab` and `entab` are not available in Red.
 
-[Top](#top)
-
 
 ***
 
@@ -692,7 +688,6 @@ probe blk
 
 `$` symbols must be removed to run example. Red currently has no money! type.
 
-[Top](#top)
 
 ***
 
@@ -797,8 +792,6 @@ For the above example to behave the same as Rebols compose/deep, use `compose/on
 [a b [c (d e)]]
 == [a b [c (d e)]]
 ```
-
-[Top](#top)
 
 
 ***
@@ -978,9 +971,6 @@ e-line: enbase line
 b-line: debase e-line
 ```
 
-[Top](#top)
-
-
 ***
 
 ## <a name="chap10">Chapter 10 - Objects
@@ -1159,8 +1149,6 @@ Red uses *-of functions for object reflection instead of `first` and `next first
 == [last-account bank-bonus first-name last-name account balance]
 ```
 
-[Top](#top)
-
 ***
 
 ## Chapter 11 - Math
@@ -1280,9 +1268,6 @@ This is "type is not allowed here" error in Red:
 *** Stack:
 ```
 
-[Top](#top)
-
-
 ***
 
 ## <a name="chap15">Chapter 15 - Parsing
@@ -1297,7 +1282,6 @@ The very first examples in the Rebol Guide will not work, as there is no `none` 
 
 [See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
 
-[Top](#top)
 
 
 
