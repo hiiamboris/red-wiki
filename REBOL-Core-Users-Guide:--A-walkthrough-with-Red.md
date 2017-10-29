@@ -14,6 +14,8 @@ just to illustrate a point.
 
 ## <a name="chap3">Rebol/Core    Chapter 3 - Quick Tour
 
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-3.html
 
 
@@ -175,6 +177,8 @@ Currently, only HTTP is available in Red.
 ***
 
 ## <a name="chap4"> REBOL/Core Chapter 4 - Expressions
+
+[Top](#top)
 
 http://www.rebol.com/docs/core23/rebolcore-4.html
 
@@ -384,6 +388,8 @@ for num 5 0 -1 [
 
 ## <a name="chap5">Chapter 5 - Scripts
 
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-5.html
 
 
@@ -542,6 +548,8 @@ The examples in this section are only for illustrative purposes.
 
 ## <a name="chap6">REBOL/Core Chapter 6 - Series
 
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-6.html
 
 
@@ -689,6 +697,9 @@ probe blk
 ***
 
 ## <a name="chap7">Chapter 7 - Block Series
+
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-7.html
 
 
@@ -793,6 +804,9 @@ For the above example to behave the same as Rebols compose/deep, use `compose/on
 ***
 
 ## <a name="chap8">Chapter 8 - String Series
+
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-8.html
 
 For a list of Red string related datatypes, type: `help any-string`
@@ -970,6 +984,9 @@ b-line: debase e-line
 ***
 
 ## <a name="chap10">Chapter 10 - Objects
+
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-10.html
 
 Red has a shortcut for make object!. `example: object [x: 1 y: 2]`
@@ -1148,6 +1165,8 @@ Red uses *-of functions for object reflection instead of `first` and `next first
 
 ## Chapter 11 - Math
 
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-11.html
 
 Note: There is no money data type in Red. 
@@ -1267,6 +1286,9 @@ This is "type is not allowed here" error in Red:
 ***
 
 ## <a name="chap15">Chapter 15 - Parsing
+
+[Top](#top)
+
 http://www.rebol.com/docs/core23/rebolcore-15.html
 
 There are some key differences between Rebol `parse` and Reds `parse`.
