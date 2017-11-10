@@ -45,11 +45,20 @@
 43. [Access binary data from an external source](#access-binary-data-from-an-external-source)
 44. [Compile Red/System with no runtime](#compile-redsystem-with-no-runtime)
 45. [Load code into REPL on startup](#load-code-into-repl-on-startup)
-46. [](#)
+46. [Function Contexts](#function-contexts)
 47. [](#)
 48. [](#)
 49. [](#)
 50. [](#)
+51. [](#)
+52. [](#)
+53. [](#)
+54. [](#)
+55. [](#)
+56. [](#)
+57. [](#)
+58. [](#)
+59. [](#)
 
 # Debugging
 [Moved](../Debugging)
@@ -698,3 +707,16 @@ Just add your stuff [here](https://github.com/red/red/blob/master/environment/co
 ```
 
 Then compile the console. That's all you need to do.
+
+# Function Contexts
+
+Why doesn't this work?
+
+```
+>> do bind [x] has [x][x: 1]
+*** Script Error: x is not in the specified context
+*** Where: do
+*** Stack:
+```
+
+Function contexts only exist when the function is under evaluation, so the error there is legitimate, as the function is not running when [x] is evaluated. Function's context are allocated on the stack (objects and closures ones are on the heap), so you need to call the function to have its context available. Though the function does not need to be the currently called one, just somewhere in the call chain. When the context is available, then any word bound to that function's context can be evaluated. When the function is not in the call stack anymore, its context becomes unavailable. Closures will not have this limitation, but they will have a memory and performance overhead. For the record, Rebol2 puts function contexts on the heap, while Rebol3 puts them on the stack (like Red).
