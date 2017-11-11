@@ -1,4 +1,4 @@
-# Immutability
+# Thoughts on Why Immutability Matters
 
 From @numberjay:
 
