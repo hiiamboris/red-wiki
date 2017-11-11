@@ -5,7 +5,7 @@ From @numberjay:
 re: immutability 
 let me state: Red should not be immutable by default, or it wouldn't be Red anymore
 
-but providing immutable data structures would be lovely 
+but providing immutable data structures would be lovely
 failing that, it's not the end of the world
 because Red is well suited to let me implement any data structure, immutable or not 
 
