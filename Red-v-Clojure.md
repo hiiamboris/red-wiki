@@ -46,6 +46,6 @@ but again that's not the end of the world, i think i can pull it off anyway by m
 
 2) on a philosophical level, and this bothers me most, as a programmer i feel disempowered not by a real difficulty or impossibility (hashing any series is straightforward, a non issue), but by an opinion... that i would be using huge data structures as keys (i'm not gonna do that in general) and that would be slow (it is)... while i would like to decide by myself what price i'm willing to pay based on what i want to do
 
-i hope i didn't come out as confrontational because i'm not
+i hope i didn't come out as confrontational because i'm not 
 if i didn't care about Red and its goals and philosophy, i wouldn't consider switching from Clojure (i'm switching) and taking the time to express myself here
 
