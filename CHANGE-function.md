@@ -15,7 +15,8 @@ The problem is changeing with empty string doesn't advance series! position, sam
 So, using it in a while loop causes an infinite loop
 >> change find "test" "e" ""
 == "est"
-`
+```
+
 There is also another point using change that we need to be careful about:
 
 ```
