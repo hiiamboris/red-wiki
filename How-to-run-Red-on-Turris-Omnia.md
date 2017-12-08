@@ -2,4 +2,4 @@
 
 `ln -s /lib/ld-musl-armhf.so.1  /lib/ld-linux-armhf.so.3`
 
-Now Red should run just fine.
+Now Red should run just fine, until you try to read file ;)
