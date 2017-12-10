@@ -69,6 +69,26 @@ find-Nth_Rec: function [
 This is a clear and simple approach, but doesn't handle all cases correctly. e.g., if `value` is a lit-word or block.
 
 ```
+; This works under R2, but not Red
+find-Nth_Par-0: func [
+	"Returns the series at occurrence N of value or none."
+	series [series!]
+	value
+	n      [integer!]
+	/local count pos
+][
+	count: 0
+	parse series [
+		some [
+			to value pos: (
+			   count: count + 1
+			   if count = n [return pos]
+			) skip
+		]
+	]
+	none
+]
+
 find-Nth_Par-1: func [
 	"Returns the series at occurrence N of value, or none."
 	series [series!]
@@ -85,8 +105,8 @@ find-Nth_Par-1: func [
 ```
 find-Nth "abcabcabc" #"a" 3
 find-Nth "abcabcabc" "bc" 2
-find-Nth [a b c a b c a b c] quote 'a 3    ; note that `quote` is needed here for lit-word use
-find-Nth [a b c [a] b c a b c] [a] 1       ; invalid for simple parse-based approach
+find-Nth [a b c a b c a b c] quote 'a 3    ; note that `quote` is needed here for find-Nth_Par-1
+find-Nth [a b c [a] b c a b c] [a] 1       ; invalid for find-Nth_Par-1
 find-Nth [a b c #a b c a b c] #a 1
 ```
 
