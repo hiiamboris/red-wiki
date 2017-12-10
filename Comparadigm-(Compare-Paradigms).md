@@ -89,7 +89,7 @@ find-Nth_Par-0: func [
 	none
 ]
 
-find-Nth_Par-1: func [
+find-Nth_Par-1: function [
 	"Returns the series at occurrence N of value, or none."
 	series [series!]
 	value
