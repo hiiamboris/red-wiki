@@ -8,6 +8,8 @@ When adding new items for comparison, copy the template section and fill it in. 
 
 *NOTE: All solutions MUST be implemented in Red. This is not a comparison with other languages, but with what different approaches look like in Red.*
 
+----------------
+
 # Template
 
 ## Imperative
@@ -19,5 +21,73 @@ When adding new items for comparison, copy the template section and fill it in. 
 ## Reddish
 
 *(These could be idiomatic solutions, parse-based, dialects, etc., and should have some explanation to go with them, for readers not deeply familiar with Red. That is, say why this might be a good approach, or even why it isn't.)*
+
+----------------
+
+# find-Nth
+
+Find the Nth value in a series.
+
+## Imperative
+```
+find-Nth_Imp: function [
+	"Returns the series at occurrence N of value, or none."
+	series [series!]
+	value
+	n      [integer!]
+][
+	while [n > 0][
+		n: n - 1
+		pos: find/only series value
+		either pos [series: next pos][break]
+	]
+	pos
+]
+```
+
+## Functional
+```
+find-Nth_Rec: function [
+	"Returns the series at occurrence N of value, or none."
+	series [series!]
+	value
+	n      [integer!]
+][
+	; TBD require positive n value
+	;print ['find-Nth_Rec mold series value n]
+	pos: find/only series value
+	either n = 1 [pos][
+		if pos [find-Nth next pos value n - 1]
+	]
+]
+```
+
+## Object Based or Object Oriented
+
+## Reddish
+
+This is a clear and simple approach, but doesn't handle all cases correctly. e.g., if `value` is a lit-word or block.
+
+```
+find-Nth_Par-1: func [
+	"Returns the series at occurrence N of value, or none."
+	series [series!]
+	value
+	n      [integer!]
+][
+	n: n - 1
+	parse series [n [thru value] to value pos:]
+	pos
+]
+```
+
+## Examples
+```
+find-Nth "abcabcabc" #"a" 3
+find-Nth "abcabcabc" "bc" 2
+find-Nth [a b c a b c a b c] quote 'a 3    ; note that `quote` is needed here for lit-word use
+find-Nth [a b c [a] b c a b c] [a] 1       ; invalid for simple parse-based approach
+find-Nth [a b c #a b c a b c] #a 1
+```
 
 ----------------
