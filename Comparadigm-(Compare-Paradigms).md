@@ -10,6 +10,7 @@ When adding new items for comparison, copy the template section and fill it in. 
 
 [Programming Paradigms](https://en.wikipedia.org/wiki/Programming_paradigm)
 
+[Symbolic](https://en.wikipedia.org/wiki/Symbolic_programming) programming is interesting in Red, and lines can be blurry. Just as functional programming doesn't *require* the use of recursion, symbolic programming in Red may extend beyond the current program, by creating and consuming dialected data.
 
 ----------------
 
