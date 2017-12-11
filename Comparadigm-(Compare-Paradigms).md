@@ -8,6 +8,9 @@ When adding new items for comparison, copy the template section and fill it in. 
 
 *NOTE: All solutions MUST be implemented in Red. This is not a comparison with other languages, but with what different approaches look like in Red.*
 
+[Programming Paradigms](https://en.wikipedia.org/wiki/Programming_paradigm)
+
+
 ----------------
 
 # Template
