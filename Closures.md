@@ -20,7 +20,6 @@ closure: func [
     spec [block!] "Function spec for closure func"
     body [block!] "Body of closure func; vars will be available"
 ][
-    ;func spec compose [(bind body context vars)]
     func spec bind body context vars
 ]
 closed-fn: closure [var: 1] [n] [var: var + n]
