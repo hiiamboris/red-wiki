@@ -1,0 +1,73 @@
+#+TITLE: List of resources for Red and Rebol programming languages
+
+* Rebol
+- [[http://www.rebol.com/][Rebol official site]]
+- [[http://rebolsource.net/][Unofficial R3 binaries]]
+
+** Forums and community hubs
+- [[http://www.rebol.org/index.r][Rebol developer's site]]
+- [[http://www.rebol.net/][Rebol developer network]]
+- [[http://rebolweek.blogspot.ru/][Rebol Week]]
+- [[http://rebol.informe.com/portal.html][Rebol informe]]
+- [[http://rebolforum.com/index.cgi][Rebol forum]]
+- [[http://stackoverflow.com/questions/tagged/rebol][SO Rebol]]
+- [[https://github.com/revault/rebol-wiki][Rebol DocBase wiki]]
+- [[http://www.maxvessi.net/rebsite/wr/][Rebol World]]
+- [[http://rebol2.blogspot.com/][Rebol2 blog]]
+
+** Hands-on guides and tutorials
+- [[http://www.re-bol.com/rebol.html][Learn Rebol by Nick Antonaccio]]
+- [[http://re-bol.com/business_programming.html][Business programming by Nick Antonaccio]]
+- [[https://en.wikibooks.org/wiki/Rebol_programming][Wikibooks Rebol programming]]
+
+** Personal blogs and pages from community members
+- [[http://www.pat665.free.fr/][pat665's Rebol related page]]
+- [[http://www.codeconscious.com/rebol/articles/rebol-concepts.html][Rebol concepts]]
+- [[http://users.telenet.be/rwmeijer/proglang/rebol.htm][An appreciation of REBOL by Rudolf Meijer]]
+- [[https://medium.com/@rgchris/understanding-rebol-series-d5d6f597a239][Understanding Rebol series by Chris Ross-Gill]]
+- [[http://reb4.me/][reb4me by Chriss Ross-Gill]]
+- [[http://ross-gill.com/page/Rebol][Rebol page by Chriss Ross-Gill]]
+- [[http://www.cobolrebol.com/][???]]
+
+** Books
+- [[http://www.rebol.com/docs/core23/rebolcore.html][REBOL/Core User Guide]]
+- [[http://vpavlu.plain.at/REBOL/tutorial/][REBOL Essentials by Viktor Pavlu]]
+- [[http://www.lulu.com/shop/olivier-auverlot-and-peter-william-alfred-wood/rebol-a-programmers-guide/ebook/product-17515075.html][Rebol - A programmer's guide by Olivier Auverlot, Peter William Alfred Wood]]
+
+* Red
+- [[http://www.red-lang.org/][Red official website]]
+
+** Media
+- [[https://www.youtube.com/channel/UCLcuoPsWmYSUfGtfL-WEkLA][Red Youtube channel]]
+- [[https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c#.zhif5dl17][Interview with Nenad]]
+- [[https://twitter.com/red_lang][Twitter]]
+
+** Forums and community hubs 
+- [[http://stackoverflow.com/questions/tagged/red][SO Red]]
+- [[https://gitter.im/red/][Gitter chat]]
+- [[https://www.reddit.com/r/redlang/][subreddit]]
+- [[https://groups.google.com/forum/?hl=en#!forum/red-lang][Mail list]]
+
+** Hands-on guides and tutorials
+- [[http://redprogramming.com/Home.html][Red programming by Nick Antonaccio]]
+- [[https://www.gitbook.com/book/ungaretti/red-language-notebook/details][Red Language notebook by Ungaretti]]
+- [[http://www.red-by-example.org/][Red by example by Arie van Wingerden and Mike Parr]]
+
+** Personal blogs and pages from community members
+- [[https://github.com/red/red/wiki][Github wiki]]
+- [[http://www.mycode4fun.co.uk/home][mycode4fun]]
+- [[http://jennyk36.blogspot.com][Jenny's blog]]
+- [[http://redlanguageblog.blogspot.nl/][Red Language blog by Arie van Wingerden]]
+- [[http://red.qyz.cz/][Red related articles by Boleslav Březovský]]
+- [[http://redlcv.blogspot.fr/][Image Processing with Red Language by Francois Jouen]]
+- [[https://github.com/iArnold/reddevdoc][Red docs by iArnold]]
+- [[https://github.com/reddoc][Community Red documentation]]
+- [[http://www.michaelsydenham.com/reds-parse-dialect/][Beginner-friendly article about parse by Michael Sydenham]]
+- [[http://ross-gill.com/page/Red][Red page by Chriss Ross-Gill]]
+
+* In between
+- [[https://programming.red/wiki/Main_Page][Rebol-family languages wiki by Giuseppe Chillemi]]
+- [[http://chat.stackoverflow.com/rooms/291/rebol-and-red][Rebol and Red StackOverflow chat]]
+- [[http://blog.hostilefork.com/][hostilefork blog]] / [[https://www.youtube.com/channel/UCpQxdoPFbT5p6s9NU7iU1ZA][Youtube channel]]
+- [[http://recode.revault.org/][ReCode 2013]]
+- [[https://www.youtube.com/user/SoftwareFreedomDay/playlists][SofwareFreedomDay playlists w/ reports about Red and Rebol]]
