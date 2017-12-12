@@ -32,7 +32,7 @@
 ** Books
 - [[http://www.rebol.com/docs/core23/rebolcore.html][REBOL/Core User Guide]]
 - [[http://vpavlu.plain.at/REBOL/tutorial/][REBOL Essentials by Viktor Pavlu]]
-- [[http://www.lulu.com/shop/olivier-auverlot-and-peter-william-alfred-wood/rebol-a-programmers-guide/ebook/product-17515075.html][Rebol - A programmer's guide by Olivier Auverlot, Peter William Alfred Wood]]
+- [[http://www.lulu.com/shop/olivier-auverlot-and-peter-william-alfred-wood/rebol-a-programmers-guide/ebook/product-17515075.html][Rebol - A programmer's guide by Olivier Auverlot, Peter W. A. Wood]]
 
 * Red
 - [[http://www.red-lang.org/][Red official website]]
