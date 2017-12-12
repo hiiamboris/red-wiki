@@ -18,7 +18,9 @@
 ** Hands-on guides and tutorials
 - [[http://www.re-bol.com/rebol.html][Learn Rebol by Nick Antonaccio]]
 - [[http://re-bol.com/business_programming.html][Business programming by Nick Antonaccio]]
-- [[https://en.wikibooks.org/wiki/Rebol_programming][Wikibooks Rebol programming]]
+- [[https://en.wikibooks.org/wiki/Rebol_programming][Wikibooks Rebol programming]] *!*
+
+*!* Some of the internal links on this wiki are messed up, if you can't access a wiki page, try to replace ~REBOL_Programming~ with ~Rebol_programming~ it its link.
 
 ** Personal blogs and pages from community members
 - [[http://www.pat665.free.fr/][pat665's Rebol related page]]
