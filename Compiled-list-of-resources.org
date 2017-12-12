@@ -27,7 +27,7 @@
 - [[https://medium.com/@rgchris/understanding-rebol-series-d5d6f597a239][Understanding Rebol series by Chris Ross-Gill]]
 - [[http://reb4.me/][reb4me by Chriss Ross-Gill]]
 - [[http://ross-gill.com/page/Rebol][Rebol page by Chriss Ross-Gill]]
-- [[http://www.cobolrebol.com/][???]]
+- [[http://www.cobolrebol.com/][Rebol for COBOL programmers]]
 
 ** Books
 - [[http://www.rebol.com/docs/core23/rebolcore.html][REBOL/Core User Guide]]
