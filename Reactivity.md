@@ -2,6 +2,8 @@ Primary reactivity docs are at https://doc.red-lang.org/en/reactivity.html
 
 Notes on single triggering: https://github.com/red/red/issues/3096
 
+PR for `get-word!` support: https://github.com/red/red/pull/3148
+
 # Making reactors
 
 When making reactors, you have control over how reactors made from the same spec behave. That depends on whether you `copy/deep` the spec, or not. If you have read https://github.com/red/red/wiki/Why-do-I-have-to-copy-series-values%3F, you know that Red is a data format first. If you have the same spec, but it appears multiple times as literal data, each is unique. If you use a word to refer to the *same* spec block, that same data is used. This is important in the reactivity subsystem. 
