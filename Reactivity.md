@@ -125,5 +125,5 @@ You can use an anonymous function and invoke that.
 
 # Future work
 
-If you are interested in building a new, more sophisticated reactive library for Red (as suggested in red/red#3096), you are welcome. The current one serves its purpose very well, but it might not be good enough for more complex use-cases. One difficult part would be designing a new API which is as lightweight as possible; ideally as simple as current one, but that may not be possible.
+If you are interested in building a new, more sophisticated reactive library for Red (as suggested in https://github.com/red/red/issues/3096), you are welcome. The current one serves its purpose very well, but it might not be good enough for more complex use-cases. One difficult part would be designing a new API which is as lightweight as possible; ideally as simple as current one, but that may not be possible.
 
