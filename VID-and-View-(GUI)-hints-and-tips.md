@@ -81,3 +81,12 @@ view/options [size 200x400 b: base][
 ```
 
 See also: https://doc.red-lang.org/en/view.html#_event_datatype
+
+# Color transparency on Windows 7
+> Why are the colors `glass` and `transparent` showing up as pitch black?
+
+Windows 7 must be set to 'best appearance' for transparency to work:
+1. Control Panel
+2. System
+3. Adjust the appearance and performance of Windows
+4. Adjust for best appearance 
