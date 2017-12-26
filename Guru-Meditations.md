@@ -46,7 +46,7 @@
 44. [Compile Red/System with no runtime](#compile-redsystem-with-no-runtime)
 45. [Load code into REPL on startup](#load-code-into-repl-on-startup)
 46. [Function Contexts](#function-contexts)
-47. [](#)
+47. ["Variadic" function](#variadic-function)
 48. [](#)
 49. [](#)
 50. [](#)
