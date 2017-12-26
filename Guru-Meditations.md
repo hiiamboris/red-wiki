@@ -732,3 +732,21 @@ Why doesn't this work?
 ```
 
 Function contexts only exist when the function is under evaluation, so the error there is legitimate, as the function is not running when [x] is evaluated. Function's context are allocated on the stack (objects and closures ones are on the heap), so you need to call the function to have its context available. Though the function does not need to be the currently called one, just somewhere in the call chain. When the context is available, then any word bound to that function's context can be evaluated. When the function is not in the call stack anymore, its context becomes unavailable. Closures will not have this limitation, but they will have a memory and performance overhead. For the record, Rebol2 puts function contexts on the heap, while Rebol3 puts them on the stack (like Red).
+
+# "variadic" function
+```Red
+>> foo: func ['a [any-type!] 'b [any-type!]][probe :a probe :b]
+== func ['a [any-type!] 'b [any-type!]][probe :a probe :b]
+>> foo
+unset
+unset
+>> foo 1
+1
+unset
+>> foo 1 2
+1
+2
+== 2
+```
+
+With bit effort, you can use this feature to fake variadic functions, but then you need to enclose each function call in `do [...]` block.
