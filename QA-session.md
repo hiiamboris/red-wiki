@@ -20,7 +20,7 @@
 | Q | A |
 |:-:|:-:|
 | What are the transaction fees when RCTs are transferred between people and how are they paid? | |
-| Does RTC have a good securities-law plan, or should US residents stay away? | About allowing buyers from US, we are looking into the options for that, but that's not simple as you know already. |
+| Does RCT have a good securities-law plan, or should US residents stay away? | About allowing buyers from US, we are looking into the options for that, but that's not simple as you know already. |
 | Isn't there a risk of a party, which has the most bying power, dictating the route of the project? Projects/features, users want to see to be released, can be supported/bought with these coins? | The foundation will set up voting rules that will prevent such things to happen, or at least diminish it. For example, the voting power could be a `log()` function of your RCT amounts. |
 
 ### /Core
