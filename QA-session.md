@@ -22,4 +22,4 @@
 | Q | A |
 |:-:|:-:|
 | Is stuff like concurrency also required to reach 1.0, and be used on blockchains? And encoding stuff? | Yes, but concurrency does not necessarily imply parallelism, so async tasks should be supported and enough for 1.0. Current I/O already fully support Unicode. For other main encoding formats, we will provide codecs. v0.6.4 already has a Latin1 decoder added recently by @qtxie |
-| | |
+| Is interop with other mainstream libraries/languages (java, python, c#, go,...) planned? | |
