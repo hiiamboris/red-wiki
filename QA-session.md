@@ -22,10 +22,12 @@
 | What are the transaction fees when RCTs are transferred between people and how are they paid? | |
 | Does RCT have a good securities-law plan, or should US residents stay away? | About allowing buyers from US, we are looking into the options for that, but that's not simple as you know already. |
 | Isn't there a risk of a party, which has the most bying power, dictating the route of the project? Projects/features, users want to see to be released, can be supported/bought with these coins? | The foundation will set up voting rules that will prevent such things to happen, or at least diminish it. For example, the voting power could be a `log()` function of your RCT amounts. |
+| What is the incentive for a potential backer to buy this token? | |
 
 ### /Core
 | Q | A |
 |:-:|:-:|
+| How is Red sustained, who currently supports it? | |
 | Is stuff like concurrency also required to reach 1.0, and be used on blockchains? And encoding stuff? | Yes, but concurrency does not necessarily imply parallelism, so async tasks should be supported and enough for 1.0. Current I/O already fully support Unicode. For other main encoding formats, we will provide codecs. v0.6.4 already has a Latin1 decoder added recently by @qtxie |
 | Is interop with other mainstream libraries/languages (java, python, c#, go,...) planned? | |
 | Are there plans for Red to support IPFS? | |
