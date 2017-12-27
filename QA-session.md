@@ -33,6 +33,7 @@
 | Are there plans for Red to support IPFS? | |
 | You said that the current Red roadmap will be delayed by a few weeks. You don't think it will be much more with all activities created by this big move? | |
 | Giving recent announcement, it seems that Red drifts further and further from initial idea of Carl. Building blockchain tech without proper GC, or 64 bit support and just basic I/O IMO again putting first things last. And it's worrisome that "full-stack language" and its community may lock itself in one niche. Can you comment on that? | |
+| You've mentioned that proposed community restructurization is akin to the one that Clojure project use. Are there any other projects/languages which models you're trying (or want) to follow? | |
 
 ### /C3
 | Q | A |
