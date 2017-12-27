@@ -13,7 +13,7 @@
 | Can we get more information on how to get involved in the ICO? | |
 | Do you have an estimate how long establishing that foundation will take, couple weeks? | |
 | How can we participate in the angel round and pre-sale event? | |
-| How will you get the information out to intetested parties ? | |
+| How will you get the information out to intetested parties? | |
 | Why choose ICO instead of traditional funding schemes (Patreon, donations, etc)? | | 
 
 ### RCT
