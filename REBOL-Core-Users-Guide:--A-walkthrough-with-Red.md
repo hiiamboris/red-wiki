@@ -1,4 +1,5 @@
-<a name="top">[Chapter 3](#chap3)  [Chapter 4](#chap4)  [Chapter 5](#chap5)  [Chapter 6](#chap6)  [Chapter 7](#chap7)  [Chapter 8](#chap8)  [Chapter 10](#chap10)  [Chapter 15](#chap15)
+**Chapters:**
+<a name="top">[3](#chap3)  [4](#chap4)  [5](#chap5)  [6](#chap6)  [7](#chap7)  [8](#chap8)  [10](#chap10)  [12](#chap12) [15](#chap15)
 
 ****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
@@ -1267,6 +1268,34 @@ This is "type is not allowed here" error in Red:
 *** Where: +
 *** Stack:
 ```
+
+***
+## <a name="chap12">Chapter 12 - Files
+
+http://www.rebol.com/docs/core23/rebolcore-12.html
+
+### 7.4 File Modification Date
+
+There is no `modified?` function in Red.
+
+### 7.5 Directory Information
+
+There is no `info?` function in Red.
+
+### 8.3 Renaming Directories and Files
+
+`rename` does not exist in Red.
+
+### 8.4 Deleting Directories and Files
+
+`delete` does not take a `block!` in Red.
+
+The following format will throw an error:
+```
+delete [%file1 %file2 %file3]
+```
+
+Red does not have `delete/any`.
 
 ***
 
