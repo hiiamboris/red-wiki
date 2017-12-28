@@ -47,7 +47,7 @@
 45. [Load code into REPL on startup](#load-code-into-repl-on-startup)
 46. [Function Contexts](#function-contexts)
 47. ["Variadic" function](#variadic-function)
-48. [](#)
+48. [Literal arguments and get arguments](#literal-arguments-and-get-arguments)
 49. [](#)
 50. [](#)
 51. [](#)
