@@ -750,3 +750,15 @@ unset
 ```
 
 With bit effort, you can use this feature to fake variadic functions, but then you need to enclose each function call in `do [...]` block.
+
+# Literal arguments and get arguments
+
+**Rebol 2**
+- lit-args: if next value is `get-word!`, eval to fetch bound value; else pass next value as-is
+- get-args: if next value is `word!`, eval to fetch bound value; else pass next value as-is
+
+**Rebol 3**
+- lit-args: if next value is `get-word!` or `get-path!` or `paren!`: eval to fetch bound value; else pass next value as-is
+- get-args: pass next value as-is
+
+Red appears to follow R3 style.
