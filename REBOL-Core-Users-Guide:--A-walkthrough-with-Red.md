@@ -1309,7 +1309,10 @@ There are some key differences between Rebol `parse` and Reds `parse`.
 
 The very first examples in the Rebol Guide will not work, as there is no `none` option for splitting strings.
 
-[See parse article for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
+[See parse blog entry for Red](http://www.red-lang.org/2013/11/041-introducing-parse.html)
+
+In addition, I recommend this getting started article:
+http://www.michaelsydenham.com/reds-parse-dialect/
 
 
 
