@@ -76,17 +76,6 @@ Consult `help` in the Red cosole for `enbase` and `debase` specifics.
 `help debase`
 
 
-### 4. Blocks
-
-```
-foreach [site action] sites [
-    data: read site
-    do action
-]
-```
-Will freeze the Red GUI Console.
-
-
 ### 6. Evaluation
 
 `if current-time > snack-time [print snack-time]`
