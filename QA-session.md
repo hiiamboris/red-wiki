@@ -41,3 +41,4 @@
 | Q | A |
 |:-:|:-:|
 | Follwoing both planned Red roadmap and doing Red/C3 in one project... isn't it too ambitious? | |
+| Some Red users long time express their preferences in Red development, mostly relating to stuff like GC, full IO, simply a core stuff and can see even Android development as some kind of a distraction. On the other hand, Fullstack Technologies has to cover also business side of things. After the Red/C3 announcement, some users fear, there might not be another core technology release in half a year, or more. How to best align community wishes with company commercial needs, especially if the community is still rather small to generate critical mass of quality contributors? | | 
