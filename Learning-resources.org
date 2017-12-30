@@ -18,6 +18,7 @@
 - [[http://redprogramming.com/Home.html][Red programming by Nick Antonaccio]]
 - [[https://www.gitbook.com/book/ungaretti/red-language-notebook/details][Red Language notebook by Ungaretti]]
 - [[http://www.red-by-example.org/][Red by example by Arie van Wingerden and Mike Parr]]
+- [[http://abdllh.com/programlama-dersleri/red-programlama-dili-dersleri/][Red Dersleri by Abdullah (Turkish)]]
 
 ** Personal blogs and pages from community members
 - [[https://github.com/red/red/wiki][Github wiki]]
