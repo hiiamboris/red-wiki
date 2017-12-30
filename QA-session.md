@@ -21,7 +21,7 @@
 |:-:|:-:|
 | What are the transaction fees when RCTs are transferred between people and how are they paid? | |
 | Does RCT have a good securities-law plan, or should US residents stay away? | About allowing buyers from US, we are looking into the options for that, but that's not simple as you know already. |
-| Isn't there a risk of a party, which has the most bying power, dictating the route of the project? Projects/features, users want to see to be released, can be supported/bought with these coins? | The foundation will set up voting rules that will prevent such things to happen, or at least diminish it. For example, the voting power could be a `log()` function of your RCT amounts. |
+| Isn't there a risk of a party, which has the most buying power, dictating the route of the project? Projects/features, users want to see to be released, can be supported/bought with these coins? | The foundation will set up voting rules that will prevent such things to happen, or at least diminish it. For example, the voting power could be a `log()` function of your RCT amounts. |
 | What is the incentive for a potential backer to buy this token? | |
 
 ### /Core
@@ -33,12 +33,12 @@
 | Are there plans for Red to support IPFS? | |
 | You said that the current Red roadmap will be delayed by a few weeks. You don't think it will be much more with all activities created by this big move? | |
 | Giving recent announcement, it seems that Red drifts further and further from initial idea of Carl. Building blockchain tech without proper GC, or 64 bit support and just basic I/O IMO again putting first things last. And it's worrisome that "full-stack language" and its community may lock itself in one niche. Can you comment on that? | |
-| You've mentioned that proposed community restructurization is akin to the one that Clojure project use. Are there any other projects/languages which models you're trying (or want) to follow? | |
+| You've mentioned that proposed community restructuration is akin to the one that Clojure project use. Are there any other projects/languages which models you're trying (or want) to follow? | |
 | What about webassembly as a compilation target? LLVM? | |
 
 
 ### /C3
 | Q | A |
 |:-:|:-:|
-| Follwoing both planned Red roadmap and doing Red/C3 in one project... isn't it too ambitious? | |
+| Following both planned Red roadmap and doing Red/C3 in one project... isn't it too ambitious? | |
 | Some Red users long time express their preferences in Red development, mostly relating to stuff like GC, full IO, simply a core stuff and can see even Android development as some kind of a distraction. On the other hand, Fullstack Technologies has to cover also business side of things. After the Red/C3 announcement, some users fear, there might not be another core technology release in half a year, or more. How to best align community wishes with company commercial needs, especially if the community is still rather small to generate critical mass of quality contributors? | | 
