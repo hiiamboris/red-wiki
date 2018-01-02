@@ -91,3 +91,9 @@ Windows 7 must be set to 'best appearance' for transparency to work:
 3. Performance Information and Tools
 4. Adjust visual effects
 5. Adjust for best appearance
+
+# How to move a face to the top of the z-order
+
+```
+move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
+```
