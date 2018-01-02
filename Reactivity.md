@@ -123,6 +123,79 @@ You can use an anonymous function and invoke that.
 == 105
 ```
 
+# Issue with panels as reactive sources
+
+@toomasv found this issue.
+```
+; With `box`, `react` works while moving either colored box
+view [
+   size 500x300 
+   at 0x0 base react [
+      face/offset: n/offset 
+      face/size: p/offset + p/size - n/offset
+   ] 
+   n: box loose red 50x50 
+   p: box blue loose 
+]
+```
+```
+; With `panel`, `react` works only when moving red box, not while moving blue panel
+view [
+   size 500x300 
+   at 0x0 base react [
+      face/offset: n/offset 
+      face/size: p/offset + p/size - n/offset
+   ] 
+   n: box loose red 50x50 
+   p: panel 100x100 blue loose []
+]
+```
+With no pane spec for the panel, it works.
+```
+view [
+   size 500x300 
+   at 0x0 base react [
+      face/offset: n/offset 
+      face/size: p/offset + p/size - n/offset
+   ] 
+   n: box loose red 50x50 
+   p: panel 100x100 blue loose
+]
+```
+You can work around it by adding the reaction after setting up the layout.
+```
+lay: layout [
+   size 500x300 
+   n: box loose red 50x50 
+   p: panel 100x100 blue loose []
+]
+insert lay/pane layout/only [
+    at 0x0 base react [
+        face/offset: n/offset 
+        face/size: p/offset + p/size - n/offset
+    ]
+]
+view lay
+```
+Or by putting the panel before the reaction is declared, then moving it to the top of the z-order.
+```
+move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
+
+view/no-wait [
+   size 500x300 
+   at 60x60
+   p: panel 100x100 blue loose []
+   at 0x0 base react [
+      face/offset: n/offset 
+      face/size: p/offset + p/size - n/offset
+   ] 
+   n: box loose red 50x50 
+]
+move-to-top p
+do-events
+```
+
+
 # Future work
 
 If you are interested in building a new, more sophisticated reactive library for Red (as suggested in https://github.com/red/red/issues/3096), you are welcome. The current one serves its purpose very well, but it might not be good enough for more complex use-cases. One difficult part would be designing a new API which is as lightweight as possible; ideally as simple as current one, but that may not be possible.
