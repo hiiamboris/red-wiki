@@ -194,7 +194,20 @@ view/no-wait [
 move-to-top p
 do-events
 ```
-
+The cleanest way seems to be styling:
+```
+view [
+	size 500x300
+	style node: box loose
+	style pan: panel loose []
+	at 0x0 base react [
+		face/offset: n/offset 
+		face/size: p/offset + p/size - n/offset
+	] 
+	n: node red 50x50 
+	at 60x60 p: pan 100x100 blue
+]
+```
 
 # Future work
 
