@@ -12,6 +12,8 @@ Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemNa
 [Sources](https://github.com/red/VScode-extension)
 
 ### Sublime-text
+[Red](https://packagecontrol.io/packages/Red) - Basic syntax highlighting.
+Install with `ctrl+shift+P` (windows/linux) or `cmd+shift+P` (mac) and type "Install Package" and hit `enter`, then wait for the package index to load and look for "Red". If you don't already have Package Control installed, as of build 3143 you can install it from the command palette (`ctrl+shift+P`) with "Install Package Control".
 
 ### [Howl](https://howl.io/)
 [rokf/howl-red](https://github.com/rokf/howl-red)
