@@ -63,6 +63,7 @@
 - [[http://reb4.me/][reb4me by Chriss Ross-Gill]]
 - [[http://ross-gill.com/page/Rebol][Rebol page by Chriss Ross-Gill]]
 - [[http://www.cobolrebol.com/][Rebol for COBOL programmers]]
+- [[http://desktop.rebol.info/][Rebol Desktop project]]
 
 ** Books
 - [[http://www.rebol.com/docs/core23/rebolcore.html][REBOL/Core User Guide]]
