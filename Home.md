@@ -32,7 +32,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
 * [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)
 * [Boleslav Březovský blog](http://red.qyz.cz/)
-* [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations#why-are-contexts-static) by Gregg Irwin
+* [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations)
 * [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
 * [Red Docker](https://github.com/eranws/red-docker) [Debian Docker](https://github.com/dander/docker-red)
 * [Red for Hopeless Programmers - Part 1](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
