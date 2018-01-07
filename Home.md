@@ -1,6 +1,7 @@
 ## Welcome to the Red programming language wiki!
 ### Installation
 * [Download and Install](http://www.red-lang.org/p/download.html)
+* [Get Started] (https://github.com/red/red/wiki/Install-and-Get-Started)
 
 ### Beginners Guides
 Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
