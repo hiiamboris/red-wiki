@@ -39,3 +39,5 @@
 > [Euler1 dialecting example](https://gist.github.com/tormaroe/1497179) (Marø 2011)
 >
 > [Rebol/Flash Dialect](http://rebol.desajn.net/rswf/) (Oldes 2012)
+>
+> [LEST - low entropy system for templating](http://lest.qyz.cz/) (Rebolek 2014)
