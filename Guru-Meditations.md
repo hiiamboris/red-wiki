@@ -606,7 +606,7 @@ See also: http://www.rebol.net/r3blogs/0318.html
 # How to make HTTP requests?
 (Until full I/O support is implemented)
 ```Red
-write | read url [
+write url [
     Http-Verbs      (word!)
     Http-Headers    (block! Must be set-word!, string! pair. Optional when use GET or HEAD method)
     Data            (string! binary! Optional when use GET or HEAD method)
@@ -619,14 +619,6 @@ probe write/info http://httpbin.org/put [
 ]
 
 probe write/info http://httpbin.org/put [HEAD]
-
-read http://httpbin.org/get [                           ;-- GET request with custom headers
-    GET
-    headers [
-        Content-type: "text/x-x"
-        Header-Test: "abc"
-    ]
-]
 ```
 
 # RGB image data via FFI
