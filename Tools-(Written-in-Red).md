@@ -26,3 +26,6 @@ Trig Lab: https://gist.github.com/greggirwin/5af03a6ed90a9a38da0a1201da2cf31e
 
 Like Math Lab, but for trig functions.
 
+# Functions and Language Tools
+
+Code Profiler: https://gist.github.com/greggirwin/908d44dc069ed84cf69f053e1308390d
