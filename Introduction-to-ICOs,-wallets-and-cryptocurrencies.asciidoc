@@ -1,0 +1,340 @@
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:toc:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:EAL: https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn[EAL]
+:MetaMask: https://myetherwallet.github.io/knowledge-base/migration/moving-from-private-key-to-metamask.html[MetaMask]
+:Cryptonite: https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige[Cryptonite]
+:MEW: https://www.myetherwallet.com/[MEW]
+:MEW_Getting_Started: https://myetherwallet.github.io/knowledge-base/getting-started/getting-started-new.html[started]
+:Exodus: https://www.exodus.io/[Exodus]
+:Electron: https://electronjs.org/[Electron]
+:Ledger: https://www.ledgerwallet.com/[Ledger]
+:Ledger_Nano_S: https://www.ledgerwallet.com/products/ledger-nano-s[Ledger Nano S]
+:Trezor: https://trezor.io/[TREZOR]
+:Bitpanda: https://www.bitpanda.com[Bitpanda]
+:Bitpanda_Referral: https://www.bitpanda.com/?ref=9074231584315130611[Writer's referral link]
+:AnycoinDirect: https://anycoindirect.eu[AnycoinDirect]
+:Coinbase: https://www.coinbase.com[coinbase]
+:Kraken: https://www.kraken.com/[Kraken]
+:Gdax: https://www.gdax.com/[GDAX]
+:Binance: https://www.binance.com/[Binance]
+:Gasstation: https://ethgasstation.info/[gas pricing website]
+:Etherscan: https://etherscan.io/[Etherscan]
+
+= RED, the ICO and myself
+
+.Disclaimer
+****
+These are my personal notes and are offered to provide an introduction to those members of the Red community who are unfamiliar with blockchains. They are neither endorsed by nor disapproved by the Red team.
+
+Any product or service recommendations in this document are mine and are not recommendations of the Red team.
+
+The User known as BeardPower.
+****
+
+.Note for the reader
+****
+This document should not be seen as a technical overview but as an accessible, understandable overview of how even a novice user without any experience in cryptocurrencies or ICOs can join the upcoming Red ICO. +
+ +
+As the ICO will happen on the Etherium Blockchain, the article will only cover the specifics of Etherium, but the concepts are similar to other cryptocurrencies and networks.
+****
+
+////
+== Meet the participants
+*_Alice_* and *_Bob_* are each owners of a special device, which accel in solving mathematical calculations, *_Charly_* is the owner of a crypto exchange and *_Ed_*, like you, wants to join the [red]#Red# ICO.
+////
+
+== Steps, to get started
+To get started with cryptocurrencies and take part in an ICO requires a few steps. These are straightforward and can be done with a little technical knowledge. So let's get started.
+
+NOTE: The user should be familiar with a browser. Knowledge of installing browser plugins and 2FA (two-factor authentication) is optional but highly recommended.
+
+=== Creating a wallet
+First, we need to know, what a _wallet_ is. A _wallet_ can be seen as a standard money pocket someone is carrying it. The only difference between the two is, that a _cryto wallet_ does not hold your money, but the _keys_ to receive and transfer _digital assets_, which can be _coins_ or _tokens_. When creating a _wallet_, the user will receive three different and distinctive series of alphanumeric characters, which are all generated for the user automatically. The mathematical concepts behind the generation of these series are out of the scope of this article, but the interested reader can check out the links in the link section. +
+
+==== What are these three series of alphanumeric characters?
+The first two are the so-called _keys_: a _public key_, and a _private key_.
+The _public key_ allows the owner to create a _wallet address_, which is needed to receive assets. This _key_ can be shared with anyone and does not need to be kept secret, as this _key_ is also used to verify a transaction by other people.
+On the contrary, the _private key_ allows transferring assets. This _key_ has to be *kept private and secure at all costs!* Anyone, who is in control of the _private key_, is in control of the assets stored on the ledger. In case of digital money, the person, who knows the _private key_, also owns the money. +
+The third alphanumeric series is your wallet address. Other people use it, so they can send you assets and needs to be shared with others to receive assets from them.
+
+IMPORTANT: Never share your private key with anyone and keep it secure. This key is the most critical part of your wallet. Once you lose it, your assets are lost and cannot get back! +
+ +
+The public key can be shared with anyone, and it does not need to be kept secret.
+
+TIP: A cold wallet should be used for maximum security, which will be explained later on.
+
+[[Keys]]
+==== What are the keys used for exactly and what do they look like?
+
+Private key:: It is random and used to derive the public key from. The _private key_ has a length of 64 hexadecimal characters and a size of 256 bits or 32 bytes.
+
+Public key:: It is not random and used to derive the wallet address from. The _public key_ has a length of 128 hexadecimal characters and a size of 512 bits or 64 bytes.
+
+Wallet address:: It is not random and derived from the public key. The _wallet address_ has a length of 40 hexadecimal characters and a size of 160 bits or 20 bytes.
+
+NOTE: The *_private key_* must *not* be *shared*! The security of the wallet stands and falls with the _private key_. Whoever controls it, controls the wallet. +
+ +
+The *_public key_* *can* be *shared* but is used internally. +
+ +
+ The *_wallet address_* *can* and *needs* to be *shared* if one wants to receive assets.
+
+
+
+
+==== Where are my assets (e.g. digital money) stored?
+As mentioned earlier, your wallet does not contain any assets, just the keys. The information, what your wallet holds and its data, is stored on a distributed ledger, which is public. The ledger can store any data, like the amount of your money. Anyone, who knows your _wallet address_, can see the content of your wallet, but the wallet address itself is not related to any personal information, so it is entirely anonymous. Nobody knows, who the owner of the wallet, and the keys is, unless it is shared with someone.
+
+NOTE: Personal information can also be stored as data through smart contracts, which will be covered later.
+
+==== So, how can I create my wallet?
+
+There are numerous ways to create your wallet. Depending on the security and usability, there are different ways to create it. Each method has a different balance between security and usability, so the reader has to decide, what fits best for himself.
+Depending on this balance, there are different types of wallets. A short overview can be seen in <<wallet_types>>.
+
+[[wallet_types, Table 1]]
+.Types of wallets
+[options="header"]
+|=======================
+|Type           |Security|Usability|Cost
+|Online wallet  |+       |\+++       |free
+|Software wallet|++      |++       |free
+|Paper wallet   |\+++    |+        |free
+|Hardware wallet|\+++    |+        |USD 50-100
+|=======================
+
+Wallets are differentiated between the following types.
+
+.Wallet types
+  * Cold wallets: are not connected to the internet and have a so-called "air gap", as they are entirely separated devices.
+  * Hot wallets: are connected to the internet or are directly store their keys in a, hopefully secure, cloud.
+  * Warm wallets: are a hybrid between cold and hot wallets and act as an intermediary between the cold and the hot wallet. They are limited in usage (adding to the overall security, as assets can only be sent to and received on an individual wallet address) and just for transferring assets between the hot and cold wallet.
+
+.Wallet subtypes
+  * Online wallets: are _hot wallets_, which stores the keys in a cloud and is offered by the exchanges for free. The keys are not owned by the user, but the exchange, so the exchange owns the user's assets. The significant advantage is their usability, as they are entirely managed by the exchange provider with a browser UI and can be accessed from anywhere. This also comes with a big drawback, security! They offer the lowest protection of all wallet types, as the user is not in control of the keys. Once the exchange loses the keys, or they are stolen because of some security breach, the assets of the user are lost forever.
+  * Software wallets: are _hot wallets_, which stores the key on your local computer and come with their own fancy Desktop application and/or Mobile apps. They offer good usability, but access is limited to the computer, where they are installed on. If the same wallet needs to be installed on a different computer, the wallet needs to be restored on the new machine, as most software wallets do not allow to access concurrent usage of the same wallet. These wallets also offer good security by encrypting the keys and storing them in a location of the user's choice (e.g., locale hard-disk, USB devices, cloud drives). They are exposed to a security risk of trojans and malware, once the computer is connected to the internet.
+  * Paper wallets: are _cold wallets_, which store the keys on a piece of paper. The creation of those is achieved by printing out the keys or by writing them down by hand. Some creation utilities also offer the key's representation as QR-Codes, so they can quickly be scanned in by a software wallet. Usability of these highly secure wallets is limited, as the keys need to be typed by hand, whenever they are used or need to be scanned by some third party app. They are also not resistant to water or fire damages. To conquer these problems, some companies are also providing _paper wallets_ made out of steel. Their significant advantage is their high security, as the keys are never shared with any third party entity.
+  * Hardware wallets: are _cold wallets_, which store keys on dedicated hardware, running a highly secure operating system and tamper-proof chips. They come with USB connectors or cables so that they can interact securely with a computer. Usability is limited in a similar way to paper wallets, as you always have to use the dedicated device for transactions. However, they offer the highest level of security, as the keys will never leave the device, even when connected to a computer. The mathematical functions are executed on the device. The transactions can be managed with the device itself or software, which comes with the them as a package. Additionally, they offer other services like 2FA (two factor authentication, PGP or ssh).
+
+NOTE: The creation of an Etherium wallet is completely free of charge and multiple wallets can be created for a single user.
+
+TIP: To prevent fishing attacks, it is recommended to install {EAL}, {MetaMask}, or {Cryptonite}. The add-ons are available for different browsers. +
+ +
+Always check the icon:lock[] symbol in the address field of your browser. +
+ +
+ Always bookmark the original websites of the services.
+
+
+.Recommendations for specific wallets
+  * Online wallets: every wallet on an exchange is an online wallet. A user of this exchange is not in control of his keys, and the wallets are connected to the internet. However, a high percentage of the funds, depending on the exchange up to 95%, are kept in cold wallets of the exchange you also have no control over. These wallets will be listed in a separate exchange section.
+* Software wallet: these come in various ways like desktop apps, mobile apps or browser apps/bridges. The recommended way is using {MEW} (my ether wallet) or {MetaMask}. Getting {MEW_Getting_Started} with {MEW} or bridging with {MetaMask}.
+  ** {MEW}
+  *** free of charge
+  *** supports various access methods to your wallet
+  *** great features
+  *** keys are generated and stored locally
+  *** can generate a paper
+  *** supports hardware wallets
+
+  ** {MetaMask}
+  *** free of charge
+  *** acts as a bridge between MEW and your browser
+  *** great features
+  *** keys are generated locally and never leave the local MetaMask storage
+  *** integrated anti-fishing and blacklisting features
+  *** supports paper and hardware wallets through {MEW}
+
+  ** {Exodus}
+  *** free of charge
+  *** desktop app based on {Electron}
+  *** fancy UI
+  *** easy to use
+  *** supports many other crypto-coin and token wallets
+  *** keys are stored locally
+  *** supports hardware wallets
+
+  * Paper wallets
+  ** nearly every wallet creation tool supports paper wallets directly, like {MEW} or indirectly, as a paper wallet is just defined as "keys printed on paper".
+  ** Your keys engraved in wood, plastic, steel, gold...
+
+  * Hardware wallets
+  ** {Ledger} (recommended {Ledger_Nano_S})
+  *** very good value for money
+  *** highest security
+  *** supports multiple crypto-coins and token wallets_
+  *** supports 2FA, PGP and ssh (these are upcoming features)
+  *** keys never leave the device
+  *** different models
+
+  ** {Trezor}
+  *** more expensive than other hardware wallets
+  *** bigger than other hardware wallets
+  *** not as secure as other hardware wallets, but still high Security
+  *** Desktop app with fancy UI instead of a browser add-on
+  *** keys never leave the devices
+  *** newer model is coming this month
+
+.Bying a hardware wallet.
+IMPORTANT: *NEVER* buy a hardware wallet from a nonauthorized reseller, as it could have been tampered with. The hardware wallets are directly shipped from the factories. +
+ +
+Also be very careful when buying from eBay or similar!
+
+.Allways encrypt your keys and stored your recovery phrase in a secure place.
+IMPORTANT: All software and hardware wallets have the option to encrypt or automatically encrypt your keys with a passphrase. Using it will keep your keys safe if they got stolen. They also support the possibility of a recovery passphrase, once you are locked out to access your keys. Keep this recovery passphrase in a secure place. If it is stolen, the owner of the recovery passphrase can access your wallet!
+
+.Make Backups!
+IMPORTANT: *Always make backups of your, hopefully encrypted, keys*
+
+=== Funding the wallet with cryptocurrencies
+
+Now an Ether wallet was created, hopefully, without any issues, the wallet needs to be funded with Ether, the currency of the Etherium blockchain. +
+There are three options to do this:
+
+  * Buying from Exchanges
+  * Trading on Exchanges
+  * Receiving from other people
+
+To buy or trade Ether from/on an exchange, an account at this exchange has to be created. The payment options like SKRILL, CC, SWIFT, etc. and the daily/weekly/monthly transferable amount of fiat currencies depend on the level of ID verification . This verification is called _KYC_ (Know Your Customer) and has to be done because of _AML_ (Anti Money Laundering) laws and other regulations. Regulations differ from country to country and the extent of the _KYC_ can be very different. Examples are automated scanning of your driver's license or passport, half-automated checking or just manually. +
+These difference, and also the run on cryptocurrencies in the last months, can take the KYC process to complete anything between minutes or even days. As noted earlier, these exchanges will also provide an _Online wallet_ for you.
+
+.Use a wallet, of which you are in control of the keys
+IMPORTANT: Only hold a few amount of cryptocurrencies in these ose _hot wallets_, as the exchange is in control of your keys and owns your assets. You can transfer out your cryptocurrencies or tokens as soon as you bought them or even state the wallet address at the time of purchasing the cryptocurrencies or tokens.
+
+.For taking part in ICOs, especially the RED ICO
+IMPORTANT: If you are taking part in the RED ICO, which tokens are EC20 tokens, you need to make sure, that the exchange you bought your Ether from, can send to a contract address (the *RED ICO* is using a *contract address*, not a wallet address). More to that later.
+
+==== Where and how to buy/exchange cryptocurrencies?
+
+Always do your due diligence, when buying from an exchange. There are a lot more of exchanges out there, but these are the ones the writer has experience with. If a reader knows other reliable ones, please drop the writer a message or feel free to add it to the wiki entry. Thank you!
+
+.Exchanges, where Ether can be bought directly with fiat money
+  * {Bitpanda} Feel free to use the {Bitpanda_Referral}
+  ** Austrian company (crypto friendly regulations)
+  ** reliable and fast
+  ** can send to a contract address
+  ** fees are included in the end-price shown
+  ** uses automatic gas fee and gas limits/no option to specify manually
+  ** great amount of payment options
+  ** KYC is done through video ident (MICK is recommended)
+
+  * {AnycoinDirect}
+  ** Dutch company
+  ** reliable and fast
+  ** fees are marked up and shown at checkout
+  ** uses automatic gas fee and gas limits/no option to specify manually
+  ** great amount of payment options
+  ** KYC is done through ID and selfie check
+
+  * {Coinbase}
+  ** US company
+  ** bad customer support and sometimes long waiting times
+  ** fees are marked up and shown on checkout
+  ** uses automatic gas fee and gas limits/no option to specify manually
+  ** great amount of payment options
+  ** KYC is done through automated ID and selfie check
+
+.Exchanges, where Ether can be traded (for more advanced users)
+  * {Kraken}
+  ** US company
+  ** sometimes long waiting sometimes
+  ** trading exchange only
+  ** fiat money only transferrable through bank transfer
+  ** KYC is done through ID and half-automated
+
+  * {Gdax}
+  ** US company
+  ** trading exchange of {Coinbase} (they are the same company)
+  ** same payment options as {Coinbase}
+  ** same KYC as {coinbase}
+
+  * {Binance}
+  ** Chinese company
+  ** does not support fiat Money
+  ** trading exchange only
+
+.Receiving from other people (this does not require any account on an exchange, just a valid Etherium wallet; there is no KYC or anything ID related needed)
+ * MEW is recommend
+ ** supports sending to a contract address
+ ** supports specifying the gas fee and the gas limit
+ ** please read the <<ICO>> section, as it's the same task for sending cryptocurrencies
+
+NOTE: Buying/Trading cryptocurrencies on an exchange instead of a pure fiat to cryptocurrency exchange has cheaper fees as the latter will sell you their currencies, they already have in their wallets. The currencies of the former, are exchanged by market participants.
+
+IMPORTANT: Most, if not all of the exchanges support 2FA and it's highly recommend to use for increasing your account security. The 2FA is compatible with authenticator apps from Google, Microsoft, and other companies.
+
+TIP: If an exchange does not require KYC in any form, it's most likely they are not compliant with the law! Do your due diligence before buying/trading from/on such an exchange.
+
+[[ICO]]
+=== Sending cryptocurrencies to the ICO/wallets
+
+Well, we finally reached the important part. An ICO (Initial Coin Offering) is a modern approach to crowdfunding. A participant sends fiat money (rarely any ICO allows fiat currency because of high regulatory hurdles) or cryptocurrencies to the company, offering the ICO.
+
+.Be careful out there, and there might be sharks. Always do your due diligence
+TIP: Compliant and reliable ICOs have a KCY in place. ICOs, which don't, either don't know better or just don't care.
+
+As explained in <<Keys>>, every participant on the Blockchain has a wallet address. These addresses can be normal wallet addresses or contract addresses. The differences will be covered at a different time, and is not important for now, beside one important thing: When sending Ether to the *_RED ICO_*, send from a wallet, which supports sending to a contract address. The transaction *WILL* fail, if you don't! The recommended exchange/service is Bitpanda or MEW, as they support it.
+
+==== Transactions
+
+The process of transferring cryptocurrencies is called a transaction. These transactions are executed by so-called _Miners_. Details will follow at a later time and knowledge about it is not required at this time. Imagine them as a service, which makes sure your cryptocurrencies will be transferred from the reader's wallet to some other wallet, in the _RED ICOs_ case Ether, on the Etherium Blockchain. +
+For offering and executing this service, they need compensation for it, being paid by the initiator of the transaction (a transaction requires a lot of computing power).
+For Etherium, this fee consists of two parts: gas and gas limit. +
+Imagine gas as the gasoline price per gallon for your car and gas limit as the capacity of your car's tank. gas is the amount of Ether you want to spend on a transaction, and gas limit is the maximum fee, you are willing to spend, as a transaction needs time to be processed.
+
+NOTE: The standard unit for gas is called _gwei_, which is 0.000000001 Ether.
+
+Depending on the utilization of the Etherium network, the gas price increases, when usage is high and decreases when usage is low. To ensure, that your transaction will be transferred, and not end up in a pending state, you need to set these two parameters wisely. As with every paid service: the more a client is willing to pay, the more likely is, the service provider will take care of his needs. +
+
+NOTE: Minders sort the transactions based on gwei spent for the transaction. The more is spent on a transaction, the more likely the transaction is being completed.
+
+Transactions with the standard _gwei_ of 20 and a gas limit of 21000 are thrown into the transaction pool as well but are marked as a pending transaction and executed on a low priority.
+
+===== How to find the right gas and gas limit
+
+To make sure the transaction will not run _out of gas_, the reader should always take a look at the {Gasstation}. The site will show you, based on the utilization of the Etherium network, the different settings for each tier (SafeLow, Standard, and Fast), as well as your settings.
+
+.Recommended gas fee and gas limit
+TIP: The writer suggests a gas fee of 50 gwei and a gas limit of 50000, when the Etherium network is saturated. With these settings, transactions should be completed within 5-15 minutes.
+
+.Limits
+NOTE: The maximum gas fee is 100 gwei, but the gas limit is not limited itself.
+
+[[Transaction]]
+==== Getting the transaction onto the Blockchain
+Now it's time to start your preferred wallet software (not to be mixed with a software wallet), e.g., Exodus or MEW. Follow the instructions to specify the wallet/contract address, which was given to the participant in the ICO by the company running the ICO or, in case of a normal transaction, the wallet address of the person, an asset should be transferred to by the sender. Once you send the transaction, a so called Tsx (transaction ID) will be posted to your wallet software as a string of alphanumeric series of characters or/and a link (e.g. {Etherscan}). You can click this directly or copy it, depending on the wallet software used.
+
+==== How can the transaction status be checked?
+
+Networks like Etherium are using a distributed ledger, where anyone can look up past, current and pending transaction. Anyone can check the balance of assets stored on the wallets if they know the wallet address.
+A recommended service for displaying the ledger data is {Etherscan}. Just paste the alphanumeric series of characters from <<Transaction>> into the input field on the top right. Depending on the saturation of the Etherium network, it can take some seconds or up to a minute, the transaction will appear on the site. If the information on the wallet itself is needed, the wallet address can also be entered. Keep in mind, that this site is only for Etherium.
+Different cryptocurrencies can use different ledgers, so check the relevant ledger.
+
+.Keep your private keys safe and secure
+IMPORTANT: *NEVER EVER* paste, copy, share, publish, lose your private keys or give them out to anyone! You *WILL* lose *ALL* your assets!
+
+=== After the ICO
+
+Once the IPO is over, the contract of the token will mint the specific coins, and they get distributed. At this point, a participant in the ICO can decide, if he wants to keep the coins in the wallets of the ICO's company (if they planned to do so), or they are transferred to the wallet address the participant specified in the KYC. That's the reason, why it's so important, that the wallet specified at the point of transferring the cryptocurrency to the ICOs wallet, is an ERC20 compliant wallet and the private key of this wallet is controlled by the participant of the ICO, the reader:
+
+* The distributed coins are based on an ERC20 tokens
+* The coins are owned by whoever controls the private keys of the wallet, they got sent to
+
+.Wallets for ICOs and large amount of cryptocurrencies
+IMPORTANT: Always use a wallet, which private keys are controlled by yourself
+
+== Links and information for the interested reader
+
+Will follow
+
+== Advanced topics
+
+Will follow
