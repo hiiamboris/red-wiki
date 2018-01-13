@@ -45,7 +45,7 @@ The User known as BeardPower.
 ****
 This document should not be seen as a technical overview but as an accessible, understandable overview of how even a novice user without any experience in cryptocurrencies or ICOs can join the upcoming Red ICO. +
  +
-As the ICO will happen on the Etherium Blockchain, the article will only cover the specifics of Etherium, but the concepts are similar to other cryptocurrencies and networks.
+As the ICO will happen on the Ethereum Blockchain, the article will only cover the specifics of Ethereum, but the concepts are similar to other cryptocurrencies and networks.
 ****
 
 ////
@@ -125,7 +125,7 @@ Wallets are differentiated between the following types.
   * Paper wallets: are _cold wallets_, which store the keys on a piece of paper. The creation of those is achieved by printing out the keys or by writing them down by hand. Some creation utilities also offer the key's representation as QR-Codes, so they can quickly be scanned in by a software wallet. Usability of these highly secure wallets is limited, as the keys need to be typed by hand, whenever they are used or need to be scanned by some third party app. They are also not resistant to water or fire damages. To conquer these problems, some companies are also providing _paper wallets_ made out of steel. Their significant advantage is their high security, as the keys are never shared with any third party entity.
   * Hardware wallets: are _cold wallets_, which store keys on dedicated hardware, running a highly secure operating system and tamper-proof chips. They come with USB connectors or cables so that they can interact securely with a computer. Usability is limited in a similar way to paper wallets, as you always have to use the dedicated device for transactions. However, they offer the highest level of security, as the keys will never leave the device, even when connected to a computer. The mathematical functions are executed on the device. The transactions can be managed with the device itself or software, which comes with the them as a package. Additionally, they offer other services like 2FA (two factor authentication, PGP or ssh).
 
-NOTE: The creation of an Etherium wallet is completely free of charge and multiple wallets can be created for a single user.
+NOTE: The creation of an Ethereum wallet is completely free of charge and multiple wallets can be created for a single user.
 
 TIP: To prevent fishing attacks, it is recommended to install {EAL}, {MetaMask}, or {Cryptonite}. The add-ons are available for different browsers. +
  +
@@ -196,7 +196,7 @@ IMPORTANT: *Always make backups of your, hopefully encrypted, keys*
 
 === Funding the wallet with cryptocurrencies
 
-Now an Ether wallet was created, hopefully, without any issues, the wallet needs to be funded with Ether, the currency of the Etherium blockchain. +
+Now an Ether wallet was created, hopefully, without any issues, the wallet needs to be funded with Ether, the currency of the Ethereum blockchain. +
 There are three options to do this:
 
   * Buying from Exchanges
@@ -261,7 +261,7 @@ Always do your due diligence, when buying from an exchange. There are a lot more
   ** does not support fiat Money
   ** trading exchange only
 
-.Receiving from other people (this does not require any account on an exchange, just a valid Etherium wallet; there is no KYC or anything ID related needed)
+.Receiving from other people (this does not require any account on an exchange, just a valid Ethereum wallet; there is no KYC or anything ID related needed)
  * MEW is recommend
  ** supports sending to a contract address
  ** supports specifying the gas fee and the gas limit
@@ -285,14 +285,14 @@ As explained in <<Keys>>, every participant on the Blockchain has a wallet addre
 
 ==== Transactions
 
-The process of transferring cryptocurrencies is called a transaction. These transactions are executed by so-called _Miners_. Details will follow at a later time and knowledge about it is not required at this time. Imagine them as a service, which makes sure your cryptocurrencies will be transferred from the reader's wallet to some other wallet, in the _RED ICOs_ case Ether, on the Etherium Blockchain. +
+The process of transferring cryptocurrencies is called a transaction. These transactions are executed by so-called _Miners_. Details will follow at a later time and knowledge about it is not required at this time. Imagine them as a service, which makes sure your cryptocurrencies will be transferred from the reader's wallet to some other wallet, in the _RED ICOs_ case Ether, on the Ethereum Blockchain. +
 For offering and executing this service, they need compensation for it, being paid by the initiator of the transaction (a transaction requires a lot of computing power).
-For Etherium, this fee consists of two parts: gas and gas limit. +
+For Ethereum, this fee consists of two parts: gas and gas limit. +
 Imagine gas as the gasoline price per gallon for your car and gas limit as the capacity of your car's tank. gas is the amount of Ether you want to spend on a transaction, and gas limit is the maximum fee, you are willing to spend, as a transaction needs time to be processed.
 
 NOTE: The standard unit for gas is called _gwei_, which is 0.000000001 Ether.
 
-Depending on the utilization of the Etherium network, the gas price increases, when usage is high and decreases when usage is low. To ensure, that your transaction will be transferred, and not end up in a pending state, you need to set these two parameters wisely. As with every paid service: the more a client is willing to pay, the more likely is, the service provider will take care of his needs. +
+Depending on the utilization of the Ethereum network, the gas price increases, when usage is high and decreases when usage is low. To ensure, that your transaction will be transferred, and not end up in a pending state, you need to set these two parameters wisely. As with every paid service: the more a client is willing to pay, the more likely is, the service provider will take care of his needs. +
 
 NOTE: Minders sort the transactions based on gwei spent for the transaction. The more is spent on a transaction, the more likely the transaction is being completed.
 
@@ -300,10 +300,10 @@ Transactions with the standard _gwei_ of 20 and a gas limit of 21000 are thrown 
 
 ===== How to find the right gas and gas limit
 
-To make sure the transaction will not run _out of gas_, the reader should always take a look at the {Gasstation}. The site will show you, based on the utilization of the Etherium network, the different settings for each tier (SafeLow, Standard, and Fast), as well as your settings.
+To make sure the transaction will not run _out of gas_, the reader should always take a look at the {Gasstation}. The site will show you, based on the utilization of the Ethereum network, the different settings for each tier (SafeLow, Standard, and Fast), as well as your settings.
 
 .Recommended gas fee and gas limit
-TIP: The writer suggests a gas fee of 50 gwei and a gas limit of 50000, when the Etherium network is saturated. With these settings, transactions should be completed within 5-15 minutes.
+TIP: The writer suggests a gas fee of 50 gwei and a gas limit of 50000, when the Ethereum network is saturated. With these settings, transactions should be completed within 5-15 minutes.
 
 .Limits
 NOTE: The maximum gas fee is 100 gwei, but the gas limit is not limited itself.
@@ -314,8 +314,8 @@ Now it's time to start your preferred wallet software (not to be mixed with a so
 
 ==== How can the transaction status be checked?
 
-Networks like Etherium are using a distributed ledger, where anyone can look up past, current and pending transaction. Anyone can check the balance of assets stored on the wallets if they know the wallet address.
-A recommended service for displaying the ledger data is {Etherscan}. Just paste the alphanumeric series of characters from <<Transaction>> into the input field on the top right. Depending on the saturation of the Etherium network, it can take some seconds or up to a minute, the transaction will appear on the site. If the information on the wallet itself is needed, the wallet address can also be entered. Keep in mind, that this site is only for Etherium.
+Networks like Ethereum are using a distributed ledger, where anyone can look up past, current and pending transaction. Anyone can check the balance of assets stored on the wallets if they know the wallet address.
+A recommended service for displaying the ledger data is {Etherscan}. Just paste the alphanumeric series of characters from <<Transaction>> into the input field on the top right. Depending on the saturation of the Ethereum network, it can take some seconds or up to a minute, the transaction will appear on the site. If the information on the wallet itself is needed, the wallet address can also be entered. Keep in mind, that this site is only for Ethereum.
 Different cryptocurrencies can use different ledgers, so check the relevant ledger.
 
 .Keep your private keys safe and secure
