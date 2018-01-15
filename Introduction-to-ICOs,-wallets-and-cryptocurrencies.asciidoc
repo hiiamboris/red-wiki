@@ -183,7 +183,7 @@ Always check the icon:lock[] symbol in the address field of your browser. +
   *** keys never leave the devices
   *** newer model is coming this month
 
-.Bying a hardware wallet.
+.Buying a hardware wallet.
 IMPORTANT: *NEVER* buy a hardware wallet from a nonauthorized reseller, as it could have been tampered with. The hardware wallets are directly shipped from the factories. +
  +
 Also be very careful when buying from eBay or similar!
