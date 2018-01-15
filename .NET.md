@@ -1,0 +1,3 @@
+- https://github.com/iceflow19/red-mono
+- https://github.com/red/red/tree/master/bridges/dotnet
+- https://github.com/koba-yu/LibRedSharp
