@@ -15,6 +15,11 @@
 | How can we participate in the angel round and pre-sale event? | |
 | How will you get the information out to intetested parties? | |
 | Why choose ICO instead of traditional funding schemes (Patreon, donations, etc)? | | 
+| How are the ICO funds being stored? | |
+| Is there an escrow or is the team in control? | |
+| Can they provide the addresses so I can see the funds on the block explorer? | |
+| Has there been any marketing to the cryptocommunity? | |
+| How much money has been raised so far, and where do you expect most of it is coming from? | |
 
 ### RCT
 | Q | A |
