@@ -1184,3 +1184,83 @@ size? s!                   ;-- will return 8
 > **动态 `string` 的案例（Dynamic string use cases）**
 >
 > `Size?` 只能用于 `c-string!` 字面量，而 `c-string!` 的指针只能用 `length?` 函数。
+
+## 表达式
+
+表达式是`Red/System`程序的基本构件。包括：
+
+- 变量
+- 字面量
+- 函数调用
+- 运算符操作
+- 圆括号中的子表达式
+
+### 正式语法规则
+
+以下是由[BNF](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form)格式指定的语法规则，定义在本地语言中的部分使用`...`表示。
+
+```
+<literal>       ::= ... any valid Red/System literal value ...
+<variable>      ::= ... any valid Red/System variable name ...
+<logic-call>    ::= ... function call that returns a value of logic! type ...
+<func-call>     ::= ... function call that returns a value ...
+<statement>     ::= ... statement or function without return value...
+
+<logic-literal> ::= "true" | "false"
+
+<math-op>       ::= "+" | "-" | "*" | "/" | "//" | "%"
+<bitwise-op>    ::= "and" | "or" | "xor"
+<comparison-op> ::= "=" | "<>" | "<" | "<=" | ">=" | ">"
+<op>            ::= <math-op> | <bitwise-op>
+
+<cond-expr>     ::= <value> <comparison-op> <expression>
+<condition>     ::= <logic-literal> | <logic-call> | <cond-expr>
+
+<all>           ::= "ALL" "[" <condition>+ "]"
+<any>           ::= "ANY" "[" <condition>+ "]" 
+<either>        ::= "EITHER" <condition> "[" <expression>+ "]" "[" <expression>+ "]"
+<short-circuit> ::= <all> | <any> | <either>
+
+<paren>         ::= "(" <expression> ")"
+<value>         ::= <variable> | <literal> | <paren> | "null"
+
+<infix>         ::= <value> <op> <expression>
+<prefix>        ::= <func-call> <expression>* | <statement> <expression>* 
+<call>          ::= <prefix>+ | <infix> | <cond-expr>
+
+<expression>    ::= <call> | <value> | <short-circuit>
+```
+
+表达式可以单独使用，跟在赋值语句后或者作为一些语句的参数（`RETURN`，`IF`或者`EITHER`都被用作语句）。
+
+注意：`EITHER`在被用于表达式中时，其`TRUE`块和`FALSE`块中最后一个表达式的值必须为相同类型。类似于C语言中的三元运算符（?）。
+
+**示例**
+
+```
+a: 123
+foo a + 1
+0 < foo a + 1
+any [(0 < foo a + 1) a > 0]
+
+if any [(0 < foo a + 1) a > 0][print "ok"]
+
+b: 1 + (2 * a - either zero? a [0][a + 100])
+```
+
+### 求值顺序规则
+
+表达式从左到右求值，除了中缀运算符优先级高于前缀运算符（包括函数调用）的规则之外，没有其他运算符优先级。
+
+**示例**
+
+```
+1 + 2 * 3                              ;-- (1 + 2) * 3 returns 9
+1 + 2 * 3 = 9                          ;-- ((1 + 2) * 3) = 9 returns TRUE
+9 = 1 + 2 * 3                          ;-- ((9 = 1) + 2) * 3 raises an error!
+
+1 + (2 * 3)                            ;-- 1 + (2 * 3) returns 7
+
+foo 1 + 2                              ;-- foo (1 + 2)
+1 + foo 2 * 3                          ;-- 1 + (foo (2 * 3))
+```
