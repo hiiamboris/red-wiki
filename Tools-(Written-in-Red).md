@@ -7,6 +7,7 @@ A GUI tool you can use to explore the system.
 
 # IDEs, Build Tools, and Editors
 
+Salça: http://abdllh.com/projeler/salca/
 
 # Lab Tools
 
