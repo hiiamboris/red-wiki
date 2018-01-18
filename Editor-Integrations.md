@@ -37,3 +37,9 @@ Editors written in Red itself
 
 ### Useful words
 `help-string`, `red-complete-input`
+
+## LaTeX
+To produce PDF files with programming code syntax coloring there are at least two packages:
+
+* [minted](https://ctan.org/pkg/minted), supports Red and REBOL. Requires Python and Pygments.
+* [listings](https://ctan.org/pkg/listings), does not (yet) support Red.
