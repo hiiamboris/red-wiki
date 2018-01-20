@@ -1,3 +1,5 @@
+## 从Red编译成Red System能学到什么
+
 准备好最简单的 Red 源码如下：
 
 ```shell
