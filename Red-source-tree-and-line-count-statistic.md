@@ -23,7 +23,7 @@ Base on Red `0.6.3` version, exclude directorys whose name contain `test`, `docs
 
 ## The most important part in my opinion?
 
-`Red` is built with `Red/System` low level(same level as `C`) language: the runtime and datatypes, which are the foundation of Red.
+`Red` is built with `Red/System` low level(same level as `C`) language: the **runtime** and **datatypes**, which are the foundation of Red.
 
 And currently compilers of `Red` and `Red/System` are all written with `REBOL`, but compiler is so complicated, not to mention the linking and emitting to machine code, in which phases depend on different OSs and different CPUs.
 
