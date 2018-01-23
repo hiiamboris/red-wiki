@@ -1,0 +1,1 @@
+A place to put notes and references for future module design.
