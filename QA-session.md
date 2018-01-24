@@ -2,8 +2,10 @@
 | Q | A |
 |:-:|:-:|
 | Any plans to open-source AltMe? | |
+| Any way that would make open-sourcing Rebol documentation possible? | |
 | When will Carl return to Redbol? | |
 | User-defined custom datatypes? | |
+| Where can we buy SassenRanch wine? | |
 
 ### Blockchain
 | Q | A |
