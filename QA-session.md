@@ -8,7 +8,7 @@
 | Where can we buy SassenRanch wine? | |
 | Does `query` have a modes dialect? | |
 | Why `/local` is a refinement? | |
-| Who and how comed up with idea of bindology and so-called definitional scoping? | |
+| Who and how came up with ideas of bindology and so-called definitional scoping? | |
 
 ### Blockchain
 | Q | A |
