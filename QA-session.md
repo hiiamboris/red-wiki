@@ -6,6 +6,7 @@
 | When will Carl return to Redbol? | |
 | User-defined custom datatypes? | |
 | Where can we buy SassenRanch wine? | |
+| Does `query` have a modes dialect? | |
 
 ### Blockchain
 | Q | A |
