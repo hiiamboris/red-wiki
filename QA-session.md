@@ -9,6 +9,7 @@
 | Does `query` have a modes dialect? | |
 | Why `/local` is a refinement? | |
 | Who and how came up with ideas of bindology and so-called definitional scoping? | |
+| What makes Rebol and Red so small? | |
 
 ### Blockchain
 | Q | A |
