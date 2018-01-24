@@ -1,7 +1,9 @@
 ### Carl Sassenrath
 | Q | A |
 |:-:|:-:|
-| Any plans to open-source AltMe?| |
+| Any plans to open-source AltMe? | |
+| When will Carl return to Redbol? | |
+| User-defined custom datatypes? | |
 
 ### Blockchain
 | Q | A |
