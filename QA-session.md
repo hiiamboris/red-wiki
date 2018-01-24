@@ -7,6 +7,7 @@
 | User-defined custom datatypes? | |
 | Where can we buy SassenRanch wine? | |
 | Does `query` have a modes dialect? | |
+| Why `/local` is a refinement? | |
 
 ### Blockchain
 | Q | A |
