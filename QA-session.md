@@ -10,7 +10,7 @@
 | Why `/local` is a refinement? | |
 | Who and how came up with ideas of bindology and so-called definitional scoping? | |
 | What makes Rebol and Red so small? | |
-| Will you release a new 64bit version of R2 with the checkum code corrected to work (see R3 implementation)? | |
+| Will you release a new 64bit version of R2 with the checksum code corrected to work (see R3 implementation)? | |
 
 ### Blockchain
 | Q | A |
