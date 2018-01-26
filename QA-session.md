@@ -1,4 +1,4 @@
-### Carl Sassenrath
+# Carl Sassenrath
 | Q | A |
 |:-:|:-:|
 | Any plans to open-source AltMe? | |
@@ -12,7 +12,7 @@
 | What makes Rebol and Red so small? | |
 | Will you release a new 64bit version of R2 with the checksum code corrected to work (see R2 blog on this and R3 implementation)? | |
 
-### Blockchain
+# Blockchain
 | Q | A |
 |:-:|:-:|
 | Any plans to run a private NEO blockchain? | |
@@ -54,7 +54,6 @@
 | Giving recent announcement, it seems that Red drifts further and further from initial idea of Carl. Building blockchain tech without proper GC, or 64 bit support and just basic I/O IMO again putting first things last. And it's worrisome that "full-stack language" and its community may lock itself in one niche. Can you comment on that? | |
 | You've mentioned that proposed community restructuration is akin to the one that Clojure project use. Are there any other projects/languages which models you're trying (or want) to follow? | |
 | What about webassembly as a compilation target? LLVM? | |
-
 
 ### /C3
 | Q | A |
