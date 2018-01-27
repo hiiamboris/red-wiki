@@ -11,6 +11,8 @@
 | Who and how came up with ideas of bindology and so-called definitional scoping? | |
 | What makes Rebol and Red so small? | |
 | Will you release a new 64bit version of R2 with the checksum code corrected to work (see R2 blog on this and R3 implementation)? | |
+| Do you have any specific wishes for the Red project? | |
+
 
 # Blockchain
 | Q | A |
