@@ -41,3 +41,5 @@
 > [Rebol/Flash Dialect](http://rebol.desajn.net/rswf/) (Oldes 2012)
 >
 > [LEST - low entropy system for templating](http://lest.qyz.cz/) (Rebolek 2014)
+>
+> [StyleTalk](https://github.com/rgchris/StyleTalk)—Style Sheet dialect (Ross-Gill 2013)
