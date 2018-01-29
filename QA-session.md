@@ -12,6 +12,7 @@
 | What makes Rebol and Red so small? | |
 | Will you release a new 64bit version of R2 with the checksum code corrected to work (see R2 blog on this and R3 implementation)? | |
 | Do you have any specific wishes for the Red project? | |
+| The WiKipedia mentions that you were interested in parallel processing, why rebol just single-threaded? | |
 
 
 # Blockchain
