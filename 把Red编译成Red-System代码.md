@@ -1,4 +1,4 @@
-### 例子：test.red
+## 例子：test.red
 
 ```
 Red [ ]
@@ -20,7 +20,7 @@ print b
 
 ```
 
-### 把 Red 编译成 Red/System
+## 把 Red 编译成 Red/System
 
 在 `test.red` 所在目录下执行 `red-063.exe -c -v 4 test.red > v4.reds`，得到 `v4.reds` 文件如下。
 
@@ -159,12 +159,12 @@ with red [
 ...compilation time : 47 ms
 ```
 
-### 字符串变量的符号表在哪里？
+## 字符串变量的符号表在哪里？
 
-字符串变量 `s` 在编译后是用 `~s` 来表示，于是在 `v4.reds` 中搜索 `~s`，发现在 `emiter/symbols` 中似乎找到了，这是 Redbin 的符号表？
+字符串变量 `s` 在编译后是用 `~s` 来表示，于是在 `v4.reds` 中搜索 `~s`，发现在 `-- compiler/globals --` 和 `emiter/symbols` 中分别找到了，前者说明字符串是全局的？后者说明是从 Redbin 的符号表来读取？
 
 ```
--- emitter/symbols -- 
+-- compiler/globals -- 
 [
     <data> [global 0 [144 150] -] 
     stdout [global 4 [110] -] 
@@ -181,7 +181,10 @@ with red [
     exec/~trace? [red/red-word!] 
     exec/~s [red/red-word!] -------->这个是吗？
     exec/~do-quit [red/red-word!] 
-...省略...
+]
+
+-- emitter/symbols -- 
+[
     exec/~active? [global 10256 [20252] -] 
     <data> [global 10260 [20266] -] 
     exec/~trace? [global 10268 [20279] -] 
