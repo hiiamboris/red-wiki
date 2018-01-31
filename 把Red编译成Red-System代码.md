@@ -161,9 +161,22 @@ with red [
 
 ### 字符串变量的符号表在哪里？
 
-字符串变量 `s` 在编译后是用 `~s` 来表示，于是在 `v4.reds` 中搜索 `~s`，发现如下：
+字符串变量 `s` 在编译后是用 `~s` 来表示，于是在 `v4.reds` 中搜索 `~s`，发现在 `emiter/symbols` 中似乎找到了，这是 Redbin 的符号表？
 
 ```
+-- emitter/symbols -- 
+[
+    <data> [global 0 [144 150] -] 
+    stdout [global 4 [110] -] 
+    stdin [global 8 [95] -] 
+    stderr [global 12 [125] -] 
+    newline [global 16 [] -] 
+    <data> [global 20 [] [17]] 
+    lf [global 22 [43601 44310 45131 45166] -] 
+    cr [global 23 [] -] 
+    tab [global 24 [] -] 
+    space [global 25 [] -] 
+...省略...
     exec/~active? [red/red-word!] 
     exec/~trace? [red/red-word!] 
     exec/~s [red/red-word!] -------->这个是吗？
@@ -176,4 +189,5 @@ with red [
     exec/~s [global 10276 [20306 40837 40982] -] ----> 这是在读取 Redbin？说明字符串是在全局 data 段里？
     <data> [global 10280 [20320] -] 
     exec/~do-quit [global 10288 [20333] -] 
+]
 ```
