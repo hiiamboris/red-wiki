@@ -98,13 +98,13 @@ with red [
         f_extract-boot-args 
         stack/unwind ------------| "extract-boot-args" #user-code 
         stack/mark-native ~set 
-        word/push ~a435 
+        word/push ~a435 ----->变量 a
         integer/push 1 
         word/set 
         stack/unwind 
         stack/reset ------------| "a: 1" 
         stack/mark-native ~set 
-        word/push ~b436 
+        word/push ~b436 ----->变量 b
         stack/mark-native ~+ 
         integer/push 2 
         word/get ~a435 
@@ -119,7 +119,7 @@ with red [
         stack/unwind 
         stack/reset ------------| "print b" 
         stack/mark-native ~set 
-        word/push ~s 
+        word/push ~s -----------> 字符串变量 s ？
         string/push as red-string! get-root 0 
         word/set 
         stack/unwind 
