@@ -270,6 +270,11 @@ blue
 >> 
 ```
 
+```
+>> head? colors
+== true
+```
+
 There is no `forskip` in Red.
 
 
@@ -294,6 +299,7 @@ print switch 22 [
 ]
 ```
 
+This example seems to missing the `person` word in the switch:
 ```
 person: 123
 switch type?/word [
@@ -304,7 +310,7 @@ switch type?/word [
 ]
 ```
 
-Appears to be wrong. Should be?:
+Should be?:
 
 ```
 person: 123
