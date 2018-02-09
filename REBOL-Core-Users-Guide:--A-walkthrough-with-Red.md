@@ -196,6 +196,13 @@ print remold [1 + 2  3 + 4]
 
 `reform` and `remold` do not exist in Red. Use `form reduce` and `mold reduce` instead.
 
+You can create your own functions if you want `reform` and `remold`.
+
+`reform: func [val][form reduce val]`
+
+`remold: func [val][mold reduce val]`
+
+
 
 ### 5. Words
 
