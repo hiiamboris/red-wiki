@@ -34,7 +34,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard) by Arie
 * [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
 * [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
-* [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)（[Red/System语言规范-中文翻译 25%](https://github.com/red/red/wiki/Red-System-语言规范（Red-System-Language-Specification-中文翻译）)）
+* [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)（[Red/System语言规范-中文翻译 25%](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)）
 * [Boleslav Březovský blog](http://red.qyz.cz/)
 * [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations)
 * [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
