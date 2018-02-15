@@ -167,6 +167,40 @@ Now let's re-edit our second program, and let's convert it into a Red program:
 		rep = 1
 	] 
 
+# Using #include for a Red/System file from Red
+
+This is how you can include a Red/System file in a Red program:
+
+Red Code:
+
+```
+Red []
+
+print "From Red"
+
+#system [
+    #include %../Red-System/test.reds
+    f
+]
+
+print "From Red"
+
+r: routine [][f]
+r
+
+print "From Red"
+```
+
+Red/System code:
+
+```
+Red/System []
+
+f: func [] [
+    print ["From Red System" lf]
+]
+```
+
 A few comments:
 - importing libraries is still red/system code.  To mention this, the #system directive is mentioned.
 - alert and confirm functions are now declared as routines, since they make calls to red/system functions.
