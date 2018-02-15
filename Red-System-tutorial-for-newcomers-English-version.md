@@ -283,6 +283,9 @@ And now, we all share the same directory structure, Linux users and windows user
 
 My wife won't let me use here Mac.  If I can get a hold on it, I'll try to write something.  In the mean time, check Arnold's very good videos, they feature a Red Mac: http://www.youtube.com/playlist?list=PLr1rbtkaZDGDKtExuz8Q0nFDtDtUyyOHz&feature=c4-feed-u
 
+# See Also
+
+http://red.qyz.cz/red-system-from-red.html
 
 
 
