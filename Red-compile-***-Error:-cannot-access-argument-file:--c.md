@@ -2,11 +2,13 @@
 the error messages a few people over the years have seen and posted about.
 it appears to affect very few people and is related to not being able to process commandline options.
 noticeable because you won't be able to -c compile or -e encap your programs.
+affects both the red gui and regular console
 
 please list details of the OS, commandline and how the red executable was obtained
 maybe there will emerge a common denominator
 * for example: does --help work, see `red/usage.txt` for other commandline options.
 
+****
 #### OS version:
 #### VM?:
 #### user level access:
@@ -28,12 +30,16 @@ maybe there will emerge a common denominator
 from another directory using something like total commander or cmd.exe or a short cut
 #### commandline and invoked from: 
 tried anything and everything. I can build the source/test/hello.red with rebol
-but this doesn't seem to work with my programs even if I move them into the source dir
-
+but this doesn't seem to work with my programs even if I move them into the source dir  
+--ne1  
+****
 
 #### latest reference 
- 17th of Feb 2018 on win10 and win7 or win8 
-https://gitter.im/red/red?at=5a887e746fba1a703a64e8ec
+[17th of Feb 2018](https://gitter.im/red/red?at=5a887e746fba1a703a64e8ec) on win10 and win7 or win8 
+
+#### archlinux packages, linked from the download page, comments mentions arg file error:
++ also: are the details of building red with rebol needing SDK accurate? 
++ https://aur.archlinux.org/packages/red/
 
 #### almost any wrong commandline option might trigger the error message
 + https://stackoverflow.com/search?q=Error%3A+cannot+access+argument+file
