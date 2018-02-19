@@ -1,9 +1,11 @@
-### Red compile *** Error: cannot access argument file:  -c
-the error messages a few people over the years have seen and posted
-it appears to be related to not being able to compile any programs with red.
+### *** Error: cannot access argument file:  -c
+the error messages a few people over the years have seen and posted about.
+it appears to affect very few people and is related to not being able to process commandline options.
+noticeable because you won't be able to -c compile or -e encap your programs.
 
 please list details of the OS, commandline and how the red executable was obtained
 maybe there will emerge a common denominator
+* for example: does --help work, see `red/usage.txt` for other commandline options.
 
 #### OS version:
 #### VM?:
@@ -11,7 +13,7 @@ maybe there will emerge a common denominator
 #### red version how and where obtained:
 #### commandline and invoked from:
 
-
+****
 #### OS version:
  win7 pro 64
 #### VM?:
@@ -33,6 +35,8 @@ but this doesn't seem to work with my programs even if I move them into the sour
  17th of Feb 2018 on win10 and win7 or win8 
 https://gitter.im/red/red?at=5a887e746fba1a703a64e8ec
 
+#### almost any wrong commandline option might trigger the error message
++ https://stackoverflow.com/search?q=Error%3A+cannot+access+argument+file
 
 #### at least two tickets unrelated to compiling that mention the same error:
 * Linux: cannot access argument file · Issue #2426 · red/red
