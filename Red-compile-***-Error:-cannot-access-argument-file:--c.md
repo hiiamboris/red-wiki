@@ -41,3 +41,6 @@ https://gitter.im/red/red?at=5a887e746fba1a703a64e8ec
 * *** Error: cannot access argument file - When I start in Wine under Ubuntu 15.10 · Issue #1602 · red/red
 + https://github.com/red/red/issues/1602
 
+****
+**Note:** Windows does not recognize the `%20` separator in directories. This might be a contributing factor.
+
