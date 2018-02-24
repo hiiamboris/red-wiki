@@ -48,7 +48,7 @@
 46. [Function Contexts](#function-contexts)
 47. ["Variadic" function](#variadic-function)
 48. [Literal arguments and get arguments](#literal-arguments-and-get-arguments)
-49. [`--no-runtime option](#--no-runtime-option)
+49. [`--no-runtime` option](#--no-runtime-option)
 50. [](#)
 51. [](#)
 52. [](#)
