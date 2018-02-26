@@ -1,1 +1,1 @@
-GET of compiled object method doesn't run: #924
+GET of compiled object method doesn't run: https://github.com/red/red/issues/924
