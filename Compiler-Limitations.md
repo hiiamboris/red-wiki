@@ -1,2 +1,1 @@
-See ticket #924
-
+GET of compiled object method doesn't run: #924
