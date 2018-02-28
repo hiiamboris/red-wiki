@@ -23,7 +23,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 ### Rebol
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
 * [Rebol Forum](http://rebolforum.com/index.cgi?f=printtopic&topicnumber=48&archiveflag=new) 
-* [Rebol Core Guide vs Red](https://github.com/red/red/wiki/REBOL-Core-Users-Guide:--A-walkthrough-with-Red)
+* [Rebol Core Guide - A walkthrough with Red](https://github.com/red/red/wiki/REBOL-Core-Users-Guide:--A-walkthrough-with-Red)
 
 ### Examples
 * [Red by Example](http://www.red-by-example.org/index.html) at red-by-example.org
