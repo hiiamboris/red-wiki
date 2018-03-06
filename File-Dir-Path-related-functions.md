@@ -1,3 +1,11 @@
+NOTE: It's possible for this to get out of date with current Red functions. To see what's available in your current version of Red, use `help`. e.g.
+
+```
+help file
+help path
+help dir
+```
+
 Red contains a number of standard functions related to file and directory paths. If you're coming from another language, the names may differ from what you're used to, or the functionality may not be exactly the same. Some exist for Rebol compatibility, but also had to be considered *worth* including. Others are new, and still may be open for design changes. More are yet to come, surely. This document can be used to see how they work, individually, and together, for both learning and discussions on how to provide the best set of file functions possible.
 
 Note that `file!` values in Red are file *names*, not file *contents*. Access to file contents will come with ports. For example `length?` refers to the length of the filename, while `size?` refers to the file contents.
