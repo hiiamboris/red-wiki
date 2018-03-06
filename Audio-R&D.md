@@ -8,6 +8,8 @@ https://msdn.microsoft.com/en-us/library/windows/desktop/ee415813(v=vs.85).aspx
 https://msdn.microsoft.com/en-us/library/windows/desktop/ee415714(v=vs.85).aspx
 https://msdn.microsoft.com/en-us/library/windows/desktop/dd370802(v=vs.85).aspx
 
+https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/Introduction/Introduction.html
+
 Depending on the level (low, high, frameworks, engines), every platform has various APIs.
 
 Counting the ones for Windows, Android and macOS, you get >10 APIs, each with different features and designs (low latency, output quality, memory usage, hardware acceleration,...).
