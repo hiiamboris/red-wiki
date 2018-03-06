@@ -96,9 +96,25 @@ For a Red file!
 ```
 
 ## Get a block of fully qualified directories
+
+As always, there are many ways to do things in Red. We'll just provide a couple examples.
+
 ```
 >> collect [foreach file read to-red-file path [if dir? file [keep clean-path file]]]
 == [%/Z/home/isheh/dev/red/logs/ %/Z/home/isheh/dev/red/inf/ %/Z/home/isheh/dev/red/mono/ %/Z/home...
+```
+or
+```
+>> files: read path
+== [%addins/ %AppCompat/ %AppPatch/ %ARJ.PIF %assembly/ %atiogl.xml %ativpsrm.bin %atl80.dll %bfsvc.exe %Boot/ %boots...
+>> remove-each file files [not dir? file]
+>> files
+== [%addins/ %AppCompat/ %AppPatch/ %assembly/ %Boot/ %Branding/ %CSC/ %Cursors/ %debug/ %diagnostics/ %DigitalLocker...
+>> forall files [files/1: clean-path files/1]
+== %/D/<redacted>/build/bin/winsxs/
+>> files
+== [%/D/<redacted>/build/bin/addins/ %/D/<redacted>/build/bin/AppCompat/ ...
+>> 
 ```
 
 ## Get a block of unqualified contents (file or dir) in a directory
