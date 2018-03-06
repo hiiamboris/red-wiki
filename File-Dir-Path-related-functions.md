@@ -45,3 +45,6 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 
 # Split-path
 
+# File! vs path! values
+
+`File!` values are a string type. There are some funcs that work on them, e.g. `split-path` that "know" about path separators, but the datatype itself doesn't. `Path!` values are block values, where each slot can contain a different type of Red value, though not every value type, and most commonly words. One thing they can't contain is a `set-word!` value in any slot other than the last value. If there is a `set-word!` in the first slot, they are currently lexed as a `url!`, which is a different question, but may help explain why you can't treat these types interoperably or convert between them with complete confidence. It may be tempting to use path! values when trying to make file values, but likely won't be the best approach.
