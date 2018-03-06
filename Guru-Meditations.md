@@ -608,8 +608,8 @@ See also: http://www.rebol.net/r3blogs/0318.html
 ```Red
 write url [
     Http-Verbs      (word!)
-    Http-Headers    (block! Must be set-word!, string! pair. Optional when use GET or HEAD method)
-    Data            (string! binary! Optional when use GET or HEAD method)
+    Http-Headers    (block! (optional) Contents must be one of [set-word! string! pair!]; use with GET or HEAD method)
+    Data            (string! or binary! (optional) use with GET or HEAD method)
 ]
 
 probe write/info http://httpbin.org/put [
