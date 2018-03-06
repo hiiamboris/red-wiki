@@ -48,3 +48,67 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 # File! vs path! values
 
 `File!` values are a string type. There are some funcs that work on them, e.g. `split-path` that "know" about path separators, but the datatype itself doesn't. `Path!` values are block values, where each slot can contain a different type of Red value, though not every value type, and most commonly words. One thing they can't contain is a `set-word!` value in any slot other than the last value. If there is a `set-word!` in the first slot, they are currently lexed as a `url!`, which is a different question, but may help explain why you can't treat these types interoperably or convert between them with complete confidence. It may be tempting to use path! values when trying to make file values, but likely won't be the best approach.
+
+# How do I ...?
+
+## Define a file as a string
+
+You can use a literal string, or use Red notation for a filename.
+```
+>> path: "C:\windows\"
+== "C:\windows\"
+>> path: %/c/windows/
+== %/c/windows/
+```
+
+## Make a block of file path components from a file path
+
+For a local filename string
+```
+>> path: "C:\windows\"
+== "C:\windows\"
+>> split path #"\"
+== ["C:" "windows"]
+```
+
+For a Red file!
+```
+>> path: %/c/windows/
+== %/c/windows/
+>> split-path path
+== [%/c/ %windows/]
+```
+
+## Make a Red compatible filename
+```
+>> path: "C:\windows\"
+== "C:\windows\"
+>> to-red-file path
+== %/C/windows/
+```
+
+## Make a local OS compatible filename
+```
+>> path: %/c/windows/
+== %/c/windows/
+>> to-local-file path
+== "c:\windows\"
+```
+
+## Get a block of fully qualified directories
+```
+>> collect [foreach file read to-red-file path [if dir? file [keep clean-path file]]]
+== [%/Z/home/isheh/dev/red/logs/ %/Z/home/isheh/dev/red/inf/ %/Z/home/isheh/dev/red/mono/ %/Z/home...
+```
+
+## Get a block of unqualified contents (file or dir) in a directory
+```
+>> read to-red-file path
+== [%logs/ %inf/ %mono/ %winsxs/ %syswow64/ %twain_32.dll %win.ini %Installer/ %Fonts/ %twain.dll ...
+```
+
+## Get a block of filenames, no dirs, for a directory
+```
+>> collect [foreach file read to-red-file path [unless dir? file [keep file]]]
+== [%twain_32.dll %win.ini %twain.dll %winhlp32.exe %system.ini %regedit.exe %explorer.exe %notepa...
+```
