@@ -7,3 +7,5 @@ GET of compiled object method doesn't run: [#924](https://github.com/red/red/iss
 Inner func capture compiler issue: [#2542](https://github.com/red/red/issues/2542)
 
 Returned value from function defined in context differs during compiled app execution: [#2910](https://github.com/red/red/issues/2910)
+
+When compiling mixed Red + Red/system programs, it is necessary to compile using the release mode option (-r).
