@@ -8,7 +8,7 @@ Some API provide 3D Audio and positional audio out of the box.
 It would be much easier to use a cross-platform sound engine, but with the cost of having a dependency.
 
 ## What is 3D Audio/Positional audio?
-It can be seen as the equivalent to what 3D Graphics is. Sound waves are moving, scattered, reflected, obstructed,.. etc. in 3D space like photons are for graphics/visuals. 3D/Positional audio gives an impression ob the real world related to sound design and sound immersion.
+It can be seen as the equivalent to what 3D Graphics is. Sound waves are moving, scattered, reflected, obstructed,.. etc. in 3D space like photons are for graphics/visuals. 3D/Positional audio gives an impression of the real world related to sound design and sound immersion.
 
 ## How can it be implemented?
 There are three different possibilities.
