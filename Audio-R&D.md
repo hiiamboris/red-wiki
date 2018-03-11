@@ -1,5 +1,7 @@
-# Positional Audio (via @BeardPower)
 Thoughts about different ways audio support can be added to Red, along with design ideas, essential features, and what different target users will need.
+
+# Positional Audio (via @BeardPower)
+
 Depending on the level (low, high, frameworks, engines), every platform has various APIs.
 Counting the ones for Windows, Android, and macOS, you get >10 APIs, each with different features and designs (low latency, output quality, memory usage, hardware acceleration).
 Some API provide 3D Audio and positional audio out of the box.
