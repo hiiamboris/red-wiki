@@ -28,7 +28,7 @@ Alternatively, computations can be run on the GPU without the need for a particu
 
 ## APIs and libraries
 For each platform, there are multiple APIs supported and implemented. They are separated into low-level APIs and high-level APIs. The former act as a building block for implementing a sound engine. They are optimized for low latency, jitter-free, and high-quality sound. Some come with extensions for DSP work and helper classes. The latter are black-boxes with fixed functionality, which act like a complete sound engine.
-Think the former as a graphics equivalent to SDL/SFLM/Kha and the latter as UE/CryEngine/Unity.
+Think the former as a graphics equivalent to SDL/SFLM/Kha and the latter to UE/CryEngine/Unity.
 
 A nice overview of the implemented Android APIs: https://www.linkedin.com/pulse/android-audio-apis-jorge-frisancho
 
