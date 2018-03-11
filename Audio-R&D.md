@@ -13,7 +13,7 @@ It can be seen as the equivalent to what 3D Graphics is. Sound waves are moving,
 ## How can it be implemented?
 There are three different possibilities.
 - (1) Through supported hardware (think of hardware acceleration for sound)
-- (2) Through software (think of software renderer for sound)
+- (2) Through software (think of a software renderer for sound)
 - (3) Through 3rd party libraries and frameworks, which support software and hardware solutions
 
 ## How does it work?
