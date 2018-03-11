@@ -42,7 +42,7 @@ The Core Audio API is the foundation of DirectSound and the building block for a
 
 All Apple devices use CoreAudio. It can be used a building block for a sound engine: https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/Introduction/Introduction.html
 
-Superpowered is one of the newer sound engines. It supports Android, OSX, and iOS and is free. It's lower latency and offers more performance than other APIs for Android and Apple devices: https://superpowered.com
+Superpowered is one of the newer sound engines. It supports Android, OSX, and iOS and is free. It's lower latency and offers more performance than other APIs for Android and Apple devices: http://superpowered.com
 
 The following are Industry leading and tested sound engines/frameworks, which are not free (depends on the project and budget). They all support every major Desktop, Mobile, and Console device.
 
