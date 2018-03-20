@@ -13,3 +13,5 @@ Here are some possible directions where we could go in order to support custom w
     * Con: higher memory usage, harder to implement truly dynamic changes.
 
 Also, it is possible to have a mix of 2 and 3. 
+
+In all cases, the face object needs to be extended to handle different "states" and the logic to switch from one to the other.
