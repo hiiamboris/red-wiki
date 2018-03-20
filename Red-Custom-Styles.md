@@ -1,7 +1,7 @@
 Here are some possible directions where we could go in order to support custom widgets:
 
 1. Support "native" customization: allow native widgets to be customized by using only the OS API (Theme and VisualStyles API on Windows). 
-    * Pro: the big work is done by the OS, style 100% native widgets.
+    * Pro: the big work is done by the OS, still 100% native widgets.
     * Con: heterogeneous support across OSes.
 
 2. Draw-based widgets: create a new set of widgets entirely using Draw dialect, and add to face object the necessary framework to handle states and their corresponding Draw blocks (or transformation functions acting on a single Draw block). 
