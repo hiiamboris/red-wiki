@@ -10,6 +10,6 @@ Here are some possible directions where we could go in order to support custom w
 
 3. Image-based widgets: use a set of predefined images for each state of each widget.
     * Pro: very simple, limitless graphic freedom.
-    * Con: higher memory usage, harder to implement dynamic changes (limited to the set of predefined images).
+    * Con: higher memory usage, harder to implement truly dynamic changes.
 
 Also, it is possible to have a mix of 2 and 3. 
