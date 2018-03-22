@@ -801,3 +801,12 @@ make object! [
 ```
 
 Problem: there's no simple and free-form way to throw user errors.
+Even wrapper on `cause-error 'user 'message [...]` is too limited:
+```Red
+>> cause-error 'user 'message ["User message, still with quotes"]
+*** User Error: "User message, still with quotes"
+*** Where: do
+*** Stack: cause-error
+```
+* Error message is displayed with quotes
+* `Where` and `Stack` aren't informative enough.
