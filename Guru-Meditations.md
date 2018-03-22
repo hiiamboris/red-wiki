@@ -759,3 +759,45 @@ Red appears to follow R3 style.
 You can get the compiler to output the "pure" machine code of a Red/System program by using the `--no-runtime` option. It will not include the Red runtime so you can't use `print` in the program. (You would need to write your own input and output routines).
 
 The purpose of the `--no-runtime` option is to allow the production of "OS free" executables.
+
+# `cause-error`
+```Red
+cause-error <err-type> <err-id> <args>
+```
+Where:
+* `<err-type>` is a word from `words-of system/catalog/errors`.
+* `<err-id>` is a word for error message template from `words-of system/catalog/errors/<err-type>`
+* `<args>` is a block of values that will be inserted in selected error template.
+
+Example:
+```Red
+>> cause-error 'internal 'bad-path ['foo/bar]
+*** Internal Error: bad path: foo/bar
+*** Where: do
+*** Stack: cause-error
+
+>> cause-error 'internal 'no-memory []
+*** Internal Error: not enough memory
+*** Where: do
+*** Stack: cause-error  
+```
+```Red
+>> probe system/catalog/errors/internal
+make object! [
+    code: 900
+    type: "Internal Error"
+    bad-path: ["bad path:" arg1]
+    not-here: [arg1 "not supported on your system"]
+    no-memory: "not enough memory"
+    wrong-mem: "failed to release memory"
+    stack-overflow: "stack overflow"
+    too-deep: "block or paren series is too deep to display"
+    feature-na: "feature not available"
+    not-done: "reserved for future use (or not yet implemented)"
+    invalid-error: ["invalid error object field value:" :arg1]
+    routines: {routines require compilation, from OS shell: `red -r <script.red>`}
+    red-system: {contains Red/System code which requires compilation}
+]
+```
+
+Problem: there's no simple and free-form way to throw user errors.
