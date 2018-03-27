@@ -1,0 +1,2 @@
+This page is a place where we can collect links to interesting Gitter posts, chat, gifs, gists, projects, updates from community members and more. This will help us find them over time, and can also be used to share across channels for PR purposes. We'll come up with a notation that lets us mark items as shared, maybe a block of words for channels shared to, and when), or that a content owner doesn't want it shared on PR channels or cross posted.
+
