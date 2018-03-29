@@ -54,3 +54,8 @@ probe south
 A compiler reads and tries to make sense of your code in advance, an interpreter figures it out while evaluating it.
 
 In `probe south`, the `south` word is not defined explicitly. That is, the compiler does not see where it is defined; so it will signal an error. The compiler does a static check of the source code, while the interpreter processes the code on-the-fly. This way, the compiler can detect some simple errors and generate better code. In cases like this, you can either make the compiler happy by declaring `south` (like `south: none`), or disable compiler checks by adding the following entry inside your code's header: e.g. `Red [Config: [red-strict-check?: no]]`.
+
+# How can I load non-UTF-8 strings in Red
+
+https://stackoverflow.com/questions/43379932/access-error-invalid-utf-8-encoding-ffd8ffe0/43383454#43383454
+
