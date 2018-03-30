@@ -137,3 +137,9 @@ Making an equivalence between a "singular path" and a word value is not somethin
 > Honestly, I can live with it, and just wrap the whole thing into my own comparison and conversion functions, or convert words to paths when they appear and forget that they were ever there. No big deal.
 
 That would be a waste of resources (converting atomic value to lists) and deliberately reducing the richness of the language.
+
+# Compared to blocks
+
+A block is a sequence of values with an implicit position (a series). Block's literal form supports any literal value. Block's syntax relies on starting/ending delimiters. A path is a sequence of values with an implicit position (a series). Paths have a restricted literal form compared to blocks, supporting only a subset of literal values and requiring a starting word. Path syntax relies on separators between values.
+
+It's a relative thing (the "R" in Rebol). In the main language, a block is the general data structure for holding values. A path is used to describe a hierarchical access in a value (series, objects, maps, tuples, pairs, etc...) with different possible tail semantics (pick, select, get, poke, etc...), or to represent a function call with refinements. In a dialect, a block or a path could mean something different, depending on the dialect's semantics. Each dialect could have a different meaning for those datatypes.
