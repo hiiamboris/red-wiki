@@ -87,7 +87,7 @@ Moreover, paths can contain different kinds of values, not just words (though th
 ```
 Given those facts, an equivalence between words and paths would make no sense, because their nature is very different.
 
-While it also seems easy to introduce a set of features that will fix it all: `make to-path, to-set-path and to-get-path accept word!, get-word!, set-word!`
+> While it also seems easy to introduce a set of features that will fix it all: `make to-path, to-set-path and to-get-path accept word!, get-word!, set-word!`
 
 This is already a feature of the language, but you'll notice that it's not bijective, as an atomic value can be converted to a container with that atomic value as its single element (basically, it's a wrapping operation), though the converse, converting a series with any number of values to an atomic value makes no sense.
 
@@ -134,6 +134,6 @@ As you can see, it's not that simple, because paths are series, they have an imp
 
 Making an equivalence between a "singular path" and a word value is not something that would be natural in many use-cases. So we have to restrict the definition of "singular path" to the paths where `1 = length? head path` returns true. This kind of path is actually a rare occurence in real code, and usually a temporary state while building a path of length > 1.
 
-Honestly, I can live with it, and just wrap the whole thing into my own comparison and conversion functions, or convert words to paths when they appear and forget that they were ever there. No big deal.
+> Honestly, I can live with it, and just wrap the whole thing into my own comparison and conversion functions, or convert words to paths when they appear and forget that they were ever there. No big deal.
 
 That would be a waste of resources (converting atomic value to lists) and deliberately reducing the richness of the language.
