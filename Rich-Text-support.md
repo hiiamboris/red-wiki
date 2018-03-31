@@ -1,0 +1,168 @@
+This is our plan for supporting rich text features in Red/View. 
+
+What we call "rich text" here is a paragraph of text, where different graphic styles can be applied to segments of the text in a given paragraph. The proposed API has three different levels, from simplest to most optimized:
+
+1. Using the RTD dialect (from VID, or when manually constructing the face).
+2. A low-level rich styling dialect for a single paragraph.
+3. Multiple rich text paragraphs in a single face.
+
+## High-level Rich-Text Dialect
+
+This Rich-Text Dialect (RTD) provides a high-level interface for specifying styled text. Styles application range can be specified using starting/ending delimiters or using blocks.
+
+**Grammar**
+
+`any-single` is a pseudo-keyword meaning: *any combination of single occurence of following alternatives*.
+```
+color-name: word!
+nested: [ahead block! into rtd]
+color:  [tuple! | issue! | color-name]
+
+f-args: [
+      integer!
+    | string!
+    | integer! string!
+    | string! integer!
+]
+style: [
+      ['b | 'bold      | <b>]           [nested | rtd [/b | /bold      | </b>]
+    | ['i | 'italic    | <i>]           [nested | rtd [/i | /italic    | </i>]
+    | ['u | 'underline | <u>]           [nested | rtd [/u | /underline | </u>]
+    | ['s | 'strike    | <s>]           [nested | rtd [/s | /strike    | </s>]
+    | ['f | 'font      | <font>] f-args [nested | rtd [/f | /font      | </font>]
+    | ['bg | <bg>] color                [nested | rtd [/bg             | </bg>]
+    | tuple!        opt nested          ;-- color as R.G.B tuple
+    | issue!        opt nested          ;-- color as #rgb or #rrggbb hex value
+    | color-name    opt nested
+    | ahead path!
+      into [any-single ['b | 'i | 'u | 's | color-name]]
+      nested
+]
+rtd: some [style | string!]
+```
+
+**Usage**
+
+RTD input is processed by a specific `rtd-layout` function that will return a single-box rich-text face, where the RTD code will be compiled to a single text string (stored in `/text` facet) and a low-level styling description (stored in `/data` facet). The full specification of the function is:
+```
+rtd-layout: func [rtd [block!] /with target [face!] return: [face!]]
+```
+
+**Examples**
+```
+rtd-layout [<i> <b> "Hello" </b> <font> 24 red " Red " </font> blue "World!" </i>]
+
+rtd-layout [i b "Hello" /b font 24 red " Red " /font blue "World!" /i]
+
+rtd-layout [i [b ["Hello"] red font 24 [" Red "] blue "World!"]]
+
+rtd-layout [i/b/u/red ["Hello" font 32 " Red " /font blue "World!"]]
+```
+
+## Low-level Styling Dialect
+
+This dialect describes a list of styles to be applied on the string referred by `/text` facet in a rich-text face. The dialect grammar is a simple list of text segments (defined using a starting position and a length) followed by a list of styles. So, the typical structure is:
+```red
+[
+    start-pos length style1 style2 ...        ;-- range 1
+    start-pos length style1 style2 ...        ;-- range 2
+    ...
+]
+```
+Styles can overlap, and later styles have higher priority (cascading styles).
+
+The following styles are supported:
+```red
+[
+      tuple!                                  ;-- text color
+    | backdrop tuple!                         ;-- background color
+    | bold                                    ;-- bold font
+    | italic
+    | underline tuple! (color)  lit-word! ('dash, 'double, 'triple)    ;@@ color and type are not supported yet
+    | strike tuple! (color) lit-word! ('wave, 'double)                 ;@@ color and type are not supported yet
+    | border tuple! (color) lit-word! ('dash, 'wave)                   ;@@ not implemented
+    | size integer!                           ;-- new font size
+    | name string!                            ;-- new font name
+]
+```
+
+## Rich text face type
+
+A new native `rich-text` face type supports rich text features with underlying hardware-acceleration. The face has two modes for displaying rich text:
+
+### Single-box mode
+
+The whole face area is used for displaying the rich text, starting at upper left corner, using the following specific facets:
+
+* `/data` (block!): a block of low-level styling dialect instructions to be applied on `text` facet.
+* `/text` (string!): a text string to be displayed using the `/data` facet styles description.
+
+Draw facet can still be used and it will be rendered on top of the rich text display.
+
+### Multi-box mode
+
+In this mode, an arbitrary number of rich text paragraphs can be displayed inside the same rich-text face. In order to achieve that, an extra `text-box` keyword is supported in Draw dialect. Such keyword can only be used in this context, otherwise it will result in an error.
+
+Specific facets:
+* `/draw` (block!): a block of `text-box` instructions, eventually mixed with regular Draw instructions.
+* `/text` (none!): this facet must be set to `none` in order to enable this mode.
+
+**Draw extension**
+```
+text-box <pos> <face>
+
+<pos>  : a pair! value indicating the upper left corner of the text-box.
+<face> : a rich-text face object with a rich-text description in single-box mode.
+```
+
+This mode is optimized for lowest system resources usage when a high number of rich text paragraps needs to be rendered.
+
+
+## Info querying functions
+
+The following functions are provided in the `rich-text` context, to query information about a rich-text face content. Those functions can be used to easily implement:
+
+* cursor navigation
+* hit testing
+
+```
+    offset?: function [
+        "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
+        face    [face!]
+        pos     [integer!]
+        return: [pair!]
+    ]
+
+    index?: function [
+        "Given a coordinate, returns the corresponding text position"
+        face    [face!]
+        pt      [pair!]
+        return: [integer!]
+    ]
+
+    line-height?: function [
+        "Given a text position, returns the corresponding line's height"
+        face    [face!]
+        pos     [integer!]
+        return: [integer!]
+    ]
+
+    width?: function [
+        "text width in pixel"
+        face    [face!]
+        return: [integer!]
+    ]
+
+    height?: function [
+        "text height in pixel"
+        face    [face!]
+        return: [integer!]
+    ]
+
+    line-count?: function [
+        "number of lines (> 1 if line wrapped)"
+        face    [face!]
+        return: [integer!]
+    ]
+
+```
