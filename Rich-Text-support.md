@@ -3,8 +3,8 @@ This is our plan for supporting rich text features in Red/View.
 What we call "rich text" here is a paragraph of text, where different graphic styles can be applied to segments of the text in a given paragraph. The proposed API has three different levels, from simplest to most optimized:
 
 1. Using the RTD dialect (from VID, or when manually constructing the face).
-2. A low-level rich styling dialect for a single paragraph.
-3. Multiple rich text paragraphs in a single face.
+2. A low-level rich styling dialect for a single paragraph (for fast performance).
+3. Multiple rich text paragraphs in a single face (for complex layouts).
 
 ## High-level Rich-Text Dialect
 
@@ -40,6 +40,10 @@ style: [
 ]
 rtd: some [style | string!]
 ```
+Notes:
+
+* The path syntax allows to combine several styles together to be applied on the block following the path.
+* Mixed usage of delimiters and blocks for different styles is allowed.
 
 **Usage**
 
@@ -61,7 +65,9 @@ rtd-layout [i/b/u/red ["Hello" font 32 " Red " /font blue "World!"]]
 
 ## Low-level Styling Dialect
 
-This dialect describes a list of styles to be applied on the string referred by `/text` facet in a rich-text face. The dialect grammar is a simple list of text segments (defined using a starting position and a length) followed by a list of styles. So, the typical structure is:
+This dialect describes a list of styles to be applied on the string referred by `/text` facet in a rich-text face. The purpose of this dialect is to provide a solution for dynamic changes and info querying that performs as fast as possible. This also maps well with the underlying hardware-accelerated APIs (it relies on Direct2D on Windows).
+
+The dialect grammar is a simple list of text segments (defined using a starting position and a length) followed by a list of styles. So, the typical structure is:
 ```red
 [
     start-pos length style1 style2 ...        ;-- range 1
