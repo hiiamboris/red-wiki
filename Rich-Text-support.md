@@ -1,9 +1,9 @@
 This is our plan for supporting rich text features in Red/View. 
 
-What we call "rich text" here is a paragraph of text, where different graphic styles can be applied to segments of the text in a given paragraph. The proposed API has three different levels, from simplest to most optimized:
+What we call "rich text" here is one or several paragraphs of text, where different graphic styles can be applied to segments of the text. The proposed API has three different levels, from simplest to most optimized:
 
 1. Using the RTD dialect (from VID, or when manually constructing the face).
-2. A low-level rich styling dialect for a single paragraph (for fast performance).
+2. A low-level rich styling dialect for one text string (for fast performance).
 3. Multiple rich text paragraphs in a single face (for complex layouts).
 
 ## High-level Rich-Text Dialect
@@ -107,7 +107,7 @@ Draw facet can still be used and it will be rendered on top of the rich text dis
 
 ### Multi-box mode
 
-In this mode, an arbitrary number of rich text paragraphs can be displayed inside the same rich-text face. In order to achieve that, an extra `text-box` keyword is supported in Draw dialect. Such keyword can only be used in this context, otherwise it will result in an error.
+In this mode, an arbitrary number of rich text areas can be displayed inside the same rich-text face. In order to achieve that, an extra `text-box` keyword is supported by Draw dialect. Such keyword will only produce a result in this context, otherwise it will be ignored.
 
 Specific facets:
 * `/draw` (block!): a block of `text-box` instructions, eventually mixed with regular Draw instructions.
@@ -121,7 +121,7 @@ text-box <pos> <face>
 <face> : a rich-text face object with a rich-text description in single-box mode.
 ```
 
-This mode is optimized for lowest system resources usage when a high number of rich text paragraps needs to be rendered.
+This mode is optimized for lowest system resources usage when a high number of rich text areas needs to be rendered.
 
 
 ## Info querying functions
