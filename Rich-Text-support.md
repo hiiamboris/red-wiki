@@ -38,7 +38,7 @@ style: [
       into [any-single ['b | 'i | 'u | 's | color-name]]
       nested
 ]
-rtd: some [style | string!]
+rtd: [some [style | string!]]
 ```
 Notes:
 
