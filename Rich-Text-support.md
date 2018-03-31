@@ -25,12 +25,12 @@ f-args: [
     | string! integer!
 ]
 style: [
-      ['b | 'bold      | <b>]           [nested | rtd [/b | /bold      | </b>]
-    | ['i | 'italic    | <i>]           [nested | rtd [/i | /italic    | </i>]
-    | ['u | 'underline | <u>]           [nested | rtd [/u | /underline | </u>]
-    | ['s | 'strike    | <s>]           [nested | rtd [/s | /strike    | </s>]
-    | ['f | 'font      | <font>] f-args [nested | rtd [/f | /font      | </font>]
-    | ['bg | <bg>] color                [nested | rtd [/bg             | </bg>]
+      ['b | 'bold      | <b>]           [nested | rtd [/b | /bold      | </b>]]
+    | ['i | 'italic    | <i>]           [nested | rtd [/i | /italic    | </i>]]
+    | ['u | 'underline | <u>]           [nested | rtd [/u | /underline | </u>]]
+    | ['s | 'strike    | <s>]           [nested | rtd [/s | /strike    | </s>]]
+    | ['f | 'font      | <font>] f-args [nested | rtd [/f | /font      | </font>]]
+    | ['bg | <bg>] color                [nested | rtd [/bg             | </bg>]]
     | tuple!        opt nested          ;-- color as R.G.B tuple
     | issue!        opt nested          ;-- color as #rgb or #rrggbb hex value
     | color-name    opt nested
