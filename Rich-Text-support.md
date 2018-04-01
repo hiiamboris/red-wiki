@@ -126,42 +126,42 @@ This mode is optimized for lowest system resources usage when a high number of r
 
 ## Info querying functions
 
-The following functions are provided in the `rich-text` context, to query information about a rich-text face content. Those functions can be used to easily implement:
+The following functions are provided to query information about a rich-text face content. Those functions can be used to easily implement:
 
 * cursor navigation
 * hit testing
 
+From global context:
 ```
-    offset?: function [
+    caret-to-offset: function [
         "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
         face    [face!]
         pos     [integer!]
         return: [pair!]
     ]
 
-    index?: function [
+    offset-to-caret: function [
         "Given a coordinate, returns the corresponding text position"
         face    [face!]
         pt      [pair!]
         return: [integer!]
     ]
-
+    
+    size-text: function [
+        "Returns the area size of the text in a face" 
+        face [object!]
+        /with                   ;-- unused for rich-text
+            text [string!]
+        return: [pair! none!]
+    ]
+]
+```
+From `rich-text` context:
+```
     line-height?: function [
         "Given a text position, returns the corresponding line's height"
         face    [face!]
         pos     [integer!]
-        return: [integer!]
-    ]
-
-    width?: function [
-        "text width in pixel"
-        face    [face!]
-        return: [integer!]
-    ]
-
-    height?: function [
-        "text height in pixel"
-        face    [face!]
         return: [integer!]
     ]
 
@@ -170,5 +170,4 @@ The following functions are provided in the `rich-text` context, to query inform
         face    [face!]
         return: [integer!]
     ]
-
 ```
