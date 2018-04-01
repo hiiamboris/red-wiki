@@ -133,41 +133,40 @@ The following functions are provided to query information about a rich-text face
 
 From global context:
 ```
-    caret-to-offset: function [
-        "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
-        face    [face!]
-        pos     [integer!]
-        return: [pair!]
-    ]
+caret-to-offset: function [
+    "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
+    face    [face!]
+    pos     [integer!]
+    return: [pair!]
+]
 
-    offset-to-caret: function [
-        "Given a coordinate, returns the corresponding text position"
-        face    [face!]
-        pt      [pair!]
-        return: [integer!]
-    ]
+offset-to-caret: function [
+    "Given a coordinate, returns the corresponding text position"
+    face    [face!]
+    pt      [pair!]
+    return: [integer!]
+]
     
-    size-text: function [
-        "Returns the area size of the text in a face" 
-        face [object!]
-        /with                   ;-- unused for rich-text
-            text [string!]
-        return: [pair! none!]
-    ]
+size-text: function [
+    "Returns the area size of the text in a face" 
+    face [object!]
+    /with                   ;-- unused for rich-text
+        text [string!]
+    return: [pair! none!]
 ]
 ```
 From `rich-text` context:
 ```
-    line-height?: function [
-        "Given a text position, returns the corresponding line's height"
-        face    [face!]
-        pos     [integer!]
-        return: [integer!]
-    ]
+line-height?: function [
+    "Given a text position, returns the corresponding line's height"
+    face    [face!]
+    pos     [integer!]
+    return: [integer!]
+]
 
-    line-count?: function [
-        "number of lines (> 1 if line wrapped)"
-        face    [face!]
-        return: [integer!]
-    ]
+line-count?: function [
+    "number of lines (> 1 if line wrapped)"
+    face    [face!]
+    return: [integer!]
+]
 ```
