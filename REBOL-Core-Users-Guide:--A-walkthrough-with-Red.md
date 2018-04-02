@@ -9,7 +9,6 @@
 Not all examples are run-able in the Rebol guide, even by Rebol. Some examples are, 'For example', or 
 just to illustrate a point.
 
-
 ***
 
 
@@ -22,8 +21,8 @@ http://www.rebol.com/docs/core23/rebolcore-3.html
 
 ### 2.2 Times
 
-"Seconds can include a decimal sub-second. Times can also include AM and PM appended without intervening spaces:
-12:35PM 9:15AM"
+`Seconds can include a decimal sub-second. Times can also include AM and PM appended without intervening spaces:
+12:35PM 9:15AM`
 
 AM and PM do not work in Red.
 
@@ -255,7 +254,7 @@ watch Matrix at 12:45 for 4.25
 
 ### 7.5 Forall and Forskip
 
-"When forall returns, the color index is at the tail of the series."
+> When forall returns, the color index is at the tail of the series.
 
 The series is set back to `head` before `forall` exits.
 
@@ -396,7 +395,7 @@ http://www.rebol.com/docs/core23/rebolcore-5.html
 
 ### 2. Prefaced Scripts
 
-"Text that appears before the header is called the preface and is ignored during evaluation."
+> Text that appears before the header is called the preface and is ignored during evaluation.
 
 ```
 The text that appears before the header is ignored
@@ -465,11 +464,11 @@ To better see the `system/options` object, use `help`.
 
 ```
 >> help system/options
-     boot             string!       {C:\ProgramData\Red\gui-console-2017-10-19-24878.exe}
+     boot             string!       "C:\ProgramData\Red\gui-console-2018-4-1-19387.exe"
      home             none!         none
-     path             file!         %/C/ProgramData/Red/
+     path             file!         %/C/Users/Old%20Man/
      script           none!         none
-     cache            file!         %/C/ProgramData/Red/
+     cache            file!         %/C/Users/Old%20Man/AppData/Roaming/Red/
      thru-cache       none!         none
      args             none!         none
      do-arg           none!         none
@@ -554,7 +553,7 @@ http://www.rebol.com/docs/core23/rebolcore-6.html
 
 ### 1.1 Traversing a Series
 
-If the series position is set to `tail`in Rebol, trying to access the first element is an error.
+> If the series position is set to `tail`in Rebol, trying to access the first element is an error.
 
 ```
 print first colors
@@ -572,10 +571,9 @@ none
 ### 4.1 Length?
 
 Typo in: 
-```
-color: next color
-print length? color
-```
+> color: next color
+> print length? color
+
 
 Should be:
 ```
@@ -587,20 +585,21 @@ print length? colors
 ### 4.5 Offset?
 
 Typo:
-```
-data: [1 2 3 4]
-data1: next data
-data2: back tail data
-print offset? data1 data2
-4
-```
+
+> data: [1 2 3 4]
+> data1: next data
+> data2: back tail data
+> print offset? data1 data2
+> 4
+
 
 Result should be 2.
 
 
 ### 5. Making and Copying Series
 
-`list: make list! 128`
+> list: make list! 128
+
 There is no list! datatype in Red.
 
 
@@ -611,16 +610,19 @@ colors: [red green blue yellow orange]
 forall colors [print first colors]
 ```
 
-"The forall advances the variable position through the series, so when it returns the variable is left at its tail:"
+> The forall advances the variable position through the series, so when it returns the variable is left at its tail:
+
 ```
 print tail? colors
 true
 ```
-"Therefore, the variable must be reset before it is used again:
-colors: head colors"
+
+> Therefore, the variable must be reset before it is used again:
+colors: head colors
 
 This is not true in latest version of Rebol 2, and is not true in Red.
 The position is set back to head before `forall` exits.
+
 ```
 >> forall colors [print first colors]
 red
@@ -648,7 +650,7 @@ Consult `help find` for details.
 
 ### 7.3 Partial Searches
 
-" find/part takes either a count or an ending position."
+> find/part takes either a count or an ending position.
 
 In Red `find/part` takes:
 ```
@@ -657,10 +659,10 @@ In Red `find/part` takes:
 ```
 
 This Rebol example will fail:
-```
-colors: [red green blue yellow blue orange gold]
-probe find/part colors 'blue
-```
+
+> colors: [red green blue yellow blue orange gold]
+> probe find/part colors 'blue
+
 
 
 ### 7.6 Repeated Searches
@@ -675,19 +677,16 @@ Wildcard searches with `/any` are not yet implemented for Red.
 
 ### 7.10 Search and Replace
 
-```
-probe replace data 4 `four
-```
+> probe replace data 4 `four
+
 
 Back-tick in text should be single quote `'`
 
 
 ### 11.2 Only
 
-```
-insert/only (find blk 5) [$1 $2 $3]
-probe blk
-```
+> insert/only (find blk 5) [$1 $2 $3]
+> probe blk
 
 `$` symbols must be removed to run example. Red currently has no money! type.
 
@@ -850,7 +849,7 @@ remold: func [
 ]
 ```
 
-"This chapter will also describes these string functions:"
+> This chapter will also describes these string functions:
 
 The following functions do not currently exist in Red:
 
@@ -898,9 +897,8 @@ probe mold [22.22 money "-- unevaluated block:" sub-blk]
 
 Typo in uppercase example.  Word uppercase has three `p`s.
 
-```
-print upppercase/part "ukiah" 1
-```
+> print upppercase/part "ukiah" 1
+
 
 Should be:
 
@@ -910,15 +908,12 @@ print uppercase/part "ukiah" 1
 
 ### 2.9 Checksum
 
-"By default, the CRC checksum is computed"
-"CRC	24 bit circular redundancy checksum"
-
-```
-print checksum "hello"
-52719
-print checksum (read http://www.rebol.com/)
-356358
-```
+> By default, the CRC checksum is computed
+> CRC	24 bit circular redundancy checksum
+> print checksum "hello"
+> 52719
+> print checksum (read http://www.rebol.com/)
+> 356358
 
 Red `checksum`  requires method argument.
 
@@ -948,9 +943,6 @@ print [size? str "bytes"]
 In Red `size` takes `file!` as its argument.
 
 There is currently no `compress` in Red.
-
-(todo: Need solutions to make examples run-able here)
-
 
 
 ### 2.11 Number Base Conversion
