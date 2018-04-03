@@ -18,7 +18,7 @@ The plan is to migrate existing WISH tickets to this wiki page, and close them i
 
 # Template
 
-Submitted by <name> on <date>
+Submitted by *name* on *date*
 
 
 
