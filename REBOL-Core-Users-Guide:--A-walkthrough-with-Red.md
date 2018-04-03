@@ -4,12 +4,10 @@
 ****This walk-through explores differences between Red and Rebol and attempts to provide ways to run the code examples in the Rebol/Core Guide where incompatibilities or typos arise.****
 
 
-****Note:****
-
+Note:
 Not all examples are run-able in the Rebol guide, even by Rebol. Some examples are, 'For example', or 
 just to illustrate a point.
 
-***
 
 
 ## <a name="chap3">Rebol/Core    Chapter 3 - Quick Tour
@@ -77,7 +75,7 @@ Consult `help` in the Red cosole for `enbase` and `debase` specifics.
 
 ### 6. Evaluation
 
-`if current-time > snack-time [print snack-time]`
+> if current-time > snack-time [print snack-time]
 
 This code is just an example and will produce an error if you attempt to run it: 
 ```
@@ -173,9 +171,8 @@ http://www.rebol.com/docs/core23/rebolcore-4.html
 
 ### 4.3 Evaluating Blocks
 
-```
-if time > 12:30 [print "past noon"]
-```
+
+> if time > 12:30 [print "past noon"]
 
 Should be:
 
@@ -446,7 +443,7 @@ Embedded scripts are not supported in Red yet.
 
 ### 3. Script Arguments
 
-The `system/script` object for Red contains the following fields:
+The `system/script` object for Red contains the following fields that have initial values of `none`:
 
 `title`
 
@@ -461,6 +458,8 @@ The `system/script` object for Red contains the following fields:
 ### 3.1 Program Options
 
 To better see the `system/options` object, use `help`.
+
+`boot`, `path`, and `cache` reflect my current setup in the example below:
 
 ```
 >> help system/options
@@ -495,7 +494,7 @@ Red script extensions are `.red` by convention.
 
 `file!`, `url!`, `string!`, `binary!`
 
-`load/header` is not yet impleneted for Red.
+`load/header` is not yet implemented for Red.
 
 `load/markup` is not available in Red at this time.
 
@@ -553,7 +552,7 @@ http://www.rebol.com/docs/core23/rebolcore-6.html
 
 ### 1.1 Traversing a Series
 
-> If the series position is set to `tail`in Rebol, trying to access the first element is an error.
+> If the series position is set to tail in Rebol, trying to access the first element is an error.
 
 ```
 print first colors
@@ -585,13 +584,13 @@ print length? colors
 ### 4.5 Offset?
 
 Typo:
-
-> data: [1 2 3 4]
-> data1: next data
-> data2: back tail data
-> print offset? data1 data2
-> 4
-
+```
+ data: [1 2 3 4]
+ data1: next data
+ data2: back tail data
+ print offset? data1 data2
+ 4
+```
 
 Result should be 2.
 
@@ -618,7 +617,7 @@ true
 ```
 
 > Therefore, the variable must be reset before it is used again:
-colors: head colors
+`colors: head colors`
 
 This is not true in latest version of Rebol 2, and is not true in Red.
 The position is set back to head before `forall` exits.
@@ -659,10 +658,10 @@ In Red `find/part` takes:
 ```
 
 This Rebol example will fail:
-
-> colors: [red green blue yellow blue orange gold]
-> probe find/part colors 'blue
-
+```
+colors: [red green blue yellow blue orange gold]
+probe find/part colors 'blue
+```
 
 
 ### 7.6 Repeated Searches
@@ -684,9 +683,10 @@ Back-tick in text should be single quote `'`
 
 
 ### 11.2 Only
-
-> insert/only (find blk 5) [$1 $2 $3]
-> probe blk
+```
+ insert/only (find blk 5) [$1 $2 $3]
+ probe blk
+```
 
 `$` symbols must be removed to run example. Red currently has no money! type.
 
@@ -908,12 +908,14 @@ print uppercase/part "ukiah" 1
 
 ### 2.9 Checksum
 
-> By default, the CRC checksum is computed
-> CRC	24 bit circular redundancy checksum
-> print checksum "hello"
-> 52719
-> print checksum (read http://www.rebol.com/)
-> 356358
+```
+ By default, the CRC checksum is computed
+ CRC	24 bit circular redundancy checksum
+ print checksum "hello"
+ 52719
+ print checksum (read http://www.rebol.com/)
+ 356358
+```
 
 Red `checksum`  requires method argument.
 
@@ -981,7 +983,7 @@ Remove `$` symbols and use `float!` or `number!` datatypes in function examples 
 
 For example:
 
-Rebol
+REBOL
 
 ```
 last-account: 89431
@@ -1200,7 +1202,7 @@ There is no `abs` function in Red, but you can set a word to use the same data a
 
 ### 4.3 complement
 
-`compliment` does not accept numbers with decimal points in Red.
+`complement` does not accept numbers with decimal points in Red.
 The following data types are accepted:
 
 ```
