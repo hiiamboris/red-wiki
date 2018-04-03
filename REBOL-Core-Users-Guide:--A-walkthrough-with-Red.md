@@ -540,6 +540,8 @@ The examples in this section are only for illustrative purposes.
 
 `detab` and `entab` are not available in Red.
 
+Gist with test cases for entab/detab mezzanine functions can be found here: [Entab/Detab](https://gist.github.com/greggirwin/c56da21b5d2b5536424acff1fdc258a5)
+
 
 ***
 
@@ -859,6 +861,9 @@ The following functions do not currently exist in Red:
 
 `compress`
 
+Gist with test cases for entab/detab mezzanine functions can be found here: [Entab/Detab](https://gist.github.com/greggirwin/c56da21b5d2b5536424acff1fdc258a5)
+
+
 ### 2.1 Join
 
 ```
@@ -890,7 +895,62 @@ probe mold [22.22 money "-- unevaluated block:" sub-blk]
 
 ### 2.7.2 Detab and Entab
 
- `detab` and `entab` functions do not exist  in Red.
+ `detab` and `entab` functions do not exist in Red.
+
+Gregg Irwin and Steeve have provided entab/detab mezzanines to use if you wish:
+
+
+```
+; Steeve gets credit for this one
+detab: function [
+    "Converts leading tabs in a string to spaces. (tab size 4)"
+	string [any-string!] "(modified)"
+	/size
+	    sz [integer!] "Number of spaces per tab"
+	/all "Change all, not just leading"
+][
+	sz: max 1 any [sz 4]						; size must be at least 1
+	buf: append/dup clear "    " space sz
+	parse string [
+		 BOL: some [
+			; If we see a tab, mark its position, then change it to the...ready?
+			; offset into our buffer of spaces, based on the the difference
+			; between our current position and the beginning of the line, modulo
+			; the tab size.
+			pos: change tab (skip buf (offset? BOL pos) % sz)
+			| lf BOL:							; Set our beginning-of-line marker
+			| if (all) to [tab | lf]			; Skip over non-tab chars
+			| space								; Spaces just move us forward in the line
+			| thru lf BOL:						; Skip to end of line and set our marker
+		 ]
+	]
+	string
+]
+```
+
+```
+entab: function [
+	"Converts leading spaces in a string to tabs. (tab size 4)"
+	string [any-string!] "(modified)"
+	/size
+	    sz [integer!] "Number of spaces per tab (must be at least 1)"
+	/all "Change all, not just leading"
+][
+	sz: max 1 any [sz 4]						; size must be at least 1
+	sz-1: max 1 sz - 1							; can't have 0 as a m..n size for parse
+	parse string [
+		some [
+			any [change sz space tab | change [1 sz-1 space tab] tab]
+			if (not all) [thru [newline | end]]
+			| skip
+		]
+	]
+	string
+]
+```
+
+Gist with test cases for entab/detab mezzanine functions can be found here: [Entab/Detab](https://gist.github.com/greggirwin/c56da21b5d2b5536424acff1fdc258a5)
+
 
 
 ### 2.8 Uppercase and Lowercase
