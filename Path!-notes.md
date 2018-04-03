@@ -143,3 +143,33 @@ That would be a waste of resources (converting atomic value to lists) and delibe
 A block is a sequence of values with an implicit position (a series). Block's literal form supports any literal value. Block's syntax relies on starting/ending delimiters. A path is a sequence of values with an implicit position (a series). Paths have a restricted literal form compared to blocks, supporting only a subset of literal values and requiring a starting word. Path syntax relies on separators between values.
 
 It's a relative thing (the "R" in Rebol). In the main language, a block is the general data structure for holding values. A path is used to describe a hierarchical access in a value (series, objects, maps, tuples, pairs, etc...) with different possible tail semantics (pick, select, get, poke, etc...), or to represent a function call with refinements. In a dialect, a block or a path could mean something different, depending on the dialect's semantics. Each dialect could have a different meaning for those datatypes.
+
+# Finding and Selecting on paths
+
+Because paths are block values, you need to remember that `/only` should be used with functions that support it, if you want to match nested paths as single values.
+
+```
+>> b: [1 2 3 a b c/d e/f g/h]
+== [1 2 3 a b c/d e/f g/h]
+>> find/only b 'c/d
+== [c/d e/f g/h]
+>> select/only b 'c/d
+== e/f
+>> h: make hash! b
+== make hash! [1 2 3 a b c/d e/f g/h]
+>> select/only h 'c/d
+== e/f
+```
+
+And that holds true even if you construct convoluted paths programmatically (we won't recommend this, but it works).
+
+```
+>> p: to path! [a b/c [d e/f [g]]]
+== a/b/c/[d e/f [g]]
+>> sp: select/only p 'b/c
+== [d e/f [g]]
+>> ssp: select/only sp 'e/f
+== [g]
+```
+
+Just because you *can* create `path!` values like this doesn't mean you can round trip them, as you may create a path that can't be represented in direct lexical form.
