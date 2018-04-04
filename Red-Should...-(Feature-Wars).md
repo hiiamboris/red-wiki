@@ -10,8 +10,16 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Table of Contents
 
 1. [Immutability](#immutability)
-2. [Lexical Scoping](lexical-scoping)
-3. [Strong Typing](strong-typing)
-4. []()
+2. [Lexical Scoping](#lexical-scoping)
+3. [Strong Typing](#strong-typing)
+4. [Case Sensitivity](#case-sensitivity)
 5. []()
 6. []()
+
+# Immutability
+
+# Lexical Scoping
+
+# Strong Typing
+
+# Case Sensitivity
