@@ -13,8 +13,12 @@ That said, some new features will be great, and we all want to improve Red. So d
 2. [Lexical Scoping](#lexical-scoping)
 3. [Strong Typing](#strong-typing)
 4. [Case Sensitivity](#case-sensitivity)
-5. []()
+5. [Zero Based Indexing](#zero-based-indexing)
 6. []()
+7. []()
+8. []()
+9. []()
+10. []()
 
 # Immutability
 
@@ -23,3 +27,5 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Strong Typing
 
 # Case Sensitivity
+
+# Zero Based Indexing
