@@ -87,8 +87,8 @@ The following styles are supported:
     | underline tuple! (color)  lit-word! ('dash, 'double, 'triple)    ;@@ color and type are not supported yet
     | strike tuple! (color) lit-word! ('wave, 'double)                 ;@@ color and type are not supported yet
     | border tuple! (color) lit-word! ('dash, 'wave)                   ;@@ not implemented
-    | size integer!                           ;-- new font size
-    | name string!                            ;-- new font name
+    | integer!                                ;-- new font size
+    | string!                                 ;-- new font name
 ]
 ```
 
