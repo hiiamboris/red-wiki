@@ -16,7 +16,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 5. [Zero Based Indexing](#zero-based-indexing)
 6. [Operator Precedence](#operator-precedence)
 7. [String Interpolation](#string-interpolation)
-8. []()
+8. [Class-Based OOP](#class-based-oop)
 9. []()
 10. []()
 
@@ -33,3 +33,5 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Operator Precedence
 
 # String Interpolation
+
+# Class-Based OOP
