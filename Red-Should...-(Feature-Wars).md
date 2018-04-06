@@ -14,7 +14,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 3. [Strong Typing](#strong-typing)
 4. [Case Sensitivity](#case-sensitivity)
 5. [Zero Based Indexing](#zero-based-indexing)
-6. []()
+6. [Operator precedence](#operator-precedence)
 7. []()
 8. []()
 9. []()
@@ -29,3 +29,5 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Case Sensitivity
 
 # Zero Based Indexing
+
+# Operator precedence
