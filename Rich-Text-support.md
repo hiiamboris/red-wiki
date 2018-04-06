@@ -67,11 +67,11 @@ rtd-layout [i/b/u/red ["Hello" font 32 " Red " /font blue "World!"]]
 
 This dialect describes a list of styles to be applied on the string referred by `/text` facet in a rich-text face. The purpose of this dialect is to provide a solution for dynamic changes and info querying that performs as fast as possible. This also maps well with the underlying hardware-accelerated APIs (it relies on Direct2D on Windows).
 
-The dialect grammar is a simple list of text segments (defined using a starting position and a length) followed by a list of styles. So, the typical structure is:
+The dialect grammar is a simple list of text segments (defined using a starting position and a length combined in a  `pair!` value) followed by a list of styles. So, the typical structure is:
 ```red
 [
-    start-pos length style1 style2 ...        ;-- range 1
-    start-pos length style1 style2 ...        ;-- range 2
+    <range1> style1 style2 ...        ;-- range1: start1 x length1
+    <range2> style1 style2 ...        ;-- range2: start2 x length2
     ...
 ]
 ```
@@ -135,14 +135,14 @@ From global context:
 ```
 caret-to-offset: function [
     "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
-    face    [face!]
+    face    [object!]
     pos     [integer!]
     return: [pair!]
 ]
 
 offset-to-caret: function [
     "Given a coordinate, returns the corresponding text position"
-    face    [face!]
+    face    [object!]
     pt      [pair!]
     return: [integer!]
 ]
@@ -159,14 +159,14 @@ From `rich-text` context:
 ```
 line-height?: function [
     "Given a text position, returns the corresponding line's height"
-    face    [face!]
+    face    [object!]
     pos     [integer!]
     return: [integer!]
 ]
 
 line-count?: function [
     "number of lines (> 1 if line wrapped)"
-    face    [face!]
+    face    [object!]
     return: [integer!]
 ]
 ```
