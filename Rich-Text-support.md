@@ -19,10 +19,9 @@ nested: [ahead block! into rtd]
 color:  [tuple! | issue! | color-name]
 
 f-args: [
-      integer!
+    ahead block! into [integer! string! | string! integer!]
+    | integer!
     | string!
-    | integer! string!
-    | string! integer!
 ]
 style: [
       ['b | 'bold      | <b>]           [nested | rtd [/b | /bold      | </b>]]
