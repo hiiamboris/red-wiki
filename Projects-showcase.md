@@ -13,3 +13,4 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [March 27, 2018 1:22 AM](https://gitter.im/red/red/gui-branch?at=5ab9f13cc4d0ae8007060e87) @toomasv [Spirograph](https://gist.github.com/toomasv/b8883f41543c4b54142b4a62a5386797)
 - [March 27, 2018 4:58 AM](https://gitter.im/red/red/gui-branch?at=5aba23db7c3a01610d7c1ebe) @PlanetSizeCPU [GUI Designer](https://github.com/planetsizecpu/forms)
 - [March 27, 2018 7:17 PM](https://gitter.im/red/red?at=5abaed3fc574b1aa3e3d67ad) @hiiamboris [Pure Functional Dialect](https://github.com/hiiamboris/red-pure-fun)
+- [April 5, 2018 12:57 PM](https://gitter.im/red/chit-chat?at=5ac5f30b109bb043328de6c7) @toomasv [Mirror-scripting function (corrected in gist)](https://gist.github.com/toomasv/357b022f298ff90d821477324e9c8cf4)
