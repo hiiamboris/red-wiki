@@ -6,6 +6,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [February 7, 2018 10:35 PM](https://gitter.im/red/red/gui-branch?at=5a7b631cf283b8e546321641) @toomasv [Grid demo](https://gist.github.com/toomasv/81094ac95f7c21294055cb26fb78a3d1)
 - [February 15, 2018 2:04 PM](https://gitter.im/red/red/gui-branch?at=5a85774e18f388e626a866be) @toomasv [Cockoo clock](https://gist.github.com/toomasv/daacac72dc90d94d011ca10190fbed8a)
 - [March 12, 2018 5:08 PM](https://gitter.im/red/red/gui-branch?at=5aa697ee53c1dbb743d24c46) @toomasv [Color-picker](https://gist.github.com/toomasv/d111c2e2b2d1682bd3a9615a5d66ac0c)
+- [April 7, 2018 8:58 PM](https://gitter.im/red/red/gui-branch?at=5ac906cb5f188ccc153e8d06) @toomasv [3D cube](https://gist.github.com/toomasv/800aaa6ba1a37526993b9f2fce52fd13)
 - [March 14, 2018 11:24 PM](https://gitter.im/red/red/gui-branch?at=5aa99306c3c5f8b90d7182fb) @toomasv [Quadratic Bézier curve demo](https://gist.github.com/toomasv/6176114cf830390bc46bca29ba2b029f)
 - [March 15, 2018 12:30 PM](https://gitter.im/red/red/gui-branch?at=5aaa4b2bf3f6d24c68795aa9) @toomasv [Cubic Bézier curve demo](https://gist.github.com/toomasv/8d297d6b65613c181be41fcf693e3655)
 - [March 20, 2018 5:02 PM](https://gitter.im/red/red/gui-branch?at=5ab1226fe4d1c636041f7306) @toomasv [Bézier curve funcs and demo](https://gist.github.com/toomasv/48174a493212dca35ecf1e9b86fe5da2)
