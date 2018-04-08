@@ -1,8 +1,10 @@
 Documentation links and other learning resources.
 
 [https://github.com/red/red/wiki/Learning-resources](Red Learning Resources) contains links to many more learning resources; forums, personal blogs, and more.
+[Red Learning Resources](https://github.com/red/red/wiki/Learning-resources) contains links to many more learning resources; forums, personal blogs, and more.
 
 # Reference Documentation
+
 - [https://www.gitbook.com/book/redlang/red](Official Documentation)
 - [https://github.com/red/red/wiki](Github wiki)
 - [http://www.red-by-example.org/](Red by example by Arie van Wingerden and Mike Parr)
@@ -15,12 +17,14 @@ While we continue to add Red documentation, one of the best introductions to Red
 - [http://www.rebol.com/docs/core23/rebolcore.html](REBOL/Core User Guide)
 
 # Hands-on guides and tutorials
+
 - [http://redprogramming.com/Home.html][Red programming by Nick Antonaccio]
 - [http://www.re-bol.com/rebol.html][Learn Rebol by Nick Antonaccio]
 - [http://re-bol.com/business_programming.html][Business programming by Nick Antonaccio]
 - [https://en.wikibooks.org/wiki/Rebol_programming][Wikibooks Rebol programming]
 
 # Books
+
 - [http://www.rebol.com/docs/core23/rebolcore.html][REBOL/Core User Guide]
 - [http://vpavlu.plain.at/REBOL/tutorial/][REBOL Essentials by Viktor Pavlu]
 - [http://www.lulu.com/shop/olivier-auverlot-and-peter-william-alfred-wood/rebol-a-programmers-guide/ebook/product-17515075.html][Rebol - A programmer's guide by Olivier Auverlot, Peter W. A. Wood]
