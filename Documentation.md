@@ -1,6 +1,6 @@
 Documentation links and other learning resources.
 
-[Red Learning Resources](https://github.com/red/red/wiki/Learning-resources) contains links to many more learning resources; forums, personal blogs, and more.
+[Red Learning Resources](https://github.com/red/red/wiki/Learning-resources) contains links to extended learning resources; forums, personal blogs, and more.
 
 # Reference Documentation
 
