@@ -17,6 +17,15 @@ Should we provide a recommendation for where to drop Red, so if people follow th
 
 # Windows
 
+## Does red install some files the first time it runs? Where is this location?
+
+Example from 2018-04-06. Running red-06apr18-f53f9073.exe creates these files:
+* C:\ProgramData\Red\gui-console-2018-4-6-49774.exe
+* C:\ProgramData\Red\crush-2018-4-6-49774.dll
+
+If the Options/settings... in console is altered a config file is created:
+* C:\Users\UserName\AppData\Roaming\Red\Red-Console\console-cfg.red
+
 # MacOS
 
 # Linux
