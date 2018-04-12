@@ -25,6 +25,8 @@ That said, some new features will be great, and we all want to improve Red. So d
 
 # Lexical Scoping
 
+# Variables
+
 # Strong Typing
 
 # Case Sensitivity
