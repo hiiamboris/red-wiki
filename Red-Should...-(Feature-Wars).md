@@ -10,15 +10,16 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Table of Contents
 
 1. [Immutability](#immutability)
-2. [Lexical Scoping](#lexical-scoping)
-3. [Strong Typing](#strong-typing)
-4. [Case Sensitivity](#case-sensitivity)
-5. [Zero Based Indexing](#zero-based-indexing)
-6. [Operator Precedence](#operator-precedence)
-7. [String Interpolation](#string-interpolation)
-8. [Class-Based OOP](#class-based-oop)
-9. []()
-10. []()
+1. [Lexical Scoping](#lexical-scoping)
+1. [Variables](#variables)
+1. [Strong Typing](#strong-typing)
+1. [Case Sensitivity](#case-sensitivity)
+1. [Zero Based Indexing](#zero-based-indexing)
+1. [Operator Precedence](#operator-precedence)
+1. [String Interpolation](#string-interpolation)
+1. [Class-Based OOP](#class-based-oop)
+1. []()
+1. []()
 
 # Immutability
 
