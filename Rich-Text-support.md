@@ -114,10 +114,10 @@ Specific facets:
 
 **Draw extension**
 ```
-text-box <pos> <face>
+text <pos> <text>
 
 <pos>  : a pair! value indicating the upper left corner of the text-box.
-<face> : a rich-text face object with a rich-text description in single-box mode.
+<text> : a string, or a rich-text face object with a rich-text description in single-box mode.
 ```
 
 This mode is optimized for lowest system resources usage when a high number of rich text areas needs to be rendered.
