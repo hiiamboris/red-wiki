@@ -208,6 +208,15 @@ view [
 	at 60x60 p: pan 100x100 blue
 ]
 ```
+# Is vs React
+
+`React` is not meant to be used from inside a reactor, that's why it only recognizes paths are possible sources of reactions. That's what `is` is for. Basically, use `is` for "internal" relations inside a reactor, and `react` for "external" relations (requiring path accessors).
+
+# Hints and tips
+
+- Avoid circular relations.
+- Skipping the initial reaction, with the `/later` refinement (or `react later` in VID).
+
 
 # Future work
 
