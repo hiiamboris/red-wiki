@@ -110,7 +110,7 @@ But what happens if the *same* spec is used to make multiple reactors. Here we s
 You can use an anonymous function and invoke that.
 
 ```
->> r: make reactor! [x: 5 y: is [do has [z][z: 100 z + x + 5]]]
+>> r: make reactor! [x: 5 y: is [do reduce [ has [z][z: 100 z + x + 5] ]]]
 == make object! [
     x: 5
     y: func [/local z][z: 100 z + x + 5]
