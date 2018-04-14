@@ -212,10 +212,18 @@ view [
 
 `React` is not meant to be used from inside a reactor, that's why it only recognizes paths are possible sources of reactions. That's what `is` is for. Basically, use `is` for "internal" relations inside a reactor, and `react` for "external" relations (requiring path accessors).
 
-# Hints and tips
+# Safety guidelines of v0.6.3
+## Here's a handful of tricks a poor reactivist should always be wary of:
 
 - Avoid circular relations.
-- Skipping the initial reaction, with the `/later` refinement (or `react later` in VID).
+- Avoid defining reactions during the object creation process: take them all out into a function and call it when the object is ready and it's initial conditions are properly set up. Otherwise depending on the build, your chances are the reaction will never be triggered or even created.
+- Never use in a reactor a series that can reference itself, even after it's creation, and even it is neither a source nor a target. Better not use any series format of which you can't know in advance. It crashes. Kaboom!
+- If the sources aren't ready, skip the initial reaction with the `react/later` (or `react later` in VID).
+- Try to avoid `is` in favor of `react` for `is` might make 2 or 3 reactions where only one requested.
+- Mind that in `react` you've got to specify full paths instead of words as sources.
+- Do look at `dump-reactions` output after you've defined the reactions and double check.
+- If you're changing 2 or more sources in a go and wanna minimize the number of times your target is recomputed, try `set-quiet` or in more complex scenarios use a boolean flag as a trigger that you negate when the source data is ready.
+- If target is affected by some source indirectly (that is, not in the reaction formula itself but in the functions that it invokes), just mention these sources in the formula: `x: 1  y: 2  f: does [1 + y: x * 2]  z: is [x y f]`
 
 
 # Future work
