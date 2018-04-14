@@ -223,7 +223,8 @@ view [
 - Mind that in `react` you've got to specify full paths instead of words as sources.
 - Do look at `dump-reactions` output after you've defined the reactions and double check.
 - If you're changing 2 or more sources in a go and wanna minimize the number of times your target is recomputed, try `set-quiet` or in more complex scenarios use a boolean flag as a trigger that you negate when the source data is ready.
-- If target is affected by some source indirectly (that is, not in the reaction formula itself but in the functions that it invokes), just mention these sources in the formula: `x: 1  y: 2  f: does [1 + y: x * 2]  z: is [x y f]`
+- If target is affected by some source indirectly (that is, not in the reaction formula itself but in the functions that it invokes), just mention these sources in the formula: `make reactor! [ x: 1  y: 2  f: does [1 + y: x * 2]  z: is [x y f] ]`
+- Changing individual parts of composite scalar values (pair! tuple! time! etc) won't trigger the reaction: `[x: 0x0 y: is [x/x] x/x: 1]` and `[x: 0x0 y: is [x] x/x: 1]` are a no-go. Reassign the whole source or divide it into named components. With some scalars a `deep-reactor!` might also help.
 
 
 # Future work
