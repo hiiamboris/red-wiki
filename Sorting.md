@@ -23,6 +23,10 @@ Just as spreadsheets sort by the 3 types they understand (number, string, and bo
 
 `EXAMPLE TBD`
 
+# Map
+
+# Object
+
 # Pairs
 
 Pairs sort first by their `y` value, then their `x` value.
