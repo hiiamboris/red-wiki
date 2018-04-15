@@ -12,7 +12,7 @@ Be welcomed to the Red Community by following our [Communication Values](https:/
 * [Getting started with Red](http://redprogramming.com/Getting%20Started.html) at RedProgramming.com
 * [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/) at LearnXinYminutes.com
 * [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming) at mycode4fun.co.uk
-* [Helpin.red website](http://helpin.red/) (an upgrade of [Red Language Notebook](https://www.gitbook.com/book/ungaretti/red-language-notebook/details))
+* [Red help, tutorials and examples](http://helpin.red/) at helpin.red
 
 ### Discussions
 * [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang)
