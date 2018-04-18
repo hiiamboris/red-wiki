@@ -8,7 +8,6 @@ Documentation links and other learning resources.
 - [Github wiki](https://github.com/red/red/wiki)
 - [Red by Example, by Arie van Wingerden and Mike Parr](http://www.red-by-example.org/)
 - [Helpin' Red by Ungaretti](http://helpin.red/Introduction.html)
-- [Red Language notebook by Ungaretti](https://www.gitbook.com/book/ungaretti/red-language-notebook/details)
 
 While we continue to add Red documentation, one of the best introductions to Redbol language concepts is still the REBOL Core User's Guide, written by Carl Sassenrath. While there are differences between Red and Rebol, they share many fundamental concepts.
 
