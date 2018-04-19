@@ -16,7 +16,7 @@
 
 ** Hands-on guides and tutorials
 - [[http://redprogramming.com/Home.html][Red programming by Nick Antonaccio]]
-- [[https://www.gitbook.com/book/ungaretti/red-language-notebook/details][Red Language notebook by Ungaretti]]
+- [[http://helpin.red/][Helpin' Red by Ungaretti]]
 - [[http://www.red-by-example.org/][Red by example by Arie van Wingerden and Mike Parr]]
 - [[http://abdllh.com/programlama-dersleri/red-programlama-dili-dersleri/][Red Dersleri by Abdullah (Turkish)]]
 
@@ -32,6 +32,7 @@
 - [[http://www.michaelsydenham.com/reds-parse-dialect/][Beginner-friendly article about parse by Michael Sydenham]]
 - [[http://ross-gill.com/page/Red][Red page by Chriss Ross-Gill]]
 - [[https://mind42.com/mindmap/eca403e3-7c65-4d08-bee0-fd87a2290458 ][Mindmap on Red and related topics; maintained by Sabu Francis]]
+- [[http://learningred.com/][Learning Red by Joshua Shireman]]
 
 * Rebol
 - [[http://www.rebol.com/][Rebol official site]]
