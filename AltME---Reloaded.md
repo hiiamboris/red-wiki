@@ -41,6 +41,10 @@ To keep the needed bandwidth small, applying compression is a must-have. Using s
 
 ### Algorithms/Technolgy used
 
+## Persistance and off-line browsing
+
+Altme is great as it store all message on the client machine. Allowing off-line browsing and searching, and low band-with needs.
+
 ## P2P
 
 ## Text-Messaging
