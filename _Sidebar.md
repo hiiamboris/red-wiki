@@ -57,11 +57,11 @@
 
 [Getting started with Red](http://redprogramming.com/Getting%20Started.html)
 
+[Red help, tutorials and examples](http://helpin.red/)
+
 [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/)
 
 [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming)
-
-[Red help, tutorials and examples](http://helpin.red/)
 
 [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard)
 
