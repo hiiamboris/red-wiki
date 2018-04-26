@@ -1,4 +1,4 @@
-### Quoted links will navigate away from the Wiki
+### Quoted links are external
 ***
 
 [Home](https://github.com/red/red/wiki)
