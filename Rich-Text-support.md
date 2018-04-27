@@ -106,10 +106,10 @@ Draw facet can still be used and it will be rendered on top of the rich text dis
 
 ### Multi-box mode
 
-In this mode, an arbitrary number of rich text areas can be displayed inside the same rich-text face. In order to achieve that, an extra `text-box` keyword is supported by Draw dialect. Such keyword will only produce a result in this context, otherwise it will be ignored.
+In this mode, an arbitrary number of rich text areas can be displayed inside the same rich-text face. In order to achieve that, each rich text area is specified using the `text` keyword in Draw dialect.
 
 Specific facets:
-* `/draw` (block!): a block of `text-box` instructions, eventually mixed with regular Draw instructions.
+* `/draw` (block!): a block of `text` instructions, eventually mixed with regular Draw instructions.
 * `/text` (none!): this facet must be set to `none` in order to enable this mode.
 
 **Draw extension**
@@ -120,7 +120,7 @@ text <pos> <text>
 <text> : a string, or a rich-text face object with a rich-text description in single-box mode.
 ```
 
-This mode is optimized for lowest system resources usage when a high number of rich text areas needs to be rendered.
+This mode is optimized for lowest system resources usage when a high number of rich text areas need to be rendered.
 
 
 ## Info querying functions
