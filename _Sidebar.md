@@ -91,6 +91,8 @@
 
 [to vs. make](https://github.com/red/red/wiki/%60to%60-vs-%60make%60)
 
+[Design Deliberations](https://github.com/red/red/wiki/Dessign-Deliberations)
+
 [Closures](https://github.com/red/red/wiki/Closures)
 ***
 
