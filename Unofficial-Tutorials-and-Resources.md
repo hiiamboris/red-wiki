@@ -1,4 +1,4 @@
-External links are in quotes.
+External links appear in quotes.
 ***
 
 * ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
