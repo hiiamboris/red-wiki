@@ -1,4 +1,4 @@
-The Basics
+### The Basics
 ***
 
 [FAQ](https://github.com/red/red/wiki/FAQ)
