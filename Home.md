@@ -5,7 +5,7 @@
 
 # Quick navigation
 
-About Red        | Community        |     Getting&#xA0;Started        | Documentation        |
+About Red        | Community        |     Getting&nbsp;Started        | Documentation        |
 | :------------- | :--------------- | :--------------------- | :------------------- |
 | [[/images/about.png]] | [[/images/community.png]] | [[/images/start.png]] | [[/images/Documentation.png]] |
 [About Red](https://www.red-lang.org/p/about.html)   | [Community](https://github.com/red/red/wiki/Gitter-Room-Index)  | [Getting Started](https://www.red-lang.org/p/getting-started.html) | [Documentation](https://www.red-lang.org/p/documentation.html) |
