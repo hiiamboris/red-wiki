@@ -1,3 +1,6 @@
+External links appear in quotes.
+***
+
 * [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values)
 
 * [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
