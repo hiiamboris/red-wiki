@@ -1,3 +1,6 @@
+External links appear in quotes.
+***
+
 * [FAQ](https://github.com/red/red/wiki/FAQ)
 
 * ["Red Download Page"](https://www.red-lang.org/p/download.html)
