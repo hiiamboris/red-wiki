@@ -1,4 +1,4 @@
-External links are in quotes.
+External links appear in quotes.
 ***
 
 
