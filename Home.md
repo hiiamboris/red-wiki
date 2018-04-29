@@ -16,7 +16,7 @@
     <td>[[/images/start.png]]</td>
     <td>[[/images/Documentation.png]]</td>
     <td>[[/images/community.png]]</td>
-    <td>[[/images/about.png</td>
+    <td>[[/images/about.png]]</td>
   </tr>
 
   <tr align="middle">
