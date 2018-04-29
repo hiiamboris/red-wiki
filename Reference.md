@@ -1,4 +1,4 @@
-External links are in quotes.
+External links appear in quotes.
 ***
 
 * ["Red Language Documentation"](http://www.red-lang.org/p/documentation.html)
