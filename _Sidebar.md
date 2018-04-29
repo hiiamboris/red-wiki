@@ -2,6 +2,9 @@
 ***
 
 [Home](https://github.com/red/red/wiki)
+
+[Original Home](https://github.com/red/red/wiki/Original-Home)
+
 ***
 
 ### The Basics
