@@ -1,4 +1,4 @@
-External links are in quotes.
+External links appear in quotes.
 ***
 
 * [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
