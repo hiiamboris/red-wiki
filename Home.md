@@ -3,63 +3,13 @@
 ### NEWS ITEM - ICOs, Wallets and CryptoCurrencies
 "BeardPower" has kindly authored [a beginner's guide](https://github.com/red/red/wiki/Introduction-to-ICOs,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs, wallets and cryptocurrencies.
 
-### Installation
-* [Download and Install](http://www.red-lang.org/p/download.html)
-* [Get Started](https://github.com/red/red/wiki/Installing-Red-and-Getting-Started)
+# Quick navigation
 
-### Beginners Guides
-Be welcomed to the Red Community by following our [Communication Values](https://github.com/red/red/wiki/Community-Communication-Values).
-* [Getting started with Red](http://redprogramming.com/Getting%20Started.html) at RedProgramming.com
-* [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/) at LearnXinYminutes.com
-* [Red Programming](http://www.mycode4fun.co.uk/About-Red-Programming) at mycode4fun.co.uk
-* [Red help, tutorials and examples](http://helpin.red/) at helpin.red
-
-### Discussions
-* [Red Mailing List](https://groups.google.com/forum/#!forum/red-lang)
-* [Gitter Room Index](https://github.com/red/red/wiki/Gitter-Room-Index)
-* [Questions Tagged Red](http://stackoverflow.com/questions/tagged/red) at Stackoverflow.com
-* [FAQ](https://github.com/red/red/wiki/FAQ)
-
-### Rebol
-* [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
-* [Rebol Forum](http://rebolforum.com/index.cgi?f=printtopic&topicnumber=48&archiveflag=new) 
-* [Rebol Core Guide - A walkthrough with Red](https://github.com/red/red/wiki/REBOL-Core-Users-Guide:--A-walkthrough-with-Red)
-
-### Examples
-* [Red by Example](http://www.red-by-example.org/index.html) at red-by-example.org
-* [Community Code Library](https://github.com/red/code)
-
-### Further Reading
-* [Red/System tutorial for newcomers](https://github.com/red/red/wiki/Red-System-tutorial-for-newcomers-English-version)
-* [Red Language Blog](http://redlanguageblog.blogspot.co.uk/?view=flipcard) by Arie
-* [GUI Overview](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
-* [Red Language Documentation](http://www.red-lang.org/p/documentation.html)
-* [Red/System Documentation](http://static.red-lang.org/red-system-specs-light.html)（[Red/System语言规范-中文翻译 25%](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)）
-* [Boleslav Březovský blog](http://red.qyz.cz/)
-* [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations)
-* [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
-* [Red Docker](https://github.com/eranws/red-docker) [Debian Docker](https://github.com/dander/docker-red)
-* [Red for Hopeless Programmers - Part 1](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
-* [Red for Hopeless Programmers - Part 2](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
-
-### Reference Material
-* [Red Roadmap](http://www.red-lang.org/p/roadmap.html)
-* [Coding Style Guide](https://doc.red-lang.org/v/v0.6.0/Coding-Style-Guide.html)
-* [Interview with Nenad Rakocevic about Red](https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c)
-
-### News Feeds
-* [@red-lang](https://twitter.com/red_lang?lang=en) on Twitter
-* [Red Wiki](https://github.com/red/red/wiki.atom) - RSS Feed
-* [Red Language](http://www.red-lang.org/feeds/posts/default) - RSS Feed
-
-To read the RSS feeds, you will need an RSS reader. There is a [Chrome Plugin](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en) available.
-
-### Contributing 
-Checkout the [Contributors' Guide](https://github.com/red/red/wiki/Contributor-Guidelines) if you would like to contribute to Red.
-
-### Libraries
-There are a number of libraries in the [Red/Code repository](https://github.com/red/code/tree/master/Library). 
-
+About Red        | Community        |     Getting Started        | Documentation        |
+| :------------- | :--------------- | :--------------------- | :------------------- |
+| [[/images/about.png]] | [[/images/community.png]] | [[/images/start.png]] | [[/images/Documentation.png]] |
+[About Red](https://www.red-lang.org/p/about.html)   | [Community](https://github.com/red/red/wiki/Gitter-Room-Index)  | [Getting Started](https://www.red-lang.org/p/getting-started.html) | [Documentation](https://www.red-lang.org/p/documentation.html) |
+| </br> Red is a next-gen programming language, strongly inspired by REBOL. Red’s ambitious goal is to build the world’s first full-stack language, a language you can use from system programming tasks, up to high-level scripting through DSL. | Red has a fast growing, diverse, and friendly global community.</br> Have at look at our [communication values](https://github.com/red/red/wiki/Community-Communication-Values), and then join the fun on Gitter chat or our [mailing list](https://groups.google.com/forum/#!forum/red-lang). | Follow along with our short getting started guide.</br> If you prefer, you can go directly to our [downloads](https://www.red-lang.org/p/download.html) page. | Our official documentation for Red and Red/System.</br> You can also read our [readme](https://github.com/red/red/blob/master/README.md), check out the custom sidebar in the Wiki, or read some [source](https://github.com/red/red) code at our official github repository.</br>
 
 _____
 *Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
