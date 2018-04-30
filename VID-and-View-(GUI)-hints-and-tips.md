@@ -97,3 +97,21 @@ Windows 7 must be set to 'best appearance' for transparency to work:
 ```
 move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
 ```
+
+# Styles
+
+## Styles are a single face
+
+```
+view [
+    style buttons: panel green [
+        below
+        button "hello"
+        button "goodbye"
+    ] 
+
+    buttons
+    buttons
+]
+```
+The above won't work because a style is just one face. A panel can have a tree of child faces, so can't be used as a style. Styles are there to customize the look of widgets, not to instantiate layouts made of several faces. If one needs to duplicate VID code beyond what styles can achieve, use regular Red constructions, like `compose` to build VID blocks dynamically.
