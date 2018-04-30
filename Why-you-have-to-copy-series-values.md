@@ -1,4 +1,4 @@
-Red's designer here. Let me try to shed some light on this fundamental topic.
+Red's designer (Nenad Rakocevic) here. Let me try to shed some light on this fundamental topic.
 
 Red & Rebol are data formats first, before being programming languages. This has many implications and is overlooked by most newcomers. Rebol documentation did not stress this fact enough. Red will try to do a better job at that.
 
