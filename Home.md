@@ -20,10 +20,10 @@
   </tr>
 
   <tr align="middle">
-    <td><a href="url">Getting Started</a></td>
-    <td><a href="url">Documentation</a></td>
-    <td><a href="url">Community</a></td>
-    <td><a href="url">About Red</a></td>
+    <td><a href="https://www.red-lang.org/p/getting-started.html">Getting Started</a></td>
+    <td><a href="https://www.red-lang.org/p/documentation.html">Documentation</a></td>
+    <td><a href="https://github.com/red/red/wiki/Gitter-Room-Index">Community</a></td>
+    <td><a href="https://www.red-lang.org/p/about.html">About Red</a></td>
   </tr>
   
 <tr>
