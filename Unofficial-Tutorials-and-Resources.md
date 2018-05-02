@@ -11,7 +11,13 @@ External links appear in quotes.
 
 * ["Red Language Blog"](http://redlanguageblog.blogspot.co.uk/?view=flipcard)
 
-* ["GUI Overview"](https://doc.red-lang.org/v/v0.6.0/gui/Overview.html)
+* ["Programming in RED"](https://programming.red/wiki/Main_Page)
+
+* ["Arnold's Course"](http://arnoldvanhofwegen.com/blog/nieuwe-red-release-beginnerscursus-programmeren/)
+
+* ["Tutorial in Russian"](https://habr.com/post/351100/)
+
+* ["GUI Overview"](https://doc.red-lang.org/en/gui.html)
 
 * ["Boleslav Březovský Blog"](http://red.qyz.cz/)
 
