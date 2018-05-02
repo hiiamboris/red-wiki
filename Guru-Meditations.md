@@ -51,7 +51,7 @@
 49. [`--no-runtime` option](#--no-runtime-option)
 
 # Debugging
-[Moved](../Debugging)
+[Moved](https://github.com/red/red/wiki/Debugging)
 
 # Red/System Boxing
 
