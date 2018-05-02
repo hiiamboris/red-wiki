@@ -4,7 +4,7 @@
 "BeardPower" has kindly authored a [beginner's guide](https://github.com/red/red/wiki/Introduction-to-ICOs,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs, wallets and cryptocurrencies.
 
 
-# Quick navigation
+## Quick navigation
 ***
 <table>
   <tr valign="middle">
