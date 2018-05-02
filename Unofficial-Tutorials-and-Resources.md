@@ -1,6 +1,9 @@
 External links appear in quotes.
 ***
 
+### Red
+***
+
 * ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
 
 * ["Red help, tutorials and examples"](http://helpin.red/)
@@ -28,6 +31,9 @@ External links appear in quotes.
 * ["Red for Hopeless Programmers - Part 1"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
+
+### Blockchain
+***
 
 * [Blockchain Resources](https://github.com/red/red/wiki/Blockchain-resources)
 
