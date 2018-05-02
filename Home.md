@@ -1,7 +1,7 @@
 ## Welcome to the Red programming language wiki!
 
 ### NEWS ITEM - ICOs, Wallets and CryptoCurrencies
-"BeardPower" has kindly authored [a beginner's guide](https://github.com/red/red/wiki/Introduction-to-ICOs,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs, wallets and cryptocurrencies.
+"BeardPower" has kindly authored a [beginner's guide](https://github.com/red/red/wiki/Introduction-to-ICOs,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs, wallets and cryptocurrencies.
 
 # Quick navigation
 
