@@ -49,16 +49,6 @@
 47. ["Variadic" function](#variadic-function)
 48. [Literal arguments and get arguments](#literal-arguments-and-get-arguments)
 49. [`--no-runtime` option](#--no-runtime-option)
-50. [](#)
-51. [](#)
-52. [](#)
-53. [](#)
-54. [](#)
-55. [](#)
-56. [](#)
-57. [](#)
-58. [](#)
-59. [](#)
 
 # Debugging
 [Moved](../Debugging)
