@@ -130,6 +130,7 @@ The following functions are provided to query information about a rich-text face
 * cursor navigation
 * hit testing
 
+From global context:
 ```
 caret-to-offset: function [
     "Given a text position, returns the corresponding coordinate relative to the top-left of the layout box"
@@ -152,7 +153,9 @@ size-text: function [
         text [string!]
     return: [pair! none!]
 ]
-
+```
+From `rich-text` context:
+```
 line-height?: function [
     "Given a text position, returns the corresponding line's height"
     face    [object!]
