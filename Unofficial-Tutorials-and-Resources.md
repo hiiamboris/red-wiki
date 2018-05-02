@@ -30,3 +30,5 @@ External links appear in quotes.
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
 
 * [Blockchain Resources](https://github.com/red/red/wiki/Blockchain-resources)
+
+* [Intro to ICOs, Wallets, and CryptoCurrencies](https://github.com/red/red/wiki/Introduction-to-ICOs,-wallets-and-cryptocurrencies)
