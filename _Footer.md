@@ -1,0 +1,1 @@
+Both Red and Red/System are published under the [BSD license](https://opensource.org/licenses/bsd-3-clause). The runtime is published under the [BSL license](https://www.boost.org/users/license.html).
