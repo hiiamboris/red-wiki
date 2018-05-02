@@ -1,9 +1,3 @@
-*Just starting to gather some notes here*
-
-Red has a number of functions built in that can aid in debugging. There are also system options and compiler switches.
-
-The console/interpreter itself is mostly written in [Red/System](#redsystem)
-
 # Red console / interpreter
 
 system/state/trace: on
