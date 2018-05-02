@@ -28,3 +28,5 @@ External links appear in quotes.
 * ["Red for Hopeless Programmers - Part 1"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
+
+* [Blockchain Resources](https://github.com/red/red/wiki/Blockchain-resources)
