@@ -34,7 +34,7 @@ If you prefer, you can go directly to our <a href="https://www.red-lang.org/p/do
 </td>
   
 <td valign="top">
-Our official documentation for Red and Red/System.<br> You can also read our <a href="https://github.com/red/r/blob/master/README.md">readme</a>, or check out some <a href="https://github.com/red/red">code</a> at our official github repository.
+Our official documentation for Red and Red/System.<br> You can also read our <a href="https://github.com/red/red/blob/master/README.md">readme</a>, or check out some <a href="https://github.com/red/red">code</a> at our official github repository.
 </td>
 
 <td valign="top">
