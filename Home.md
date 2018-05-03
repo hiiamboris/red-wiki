@@ -38,11 +38,11 @@ Our official documentation for Red and Red/System.<br> You can also read our <a 
 </td>
 
 <td valign="top">
-Red has a fast growing, diverse, and friendly global community.<br> Have at look at our <a href="https://github.com/red/red/wiki/Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://github.com/red/red/wiki/Community-Communication-Values">mailing list</a>.
+Red has a fast growing, diverse, and friendly global community.<br> Have a look at our <a href="https://github.com/red/red/wiki/Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://github.com/red/red/wiki/Community-Communication-Values">mailing list</a>.
 </td>
     
 <td valign="top">
-Red’s ambitious goal is to build the world’s first full-stack language, from the system level (like C), through high-level scripting, and on to metaprgrogramming. All in a self-contained toolchain.
+Red’s ambitious goal is to build the world’s first full-stack language, from the system level (like C), through high-level scripting, and on to metaprogramming. All in a self-contained toolchain.
 </td>
   
 </tr>
