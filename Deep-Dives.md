@@ -11,4 +11,4 @@ External links appear in quotes.
 
 * [Debugging](https://github.com/red/red/wiki/How-to-Debug-__-A-use-case-by-DocKimbel)
 
-* [How to Debug: A Use Case by @DocKimbel](https://github.com/red/red/wiki/How-to-Debug:-A-use-case-by-@DocKimbel)
+* [How to Debug: A Use Case by @DocKimbel](https://github.com/red/red/wiki/How-to-Debug-__-A-use-case-by-DocKimbel)
