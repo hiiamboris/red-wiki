@@ -8,6 +8,7 @@
 6. [INVALID BLOCK SELECTOR RETURNS NONE](#invalid-block-selector-returns-none)
 7. [OBJECT INTROSPECTION](#object-introspection)
 8. [DIR? FUNCTION](#dir-function)
+9. [TO-DATE FUNCTION](#to-date-function)
 
 ## COPY object!
 
@@ -124,3 +125,9 @@ Later versions of Rebol2 include ```words-of```, ```values-of``` and ```body-of`
 ## DIR? FUNCTION
 
 Under R2, `dir?` returns true based on whether the target is an actual directory on disk. Under Red, it returns true if the target *looks like* a directory, because the name ends with a path separator.
+
+## TO-DATE FUNCTION
+
+In Rebol2 and Rebol3 ```to-date``` function works with string values but not in Red yet. So currently `to-date "2-May-2018"` will return an error. ```load``` can be used instead.
+
+Please note that this is a temporary difference since Red's lexer in not in its final form yet.
