@@ -72,6 +72,10 @@ It's possible to parse anything, even [the programming language that is made of 
 Functions' spec should accept a type provided by programmer.
 For example `f: function [color1 [HSV]] [print color/hue]` so when `f` is called `color1: HSV#222,0.5,0.5 f color1` it will check if the types in the spec and the types of an argument match (`HSV/type-name == color1/type-name`).
 
+## Implementations:
+
+- [by Nędza Darek](https://github.com/nedzadarek/red_custom_type_proposal)
+
 # Dependent types:
 Dependent type is (from [wiki](https://en.wikipedia.org/wiki/Dependent_type)) is
 > a type whose definition depends on a value. A "pair of integers" is a type. A "pair of integers where the second is greater than the first" is a dependent type because of the dependence on the value. 
