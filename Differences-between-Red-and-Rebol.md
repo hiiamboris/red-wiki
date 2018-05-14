@@ -9,6 +9,7 @@
 7. [OBJECT INTROSPECTION](#object-introspection)
 8. [DIR? FUNCTION](#dir-function)
 9. [TO-DATE FUNCTION](#to-date-function)
+10. [RANDOM](#random)
 
 ## COPY object!
 
@@ -131,3 +132,16 @@ Under R2, `dir?` returns true based on whether the target is an actual directory
 In Rebol2 and Rebol3 ```to-date``` function works with string values but not in Red yet. So currently `to-date "2-May-2018"` will return an error. ```load``` can be used instead.
 
 Please note that this is a temporary difference since Red's lexer in not in its final form yet.
+
+## RANDOM
+
+In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Red, it modifies:
+
+```
+>> s: "12345"
+== "12345"
+>> random s
+== "43512"
+>> s
+== "43512" ("12345" in R2)
+```
