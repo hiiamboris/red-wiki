@@ -52,7 +52,7 @@ Everything else, 0, empty strings, etc. is truthy. In addition, `to` and `make` 
 
 # Series types should usually be copied inside functions
 
-Otherwise your function may behave differently on each call. See the topic: [[Why do I have to copy series values?]]
+Otherwise your function may behave differently on each call. See the topic: [[Why you have to copy series values]]
 
 # What're the differences between `as` and `to`
 
