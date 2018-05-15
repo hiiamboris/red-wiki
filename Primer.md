@@ -54,7 +54,7 @@ Everything else, 0, empty strings, etc. is truthy. In addition, `to` and `make` 
 
 Otherwise your function may behave differently on each call. See the topic: [[Why you have to copy series values]]
 
-# What're the differences between `as` and `to`
+# What are the differences between `as` and `to`
 
 `To` and `as` are both _type-adapting_ functions, but with different behavior. The difference may seem subtle, but is very important. `To` creates a new value, copying the underlying buffers if any. `As` just coerces a series type to another compatible type in the same type class, and underlying buffers are shared. `To` is defined for almost all types, while `as` is only defined for `any-string!` and `any-block!` type classes (except `hash!`). You can see the difference in the following example.
 
