@@ -16,5 +16,6 @@ External links appear in quotes.
 * [Red Enhancement Proposals](https://github.com/red/red/wiki/REP---Red-Enhancement-Proposals)
 
 * ["Interview with Nenad Rakocevic about Red"](https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c)
+
 * ["Rich Text Support"](https://github.com/red/red/wiki/Rich-Text-support)
 
