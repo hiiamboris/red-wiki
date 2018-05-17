@@ -15,3 +15,5 @@ External links appear in quotes.
 #### Additional information:
 
 * [View - Rich Text support](https://github.com/red/red/wiki/Rich-Text-support)
+
+* [VID and View - Hints and tips](https://github.com/red/red/wiki/VID-and-View-(GUI)-hints-and-tips)
