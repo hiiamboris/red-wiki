@@ -6,3 +6,5 @@ External links appear in quotes.
 * ["Red Download Page"](https://www.red-lang.org/p/download.html)
 
 * ["Getting Started"](https://www.red-lang.org/p/getting-started.html)
+
+* ["Official Documentation"](https://www.red-lang.org/p/documentation.html)
