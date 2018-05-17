@@ -16,4 +16,6 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [April 1, 2018 13:10 PM](https://gitter.im/red/red/gui-branch?at=5ac0be4292f5d6205780e609) @PlanetSizeCPU [One Time Pad/ssword Generator](https://github.com/planetsizecpu/otp)
 - [April 5, 2018 12:57 PM](https://gitter.im/red/chit-chat?at=5ac5f30b109bb043328de6c7) @toomasv [Mirror-scripting function (corrected in gist)](https://gist.github.com/toomasv/357b022f298ff90d821477324e9c8cf4)
 - [April 7, 2018 8:58 PM](https://gitter.im/red/red/gui-branch?at=5ac906cb5f188ccc153e8d06) @toomasv [3D cube](https://gist.github.com/toomasv/800aaa6ba1a37526993b9f2fce52fd13)
+- [May 14, 2018 8:13 PM](https://gitter.im/red/red/gui-branch?at=5af9c3d5f04ce53632d80220) @toomasv [Rich-text box](https://gist.github.com/toomasv/8fcd1bbd7de9451e7789dbdf5ae35881)
+- [May 16, 2018 10:08 PM](https://gitter.im/red/sandbox?at=5afc81c11cfca775e114253f)] @toomasv [Date-picker](https://gist.github.com/toomasv/1234d616d8e43a4e49efaa7c1a06c9c9)
 
