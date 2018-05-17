@@ -17,6 +17,8 @@
 
 ### [Unofficial Tutorials and Resources](https://github.com/red/red/wiki/Unofficial-Tutorials-and-Resources)
 
+### [GUI Programming](https://github.com/red/red/wiki/GUI-Programming)
+
 ### [Deep Dives](https://github.com/red/red/wiki/Deep-Dives)
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
