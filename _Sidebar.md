@@ -13,11 +13,11 @@
 
 ### [Libraries](https://github.com/red/red/wiki/Libraries)
 
-### [Coming from REBOL?](https://github.com/red/red/wiki/Coming-from-REBOL)
-
 ### [Unofficial Tutorials and Resources](https://github.com/red/red/wiki/Unofficial-Tutorials-and-Resources)
 
 ### [GUI Programming](https://github.com/red/red/wiki/GUI-Programming)
+
+### [Coming from REBOL?](https://github.com/red/red/wiki/Coming-from-REBOL)
 
 ### [Deep Dives](https://github.com/red/red/wiki/Deep-Dives)
 
