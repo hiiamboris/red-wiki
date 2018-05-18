@@ -7,4 +7,4 @@ External links appear in quotes.
 
 * ["Getting Started"](https://www.red-lang.org/p/getting-started.html)
 
-* ["Official Documentation"](https://www.red-lang.org/p/documentation.html)
+* ["Official Documentation Page"](https://www.red-lang.org/p/documentation.html)
