@@ -20,6 +20,9 @@
 - [[http://www.red-by-example.org/][Red by example by Arie van Wingerden and Mike Parr]]
 - [[http://abdllh.com/programlama-dersleri/red-programlama-dili-dersleri/][Red Dersleri by Abdullah (Turkish)]]
 
+** Books
+- [[https://www.packtpub.com/application-development/learn-red-%E2%80%93-fundamentals-red][Learn Red - Fundamentals of Red by Ivo Balbaert]]
+
 ** Personal blogs and pages from community members
 - [[https://github.com/red/red/wiki][Github wiki]]
 - [[http://www.mycode4fun.co.uk/home][mycode4fun]]
