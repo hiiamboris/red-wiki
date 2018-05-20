@@ -33,7 +33,7 @@ External links appear in quotes.
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
 
-* ["Book: Learn Red – Fundamentals of Red - Ivo Balbaert"](https://www.packtpub.com/application-development/learn-red-%E2%80%93-fundamentals-red)
+* ["Book: Learn Red – Fundamentals of Red - Packt Publishing - Ivo Balbaert"](https://www.packtpub.com/application-development/learn-red-%E2%80%93-fundamentals-red)
 
 ### Blockchain
 ***
