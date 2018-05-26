@@ -10,6 +10,7 @@
 8. [DIR? FUNCTION](#dir-function)
 9. [TO-DATE FUNCTION](#to-date-function)
 10. [RANDOM](#random)
+11. [DO](#do)
 
 ## COPY object!
 
@@ -145,3 +146,20 @@ In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Re
 >> s
 == "43512" ("12345" in R2)
 ```
+
+## DO
+
+The values that get special treatment by do are: [block! path! string! url! file! error!] Everything else is evaluated passively. This is by design, to eliminate variable arity.
+
+On R2 and R3
+```
+>> type? do func [][1]
+== integer!
+```
+
+on Red
+```
+>> type? do func [][1]
+== function!
+```
+
