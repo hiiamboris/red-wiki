@@ -166,9 +166,7 @@ on Red
 
 ## MAKE NONE
 
-`make` generally doesn't accept `none` in spec argument on Red and raise error,
-
-This is different on Rebol:
+`make` generally doesn't accept `none` in spec argument on Red and raise error, which is compatible with Rebol3 but is different from Rebol2:
 
 ```
 make integer! none ; == 0
@@ -186,7 +184,7 @@ make path!    "" ; <empty path>
 ...
 ```
 
-These works on Rebol but not on Red.
+These works on Rebol2 but not on Red / Rebol3.
 
 Also notice below difference:
 
@@ -195,12 +193,5 @@ m: make hash! none
 length? m
 ```
 
-This returns 0 on Rebol but 1 on Red.
-Red creates a hash with one value (none) inside, but Rebol creates an empty hash.
-
-Also note that `make map! 0` returns an empty hash on Red:
-
-```
->> m: make map! 0 ; == #()
->> length? m      ; == 0
-```
+This returns 0 on Rebol2 but 1 on Red.
+Red creates a hash with one value (none) inside, but Rebol2 creates an empty hash.
