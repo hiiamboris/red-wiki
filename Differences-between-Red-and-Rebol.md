@@ -11,6 +11,7 @@
 9. [TO-DATE FUNCTION](#to-date-function)
 10. [RANDOM](#random)
 11. [DO](#do)
+12. [MAKE NONE](#make-none)
 
 ## COPY object!
 
@@ -163,3 +164,43 @@ on Red
 == function!
 ```
 
+## MAKE NONE
+
+`make` generally doesn't accept `none` in spec argument on Red and raise error,
+
+This is different on Rebol:
+
+```
+make integer! none ; == 0
+make block!   none ; == []
+make file!    none ; == %""
+make tag!     none ; == <>
+...
+```
+
+Above lines give error on Red. Similar issue happens with "" (empty string)
+
+```
+make integer! "" ; == 0 (R2)
+make path!    "" ; <empty path>
+...
+```
+
+These works on Rebol but not on Red.
+
+Also notice below difference:
+
+```
+m: make hash! none
+length? m
+```
+
+This returns 0 on Rebol but 1 on Red.
+Red creates a hash with one value (none) inside, but Rebol creates an empty hash.
+
+Also note that `make map! 0` returns an empty hash on Red:
+
+```
+>> m: make map! 0 ; == #()
+>> length? m      ; == 0
+```
