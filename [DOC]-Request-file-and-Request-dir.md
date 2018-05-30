@@ -36,3 +36,11 @@ request-file/filter [
     "All Pictures Files" "*.jpg;*.png;*.gif"
 ]
 ```
+
+### Notes
+
+Remember that when setting windows title,
+* ^ has special meaning in Rebol/Red string, you need to type ^^ to insert a caret.
+* & is used for underline the character on Windows. Type && for a single & character. Other platforms no such feature.
+
+[See #2610](https://github.com/red/red/issues/2610)
