@@ -66,6 +66,46 @@ Here is a way to achieve the same result with compose:
 ]
 ```
 
+# `construct` vs `context`/`object`
+
+How is `context []` and `make a []` different from `construct []` and `construct/with [] a` ?
+
+Construct is a low-level constructor that *does NOT*:
+- evaluate inner expressions
+- bind the spec block to the context (not always true, see the note below)
+
+
+```
+USAGE:
+     CONSTRUCT block
+
+DESCRIPTION: 
+     Makes a new object from an unevaluated spec; standard logic words are evaluated. 
+     CONSTRUCT is a native! value.
+
+ARGUMENTS:
+     block        [block!] 
+
+REFINEMENTS:
+     /with        => Use a prototype object.
+        object       [object!] "Prototype object."
+     /only        => Don't evaluate standard logic words.
+```
+
+It allows one to achieve fine-tuned context composition, otherwise broken by the implicit `bind`:
+```
+>> x: 'x-global  a: construct compose [x: x-of-a f: (does [x])]  a/f
+== x-global
+```
+Above, the `f` function body retains it's binding to the global (system/words) context. Compare that to `context`:
+```
+>> x: 'x-global  b: context [x: 'x-of-b  f: does [x]]  b/f
+== x-of-b
+```
+
+As of Red v0.6.3 however composition is unreliable yet when it comes to bindings. More info for documenting it here later once it's resolved can be found at: https://redd.it/8g7oce . See related github issues for update on the progress: https://github.com/red/red/issues/3406 https://github.com/red/red/issues/3365
+
+
 # `Return` in spec blocks
 
 `Context`, by design, processes a call to `return` in the spec block. It returns the argument value of the called return instead of the object.
@@ -78,3 +118,16 @@ Here is a way to achieve the same result with compose:
 == 7
 ```
 
+The rest of the block (after `return`) is not evaluated:
+```
+>> context [return 1 probe 2]
+== 1
+```
+
+But the set-words are still collected:
+```
+>> context [return self x: 1]
+== make object! [
+    x: unset
+]
+```
