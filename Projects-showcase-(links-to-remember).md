@@ -19,4 +19,4 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [May 14, 2018 8:13 PM](https://gitter.im/red/red/gui-branch?at=5af9c3d5f04ce53632d80220) @toomasv [Rich-text box](https://gist.github.com/toomasv/8fcd1bbd7de9451e7789dbdf5ae35881)
 - [May 15, 2018 5:45 AM](https://gitter.im/red/red/gui-branch?at=5afa49ddf04ce53632d9b574) @toomasv Elementary z-ordering examples
 - [May 16, 2018 10:08 PM](https://gitter.im/red/sandbox?at=5afc81c11cfca775e114253f) @toomasv [Date-picker](https://gist.github.com/toomasv/1234d616d8e43a4e49efaa7c1a06c9c9)
-
+- [May 31, 2018 2:43 AM] https://gitter.im/red/chit-chat?at=5b0fb5c9361a950a662cd0de @rebolek Gitter User stats
