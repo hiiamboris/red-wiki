@@ -35,6 +35,9 @@ this will compile the Red file that is on your screen and execute it
 ### Emacs
 [Emacs mode for Red](https://github.com/unchartedworks/red-mode)
 
+### Vim
+[Red language syntax highlighting](https://github.com/ruchee/vim-red)
+
 ### Notepad++
 [Syntax Coloring](https://github.com/Ungaretti/Notepad-config-file-for-Red-Language)
 
