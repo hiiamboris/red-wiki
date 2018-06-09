@@ -5,6 +5,8 @@ External links appear in quotes.
 
 * [VID Reference Documentation](https://github.com/red/red/wiki/VID-Reference-Documentation)
 
+* [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
+
 * ["Red/System Documentation"](http://static.red-lang.org/red-system-specs-light.html)
 
 * ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)
