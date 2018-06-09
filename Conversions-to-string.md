@@ -20,8 +20,8 @@ For these values, the resulting string is identical to the source code for the v
 For `lit-word!`, `get-word!`, `set-word!` and `any-path!` see issue #3409
 
 Furthermore, the functions `to-string`  and `form` yield identical results on values of all types except `unset!`, `none!`, those in `any-list!` (`block!`, `paren!` and `hash`) and `binary!`. Examples:
-* `to-string! ()` => _error_, `form ()` => `""`
-* `to-string! none` => _error_, `form none` => `"none"`
+* `to-string ()` => _error_, `form ()` => `""`
+* `to-string none` => _error_, `form none` => `"none"`
 * `to-string [1 2 3]` => `"123"`, `form [1 2 3]` => `"1 2 3"`, similar for `paren!` and `hash!`
 * `to-string #{313233}` => `"123"`, `form #{313233}` => `"#{313233}"`
 
