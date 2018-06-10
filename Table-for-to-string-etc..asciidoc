@@ -1,5 +1,5 @@
 ### String conversions
-[cols="5*,^,30%",options="header"]
+[options="header"]
 |===
 
 |type |expression|to-string|form|mold|mold/all
