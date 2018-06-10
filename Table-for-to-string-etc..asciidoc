@@ -1,7 +1,7 @@
 ### String conversions
-[width="60%", options="header"]
-|===
 
+|===
+[width="60%", options="header"]
 |type |expression|to-string|form|mold|mold/all
 |unset!|( )|_error_|_empty string_|unset|unset
 |none!|#[none]|_error_|none|none|none
