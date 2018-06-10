@@ -1,6 +1,6 @@
 ### String conversions
 [float="left", options="header"]
-|===
+|=
 |type |expression|to-string|form|mold|mold/all
 |unset!|( )|_error_|_empty string_|unset|unset
 |none!|#[none]|_error_|none|none|none
@@ -55,4 +55,4 @@ b: 2|make object! ...|make object! ...
 |routine!|:event?|?routine?|?routine?|routine[...][...]|routine[...][...]
 |datatype!|action!|action|action|action!|action!
 |typeset!|number!|make typeset! ...|make typeset! ...|make typeset! ...|make typeset! ...
-|===
+|=
