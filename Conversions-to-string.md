@@ -35,3 +35,6 @@ For other types, `to-string` and `form` omit the "decoration" that characterizes
 
 For types in `any-function!`, only the function type is given by `to-string` and `form`, thus:
 * `form :if` => `"?native?"`, similar for `action!`, `op!`, `function!` and `routine!`
+
+### Complete table
+This is found [here](https://github.com/red/red/wiki/Table-for-to-string-etc.) 
