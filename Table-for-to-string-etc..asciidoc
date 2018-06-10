@@ -1,5 +1,5 @@
 ### String conversions
-[cols="1,1,1,1,1,1", width="60%, options="header"]
+[cols="1,1,1,1,1,1", width="60%", options="header"]
 |===
 
 |type |expression|to-string|form|mold|mold/all
