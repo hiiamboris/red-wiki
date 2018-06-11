@@ -1,5 +1,7 @@
+* **Note:** Github will not process the table width correctly, resulting in the sidebar obscuring a portion of this table. We are investigating some workarounds.
+
 ### String conversions
-[options="header"]
+[width="50%", options="header"]
 |===
 
 |type |expression|to-string|form|mold|mold/all
