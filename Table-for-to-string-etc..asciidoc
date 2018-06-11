@@ -1,4 +1,4 @@
-* **Note:** Github will not process the table width correctly, resulting in the sidebar obscuring a portion of this table. We are investigating some workarounds.
+* **Note:** Github will not process the table width correctly, resulting in the sidebar obscuring a portion of this table. We are investigating workarounds.
 
 ### String conversions
 [width="50%", options="header"]
