@@ -128,3 +128,61 @@ or
 >> collect [foreach file read to-red-file path [unless dir? file [keep file]]]
 == [%twain_32.dll %win.ini %twain.dll %winhlp32.exe %system.ini %regedit.exe %explorer.exe %notepa...
 ```
+
+### Directory junctions & symbolic links (Windows-specific)
+Some of the directories returned in a `read` call might not themselves be readable:
+```
+>> read to-red-file "C:\Documents and Settings\"
+*** Access Error: cannot open: %/C/Documents%20and%20Settings/
+
+>> call/console {dir "C:\Documents and Settings"}
+<...>
+File not found
+```
+We can see that the above is a junction and it's target *is* readable:
+```
+>> call/console {dir /a "C:\Docu*"}
+<...>
+14.07.2009  08:08    <JUNCTION>     Documents and Settings [C:\Users]
+
+>> read to-red-file "C:\Users\"
+== [%All%20Users/ %Default/ %Default%20User/ %desktop.ini %Public/]
+
+>> read/binary %/C/Documents%20and%20Settings/desktop.ini
+== #{
+FFFE0D000A005B002E005300680065006C006C0043006C006100730073004900
+6E0066006F005D000D000A004...
+```
+This happens because the user does not have the permissions to list the link/junction contents (RD stands for Read Data, which is Denied), but have permissions to read the target:
+```
+>> call/console {icacls "C:\Documents and Settings"}
+C:\Documents and Settings All:(DENY)(S,RD)
+<...>
+
+>> call/console {icacls "C:\Users"}
+C:\Users All:(RX)
+         All:(OI)(CI)(IO)(GR,GE)
+<...>
+```
+So as you can see the OS has different ACLs assigned to the link itself and its' target. Apparently the junction is there for compatibility for WinXP and earlier and isn't supposed to be used. The reader is advised to learn about file system access control lists and commands `icacls` and `cacls` to get a more thorough technical outlook.
+
+As to "omg! what to do?", the options depend on the specifics of the task at hand. Once `query` function is implemented it will be possible to:
+- ignore all files with hidden or system attributes set (or both)
+- resolve the target of a link and try to query target's contents instead
+
+In any case, it's always a good idea to wrap the `read` call into a `try` block, as one can never know if one is allowed to read a target or not:
+```
+>> probe try [read to-red-file "C:\$Recycle.Bin"] ()
+make error! [
+    code: 500
+    type: 'access
+    id: 'cannot-open
+    arg1: %/C/$Recycle.Bin
+    arg2: none
+    arg3: none
+    near: none
+    where: 'read
+    stack: 37521760
+]
+```
+
