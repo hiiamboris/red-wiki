@@ -36,6 +36,7 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 | `to-local-file`   | Converts a Red file path to the local system file path.| 
 | `to-red-file`     | Converts a local system file path to a Red file path.| 
 | `what-dir`        | Return current dir, as a Red file path. Normalized to have a trailing slash.| 
+| `glob`            | [Recursively list files/directories matching patterns (currently unofficial).](https://gist.github.com/hiiamboris/605a4ab6831a247ac987789f4d578ef1)| 
 
 # Call
 
@@ -129,7 +130,25 @@ or
 == [%twain_32.dll %win.ini %twain.dll %winhlp32.exe %system.ini %regedit.exe %explorer.exe %notepa...
 ```
 
-### Directory junctions & symbolic links (Windows-specific)
+## Test if a directory or file exists
+Directory test:
+```
+>> dir-exists?: func [f [file!]] [exists? dirize f]
+>> dir-exists? %./
+== true
+>> mkdir %dir  dir-exists? %dir
+== true
+```
+File test:
+```
+>> file-exists?: func [f [file!]] [all [exists? f not exists? dirize f]]
+>> file-exists? %.
+== none
+>> write %file ""  file-exists? %file
+== true
+```
+
+# Directory junctions & symbolic links (Windows-specific)
 Some of the directories returned in a `read` call might not themselves be readable:
 ```
 >> read to-red-file "C:\Documents and Settings\"
@@ -185,4 +204,7 @@ make error! [
     stack: 37521760
 ]
 ```
+
+# UNC support
+Watch for https://github.com/red/red/issues/3422 progress
 
