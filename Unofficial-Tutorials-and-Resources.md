@@ -7,7 +7,9 @@ External links appear in quotes.
 
 * ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
 
-* ["Red help, tutorials and examples"](http://helpin.red/)
+* ["Helpin'Red"](http://helpin.red/)
+
+* ["Helpin'Red - Do češtiny přeložil Tovim"](http://helpin.red/cs/index.html)
 
 * ["Learn Red in Y minutes"](https://learnxinyminutes.com/docs/red/)
 
