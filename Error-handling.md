@@ -101,3 +101,7 @@ Even wrapper on `cause-error 'user 'message [...]` is too limited:
 
 ## R3
 
+# References
+
+http://helpin.red/Errorhandling.html
+http://www.red-by-example.org/index.html#cat-e01
