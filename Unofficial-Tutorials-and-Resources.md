@@ -21,7 +21,7 @@ External links appear in quotes.
 
 * ["Arnold's Course"](http://arnoldvanhofwegen.com/blog/nieuwe-red-release-beginnerscursus-programmeren/)
 
-* ["Tutorial in Russian"](https://habr.com/post/351100/)
+* ["Краткое пособие по языку Red"](https://habr.com/post/351100/)
 
 * ["GUI Overview"](https://doc.red-lang.org/en/gui.html)
 
