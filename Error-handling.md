@@ -15,9 +15,15 @@ See `system/catalog/errors` for standard error definitions
 
 Making errors with `make error!` ...
 
+To dispatch an error you have to `do` it:
+
+```Red
+do make error! "This is an error"
+```
+
 ## `cause-error`
 
-`Cause-error` is a wrapper for `make error!`
+`Cause-error` is a wrapper for `do make error!`
 
 ```Red
 cause-error <err-type> <err-id> <args>
