@@ -18,6 +18,7 @@
 - [[http://redprogramming.com/Home.html][Red programming by Nick Antonaccio]]
 - [[http://helpin.red/][Helpin' Red by Ungaretti]]
 - [[http://www.red-by-example.org/][Red by example by Arie van Wingerden and Mike Parr]]
+- [[https://crypticwyrm.neocities.org/learningred/][Learning Red by @crypticwyrm]]
 
 ** Books
 - [[https://www.amazon.com/dp/1789130700][Learn Red - Fundamentals of Red (Packt Publishing) by Ivo Balbaert]]
