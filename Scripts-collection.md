@@ -58,6 +58,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [coz](https://github.com/abdllhygt/coz) - Türkçe sözdizimli programlama dili
 
 		tags: 
+	* [red-zenity](https://github.com/abdllhygt/red-zenity) - Cross-platform dialog boxes for Red language
+
+		tags:
 	* [salcha](https://github.com/abdllhygt/salcha) - Red IDE
 
 		tags: 
