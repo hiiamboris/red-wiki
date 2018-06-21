@@ -1,4 +1,4 @@
-To compile a script that uses the input or ask functions, you will need:
+To compile a script that uses the `input` or `ask` functions, you will need:
 
 * Red sources
 
