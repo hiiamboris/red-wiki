@@ -9,4 +9,4 @@ External links appear in quotes.
 
 * ["Official Documentation Page"](https://www.red-lang.org/p/documentation.html)
 
-* [Compiling with console functions](https://github.com/red/red/wiki/Compiling-with-console-functions)
+* [Compiling with `ask` or `input`](https://github.com/red/red/wiki/Compiling-with-console-functions)
