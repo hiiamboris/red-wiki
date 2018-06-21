@@ -585,7 +585,13 @@ Words always have a context (this might change when module support is added). In
 
 # How to compile `ask`?
 
-Add `#include %environment/console/CLI/input.red` to your source file and compile in release mode (`-r` option).
+To compile the script that uses input, or "ask", you need:
+
+   * Red sources
+   * #include %environment/console/CLI/input.red
+   * compile with -r flag
+
+To make print work after compilation on Windows you need the latest build.
 
 # Why does `unset!` exist?
 
