@@ -585,7 +585,7 @@ Words always have a context (this might change when module support is added). In
 
 # How to compile `ask`?
 
-Add `#include %environment/console/input.red` to your source file and compile in release mode (`-r` option).
+Add `#include %environment/console/CLI/input.red` to your source file and compile in release mode (`-r` option).
 
 # Why does `unset!` exist?
 
