@@ -3,9 +3,10 @@ To compile a script that uses the `input` or `ask` functions, you will need:
 * Red sources
 
 * Include the following line at the beginning of your script: 
+
 `#include %environment/console/CLI/input.red`
 
-* compile with -r flag
+* Compile in release mode using the -r flag
 
 Examples:
 
