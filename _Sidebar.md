@@ -15,6 +15,8 @@
 
 ### [Unofficial Tutorials and Resources](https://github.com/red/red/wiki/Unofficial-Tutorials-and-Resources)
 
+### [Non-English Resources](https://github.com/red/red/wiki/Non-English-Resources)
+
 ### [GUI Programming](https://github.com/red/red/wiki/GUI-Programming)
 
 ### [Coming from REBOL?](https://github.com/red/red/wiki/Coming-from-REBOL)
