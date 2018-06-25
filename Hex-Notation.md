@@ -12,3 +12,12 @@ It's a nice, and very quiet syntax, but that subtlety has pros and cons. It's ye
 
 # Binary!
 
+# Syntax is temporary
+
+> The current hex literal format has always been considered temporary, to cover short-term needs. IIRC, we have proposed a final literal hex format somewhere in one ticket, after many discussions (using 0#prefix).
+
+There's a ticket with the format discussion: https://github.com/red/red/issues/1079
+
+And a trello card on implementing it: https://trello.com/c/mI0MnhvD/151-find-a-better-literal-form-for-hexadecimals-see-1079
+
+Source: [June 23, 2018 6:56 PM](https://gitter.im/red/red?at=5b2e6d917da8cd7c8c679bae)
