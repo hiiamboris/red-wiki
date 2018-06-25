@@ -601,6 +601,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 * hiiamboris - 
+	* [a+v.red](https://gitlab.com/hiiamboris/red-junk/tree/master/a+v) - `composite` func overdose, with purpose: to automatically hook an external audio track for any video file played
+
+		tags: 
 	* [arity.red](https://gist.github.com/hiiamboris/5f85edba139fc88a5eb0ee9b7b30bc6b) - get arity of any word or path
 
 		tags: 
@@ -619,15 +622,18 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [dot-chaining.red](https://gist.github.com/hiiamboris/367b517bd3fead4a50a861dc37da97df) - chain expressions with a dot to make them more readable!
 
 		tags: 
-	* [glob.red](https://gist.github.com/hiiamboris/605a4ab6831a247ac987789f4d578ef1) - list files recursively  with a pattern
+	* [glob.red](https://gitlab.com/hiiamboris/red-junk/tree/master/glob) - list files recursively  with a pattern
 
 		tags: 
-	* [piping.red](https://gist.github.com/hiiamboris/5562870578207b120032700ca3566f3f) - 
+	* [piping.red](https://gist.github.com/hiiamboris/5562870578207b120032700ca3566f3f) - `func . func . func` piping dialect
 
 		tags: 
 	* [red-pure-fun](https://github.com/hiiamboris/red-pure-fun) - Purely functional DSL for Red
 
-		tags: 
+		tags:
+	* [retris](https://gitlab.com/hiiamboris/retris) - RED-lang Tetris game Demo
+
+		tags:
 * honix - 
 	* [circle-done.red](https://gist.github.com/honix/76a9cffc1b7bf5804ed9d854e33bca55) - 
 
