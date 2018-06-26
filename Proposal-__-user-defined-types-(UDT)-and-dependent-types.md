@@ -116,3 +116,7 @@ Here, `sum` function depends on the same `length`es of the vectors.
 
 In case of `sum vect1 vect2` it will pass: `length` of the `vect1` and the `vect2` are the same (point 1 and 2), type of the return value is the same as in spec (`my-vector!`) (point 4a), `length` of the return value is the same as in the spec (point 4b).  
 In case of `sum vect1 vect3` it won't pass: `length` are not the same (point 2)
+
+## Implementations:
+
+- [by Nędza Darek](https://github.com/nedzadarek/red_dependent_types_proposal)
