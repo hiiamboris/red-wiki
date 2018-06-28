@@ -43,6 +43,11 @@ this will compile the Red file that is on your screen and execute it
 
 [Makeshift IDE for RED Language development](https://ungaretti.github.io/)
 
+### [Editplus](https://editplus.com)
+Download syntax coloring, auto-complete and cliptext files from this [page](https://editplus.com/others.html) by searching for "Red programming language" or directly from [here](https://editplus.com/dn.php?n=red.zip).
+
+Extract and copy all files to `%APPDATA%\Editplus` then open `Tools / Preferences / Settings & Syntax` add Red to file types, enter `red;reds` to file extension, select syntax (.stx) and auto-complete (.acp) files, configure colors then apply.
+
 ## Red Native
 
 Editors written in Red itself
