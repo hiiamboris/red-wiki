@@ -1007,6 +1007,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 * luce80 - 
+	* [add-script.red](https://gist.github.com/luce80/e7228b556b52cb093364ee1992018317) - Help update red scripts collection list
+
+		tags: 
 	* [dates-calcs.red](https://gist.github.com/luce80/96d48297f2307a713c918c68bf046520) - Some useful functions for calculations of dates
 
 		tags: 
