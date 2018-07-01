@@ -927,6 +927,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [Bootstrap.Code.Generation.red](https://gist.github.com/lepinekong/31223dda30fd28fc61c686f7780c6962) - 
 
 		tags: 
+	* [codegen.red](https://github.com/lepinekong/codegen.red) - Code Generation http://codegen.red
+
+		tags: 
 	* [codeops](https://github.com/lepinekong/codeops) - CodeOps is the counterpart of DevOps focusing on the upstream instead of the downstream of software development lifecycle.
 
 		tags: 
