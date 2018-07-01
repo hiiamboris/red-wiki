@@ -24,7 +24,7 @@ system/reactivity/debug?: on
 
 Use the commandline switch `-d` to get a debug build.
 
-See an example of [debugging the red console itself](https://github.com/red/red/wiki/How-to-Debug:-A-use-case-by-@DocKimbel)
+See an example of [debugging the red console itself](https://github.com/red/red/wiki/How-to-Debug-__-A-use-case-by-DocKimbel)
 
 **tl;dr** :
 Use 
