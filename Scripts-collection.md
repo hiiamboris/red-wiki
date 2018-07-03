@@ -1179,6 +1179,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 * nedzadarek - 
+	* [cached-function.red](https://gist.github.com/nedzadarek/4ce55ee8efc9ab5bfddecca764bf386d) - Cached functions with "series in the function" feature.
+
+		tags: 
 	* [collect-into-map.red](https://gist.github.com/nedzadarek/abd0169e21f400e292c7e178789c7e14) - 
 
 		tags: 
