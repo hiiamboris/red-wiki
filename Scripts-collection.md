@@ -343,7 +343,7 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 * giesse - 
-	* [profile-gab.red](https://gist.github.com/giesse/d7e6884273f9ba6fe68c2f5932a27bdd) - 
+	* [profile-gab.red](https://gist.github.com/giesse/1232d7f71a15a3a8417ec6f091398811) - profile function for Red (two variants)
 
 		tags: 
 * greggirwin - 
