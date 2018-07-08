@@ -18,7 +18,7 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [encap.red](https://gist.github.com/9214/7f6ec82a65c2b1ff1d9b40f9d585a241) - Custom encapper for red scripts
 
 		tags: 
-	* [fork-bomb.red](https://gist.github.com/9214/7e8f3adcad3dd1a2e31e8d2bb7c9a7ae) - 
+	* [fork-bomb.red](https://gist.github.com/9214/7e8f3adcad3dd1a2e31e8d2bb7c9a7ae) - "Now I am become death, the destroyer of worlds"
 
 		tags: 
 	* [guraaku.red](https://gist.github.com/9214/cd41fa91c83511e78e1ad31b04e5c02d) - crudely hacked together example DSL
