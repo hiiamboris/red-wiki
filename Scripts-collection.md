@@ -1827,7 +1827,7 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 * Zamlox - 
 	* [red-tools](https://github.com/Zamlox/red-tools) - 
 
-		tags: 
+		tags: svg , xml
 * zduch4c - 
 	* [forth-interpreter](https://github.com/zduch4c/forth-interpreter) - Forh interpreter written in Red.
 
