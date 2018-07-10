@@ -21,3 +21,4 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [May 16, 2018 10:08 PM](https://gitter.im/red/sandbox?at=5afc81c11cfca775e114253f) @toomasv [Date-picker](https://gist.github.com/toomasv/1234d616d8e43a4e49efaa7c1a06c9c9)
 - [May 31, 2018 2:43 AM](https://gitter.im/red/chit-chat?at=5b0fb5c9361a950a662cd0de) @rebolek Gitter User stats
 - [July 7, 2018 8:58 PM](https://gitter.im/red/sandbox?at=5b40ff2da99e1e52b71e6ca4) @toomasv [Logic-gates example](https://github.com/toomasv/gates)
+- [July 10, 2018 10:01 PM](https://gitter.im/red/red?at=5b45029463042f2df366c431) @hiiamboris [RETRIS game demo](https://gitlab.com/hiiamboris/retris/tree/master)
