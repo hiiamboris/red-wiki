@@ -99,6 +99,14 @@ find-Nth_Par-1: function [
 select-nth: func [s v n] [
 	all [parse s compose/only [(n) thru quote (:v) s: to end] s/1]
 ]
+; until GC is there:
+select-nth: func [s v n] [
+	all [parse s compose/only/into [(n) thru quote (:v) s: to end] clear [] s/1]
+]
+; GC-independent, and also a bit faster:
+select-nth: func [s v n] [
+	parse s head change/only skip [n thru quote v s: (return s/1)] 3 :v
+]
 
 find-Nth_Par-2: function [
 	"Returns the series at occurrence N of value, or none."
