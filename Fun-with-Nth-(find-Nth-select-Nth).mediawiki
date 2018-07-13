@@ -107,6 +107,24 @@ select-nth: func [s v n] [
 select-nth: func [s v n] [
 	parse s head change/only skip [n thru quote v s: (return s/1)] 3 :v
 ]
+;
+select-nth: func [
+	{Finds nth value in the series and returns the value or series after it, or none.} 
+	series [series! port!] 
+	'value [any-type!]
+	n [integer!]]
+][
+	all [n > 0 parse series [n thru value series: to end] series/1]
+]
+; or with loop
+select-nth: func [
+	{Finds nth value in the series and returns the value or series after it, or none.} 
+	series [series! port!] 
+	value [any-type!]
+	n [integer!]]
+][
+	pick any [loop n [series: find/tail series value] []] 1
+]
 
 find-Nth_Par-2: function [
 	"Returns the series at occurrence N of value, or none."
