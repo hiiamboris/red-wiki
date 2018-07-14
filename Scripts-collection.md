@@ -346,6 +346,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [profile-gab.red](https://gist.github.com/giesse/1232d7f71a15a3a8417ec6f091398811) - profile function for Red (two variants)
 
 		tags: 
+	* [red-topaz-parse](https://github.com/giesse/red-topaz-parse) - Port of Topaz' PARSE function to Red
+
+		tags: 
 * greggirwin - 
 	* [*-while.red](https://gist.github.com/greggirwin/9fc085a8b6b2ca38f756e9285c389674) - Various &lt;action&gt;-while example funcs for Red.
 
