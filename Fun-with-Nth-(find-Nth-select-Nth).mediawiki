@@ -112,7 +112,7 @@ select-nth: func [
 	{Finds nth value in the series and returns the value or series after it, or none.} 
 	series [series! port!] 
 	'value [any-type!]
-	n [integer!]]
+	n [integer!]
 ][
 	all [n > 0 parse series [n thru value series: to end] series/1]
 ]
@@ -121,7 +121,7 @@ select-nth: func [
 	{Finds nth value in the series and returns the value or series after it, or none.} 
 	series [series! port!] 
 	value [any-type!]
-	n [integer!]]
+	n [integer!]
 ][
 	pick any [loop n [series: find/tail series value] []] 1
 ]
