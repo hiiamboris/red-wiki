@@ -1,7 +1,7 @@
 Authors: Pierre (pierrechtux), Jocko
 
 So you have been hearing of Rebol for a long time, your neighbour keeps on telling you it's a Rebolutionary language.  Maybe you are already a happy Reboler?
-You've also heard from Red, a language with the same syntax as Rebol, designed right from the start in an open manner (free-libre, open-souce), which is progressing at a lightning pace now (this is written at the end of summer 2013 from Earth's Northern Hemisphere).
+You've also heard from Red, a language with the same syntax as Rebol, designed right from the start in an open manner (free-libre, open-source), which is progressing at a lightning pace now (this is written at the end of summer 2013 from Earth's Northern Hemisphere).
 So you're all excited, you want to bite the bullet and test Red.
 
 But, how to do it?  Where to start?
