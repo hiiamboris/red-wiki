@@ -7,6 +7,8 @@ External links appear in quotes.
 
 * [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
 
+* [Using `call`](https://github.com/red/red/wiki/Reference-Call)
+
 * ["Red/System Documentation"](http://static.red-lang.org/red-system-specs-light.html)
 
 * ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)
