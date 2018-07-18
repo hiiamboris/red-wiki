@@ -5,10 +5,6 @@ External links appear in quotes.
 
 * [VID Reference Documentation](https://github.com/red/red/wiki/VID-Reference-Documentation)
 
-* [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
-
-* [Using `call`](https://github.com/red/red/wiki/Reference-Call)
-
 * ["Red/System Documentation"](http://static.red-lang.org/red-system-specs-light.html)
 
 * ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)
@@ -19,5 +15,12 @@ External links appear in quotes.
 
 * [Red Enhancement Proposals](https://github.com/red/red/wiki/REP---Red-Enhancement-Proposals)
 
-* ["Interview with Nenad Rakocevic about Red"](https://notamonadtutorial.com/interview-with-nenad-rakocevic-about-red-a-rebol-inspired-programming-language-681133e3fd1c)
+* [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
+
+* [Using `call`](https://github.com/red/red/wiki/Reference-Call)
+
+* [The Handling of NaNs, INFs, and signed zeros](https://github.com/red/red/wiki/%5BDOC%5D-The-Handling-of-NaNs,-INFs-and-signed-zeros.)
+
+* [Red Enhancement Proposals](https://github.com/red/red/wiki/REP---Red-Enhancement-Proposals)
+
 
