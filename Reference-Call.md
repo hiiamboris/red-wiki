@@ -1,4 +1,4 @@
-# Reference - CALL function
+# [DOC] Reference - CALL function
 
 The CALL function enables RED programs to execute and communicate with the system's shell interface.
 
