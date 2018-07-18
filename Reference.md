@@ -13,8 +13,6 @@ External links appear in quotes.
 
 * [Contributors Guidelines](https://github.com/red/red/wiki/Contributor-Guidelines)
 
-* [Red Enhancement Proposals](https://github.com/red/red/wiki/REP---Red-Enhancement-Proposals)
-
 * [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
 
 * [Using `call`](https://github.com/red/red/wiki/Reference-Call)
