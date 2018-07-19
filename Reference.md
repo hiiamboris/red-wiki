@@ -11,7 +11,7 @@ External links appear in quotes.
 
 * ["Coding Style Guide"](https://doc.red-lang.org/v/v0.6.0/Coding-Style-Guide.html)
 
-* [Contributors Guidelines](https://github.com/red/red/wiki/Contributor-Guidelines)
+* [Contributors Guidelines](https://github.com/red/red/wiki/%5BDOC%5D-Contributor-Guidelines)
 
 * [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
 
