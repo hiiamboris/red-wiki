@@ -1,4 +1,4 @@
-* ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)
+* ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/%5Bzh-hans%5D-Red-System-Language-Specification-Chinese-Traslation)
 
 * ["言語処理100本ノック with Red言語"](https://github.com/koba-yu/NLP100_Red)
 
