@@ -6,6 +6,6 @@ External links appear in quotes.
 
 * ["Community Code Library"](https://github.com/red/code)
 
-* [Projects Showcase](https://github.com/red/red/wiki/Projects-showcase-%28links-to-remember%29)
+* [Projects Showcase](https://github.com/red/red/wiki/%5BLINKS%5D-Projects-showcase-(links-to-remember)
 
 * [A collection of links to many scripts](https://github.com/red/red/wiki/Scripts%20collection)
