@@ -7,7 +7,7 @@ External links appear in quotes.
 
 * ["Red/System Documentation"](http://static.red-lang.org/red-system-specs-light.html)
 
-* ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/Red-System-Language-Specification-Chinese-Traslation)
+* ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/%5Bzh-hans%5D-Red-System-Language-Specification-Chinese-Traslation)
 
 * ["Coding Style Guide"](https://github.com/red/red/wiki/%5BDOC%5D-Coding-Style-Guide)
 
