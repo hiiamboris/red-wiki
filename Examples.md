@@ -8,4 +8,4 @@ External links appear in quotes.
 
 * [Projects Showcase](https://github.com/red/red/wiki/%5BLINKS%5D-Projects-showcase-(links-to-remember))
 
-* [A collection of links to many scripts](https://github.com/red/red/wiki/Scripts%20collection)
+* [A collection of links to many scripts](https://github.com/red/red/wiki/%5BLINKS%5D-Scripts-collection)
