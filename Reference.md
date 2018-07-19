@@ -3,7 +3,7 @@ External links appear in quotes.
 
 * ["Red Language Documentation"](http://www.red-lang.org/p/documentation.html)
 
-* [VID Reference Documentation](https://github.com/red/red/wiki/VID-Reference-Documentation)
+* [VID Reference Documentation](https://github.com/red/red/wiki/%5BDOC%5D-VID-Reference-Documentation)
 
 * ["Red/System Documentation"](http://static.red-lang.org/red-system-specs-light.html)
 
