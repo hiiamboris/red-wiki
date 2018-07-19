@@ -1,7 +1,7 @@
 External links appear in quotes.
 ***
 
-* [Guru Meditations](https://github.com/red/red/wiki/Guru-Meditations)
+* [Guru Meditations](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditations)
 
 * [to vs. make](https://github.com/red/red/wiki/%60to%60-vs-%60make%60)
 
