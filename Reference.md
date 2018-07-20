@@ -9,7 +9,7 @@ External links appear in quotes.
 
 * ["Red/System - 语言规范-中文翻译"](https://github.com/red/red/wiki/%5Bzh-hans%5D-Red-System-Language-Specification-Chinese-Traslation)
 
-* ["Coding Style Guide"](https://github.com/red/red/wiki/%5BDOC%5D-Coding-Style-Guide)
+* [Coding Style Guide](https://github.com/red/red/wiki/%5BDOC%5D-Coding-Style-Guide)
 
 * [Contributors Guidelines](https://github.com/red/red/wiki/%5BDOC%5D-Contributor-Guidelines)
 
