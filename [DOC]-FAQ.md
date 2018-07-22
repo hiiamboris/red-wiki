@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Red FAQ">
+  <meta name="description" content="Red Wiki FAQ">
   <meta name="keywords" content="HTML,CSS,XML,JavaScript">
 </head>
 
