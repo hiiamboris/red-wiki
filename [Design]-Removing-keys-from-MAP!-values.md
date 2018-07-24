@@ -6,7 +6,7 @@ In a more general sense, `map!` is the only case in Red where setting something 
 
 ## Why does it currently work this way?
 
-The reason behind using `none` to remove a key is that `map!` is not a series, and so you can't just use `remove`, and it's not a context (besides, keys are not limited to words) so you can't just use `unset`.
+The reason behind using `none` to remove a key is that `map!` is not a series, and so you can't just use `remove`, and it's not a context (besides, keys are not limited to words) so you can't just use `unset`. It is also a common idiom for associative arrays in other languages.
 
 # Possible solutions
 
