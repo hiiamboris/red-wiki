@@ -2,7 +2,7 @@
 
 Currently, you can remove a key from a `map!` by setting it to `none`. Although this works very nicely, it has a significant drawback: if you're trying, for example, to use `map!` to represent an object imported from JSON data, then you can't distinguish between a key being there but set to `null` and a key not being there at all. (Since the most obvious mapping for JSON `null` is `none` in Red.)
 
-In a more general sense, `map!` is the only case in Red where setting something to `none` "removes" it, and it seems arbitrary.
+In a more general sense, `map!` is the only case in Red where setting something to `none` "removes" it, and it seems arbitrary. With blocks, or maps, you can use `find` to determine if a key exists, but there is no way to have a key associated with a `none!` value in maps currently, which makes it quite different.
 
 ## Why does it currently work this way?
 
