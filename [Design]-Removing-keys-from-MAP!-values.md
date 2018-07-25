@@ -39,6 +39,10 @@ The downside is that this is a special case and somewhat pollutes the meaning of
 
 Instead of the current `map/key: none` to remove `key` from `map`, use something like `map/key: make unset! none`. It makes more sense logically, given the meaning of `unset!`, however it's annoying to ever have to explicitly deal with `unset!` values. A mezz helper function could be added though, and it could support other cases as well (including perhaps `bitset!`, so we can get rid of the `remove/part` special case altogether).
 
+This is a bit inconsistent with words, which require `set/any` to accept `unset!`.
+
 ## Allow `unset` (the `native!` function) on `path!` values and handle all cases accordingly
 
 A similar but perhaps cleaner alternative to the above would be to allow `unset 'map/key` to remove `key` from `map`. It gets a little ugly with `string!` keys etc, you'd have to use `unset 'map/("key")`. It would be perhaps more familiar to people coming from Javascript for eg. (`delete object.key` becomes `unset 'object/key`).
+
+There is a precedent for this with `get` and `set`, which both allow a map path. It does start feeling a little strange, but as an underlying mechanism, with a wrapper mezz, it might be the most consistent. Unless `remove/part` to match bitset behavior is deemed better. `Unset` is shorter. And also doesn't preclude using `unset!` as a value to remove a key.
