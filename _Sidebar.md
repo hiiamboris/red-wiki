@@ -2,7 +2,6 @@
 
 ***
 
-
 ### [The Basics](https://github.com/red/red/wiki/The-Basics)
 
 ### [Discussion and Help](https://github.com/red/red/wiki/Discussion-and-Help)

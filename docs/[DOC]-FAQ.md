@@ -1,9 +1,3 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Red Language FAQ">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-</head>
-
 (NB: Feel free to append new questions at the bottom.)
 
 # Technical

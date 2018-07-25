@@ -8,8 +8,6 @@
 
 * [Red语言和Red/System之间的交互](https://github.com/red/red/wiki/%5Bzh-hans%5D-Red.Hack.Interface.With.Red.System)
 
-* ["潮汐猎人的博客，Red的初级学习教程"](http://www.bitbegin.com/)
-
 * ["Helpin'Red - Do češtiny přeložil Tovim"](http://helpin.red/cs/index.html)
 
 * ["Краткое пособие по языку Red"](https://habr.com/post/351100/)
