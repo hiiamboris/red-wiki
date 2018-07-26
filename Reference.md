@@ -13,7 +13,7 @@ External links appear in quotes.
 
 * [Contributors Guidelines](https://github.com/red/red/wiki/%5BDOC%5D-Contributor-Guidelines)
 
-* [Conversions to string](https://github.com/red/red/wiki/Conversions-to-string)
+* [Conversions to string](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Conversions-to-string)
 
 * [Using `call`](https://github.com/red/red/wiki/Reference-Call)
 
