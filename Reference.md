@@ -21,4 +21,12 @@ External links appear in quotes.
 
 * [Red Enhancement Proposals](https://github.com/red/red/wiki/%5BDOC%5D-REP---Red-Enhancement-Proposals)
 
+***
 
+## Using Red on Linux with Wine
+
+Since there is no GUI support yet for the Linux version of Red, you might want to run the Windows version of Red with Wine. It works remarkably well without any extra configuration, but DRAW commands are a bit slow out of the box.
+
+You can achieve a x10 speed increase by installing `gdiplus` with ["Winetricks"](https://wiki.winehq.org/Winetricks), which is a simple bash script that can be installed through the package manager of most Linux distributions, or just downloaded from its website.
+
+You can then install `gdiplus` by opening a terminal and entering: `winetricks gdiplus`
