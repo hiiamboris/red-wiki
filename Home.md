@@ -41,7 +41,7 @@ Our official documentation for Red and Red/System.<br> You can also read our <a 
 </td>
 
 <td valign="top">
-Red has a fast growing, diverse, and friendly global community.<br> Have a look at our <a href="https://github.com/gltewalt/red/wiki/%5BNOTES%5D-Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://github.com/red/red/wiki/Community-Communication-Values">mailing list</a>.
+Red has a fast growing, diverse, and friendly global community.<br> Have a look at our <a href="https://github.com/gltewalt/red/wiki/%5BNOTES%5D-Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://groups.google.com/forum/#!forum/red-lang">mailing list</a>.
 </td>
     
 <td valign="top">
