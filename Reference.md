@@ -15,7 +15,7 @@ External links appear in quotes.
 
 * [Conversions to string](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Conversions-to-string)
 
-* [Using `call`](https://github.com/red/red/wiki/Reference-Call)
+* [Using `call`](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Reference-Call)
 
 * [The Handling of NaNs, INFs, and signed zeros](https://github.com/red/red/wiki/%5BDOC%5D-The-Handling-of-NaNs,-INFs-and-signed-zeros.)
 
