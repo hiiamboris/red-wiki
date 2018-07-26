@@ -27,7 +27,7 @@ External links appear in quotes.
 
 * ["Boleslav Březovský Blog"](http://red.qyz.cz/)
 
-* [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/Install-Red-in-Cloud9-IDE)
+* [Install Red in Cloud9 IDE](https://github.com/red/red/wiki/%5BDOC%5D-Install-Red-in-Cloud9-IDE)
 
 * ["Red Docker"](https://github.com/eranws/red-docker) [Debian Docker](https://github.com/dander/docker-red)
 
