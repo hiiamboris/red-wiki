@@ -24,5 +24,6 @@
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
 ***
+*Editors*
 ### [VSCode Plugin](https://github.com/red/red/wiki/Visual-Studio-Code-Plugin)
 
