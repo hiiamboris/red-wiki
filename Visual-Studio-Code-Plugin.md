@@ -14,3 +14,9 @@ exec wine /replace/with/path/to/red-063.exe $1 "`winepath --windows \"$2\"`"
 ```
 
 Save this as `winered.sh`, edit the script to point to `red-063.exe` on your computer, give it executable permissions with `chmod +x` and then in your user settings in Visual Studio Code, set `red.redPath` to `winered.sh`.
+
+## Speed up DRAW commands through Wine
+
+You can achieve a x10 speed increase by installing `gdiplus` with ["Winetricks"](https://wiki.winehq.org/Winetricks), which is a simple bash script that can be installed through the package manager of most Linux distributions, or just downloaded from its website.
+
+You can then install `gdiplus` by opening a terminal and entering: `winetricks gdiplus`
