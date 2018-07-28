@@ -23,5 +23,6 @@
 ### [Deep Dives](https://github.com/red/red/wiki/Deep-Dives)
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
-
+***
+### [VSCode Plugin](https://github.com/red/red/wiki/Visual-Studio-Code-Plugin)
 
