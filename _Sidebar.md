@@ -16,7 +16,7 @@
 
 ### [Non-English Resources](https://github.com/red/red/wiki/Non-English-Resources)
 
-### [GUI Programming](https://github.com/red/wiki/%5BLINKS%5D-GUI-Programming)
+### [GUI Programming](https://github.com/red/red/wiki/%5BLINKS%5D-GUI-Programming)
 
 ### [Coming from REBOL?](https://github.com/red/red/wiki/Coming-from-REBOL)
 
