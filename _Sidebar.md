@@ -20,7 +20,7 @@
 
 ### [Coming from REBOL?](https://github.com/red/red/wiki/%5BLINKS%5D-Coming-from-REBOL)
 
-### [Deep Dives](https://github.com/red/red/wiki/Deep-Dives)
+### [Deep Dives](https://github.com/red/red/wiki/%5BLINKS%5D-Deep-Dives)
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
 ***
