@@ -18,7 +18,7 @@
 
 ### [GUI Programming](https://github.com/red/red/wiki/%5BLINKS%5D-GUI-Programming)
 
-### [Coming from REBOL?](https://github.com/red/red/wiki/Coming-from-REBOL)
+### [Coming from REBOL?](https://github.com/red/red/wiki/%5BLINKS%5D-Coming-from-REBOL)
 
 ### [Deep Dives](https://github.com/red/red/wiki/Deep-Dives)
 
