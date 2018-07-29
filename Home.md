@@ -26,7 +26,7 @@
   <tr align="middle">
     <td><a href="https://www.red-lang.org/p/getting-started.html">Getting Started</a></td>
     <td><a href="https://www.red-lang.org/p/documentation.html">Documentation</a></td>
-    <td><a href="https://github.com/gltewalt/red/wiki/%5BDOC%5D-Gitter-Room-Index">Community</a></td>
+    <td><a href="https://github.com/red/red/wiki/%5BDOC%5D-Gitter-Room-Index">Community</a></td>
     <td><a href="https://www.red-lang.org/p/about.html">About Red</a></td>
   </tr>
   
@@ -41,7 +41,7 @@ Our official documentation for Red and Red/System.<br> You can also read our <a 
 </td>
 
 <td valign="top">
-Red has a fast growing, diverse, and friendly global community.<br> Have a look at our <a href="https://github.com/gltewalt/red/wiki/%5BNOTES%5D-Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://groups.google.com/forum/#!forum/red-lang">mailing list</a>.
+Red has a fast growing, diverse, and friendly global community.<br> Have a look at our <a href="https://github.com/red/red/wiki/%5BNOTES%5D-Community-Communication-Values">communication values</a>, and then join the fun on Gitter chat or our <a href="https://groups.google.com/forum/#!forum/red-lang">mailing list</a>.
 </td>
     
 <td valign="top">
