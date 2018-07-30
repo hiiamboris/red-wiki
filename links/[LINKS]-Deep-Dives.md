@@ -7,7 +7,7 @@ External links appear in quotes.
 
 * [Design Deliberations](https://github.com/red/red/wiki/%5BNOTES%5D-Design-Deliberations)
 
-* [Closures](https://github.com/red/red/wiki/Closures)
+* [Closures](https://github.com/red/red/wiki/%5BNOTES%5D-Closures)
 
 * [How to Debug: A Use Case, by @DocKimbel](https://github.com/red/red/wiki/How-to-Debug-__-A-use-case-by-DocKimbel)
 
