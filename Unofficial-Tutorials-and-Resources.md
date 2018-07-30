@@ -3,7 +3,8 @@ External links appear in quotes.
 
 ### Red
 ***
-* [List of learning resources](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources)
+[List of learning resources](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources)
+***
 
 * ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
 
