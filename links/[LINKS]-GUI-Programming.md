@@ -26,3 +26,5 @@ External links appear in quotes.
 * [redide4mac by vulnz](https://github.com/vulnz/redide4mac)
 * [Red Forms Generator by PlanetSizeCPU](https://github.com/planetsizecpu/forms/blob/master/forms_dynamic.red)
 * [salcha by abdllhygt](https://github.com/abdllhygt/salcha)
+* [Red IDE article by Mike Parr](http://redlanguageblog.blogspot.com)
+* [REBOL/RED Editor 2.0 by Francois Jouen(LDCI)](https://github.com/ldci/RedEdit/blob/master/editor.2.0.1.r)
