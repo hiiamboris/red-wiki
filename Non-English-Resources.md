@@ -10,4 +10,7 @@
 
 * ["Helpin'Red - Do češtiny přeložil Tovim"](http://helpin.red/cs/index.html)
 
+* ["Helpin'Red - Em português"](http://helpin.red/pt/index.html)
+
 * ["Краткое пособие по языку Red"](https://habr.com/post/351100/)
+
