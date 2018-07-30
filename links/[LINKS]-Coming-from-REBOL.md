@@ -1,7 +1,7 @@
 External links appear in quotes.
 ***
 
-* [Differences between Red and Rebol](https://github.com/red/red/wiki/Differences-between-Red-and-Rebol)
+* [Differences between Red and Rebol](https://github.com/red/red/wiki/%5BDOC%5D-Differences-between-Red-and-Rebol)
 
 * ["Rebol Forum"](http://rebolforum.com/index.cgi?f=printtopic&topicnumber=48&archiveflag=new) 
 
