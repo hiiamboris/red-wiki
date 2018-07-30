@@ -14,9 +14,9 @@ External links appear in quotes.
 
 #### Additional information:
 
-* [View - Rich Text support](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Rich-Text-support)
+* [View - Rich Text support](https://github.com/red/red/wiki/%5BDOC%5D-Rich-Text-support)
 
-* [VID and View - Hints and tips](https://github.com/gltewalt/red/wiki/%5BDOC%5D-VID-and-View-(GUI)-hints-and-tips)
+* [VID and View - Hints and tips](https://github.com/red/red/wiki/%5BDOC%5D-VID-and-View-(GUI)-hints-and-tips)
 
 ***
 
