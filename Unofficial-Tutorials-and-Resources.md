@@ -40,6 +40,6 @@ External links appear in quotes.
 ### Blockchain
 ***
 
-* [Blockchain Resources](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Blockchain-resources)
+* [Blockchain Resources](https://github.com/red/red/wiki/%5BDOC%5D-Blockchain-resources)
 
-* [Intro to ICOs, Wallets, and CryptoCurrencies](https://github.com/gltewalt/red/wiki/%5BDOC%5D-Introduction-to-ICOs,-wallets-and-cryptocurrencies)
+* [Intro to ICOs, Wallets, and CryptoCurrencies](https://github.com/red/red/wiki/%5BDOC%5D-Introduction-to-ICOs,-wallets-and-cryptocurrencies)
