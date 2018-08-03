@@ -26,7 +26,8 @@ All contributions should adhere to the following coding standards
 3. Functions specifications that don't include the datatypes of the arguments and locals should be kept concise. The specification should be on same line as function name, unless it doesn't fit on a line of around 90 characters. If the specification cannot fit on one line, the arguments and locals should be on different lines. If necessary put refinements on a separate line.
 4. Function specifications that include datatypes should follow a vertical layout.
 5. End-of-line comments are preferred over between line comments. They should be preceded with ";—-" starting at position 57.
-```
+
+```red
 
 short-spec: func [
     arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9
@@ -76,7 +77,8 @@ The following approach to writing tests should be used:
 8. For short tests both the test header and the assert should be written on a single line.
 9. With longer multi-line tests, the assert should be indented from the test header.
 10. The following indentation scheme should be used:
-```
+
+```red
 Red [ … ]
 #include %<path-to>/quick-test/quick-test.red
 
