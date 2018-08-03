@@ -41,13 +41,15 @@ compile with `-t Windows`
 # How can I make the compiler accept more dynamic code?
 
 Code like this runs fine in the interpreter, but won't compile:
-```
+
+```red
 direction: "south"
 set to-word direction 4
 probe south
 == 4
 ```
-```
+
+```red
 ** script error: undefined word south
 ```
 
