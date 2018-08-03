@@ -223,10 +223,11 @@ In the examples below, we are assuming a possible notation in which `~[...]` rep
 
 Now, besides all the examples in [#2](#2), we also have:
 
-``red
+```red
 red>> select ~["a" 10 "A" 20] "A"
 == 10
 ```
+
 The question remains whether the `/strict` refinement will override the bias of the collection:
 
 ```red
