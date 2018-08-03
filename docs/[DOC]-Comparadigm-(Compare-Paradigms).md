@@ -33,7 +33,8 @@ When adding new items for comparison, copy the template section and fill it in. 
 Find the Nth value in a series.
 
 ## Imperative
-```
+
+```red
 find-Nth_Imp: function [
 	"Returns the series at occurrence N of value, or none."
 	series [series!]
@@ -50,7 +51,8 @@ find-Nth_Imp: function [
 ```
 
 ## Functional
-```
+
+```red
 find-Nth_Rec: function [
 	"Returns the series at occurrence N of value, or none."
 	series [series!]
@@ -72,7 +74,7 @@ find-Nth_Rec: function [
 
 This is a clear and simple approach, but doesn't handle all cases correctly. e.g., if `value` is a lit-word or block.
 
-```
+```red
 ; This works under R2, but not Red
 find-Nth_Par-0: func [
 	"Returns the series at occurrence N of value or none."
@@ -106,7 +108,8 @@ find-Nth_Par-1: function [
 ```
 
 ## Examples
-```
+
+```red
 find-Nth "abcabcabc" #"a" 3
 find-Nth "abcabcabc" "bc" 2
 find-Nth [a b c a b c a b c] quote 'a 3    ; note that `quote` is needed here for find-Nth_Par-1
