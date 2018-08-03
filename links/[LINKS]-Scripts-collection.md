@@ -1562,6 +1562,11 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 ## T
+* tentamen - 
+	* [twitter-logo.red](https://github.com/tentamen/drawing/blob/master/twitter-logo.red) - Twitter Logo
+
+		tags: 
+
 * toomasv - 
 	* [3Dcube.red](https://gist.github.com/toomasv/800aaa6ba1a37526993b9f2fce52fd13) - Memory-stable 3D cube
 
