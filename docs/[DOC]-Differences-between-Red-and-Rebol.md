@@ -23,21 +23,22 @@ Red: `copy object!` rebinds functions to the new copy.
 
 Example:
 
-    >> o1: make object! [a: 42 m: does [a]]
-    >> o2: copy o1
-    >> o2/a: 99
+```red
+>> o1: make object! [a: 42 m: does [a]]
+>> o2: copy o1
+>> o2/a: 99
 
-    >> o1/m
-    == 42         ;; Both R3 and Red
+>> o1/m
+== 42         ;; Both R3 and Red
     
-    ;; R3 does not rebind:
-    >> o2/m       ;; R3
-    == 42         ;; R3
+;; R3 does not rebind:
+>> o2/m       ;; R3
+== 42         ;; R3
 
-    ;; Red rebinds:
-    red>> o2/m    ;; Red
-    == 99
-
+;; Red rebinds:
+red>> o2/m    ;; Red
+== 99
+```
 
 ## FLOAT! vs DECIMAL!
 
@@ -87,13 +88,14 @@ Red: You can use only ```self``` when binding a word or block to the context of 
 
 Under Rebol, using an invalid index selector in a path throws an error, under Red it returns `none`. This is normally very helpful, but be careful if you're using words mapped to indexes and forget to make them a `get-word!` in the path. Used in calculations, e.g. following a `-` op, it can lead to error messages that aren't obvious:
 
-```
+```red
 *** Script error: none! type is not allowed here
 *** Where: -
 ```
 
 R2/R3:
-```
+
+```rebol
 >> blk: [image img 100x100 300x300]
 == [image img 100x100 300x300]
 >> IDX_TL: 3
@@ -106,7 +108,8 @@ R2/R3:
 ```
 
 Red:
-```
+
+```red
 red>> blk: [image img 100x100 300x300]
 == [image img 100x100 300x300]
 red>> IDX_TL: 3
@@ -139,7 +142,7 @@ Please note that this is a temporary difference since Red's lexer in not in its 
 
 In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Red, it modifies:
 
-```
+```red
 >> s: "12345"
 == "12345"
 >> random s
@@ -153,13 +156,13 @@ In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Re
 The values that get special treatment by do are: [block! path! string! url! file! error!] Everything else is evaluated passively. This is by design, to eliminate variable arity.
 
 On R2 and R3
-```
+```rebol
 >> type? do func [][1]
 == integer!
 ```
 
 on Red
-```
+```red
 >> type? do func [][1]
 == function!
 ```
@@ -168,7 +171,7 @@ on Red
 
 `make` generally doesn't accept `none` in spec argument on Red and raise error, which is compatible with Rebol3 but is different from Rebol2:
 
-```
+```red
 make integer! none ; == 0
 make block!   none ; == []
 make file!    none ; == %""
@@ -178,7 +181,7 @@ make tag!     none ; == <>
 
 Above lines give error on Red. Similar issue happens with "" (empty string)
 
-```
+```red
 make integer! "" ; == 0 (R2)
 make path!    "" ; <empty path>
 ...
@@ -188,7 +191,7 @@ These works on Rebol2 but not on Red / Rebol3.
 
 Also notice below difference:
 
-```
+```red
 m: make hash! none
 length? m
 ```
