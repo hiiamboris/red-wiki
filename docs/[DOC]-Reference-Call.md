@@ -24,7 +24,7 @@ or compile the console-call example from the Red directory :
 Linux and MacOSX users run **console-call** from command line.  Windows users run **console-call.exe**.
 
 ## Getting help
-
+```red
 	red>> help call
 
 	USAGE:
@@ -47,7 +47,7 @@ Linux and MacOSX users run **console-call** from command line.  Windows users ru
 			out [string! block!] => Redirects stdout to out.
 		/error
 			err [string! block!] => Redirects stderr to err.
-
+```
 
 ## Call syntax
 
@@ -90,6 +90,7 @@ The CALL function can launch any GUI application :
 
 Cause CALL to wait for child process is completed. Return -1 if there is an execution error or child process exit code.
 
+```red
 	red>> call "cp source.red dest.red"
 	== 7227					; PID
 	red>> call/wait "cp source.red dest.red"
@@ -97,22 +98,23 @@ Cause CALL to wait for child process is completed. Return -1 if there is an exec
 	red>>
 
 /input, /output or /error refinements implicitly set the /wait refinement.
+```
 
 #### **/console**
 
 Cause the process' stdout and stderr to be printed to the console.
 
 With no **/wait** refinement, the process ID is shown first and RED returns to prompt before the command output is printed.
-
+```red
 	red>> call/console "ls"
 	== 7946
 	red>> boot.red     build         console-call      lexer.r       README.md  red.r      tests
 	bridges            call-example  console-call.bin  lexer.red     Red        run-all.r  usage.txt
 	BSD-3-License.txt  compiler.r    console-call.exe  pdcurses.dll  red.bin    runtime    utils
 	BSL-License.txt    console       docs              quick-test    red.exe    system     version.r
-
+```
 With **/wait** refinement, the CALL returned value is printed after the command output ended.
-
+```red
 	red>> call/console/wait "ls"
 	boot.red           build         console-call      lexer.r       README.md  red.r      tests
 	bridges            call-example  console-call.bin  lexer.red     Red        run-all.r  usage.txt
@@ -120,13 +122,13 @@ With **/wait** refinement, the CALL returned value is printed after the command 
 	BSL-License.txt    console       docs              quick-test    red.exe    system     version.r
 	== 0
 	red>>
-
+```
 #### **/input**
 
 A string or a block can be redirected as input to the launched process.
 
 String examples :
-
+```red
 	red>> call/input "cat" {This is a Red world^/}
 	== 0
 	red>> call/input/console "cat" {This is a Red world^/}
@@ -139,9 +141,9 @@ String examples :
 	yellow
 	== 0
 	red>>
-
+```
 Block examples :
-
+```red
 	red>> call/input/console "cat" [ "This" "is" "a" "Red" "world^/"  ]
 	This is a Red world
 	== 0
@@ -155,14 +157,14 @@ Block examples :
 	This is a Red world
 	== 0
 	red>>
-
+```
 
 #### **/output**
 
 Process output is redirected to a string or a block.
 
 If parameter is a string. CALL insert the redirected output before the beginning of this string :
-
+```red
 	red>> out: "" call/output {echo Welcome Red Language} out
 	== 0
 	red>> probe out
@@ -174,9 +176,10 @@ If parameter is a string. CALL insert the redirected output before the beginning
 	"Hello Red world^/Welcome Red Language^/"
 	== "Hello Red world^/Welcome Red Language^/"
 	red>>
+```
 
 If parameter is a block. CALL insert a new item containing redirected output as first item of this block.
-
+```red
 	red>> out: [] call/output {echo Welcome Red Language} out
 	== 0
 	red>> call/output {echo Hello Red world} out
@@ -185,9 +188,10 @@ If parameter is a block. CALL insert a new item containing redirected output as 
 	["Hello Red world^/" "Welcome Red Language^/"]
 	== ["Hello Red world^/" "Welcome Red Language^/"]
 	red>>
+```
 
 Windows example :
-
+```red
 	red>> data: "" call/output {findstr "Nenad" *.r} data
 	== 0
 	red>> print data
@@ -199,24 +203,25 @@ Windows example :
 	red.r:  Rights:  "Copyright (C) 2011-2012 Nenad Rakocevic, Andreas Bolka. All rights reserved."
 
 	red>>
+```
 
 When output is redirected, the /console refinement as no effect.
-
+```red
 	red>> out: "" call/output/console {echo Welcome Red Language} out
 	== 0
 	red>>
-
+```
 
 #### **/error**
 
 Same behavior as /output refinement. Parameter can be a string or a block.
-
+```red
 	red>> err: "" call/error "cp" err
 	== 1
 	red>> print err		;-- Language dependent message
 	cp: missing file arguments Try `cp --help' for more information.
 	red>>
-
+```
 #### **/shell**
 
 Unix and MacOSX only.
@@ -224,7 +229,7 @@ Unix and MacOSX only.
 RED identify the user shell and uses it to launch command with a "-c" option.
 
 This refinement allows the use of shell's redirections symbols : "<" stdin, ">" stdout and "|" pipe.
-
+```red
 	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
 	== {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
 	red>> call/console/shell/input "grep a" data
@@ -238,11 +243,12 @@ This refinement allows the use of shell's redirections symbols : "<" stdin, ">" 
 	magenta
 	== 0
 	red>>
+```
 
 ### Combining refinements
 
 Redirections can be combined together.
-
+```red
 	red>> data: {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
 	== {white^/red^/green^/blue^/magenta^/cyan^/yellow^/black}
 	red>> out: "" call/input/output "sort" data out
@@ -251,22 +257,25 @@ Redirections can be combined together.
 	{black^/blue^/cyan^/green^/magenta^/red^/white^/yellow^/}
 	== {black^/blue^/cyan^/green^/magenta^/red^/white^/yellow^/}
 	red>>
+```
 
 ## Return code
 
 ### Posix
 
 With a /wait ot implicit wait refinement.
-
+```red
 	red>> call/wait "ls"
 	== 0
 	red>> call/wait "ts"	;-- ts is not a unix command
 	== 255
+```
 
 ## Unix parameters expansion
 
 Unix and MacOSX version of CALL use POSIX [wordexp](http://pubs.opengroup.org/onlinepubs/9699919799/functions/wordexp.html) function to perform [wildcards](http://www.tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm) expansion and environment variables substitution.
 
+```red
 	red>> call/wait/console "ls *.r"
 	compiler.r  lexer.r  red.r  run-all.r  version.r
 	== 0
@@ -280,9 +289,10 @@ Unix and MacOSX version of CALL use POSIX [wordexp](http://pubs.opengroup.org/on
 	/bin/bash
 	== 0
 	red>>
+```
 
 Shell redirection is not performed by wordexp. The **/shell** refinement is required if you need pipes or redirection to file :
-
+```red
 	red>> call/wait/console "ls > ls.txt"
 	Error Red/System call, wordexp parsing command : ls > ls.txt
 	Use of the unquoted characters- <newline>, '|', '&', ';', '<', '>', '(', ')', '{', '}'
@@ -290,6 +300,7 @@ Shell redirection is not performed by wordexp. The **/shell** refinement is requ
 	red>> call/wait/console/shell "ls > ls.txt"
 	== 0
 	red>>
+```
 
 ## Windows issues
 
