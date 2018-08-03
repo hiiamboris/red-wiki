@@ -1,6 +1,6 @@
 NOTE: It's possible for this to get out of date with current Red functions. To see what's available in your current version of Red, use `help`. e.g.
 
-```
+```red
 help file
 help path
 help dir
@@ -56,7 +56,8 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 ## Define a file as a string
 
 You can use a literal string, or use Red notation for a filename.
-```
+
+```red
 >> path: "C:\windows\"
 == "C:\windows\"
 >> path: %/c/windows/
@@ -66,7 +67,7 @@ You can use a literal string, or use Red notation for a filename.
 ## Make a block of file path components from a file path
 
 For a local filename string
-```
+```red
 >> path: "C:\windows\"
 == "C:\windows\"
 >> split path #"\"
@@ -74,7 +75,7 @@ For a local filename string
 ```
 
 For a Red file!
-```
+```red
 >> path: %/c/windows/
 == %/c/windows/
 >> split-path path
@@ -82,7 +83,7 @@ For a Red file!
 ```
 
 ## Make a Red compatible filename
-```
+```red
 >> path: "C:\windows\"
 == "C:\windows\"
 >> to-red-file path
@@ -90,7 +91,8 @@ For a Red file!
 ```
 
 ## Make a local OS compatible filename
-```
+
+```red
 >> path: %/c/windows/
 == %/c/windows/
 >> to-local-file path
@@ -101,12 +103,13 @@ For a Red file!
 
 As always, there are many ways to do things in Red. We'll just provide a couple examples.
 
-```
+```red
 >> collect [foreach file read to-red-file path [if dir? file [keep clean-path file]]]
 == [%/Z/home/isheh/dev/red/logs/ %/Z/home/isheh/dev/red/inf/ %/Z/home/isheh/dev/red/mono/ %/Z/home...
 ```
 or
-```
+
+```red
 >> files: read path
 == [%addins/ %AppCompat/ %AppPatch/ %ARJ.PIF %assembly/ %atiogl.xml %ativpsrm.bin %atl80.dll %bfsvc.exe %Boot/ %boots...
 >> remove-each file files [not dir? file]
@@ -120,20 +123,21 @@ or
 ```
 
 ## Get a block of unqualified contents (file or dir) in a directory
-```
+
+```red
 >> read to-red-file path
 == [%logs/ %inf/ %mono/ %winsxs/ %syswow64/ %twain_32.dll %win.ini %Installer/ %Fonts/ %twain.dll ...
 ```
 
 ## Get a block of filenames, no dirs, for a directory
-```
+```red
 >> collect [foreach file read to-red-file path [unless dir? file [keep file]]]
 == [%twain_32.dll %win.ini %twain.dll %winhlp32.exe %system.ini %regedit.exe %explorer.exe %notepa...
 ```
 
 ## Test if a directory or file exists
 Directory test:
-```
+```red
 >> dir-exists?: func [f [file!]] [exists? dirize f]
 >> dir-exists? %./
 == true
@@ -141,7 +145,7 @@ Directory test:
 == true
 ```
 File test:
-```
+```red
 >> file-exists?: func [f [file!]] [all [exists? f not exists? dirize f]]
 >> file-exists? %.
 == none
@@ -151,7 +155,7 @@ File test:
 
 # Directory junctions & symbolic links (Windows-specific)
 Some of the directories returned in a `read` call might not themselves be readable:
-```
+```red
 >> read to-red-file "C:\Documents and Settings\"
 *** Access Error: cannot open: %/C/Documents%20and%20Settings/
 
@@ -159,8 +163,10 @@ Some of the directories returned in a `read` call might not themselves be readab
 <...>
 File not found
 ```
+
 We can see that the above is a junction and it's target *is* readable:
-```
+
+```red
 >> call/console {dir /a "C:\Docu*"}
 <...>
 14.07.2009  08:08    <JUNCTION>     Documents and Settings [C:\Users]
@@ -173,8 +179,10 @@ We can see that the above is a junction and it's target *is* readable:
 FFFE0D000A005B002E005300680065006C006C0043006C006100730073004900
 6E0066006F005D000D000A004...
 ```
+
 This happens because the user does not have the permissions to list the link/junction contents (RD stands for Read Data, which is Denied), but have permissions to read the target:
-```
+
+```red
 >> call/console {icacls "C:\Documents and Settings"}
 C:\Documents and Settings All:(DENY)(S,RD)
 <...>
@@ -184,6 +192,7 @@ C:\Users All:(RX)
          All:(OI)(CI)(IO)(GR,GE)
 <...>
 ```
+
 So as you can see the OS has different ACLs assigned to the link itself and its' target. Apparently the junction is there for compatibility for WinXP and earlier and isn't supposed to be used. The reader is advised to learn about file system access control lists and commands `icacls` and `cacls` to get a more thorough technical outlook.
 
 As to "omg! what to do?", the options depend on the specifics of the task at hand. Once `query` function is implemented it will be possible to:
@@ -191,7 +200,8 @@ As to "omg! what to do?", the options depend on the specifics of the task at han
 - resolve the target of a link and try to query target's contents instead
 
 In any case, it's always a good idea to wrap the `read` call into a `try` block, as one can never know if one is allowed to read a target or not:
-```
+
+```red
 >> probe try [read to-red-file "C:\$Recycle.Bin"] ()
 make error! [
     code: 500
