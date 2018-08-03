@@ -95,6 +95,7 @@ Perhaps `hash!`, `block!` and others can take advantage of case-sensitive `strin
 
 Examples:
 
+```red
 	red>> "a" = "A"
 	== false
 	red>> "a" == "A"
@@ -122,7 +123,7 @@ Examples:
 	== 20
 	red>> select/relaxed [a 10 A 20] 'A
 	== 10
-
+```
 
 #### 3
 **All keys in `map`! are the case-sensitive exception.**
@@ -203,10 +204,12 @@ Literal forms of strings which override the default non-strict-compare might loo
 
 This concept raises some questions about how to handle adding an uncased string to a map that already contains matching cased ones, or adding a cased version of a string if it has an uncased one.  Maps have sort of a "quiet override" at present:
 
+```red
     >> make map! ["a" 10 "a" 20]
     == make map! [
         "a" 20
     ]
+```
 
 Simple idea of a cased variant wiping out a pre-existing uncased variant or uncased wiping out all pre-existing cased variants isn't the worst thing that could be chosen, and is at least easy.
 
@@ -220,19 +223,23 @@ In the examples below, we are assuming a possible notation in which `~[...]` rep
 
 Now, besides all the examples in [#2](#2), we also have:
 
-	red>> select ~["a" 10 "A" 20] "A"
-	== 10
-
+``red
+red>> select ~["a" 10 "A" 20] "A"
+== 10
+```
 The question remains whether the `/strict` refinement will override the bias of the collection:
 
-	red>> select/strict ~["a" 10 "A" 20] "A"
-	== 20
+```red
+red>> select/strict ~["a" 10 "A" 20] "A"
+== 20
+```
 
 Depending on how it's implemented, this may be the same question as has been asked about mixing refinements in [#2](#2):
 
-	red>> select/relaxed/strict ["a" 10 "A" 20] "A"
-	== 20
-
+```red
+red>> select/relaxed/strict ["a" 10 "A" 20] "A"
+== 20
+```
 If `/strict` **does** override a relaxed bias (as in both the examples above):
 * A `map!` with the bit switched to the non-default setting will effectively behave like `map!` from Rebol 3, except that:
 	* An initial `make map! ~["a" 10 "A" 20]` should not lose any information, and
@@ -261,13 +268,16 @@ Note:
 
 If we assume that all `map!`s, `hash!`s, `block!`s, etc. will be only be used one way or the other throughout their lifetimes, we may no longer need a `/relaxed` refinement, since:
 
-	red>> equal?  select/relaxed ["a" 10 "A" 20] "A"  select ~["a" 10 "A" 20] "A"
-	== true
-
+```red
+red>> equal?  select/relaxed ["a" 10 "A" 20] "A"  select ~["a" 10 "A" 20] "A"
+== true
+```
 ...and since this is redundant:
 
-	red>> select/relaxed ~["a" 10 "A" 20] "A"
-	== 10
+```red
+red>> select/relaxed ~["a" 10 "A" 20] "A"
+== 10
+```
 
 Pros (in addition to [#11a](#11a)):
 * No need to worry about what happens when `/relaxed` and `/strict` refinements are mixed together.
