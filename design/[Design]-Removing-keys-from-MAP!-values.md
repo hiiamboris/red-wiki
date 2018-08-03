@@ -14,14 +14,14 @@ The reason behind using `none` to remove a key is that `map!` is not a series, a
 
 `remove` is a series action, and the `/part` refinement generally means to remove more than one value from the series. However, it would be possible to allow `map!` as an argument and also allow any value as the `/part` argument. Then one could remove a key with:
 
-```
+```red
 remove/part map 'key
 remove/part map "key"
 ```
 
 ...and so on. There is precedent in `bitset!`:
 
-```
+```red
 >> b: make bitset! "ABC"
 == make bitset! #{000000000000000070}
 >> remove b
