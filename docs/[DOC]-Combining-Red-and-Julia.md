@@ -33,7 +33,7 @@ Calling graphical functions works fine.
 
 ### Example: Calling a Julia function from a Red GUI defined in Julia
 
-```
+```julia
 using Red
 
 function blabla()
@@ -56,7 +56,7 @@ redDo(cmd)
 
 Julia callback updates text in Red Window.
 
-```
+```julia
 using Red
 
 function blabla(t)
