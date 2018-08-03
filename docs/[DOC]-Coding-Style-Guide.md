@@ -38,7 +38,8 @@ Tabs: 4
 Each time you go to a new line after opening a block or a parenthesis, you should indent by one tab.
 
 **Correct**
-```
+
+```red
 func [
 	arg1
 	arg2
@@ -49,7 +50,8 @@ func [
 ]
 ```
 Incorrect
-```
+
+```red
 func [
 arg1					;-- missing indentation!
 arg2
@@ -65,12 +67,14 @@ arg2
 All the following rules apply to blocks `[]` as well as parenthesis `()`.
 
 Empty blocks do not contain any whitespace:
-```
+
+```red
 a: []
 ```
 
 Contiguous blocks do not require a whitespace between the end of one and start of another:
-```
+
+```red
 [][]
 []()
 
@@ -81,7 +85,8 @@ Contiguous blocks do not require a whitespace between the end of one and start o
 ]
 ```
 However, it is acceptable to use whitespaces in-between nested blocks:
-```
+
+```red
 array: [[] [] [] []]
 list:  [ [] [] [] [] ]
 
@@ -90,14 +95,16 @@ either a = 1 [ ["hello"] ][ ["world"] ]
 ```
 
 For expressions containing small blocks, they are usually opened and closed on the same line
-```
+
+```red
 b: either a = 1 [a + 1][3]
 ```
 
 If the line is too long, the block should be wrapped over several lines with one level of indentation:
 
 **Correct**
-```
+
+```red
 b: either a = 1 [
 	a + 1
 ][
@@ -106,15 +113,18 @@ b: either a = 1 [
 ```
 
 Incorrect
-```
+
+```red
 b: either a = 1 
 	[a + 1]
 	[123 + length? mold a]
 ```
+
 *That style is wrong because it breaks the ability to copy/paste code to the Red console (`either ` will be evaluated before the block arguments are detected).*
 
 If the first block is small enough and can fit on the same line, then only the subsequent blocks are wrapped over several lines:
-```
+
+```red
 print either a = 1 ["hello"][
 	append mold a "this is a very long expression"
 ]
@@ -132,7 +142,8 @@ while [not tail? series][
 Names made of multiple words are separated with a dash `-` character. Use a two-words name only when a fitting single-word cannot be found or would be too confusing with already used ones. Variable names made of more than two words should only be used in rare cases. Using single-words as much as possible makes the code horizontally much more compact, improving readability greatly. Avoid useless verbosity.
 
 **Correct**
-```
+
+```red
 code: 123456
 name: "John"
 table: [2 6 8 4 3]
@@ -142,7 +153,8 @@ unless tail? list [author: select list index]
 ```
 
 Incorrect
-```
+
+```red
 code_for_article: 123456
 Mytable: [2 6 8 4 3]
 lostItems: []
@@ -153,7 +165,8 @@ unless tail? list-of-books [author-property: select list-of-books selected-index
 **Function names** should strive to be single-word **verbs**, in order to express an action, though two or three words names are often necessary. More than three words should be avoided as much as possible. Variable naming conventions also apply to function names. A noun or an adjective followed by a question mark is also accepted. Often, it denotes that the return value is of `logic!` type, but this is not a strict rule, as it is handy to form single-word action names for retrieving a property (e.g. `length?`, `index?`). When forming function names with two or more words, always put the verb in the first position. If names are picked carefully for variables and function names, the code becomes almost self-documented, often reducing the need for comments.
 
 **Correct**
-```
+
+```red
 make: 	func [...
 reduce: func [...
 allow: 	func [...
@@ -161,7 +174,8 @@ crunch: func [...
 ```
 
 Incorrect
-```
+
+```red
 length:    func [...
 future:    func [...
 position:  func [...
@@ -169,7 +183,8 @@ blue-fill: func [...		;-- should be fill-blue
 ```
 
 There is an exception to those naming rules which applies to OS or non-Red third-party API names. In order to make API-specific function and structures field names easily recognizable, their original name should be used. It visually helps distinguish such imported names from regular Red or Red/System code. For example:
-```
+
+```reds
 tagMSG: alias struct! [
 	hWnd	[handle!]
 	msg		[integer!]
@@ -219,7 +234,8 @@ Apply the same naming conventions for picking up Red/System macros names. Macros
 The general rule is to keep the spec block on a single line. The body block can be on the same line or over several lines. In case of Red/System, as the spec blocks tend to be longer, most functions spec blocks are wrapped over several lines, so, for sake of visual consistency, often even small spec block are wrapped.
 
 **Correct**
-```
+
+```red
 do-nothing: func [][]
 increment: func [n [integer!]][n + 1]
 
@@ -233,8 +249,10 @@ increment: func [
 	n + 1
 ]
 ```
+
 Incorrect
-```
+
+```red
 do-nothing: func [
 ][
 ]
@@ -255,7 +273,8 @@ When the spec block is too long, it should be wrapped over several lines. When w
 When wrapping the spec block over several lines, it is recommended to align the datatype definitions for consecutive arguments, on the same column for easier reading. Such alignment is preferably done using tabs (if you strictly follow these coding style rules) or else, using spaces.
 
 **Correct**
-```
+
+```red
 make-world: func [
 	earth	[word!]
 	wind	[bitset!]
@@ -272,8 +291,10 @@ make-world: func [
 	...
 ]
 ```
+
 Incorrect
-```
+
+```red
 make-world: func [
 	[throw] earth [word!]		;-- attributes block not on its own line
 	wind	[bitset!]
@@ -294,7 +315,8 @@ make-world: func [
 For docstrings, the main one (describing the function) should be on its own line if the spec block is wrapped. The argument and refinement docstrings should be on the same line as the item they are describing. Docstrings start with a capital letter and do not require a ending dot (it's added automatically when printed on screen by `help` function).
 
 **Correct**
-```
+
+```red
 increment: func ["Add 1 to the argument value" n][n + 1]
 
 make-world: func [
@@ -314,8 +336,10 @@ make-world: func [
 	...
 ]
 ```
+
 Incorrect
-```
+
+```red
 make-world: func ["Build a new World"	;-- should be on a newline
 	earth	[word!]		"1st element"
 	wind	[bitset!]	  "2nd element"	;-- excessive indentation
@@ -340,7 +364,8 @@ make-world: func ["Build a new World"	;-- should be on a newline
 Arguments are following the function call on the same line. If the line becomes too long, arguments can be wrapped over several lines (one argument per line) with an indentation.
 
 **Correct**
-```
+
+```red
 foo arg1 arg2 arg3 arg4 arg5
 
 process-many
@@ -350,8 +375,10 @@ process-many
 	argument4
 	argument5
 ```
+
 Incorrect
-```
+
+```red
 foo arg1 arg2 arg3
 	arg4 arg5
 
@@ -368,7 +395,8 @@ process-many
 ```
 
 For long expressions with many nested parts, spotting the bounds of each expression can be sometimes difficult. Using parenthesis for grouping a nested call with its arguments is acceptable (but not mandatory).
-```
+
+```red
 head insert (copy/part [1 2 3 4] 2) (length? mold (2 + index? find "Hello" #"o"))
 
 head insert 
