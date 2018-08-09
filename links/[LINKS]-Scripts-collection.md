@@ -93,6 +93,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: math
 * ArievW - 
+	* [fip.red](https://gist.github.com/Arie-vw/b145038c83740a8c850003a78c569b7d) - Filter OS PATH components
+
+		tags: os
 	* [inspect.red](https://gist.github.com/Arie-vw/dc4748fe1e40536090b0c2eb92b1ec77) - Inspect Red words or paths
 
 		tags: debug
