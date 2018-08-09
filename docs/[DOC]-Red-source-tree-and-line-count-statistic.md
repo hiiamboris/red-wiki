@@ -4,7 +4,7 @@ Base on Red `0.6.3` version, exclude directorys whose name contain `test`, `docs
 
 **Note: Lines starts with `;` and empty lines will not be count in.**
 
-```redshell
+```shell
 -------Total line count of each file type------
      .reds: 74162
         .r: 22072
@@ -31,7 +31,7 @@ This article "[Red/System compiler overview](http://www.red-lang.org/2011/05/red
 
 After [I compiled a very simple `Red` code to `Red/System`](https://github.com/red/red/wiki/Compile-Red-code-to-Red-System-and-learn-something), I found maybe these three files are the startpoint of `Red`.
 
-```redshell
+```shell
 ...compilation time : 51 ms
 [
     Red/System [origin: 'Red] 
@@ -45,7 +45,7 @@ After [I compiled a very simple `Red` code to `Red/System`](https://github.com/r
 
 So I will try to read the `Red` runtime code below, to understand the `Red` inside.
 
-```redshell
+```shell
 >> python cloc.py red-0.6.3/runtime/
 
 Output:
@@ -151,7 +151,7 @@ red-0.6.3/runtime
 
 ## Python script to count code lines
 
-```redpython
+```python
 # -*- coding: utf-8 -*-
 
 import os
@@ -239,7 +239,7 @@ if __name__ == '__main__':
 
 ## The whole Red source tree and line count
 
-```redshell
+```shell
 >> python cloc.py red-0.6.3
 
 Output:
