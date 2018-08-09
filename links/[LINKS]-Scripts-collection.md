@@ -92,6 +92,10 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [red-examples](https://github.com/AresAndy/red-examples) - Code examples for the Red programming language
 
 		tags: math
+* ArievW -
+        * [inspect.red](https://gist.github.com/Arie-vw/dc4748fe1e40536090b0c2eb92b1ec77) - Inspect Red words / paths
+
+		tags: debug
 * AT-Aoi - 
 	* [repeat-nested.red](https://gist.github.com/AT-Aoi/40dc69ec26fdf8e752c67fd10baa1bd2) - repeat the code nestedly
 
