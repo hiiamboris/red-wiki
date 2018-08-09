@@ -18,7 +18,7 @@ when insert, Lua also move the colliding node into it's main position.
 in my amoeba library[1], in a 1000+ elements hash table, the most link
 has only 3 elements. and the lookup loop looks even more compact than
 author's:
-```redc
+```c
 static const am_Entry am_gettable(const am_Table t, am_Symbol key) {
 const am_Entry *e;
 if (t->size == 0 || key.id == 0) return NULL;
