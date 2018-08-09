@@ -61,7 +61,7 @@ An array is a fixed size list of elements. Only literal arrays are supported in 
 
 E.g to create a 100 element array of `double` values in C++:
 
-```redc++
+```c++
 // Stack
 int values[100];
 // Heap
