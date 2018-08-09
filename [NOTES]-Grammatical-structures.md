@@ -1,5 +1,6 @@
-#语法结构0.6.1 
-* 根据 natives.red 产生
+Grammatical structures (0.6.1)
+
+* According to natives.red produce
 
 
 * if: make native! [[
