@@ -55,20 +55,20 @@ The tests are stored in sub-directories of the red/tests/ and red/system/tests/ 
 The --test-- line should stand out in the tests so that they can be seen at a glance.
 
 The basic format for a concise test is:
-```redtext
+```text
     <one tab>--test-- "test-name"<one or more tabs>--assert
 ```
 Concise tests are written without a new line between them.
 
 Example of concise tests:
-```redtext
+```text
     --test-- "basic-1"	--assert "make bitset! #{00}" = mold make bitset! 1
     --test-- "basic-2"	--assert "make bitset! #{00}" = mold charset ""
     --test-- "basic-3"	--assert "make bitset! #{00}" = mold charset []
 ```
 
 The basic format for a standard test is:
-```redtext
+```text
     <empty line>
     <one tab>--test-- "test-name"
     <two tabs><test code>
@@ -78,7 +78,7 @@ The basic format for a standard test is:
     <empty line>
 ```
 Example of standard tests:
-```redtext
+```text
     --test-- "basic-14"
         bs: make bitset! [255 256]
         --assert 264 = length? bs
