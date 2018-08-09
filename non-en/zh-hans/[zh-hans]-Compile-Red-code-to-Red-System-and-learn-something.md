@@ -2,7 +2,7 @@
 
 准备好最简单的 Red 源码如下：
 
-```redshell
+```shell
 ➜ /Users/test >cat test.red
 Red [ ]
 
@@ -26,7 +26,7 @@ test.red
 
 用 `--help`查看编译选项，以下 3 个选项是我们要用到的：
 
-```redshell
+```shell
 ➜ /Users/test >red-063 --help
 
 Usage: red [command] [options] [file]
@@ -48,7 +48,7 @@ Usage: red [command] [options] [file]
 
 把 `test.red` 编译成 Red/System 代码，因为编译生成的 Red/System 代码会直接输出到标准输出，我们重定向到 `1.reds` 方便查看。
 
-```redshell
+```shell
 ➜ /Users/test >red-063 -c -v 1 --red-only test.red > 1.reds
 
 ➜ /Users/test >ls -l
@@ -62,7 +62,7 @@ test.red
 
 查看 `1.reds` 文件：
 
-```redshell
+```shell
 ... # 省略 2万行，不过建议看一看最前面，都是 #include 必要的文件，可能可以了解到一点东西
 ...
 ... # 注意，以下很眼熟，刚好是 test.red 源码中的变量名和函数名，所以这应该是符号表？
@@ -192,7 +192,7 @@ stack/unwind ------------| "print b" #user-code
 
 生成的 `1.reds` 后半段，有下面一部分，可以得知 Red 的运行时要先导入以下文件，也就是说 Red 的源头就是这个顺序，可以按这个顺序来阅读 Red runtime 的代码。
 
-```redshell
+```shell
 ...compilation time : 51 ms
 [
     Red/System [origin: 'Red] 
