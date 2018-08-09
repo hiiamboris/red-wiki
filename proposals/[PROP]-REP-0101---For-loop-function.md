@@ -59,7 +59,7 @@ Interface:
 
 ## Use Case
 
-The use case of a ```redfor``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
+The use case of a ```for``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
 
 Examples of how it would be used are:
 
