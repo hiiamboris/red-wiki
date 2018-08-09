@@ -8,7 +8,7 @@ Provide a simple way to intialise strings such as:
 -----
 
 Would this functionality be better served by a function? (old idea, with name and exact behavior TBD) --Gregg
-```
+```red
 dup: dupe: dupl: func [
 	"Returns a value repeated 'count times in a block."
 	value

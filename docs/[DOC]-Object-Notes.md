@@ -4,7 +4,7 @@
 
 Is there a reason you can't initialize a word in a context with the same name?
 
-```
+```red
 >> a: 5
 == 5
 >> c: context [a: a]
@@ -15,7 +15,7 @@ Is there a reason you can't initialize a word in a context with the same name?
 
 Here is why you get the error:
 
-```
+```red
 >> a: 5
 == 5
 >> o: make object! [
@@ -38,7 +38,7 @@ The word `a` is first added to the context to which `o` is bound. By the time `a
 
 You need to supply the context of the `a` to which you wish to bind the `a` in the object context. For example, you can reference the global context or use the `in` function:
 
-```
+```red
 >> a: 5
 == 5
 >> f: func[a][print a]
@@ -53,7 +53,7 @@ You need to supply the context of the `a` to which you wish to bind the `a` in t
 
 Here is a way to achieve the same result with compose:
 
-```
+```red
 >> a: 5
 == 5
 >> f: func[a][print a]
@@ -75,7 +75,7 @@ Construct is a low-level constructor that *does NOT*:
 - bind the spec block to the context (not always true, see the note below)
 
 
-```
+```red
 USAGE:
      CONSTRUCT block
 
@@ -93,12 +93,12 @@ REFINEMENTS:
 ```
 
 It allows one to achieve fine-tuned context composition, otherwise broken by the implicit `bind`:
-```
+```red
 >> x: 'x-global  a: construct compose [x: x-of-a f: (does [x])]  a/f
 == x-global
 ```
 Above, the `f` function body retains it's binding to the global (system/words) context. Compare that to `context`:
-```
+```red
 >> x: 'x-global  b: context [x: 'x-of-b  f: does [x]]  b/f
 == x-of-b
 ```
@@ -110,7 +110,7 @@ As of Red v0.6.3 however composition is unreliable yet when it comes to bindings
 
 `Context`, by design, processes a call to `return` in the spec block. It returns the argument value of the called return instead of the object.
 
-```
+```red
 >> o: context [x: 5 return 2 + x]
 == 7
 >> probe o
@@ -119,13 +119,13 @@ As of Red v0.6.3 however composition is unreliable yet when it comes to bindings
 ```
 
 The rest of the block (after `return`) is not evaluated:
-```
+```red
 >> context [return 1 probe 2]
 == 1
 ```
 
 But the set-words are still collected:
-```
+```red
 >> context [return self x: 1]
 == make object! [
     x: unset

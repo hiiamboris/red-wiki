@@ -51,7 +51,7 @@ Whilst this may not be the correct place to discuss that issue, the real world u
 ### to logic!
 
 Rebol 2 converts 0 to False and all other integers to True. This hints at an underlying implementation of logic! values that may or may not be true. It is inconsistent with Rebol2 implicit value conversions:
-```
+```red
 >> if 0 [print "oh, oh"]
 oh, oh
 ```

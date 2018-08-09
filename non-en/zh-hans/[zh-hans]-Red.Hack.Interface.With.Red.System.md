@@ -10,7 +10,7 @@ Red语言和Red/System之间的交互
 
 # 常见的数据类型
 * 1. string! 在R/S中用 red-string来传送 
-```
+```red
 red-string!: alias struct! [
 	header 	[integer!];-- cell header
 	head	[integer!];-- string's head index (zero-based)

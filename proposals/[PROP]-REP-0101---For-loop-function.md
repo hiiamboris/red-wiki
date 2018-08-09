@@ -51,7 +51,7 @@ Interface:
 - Or -1 if start is greater than end
     `for [i 10 5] [print i]`
 - Optional key words can be supported in the dialect, to aid readability and make new users more comfortable
-```
+```red
 	for [i = 5 to 10 step 2] [print i]
 	for [i = 5 to 10 by 2] [print i]
 	for [i = 5 to 10 step by 2] [print i]
@@ -59,11 +59,11 @@ Interface:
 
 ## Use Case
 
-The use case of a ```for``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
+The use case of a ```redfor``` function is to provide a way of looping over data in a way that is common in procedural programming languages. 
 
 Examples of how it would be used are:
 
-```
+```red
 a: 1
 b: 5
 

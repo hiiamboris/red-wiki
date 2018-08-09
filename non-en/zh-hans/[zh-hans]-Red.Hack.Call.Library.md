@@ -1,5 +1,5 @@
 * 1. 增加符号序列@runtime/macros.reds 第241行 插入以下内容
-```
+```red
 	; add by tomac
 	NAT_LIBOPEN
 	NAT_LIBCLOSE
@@ -10,7 +10,7 @@
 
 
 * 2. 增加Red中的Word声明@environment/natives.red  第860行即文件尾部插入以下内容
-```
+```red
 libopen: make native! [[
 		"打开共享库"
 		libname [string!]
@@ -38,7 +38,7 @@ libcall: make native! [[
 ```
 
 * 3. 增加到词汇表 @ runtime/natives.reds 行 2853 插入以下内容
-```
+```red
 			; add by tomac
 			:libopen*
 			:libclose*
@@ -48,7 +48,7 @@ libcall: make native! [[
 
 
 * 4. 增加Red/System的功能实现 @ runtime/natives.reds 尾部的!!!!中括号前!!!!插入以下内容
-```
+```red
 	; add by tomac
 	libopen*: func [ 
 		check?			[logic!]
@@ -263,7 +263,7 @@ libcall: make native! [[
 
 
 * 5. 增加libdl的导入@system/runtime/libc.reds 尾部插入
-```
+```red
 #import [
     "libdl.so" stdcall [
 		_dlsym:		"dlsym"	[
@@ -289,7 +289,7 @@ libcall: make native! [[
 ```
 
 * 6.使用样例  以下代码保存为  test.red
-```
+```red
 Red []
 handler: -1
 handler: libopen "libmysqlclient.so"
@@ -319,13 +319,13 @@ print ["libclose=" handler lf]
 * 说明2: 要测试以让代码，在64环境中需要安装32位mysql运行库  apt install libmysqlclinet-dev:i386
 * 说明3: 可与我具体探讨 QQ:5379823  AUTHOR:tomac
 * 说明4: 以上代码基于  red-0.6.1 源码，下载该版本代码解压后，按上面的步骤修改，安装rebol解释器，在red源码目录运行以下指令
-```
+```red
 rebol %red.r "%environment/console/console.red" 
 ./console test.red
 ```
 
 所得的效果为
-```
+```red
 tomac-HP-ProBook-440-G3 red # ./console test.red
 libopen= 162265888         <= dlopen获得的句柄
 mysql_init= 162351600      <= mysql_init 产生的内存块

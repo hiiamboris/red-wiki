@@ -26,7 +26,7 @@ I'd like to talk about 2 languages which handles "looping" very much the way I l
 Is very similar to redbol. Has 2 [words](http://julia.readthedocs.io/en/latest/manual/control-flow/#man-loops) `for` and `while` and uses a range syntax `start:optional_step:end`. For is nicely combined with [comprehensions](http://julia.readthedocs.io/en/latest/manual/arrays/#comprehensions). It all works well for upto 2-3 dimensions. For higher ones you have to explicitly reshape
 #### J
 Is very much different. It transparently handles the cases for multiple dimensions. The basic operator for ranges is `i.` so for example, `i. 2 _5` gives
-```
+```red
 4 3 2 1 0
 9 8 7 6 5
 ```
@@ -45,7 +45,7 @@ Multiple data types?
 Complex intervals
 ## Loops / collections at a higher level
 Catamorphisms anamorphisms..
-```
+```red
 a -> [a]          ; create range/collection
 [a] -> a          ; fold / reduce
 a -> [a] -> a     ; map? (this can be optimized in some cases)

@@ -1,7 +1,7 @@
 # 入门：
 * 编辑一个文本文件名为hello.red内容如下
 
-```
+```red
 Red []`
 
 print "hello　world"
@@ -9,13 +9,13 @@ print "hello　world"
 运行：
 ./red-061  hello.red 
 输出
-```hello world```
+```redhello world```
 
 注意：仅限于Red代码，Red/System代码不可以这样运行，只能用-c 编译成可执行文件
 
 # 常见问题
 * Q: 老是说变量没定义
- ```
+ ```red
  A: 可能是有全角空格在里面
  ``` 
 

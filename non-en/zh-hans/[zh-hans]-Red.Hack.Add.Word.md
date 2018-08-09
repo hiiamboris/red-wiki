@@ -1,6 +1,6 @@
 #为Red增加Word
 * 1. runtime/macros.reds 增加一个NAT_XXXX格式的枚举，这个应该是为redbin处理时使用的吧
-```
+```red
 	; add by tomac
 	NAT_LIBOPEN
 	NAT_LIBCLOSE
@@ -9,7 +9,7 @@
 ```
 
 * 2. environment/natives.red  根据其他功能抄一个，改成相应的名字
-```
+```red
 libopen: make native! [[
 		"打开共享库"
 		libname [string!]
@@ -40,7 +40,7 @@ libcall: make native! [[
 ]
 ```
 * ３. runtime/nativers.reds 增加red/system的实现函数
-```
+```red
 	; add by tomac
 	libopen*: func [ libname [c-string!]  return: [integer!] /local handle [integer!] ][
 		handle: _dlopen libname 0
@@ -74,7 +74,7 @@ libcall: make native! [[
 ```
 
 * ４. runtime/nativers.reds  注册到表中去
-```
+```red
 			; add by tomac
 			:libopen*
 			:libclose*

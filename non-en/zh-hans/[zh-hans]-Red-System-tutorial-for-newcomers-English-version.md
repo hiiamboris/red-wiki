@@ -173,7 +173,7 @@ This is how you can include a Red/System file in a Red program:
 
 Red Code:
 
-```
+```red
 Red []
 
 print "From Red"
@@ -193,7 +193,7 @@ print "From Red"
 
 Red/System code:
 
-```
+```red
 Red/System []
 
 f: func [] [

@@ -10,7 +10,7 @@ When making reactors, you have control over how reactors made from the same spec
 
 In this first example, we make 3 reactors from 3 different spec blocks. The blocks look the same, but each is a separate value. As you can see, each reactor is independent of the others, and likely the behavior you expect.
 
-```
+```red
 >> a: make reactor! [x: 1 y: 2 total: is [x + y]]
 == make object! [
     x: 1
@@ -57,7 +57,7 @@ In this first example, we make 3 reactors from 3 different spec blocks. The bloc
 
 But what happens if the *same* spec is used to make multiple reactors. Here we set `spec` to reference the spec block, and re-use that for a second reactor (`b`). Everything looks normal, until we set `b/x:` and then examine `a/total`. Because the same spec block was used, the reactive subsystem connected it to the last reactor that was made from it. You can see that changes to `a/x` no longer trigger reactions in `a/total`, but changes to `b/x` are reflected in `a/total`. This is likely *not* the expected behavior. But Red can't read your mind. It *might* be what you want, so you can do it. And the way to produce the behavior from the first example is to use `copy/deep` on shared specs you use to make reactors. The `/deep` refinement is important here, because it's the `is` sub-block that you really need to copy. When we do this for the third reactor below (`c`), you can see that `b` does not suffer the same fate as `a` did.
 
-```
+```red
 >> spec: [x: 1 y: 2 total: is [x + y]]
 == [x: 1 y: 2 total: is [x + y]]
 
@@ -109,7 +109,7 @@ But what happens if the *same* spec is used to make multiple reactors. Here we s
 
 You can use an anonymous function and invoke that.
 
-```
+```red
 >> r: make reactor! [x: 5 y: is [do reduce [ has [z][z: 100 z + x + 5] ]]]
 == make object! [
     x: 5
@@ -126,7 +126,7 @@ You can use an anonymous function and invoke that.
 # Issue with panels as reactive sources
 
 @toomasv found this issue.
-```
+```red
 ; With `box`, `react` works while moving either colored box
 view [
    size 500x300 
@@ -138,7 +138,7 @@ view [
    p: box blue loose 
 ]
 ```
-```
+```red
 ; With `panel`, `react` works only when moving red box, not while moving blue panel
 view [
    size 500x300 
@@ -151,7 +151,7 @@ view [
 ]
 ```
 With no pane spec for the panel, it works.
-```
+```red
 view [
    size 500x300 
    at 0x0 base react [
@@ -163,7 +163,7 @@ view [
 ]
 ```
 You can work around it by adding the reaction after setting up the layout.
-```
+```red
 lay: layout [
    size 500x300 
    n: box loose red 50x50 
@@ -178,7 +178,7 @@ insert lay/pane layout/only [
 view lay
 ```
 Or by putting the panel before the reaction is declared, then moving it to the top of the z-order.
-```
+```red
 move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
 
 view/no-wait [
@@ -195,7 +195,7 @@ move-to-top p
 do-events
 ```
 The cleanest way seems to be styling:
-```
+```red
 view [
 	size 500x300
 	style node: box loose

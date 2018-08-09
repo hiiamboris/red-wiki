@@ -2,7 +2,7 @@
 
 @dockimbel's more advanced, but still pretty simple model:
 
-```
+```red
 closure: func [vars spec body][
     ; Don't have to reuse 'spec name; just saves a word.
     bind (body-of spec: func spec body) (context vars)
@@ -14,7 +14,7 @@ gen3: closure [var: 0] [] [var: var + 1]
 
 Original, simple model:
 
-```
+```red
 closure: func [
     vars [block!] "Values to close over, in spec block format"
     spec [block!] "Function spec for closure func"

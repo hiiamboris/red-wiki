@@ -2,7 +2,7 @@
 
 Depending on your needs, it may be worth taking items from the series, tail to head, then reversing your result. Or maybe the order in which you take items doesn't matter, in which case, taking from the tail will be much faster.
 
-```
+```red
 blk: collect [repeat i 100'000 [keep i]]
 
 take-from-head:         func [blk][until [take blk               empty? blk]]
@@ -21,7 +21,7 @@ profile/show [
     [take-part-from-tail-32 copy blk]
 ]
 ```
-```
+```red
 Count: 1
 Time         | Time (Per)   | Memory      | Code
 0:00:00.004  | 0:00:00.004  | 4202496     | [take-part-from-tail-32 copy blk]

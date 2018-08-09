@@ -8,7 +8,7 @@ Since there is no GUI support for Red on Linux yet, you might want to use the Wi
 
 You can configure the F6 / "Run Red script" command of the Red Visual Studio Code plugin to use the Windows version of Red through Wine by using a shell script:
 
-```
+```red
 #!/bin/sh
 exec wine /replace/with/path/to/red-063.exe $1 "`winepath --windows \"$2\"`"
 ```

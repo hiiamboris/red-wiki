@@ -1,7 +1,7 @@
 To use Red as CGI, you must configure your server to support Red executable. For Apache, see https://httpd.apache.org/docs/current/howto/cgi.html .
 
 Basic example script would then look like this:
-```
+```red
 #!/usr/local/bin/red ; replace this with your path to Red executable
 Red[]
 print "Content-type: text/html^/"
@@ -14,7 +14,7 @@ For the `GET` method, query string is in `http-headers/query-string`.
 
 For the `POST` method, you can get the POST data using `input`:
 
-```
+```red
 #!/usr/local/bin/red
 Red[]
 print "Content-type: text/html^/"

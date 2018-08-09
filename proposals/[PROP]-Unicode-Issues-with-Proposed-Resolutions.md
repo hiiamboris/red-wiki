@@ -52,7 +52,7 @@ It is most likely that this additional functionality will be provided by introdu
 
 The internal format for both string! and text! will be the same, the difference is the behaviours of how functions act on them. For example:
 
-```
+```red
 >> my-string: "^(0063)^(0327)"                                      ;; decomposed ç
 == "ç"
 >> head insert next my-string "1"

@@ -46,7 +46,7 @@ Implementation note: It is currently provided with a complete tool-chain generat
 ### 2.1 分隔符（Delimiters）
 
 字符串分隔符：双引号
-```rebol
+```redrebol
 "this is a string"
 {This is
   a multiline
@@ -55,7 +55,7 @@ Implementation note: It is currently provided with a complete tool-chain generat
 ```
 
 代码块分隔符：方括号
-```
+```red
 if a > 0 [print "TRUE"]
 
 either a > 0 [print "TRUE"][print "FALSE"]
@@ -64,7 +64,7 @@ while [a > 0][print "loop" a: a - 1]
 ```
 
 Path 分隔符: 斜杠（表明层级关系）
-```
+```red
 s: declare struct! [i [integer!] b [byte!]]
 s/i: 123
 s/b: #"A"
@@ -76,7 +76,7 @@ s/b: #"A"
 
 以下是例子都是可以正确运行的：
 
-```
+```red
 while [a > 0][print "loop" a: a - 1]
 
 while [a > 0]
@@ -96,7 +96,7 @@ while [
 
 单行注释：
 
-```
+```red
 ;this is a commented line
 
 print "hello world"    ; this is another comment
@@ -104,7 +104,7 @@ print "hello world"    ; this is another comment
 
 多行注释：
 
-```rebol
+```redrebol
 comment {
     This is a
     multiline
@@ -118,7 +118,7 @@ comment {
 
 - 多行注释也可以用于代码的任何地方，但不能放在表达式中间。例如：
 
-  ```
+  ```red
   a: 1 + comment {5} 4   ; 这里的 comment {5} 注释会导致编译错误
   ```
 
@@ -129,13 +129,13 @@ comment {
 
 变量是用来表示一个内存地址的标签。这个标签（下文开始叫`标识符`）由一系列可打印的字符组成（不包括空格、换行、制表符等空白字符）。可打印字符是指可以在系统 console 打印出来的字符，ASCII 在 20h-7Eh 之间。但以下这些字符除外，它们被用于分隔符或保留给某些数据类型所用：
 
-```rebol
+```redrebol
 [ ] { } " ( ) / \ @ # $ % ^ , : ; < >
 ```
 
 以下字符不能作为变量的首个字符，放在其他位置是可以的：
 
-```rebol
+```redrebol
 0 1 2 3 4 5 6 7 8 9 '
 ```
 
@@ -151,7 +151,7 @@ Also there is a another restriction to avoid letting the compiler mistake an hex
 ### 3.1 设值（Setting a value）
 
 变量可以承载所有可用类型的值。它们可以是真实的值（例如 `integer!` 或 `pointer!`），或者指向真实值的引用（例如 `struct!` 和 `c-string!`）。在变量标识符后面加上冒号 `:` 可以给变量赋值：
-```
+```red
 foo: 123
 bar: "hello"
 ```
@@ -164,19 +164,19 @@ bar: "hello"
 ### 3.2 取值（Getting a value）
 
 取值或传参给函数时直接使用变量名，不需要任何修饰符。
-```
+```red
 bar: "hello"
 print bar
 ```
 会输出:
-```
+```red
 hello
 ```
 
 ### 3.3 类型（Typing）
 
 变量必须属于某种类型。变量在使用前不一定要先声明，但必须先初始化。函数内的本地变量必须先声明，本地变量的类型也可以忽略，前提是它在函数内可以被正确初始化。例如下面的例子是可行的用法：
-```
+```red
 foo: 123
 bar: "hello"
 size: length? bar
@@ -193,7 +193,7 @@ compute: func [
 ```
 
 初始化必须在代码的顶层完成，尝试在代码块中初始化将会导致编译错误。
-```
+```red
 foo: 123                               ;-- 合法的初始化
 
 if a < b [foo: 123]                    ;-- 非法的初始化
@@ -224,7 +224,7 @@ if a < b [foo: 123]                    ;-- 非法的初始化
 
 #### 4.1.1 字面量（Literal format）
 
-```
+```red
 十进制正整数 :  1234
 十进制负整数 :  -1234
 十六进制     :  04D2h
@@ -251,14 +251,14 @@ byte! 类型用于表示 `0-255` 之间的无符号整数。
 
 #### 4.2.1 语法（Syntax）
 
-```
+```red
 #"<character>"
 #"^<character>"
 #"^(hexadecimal)"
 #"^(name)"
 ```
 例如：
-```
+```red
 #"a"
 #"A"
 #"5"
@@ -272,7 +272,7 @@ byte! 类型用于表示 `0-255` 之间的无符号整数。
 
 Casting is allowed to some extent (see section "4.9 Type Casting").
 
-```
+```red
 foo: as integer! #"a"                  ;-- foo 的值是 97
 bar: as byte! foo                      ;-- bar 的值是 #"a"
 ```
@@ -287,22 +287,22 @@ float! 类型表示了 IEEE-754 的双精度浮点数，它的内存大小是 64
 
 #### 4.3.1 语法（Syntax）
 
-```
+```red
 <sign><digits>.<digits>
 ```
 或用科学计数法：
-```
+```red
 <sign><digits>E<exponent>
 <sign><digits>.<digits>E<exponent>
 ```
 其中：
-```
+```red
 <sign>     : 可选的 + 或 - 符号
 <digits>   : 一个或多个数字
 <exponent> : 一个正整数或负整数
 ```
 例如：
-```
+```red
 0.0
 1.0
 -12345.6789
@@ -318,13 +318,13 @@ float! 字面量的值最大只有 16位，超出部分会被丢掉。
 #### 4.3.2 转型（Casting）
 
 可以把 float! 的值转成 float32! 类型，例如：
-```
+```red
 pi: 3.14159265358979
 pi-32: as float32! pi
 print pi-32
 ```
 会输出：
-```
+```red
 3.1415927
 ```
 
@@ -347,7 +347,7 @@ float32! 类型表示 IEEE-754 的单精度浮点数，它的内存大小是 32 
 #### 4.4.1 语法（Syntax）
 
 float32! 类型没有字面量写法，只能从一个 float! 字面量转型成 float32! 来获取到 float32! 常量。例如：
-```
+```red
 pi32: as float32! 3.1415927
 ```
 > 关于单精度浮点数的更多信息，请参考 [Wikipedia](http://en.wikipedia.org/wiki/Single-precision_floating-point_format)。
@@ -360,7 +360,7 @@ It is allowed to apply a type casting transformation on a float32! value to conv
 
 例如：
 
-```
+```red
 s: as float32! 3.1415927
 print [
    as float! s lf
@@ -368,7 +368,7 @@ print [
 ]
 ```
 会输出：
-```
+```red
 3.14159270000000
 1518260631
 ```
@@ -391,34 +391,34 @@ logic! 类型表示布尔值：**TRUE** 和 **FALSE**。logic! 变量用布尔�
 
 #### 4.5.1 字面量格式（Literal format）
 
-```
+```red
 true
 false
 ```
 
 用字面量初始化 logic! 变量：
 
-```
+```red
 foo: true
 either foo [print "true"][print "false"]
 ```
 
 会输出：
 
-```
+```red
 true
 ```
 
 用条件表达式来初始化 logic! 变量：
 
-```
+```red
 bar: 2 > 5
 either bar [print "true"][print "false"]
 ```
 
 会输出：
 
-```
+```red
 false
 ```
 
@@ -432,7 +432,7 @@ false
 
 c-string! 字面量的定义用两个双引号或者用一对大括号括起来：
 
-```
+```red
 foo: "I am a c-string"
 bar: {I am
   a multiline
@@ -448,7 +448,7 @@ bar: {I am
 
 用 `LENGTH?` 函数可以在运行时获取 c-string! 变量的字节数（不包括 null 终结符）。
 
-```
+```red
 a: length? "Hello"                     ;-- here length? will return 5
 ```
 
@@ -464,7 +464,7 @@ It is possible to apply some simple math operations on c-string variables like a
 
 语法：
 
-```
+```red
 <c-string> + <n>
 <c-string> - <n>
 
@@ -474,7 +474,7 @@ It is possible to apply some simple math operations on c-string variables like a
 
 例子：
 
-```
+```red
 s: "hello"                             ;-- let's suppose s points to address 40000000h
 
 s: s + 1                               ;-- now s points to address 40000001h
@@ -488,7 +488,7 @@ print s                                ;-- "llo" would be printed
 
 可以用 path 方式来访问 c-string! 变量的单个字节：
 
-```
+```red
 <c-string>/integer!                    ;-- literal integer index provided
 <c-string>/<index>                     ;-- index provided by a variable
 
@@ -498,7 +498,7 @@ print s                                ;-- "llo" would be printed
 
 返回值是 byte! 类型。例如：
 
-```
+```red
 foo: "I am a c-string"
 foo/1  =>  #"I"                        ;-- byte! value (73)
 foo/2  =>  #" "                        ;-- byte! value (32)
@@ -513,14 +513,14 @@ foo/16 => #"^(00)"                     ;-- byte! value (0) (end marker)
 
 用变量作为下标的例子：
 
-```
+```red
 c: 4
 foo/c  => #"m"                         ;-- byte! value (109)
 ```
 
 遍历一个 c-string! 变量的简单实现：
 
-```
+```red
 foo: "I am a c-string"
 bar: foo
 
@@ -533,13 +533,13 @@ until [
 
 会输出：
 
-```
+```red
 I am a c-string
 ```
 
 类似的，也可以用 path 方式（以分号结尾）来修改 c-string! 变量中的字节：
 
-```
+```red
 <c-string>/integer!:   <value>         ;-- literal integer index provided
 <c-string>/<index>:    <value>         ;-- index provided by a variable
 
@@ -550,7 +550,7 @@ I am a c-string
 
 例如：
 
-```
+```red
 foo: "I am a c-string"
 foo/3: #"-"
 c: 4
@@ -560,7 +560,7 @@ print foo
 
 会输出：
 
-```
+```red
 I -- a c-string
 ```
 
@@ -578,7 +578,7 @@ I -- a c-string
 
 struct! 的声明用 `DECLARE STRUCT!` 序列跟着一个特殊的 block，这个 block 定义了 struct! 值的成员，每个成员是一对名称和数据类型的定义。
 
-```
+```red
 declare struct! [
    <member> [<datatype>]
    ...
@@ -597,7 +597,7 @@ The returned value of DECLARE STRUCT! is the memory address of the newly created
 
 #### 4.7.2 用法（Usage）
 
-```
+```red
 s: declare struct! [
    a   [integer!]
    b   [c-string!]
@@ -608,13 +608,13 @@ s: declare struct! [
 
 上面的例子中所定义的 struct! 值有 3 个成员：a、b、c，每一个都是不同的数据类型。成员 c 是一个 struct! 值的指针，它必须呗赋值一个 struct! 值之后才能使用。因此成员 c 的正确初始化方式是：
 
-```
+```red
 s/c: declare struct! [d [integer!]]
 ```
 
 可以嵌套 struct! 值（而不是 struct! 值的指针），但必须加上 `value` 关键词在被嵌套的 struct! 类型后面：
 
-```
+```red
 s2: declare struct! [
    a   [integer!]
    b   [c-string!]
@@ -630,7 +630,7 @@ struct! 指针和值可以任意互相嵌套。
 
 struct! 的成员访问要用 path 方式，语法是：
 
-```
+```red
 <struct>/<member>                      ;-- read access
 <struct>/<member>: <value>             ;-- write access
 
@@ -641,7 +641,7 @@ struct! 的成员访问要用 path 方式，语法是：
 
 上一个例子：
 
-```
+```red
 foo: s/a                               ;-- reading member 'a in struct 's
 s/a: 123                               ;-- writing 123 in member 'a in struct 's
 s/b: "hello"
@@ -652,7 +652,7 @@ bar: s/c/d                             ;-- deep read/write access is also possib
 
 也可以用 get-path 的方式来访问一个 struct! 中的成员指针：
 
-```
+```red
 :<struct>/<member>
 
 <struct>  : a valid struct variable
@@ -661,7 +661,7 @@ bar: s/c/d                             ;-- deep read/write access is also possib
 
 返回的类型总是 `pointer! [integer!]` 。It can be freely type-casted to other pointer types.
 
-```
+```red
 p: :s/a
 p/value                               ;-- returns the value of s/a
 p/value: 456                          ;-- sets a new value in s/a
@@ -673,7 +673,7 @@ p/value: 456                          ;-- sets a new value in s/a
 
 语法：　
 
-```
+```red
 <struct> + <n>
 <struct> - <n>
 
@@ -683,7 +683,7 @@ p/value: 456                          ;-- sets a new value in s/a
 
 例子：　
 
-```
+```red
 p: declare struct! [                   ;-- let suppose p = 40000000h
    a [integer!]
    b [pointer! [integer!]]
@@ -704,7 +704,7 @@ struct! 值的定义有时会很长，所以在某些场景下 struct! 的定义
 
 别名的语法：
 
-```
+```red
 <name>: alias struct! [
    <member> [<datatype>]
    ...
@@ -718,7 +718,7 @@ struct! 值的定义有时会很长，所以在某些场景下 struct! 的定义
 
 struct! 值用别名的定义来声明：
 
-```
+```red
 <variable>: declare <alias>
 
 <variable>  : a struct variable
@@ -727,7 +727,7 @@ struct! 值用别名的定义来声明：
 
 struct! 的用法示例：
 
-```
+```red
 book!: alias struct! [                 ;-- 定义一个新的别名，注意别名用感叹号 ! 结尾
    title       [c-string!]
    author      [c-string!]
@@ -766,7 +766,7 @@ gift2: declare struct! [
 
 用下面的语法来新建指针：
 
-```
+```red
 declare pointer! [<datatype>]
 
 <datatype>: integer! | byte! | float! | float32!
@@ -777,7 +777,7 @@ declare pointer! [<datatype>]
 
 例子：
 
-```
+```red
 foo: declare pointer! [integer!]       ;-- 等同于 C 语言的: int *foo;
 bar: declare pointer! [byte!]          ;-- 等同于 C 语言的: char *bar;
 baz: declare pointer! [float!]         ;-- 等同于 C 语言的: double *baz;
@@ -791,7 +791,7 @@ baz: declare pointer! [float!]         ;-- 等同于 C 语言的: double *baz;
 
 指针的声明只在函数的 specification block 里才是必须的。对于本地的指针变量，它的数据类型声明可以忽略掉，留待后面的推断（详见「类型推断」一节）。
 
-```
+```red
 pointer! [<datatype>]
 
 <datatype>: integer! | byte! | float! | float32!
@@ -799,7 +799,7 @@ pointer! [<datatype>]
 
 全局变量声明的例子（及其等价的 C 语言写法）：
 
-```
+```red
 p: declare pointer! [integer!]         ;-- int *p;
 p: declare pointer! [byte!]            ;-- char *p;
 p: declare pointer! [float!]           ;-- double *p;
@@ -807,7 +807,7 @@ p: declare pointer! [float!]           ;-- double *p;
 
 本地变量也是同理：
 
-```
+```red
 func [/local p [pointer! [integer!]]   ;-- int *p;
 func [/local p [pointer! [byte!]]      ;-- char *p;
 func [/local p [pointer! [float!]]     ;-- double *p;
@@ -815,7 +815,7 @@ func [/local p [pointer! [float!]]     ;-- double *p;
 
 指针变量的类型推断：
 
-```
+```red
 foo: func [
    a [struct! [count [integer!]]]
    /local
@@ -848,7 +848,7 @@ bar2: func [
 
 解引用可以访问指针所指的值。在 Red/System 中，它是通过给指针变量增加一个 **value** 修饰词（refinement）来实现的，通常也叫作 path 记法）。
 
-```
+```red
 <pointer>/value                        ;-- 获取值
 <pointer>/value: <value>               ;-- 写入值
 
@@ -858,7 +858,7 @@ bar2: func [
 
 用法示例：
 
-```
+```red
 p:   declare pointer! [integer!]       ;-- declare a pointer on an integer
 bar: declare pointer! [integer!]       ;-- declare another pointer on an integer
 
@@ -874,7 +874,7 @@ bar: p                                 ;-- assign pointer address to 'bar
 
 指针可以进行一些简单的数学运算，例如加减法（跟 C 语言一样）。指针的地址会随着所指向值的内存大小相应地乘以加减的值而增加或减少。
 
-```
+```red
 p: declare pointer! [integer!]         ;-- pointed value memory size is 4 bytes
 
 p: as [pointer! [integer!]] 40000000h
@@ -889,7 +889,7 @@ q: q + 1                               ;-- p points now to 40000002h
 Also, additions and subtractions between pointer addresses are allowed. The result value type is, as usual, the type of left operand.
 加减法在指针之间也是允许的。它的返回值一般而言跟左边操作数的类型相同。
 
-```
+```red
 offset: p - q                          ;-- would store 6 in offset
                                        ;-- type of offset is pointer! [integer!]
 ```
@@ -900,7 +900,7 @@ offset: p - q                          ;-- would store 6 in offset
 
 语法：
 
-```
+```red
 <pointer>/<integer>                    ;-- literal integer index provided
 <pointer>/<index>                      ;-- index provided by a variable
 
@@ -911,7 +911,7 @@ offset: p - q                          ;-- would store 6 in offset
 
 例子：
 
-```
+```red
 p: declare pointer! [integer!]
 
 p: as [pointer! [integer!]] 40000000h
@@ -921,7 +921,7 @@ p/2: a                                 ;-- writes the integer! to 40000004h
 
 整型变量也可以作为下标：
 
-```
+```red
 p: declare pointer! [integer!]
 
 p: as [pointer! [integer!]] 40000000h
@@ -937,7 +937,7 @@ p/c: 1234                              ;-- writes 1234 (4 bytes) at 40000004h
 
 语法：
 
-```
+```red
 <variable>: [<items>]
 
 <variable> : 指向数组的指针变量，类型跟数组元素一样
@@ -948,7 +948,7 @@ p/c: 1234                              ;-- writes 1234 (4 bytes) at 40000004h
 
 例子：
 
-```
+```red
 list: [123 456 789]
 probe list/0                           ;-- outputs 3
 probe list/2                           ;-- outputs 456
@@ -997,7 +997,7 @@ probe pf/5                             ;-- outputs 3.14
 
 例如：
 
-```
+```red
 a: declare pointer! [integer!]
 a: null                                ;-- valid assignment, 'a type is defined
 b: null                                ;-- invalid assignment, type of b cannot
@@ -1024,7 +1024,7 @@ For pointers to c-string! or struct! variables, a pointer variable can be used t
 
 例如：
 
-```
+```red
 p-buffer!: alias struct! [buffer [c-string!]]
 
 set-hello: function [
@@ -1048,7 +1048,7 @@ foo                                    ;-- call foo function
 
 会打印：
 
-```
+```red
 hello
 ```
 
@@ -1068,7 +1068,7 @@ It is possible to get a pointer on an existing variable for the following dataty
 
 语法：
 
-```
+```red
 :<variable>
 
 <variable> : a variable name of allowed type.
@@ -1085,7 +1085,7 @@ It is possible to get a pointer on an existing variable for the following dataty
 
 例子：
 
-```
+```red
 s: declare pointer! [integer!]
 a: 123
 s: :a
@@ -1106,7 +1106,7 @@ print s/value       ;-- will output 123
 
 语法：
 
-```
+```red
 as <new-type> <expr>
 as [<new-type>] <expr>                 ;-- alternative syntax
 as <new-type> keep <expr>
@@ -1125,7 +1125,7 @@ as <new-type> keep <expr>
 
 例如：
 
-```
+```red
 foo: 0                                 ;-- foo is an integer variable
 bar: declare pointer! [integer!]       ;-- bar is a pointer variable
 
@@ -1159,7 +1159,7 @@ bar: as pointer! [integer!] foo
 
 语法：
 
-```
+```red
 size? <type>
 size? "<string>"
 
@@ -1171,7 +1171,7 @@ size? "<string>"
 
 例如：
 
-```
+```red
 size? byte!                ;-- will return 1
 size? integer!             ;-- will return 4
 s!: alias struct! [
@@ -1199,7 +1199,7 @@ size? s!                   ;-- will return 8
 
 以下是由[BNF](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form)格式指定的语法规则，定义在本地语言中的部分使用`...`表示。
 
-```
+```red
 <literal>       ::= ... any valid Red/System literal value ...
 <variable>      ::= ... any valid Red/System variable name ...
 <logic-call>    ::= ... function call that returns a value of logic! type ...
@@ -1237,7 +1237,7 @@ size? s!                   ;-- will return 8
 
 **示例**
 
-```
+```red
 a: 123
 foo a + 1
 0 < foo a + 1
@@ -1254,7 +1254,7 @@ b: 1 + (2 * a - either zero? a [0][a + 100])
 
 **示例**
 
-```
+```red
 1 + 2 * 3                              ;-- (1 + 2) * 3 returns 9
 1 + 2 * 3 = 9                          ;-- ((1 + 2) * 3) = 9 returns TRUE
 9 = 1 + 2 * 3                          ;-- ((9 = 1) + 2) * 3 raises an error!

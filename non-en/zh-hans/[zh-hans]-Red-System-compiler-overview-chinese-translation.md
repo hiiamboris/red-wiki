@@ -5,7 +5,7 @@
 
 ### 源码结构（Source Navigation）
 
-```shell
+```redshell
  red-system/
      %compiler.r        ; Main compiler code, loads everything else
      %emitter.r         ; Target code emitter abstract layer
@@ -31,7 +31,7 @@
 
 ```
 
-```shell
+```redshell
  system/words/          ; global REBOL context
 
  system-dialect/        ; main object

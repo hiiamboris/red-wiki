@@ -21,7 +21,7 @@ To make print work after compilation on Windows you need the latest build, and m
 ***
 
 ****Compilation table:****
-```
+```red
 MSDOS        : Windows, x86, console (+ GUI) applications
 Windows      : Windows, x86, GUI applications
 WindowsXP    : Windows, x86, GUI applications, no touch API

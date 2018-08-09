@@ -1,5 +1,5 @@
 ## Request-file
-```
+```red
 request-file  /save  /multi  /file  name  /title  text  /filter  list
 
   Asks user to select a file and returns full file path (or block of paths).
@@ -18,7 +18,7 @@ Refinements:
 ### Filtering file views
 You can provide file list filters to show only specific files. 
 
-```
+```red
 [
     description-1 file-extensions-1
     description-2 file-extensions-2
@@ -30,7 +30,7 @@ You can provide file list filters to show only specific files.
 
 For example:
 
-```
+```red
 request-file/filter [
     "Red Source Files (red, reds)" "*.red;*.reds"
     "All Pictures Files" "*.jpg;*.png;*.gif"

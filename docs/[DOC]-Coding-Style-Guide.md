@@ -31,7 +31,7 @@ There is no strictly-defined maximum number of columns for a single line of code
 Red codebase uses tabulations with size of **4** columns to indent the source code. This gives a good trade-off between too small values (like 2 columns) and too big ones (like 8 columns). Using tabs also means that you can adjust it to your personal preference in your editor, while respecting the rule (just pay attention to right alignments using tabs then).
 
 All the contributed Red files to red/red repo should contain the following field in their header:
-```
+```red
 Tabs: 4
 ```
 

@@ -5,14 +5,14 @@ This document suggests some alternatives that could be implemented in the compil
 ## #define a constant
  
 ### alternative 1
-```rebol
+```redrebol
 MY_CONSTANT: [constant] "This cannot be changed"
 ```
 
 This alternative follows the pattern of including some compiler directives in square brackets.
 
 ### alternative 2
-```rebol
+```redrebol
 MY_CONSTANT: "This cannot be changed"
 protect [MY_CONSTANT]
 ```
@@ -22,14 +22,14 @@ This alternative follows the Red syntax for creating a constant. In Red, a const
 Whilst this best mirrors Red syntax, it is possible to write confusing code by separating the assignment of the value from the protect.
 
 ### alternative 3
-```rebol
+```redrebol
 protect [MY_CONSTANT "This cannot be changed"]
 ```
 
 A hybrid approach that could also be added to Red by making protect a variadic function.
 
 ### alternative 4
-```rebol
+```redrebol
 MY_CONSTANT: declare constant! "This cannot be changed"
 ```
 
@@ -37,7 +37,7 @@ An approach based on way to declare a struct!.
 
 ## Macro (no arguments):
 
-```rebol
+```redrebol
 my-macro: does [[inline]] [ ... macro]
 ```
 
@@ -45,7 +45,7 @@ The compiler would then inline the code inside the block. Inlining probably woul
 
 ## Macro (arguments):
 
-```rebol
+```redrebol
 my-macro-with-args: func [ [inline] arg1 [type1!] arg2 [type2!]] [... macro code]
 ```
 

@@ -9,7 +9,7 @@ See: https://static.red-lang.org/red-system-specs.html#section-4.8.6
 
 Literal array pointers are always defined as int-ptr! regardless of the content of the array (otherwise it wouldn't be able to access the size nor support mixed type arrays). So if you want to access, e.g., floats, you need to acquire a float pointer first:
 
-```
+```red
 powers: [1.0 2.0 3.0]
 floats: as float-ptr! powers
 probe floats/1
@@ -24,7 +24,7 @@ In Red/System version1 'DOES is simply shorthand for func []. It could be optimi
 When writing libs it is very common to define unique "sub-types" of Red/System's built-in simple types (integer!, byte!, float!, etc). If these could be declared as aliases instead of pre-processors defines, the compiler would apply an additional level of type checking that would catch "sub-type" errors for the programmer.
 
 Before:
-```
+```red
 #define sub-type-a! integer!
 #define sub-type-b! integer!
 
@@ -41,7 +41,7 @@ my-func b
 ```
 
 After:
-```
+```red
 sub-type-a!: alias integer!
 sub-type-b!: alias integer!
 
@@ -63,7 +63,7 @@ Author: Peter W A Wood
 
 Being able to declare and use unique symbols would improve program readability over using defined constants. As word! is not a valid type in Red/System, lit-word syntax could be used for symbol literals. This feature would allow the following code: 
 
-```
+```red
 #define okay 	0
 #define error1	1
 #define error2	2
@@ -89,7 +89,7 @@ switch response [
 	
 ```
 to be re-written as:
-```
+```red
 my-func: [
 	i		[integer!]
  	return:		[symbol!]

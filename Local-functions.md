@@ -2,7 +2,7 @@ It is possible to define a function in Red/System V1 though it is not mentioned 
 
 The following Red/System program compiles and produces the expected output:
 
-```
+```red
 Red/System []
 
 f: func[] [
@@ -18,7 +18,7 @@ A call to a locally defined function from the global scope gives an undefined sy
 However the current implementation does not allow a local function to be assigned to a variable which has the same name as a global variable to which a function has been assigned. Declaring a local function with the same name as a global variable does not give a compiler error but doesn't give expected results). These two code examples show this more clearly than my explanation.
 
 Code
-```
+```red
 Red/System []
 
 f: func[] [
@@ -31,7 +31,7 @@ g
 ```
 
 Output
-```
+```red
 *** Compilation Error: attempt to redefine existing function name: g 
 *** in file: %pathto/test.reds 
 *** in function: f
@@ -43,7 +43,7 @@ Output
 ```
 
 Code
-```
+```red
 Red/System []
 
 f: func[] [
@@ -57,7 +57,7 @@ print ["after calling f" lf]
 ```
 
 Output
-```
+```red
 ...compilation time:     125 ms
 ...linking time:         10 ms
 ...output file size:     16384 bytes

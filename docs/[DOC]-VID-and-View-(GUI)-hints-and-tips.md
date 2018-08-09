@@ -2,7 +2,7 @@
 
 Add a filter for 'key events (in a detect event), and return 'stop from it.
 
-```
+```red
 system/view/capturing?: yes
 view [area "read only" on-detect [if event/type = 'key [return 'stop]]]
 ```
@@ -15,7 +15,7 @@ For debugging View apps, compile them with `-d` instead of `-t Windows` and run 
 
 > How do I read keyboard presses? I want to make a simple 2D game where I move my guy around.
 
-```
+```red
 view [
     size 300x300
     base red on-created [set-focus face] on-key [
@@ -31,7 +31,7 @@ view [
 
 Notice that you need to set-focus on a given face in order to receive key event there. An alternative way is to hook the event handler to the window itself:
 
-```
+```red
 view/options [
     size 300x300
     b: base red
@@ -53,13 +53,13 @@ view/options [
 
 Set its menu facet to an empty block. For example:
 
-```
+```red
 view [a: area do [a/menu: []]]
 ```
 
 # How to handle `wheel` events
 
-```
+```red
 view [
     size 200x400
     base
@@ -70,7 +70,7 @@ view [
 
 The key part is giving focus to the face where you define the `on-wheel` handler, so that it will receive the wheel events. By default, the window receivs those events, so you can also put an handler there:
 
-```
+```red
 view/options [size 200x400 b: base][
     actors: object [
         on-wheel: func [face event][
@@ -94,7 +94,7 @@ Windows 7 must be set to 'best appearance' for transparency to work:
 
 # How to move a face to the top of the z-order
 
-```
+```red
 move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
 ```
 
@@ -102,7 +102,7 @@ move-to-top: func [face] [move find face/parent/pane face tail face/parent/pane]
 
 ## Styles are a single face
 
-```
+```red
 view [
     style buttons: panel green [
         below

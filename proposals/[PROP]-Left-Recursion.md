@@ -1,4 +1,4 @@
-```
+```red
 ;example taken from red web page
 
 expr:   [term ["+" | "-"] expr | term]

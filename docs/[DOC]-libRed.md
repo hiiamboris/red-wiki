@@ -1,7 +1,7 @@
 # Call libRed from C 
 
 `%red-in-c.c`
-```c
+```redc
 #include "<path to>/libRed/red.h"
 
 int main(int argc, const char * argv[]) {
@@ -15,19 +15,19 @@ int main(int argc, const char * argv[]) {
 ## macOS
 Here's the command to compile it on macOS (As libRed is 32-bit, you must use gcc to compile the program so it can call libRed) :
 
-```
+```red
 $ gcc -m32 <path to>/libRed.dylib -o red-in-c red-in-c.c
 ```
 
 ## ubuntu32
 
-```
+```red
 gcc red-in-c.c -L ./ -l Red -I <path to>/libRed -o red-in-c
 ```
 
 ## Windows using the Tiny C Compiler
 
-```
+```red
 tcc red-in-c.c -L <path-to-dir-containing-libRed.dll>\ -lRed -o red-in-c.exe
 ```
 
@@ -36,7 +36,7 @@ tcc red-in-c.c -L <path-to-dir-containing-libRed.dll>\ -lRed -o red-in-c.exe
 ## macOS & Ubuntu32
 
 ### Code
-```c
+```redc
 #include <stdlib.h>
 #include <stdio.h>
 #include <dlfcn.h>
@@ -78,13 +78,13 @@ int main(int argc, const char *argv[]) {
 }
 ```
 ### Compilation (gcc)
-```text
+```redtext
 gcc -m32 -o <executable-filename> <source-file>.c -ldl
 
 ```
 # Call libRed from Ruby (Ubuntu32) using the FFI Gem
 
-```ruby
+```redruby
 require 'ffi'
 
 module RubyRed

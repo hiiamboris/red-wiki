@@ -2,7 +2,7 @@ Currently in Rebol, `pick` and `poke` seem to use 0-based indexing with `pair!`.
 
 Example:
 
-```
+```red
 img: make image! [2x2 #{FF000000FF000000FF000000} #{000000FF}]
 probe pick img 1
 probe pick img 2
@@ -22,7 +22,7 @@ probe pick img 1x1
 
 Current Rebol result:
 
-```
+```red
 255.0.0.0
 0.255.0.0
 0.0.255.0
@@ -41,7 +41,7 @@ none
 
 Preferred result:
 
-```
+```red
 255.0.0.0
 0.255.0.0
 0.0.255.0

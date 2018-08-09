@@ -18,7 +18,7 @@ Install with `ctrl+shift+P` (windows/linux) or `cmd+shift+P` (mac) and type "Ins
 
 ### for Sublime Text 3 users (Build System): 
 
-```
+```red
 {
     "shell_cmd": "/Users/apple/Desktop/
     /red-063.dms -c \"${file}\" && \"${file_path}/${file_base_name}\""

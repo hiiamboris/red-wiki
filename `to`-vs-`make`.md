@@ -6,7 +6,7 @@ We don't have any principle of least surprise to abide by, as Red lives in its o
 
 In Red, all values are `true` except `false` and `none`. Thus:
 
-```
+```red
 >> to logic! 1
 == true
 >> to logic! 0
@@ -17,7 +17,7 @@ is the expected result. Consequently, `true` (and by extension `false`), cannot 
 
 Current behaviors:
 
-```
+```red
 >> make integer! false
 == 0
 >> make integer! true
@@ -43,7 +43,7 @@ Current behaviors:
 
 In a more concise way:
 
-```
+```red
  MAKE	    TO
 ------	  --------
 T -> 1	  T -> n/a

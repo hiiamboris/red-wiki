@@ -4,7 +4,7 @@ Life of custom style author can certainly be made easier. Here are some thoughts
 
 Currently, adding action to a custom style in VID overwrites custom actors:
 
-```
+```red
 view [
     style my-button: base 100x24 on-create [
         face/draw: compose [pen black fill-pen white box 0x0 100x24 text 2x2 (face/text)]

@@ -6,7 +6,7 @@ What does that mean in practice?
 
 In almost all non-Lisp languages, you go from a textual representation of your source code to an AST which is compiled/interpreted. That is not the case in Red/Rebol, the text representation is LOADed as Red data and put in a block, illustrated by this example:
 
-```
+```red
 red>> src: {test: func [input /local s][s: "hello" append s input]}
 == {test: func [input /local s][s: "hello" append s input]}
 red>> code: load src
@@ -31,7 +31,7 @@ Strictly speaking there are no "variables" in Red. Words are first-class values,
 
 Let's run the test function and see what happens.
 
-```
+```red
 red>> do code
 == func [input /local s][s: "hello world" append s input]
 red>> test "x"
@@ -46,7 +46,7 @@ It should be clear, now, that each time you evaluate the function, you are modif
 
 # Deeper into the rabbit hole
 
-```
+```red
 red>> :test
 == func [input /local s][s: "hello worldx" append s input]
 red>> clear second body-of :test
@@ -69,7 +69,7 @@ This property can be leveraged in functions to implement local caches, for free,
 
 In general, this code-as-data approach makes serialization trivial, so saving snapshots of "code" from a running program to disk or sending code remotely, are one-liners in Red/Rebol.
 
-```
+```red
 red>> code
 == [test: func [input /local s] [s: "x" append s input]]
 red>> save %my-code.red code

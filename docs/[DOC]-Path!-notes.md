@@ -6,7 +6,7 @@ But what happens in other cases? Red has a _lot_ of datatypes. How does each of 
 
 Can you have a path within a path? Yes, you can. Look at this example:
 
-```
+```red
 >> p1: to path! [a b c]
 == a/b/c
 >> p2: to path! [a b/c]
@@ -36,7 +36,7 @@ Can you have a path within a path? Yes, you can. Look at this example:
 
 The two path values look the same when rendered, but are not the same internally. We have the same behavior in many other datatypes in Red:
 
-```
+```red
 >> word! = first [word!]
 == false
 >> none = first [none]
@@ -76,12 +76,12 @@ Come up with more first-class literal forms: the syntactic space of human-friend
 See: https://www.reddit.com/r/redlang/comments/86kdwr/on_words_vs_paths_confusion/
 
 The cause of some confusion is that users might have missed that words are atomic values while paths are containers (more precisely series), like blocks, that's why path types are part of `any-block!` typeset:
-```
+```red
 >> any-block!
 == make typeset! [block! paren! path! lit-path! set-path! get-path! hash!]
 ```
 Moreover, paths can contain different kinds of values, not just words (though they do require a word as the first element):
-```
+```red
 >> 'a/1/("hello")
 == a/1/("hello")
 ```
@@ -92,7 +92,7 @@ Given those facts, an equivalence between words and paths would make no sense, b
 This is already a feature of the language, but you'll notice that it's not bijective, as an atomic value can be converted to a container with that atomic value as its single element (basically, it's a wrapping operation), though the converse, converting a series with any number of values to an atomic value makes no sense.
 
 If we restrict the series to only series of single element, would that make sense to allow conversion, let's say from a "singular path" to a word? It would make sense, though it doesn't need to be implemented, because it's already an existing feature: simply extracting a value from a series. For example:
-```
+```red
 >> p: to-path 'a
 == a
 >> type? p
@@ -104,7 +104,7 @@ a
 You can use `first` or `pick` to get your word from the path, so the feature is already covered with basic series semantics.
 
 So far, so good, right? Well, not exactly. What you've called "singular path" is ill-defined. Let's say you define it as a path where the following test would return `true: 1 = length? path`. Let's now see some examples:
-```
+```red
 >> p: 'a/b
 == a/b
 >> 1 = length? p
@@ -117,7 +117,7 @@ So far, so good, right? Well, not exactly. What you've called "singular path" is
 == 2
 ```
 As you can see, it's not that simple, because paths are series, they have an implicit offset position. So `p` is a path of length 2 (not singular), while `q` is a path of length 1 (singular). But `q` is actually referring to a path of length 2 when the offset is at is head. `q` refers to the same underlying series as `p` differing only in the offset position:
-```
+```red
 >> poke p 2 123
 == 123
 >> p
@@ -148,7 +148,7 @@ It's a relative thing (the "R" in Rebol). In the main language, a block is the g
 
 Because paths are block values, you need to remember that `/only` should be used with functions that support it, if you want to match nested paths as single values.
 
-```
+```red
 >> b: [1 2 3 a b c/d e/f g/h]
 == [1 2 3 a b c/d e/f g/h]
 >> find/only b 'c/d
@@ -163,7 +163,7 @@ Because paths are block values, you need to remember that `/only` should be used
 
 And that holds true even if you construct convoluted paths programmatically (we won't recommend this, but it works).
 
-```
+```red
 >> p: to path! [a b/c [d e/f [g]]]
 == a/b/c/[d e/f [g]]
 >> sp: select/only p 'b/c

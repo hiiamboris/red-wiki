@@ -13,7 +13,7 @@ This Rich-Text Dialect (RTD) provides a high-level interface for specifying styl
 **Grammar**
 
 `any-single` is a pseudo-keyword meaning: *any combination of single occurence of following alternatives*.
-```
+```red
 color-name: word!
 nested: [ahead block! into rtd]
 color:  [tuple! | issue! | color-name]
@@ -47,12 +47,12 @@ Notes:
 **Usage**
 
 RTD input is processed by a specific `rtd-layout` function that will return a single-box rich-text face, where the RTD code will be compiled to a single text string (stored in `/text` facet) and a low-level styling description (stored in `/data` facet). The full specification of the function is:
-```
+```red
 rtd-layout: func [rtd [block!] /with target [face!] return: [face!]]
 ```
 
 **Examples**
-```
+```red
 rtd-layout [<i> <b> "Hello" </b> <font> 24 red " Red " </font> blue "World!" </i>]
 
 rtd-layout [i b "Hello" /b font 24 red " Red " /font blue "World!" /i]

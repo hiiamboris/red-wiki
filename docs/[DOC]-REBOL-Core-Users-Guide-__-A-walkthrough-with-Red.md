@@ -42,21 +42,21 @@ A trailing `.` is an error in Red:
 
 2.3. 
 
-```
+```red
 *** Syntax Error: invalid float! at "2.3."
 *** Where: do
 *** Stack: load 
 ```
 
 Decimal in Rebol is `float!` in Red:
-```
+```red
 >> type? 2.3
 == float!
 ```
 
 ### 2.13 Binary
 
-```
+```red
 Binary values are byte strings of any length. They can be encoded directly as hexadecimal or base-64. 
 
 For example:
@@ -78,13 +78,13 @@ Consult `help` in the Red cosole for `enbase` and `debase` specifics.
 > if current-time > snack-time [print snack-time]
 
 This code is just an example and will produce an error if you attempt to run it: 
-```
+```red
 *** Script Error: current-time has no value
 *** Where: >
 *** Stack:
 ```
 
-```
+```red
 loop 20 [
     wait 8:00
     send friend@rebol.com read http://www.cnn.com
@@ -102,7 +102,7 @@ Red function is: `FUNCTION spec body`
 
 Red will accept the form of Rebols function, but will generate an error when the function is
 called.
-```
+```red
 average: function [series] [total] [
     total: 0
     foreach value series [total: total + value]
@@ -111,7 +111,7 @@ average: function [series] [total] [
 ```
 
 `print average [37 1 42 108]`
-```
+```red
 *** Script Error: total has no value
 *** Where: average
 *** Stack: average  
@@ -132,7 +132,7 @@ Red   `page-sum: checksum page 'SHA256`
 
 Consult `help checksum`.
 
-```
+```red
 if any [
     not exists? %page-sum.r
     page-sum <> (load %page-sum.r)
@@ -176,14 +176,14 @@ http://www.rebol.com/docs/core23/rebolcore-4.html
 
 Should be:
 
-```
+```red
 if now/time > 12:30 [print "past noon"]
 ```
 
 
 ### 4.4 Reducing Blocks
 
-```
+```red
 print reform [1 + 2  3 + 4]
 3 7
 print remold [1 + 2  3 + 4]
@@ -217,7 +217,7 @@ There is no `for` function in Red.
 
 ### 7.4 Foreach
 
-```
+```red
 movies: [
      8:30 "Contact"      $4.95
     10:15 "Ghostbusters" $3.25
@@ -234,7 +234,7 @@ watch Matrix at 12:45 for $4.25
 
 There is no `money!` datatype in Red. Use `float`, instead. 
 
-```
+```red
 movies: [
      8:30 "Contact"      4.95
     10:15 "Ghostbusters" 3.25
@@ -255,7 +255,7 @@ watch Matrix at 12:45 for 4.25
 
 The series is set back to `head` before `forall` exits.
 
-```
+```red
 >> forall colors [print first colors]
 red
 green
@@ -266,7 +266,7 @@ blue
 >> 
 ```
 
-```
+```red
 >> head? colors
 == true
 ```
@@ -276,7 +276,7 @@ There is no `forskip` in Red.
 
 ### 8.2 Switch
 
-```
+```red
 str: copy "right "
 
 print switch 22 [
@@ -286,7 +286,7 @@ print switch 22 [
 ```
 Since Red currently has no `join` function, equivalent code would be:
 
-```
+```red
 str: copy "right "
 
 print switch 22 [
@@ -296,7 +296,7 @@ print switch 22 [
 ```
 
 This example seems to missing the `person` word in the switch:
-```
+```red
 person: 123
 switch type?/word [
     string! [print "a string"]
@@ -308,7 +308,7 @@ switch type?/word [
 
 Should be?:
 
-```
+```red
 person: 123
 switch type?/word person [
     string! [print "a string"]
@@ -320,7 +320,7 @@ switch type?/word person [
 
 `send` is not defined in Red. The following example will not work.
 
-```
+```red
 time: 12:30
 switch time [
      8:00 [send wendy@domain.dom "Hey, get up"]
@@ -333,7 +333,7 @@ switch time [
 ### 8.2.2 Common Cases
 
 This code:
-```
+```red
 case1: [print length? url]   ; the common block
 
 url: http://www.rebol.com
@@ -346,7 +346,7 @@ switch url [
 
 Should be:
 
-```
+```red
 case1: [print length? url]   ; the common block
 
 url: http://www.rebol.com
@@ -360,19 +360,19 @@ switch url [
 
 ### 9. Stopping Evaluation
 
-```
+```red
 if time > 12:00 [halt]
 ```
 
 Should be:
 
-```
+```red
 if now/time > 12:00 [halt]
 ```
 
 ### 10. Trying Blocks
 
-```
+```red
 for num 5 0 -1 [
     if error? try [print 10 / num] [print "error"]
 ]
@@ -394,7 +394,7 @@ http://www.rebol.com/docs/core23/rebolcore-5.html
 
 > Text that appears before the header is called the preface and is ignored during evaluation.
 
-```
+```red
 The text that appears before the header is ignored
 by REBOL and can be used for comments, email headers,
 HTML tags, etc.
@@ -408,7 +408,7 @@ print "This file has a preface before the header"
 ```
 
 "," is one of the invalid `word` characters in Rebol and Red, so an Error will occur if  `load` is used:
-```
+```red
 *** Syntax Error: invalid value at ", email headers,HTML tags, etc.Red ["
 *** Where: do
 *** Stack: load 
@@ -419,7 +419,7 @@ Remove commas from the Preface and change the header to `Red []` if you want to 
 
 ### Embedded Scripts
 
-```
+```red
 Here is some text before the script.
 [
     Red [
@@ -433,7 +433,7 @@ Here is some text after the script.
 
 Error in Red whe `do` is used:
 
-```
+```red
 *** Syntax Error: invalid value at "]Here is some text after the script."
 *** Where: do
 *** Stack: do-file expand-directives load  
@@ -461,7 +461,7 @@ To better see the `system/options` object, use `help`.
 
 `boot`, `path`, and `cache` reflect my current setup in the example below:
 
-```
+```red
 >> help system/options
      boot             string!       "C:\ProgramData\Red\gui-console-2018-4-1-19387.exe"
      home             none!         none
@@ -504,25 +504,25 @@ Consult `help load`
 ### 4.2 Saving Scripts
 
 Red has no `money!` datatype. Remove the `$` from the example.
-```
+```red
 >> data: [Buy 100 shares at 20.00 per share]
 == [Buy 100 shares at 20.0 per share]
 >> save %data.red data
 ```
 
 Loaded later with:
-```
+```red
 >> data: load %data.red
 == [Buy 100 shares at 20.0 per share]
 ```
 
-```
+```red
 >> save %date.red now
 >> stamp: load %date.red
 == 27-Oct-2017/22:57:10-06:00
 ```
 
-```
+```red
 >> save/header %data.red data header
 >> load %data.red
 == [Red [
@@ -556,7 +556,7 @@ http://www.rebol.com/docs/core23/rebolcore-6.html
 
 > If the series position is set to tail in Rebol, trying to access the first element is an error.
 
-```
+```red
 print first colors
 ** Script Error: Out of range or past end.
 ** Where: print first colors
@@ -564,7 +564,7 @@ print first colors
 
 In Red it returns `none`.
 
-```
+```red
 >> print first colors
 none
 ```
@@ -577,7 +577,7 @@ Typo in:
 
 
 Should be:
-```
+```red
 colors: next colors
 print length? colors
 ```
@@ -586,7 +586,7 @@ print length? colors
 ### 4.5 Offset?
 
 Typo:
-```
+```red
  data: [1 2 3 4]
  data1: next data
  data2: back tail data
@@ -606,14 +606,14 @@ There is no list! datatype in Red.
 
 ### 6.3 Forall Loop
 
-```
+```red
 colors: [red green blue yellow orange]
 forall colors [print first colors]
 ```
 
 > The forall advances the variable position through the series, so when it returns the variable is left at its tail:
 
-```
+```red
 print tail? colors
 true
 ```
@@ -624,7 +624,7 @@ true
 This is not true in latest version of Rebol 2, and is not true in Red.
 The position is set back to head before `forall` exits.
 
-```
+```red
 >> forall colors [print first colors]
 red
 green
@@ -654,13 +654,13 @@ Consult `help find` for details.
 > find/part takes either a count or an ending position.
 
 In Red `find/part` takes:
-```
+```red
 /part        => Limit the length of the search.
         length       [number! series!] 
 ```
 
 This Rebol example will fail:
-```
+```red
 colors: [red green blue yellow blue orange gold]
 probe find/part colors 'blue
 ```
@@ -685,7 +685,7 @@ Back-tick in text should be single quote `'`
 
 
 ### 11.2 Only
-```
+```red
  insert/only (find blk 5) [$1 $2 $3]
  probe blk
 ```
@@ -704,7 +704,7 @@ http://www.rebol.com/docs/core23/rebolcore-7.html
 
 ### 3. Arrays
 
-```
+```red
 arr: [
     [1   2   3  ]
     [a   b   c  ]
@@ -725,7 +725,7 @@ There is currently no `array!` type in Red. Use `block!` or `vector!`
 `b: make block! 5` Make a block with room for 5 elements.
 
 Make `vector!`  of size `n`. Initial values are `0`.
-```
+```red
 >> arr: make vector! 5 
 == make vector! [0 0 0 0 0]
 
@@ -735,7 +735,7 @@ Make `vector!`  of size `n`. Initial values are `0`.
 
 Here is a port of the Rebol `array` function by Gregg Irwin, which you can use for the examples in this section:
 
-```
+```red
 array: function [
     "Makes and initializes a block of of values (NONE by default)"
     size [integer! block!] "Size or block of sizes for each dimension"
@@ -773,13 +773,13 @@ array: function [
 ### 4. Composing Blocks
 
 Rebol example:
-```
+```red
 probe compose/deep [a b [c (d e)]]
 [a b [c d e]]
 ```
 
 Red:
-```
+```red
 >> probe compose/deep [a b [c (d e)]]
 *** Script Error: d has no value
 *** Where: compose
@@ -791,7 +791,7 @@ Consult `help compose`.
 
 For the above example to behave the same as Rebols compose/deep, use `compose/only`.
 
-```
+```red
 >> probe compose/only [a b [c (d e)]]
 [a b [c (d e)]]
 == [a b [c (d e)]]
@@ -818,7 +818,7 @@ We can use Rebol 2 source to add our own versions of these functions:
 
 `join`
 
-```
+```red
 join: func [
     "Concatenates values."
     value "Base value"
@@ -831,7 +831,7 @@ join: func [
 
 `reform`
 
-```
+```red
 reform: func [
     "Forms a reduced block and returns a string."
     value "Value to reduce and form"
@@ -842,7 +842,7 @@ reform: func [
 
 `remold`
 
-```
+```red
 remold: func [
     "Molds a reduced block and returns a string."
     value "Value to reduce and mold"
@@ -866,7 +866,7 @@ Gist with test cases for entab/detab mezzanine functions can be found here: [Ent
 
 ### 2.1 Join
 
-```
+```red
 print join $11 " dollars"
 ```
 
@@ -879,7 +879,7 @@ There is no money type in Red. Change $1.50 to 1.50 to run examples.
 
 ### 2.5 Mold
 
-```
+```red
 money: $11.11
 sub-blk: [inside another block mold this is unevaluated]
 probe mold [$22.22 money "-- unevaluated block:" sub-blk]
@@ -887,7 +887,7 @@ probe mold [$22.22 money "-- unevaluated block:" sub-blk]
 
 Red does not currently have a `money!` datatype. Remove `$` symbol to run examples.
 
-```
+```red
 money: 11.11
 sub-blk: [inside another block mold this is unevaluated]
 probe mold [22.22 money "-- unevaluated block:" sub-blk]
@@ -900,7 +900,7 @@ probe mold [22.22 money "-- unevaluated block:" sub-blk]
 Gregg Irwin and Steeve have provided entab/detab mezzanines to use if you wish:
 
 
-```
+```red
 ; Steeve gets credit for this one
 detab: function [
     "Converts leading tabs in a string to spaces. (tab size 4)"
@@ -928,7 +928,7 @@ detab: function [
 ]
 ```
 
-```
+```red
 entab: function [
 	"Converts leading spaces in a string to tabs. (tab size 4)"
 	string [any-string!] "(modified)"
@@ -962,13 +962,13 @@ Typo in uppercase example.  Word uppercase has three `p`s.
 
 Should be:
 
-```
+```red
 print uppercase/part "ukiah" 1
 ```
 
 ### 2.9 Checksum
 
-```
+```red
  By default, the CRC checksum is computed
  CRC	24 bit circular redundancy checksum
  print checksum "hello"
@@ -979,7 +979,7 @@ print uppercase/part "ukiah" 1
 
 Red `checksum`  requires method argument.
 
-```
+```red
 ARGUMENTS:
      data         [binary! string! file!] 
      method       [word!] {MD5 SHA1 SHA256 SHA384 SHA512 CRC32 TCP ADLER32 hash}.
@@ -987,7 +987,7 @@ ARGUMENTS:
 
 In Red:
 
-```
+```red
 >> print checksum "hello" 'md5
 #{5D41402ABC4B2A76B9719D911017C592}
 ```
@@ -997,7 +997,7 @@ Checksum has different refinements in Red. Consult `help checksum`.
 
 ### 2.10 Compression and Decompression
 
-```
+```red
 print [size? str "bytes"]
 306 bytes
 ```
@@ -1011,7 +1011,7 @@ There is currently no `compress` in Red.
 
 Will not work as written:
 
-```
+```red
 b-line: debase e-line
 print type? b-line
 binary
@@ -1022,7 +1022,7 @@ No! There's a land!
 ```
 
 You can use these lines to make the examples run-able:
-```
+```red
 line: "No! There's a land!"
 e-line: enbase line
 b-line: debase e-line
@@ -1045,7 +1045,7 @@ For example:
 
 REBOL
 
-```
+```red
 last-account: 89431
 bank-bonus: $10.00
 
@@ -1067,7 +1067,7 @@ make-account: func [
 
 Red
 
-```
+```red
 last-account: 89431
 bank-bonus: 10.00
 
@@ -1097,7 +1097,7 @@ Create a prototype object:  `my-prototype: object [x: 3 y: 2]`
 Clone the prototype object: `example1: make my-prototype []`
 
 You can extend the cloned object by adding new words in the block:
-```
+```red
 >> example2: make my-prototype [z: 1]
 == make object! [
     x: 3
@@ -1110,7 +1110,7 @@ You can extend the cloned object by adding new words in the block:
 ### 8. Encapsulation
 
 Typo in example:
-```
+```red
 Bank: make object! [
 
     last-account: 89431
@@ -1135,7 +1135,7 @@ Bank: make object! [
 
 Should be:
 
-```
+```red
 bank-account: make object! [
 
     last-account: 89431
@@ -1165,7 +1165,7 @@ bank-account: make object! [
 
 Red uses *-of functions for object reflection instead of `first` and `next first`.
 
-```
+```red
 >> probe first luke
 *** Script Error: first does not allow object! for its s argument
 *** Where: first
@@ -1173,35 +1173,35 @@ Red uses *-of functions for object reflection instead of `first` and `next first
 ```
 
 `body-of`
-```
+```red
 >> body-of luke
 == [last-account: 89433 bank-bonus: 10.0 first-name: "Luke" last-name: "Lakeswimmer" account: 89431 balance: 1204.52]
 ```
 
 `class-of`
 
-```
+```red
 >> class-of luke
 == 1000006
 ```
 
 `keys-of`
 
-```
+```red
 >> keys-of luke
 == [last-account bank-bonus first-name last-name account balance]
 ```
 
 `values-of`
 
-```
+```red
 >> values-of luke
 == [89433 10.0 "Luke" "Lakeswimmer" 89431 1204.52]
 ```
 
 `words-of`
 
-```
+```red
 >> words-of luke
 == [last-account bank-bonus first-name last-name account balance]
 ```
@@ -1238,14 +1238,14 @@ Should be: `print -2:20`
 
 The `//` operator does not work with `pair!` in Red.
 
-```
+```red
 >> print 101x32 // 10x3
 *** Script Error: cannot compare 1x2 with 0
 *** Where: <
 *** Stack: mod 
 ```
 
-```
+```red
 >> print 101x32 // 10
 *** Script Error: cannot compare 1x2 with 0
 *** Where: <
@@ -1265,7 +1265,7 @@ There is no `abs` function in Red, but you can set a word to use the same data a
 `complement` does not accept numbers with decimal points in Red.
 The following data types are accepted:
 
-```
+```red
 ARGUMENTS:
      value        [logic! integer! bitset! typeset! binary!] 
 ```
@@ -1285,7 +1285,7 @@ Correct: `print -2`
 
 From `help //`:
 
-```
+```red
 Wrapper for MOD that handles errors like REMAINDER. Negligible values (compared to A and B) are rounded to zero. 
 ```
 
@@ -1318,7 +1318,7 @@ Returns `== 1.#NaN` in Red.
 
 This is "type is not allowed here" error in Red:
 
-```
+```red
 >> 10:30 + 1.2.3
 *** Script Error: time! type is not allowed here
 *** Where: +
@@ -1347,7 +1347,7 @@ There is no `info?` function in Red.
 `delete` does not take a `block!` in Red.
 
 The following format will throw an error:
-```
+```red
 delete [%file1 %file2 %file3]
 ```
 

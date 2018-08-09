@@ -1,6 +1,6 @@
 The parse function is case insensitive by default (but only for a-z at the moment) but does not handle bitset!s case insensitively. The current behaviour, mirrored in Rebol 2, could be considered inconsistent.
 
-```
+```red
 >> parse "abc" [some [#"A" | #"B" | #"C"]]
 == true
 >> c: charset [#"A" #"B" #"C"]

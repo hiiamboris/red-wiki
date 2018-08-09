@@ -49,7 +49,7 @@ Type provider (programmer that implements a type) will parse only his/her types.
 2) the Red will call `parser: parsers(m/type-name) background-color: parser/parse(m/value)`
 3) `background-color` will be an object:
 
-```
+```red
 construct [
     type-name: "HSV"
     hue: 360
@@ -83,7 +83,7 @@ Dependent type is (from [wiki](https://en.wikipedia.org/wiki/Dependent_type)) is
 Using above syntaxes we can easily implement the dependent types.  
 We should just extend the `function` (as the `function` in `foo: function [a] [print a]`).  
 Common example of dependent type is adding 2 vectors (arrays of the same length). 
-```
+```red
 vect1: my-vector#{1 2 3} ; object [type-name: "my-vector" arr: [1 2 3] length: 3 ]
 vect2: my-vector#{1 2 3} ; object [type-name: "my-vector" arr: [1 2 3] length: 3 ]
 vect3: my-vector#{1 2 3 4 5} ; object [type-name: "my-vector" arr: [1 2 3 4 5] length: 5] 

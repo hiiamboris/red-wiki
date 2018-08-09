@@ -3,7 +3,7 @@
 
 ## 例子：test.red
 
-```
+```red
 Red [ ]
 
 ; 数值
@@ -29,7 +29,7 @@ print b
 
 可以看到 `int` 变量 `a`、`b` 以及函数 `inc` 的符号表（指在 `------------| "Symbols"` 部分），但找不到字符串变量 `s`。
 
-```
+```red
 with red [
     root-base: redbin/boot-load system/boot-data yes 
     exec: context [
@@ -166,7 +166,7 @@ with red [
 
 字符串变量 `s` 在编译后是用 `~s` 来表示，于是在 `v4.reds` 中搜索 `~s`，发现在 `-- compiler/globals --` 和 `emiter/symbols` 中分别找到了，前者说明字符串是全局的？后者说明是从 Redbin 的符号表来读取？
 
-```
+```red
 -- compiler/globals -- 
 [
     <data> [global 0 [144 150] -] 
