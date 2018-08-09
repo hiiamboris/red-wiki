@@ -46,7 +46,7 @@ Implementation note: It is currently provided with a complete tool-chain generat
 ### 2.1 分隔符（Delimiters）
 
 字符串分隔符：双引号
-```redrebol
+```rebol
 "this is a string"
 {This is
   a multiline
@@ -104,7 +104,7 @@ print "hello world"    ; this is another comment
 
 多行注释：
 
-```redrebol
+```rebol
 comment {
     This is a
     multiline
@@ -129,13 +129,13 @@ comment {
 
 变量是用来表示一个内存地址的标签。这个标签（下文开始叫`标识符`）由一系列可打印的字符组成（不包括空格、换行、制表符等空白字符）。可打印字符是指可以在系统 console 打印出来的字符，ASCII 在 20h-7Eh 之间。但以下这些字符除外，它们被用于分隔符或保留给某些数据类型所用：
 
-```redrebol
+```rebol
 [ ] { } " ( ) / \ @ # $ % ^ , : ; < >
 ```
 
 以下字符不能作为变量的首个字符，放在其他位置是可以的：
 
-```redrebol
+```rebol
 0 1 2 3 4 5 6 7 8 9 '
 ```
 
