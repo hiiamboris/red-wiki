@@ -7,6 +7,7 @@ Ah, except that's only for strings. For blocks, all none! values are removed by 
 
 I am using red-063. trim is not the same as trim/head/tail for me.
 
+```red
 ;== trim messes with each line, and leaves a cr at the end
 ;== trim/head/tail does not
 
@@ -24,14 +25,18 @@ reduce [
 
 }
 ]
+```
 
-======
 
+***
+
+
+```red
 [
     {hello^/world^-^-asdf^/asdf^/} 
     "hello^/^-world^-^-asdf^/^-asdf"
 ]
-
+```
 
 #### @accumulism
 
