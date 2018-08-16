@@ -33,3 +33,31 @@ To use Red as CGI under IIS, follow the instructions below:
 * Under `CGI`, set `Use New Console For Each Invocation` to `true`. Otherwise you get `502.2 - Bad Gateway. SetConsoleTitle failed!` error.
 
 If you use `red.exe` instead of compiled red console application, then don't forget to put `--cli` for `Executable` settings: `<path>\red.exe --cli "%s"`. Otherwise you get `502.2 - Bad Gateway. ""` (empty header error)
+
+## Under Cheyenne Web Server
+
+For details see https://www.cheyenne-server.org/about.shtml
+
+Add `.red` extension to `bind-extern` in `globals` section in `httpd.cfg` file:
+
+```red
+globals [
+  listen [80 81 82] ;can listen multiple ports
+  bind-extern CGI to [.cgi .red] ;you can use any extension you want
+  bind-extern RSP to [.rsp]
+  worker-libs [
+    ...
+```
+
+Reload or restart Cheyenne.
+
+Then create a file named `test.red` under `www`, change the path to your `red` executable or the pre-compiled console executable in the first line of your script:
+
+```red
+#!/E/Server/cheyenne/www/red-console.exe
+Red []
+print "Content-type: text/html^/"
+print now
+```
+
+Now you are ready to test. Open a browser and point to `localhost/test.red` you should see the output of your script.
