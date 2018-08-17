@@ -49,7 +49,7 @@ globals [
     ...
 ```
 
-Reload or restart Cheyenne.
+Reload config or restart Cheyenne.
 
 Then create a file named `test.red` under `www`, change the path to your `red` executable or the pre-compiled console executable in the first line of your script:
 
