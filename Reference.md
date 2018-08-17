@@ -1,6 +1,8 @@
 External links appear in quotes.
 ***
 
+* [Lexical/Syntactic and Semantic rules of the Red Programming Language - Rudolf Meijer](https://github.com/meijeru/red.specs-public)
+
 * ["Red Language Documentation"](http://www.red-lang.org/p/documentation.html)
 
 * [VID Reference Documentation](https://github.com/red/red/wiki/%5BDOC%5D-VID-Reference-Documentation)
