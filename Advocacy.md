@@ -7,6 +7,8 @@ We need to figure out how to format this page, so we can see if a site or channe
 - https://rosettacode.org The reference standard
 - https://rosetta.alhur.es Idea for Red for X programmers, both as a site and a desktop app
 - https://exercism.io
+- http://www.tutorialspoint.com A huge tutorials library
+- https://www.tutorialspoint.com/codingground.htm Online terminals, compilers, interpreters and editors
 
 Find other programming challenge and training sites to add!
 
