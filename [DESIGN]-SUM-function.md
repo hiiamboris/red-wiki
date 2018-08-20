@@ -1,4 +1,4 @@
-Simple `sum` (and `average`) function added to Red.
+Simple `sum` (and `average`) function added to Red. See [PR-3498](https://github.com/red/red/pull/3498)
 
 Currently `sum` doesn't coalesce return value as `float!` in case of integer overflow. This could be done by a `safe` refinement with a cost of performance.
 
