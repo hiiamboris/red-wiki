@@ -314,6 +314,11 @@ make-world: func [
 
 For docstrings, the main one (describing the function) should be on its own line if the spec block is wrapped. The argument and refinement docstrings should be on the same line as the item they are describing. Docstrings start with a capital letter and do not require a ending dot (it's added automatically when printed on screen by `help` function).
 
+- Doc strings SHOULD NOT be more than 70 chars
+- They SHOULD NOT contain line breaks
+- They SHOULD provide a brief description of the functions purpose or behavior
+- They SHOULD use terminology consistent with similar or related functions
+
 **Correct**
 
 ```red
