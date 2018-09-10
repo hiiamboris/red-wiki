@@ -27,9 +27,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [incept.red](https://gist.github.com/9214/6aec87123b69fb815cdb008a022aa163) - 
 
 		tags: 
-	* [linden](https://github.com/9214/linden) - fractals and plants
-
-		tags: fractals , l-system
 	* [only.red](https://gist.github.com/9214/3fb68cb043d8dc0fb9f1041606cd238b) - 
 
 		tags: 
