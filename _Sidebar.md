@@ -12,9 +12,9 @@
 
 ### [Libraries](https://github.com/red/red/wiki/Libraries)
 
-### [Unofficial Tutorials and Resources](https://github.com/red/red/wiki/Unofficial-Tutorials-and-Resources)
+### [Unofficial Tutorials and Resources](https://github.com/red/red/wiki/%5BLINKS%5D-Unofficial-Tutorials-and-Resources)
 
-### [Non-English Resources](https://github.com/red/red/wiki/Non-English-Resources)
+### [Non-English Resources](https://github.com/red/red/wiki/%5BLINKS%5D-Non-English-Resources)
 
 ### [GUI Programming](https://github.com/red/red/wiki/%5BLINKS%5D-GUI-Programming)
 
