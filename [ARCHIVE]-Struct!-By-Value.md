@@ -17,20 +17,20 @@ s2: declare struct! [
 
 See https://github.com/haolloyin/reds-json/blob/master/json.reds#L401
 ```
-    parse-object: func [
-        v       [json-value!]
-        return: [json-parse-result!]
-        /local
-            ret     [integer!]
-            size    [integer!]
-            key-ptr [bytes-ptr!]
-            len-ptr [int-ptr!]
-            target  [byte-ptr!]
-            m       [json-member! value]    ;-- add `value` to avoid static allocate memory for `m`
-            i       [integer!]
-    ][
-        ...
-    ]
+parse-object: func [
+    v       [json-value!]
+    return: [json-parse-result!]
+    /local
+        ret     [integer!]
+        size    [integer!]
+        key-ptr [bytes-ptr!]
+        len-ptr [int-ptr!]
+        target  [byte-ptr!]
+        m       [json-member! value]    ;-- add `value` to avoid static allocate memory for `m`
+        i       [integer!]
+][
+    ...
+]
 ```
 
 or see https://github.com/haolloyin/reds-json/blob/master/json.reds#L43
