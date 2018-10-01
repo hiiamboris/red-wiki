@@ -48,3 +48,11 @@ This is a bit inconsistent with words, which require `set/any` to accept `unset!
 A similar but perhaps cleaner alternative to the above would be to allow `unset 'map/key` to remove `key` from `map`. It gets a little ugly with `string!` keys etc, you'd have to use `unset 'map/("key")`. It would be perhaps more familiar to people coming from Javascript for eg. (`delete object.key` becomes `unset 'object/key`).
 
 There is a precedent for this with `get` and `set`, which both allow a map path. It does start feeling a little strange, but as an underlying mechanism, with a wrapper mezz, it might be the most consistent. Unless `remove/part` to match bitset behavior is deemed better. `Unset` is shorter. And also doesn't preclude using `unset!` as a value to remove a key.
+
+## Add a new action, `remove-key`
+
+It feels a bit "ugly" to add an action that only serves one type, however, it would be handy on all series values (just like `append` is unnecessary but handy to have), and would solve the problem for `map!` (and, arguably, `bitset!`). It might be useful in the future for other types as well.
+
+## Turn `map!` into a proper series
+
+Given that we seem to care about the order of keys in `map!` (as well as `object!`), at least up to some extent, it might not be so outrageous to allow `map!` values to have a current position as well, and let most series actions work on `map!`, including `remove`. This definitely needs more thought, however, I think it would be a big win if we could figure out how to leverage the series abstraction here.
