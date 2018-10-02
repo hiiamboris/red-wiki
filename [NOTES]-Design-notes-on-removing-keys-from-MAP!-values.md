@@ -56,3 +56,7 @@ It feels a bit "ugly" to add an action that only serves one type, however, it wo
 ## Turn `map!` into a proper series
 
 Given that we seem to care about the order of keys in `map!` (as well as `object!`), at least up to some extent, it might not be so outrageous to allow `map!` values to have a current position as well, and let most series actions work on `map!`, including `remove`. This definitely needs more thought, however, I think it would be a big win if we could figure out how to leverage the series abstraction here.
+
+## And the winner is...
+
+A new idea, not listed above, but close to others. We'll add a `/key` refinement to `remove`, which will be used for both maps and bitsets. The bitset code will change because of that, but it means `/part` won't be overloaded for this purpose. 
