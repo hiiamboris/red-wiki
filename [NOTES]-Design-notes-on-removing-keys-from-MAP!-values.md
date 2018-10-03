@@ -60,3 +60,5 @@ Given that we seem to care about the order of keys in `map!` (as well as `object
 ## And the winner is...
 
 A new idea, not listed above, but close to others. We'll add a `/key` refinement to `remove`, which will be used for both maps and bitsets. The bitset code will change because of that, but it means `/part` won't be overloaded for this purpose. 
+
+While this seems like the best choice, it won't come particularly cheap. `Remove` is an action, and therefore implemented for each type independently. Each instance must be updated to support the new refinement and its argument, even if only to return an error saying they don't support that refinement. Interaction with `/part` must also be considered.
