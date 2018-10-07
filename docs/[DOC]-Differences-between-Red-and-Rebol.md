@@ -153,7 +153,7 @@ In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Re
 
 ## DO
 
-The values that get special treatment by do are: [block! path! string! url! file! error!] Everything else is evaluated passively. This is by design, to eliminate variable arity.
+The values that get special treatment by do are: [block! path! string! url! file! error!] Everything else is evaluated passively. This is by design, to eliminate variable arity. (See [here](https://gitter.im/red/help?at=5ab285275f188ccc15df954b))
 
 On R2 and R3
 ```rebol
