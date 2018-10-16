@@ -298,10 +298,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [worm.red](https://gist.github.com/dockimbel/2d95c8c85e5bfed71bd1c15294ee77c5) - 
 
 		tags: 
-* DonaldTsang - 
-	* [LearnRed](https://github.com/DonaldTsang/LearnRed) - For people to learn Red the fun way! <3
-
-		tags: ciphers , cryptography resources
 * DVL333 - 
 	* [Experiments](https://github.com/DVL333/Experiments) - 
 
