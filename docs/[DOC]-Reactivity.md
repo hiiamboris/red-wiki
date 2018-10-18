@@ -208,6 +208,27 @@ view [
 	at 60x60 p: pan 100x100 blue
 ]
 ```
+# Composing reactions on windows `on-created`
+
+You can compose several `react`s with same spec for many similar faces in window `on-created` actor, as e.g.
+```
+clear-reactions view/flags [
+	on-created [
+		win: face 
+		reacts: copy [] 
+		repeat i length? face/pane [
+			append reacts compose/deep [
+				react [
+					(to-set-path compose [win pane (i) offset]) as-pair win/size/x - 10 * 1.0 / 3 * (i - 1) + 10 10 
+					(to-set-path compose [win pane (i) size]) as-pair win/size/x - 10 * 1.0 / 3 - 10 win/size/y - 20
+				]
+			]
+		] 
+		do reacts
+	] 
+	box red box blue box green
+] 'resize
+```
 # Is vs React
 
 `React` is not meant to be used from inside a reactor, that's why it only recognizes paths are possible sources of reactions. That's what `is` is for. Basically, use `is` for "internal" relations inside a reactor, and `react` for "external" relations (requiring path accessors).
