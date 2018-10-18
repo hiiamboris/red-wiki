@@ -229,6 +229,30 @@ clear-reactions view/flags [
 	box red box blue box green
 ] 'resize
 ```
+And example with resizing fields:
+```
+clear-reactions view/flags [
+	on-created [
+		win: face 
+		reacts: copy [] 
+		repeat i length? face/pane [
+			if face/pane/:i/type = 'field [
+				append reacts compose/deep [
+					react [
+						(to-set-path compose [win pane (i) size]) as-pair win/size/x - 10 - win/pane/(i)/offset/x win/pane/(i)/size/y
+					]
+				]
+			]
+		] 
+		do reacts
+	]
+	style lbl: text 50 right
+	style fld: field 100
+	lbl "First:" fld return
+	lbl "Second:" fld return
+	lbl "Third:" fld
+] 'resize
+```
 # Is vs React
 
 `React` is not meant to be used from inside a reactor, that's why it only recognizes paths are possible sources of reactions. That's what `is` is for. Basically, use `is` for "internal" relations inside a reactor, and `react` for "external" relations (requiring path accessors).
