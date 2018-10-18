@@ -208,7 +208,7 @@ view [
 	at 60x60 p: pan 100x100 blue
 ]
 ```
-# Composing reactions on windows `on-created`
+# Composing reactions in window `on-created` actor
 
 You can compose several `react`s with same spec for many similar faces in window `on-created` actor, as e.g.
 ```
