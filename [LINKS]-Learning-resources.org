@@ -22,7 +22,6 @@
 
 ** Books
 - [[https://www.amazon.com/dp/1789130700][Learn Red - Fundamentals of Red (Packt Publishing) by Ivo Balbaert]]
-- [[https://www.amazon.com/dp/1788995236][Hands-On Red Team Tactics (Packt Publishing) by Himanshu Sharma,Harpreet Singh]]
 
 ** Personal blogs and pages from community members
 - [[https://github.com/red/red/wiki][Github wiki]]
