@@ -10,8 +10,6 @@ External links appear in quotes.
 
 * ["Helpin'Red"](http://helpin.red/)
 
-* ["Helpin'Red - Do češtiny přeložil Tovim"](http://helpin.red/cs/index.html)
-
 * ["Learn Red in Y minutes"](https://learnxinyminutes.com/docs/red/)
 
 * ["Red Programming"](http://www.mycode4fun.co.uk/About-Red-Programming)
@@ -19,10 +17,6 @@ External links appear in quotes.
 * ["Red Language Blog"](http://redlanguageblog.blogspot.co.uk/?view=flipcard)
 
 * ["Programming in RED"](https://programming.red/wiki/Main_Page)
-
-* ["Arnold's Course"](http://arnoldvanhofwegen.com/blog/nieuwe-red-release-beginnerscursus-programmeren/)
-
-* ["Краткое пособие по языку Red"](https://habr.com/post/351100/)
 
 * ["GUI Overview"](https://doc.red-lang.org/en/gui.html)
 
@@ -35,8 +29,6 @@ External links appear in quotes.
 * ["Red for Hopeless Programmers - Part 1"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
-
-* ["Book: Learn Red – Fundamentals of Red - Packt Publishing - Ivo Balbaert"](https://www.packtpub.com/application-development/learn-red-%E2%80%93-fundamentals-red)
 
 ### Blockchain
 ***
