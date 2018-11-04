@@ -27,3 +27,5 @@
 **Editors**
 ### [VSCode Plugin](https://github.com/red/red/wiki/Visual-Studio-Code-Plugin)
 
+### [Rededitor] (http://helpin.red/Rededitor.html)
+
