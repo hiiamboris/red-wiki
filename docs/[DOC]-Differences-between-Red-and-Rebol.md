@@ -12,6 +12,10 @@
 10. [RANDOM](#random)
 11. [DO](#do)
 12. [MAKE NONE](#make-none)
+13. [LAST](#last)
+14. [TAKE](#take)
+15. [TO-INTEGER](#to-integer)
+16. [LOAD](#load)
 
 ## COPY object!
 
@@ -136,6 +140,14 @@ Under R2, `dir?` returns true based on whether the target is an actual directory
 
 In Rebol2 and Rebol3 ```to-date``` function works with string values but not in Red yet. So currently `to-date "2-May-2018"` will return an error. ```load``` can be used instead.
 
+```
+>> load "2018/01/02"
+== 2-Jan-2018
+
+>> to-date "2018/01/02"
+Script Error: cannot MAKE/TO date! from: "2018/01/02"
+```
+
 Please note that this is a temporary difference since Red's lexer in not in its final form yet.
 
 ## RANDOM
@@ -198,3 +210,27 @@ length? m
 
 This returns 0 on Rebol2 but 1 on Red.
 Red creates a hash with one value (none) inside, but Rebol2 creates an empty hash.
+
+## LAST
+
+`last []` returns `none` on Red and R3, but returns `Out of range or past end` on R2.
+
+## TAKE
+
+`take []` returns `none` on all Red, R3 and R2.
+
+But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's behavior looks more consistent.
+
+## TO-INTEGER
+
+`to-integer ""` returns error on Red and R3, but `0` on R2.
+
+## LOAD
+
+`load %file.txt` loads the content of the file and return one value (if there is just one value in the file) or a block of values (if there are more values in the file) on Red and R2, but returns a string on R3.
+
+```
+>> load %/c/file.txt
+== [abc def] ; Red & R2
+== "abc^/def^/" ; R3
+```
