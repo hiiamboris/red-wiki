@@ -16,6 +16,7 @@
 14. [TAKE](#take)
 15. [TO-INTEGER](#to-integer)
 16. [LOAD](#load)
+17. [READ](#read)
 
 ## COPY object!
 
@@ -242,3 +243,22 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 == [%$Recycle.Bin/ %$WINDOWS.~BT/ %Boot/ %bootmgr ... ] ; R2 & R3
 *** Script Error: transcode does not allow block! for its <anon> argument ; Red
 ```
+
+## READ
+
+`read/lines/part` behaves different on Red, R2 and R3:
+
+```
+>> write/lines %file.txt ["one" "two" "three"]
+
+>> read/lines/part %file.txt 2
+== ["on"] ; Red & R3
+== ["one" "two"] ; R2
+
+>> read/lines/part %file.txt 4
+== ["one^M"] ; Red
+== ["one"] ; R3
+== ["one" "two" "three"] ; R2
+```
+
+Note that full IO support will come with v0.7.0 to Red and current simple-io functionality may change.
