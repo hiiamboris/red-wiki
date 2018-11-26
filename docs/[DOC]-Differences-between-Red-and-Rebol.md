@@ -227,10 +227,18 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 
 ## LOAD
 
-`load %file.txt` loads the content of the file and return one value (if there is just one value in the file) or a block of values (if there are more values in the file) on Red and R2, but returns a string on R3.
+1. `load %file.txt` loads the content of the file and return one value (if there is just one value in the file) or a block of values (if there are more values in the file) on Red and R2, but returns a string on R3.
 
 ```
 >> load %/c/file.txt
 == [abc def] ; Red & R2
 == "abc^/def^/" ; R3
+```
+
+2. `load %./` returns a block of files and folders on R2 and R3, but not on Red:
+
+```
+>> load %/c/
+== [%$Recycle.Bin/ %$WINDOWS.~BT/ %Boot/ %bootmgr ... ] ; R2 & R3
+*** Script Error: transcode does not allow block! for its <anon> argument ; Red
 ```
