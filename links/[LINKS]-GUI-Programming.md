@@ -16,7 +16,7 @@ External links appear in quotes.
 
 * [View - Rich Text support](https://github.com/red/red/wiki/%5BDOC%5D-Rich-Text-support)
 
-* [VID and View - Hints and tips](https://github.com/red/red/wiki/%5BDOC%5D-VID-and-View-(GUI)-hints-and-tips)
+* [VID and View - Hints and tips](https://github.com/red/red/wiki/%5BHOWTO%5D-VID-and-View-(GUI)-hints-and-tips)
 
 ***
 
