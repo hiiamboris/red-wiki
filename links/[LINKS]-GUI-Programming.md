@@ -22,6 +22,7 @@ External links appear in quotes.
 
 #### Red IDE projects from the community:
 
+* [Rededitor by Ungaretti](http://helpin.red/Rededitor.html)
 * [Red IDE by Alexander Baggett](https://github.com/AlexanderBaggett/RedIDE)
 * [redide4mac by vulnz](https://github.com/vulnz/redide4mac)
 * [Red Forms Generator by PlanetSizeCPU](https://github.com/planetsizecpu/forms/blob/master/forms_dynamic.red)
