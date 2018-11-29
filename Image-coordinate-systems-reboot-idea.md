@@ -1,6 +1,7 @@
 # Image coordinate systems reboot
 
-See https://github.com/red/red/issues/3504 for the history. 
+See https://github.com/red/red/issues/3504 for the history.
+See https://github.com/red/REP/issues/34 for the discussion.
 
 Currently there are 3 different coordinate systems (CS) used in images:
 
