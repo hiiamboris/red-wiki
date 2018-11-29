@@ -78,7 +78,5 @@
 
 * In between
 - [[https://programming.red/wiki/Main_Page][Rebol-family languages wiki by Giuseppe Chillemi]]
-- [[http://chat.stackoverflow.com/rooms/291/rebol-and-red][Rebol and Red StackOverflow chat]]
-- [[http://blog.hostilefork.com/][hostilefork blog]] / [[https://www.youtube.com/channel/UCpQxdoPFbT5p6s9NU7iU1ZA][Youtube channel]]
 - [[http://recode.revault.org/][ReCode 2013]]
 - [[https://www.youtube.com/user/SoftwareFreedomDay/playlists][SofwareFreedomDay playlists w/ reports about Red and Rebol]]
