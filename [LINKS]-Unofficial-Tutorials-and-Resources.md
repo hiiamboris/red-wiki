@@ -2,13 +2,10 @@ External links appear in quotes.
 ***
 
 ### Red
-***
-[List of learning resources](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources)
-***
-
-* ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
 
 * ["Helpin'Red"](http://helpin.red/)
+
+* ["Getting started with Red"](http://redprogramming.com/Getting%20Started.html)
 
 * ["Learn Red in Y minutes"](https://learnxinyminutes.com/docs/red/)
 
@@ -29,6 +26,11 @@ External links appear in quotes.
 * ["Red for Hopeless Programmers - Part 1"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
+
+
+***
+[A list of resources for Red and Rebol programming langues](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources)
+***
 
 ### Blockchain
 ***
