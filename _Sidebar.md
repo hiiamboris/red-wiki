@@ -18,6 +18,8 @@
 
 ### [GUI Programming](https://github.com/red/red/wiki/%5BLINKS%5D-GUI-Programming)
 
+### [Parse](https://github.com/red/red/wiki/%5BDOC%5D-Parse)
+
 ### [Coming from REBOL?](https://github.com/red/red/wiki/%5BLINKS%5D-Coming-from-REBOL)
 
 ### [Deep Dives](https://github.com/red/red/wiki/%5BLINKS%5D-Deep-Dives)
