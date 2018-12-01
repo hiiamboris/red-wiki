@@ -753,4 +753,4 @@ You can get the compiler to output the "pure" machine code of a Red/System progr
 The purpose of the `--no-runtime` option is to allow the production of "OS free" executables.
 
 # Compiling CLI console with View engine
-Just prepend `Needs: View` to `%.environment/console/CLI/console.red` script header.
+Just prepend `Needs: View` to `%environment/console/CLI/console.red` script header.
