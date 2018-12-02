@@ -9,6 +9,7 @@ We need to figure out how to format this page, so we can see if a site or channe
 - https://exercism.io
 - http://www.tutorialspoint.com A huge tutorials library
 - https://www.tutorialspoint.com/codingground.htm Online terminals, compilers, interpreters and editors
+- https://adventofcode.com/ Advent of Code programming puzzles
 
 Find other programming challenge and training sites to add!
 
