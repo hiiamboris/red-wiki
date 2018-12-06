@@ -12,3 +12,4 @@ When compiling mixed Red + Red/system programs, it is necessary to compile using
 
 [#1342](https://github.com/red/red/issues/1342) is a dynamic limitation. The compiler does not support such constructs, nor will it support them in the near future (written in mid 2018). The alternative is to use the encapping mode when compiling (-e option instead of -c), that will ensure that your code runs through the interpreter, fully preserving the semantics you experience in the REPL.
 
+Additional issues for compiler limitation: [#3285](https://github.com/red/red/issues/3285) [#1748](https://github.com/red/red/issues/1748) [#1977](https://github.com/red/red/issues/1977)
