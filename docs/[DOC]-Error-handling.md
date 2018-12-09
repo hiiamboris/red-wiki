@@ -106,3 +106,5 @@ Even wrapper on `cause-error 'user 'message [...]` is too limited:
 http://helpin.red/Errorhandling.html
 
 http://www.red-by-example.org/index.html#cat-e01
+
+https://github.com/red/red/issues/3592
