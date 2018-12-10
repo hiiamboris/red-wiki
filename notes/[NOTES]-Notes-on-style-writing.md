@@ -19,3 +19,7 @@ Such action (`print "test"`) should be added to some default location instead (l
 ## Passing values from VID to style
 
 It's easy for basic values like text, color, etc that are supported by VID already, but setting some custom values is not possible. Using `extra` will overwrite whole `extra` context, so I think there should be a way to just change specific words in `extra` context.
+
+## Example
+
+An explanation & example style can be found: [Writing simple VID style](http://red.qyz.cz/writing-style.html)
