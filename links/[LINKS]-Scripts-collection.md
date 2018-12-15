@@ -116,10 +116,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [messagebox.reds](https://gist.github.com/ChadSki/a1d506b6602cf81e220b07cf73df3fc8) - 
 
 		tags: 
-* CORDEA - 
-	* [Inco-manager](https://github.com/CORDEA/Inco-manager) - 
-
-		tags: 
 * cromo - 
 	* [red-horizon](https://github.com/cromo/red-horizon) - Personal exploration of the Red programming language http://www.red-lang.org/
 
