@@ -17,6 +17,7 @@
 15. [TO-INTEGER](#to-integer)
 16. [LOAD](#load)
 17. [READ](#read)
+18. [ADJUST TIME BY SETTING TIMEZONE](#adjust-time-by-setting-timezone)
 
 ## COPY object!
 
@@ -262,3 +263,18 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 ```
 
 Note that full IO support will come with v0.7.0 to Red and current simple-io functionality may change.
+
+## ADJUST TIME BY SETTING TIMEZONE
+
+When setting timezone of a date value by `zone`, time will not be adjusted in R2, R3 and Red.
+
+When `timezone` is used to set, time adjusted, only Red has this feature:
+
+```
+>> d: now
+== 22-Dec-2018/1:53:52+03:00
+>> d/timezone: 5:0:0
+== 5:00:00
+>> d
+== 22-Dec-2018/3:53:52+05:00
+```
