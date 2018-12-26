@@ -1,5 +1,4 @@
-A page for learning Parse.
-***
+# Learning resources for Parse.
 
 * ["A beginner friendly Parse article by Michael Sydenham"](http://www.michaelsydenham.com/reds-parse-dialect/)
 
@@ -8,3 +7,9 @@ A page for learning Parse.
 * ["Parse chapter from Ungaretti's Red Language Notebook"](https://ungaretti.gitbooks.io/red-language-notebook/content/parse.html)
 
 * ["Parse section from Red by Example"](http://www.red-by-example.org/parse.html)
+
+***
+
+# Notes about Parse
+
+[Parse always reaches the tail with some combinations of iterators and TO / THRU](https://github.com/red/red/issues/3679)
