@@ -18,6 +18,7 @@
 16. [LOAD](#load)
 17. [READ](#read)
 18. [ADJUST TIME BY SETTING TIMEZONE](#adjust-time-by-setting-timezone)
+19. [REPEND](#repend)
 
 ## COPY object!
 
@@ -278,3 +279,11 @@ When `timezone` is used to set, time adjusted, only Red has this feature:
 >> d
 == 22-Dec-2018/3:53:52+05:00
 ```
+
+## REPEND
+
+`repend` in Rebol is just a shortcut for the common `append ... reduce` pattern. This means that you still incur the cost of an extra block produced by reduce before append.
+
+In Red, `repend` is the fusion of the `append ... reduce` pattern, so that no intermediary block is created (thanks to the efficient `reduce/into` call). This means that values are reduced and appended one by one in this case. It will behave the same way as `append ... reduce`, unless you rely on side-effects, like above modifying the accumulating series while reducing. In such cases, just fall back on `append ... reduce` in order to separate fully the reduction from the appending actions.
+
+See the details [here](https://github.com/red/red/issues/3340)
