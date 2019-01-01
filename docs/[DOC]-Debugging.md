@@ -41,3 +41,5 @@ Remember that Red's toolchain is minimal, building from source is fast and easy,
 # See also:
 
 - https://github.com/red/red/ (readme shows command line switches, of which a few are debugging related)
+
+- [Chasing a bug till resolving](https://github.com/red/red/issues/3692#issuecomment-450722963)
