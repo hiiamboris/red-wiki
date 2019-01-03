@@ -1676,9 +1676,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [red-graphviz](https://github.com/toomasv/red-graphviz) - Graph vizualization for Red with graphviz
 
 		tags: 
-	* [redgithub](https://github.com/toomasv/redgithub) - Red integration with github
-
-		tags: 
 	* [regex](https://github.com/toomasv/regex) - Regex to parse translator
 
 		tags: 
