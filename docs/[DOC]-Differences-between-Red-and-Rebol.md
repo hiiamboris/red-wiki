@@ -19,6 +19,7 @@
 17. [READ](#read)
 18. [ADJUST TIME BY SETTING TIMEZONE](#adjust-time-by-setting-timezone)
 19. [REPEND](#repend)
+20. [PARSE](#parse)
 
 ## COPY object!
 
@@ -287,3 +288,18 @@ When `timezone` is used to set, time adjusted, only Red has this feature:
 In Red, `repend` is the fusion of the `append ... reduce` pattern, so that no intermediary block is created (thanks to the efficient `reduce/into` call). This means that values are reduced and appended one by one in this case. It will behave the same way as `append ... reduce`, unless you rely on side-effects, like above modifying the accumulating series while reducing. In such cases, just fall back on `append ... reduce` in order to separate fully the reduction from the appending actions.
 
 See the details [here](https://github.com/red/red/issues/3340)
+
+## PARSE
+
+`path!`s are evaluated in R2 and R3 but not in Red:
+
+```
+>> b: [x 3]
+>> parse "aaa" [b/x "a"]
+== true (on R2 & R3)
+== false (on Red)
+```
+
+There is already a ticket about it and it may change in the future: [#3528](https://github.com/red/red/issues/3528)
+
+Also check TO / THRU difference described in this issue [#3679](https://github.com/red/red/issues/3679)
