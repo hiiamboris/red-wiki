@@ -7,7 +7,7 @@
 
 (see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) )
 
-1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin, libcanberra-gtk3-module`
+1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin`
 1. Download code: `git clone -b GTK https://github.com/rcqls/red.git`
 1. Download *REBOL*: `wget http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz && tar xzvf rebol-core-278-4-3.tar.gz && cp rebol-core/rebol red/`
 1. `cd red`
