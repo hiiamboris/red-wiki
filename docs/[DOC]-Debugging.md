@@ -4,6 +4,8 @@ system/state/trace: on
 
 system/preprocessor/debug?: on
 
+recycle/off (disables Garbage Collector)
+
 ## Parse
 
 `parse/trace` allows you to debug `parse` expressions.
