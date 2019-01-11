@@ -25,3 +25,7 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
 
 * @rcqls' private notes about Gtk development, may be outdated: https://toltex.u-ga.fr/RedGtk
 * Docker image that can be used to simulate 32-bit environment: https://github.com/rcqls/docker-red-gtk
+
+## Known problems
+
+Gtk backend does not work with [64-bit multilib Arch-based](https://wiki.archlinux.org/index.php/Official_repositories#multilib) installations: [@StackOverflow](https://stackoverflow.com/questions/54109186/segmentation-fault-with-gtk-console-on-64-bit-system)
