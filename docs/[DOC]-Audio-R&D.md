@@ -51,3 +51,7 @@ FMOD: https://www.fmod.com/
 Wise: https://www.audiokinetic.com/products/wwise/
 
 Miles: http://www.radgametools.com/miles.htm
+
+# Other Interesting Links
+
+https://audiomasher.org/
