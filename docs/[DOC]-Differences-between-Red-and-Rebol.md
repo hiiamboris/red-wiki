@@ -20,6 +20,7 @@
 18. [ADJUST TIME BY SETTING TIMEZONE](#adjust-time-by-setting-timezone)
 19. [REPEND](#repend)
 20. [PARSE](#parse)
+21. [TO-TIME](#to-time)
 
 ## COPY object!
 
@@ -303,3 +304,29 @@ See the details [here](https://github.com/red/red/issues/3340)
 There is already a ticket about it and it may change in the future: [#3528](https://github.com/red/red/issues/3528)
 
 Also check TO / THRU difference described in this issue [#3679](https://github.com/red/red/issues/3679)
+
+## TO-TIME
+
+In Red Meridian designations are not part of the time! form:
+```
+>> load "13:00PM"
+== [13:00:00 PM]
+```
+
+See [specs](https://doc.red-lang.org/en/datatypes/time.html#_literal_syntax)
+
+This leads to below differences:
+
+```
+>> to time! "1:00PM"
+== none ; R2
+== 13:00 ;Red
+== Error ;R3
+```
+
+```
+>> to time! "13:00PM"
+== none ; R2
+== 13:00 ;Red
+== Error ;R3
+```
