@@ -309,8 +309,13 @@ Also check TO / THRU difference described in this issue [#3679](https://github.c
 
 In Red Meridian designations are not part of the time! form:
 ```
+>> load "01:00PM"
+== [1:00:00 PM]        ;Red
+== 13:00               ;R2 & R3
+
 >> load "13:00PM"
-== [13:00:00 PM]
+== [13:00:00 PM]       ;Red
+== Invalid time error  ;R2 & R3
 ```
 
 See [specs](https://doc.red-lang.org/en/datatypes/time.html#_literal_syntax)
@@ -319,14 +324,14 @@ This leads to below differences:
 
 ```
 >> to time! "1:00PM"
-== none ; R2
-== 13:00 ;Red
-== Error ;R3
+== 01:00:00 ;Red
+== 13:00    ; R2
+== 13:00    ;R3
 ```
 
 ```
 >> to time! "13:00PM"
-== none ; R2
 == 13:00 ;Red
+== none  ;R2
 == Error ;R3
 ```
