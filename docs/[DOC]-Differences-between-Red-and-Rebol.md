@@ -21,6 +21,7 @@
 19. [REPEND](#repend)
 20. [PARSE](#parse)
 21. [TO-TIME](#to-time)
+22. [SELECT SKIP](#select-skip)
 
 ## COPY object!
 
@@ -334,4 +335,14 @@ This leads to below differences:
 == 13:00 ;Red
 == none  ;R2
 == Error ;R3
+```
+
+## SELECT SKIP
+
+`select/skip` returns a block (the record, see the help `? select`) in R2, returns a single value in R3 & Red:
+
+```
+>> select/skip [1 2 3 4 5 6] 1 3
+== [2 3] ;R2
+== 2     ;R3 & Red
 ```
