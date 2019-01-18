@@ -22,6 +22,8 @@
 20. [PARSE](#parse)
 21. [TO-TIME](#to-time)
 22. [SELECT SKIP](#select-skip)
+23. [REFINEMENTS](#refinements)
+24. [LEXER](#lexer)
 
 ## COPY object!
 
@@ -345,4 +347,24 @@ This leads to below differences:
 >> select/skip [1 2 3 4 5 6] 1 3
 == [2 3] ;R2
 == 2     ;R3 & Red
+```
+
+## REFINEMENTS
+
+`refinement!` is currently not part of `any-word!` as in Rebol:
+
+```
+>> any-word? /ref
+== true  ;R2 & R3
+== false ;Red
+```
+
+## LEXER
+
+Red's and Rebol's lexers behave differently in some cases:
+
+```
+>> [/:a]
+== [/ :a] ;R2 & R3
+== [/: a] ;Red
 ```
