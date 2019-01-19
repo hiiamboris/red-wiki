@@ -8,6 +8,7 @@
 1. [Reactive Cycles](#reactive-cycles)
 1. [Define infix operators](#define-infix-operators)
 1. [Hide the cmd window under Windows, when running %.red scripts](#hide-the-cmd-window-under-windows-when-running-red-scripts)
+1. [Hide the CMD window popping up in the background after execution of compiled Red script](#hide-the-cmd-window-popping-up-in-the-background-after-execution-of-compiled-red-script)
 1. [Compiled vs interpreted macros](#compiled-vs-interpreted-macros)
 1. [Getting output in a shell when running a Red script](#getting-output-in-a-shell-when-running-a-red-script)
 1. [Exposing Red/System macros in Red](#exposing-redsystem-macros-in-red)
@@ -138,6 +139,9 @@ view/options [text "hi"][
 ]
 ```
 
+# Hide the CMD window popping up in the background after execution of compiled Red script
+
+Specify `Windows` or `WindowsXP` as a compilation target using `-t <target>` flag.
 
 # Compiled vs interpreted macros
 
