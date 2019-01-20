@@ -54,4 +54,4 @@ Miles: http://www.radgametools.com/miles.htm
 
 # Other Interesting Links
 
-https://audiomasher.org/
+* [AudioMasher](https://audiomasher.org) - live audio and music programming environment based on [Sporth](http://paulbatchelor.github.io/proj/sporth.html), a Forth dialect for audio DSP.
