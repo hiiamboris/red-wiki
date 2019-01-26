@@ -143,10 +143,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [range-generator.red](https://gist.github.com/dander/7e9118778acda64f18ee4fa6e7c9e1e8) - lazy range enumeration
 
 		tags: 
-* darithorn - 
-	* [red-libs](https://github.com/darithorn/red-libs) - Bindings for C libraries for Red/System
-
-		tags: 
 * DideC - 
 	* [animate.red](https://gist.github.com/DideC/c9a894fcb01c5b4e2f11706445b50516) - First try of an animation dialect for Red VID. Computation is not precise enough  but just a proof of concept ;-)
 
