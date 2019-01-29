@@ -1,11 +1,5 @@
 ## Welcome to the Red programming language wiki!
 
-### The "Programming Red' Wiki is looking for stewardship.
-
-The "Programming Red" Wiki is looking for stewardship. It will be closed down in 15 days if it shows no activity, so we are looking for volunteers.
-
-[Programming Red Wiki](https://programming.red/wiki/Main_Page)
-***
 ### NEWS ITEM - Tokens, Wallets and Cryptocurrencies.
 
 [RED Wallet: the tiny, simple, fast and secure wallet!](https://www.red-lang.org/)
