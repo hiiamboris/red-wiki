@@ -15,6 +15,7 @@ endif::[]
 :Cryptonite: https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige[Cryptonite]
 :MEW: https://www.myetherwallet.com/[MEW]
 :MEW_Getting_Started: https://myetherwallet.github.io/knowledge-base/getting-started/getting-started-new.html[started]
+:MEW_Beta: https://beta.myetherwallet.com/[MEW Beta]
 :Exodus: https://www.exodus.io/[Exodus]
 :Electron: https://electronjs.org/[Electron]
 :Ledger: https://www.ledgerwallet.com/[Ledger]
@@ -29,7 +30,21 @@ endif::[]
 :Binance: https://www.binance.com/[Binance]
 :Gasstation: https://ethgasstation.info/[gas pricing website]
 :Etherscan: https://etherscan.io/[Etherscan]
-
+:Atomic: https://atomicwallet.io/[Atomic]
+:Contract_Address: 0x76960Dccd5a1fe799F7c29bE9F19ceB4627aEb2f
+:Decimals: 18
+:Red_Wallet: https://www.red-lang.org/2018/10/red-wallet-alpha-2.html/[Red Wallet]
+:Changelly: https://changelly.com/[Changelly]
+:ShapeShift: https://changelly.com/[ShapeShift]
+:0X_Instant: https://0x.org/instant[0X Instant]
+:Octowallet: https://www.octowallet.com/[Octowallet]
+:Xeeda: https://www.xeeda.io/[Xeeda]
+:Vault: https://vault.coinve.st/[Vault]
+:Sugi: https://sugi.io/[Sugi]
+:Hodl: https://universahodl.com/[Universa HODL]
+:Plaak: https://plaak.com/core/cards/[PLAAK Core wallet]
+:Sparta: https://www.spartacard.com/[SparteCard]
+:SecuX: https://secuxtech.com/[SecuX]
 = RED, the ICO and myself
 
 .Disclaimer
@@ -330,6 +345,121 @@ Once the IPO is over, the contract of the token will mint the specific coins, an
 
 .Wallets for ICOs and large amount of cryptocurrencies
 IMPORTANT: Always use a wallet, which private keys are controlled by yourself
+
+== Using the RED token
+Now the RED token has been minted, we want to deposit, withdraw, send and receive it. That for we need a wallet to do so. Keep in mind that The RED token is an ERC-20 token, which is a standard of the Ethereum blockchain. This means that any Ethereum address can be used for the token usage, although there are a few points you have to be aware of:
+
+* Never send a token to a different blockchain or DLT address. E.g. sending the RED token to a bitcoin address (the tokens will be lost)
+* Never send a token to it's contract address as this address is used to handle the token (the tokens will be lost)
+* Never send a token to a exchange wallet which is not officially supporting the token. Although this is not a technical issue but a policy issue. As you are not owning the private keys of the exchange wallet, you rely on the exchange company transferring your tokens.
+
+Every transaction of and the ERC-20 token itself is stored on the same blockchain, namely Ethereum. Remember, the wallet does not store any value but only the keys to access your tokens.
+
+=== Wallets supporting the RED token
+There are various wallets available, which each of them has different features and security. This and the next sections discuss wallets, which can be used to manage the RED token.
+
+==== Red wallet
+The Red wallet is our official wallet. It currently supports Ethereum a the RED token and the only access method for your keys is by using a hard-ware key.
+It does not store your keys anywhere!
+
+* Step 1: download the {Red_Wallet}.
+* Step 2: connect your supported hardware-key
+* Step 3: select RED from the drop-down menu
+
+You are all set and can manage your RED token.
+
+===== Advantages of the Red wallet
+* various access methods supported including hardware keys
+* offers a stand-alone app
+* supports all ERC-20 tokens
+* many features like swaps and ENS supported
+* comes with it's own USB driver
+
+===== Disadvantages of the Red wallet
+* security of the web-interface can be weakened/circumvented with browser-extensions
+* stand-alone version is bloated as it's just an Electron app
+* UI/UX can be cumbersome
+
+==== MEW/MyCrypto
+MEW (My Ether Wallet) is very similar in functionality as MyCrypto, but does not offer a stand-alone app. There is currently a new {MEW_Beta} website with a more modern design. Apart from that, the same steps as in MyCrypto apply for MEW.
+
+MyCrypto is a fork of {MEW}. Both of them are very popular, features and functionality are very similar. The wallet is available as a web-interface and also as a downloadable application, which is based on Electron. Both the website as the stand-alone app are Open Source. The wallet offers are borad range of services from exchanging ({ShapeShift}), Atomic swaps {0X_Instant}, ENS and contract tools. The steps to add the RED token to the wallet is the same for both versions.
+
+* Step 1: visit the {MEW} website and use the web-interface or download the stand-alone version.
+* Step 2: access your keys through the appropriate method (hardware key, key-phrase etc.)
+* Step 3: select the address you want to access.
+* Step 4: click on the button labeled "Scan for Tokens". It will search your wallet for already known tokens (MyCrypto already defined the RED token, so it's able to recognize it). Once scanning has finished (it should only take up to a minute), you will be presented with the following message: _Select which tokens you would like to keep track of._ Select the RED token and click _SAVE_. From now on you are able to select the RED token to be transferred like any other ERC-20 token.
+
+.No tokens found
+NOTE: This is totally normal and it just tells you that you never stored any tokens on that specific address. You need to scan for tokens for each address separately.
+
+===== Advantages of MyCryto
+* various access methods supported including hardware keys
+* offers a stand-alone app
+* supports all ERC-20 tokens
+* many features like exchanging assets and Atomic swaps and ENS supported
+* contract managing tools
+* Open Source
+
+===== Disadvantages of MyCryto
+* security of the web-interface can be weakened/circumvented with browser-extensions
+* stand-alone version is bloated as it's just an Electron app
+* UI/UX can be cumbersome
+
+==== Atomic Wallet
+Atomic wallet is a stand-alone application based on Electron with exchange features and a nice design. One of it's big disadvantages is that hardware keys are not supported. Your keys will be encrypted with AES and stored on your hard-disk. Also keep in mind that it's currently in Beta. The wallet is only available as a compiled binary and not Open Source.
+
+* Step 1: visit {Atomic} and download the wallet.
+* Step 2: either create a new wallet or restore a wallet from a backups (please write down the 12-word Backup Phrase and keep the copy in a secure place)
+* Step 3: Once the wallet has been set up, click on "Add token" in the top right of the app.
+* Step 4: Add the details into the appropriate fields. The _Token contract address_ is {Contract_Address} and _Decimals of precision_ is {Decimals}. The other fields can be filled with any input you like to name your RED token.
+* Step 5: Click _Add token_. After a while a little green confirmation popup will appear and you can go back to the wallet dashboard by clicking the _X_ button on the top right of the app.
+* Step 6: Enter the name you specified in Step 5 and you will see the RED token with its generated address. You are all set now to manage your RED token.
+
+===== Advantages of Atomic Wallet
+* supports all ERC-20 tokens
+* exchange your assets via non-custodial Atomic Swap with decentralized order book
+* supports exchange through {Changelly} and {ShapeShift}
+* wallet secured by passphrase
+
+===== Disadvantages of Atomic Wallet
+* lack of support for hardware keys or other access methods
+* stand-alone version is bloated as it's just an Electron app
+* slow
+* easy to use UI
+* not Open Source
+
+=== Wallets supporting the RED token in the future
+There are several other wallets on the market, but are not supporting user-defined
+ERC-20 tokens yet. As soon as this happens, they will be added to this document.
+
+==== Exodus
+Exodus is a stand-alone app based on Electron.
+
+===== Advantages of Exodus
+* supports all ERC-20 tokens
+* many features
+
+===== Disadvantages of Exodus
+* lack of support for hardware keys
+* stand-alone version is bloated as it's just an Electron app
+* slow
+* easy to use UI
+
+=== Resource comparison of the wallets
+.Resources
+[caption="Figure 1: "]
+image::https://raw.githubusercontent.com/BeardPower/images/master/wallet_charts.png[]
+
+=== Interesting hardware-wallets/keys
+* {Octowallet} is an external hardware adapter to connect to your smartphone.
+* {Xeeda} is an external hardware adapter to connect to your smartphone.
+* {Vault} is an external hardware wallet with a OLED touchscreen.
+* {Sugi} is a NFC Wallet Card + Mobile App.
+* {Hodl} is a hardware wallet with Bluetooth functionality.
+* {Plaak} is a NFC+Blutooth Wallet card with a battery and eInk-Display.
+* {Sparta} is a NFC+Blutooth Wallet card with a battery and eInk-Display.
+* {SecuX} is a family of different hardware wallets.
 
 == Links and information for the interested reader
 
