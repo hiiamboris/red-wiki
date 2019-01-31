@@ -369,16 +369,17 @@ It does not store your keys anywhere!
 You are all set and can manage your RED token.
 
 ===== Advantages of the Red wallet
-* various access methods supported including hardware keys
-* offers a stand-alone app
-* supports all ERC-20 tokens
-* many features like swaps and ENS supported
+* very secure as it supports hardware keys only
+* cross-platform stand-alone and native app
+* supports all ERC-20 tokens (1000+)
 * comes with it's own USB driver
+* zero dependencies
+* very low on resource-usage
 
 ===== Disadvantages of the Red wallet
-* security of the web-interface can be weakened/circumvented with browser-extensions
-* stand-alone version is bloated as it's just an Electron app
-* UI/UX can be cumbersome
+* rudimentary/basic UI/UX
+* ETH and BTC support only at this time
+* not supporting advanced features like atomic swaps or exchange connection
 
 ==== MEW/MyCrypto
 MEW (My Ether Wallet) is very similar in functionality as MyCrypto, but does not offer a stand-alone app. There is currently a new {MEW_Beta} website with a more modern design. Apart from that, the same steps as in MyCrypto apply for MEW.
