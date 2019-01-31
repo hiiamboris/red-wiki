@@ -138,7 +138,7 @@ Wallets are differentiated between the following types.
   * Online wallets: are _hot wallets_, which stores the keys in a cloud and is offered by the exchanges for free. The keys are not owned by the user, but the exchange, so the exchange owns the user's assets. The significant advantage is their usability, as they are entirely managed by the exchange provider with a browser UI and can be accessed from anywhere. This also comes with a big drawback, security! They offer the lowest protection of all wallet types, as the user is not in control of the keys. Once the exchange loses the keys, or they are stolen because of some security breach, the assets of the user are lost forever.
   * Software wallets: are _hot wallets_, which stores the key on your local computer and come with their own fancy Desktop application and/or Mobile apps. They offer good usability, but access is limited to the computer, where they are installed on. If the same wallet needs to be installed on a different computer, the wallet needs to be restored on the new machine, as most software wallets do not allow to access concurrent usage of the same wallet. These wallets also offer good security by encrypting the keys and storing them in a location of the user's choice (e.g., locale hard-disk, USB devices, cloud drives). They are exposed to a security risk of trojans and malware, once the computer is connected to the internet.
   * Paper wallets: are _cold wallets_, which store the keys on a piece of paper. The creation of those is achieved by printing out the keys or by writing them down by hand. Some creation utilities also offer the key's representation as QR-Codes, so they can quickly be scanned in by a software wallet. Usability of these highly secure wallets is limited, as the keys need to be typed by hand, whenever they are used or need to be scanned by some third party app. They are also not resistant to water or fire damages. To conquer these problems, some companies are also providing _paper wallets_ made out of steel. Their significant advantage is their high security, as the keys are never shared with any third party entity.
-  * Hardware wallets: are _cold wallets_, which store keys on dedicated hardware, running a highly secure operating system and tamper-proof chips. They come with USB connectors or cables so that they can interact securely with a computer. Usability is limited in a similar way to paper wallets, as you always have to use the dedicated device for transactions. However, they offer the highest level of security, as the keys will never leave the device, even when connected to a computer. The mathematical functions are executed on the device. The transactions can be managed with the device itself or software, which comes with the them as a package. Additionally, they offer other services like 2FA (two factor authentication, PGP or ssh).
+  * Hardware wallets: are _cold wallets_, which store keys on dedicated hardware, running a highly secure operating system and tamper-proof chips. They come with USB connectors or cables so that they can interact securely with a computer. Usability is limited in a similar way to paper wallets, as you always have to use the dedicated device for transactions. However, they offer the highest level of security, as the keys will never leave the device, even when connected to a computer. The mathematical functions are executed on the device. The transactions can be managed with the device itself or software, which comes with them as a package. Additionally, they offer other services like 2FA (two-factor authentication, PGP or ssh).
 
 NOTE: The creation of an Ethereum wallet is completely free of charge and multiple wallets can be created for a single user.
 
@@ -218,11 +218,11 @@ There are three options to do this:
   * Trading on Exchanges
   * Receiving from other people
 
-To buy or trade Ether from/on an exchange, an account at this exchange has to be created. The payment options like SKRILL, CC, SWIFT, etc. and the daily/weekly/monthly transferable amount of fiat currencies depend on the level of ID verification . This verification is called _KYC_ (Know Your Customer) and has to be done because of _AML_ (Anti Money Laundering) laws and other regulations. Regulations differ from country to country and the extent of the _KYC_ can be very different. Examples are automated scanning of your driver's license or passport, half-automated checking or just manually. +
+To buy or trade Ether from/on an exchange, an account at this exchange has to be created. The payment options like SKRILL, CC, SWIFT, etc. and the daily/weekly/monthly transferable amount of fiat currencies depend on the level of ID verification. This verification is called _KYC_ (Know Your Customer) and has to be done because of _AML_ (Anti Money Laundering) laws and other regulations. Regulations differ from country to country and the extent of the _KYC_ can be very different. Examples are automated scanning of your driver's license or passport, half-automated checking or just manually. +
 These difference, and also the run on cryptocurrencies in the last months, can take the KYC process to complete anything between minutes or even days. As noted earlier, these exchanges will also provide an _Online wallet_ for you.
 
 .Use a wallet, of which you are in control of the keys
-IMPORTANT: Only hold a few amount of cryptocurrencies in these ose _hot wallets_, as the exchange is in control of your keys and owns your assets. You can transfer out your cryptocurrencies or tokens as soon as you bought them or even state the wallet address at the time of purchasing the cryptocurrencies or tokens.
+IMPORTANT: Only hold a few amounts of cryptocurrencies in the _hot wallets_, as the exchange is in control of your keys and owns your assets. You can transfer out your cryptocurrencies or tokens as soon as you bought them or even state the wallet address at the time of purchasing the cryptocurrencies or tokens.
 
 .For taking part in ICOs, especially the RED ICO
 IMPORTANT: If you are taking part in the RED ICO, which tokens are EC20 tokens, you need to make sure, that the exchange you bought your Ether from, can send to a contract address (the *RED ICO* is using a *contract address*, not a wallet address). More to that later.
@@ -309,7 +309,7 @@ NOTE: The standard unit for gas is called _gwei_, which is 0.000000001 Ether.
 
 Depending on the utilization of the Ethereum network, the gas price increases, when usage is high and decreases when usage is low. To ensure, that your transaction will be transferred, and not end up in a pending state, you need to set these two parameters wisely. As with every paid service: the more a client is willing to pay, the more likely is, the service provider will take care of his needs. +
 
-NOTE: Minders sort the transactions based on gwei spent for the transaction. The more is spent on a transaction, the more likely the transaction is being completed.
+NOTE: Minders sort the transactions based on gwei spent on the transaction. The more is spent on a transaction, the more likely the transaction is being completed.
 
 Transactions with the standard _gwei_ of 20 and a gas limit of 21000 are thrown into the transaction pool as well but are marked as a pending transaction and executed on a low priority.
 
@@ -325,11 +325,11 @@ NOTE: The maximum gas fee is 100 gwei, but the gas limit is not limited itself.
 
 [[Transaction]]
 ==== Getting the transaction onto the Blockchain
-Now it's time to start your preferred wallet software (not to be mixed with a software wallet), e.g., Exodus or MEW. Follow the instructions to specify the wallet/contract address, which was given to the participant in the ICO by the company running the ICO or, in case of a normal transaction, the wallet address of the person, an asset should be transferred to by the sender. Once you send the transaction, a so called Tsx (transaction ID) will be posted to your wallet software as a string of alphanumeric series of characters or/and a link (e.g. {Etherscan}). You can click this directly or copy it, depending on the wallet software used.
+Now it's time to start your preferred wallet software (not to be mixed with a software wallet), e.g., Exodus or MEW. Follow the instructions to specify the wallet/contract address, which was given to the participant in the ICO by the company running the ICO or, in case of a normal transaction, the wallet address of the person, an asset should be transferred to by the sender. Once you send the transaction, a so-called Tsx (transaction ID) will be posted to your wallet software as a string of alphanumeric series of characters or/and a link (e.g. {Etherscan}). You can click this directly or copy it, depending on the wallet software used.
 
 ==== How can the transaction status be checked?
 
-Networks like Ethereum are using a distributed ledger, where anyone can look up past, current and pending transaction. Anyone can check the balance of assets stored on the wallets if they know the wallet address.
+Networks like Ethereum are using a distributed ledger, where anyone can look up the past, current and pending transaction. Anyone can check the balance of assets stored on the wallets if they know the wallet address.
 A recommended service for displaying the ledger data is {Etherscan}. Just paste the alphanumeric series of characters from <<Transaction>> into the input field on the top right. Depending on the saturation of the Ethereum network, it can take some seconds or up to a minute, the transaction will appear on the site. If the information on the wallet itself is needed, the wallet address can also be entered. Keep in mind, that this site is only for Ethereum.
 Different cryptocurrencies can use different ledgers, so check the relevant ledger.
 
@@ -343,15 +343,15 @@ Once the IPO is over, the contract of the token will mint the specific coins, an
 * The distributed coins are based on an ERC20 tokens
 * The coins are owned by whoever controls the private keys of the wallet, they got sent to
 
-.Wallets for ICOs and large amount of cryptocurrencies
+.Wallets for ICOs and a large amount of cryptocurrencies
 IMPORTANT: Always use a wallet, which private keys are controlled by yourself
 
 == Using the RED token
 Now the RED token has been minted, we want to deposit, withdraw, send and receive it. That for we need a wallet to do so. Keep in mind that The RED token is an ERC-20 token, which is a standard of the Ethereum blockchain. This means that any Ethereum address can be used for the token usage, although there are a few points you have to be aware of:
 
 * Never send a token to a different blockchain or DLT address. E.g. sending the RED token to a bitcoin address (the tokens will be lost)
-* Never send a token to it's contract address as this address is used to handle the token (the tokens will be lost)
-* Never send a token to a exchange wallet which is not officially supporting the token. Although this is not a technical issue but a policy issue. As you are not owning the private keys of the exchange wallet, you rely on the exchange company transferring your tokens.
+* Never send a token to its contract address as this address is used to handle the token (the tokens will be lost)
+* Never send a token to an exchange wallet which is not officially supporting the token. Although this is not a technical issue but a policy issue. As you are not owning the private keys of the exchange wallet, you rely on the exchange company transferring your tokens.
 
 Every transaction of and the ERC-20 token itself is stored on the same blockchain, namely Ethereum. Remember, the wallet does not store any value but only the keys to access your tokens.
 
@@ -359,7 +359,7 @@ Every transaction of and the ERC-20 token itself is stored on the same blockchai
 There are various wallets available, which each of them has different features and security. This and the next sections discuss wallets, which can be used to manage the RED token.
 
 ==== Red wallet
-The Red wallet is our official wallet. It currently supports Ethereum a the RED token and the only access method for your keys is by using a hard-ware key.
+The Red wallet is our official wallet. It currently supports Ethereum a the RED token and the only access method for your keys is by using a hardware key.
 It does not store your keys anywhere!
 
 * Step 1: download the {Red_Wallet}.
@@ -372,9 +372,10 @@ You are all set and can manage your RED token.
 * very secure as it supports hardware keys only
 * cross-platform stand-alone and native app
 * supports all ERC-20 tokens (1000+)
-* comes with it's own USB driver
+* comes with its own USB driver
 * zero dependencies
 * very low on resource-usage
+* Open Source and full transparency
 
 ===== Disadvantages of the Red wallet
 * rudimentary/basic UI/UX
@@ -382,11 +383,11 @@ You are all set and can manage your RED token.
 * not supporting advanced features like atomic swaps or exchange connection
 
 ==== MEW/MyCrypto
-MEW (My Ether Wallet) is very similar in functionality as MyCrypto, but does not offer a stand-alone app. There is currently a new {MEW_Beta} website with a more modern design. Apart from that, the same steps as in MyCrypto apply for MEW.
+MEW (My Ether Wallet) is very similar in functionality as MyCrypto but does not offer a stand-alone app. There is currently a new {MEW_Beta} website with a more modern design. Apart from that, the same steps as in MyCrypto apply for MEW.
 
-MyCrypto is a fork of {MEW}. Both of them are very popular, features and functionality are very similar. The wallet is available as a web-interface and also as a downloadable application, which is based on Electron. Both the website as the stand-alone app are Open Source. The wallet offers are borad range of services from exchanging ({ShapeShift}), Atomic swaps {0X_Instant}, ENS and contract tools. The steps to add the RED token to the wallet is the same for both versions.
+MyCrypto is a fork of {MEW}. Both of them are very popular, features and functionality are very similar. The wallet is available as a web interface and also as a downloadable application, which is based on Electron. Both the website as the stand-alone app are Open Source. The wallet offers are a broad range of services from exchanging ({ShapeShift}), Atomic swaps {0X_Instant}, ENS and contract tools. The steps to add the RED token to the wallet is the same for both versions.
 
-* Step 1: visit the {MEW} website and use the web-interface or download the stand-alone version.
+* Step 1: visit the {MEW} website and use the web interface or download the stand-alone version.
 * Step 2: access your keys through the appropriate method (hardware key, key-phrase etc.)
 * Step 3: select the address you want to access.
 * Step 4: click on the button labeled "Scan for Tokens". It will search your wallet for already known tokens (MyCrypto already defined the RED token, so it's able to recognize it). Once scanning has finished (it should only take up to a minute), you will be presented with the following message: _Select which tokens you would like to keep track of._ Select the RED token and click _SAVE_. From now on you are able to select the RED token to be transferred like any other ERC-20 token.
@@ -408,20 +409,20 @@ NOTE: This is totally normal and it just tells you that you never stored any tok
 * UI/UX can be cumbersome
 
 ==== Atomic Wallet
-Atomic wallet is a stand-alone application based on Electron with exchange features and a nice design. One of it's big disadvantages is that hardware keys are not supported. Your keys will be encrypted with AES and stored on your hard-disk. Also keep in mind that it's currently in Beta. The wallet is only available as a compiled binary and not Open Source.
+The Atomic wallet is a stand-alone application based on Electron with exchange features and a nice design. One of its big disadvantages is that hardware keys are not supported. Your keys will be encrypted with AES and stored on your hard-disk. Also, keep in mind that it's currently in Beta. The wallet is only available as a compiled binary and not Open Source.
 
 * Step 1: visit {Atomic} and download the wallet.
-* Step 2: either create a new wallet or restore a wallet from a backups (please write down the 12-word Backup Phrase and keep the copy in a secure place)
+* Step 2: either create a new wallet or restore a wallet from a backup (please write down the 12-word Backup Phrase and keep the copy in a secure place)
 * Step 3: Once the wallet has been set up, click on "Add token" in the top right of the app.
 * Step 4: Add the details into the appropriate fields. The _Token contract address_ is {Contract_Address} and _Decimals of precision_ is {Decimals}. The other fields can be filled with any input you like to name your RED token.
-* Step 5: Click _Add token_. After a while a little green confirmation popup will appear and you can go back to the wallet dashboard by clicking the _X_ button on the top right of the app.
+* Step 5: Click _Add token_. After a while, a little green confirmation popup will appear and you can go back to the wallet dashboard by clicking the _X_ button on the top right of the app.
 * Step 6: Enter the name you specified in Step 5 and you will see the RED token with its generated address. You are all set now to manage your RED token.
 
 ===== Advantages of Atomic Wallet
 * supports all ERC-20 tokens
-* exchange your assets via non-custodial Atomic Swap with decentralized order book
+* exchange your assets via non-custodial Atomic Swap with a decentralized order book
 * supports exchange through {Changelly} and {ShapeShift}
-* wallet secured by passphrase
+* wallet secured by a passphrase
 
 ===== Disadvantages of Atomic Wallet
 * lack of support for hardware keys or other access methods
@@ -431,7 +432,7 @@ Atomic wallet is a stand-alone application based on Electron with exchange featu
 * not Open Source
 
 === Wallets supporting the RED token in the future
-There are several other wallets on the market, but are not supporting user-defined
+There are several other wallets on the market but are not supporting user-defined
 ERC-20 tokens yet. As soon as this happens, they will be added to this document.
 
 ==== Exodus
@@ -455,7 +456,7 @@ image::https://raw.githubusercontent.com/BeardPower/images/master/wallet_charts.
 === Interesting hardware-wallets/keys
 * {Octowallet} is an external hardware adapter to connect to your smartphone.
 * {Xeeda} is an external hardware adapter to connect to your smartphone.
-* {Vault} is an external hardware wallet with a OLED touchscreen.
+* {Vault} is an external hardware wallet with an OLED touchscreen.
 * {Sugi} is a NFC Wallet Card + Mobile App.
 * {Hodl} is a hardware wallet with Bluetooth functionality.
 * {Plaak} is a NFC+Blutooth Wallet card with a battery and eInk-Display.
