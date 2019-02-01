@@ -56,3 +56,4 @@ Miles: http://www.radgametools.com/miles.htm
 
 * [AudioMasher](https://audiomasher.org) - live audio and music programming environment based on [Sporth](http://paulbatchelor.github.io/proj/sporth.html), a Forth dialect for audio DSP.
 * [API History](http://shanekirk.com/2015/10/a-brief-history-of-windows-audio-apis/) - A brief history of Windows audio APIs.
+* R/S can be leveraged for writing Pure Data [externals](https://github.com/pure-data/externals-howto). No idea how Max/MSP handles that.
