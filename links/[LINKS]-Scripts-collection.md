@@ -74,13 +74,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [RedIDE.red](https://gist.github.com/AlexanderBaggett/20ed905f7e77a30dab9cff0add62fa2b) - Red IDE
 
 		tags: view , vid
-* amreus - 
-	* [probe-field-data.red](https://gist.github.com/amreus/b0df88879d651d9ce94cac552d593dfd) - 
-
-		tags: 
-	* [red-kool-aid](https://github.com/amreus/red-kool-aid) - My Red Language Sandbox
-
-		tags: gedcom
 * are1000 - 
 	* [graph.red](https://gist.github.com/are1000/238a1047d0c37fcd2b99ae5f0a705fc2) - 
 
