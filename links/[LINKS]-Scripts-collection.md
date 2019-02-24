@@ -984,6 +984,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [add-script.red](https://gist.github.com/luce80/e7228b556b52cb093364ee1992018317) - Help update red scripts collection list
 
 		tags: 
+	* [color-slider.red](https://gist.github.com/luce80/8a3e2b58046d9fbd9520413df3c4bead) - Red VID reactive script in 3 versions
+
+		tags: react
 	* [dates-calcs.red](https://gist.github.com/luce80/96d48297f2307a713c918c68bf046520) - Some useful functions for calculations of dates
 
 		tags: 
