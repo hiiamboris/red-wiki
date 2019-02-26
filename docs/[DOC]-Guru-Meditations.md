@@ -51,7 +51,7 @@
 1. [Literal arguments and get arguments](#literal-arguments-and-get-arguments)
 1. [`--no-runtime` option](#--no-runtime-option)
 1. [Compiling CLI console with View engine](#compiling-cli-console-with-view-engine)
-1. [Using `load` with `/next` and `/trap`](#using-load-with-next-and-trap)
+1. [Using `load` with `/next` and `/trap`](#using-load-with-/next-and-/trap)
 
 # Debugging
 [Moved](https://github.com/red/red/wiki/Debugging)
