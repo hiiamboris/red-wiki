@@ -51,6 +51,7 @@
 1. [Literal arguments and get arguments](#literal-arguments-and-get-arguments)
 1. [`--no-runtime` option](#--no-runtime-option)
 1. [Compiling CLI console with View engine](#compiling-cli-console-with-view-engine)
+1. [Using `load` with `/next` and `/trap`](#using-load-with-next-and-trap)
 
 # Debugging
 [Moved](https://github.com/red/red/wiki/Debugging)
@@ -758,3 +759,42 @@ The purpose of the `--no-runtime` option is to allow the production of "OS free"
 
 # Compiling CLI console with View engine
 Just prepend `Needs: View` to `%environment/console/CLI/console.red` script header.
+
+# Using `load` with `/next` and `/trap` (@toomasv [February 26, 2019 10:16 AM](https://gitter.im/red/bugs?at=5c74f5e15015f21e19601bf5))
+
+`/trap` can be made to work with `/next`, but it seems mostly to be useful without it, as it overrides `/next` refinement's usual semantics. I don't think it was meant to be used with `/next`. To trap errors with `/next` without overriding its semantics something like this can be used:
+
+```
+>> s: "1 2 3bad"
+== "1 2 3bad"
+>> either error? n: try [load/next s 's]['error][n]
+== 1
+>> either error? n: try [load/next s 's]['error][n]
+== 2
+>> either error? n: try [load/next s 's]['error][n]
+== error
+>> to-block n
+== [make error! [
+    code: 200
+    type: 'syntax
+    id: 'invalid
+    arg1: integer!
+    arg2: "3bad"...
+```
+
+To use /next with /trap, something like following can be used:
+
+```
+>> s: "1 2 3bad"
+== "1 2 3bad"
+>> s: second load/next/trap s 'n either error? n/3 ['error][n/1/1]
+== 1
+>> s: second load/next/trap s 'n either error? n/3 ['error][n/1/1]
+== 2
+>> s: second load/next/trap s 'n either error? n/3 ['error][n/1/1]
+== error
+>> to-block n/3
+== [make error! [
+    code: 200
+    type: 'syntax...
+```
