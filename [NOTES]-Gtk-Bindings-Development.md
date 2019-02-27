@@ -28,6 +28,7 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
 * @rcqls' private notes about Gtk development, may be outdated: https://toltex.u-ga.fr/RedGtk
 * Docker image that can be used to simulate 32-bit environment: https://github.com/rcqls/docker-red-gtk
 * Last generated `console-view` from `rcqls/red:GTK-dev` branch: https://toltex.u-ga.fr/users/RCqls/Red/console-view 
+* Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
 
 ## Known problems
 
