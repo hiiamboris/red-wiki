@@ -32,6 +32,8 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
 
 ## Known problems
 
-Gtk backend does not work with [64-bit multilib Arch-based](https://wiki.archlinux.org/index.php/Official_repositories#multilib) installations: [@StackOverflow](https://stackoverflow.com/questions/54109186/segmentation-fault-with-gtk-console-on-64-bit-system)
+* Gtk backend does not work with [64-bit multilib Arch-based](https://wiki.archlinux.org/index.php/Official_repositories#multilib) installations: [@StackOverflow](https://stackoverflow.com/questions/54109186/segmentation-fault-with-gtk-console-on-64-bit-system)
 
-Some floating point arithmetics [give strange results](https://gitter.im/red/GTK?at=5c41de8df780a1521f2de084) on GTK branch and a specific LOCALE. For example `load "0.00000152"` returns `0.0` or `5 / 2.0` returns `2,5.0`.
+* Some floating point arithmetic [give strange results](https://gitter.im/red/GTK?at=5c41de8df780a1521f2de084) on GTK branch and a specific LOCALE. For example `load "0.00000152"` returns `0.0` or `5 / 2.0` returns `2,5.0`.
+
+There is a workaround for LOCALE bug, use this to run Red: `LC_ALL=C path/to/console-view`
