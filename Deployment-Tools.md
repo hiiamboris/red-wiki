@@ -31,5 +31,10 @@ _A note on installers._
 1. Installers run on Windows 10 and all relevant Windows OS's (you choose which)
 1. Installs both 32-bit and 64-bit programs
 
+* [IzPack](http://izpack.org/) is a widely used tool for packaging applications on the Java™ platform.
+
+1. Installers run on Microsoft Windows™, Linux™, Solaris™ and Mac OS X™s (you choose which)
+1. Installs both 32-bit and 64-bit programs
+
 
 * [Software Licensing Solutions](https://www.softwarekey.com/) Copy protection, license management, and online sales automation for enterprise level or single developers.
