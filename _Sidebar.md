@@ -25,6 +25,7 @@
 ### [Deep Dives](https://github.com/red/red/wiki/%5BLINKS%5D-Deep-Dives)
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
+### [Deployment Tools] (https://github.com/red/red/wiki/Deployment-Tools)
 ***
 **Editors**
 ### [VSCode Plugin](https://github.com/red/red/wiki/Visual-Studio-Code-Plugin)
