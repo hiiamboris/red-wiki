@@ -13,7 +13,7 @@ _A note on installers._
 
 
 
-* [Zero Install](https://0install.de/downloads/) Zero Install allows you to run applications with a single click without having to install them first. 
+* [Zero Install](https://0install.de/downloads/) Zero Install allows you to run applications with a single click without having to install them first. (  setup feeds and shared libraries online creating a Red distribution network for apps)
 1. Installers run on Mac, Linux, and all relevant Windows OS's (you choose which)
 1. Installs both 32-bit and 64-bit programs
 
