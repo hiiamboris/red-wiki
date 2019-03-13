@@ -40,3 +40,5 @@ _A note on installers._
 
 
 * [Software Licensing Solutions](https://www.softwarekey.com/) Copy protection, license management, and online sales automation for enterprise level or single developers.
+
+* [Inno Setup](http://www.jrsoftware.org/isinfo.php) is a free installer for Windows programs first introduced in 1997, Inno Setup today rivals and even surpasses many commercial installers in feature set and stability. Supports for every Windows release since 2000 and completely free of charge, even for commercial use.
