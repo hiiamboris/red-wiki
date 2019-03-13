@@ -24,6 +24,7 @@
 22. [SELECT SKIP](#select-skip)
 23. [REFINEMENTS](#refinements)
 24. [LEXER](#lexer)
+25. [TO-LOGIC](#to-logic)
 
 ## COPY object!
 
@@ -368,3 +369,7 @@ Red's and Rebol's lexers behave differently in some cases:
 == [/ :a] ;R2 & R3
 == [/: a] ;Red
 ```
+
+## TO-LOGIC
+
+`to-logic 0` returns `true` in Red and R3, but `false` in R2.
