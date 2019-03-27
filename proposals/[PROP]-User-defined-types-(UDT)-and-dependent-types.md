@@ -120,3 +120,4 @@ In case of `sum vect1 vect3` it won't pass: `length` are not the same (point 2)
 ## Implementations:
 
 - [by Nędza Darek](https://github.com/nedzadarek/red_dependent_types_proposal)
+- [by Rebolek](http://red.qyz.cz/dependent-types.html)
