@@ -52,6 +52,7 @@
 1. [`--no-runtime` option](#--no-runtime-option)
 1. [Compiling CLI console with View engine](#compiling-cli-console-with-view-engine)
 1. [Using `load` with `/next` and `/trap`](#using-load-with-next-and-trap)
+1. [Convert `c-string!` to `red-string!`](#convert-c-string-to-red-string)
 
 # Debugging
 [Moved](https://github.com/red/red/wiki/Debugging)
@@ -798,4 +799,20 @@ To use /next with /trap, something like following can be used:
 == [make error! [
     code: 200
     type: 'syntax...
+```
+
+# Convert `c-string!` to `red-string!`
+
+```red
+Red [Note: "compile with -r flag"]
+
+foo: routine [
+    /local c-string red-string
+][
+    c-string: "this is a C string!"
+    red-string: string/load c-string length? c-string UTF-8
+    SET_RETURN(red-string)
+]
+
+print replace foo "C" "Red"
 ```
