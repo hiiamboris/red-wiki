@@ -119,3 +119,14 @@ To give improved external interfacing capability and possible speed optimisation
 * bit fields
 * unions
 * arbitrary padding
+
+# Forward declaring struct alias
+
+It is not supported, as Red/System has a single-pass compiler.
+
+Macros can be used to workaround that:
+
+```red
+#define relationship! [ struct! [ startNode [ node! ] endNode [ node! ] ] ]
+node!: alias struct! [ nextRel [ relationship! ] ]
+```
