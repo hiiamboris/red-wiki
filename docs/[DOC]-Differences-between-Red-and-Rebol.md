@@ -25,6 +25,7 @@
 23. [REFINEMENTS](#refinements)
 24. [LEXER](#lexer)
 25. [TO-LOGIC](#to-logic)
+26. [GET ON OBJECT](#get-on-object)
 
 ## COPY object!
 
@@ -238,7 +239,7 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 
 1. `load %file.txt` loads the content of the file and return one value (if there is just one value in the file) or a block of values (if there are more values in the file) on Red and R2, but returns a string on R3.
 
-```
+```red
 >> load %/c/file.txt
 == [abc def] ; Red & R2
 == "abc^/def^/" ; R3
@@ -246,7 +247,7 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 
 2. `load %./` returns a block of files and folders on R2 and R3, but not on Red:
 
-```
+```red
 >> load %/c/
 == [%$Recycle.Bin/ %$WINDOWS.~BT/ %Boot/ %bootmgr ... ] ; R2 & R3
 *** Script Error: transcode does not allow block! for its <anon> argument ; Red
@@ -256,7 +257,7 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 
 `read/lines/part` behaves different on Red, R2 and R3:
 
-```
+```red
 >> write/lines %file.txt ["one" "two" "three"]
 
 >> read/lines/part %file.txt 2
@@ -277,7 +278,7 @@ When setting timezone of a date value by `zone`, time will not be adjusted in R2
 
 When `timezone` is used to set, time adjusted, only Red has this feature:
 
-```
+```red
 >> d: now
 == 22-Dec-2018/1:53:52+03:00
 >> d/timezone: 5:0:0
@@ -298,7 +299,7 @@ See the details [here](https://github.com/red/red/issues/3340)
 
 `path!`s are evaluated in R2 and R3 but not in Red:
 
-```
+```red
 >> b: [x 3]
 >> parse "aaa" [b/x "a"]
 == true (on R2 & R3)
@@ -312,7 +313,7 @@ Also check TO / THRU difference described in this issue [#3679](https://github.c
 ## TO-TIME
 
 In Red Meridian designations are not part of the time! form:
-```
+```red
 >> load "01:00PM"
 == [1:00:00 PM]        ;Red
 == 13:00               ;R2 & R3
@@ -326,14 +327,14 @@ See [specs](https://doc.red-lang.org/en/datatypes/time.html#_literal_syntax)
 
 This leads to below differences:
 
-```
+```red
 >> to time! "1:00PM"
 == 01:00:00 ;Red
 == 13:00    ; R2
 == 13:00    ;R3
 ```
 
-```
+```red
 >> to time! "13:00PM"
 == 13:00 ;Red
 == none  ;R2
@@ -344,7 +345,7 @@ This leads to below differences:
 
 `select/skip` returns a block (the record, see the help `? select`) in R2, returns a single value in R3 & Red:
 
-```
+```red
 >> select/skip [1 2 3 4 5 6] 1 3
 == [2 3] ;R2
 == 2     ;R3 & Red
@@ -354,7 +355,7 @@ This leads to below differences:
 
 `refinement!` is currently not part of `any-word!` as in Rebol:
 
-```
+```red
 >> any-word? /ref
 == true  ;R2 & R3
 == false ;Red
@@ -364,7 +365,7 @@ This leads to below differences:
 
 Red's and Rebol's lexers behave differently in some cases:
 
-```
+```red
 >> [/:a]
 == [/ :a] ;R2 & R3
 == [/: a] ;Red
@@ -373,3 +374,19 @@ Red's and Rebol's lexers behave differently in some cases:
 ## TO-LOGIC
 
 `to-logic 0` returns `true` in Red and R3, but `false` in R2.
+
+## GET-ON-OBJECT
+
+```red
+>> o: context [a: 1]
+
+|--------------------------------------|
+|          |Red       |R2        |R3   |
+|----------|----------|----------|-----|
+|get o     |[1]       |[1]       |[1]  |
+|get :o    |[1]       |[1]       |[1]  |
+|get o/a   |Error     |Error     |1    |
+|get 'o/a  |1         |Error     |1    |
+|get :o/a  |Error     |Error     |1    |
+|--------------------------------------|
+```
