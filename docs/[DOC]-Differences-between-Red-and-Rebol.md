@@ -25,7 +25,7 @@
 23. [REFINEMENTS](#refinements)
 24. [LEXER](#lexer)
 25. [TO-LOGIC](#to-logic)
-26. [GET ON OBJECT](#get-on-object)
+26. [GET](#get)
 
 ## COPY object!
 
@@ -375,7 +375,7 @@ Red's and Rebol's lexers behave differently in some cases:
 
 `to-logic 0` returns `true` in Red and R3, but `false` in R2.
 
-## GET-ON-OBJECT
+## GET
 
 ```red
 >> o: context [a: 1]
@@ -388,5 +388,7 @@ Red's and Rebol's lexers behave differently in some cases:
 |get o/a   |Error     |Error     |1    |
 |get 'o/a  |1         |Error     |1    |
 |get :o/a  |Error     |Error     |1    |
+|get 1     |Error     |Error     |1    |
+|get none  |Error     |none      |none |
 |--------------------------------------|
 ```
