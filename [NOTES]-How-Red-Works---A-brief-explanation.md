@@ -78,7 +78,7 @@ spec: [
 ]
 ```
 
-is a specification (or an "interrace") for a function that performs addition. Here's a block that expresses addition of two specific numbers:
+is a specification (or an "interface") for a function that performs addition. Here's a block that expresses addition of two specific numbers:
 
 `[1 + 2]`
 
