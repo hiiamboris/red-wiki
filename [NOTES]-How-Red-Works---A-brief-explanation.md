@@ -25,6 +25,8 @@ So, lexer converts string representation to a tree of value slots (this phase is
 == integer!
 ```
 
+
+
 Everything is a (first-class) value, and every value has a datatype (we have roughly 50 of them right now). And there's no code - only this data structure, which is just a block, which you can freely manipulate at will (so as any other value).
 
 ```red
@@ -37,6 +39,7 @@ Everything is a (first-class) value, and every value has a datatype (we have rou
 ```
 
 What interpreter does is just a "walk" over this tree of values, dictated by a set of simple evaluation rules (expressions are evaluated left to right, operators take precedence over functions and have a more tight left side, literals evaluate to themselves, functions are applied to a fixed set of arguments, symbolic values of type "set-word!" [more on this later] are bound to the result of expression that follows them, etc.) but there are a couple of catches.
+
 The first catch is that some values are symbolic - that is, they indirectly refer to some other values via a context (namespace). You can modify this reference (called binding) freely at runtime, and thus change the meaning of symbolic values and of an entire block that contains them.
 
 So, the "meaning" of a given block is always relative to some context(s) - this is what relative expression means (RE in REBOL). And context itself is just an environment of key/value pairs (key is a "symbol", value is its "meaning") represented as an object (O in REBOL).
@@ -116,3 +119,21 @@ x [number!] y [number!]
 == 3
 ```
 
+---
+
+What `load` essentially does - it takes a string and returns a [concrete syntax tree](https://en.wikipedia.org/wiki/Parse_tree) (or CST for short). `do` then takes that CST and evaluates it. You can do that in a single-step manner with `do/next` (there's also `load/next`). Moreso, you can think of blocks as phrase markers (see [wiki example](https://en.wikipedia.org/wiki/Parse_tree)):
+```
+[S [NP John] [VP [V hit] [NP the [N ball]]]]
+```
+
+Now compare it to Red internal data structure written down in similar fashion:
+```
+<block! [<integer! 1> <word! +> <integer! 2>]>
+```
+
+Here I loosely follow phrase marker notation - nonterminals correspond to datatypes, terminals correspond to literal values. But datatype is implied by literal form, and implicitly contained in each value slot (its a datatype ID tag in the header), so I can tidy this up to:
+```red
+[1 + 2]
+```
+
+This is what lexer returns - just a block. You can then manipulate it whichever way you want and evaluate.
