@@ -4,7 +4,7 @@ _Posted to [Hacker News](https://news.ycombinator.com/item?id=18843544) by 9214_
 
 Red (and Rebol) are based on research in denotational semantics that Carl Sassenrath did. I'll try to briefly explain the main points.
 
-Everything starts with a UTF-8 encoded string. Each valid token in this string is converted to an internal data representation - a boxed structure, called a value slot or sometimes a cell. Each value is represented as a boxed structure 4 machine pointers in size. On 32-bit systems that's 128 bits, on 64-bits 256.
+Everything starts with a UTF-8 encoded string. Each valid token in this string is converted to an internal data representation - a boxed structure, called a value slot or sometimes a cell. Each value is represented as a boxed structure 4 machine pointers in size.
 
 Value slot is composed of a header and a payload. Header contains various flags and datatype ID, payload specifies exact content of the value. If content doesn't fit in one value slot, then payload contains a pointer to an external buffer (an array of value slots, bytes, or other units + offset and start/end addresses IIRC) with extra data.
 
