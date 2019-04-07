@@ -1,6 +1,6 @@
 # How Red Works - A brief explanation
 
-_Posted to [Hacker News](https://news.ycombinator.com/item?id=18843544) by 9214_
+_Posted on [Hacker News](https://news.ycombinator.com/item?id=18843544) by 9214_
 
 Red (and Rebol) are based on research in denotational semantics that Carl Sassenrath did. I'll try to briefly explain the main points.
 
