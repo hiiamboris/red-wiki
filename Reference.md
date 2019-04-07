@@ -22,3 +22,5 @@ External links appear in quotes.
 * [The Handling of NaNs, INFs, and signed zeros](https://github.com/red/red/wiki/%5BDOC%5D-The-Handling-of-NaNs,-INFs-and-signed-zeros.)
 
 * [Red Enhancement Proposals](https://github.com/red/red/wiki/%5BDOC%5D-REP---Red-Enhancement-Proposals)
+
+* [How-Red-Works---A-brief-explanation](https://github.com/red/red/wiki/%5BNOTES%5D-How-Red-Works---A-brief-explanation)
