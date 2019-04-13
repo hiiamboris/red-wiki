@@ -115,3 +115,46 @@ view [
 ]
 ```
 The above won't work because a style is just one face. A panel can have a tree of child faces, so can't be used as a style. Styles are there to customize the look of widgets, not to instantiate layouts made of several faces. If one needs to duplicate VID code beyond what styles can achieve, use regular Red constructions, like `compose` to build VID blocks dynamically.
+
+# How to set up default custom font?
+
+1. Change system template, e.g.:
+```
+append system/view/VID/styles/text/template [
+    font: make font! [
+        color: red size: 20 name: "Courier New"
+    ]
+]
+```
+This method affects only styles for which you change template, of course. To change templates for several styles you can use the following function:
+```
+set-defaults-for-styles: function [styles [block!] defaults [block!]][
+    foreach style styles [
+        append system/view/VID/styles/:style/template defaults
+    ]
+]
+```
+With this method you can use several facets for several styles at once.
+
+2. The other way is to change `system/view/VID/default-font`, e.g.:
+```
+system/view/VID/default-font: [
+    name fname size fsize color fcolor
+]
+fname: "Courier New" fsize: 16 fcolor: orange 
+```
+You cant use set-words and values directly because of the internal way `default-font`is [used](https://github.com/red/red/blob/master/modules/view/VID.red#L432).
+
+With this method you still need to "touch" `font` facet of the styles, in which you want the custom font to be displayed, e.g. in this manner:
+```
+view [below 
+    text "Second way" font [] 
+    button font [] "On all styles" 
+    tab-panel 200x50 font [] ["A" [] "B" []]
+]
+```
+But you can also change any aspect of your custom font, e.g.:
+```
+view [text "Hello" font-size: 20]
+```
+Custom font is invoked whenever you mention font facet in your VID block.
