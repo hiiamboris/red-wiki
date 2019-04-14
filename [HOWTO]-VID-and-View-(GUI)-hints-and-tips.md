@@ -158,3 +158,42 @@ But you can also change any aspect of your custom font, e.g.:
 view [text "Hello" font-size: 20]
 ```
 Custom font is invoked whenever you mention font facet in your VID block.
+
+# How to pass data to second window
+
+One possibility is to open second window in a function and pass data as argument(s) to this function, e.g.:
+```
+context [
+    obj1: ar1: lay: none
+    win: func [obj /local obj2 ar2][
+        view/options [
+            ar2: area with [text: mold body-of obj] 
+            button "Back" [obj2: object load ar2/text unview] 
+        ][offset: lay/offset + as-pair lay/size/x -25]
+        obj2
+    ]
+    view lay: layout [
+        ar1: area "[a: 1 b: 2]"
+        button "Window2" [
+            obj1: win object load ar1/text 
+            ar1/text: mold body-of obj1
+        ]
+    ]
+]
+```
+
+The other possibility is just to open the window and set data on its faces directly, e.g.:
+```
+view [below 
+    tabs: field "one two" 
+    panels: area {[text "1"]^/[button "OK" [unview]]} 
+    button "Tabs-win" [
+        view [tab-panel 200x100 with [
+            data: split tabs/text space 
+            pane: copy [] foreach panel load panels/text [
+                append pane layout/only compose/only [panel (panel)]
+            ]
+        ]]
+    ]
+]
+```
