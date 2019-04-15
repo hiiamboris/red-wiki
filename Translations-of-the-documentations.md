@@ -28,7 +28,10 @@ You can create a pull request:
 List of editor that support previewing/highlighting AsciiDoc:
 - VS Code
 - Atom: preview - [AsciiDoc preview](https://atom.io/packages/asciidoc-preview), highlighting - [language-asciidoc](https://atom.io/packages/language-asciidoc)
+***
+## List of translations in progress and its translators:
 
+***
 ## Contributions:
 
 @endo64 @gltewalt @greggirwin @Tovim
