@@ -204,48 +204,48 @@ Two examples, one - more articulated - with `parse`, the other - more contracted
 
 ```
 context [
-	system/view/capturing?: yes
-	digit: charset ["0123456789.-^(back)^C^V"]
-	special: ['end | 'home | 'left | 'right | 'delete]
+    system/view/capturing?: yes
+    digit: charset ["0123456789.-^(back)^C^V"]
+    special: ['end | 'home | 'left | 'right | 'delete]
 	
-	numeric-key?: function [event /local ok?] [
-		if event/type = 'key [
-			ok?: either (char? event/key) [
-				parse to-string event/key [some digit]
-			][
-				parse to-block event/key special
-			]
-			if not ok? [return 'stop]
-		]
-	]
+    numeric-key?: function [event /local ok?] [
+        if event/type = 'key [
+            ok?: either (char? event/key) [
+                parse to-string event/key [some digit]
+            ][
+                parse to-block event/key special
+            ]
+            if not ok? [return 'stop]
+        ]
+    ]
 	
-	view [
-		title "Test"
-		text "Numeric field:"
-		num: field 150 right focus on-detect [numeric-key? event]
-	]
+    view [
+        title "Test"
+        text "Numeric field:"
+        num: field 150 right focus on-detect [numeric-key? event]
+    ]
 ]
 ```
 
 ```
 context [
-	system/view/capturing?: yes
-	digit: charset "0123456789.'-^(back)^C^V"
+    system/view/capturing?: yes
+    digit: charset "0123456789.'-^(back)^C^V"
     
-	numeric-key?: func [event] [
-		all [
-			event/type = 'key 
-			not find either char? event/key [digit][
-				[end home left right delete]
-			] event/key
-			'stop
-		]
-	]
+    numeric-key?: func [event] [
+        all [
+            event/type = 'key 
+            not find either char? event/key [digit][
+                [end home left right delete]
+            ] event/key
+            'stop
+        ]
+    ]
 
-	view [
-		title "Test"
-		text right "Numeric field:" 
-		field 150 right focus on-detect [numeric-key? event]
-	]
+    view [
+        title "Test"
+        text right "Numeric field:"
+        field 150 right focus on-detect [numeric-key? event]
+    ]
 ]
 ```
