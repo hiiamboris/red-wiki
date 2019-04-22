@@ -42,9 +42,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [spuny-mortals.red](https://gist.github.com/9214/1dd30a88383a3e46edf45e33e9def3a7) - Instead... only try to realize the truth.
 
 		tags: 
-	* [whatnot](https://github.com/9214/whatnot) - The ultimate kitchen sink.
-
-		tags: 
 	* [words-bomb.red](https://gist.github.com/9214/90268a5f5e4fc8b17f04a765b1fd5a2a) - global context destroyer
 
 		tags: 
