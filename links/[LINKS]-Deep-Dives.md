@@ -12,3 +12,5 @@ External links appear in quotes.
 * [How to Debug: A Use Case, by @DocKimbel](https://github.com/red/red/wiki/%5BDOC%5D-How-to-Debug-__-A-use-case-by-DocKimbel)
 
 * [Why you have to copy series values, by @DocKimbel](https://github.com/red/red/wiki/%5BDOC%5D-Why-you-have-to-copy-series-values)
+
+* [Function Evalutation](https://github.com/red/red/wiki/%5BDOC%5D-Function-Evaluation)
