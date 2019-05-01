@@ -24,3 +24,11 @@ f 3 4
 ```
 
 When compiled and executed this code, it doesn't print anything. Use `-e` (encapped mode)
+
+# Function assignment chaining
+
+See: https://github.com/red/red/issues/3862
+
+`single?: last?: func [`
+
+The way the single? function is defined is not compatible with the compiler. The compiler processes runtime source files specifically to extract function definitions, and currently only recognizes `name: func` and `name: :other-name` patterns for defining functions.
