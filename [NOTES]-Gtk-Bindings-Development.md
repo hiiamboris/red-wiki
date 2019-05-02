@@ -2,12 +2,13 @@
 
 Development of Linux backend for [Red's Graphical User Interface](https://doc.red-lang.org/en/gui.html), using version 3 of [Gtk+ library](https://en.wikipedia.org/wiki/GTK%2B).
 
-* Sources: https://github.com/rcqls/red/tree/GTK (_rcqls/red:GTK_ branch)
+* Sources: https://github.com/rcqls/red/tree/GTK (_rcqls/red:GTK-dev_ branch)
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
+* `red-gtk` binary provided [here](https://toltex.u-ga.fr/users/RCqls/Red/red-gtk).
 
 ## Compilation (32-bit Linux)
 
-(see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) )
+(see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) or [`reds project` requirement page](https://github.com/rcqls/reds/blob/master/README-RedGTK.md))
 
 1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin`
 1. Download code: `git clone -b GTK https://github.com/rcqls/red.git`
