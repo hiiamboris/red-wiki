@@ -4,11 +4,11 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 
 * Sources: https://github.com/rcqls/red/tree/GTK (_rcqls/red:GTK-dev_ branch)
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
-* `red-gtk` binary provided [here](https://toltex.u-ga.fr/users/RCqls/Red/red-gtk).
+* `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://toltex.u-ga.fr/users/RCqls/Red/red-gtk).
 
 ## Compilation (32-bit Linux)
 
-(see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) or [`reds project` requirement page](https://github.com/rcqls/reds/blob/master/README-RedGTK.md))
+(see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) or [`reds project` page](https://github.com/rcqls/reds/blob/master/README-RedGTK.md) for quick installation notes about `red/GTK` requirements)
 
 1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin`
 1. Download code: `git clone -b GTK https://github.com/rcqls/red.git`
