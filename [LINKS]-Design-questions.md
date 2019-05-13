@@ -41,4 +41,8 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Why word and a single-word path are different (despite the visual similarity)
 - [reddit - on words vs paths confusion](https://www.reddit.com/r/redlang/comments/86kdwr/on_words_vs_paths_confusion/)
 
+#### Core: :get-word function argument evaluation semantics: R2- or R3-like? (final?)
+- [Calling a function passed as get argument inside another function does not work #1850](https://github.com/red/red/issues/1850)
+
+
 
