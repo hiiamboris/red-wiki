@@ -55,7 +55,7 @@
 1. [Convert `c-string!` to `red-string!`](#convert-c-string-to-red-string)
 
 # Debugging
-[Moved](https://github.com/red/red/wiki/Debugging)
+[Moved](https://github.com/red/red/wiki/%5BDOC%5D-Debugging)
 
 # Red/System Boxing
 
