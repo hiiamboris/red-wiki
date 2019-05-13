@@ -18,6 +18,7 @@ External links appear in quotes.
 
 * [VID and View - Hints and tips](https://github.com/red/red/wiki/%5BHOWTO%5D-VID-and-View-(GUI)-hints-and-tips)
 
+* [Vid section from Red By Example](http://www.red-by-example.org/vid.html)
 ***
 
 #### Red IDE projects from the community:
