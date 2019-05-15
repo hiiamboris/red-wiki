@@ -375,6 +375,12 @@ Red's and Rebol's lexers behave differently in some cases:
 
 `to-logic 0` returns `true` in Red and R3, but `false` in R2.
 
+Some people think zero should be falsey, based on how many other languages do it, and *their* instinct was to follow how C did it. But C has no concept of real logic values. So what we need to ask is what makes the most sense in Red (Red/System is a different story, because it's a C level language).
+
+Red chose to be consistent in how logic values are coerced, with only false and none mapping to false. Zero is a number, and no special case is made for it. Even unset! coerces to true.
+
+That said, you have an option. `Make` creates a logic value of false if the spec is a numeric zero, including floats and percents.
+
 ## GET
 
 ```red
