@@ -30,7 +30,7 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### VID DSL: should it allow to override already defined actors (e.g. `base on-down [probe 1] [probe 2]`)?
 - [red/help May 12, 2019 7:19 PM](https://gitter.im/red/help?at=5cd847775a1d435d462cc06f)
 
-#### Core: how to solve inelegancies and dangers of `error? try`, `attempt` and `catch` on *arbitrary* code
+#### Core: how to solve inelegancies and dangers of `error? try`, `attempt` and `catch` on *arbitrary* code?
 - [The flaw of `error? try` approach #3755](https://github.com/red/red/issues/3755)
 
 # Historical questions & explanations
