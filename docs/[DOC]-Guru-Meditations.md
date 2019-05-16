@@ -612,7 +612,7 @@ write url [
 
 probe write/info http://httpbin.org/put [
     PUT
-    [Content-Type: "Content-Type: text/html; charset=utf-8"]
+    [Content-Type: "text/html; charset=utf-8"]
     "Hello Red"
 ]
 
