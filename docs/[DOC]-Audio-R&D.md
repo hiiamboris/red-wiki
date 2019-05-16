@@ -52,6 +52,8 @@ Wise: https://www.audiokinetic.com/products/wwise/
 
 Miles: http://www.radgametools.com/miles.htm
 
+Howler.js: https://github.com/goldfire/howler.js
+
 # Other Interesting Links
 
 * [AudioMasher](https://audiomasher.org) - live audio and music programming environment based on [Sporth](http://paulbatchelor.github.io/proj/sporth.html), a Forth dialect for audio DSP.
