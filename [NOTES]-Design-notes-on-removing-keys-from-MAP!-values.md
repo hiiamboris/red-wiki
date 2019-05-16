@@ -61,4 +61,6 @@ Given that we seem to care about the order of keys in `map!` (as well as `object
 
 A new idea, not listed above, but close to others. We'll add a `/key` refinement to `remove`, which will be used for both maps and bitsets. The bitset code will change because of that, but it means `/part` won't be overloaded for this purpose. 
 
-While this seems like the best choice, it won't come particularly cheap. `Remove` is an action, and therefore implemented for each type independently. Each instance must be updated to support the new refinement and its argument, even if only to return an error saying they don't support that refinement. Interaction with `/part` must also be considered.
+While this seems like the best choice, it won't come particularly cheap. `Remove` is an action, and therefore implemented for each type independently. Each instance must be updated to support the new refinement and its argument, even if only to return an error saying they don't support that refinement. Interaction with `/part` must also be considered. It seems best to make `/part` and `/key` mutually exclusive. However, if they're mutually exclusive, we could argue again for `remove/part`.
+
+The new refinement could also be used for series values, replacing the `remove-key` idea above. And if we have `extend`, it could be the opposite of that for objects (though the naming isn't great for that).
