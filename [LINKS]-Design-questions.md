@@ -33,6 +33,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: how to solve inelegancies and dangers of `error? try`, `attempt` and `catch` on *arbitrary* code?
 - [The flaw of `error? try` approach #3755](https://github.com/red/red/issues/3755)
 
+#### Core: how to allow maps to have `none` values?
+- [Design notes on removing keys from MAP! values](https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values)
+
 # Historical questions & explanations
 
 #### Arguments on why paths evaluate picked items (so-called active accessors)
