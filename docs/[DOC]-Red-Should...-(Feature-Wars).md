@@ -18,6 +18,9 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Operator Precedence](#operator-precedence)
 1. [String Interpolation](#string-interpolation)
 1. [Class-Based OOP](#class-based-oop)
+1. [Use XXX Syntax](use-xxx-syntax)
+1. []()
+1. []()
 1. []()
 1. []()
 
