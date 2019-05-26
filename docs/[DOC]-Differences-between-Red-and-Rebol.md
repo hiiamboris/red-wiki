@@ -26,6 +26,7 @@
 24. [LEXER](#lexer)
 25. [TO-LOGIC](#to-logic)
 26. [GET](#get)
+27. [EQUAL?](#equal)
 
 ## COPY object!
 
@@ -397,4 +398,14 @@ That said, you have an option. `Make` creates a logic value of false if the spec
 |get 1     |Error     |Error     |1    |
 |get none  |Error     |none      |none |
 |--------------------------------------|
+```
+
+## EQUAL?
+
+`equal?` accepts `unset!` on Red and R3, but not on R2.
+
+```
+>> equal? () ()
+== true (Red & R3)
+** Script Error: equal? is missing its value1 argument (R2)
 ```
