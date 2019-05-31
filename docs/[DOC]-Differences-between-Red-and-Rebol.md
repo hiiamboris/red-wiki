@@ -27,6 +27,7 @@
 25. [TO-LOGIC](#to-logic)
 26. [GET](#get)
 27. [EQUAL?](#equal)
+28. <a href="#what-what">??</a>
 
 ## COPY object!
 
@@ -408,4 +409,63 @@ That said, you have an option. `Make` creates a logic value of false if the spec
 >> equal? () ()
 == true (Red & R3)
 ** Script Error: equal? is missing its value1 argument (R2)
+```
+
+<a id="what-what"/>
+
+## ??
+
+In R2 & R3, `??` can take a literal value, and it returns it back, so can be used inside expressions:
+```
+>> 5 - ?? 2
+2
+== 3
+```
+In Red, `??` returns `unset` and only accepts words and paths:
+```
+>> ?? 1
+*** Script Error: ?? does not allow integer! for its 'value argument
+*** Where: ??
+*** Stack: ?? 
+```
+
+The rationale behind `unset` is that REBOL console by default hid most of the values and one had to use `??` to see them:
+```
+>> f: does [something]
+>> o: make object! [a: 1]
+>> :f
+>> o
+>> ?? f
+f: func [][something]
+>> ?? o
+o: make object! [
+    a: 1
+]
+```
+while Red console honestly displays all the values:
+```
+>> f: does [something]
+== func [][something]
+>> :f
+== func [][something]
+```
+so `??` returning them would have led to output duplication, like this:
+```
+>> ?? o
+o: 
+make object! [
+    a: 1
+    b: 2
+    c: 3]
+== make object! [
+    a: 1
+    b: 2
+    c: 3
+]
+```
+From within *Red expressions* `probe` should be used instead:
+```
+>> 1 + probe 2
+2
+== 3
 ```
