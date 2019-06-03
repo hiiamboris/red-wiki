@@ -30,3 +30,4 @@ External links appear in quotes.
 * [salcha by abdllhygt](https://github.com/abdllhygt/salcha)
 * [Red IDE article by Mike Parr](http://redlanguageblog.blogspot.com)
 * [REBOL/RED Editor 2.0 by Francois Jouen(LDCI)](https://github.com/ldci/RedEdit/blob/master/editor.2.0.1.r)
+* [Red drag/drop gui maker by Alan Brack  scroll down to find it] (http://www.mycode4fun.co.uk/red-apps)
