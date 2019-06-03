@@ -1,4 +1,4 @@
-# How to do to retrive default Windows locales values?
+# How to retrieve default Windows locales values
 
 We have to write (at june 2019, Red 0.6.4) a simple code in Red/System (to compile with -r flag)
 to access Windows API to get the locales values we need. 
