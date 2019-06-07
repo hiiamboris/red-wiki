@@ -15,17 +15,3 @@ If 'FUNCTION proposal accepted:
 	][
 		; function code
 	]
-
-Or better with **default values of certain arguments**:
-
-```rebol
-f: function [
-	i		[integer! 55]
-][
-	finished?	[logic! false]
-	moulded-int	[c-string! "          "]
-][
-	; function code
-]
-```
-(calling such function could be done maybe by the use of empty parentheses `f ()` to use the default value)
