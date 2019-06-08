@@ -44,20 +44,19 @@ Let us notice that, from now, only one camera is detected at the device /dev/vid
 export RED_GTK_CAMERA=YES
 export GST_V4L2_USE_LIBV4L2=1
 ```
-* Additional requirements:
-  * gstreamer installation (Ubuntu example)
+* gstreamer installation (Ubuntu example)
 ```
 apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good 
 ```
-  * optional installation (for further development)
+* optional installation (for further development)
 ```
 apt-get install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-pulseaudio
 ```
-  * in case plugin gtksink is not already installed in standard plugins above: 
+* in case plugin gtksink is not already installed in standard plugins above: 
 ```
 apt-get install gstreamer1.0-gtk3
 ```
-  * for detection of webcam
+* for detection of webcam
 ```
 apt-get install  libgudev-1.0-0
 ```
