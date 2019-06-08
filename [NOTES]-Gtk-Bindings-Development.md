@@ -4,7 +4,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 
 * Sources: https://github.com/rcqls/red/tree/GTK (_rcqls/red:GTK-dev_ branch)
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
-* `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://toltex.u-ga.fr/users/RCqls/Red/red-gtk).
+* `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
 
 ## Compilation (32-bit Linux)
 
@@ -26,9 +26,9 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
 
 ## Links
 
-* @rcqls' private notes about Gtk development, may be outdated: https://toltex.u-ga.fr/RedGtk
+* @rcqls' private notes about Gtk development, may be outdated: https://cqls.dyndoc.fr/RedGtk
 * Docker image that can be used to simulate 32-bit environment: https://github.com/rcqls/docker-red-gtk
-* Last generated `console-view` from `rcqls/red:GTK-dev` branch: https://toltex.u-ga.fr/users/RCqls/Red/console-view 
+* Last generated `console-view` from `rcqls/red:GTK-dev` branch: https://cqls.dyndoc.fr/users/RCqls/Red/console-view 
 * Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
 
 ## Known problems
