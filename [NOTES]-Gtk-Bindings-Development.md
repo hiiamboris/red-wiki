@@ -28,8 +28,41 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
 
 * @rcqls' private notes about Gtk development, may be outdated: https://cqls.dyndoc.fr/RedGtk
 * Docker image that can be used to simulate 32-bit environment: https://github.com/rcqls/docker-red-gtk
-* Last generated `console-view` from `rcqls/red:GTK-dev` branch: https://cqls.dyndoc.fr/users/RCqls/Red/console-view 
+* Last generated `console-view` from `rcqls/red:GTK-dev` branch: 
+  * with camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-view
+  * without camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-nocam
 * Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
+
+## Notes for new testers for the experimental red binary red-gtk with camera (only one camera from now supposed to be at the device /dev/video0)
+
+* Inside .bah_profile (or equivalent):
+```
+export RED_GTK_CAMERA=YES
+export GST_V4L2_USE_LIBV4L2=1
+```
+* Additional requirements:
+  * gstreamer installation (Ubuntu example)
+```
+apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good 
+```
+  * optional installation (for further development)
+```
+apt-get install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-pulseaudio
+```
+  * in case plugin gtksink is not already installed in standard plugins above: 
+```
+apt-get install gstreamer1.0-gtk3
+```
+  *for detection of webcam
+```
+apt-get install  libgudev-1.0-0
+```
+* preliminary test to apply to check if `gstreamer` stuff is working properly
+```
+gst-launch-1.0 v4l2src ! videoconvert ! gtksink 
+```
+which launchs a camera viewer. Normally if this test passes camera is supposed to work inside red.
+* If you test red/tests/view-test.red, debug mode needs to be deactivated (issue nothing related to camera).
 
 ## Known problems
 
