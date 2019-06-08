@@ -33,9 +33,11 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
   * without camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-nocam
 * Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
 
-## Notes for experimental red binary red-gtk or console-view with camera stuff 
+## Notes for experimental camera stuff
 
-From now, only one camera from now supposed to be at the device /dev/video0
+Last red binary https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk and https://cqls.dyndoc.fr/users/RCqls/Red/console-view include preliminary camera stuff that require some further dependencies. 
+
+Let us notice that, from now, only one camera is detected at the device /dev/video0.
 
 * Inside .bah_profile (or equivalent):
 ```
