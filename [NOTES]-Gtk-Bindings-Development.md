@@ -33,7 +33,9 @@ Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter
   * without camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-nocam
 * Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
 
-## Notes for new testers for the experimental red binary red-gtk with camera (only one camera from now supposed to be at the device /dev/video0)
+## Notes for experimental red binary red-gtk or console-view with camera stuff 
+
+From now, only one camera from now supposed to be at the device /dev/video0
 
 * Inside .bah_profile (or equivalent):
 ```
@@ -53,7 +55,7 @@ apt-get install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-tools g
 ```
 apt-get install gstreamer1.0-gtk3
 ```
-  *for detection of webcam
+  * for detection of webcam
 ```
 apt-get install  libgudev-1.0-0
 ```
