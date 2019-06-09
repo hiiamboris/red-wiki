@@ -1786,12 +1786,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 		tags: 
 ## Y
 * Y2J2142 - 
-	* [P1](https://github.com/Y2J2142/P1) - red graph
-
-		tags: 
-	* [red-graph](https://github.com/Y2J2142/red-graph) - draw a graph from file
-
-		tags: 
 	* [red-integrals](https://github.com/Y2J2142/red-integrals) - 
 
 		tags: 
