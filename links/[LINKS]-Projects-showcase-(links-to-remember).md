@@ -1,8 +1,8 @@
 This page is a place where we can collect links to interesting Gitter posts, chat, gifs, gists, projects, updates from community members and more. This will help us find them over time, and can also be used to share across channels for PR purposes. We'll come up with a notation that lets us mark items as shared, maybe a block of words for channels shared to, and when), or that a content owner doesn't want it shared on PR channels or cross posted.
 
 # Games
-- [June 05, 2019 10:55 AM](https://gitter.im/red/red/gui-branch?at=5cf78367b76eac527aa71016) @PlanetSizeCpu [Cave-In game]
-- [June 26, 2018 10:07 PM](https://gitter.im/red/red/gui-branch?at=5b328ee272b31d3691f5dd45) @cryptowyrm [Match-3 game](https://github.com/cryptowyrm/red-scripts/blob/master/match3.red) [(preview)](https://lh3.googleusercontent.com/hpF3IioogCA1MG3sul6CWjwlGAyGqr9tyE0twpqoChyIR0l3pIlVK8k5qUNBODL8ul0qJ88vEkCL)
+- [June 05, 2019 10:55 AM](https://gitter.im/red/red/gui-branch?at=5cf78367b76eac527aa71016) @PlanetSizeCpu [Cave-In game](https://github.com/planetsizecpu/Cave-In)
+- [June 26, 2018 10:07 PM](https://gitter.im/red/red/gui-branch?at=5b328ee272b31d3691f5dd45) @cryptowyrm [Match-3 game] (https://github.com/cryptowyrm/red-scripts/blob/master/match3.red) [(preview)](https://lh3.googleusercontent.com/hpF3IioogCA1MG3sul6CWjwlGAyGqr9tyE0twpqoChyIR0l3pIlVK8k5qUNBODL8ul0qJ88vEkCL)
 - [July 10, 2018 10:01 PM](https://gitter.im/red/red?at=5b45029463042f2df366c431) @hiiamboris [RETRIS game demo](https://gitlab.com/hiiamboris/retris/tree/master)
 - [January 23, 2019 4:12 PM](https://gitter.im/red/help?at=5c48684e8ce4bb25b8f918c4) @hyzwhu [4x4 tile game](https://github.com/hyzwhu/red-2048) [(preview)](https://files.gitter.im/red/help/lC9w/g4.gif)
 - [January 23, 2019 4:12 PM](https://gitter.im/red/help?at=5c48684e8ce4bb25b8f918c4) @hyzwhu [RedBOX game (port of ReBOX)](https://github.com/hyzwhu/redbox) [(preview)](https://files.gitter.im/red/help/8S4U/1.gif)
