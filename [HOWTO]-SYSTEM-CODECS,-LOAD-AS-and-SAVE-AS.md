@@ -33,3 +33,7 @@ append system/codecs reduce [
 * with `save` you have the choice to let it `write` the data for you or not, though the mechanism to do so is a bit obscure; perhaps it should always write for you, and decide on using `/binary` or not depending on whether you return `string!` or `binary!`
 
 * I suspect that the reason for the way it is currently implemented is to allow streaming encoders and decoders; but it would perhaps be better to have a simple common case where `load` and `save` do the work for you and have a flag to indicate if the codec supports streaming; you'd want to use ports for that anyway and not have the codecs deal with `file!` or `url!` directly
+
+# JSON Codec
+
+Here you can find the [JSON Codec](https://github.com/red/red/commit/cc74e4a5842014bcbe195d7a41f7f4c6d640dbeb) implementation as an example.
