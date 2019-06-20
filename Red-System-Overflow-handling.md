@@ -4,7 +4,7 @@
 * Subtraction: optional post-check
 * Multiplication: optional post-check
 * Division
-    * Division by zero: hard-exception
+    * Division by zero: hard-exception (maskable)
     * Division overflow: soft-exception
 
 ### ARMv5-6
