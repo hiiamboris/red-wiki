@@ -1,3 +1,5 @@
+Current state:
+
 ### Intel
 
 * Addition: optional post-check
