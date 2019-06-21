@@ -1,4 +1,4 @@
-Current state:
+## Current state
 
 Optional post-check: user can add a `system/cpu/overflow?` test after a math operation to detect an overflow.
 
