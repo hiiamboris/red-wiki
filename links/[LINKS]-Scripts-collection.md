@@ -801,10 +801,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [_utf8.red](https://gist.github.com/kermitaner/1d024d1e74e599fe876a3dbab8feebd5) - ;; utf8 conversion red from win1252 codepage
 
 		tags: 
-* kingburrito666 - 
-	* [Red-Engine](https://github.com/kingburrito666/Red-Engine) - until RED has GUI support for linux  this project is on hold
-
-		tags: 
 * KirillTemnov - 
 	* [sample-using-or.red](https://gist.github.com/KirillTemnov/1d4b9a99342966f8b1c6) - 
 
