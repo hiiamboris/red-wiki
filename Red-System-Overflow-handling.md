@@ -12,8 +12,8 @@ _Division overflow_ is caused by the special edge case: `-2147483648 / -1`
 * Subtraction: optional post-check
 * Multiplication: optional post-check
 * Division
-    * Division by zero: hard-exception (maskable)
-    * Division overflow: hard-exception (maskable)
+    * Division by zero: hard-exception (non-maskable)
+    * Division overflow: hard-exception (non-maskable)
 
 ### ARMv5-6
 
