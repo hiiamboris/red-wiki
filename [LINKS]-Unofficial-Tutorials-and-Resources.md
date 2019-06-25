@@ -27,6 +27,7 @@ External links appear in quotes.
 
 * ["Red for Hopeless Programmers - Part 2"](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
 
+* ["Red Beginners Reference Guide by Alan"](http://www.mycode4fun.co.uk/red-beginners-reference-guide)
 
 ***
 [A list of resources for Red and Rebol programming langues](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources)
