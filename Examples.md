@@ -11,3 +11,5 @@ External links appear in quotes.
 * [A collection of links to many scripts](https://github.com/red/red/wiki/%5BLINKS%5D-Scripts-collection)
 
 * [Red Beginners Reference Guide by Alan Brack](http://www.mycode4fun.co.uk/red-beginners-reference-guide)
+
+* [Plenty of powerful examples here](http://www.mycode4fun.co.uk/About-Red-Programming)
