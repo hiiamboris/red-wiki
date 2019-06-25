@@ -12,4 +12,7 @@ External links appear in quotes.
 
 * [Red Beginners Reference Guide by Alan Brack](http://www.mycode4fun.co.uk/red-beginners-reference-guide)
 
-* [Plenty of powerful examples here](http://www.mycode4fun.co.uk/About-Red-Programming)
+* [Plenty of powerful examples here from Alan](http://www.mycode4fun.co.uk/About-Red-Programming)
+
+* [More cool Red scripts Here](http://www.mycode4fun.co.uk/example-scripts)
+
