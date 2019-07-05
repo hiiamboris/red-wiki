@@ -12,7 +12,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 
 1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin`
 1. Download code: `git clone -b GTK https://github.com/rcqls/red.git`
-1. Download *REBOL*: `wget http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz && tar xzvf rebol-core-278-4-3.tar.gz && cp rebol-core/rebol red/`
+1. Download *REBOL*: `wget http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz && tar xzvf rebol-core-278-4-3.tar.gz && cp releases/rebol-core/rebol red/`
 1. `cd red`
 1. Edit `environment/console/CLI/console.red`, and add `Needs: View` line inside `Red []` block.
 1. Compile: `echo 'Rebol[] do/args %red.r "-r %environment/console/CLI/console.red"' | rebol +q -s`
