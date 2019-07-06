@@ -6,43 +6,10 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 ## 0
 * 9214 - 
-	* [arity.red](https://gist.github.com/9214/0f8532cb84b7c1619590af1e0db1b675) - 
-
-		tags: 
-	* [cadadaverous.red](https://gist.github.com/9214/c325d349195ba9054e18555ed51c9ed5) - my other car is rocket alien . Lispy reader macro
-
-		tags: 
 	* [daruma](https://github.com/9214/daruma) - 'Beyond Good & Evil' videogame Internet code decoder / Akuda closet unlocker.
 
-		tags: 
-	* [encap.red](https://gist.github.com/9214/7f6ec82a65c2b1ff1d9b40f9d585a241) - Custom encapper for red scripts
-
-		tags: 
-	* [fork-bomb.red](https://gist.github.com/9214/7e8f3adcad3dd1a2e31e8d2bb7c9a7ae) - "Now I am become death, the destroyer of worlds"
-
-		tags: 
+		tags:
 	* [guraaku.red](https://gist.github.com/9214/cd41fa91c83511e78e1ad31b04e5c02d) - crudely hacked together example DSL
-
-		tags: 
-	* [incept.red](https://gist.github.com/9214/6aec87123b69fb815cdb008a022aa163) - 
-
-		tags: 
-	* [only.red](https://gist.github.com/9214/3fb68cb043d8dc0fb9f1041606cd238b) - 
-
-		tags: 
-	* [palette.red](https://gist.github.com/9214/307b69bfdfb8f71c96d7ebf8daeee628) - Palette of Red's built-in colors
-
-		tags: 
-	* [pig-latin.red](https://gist.github.com/9214/b06fd40bf71d8990146d4ed46cef191d) - Implesay igpay atinlay anslatortray
-
-		tags: 
-	* [rotate.red](https://gist.github.com/9214/aeb03e3afad1ed2585e8b3309cbd06a4) - sophisticated rotate function
-
-		tags: 
-	* [spuny-mortals.red](https://gist.github.com/9214/1dd30a88383a3e46edf45e33e9def3a7) - Instead... only try to realize the truth.
-
-		tags: 
-	* [words-bomb.red](https://gist.github.com/9214/90268a5f5e4fc8b17f04a765b1fd5a2a) - global context destroyer
 
 		tags: 
 ## _
