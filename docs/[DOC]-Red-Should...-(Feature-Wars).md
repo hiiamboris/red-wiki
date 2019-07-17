@@ -18,8 +18,8 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Operator Precedence](#operator-precedence)
 1. [String Interpolation](#string-interpolation)
 1. [Class-Based OOP](#class-based-oop)
-1. [Use XXX Syntax](use-xxx-syntax)
-1. []()
+1. [Use XXX Syntax](#use-xxx-syntax)
+1. [Easier Custom Datatypes](#easier-custom-datatypes)
 1. []()
 1. []()
 1. []()
@@ -43,3 +43,13 @@ That said, some new features will be great, and we all want to improve Red. So d
 # Class-Based OOP
 
 # Use XXX Syntax
+
+# Easier Custom Datatypes
+
+Adding new datatypes to Red must be done in Red/System, which is not terribly difficult, but it does mean dropping to a C level language. Beyond implementing the datatype itself, you also have to add it to the system, and update the lexers if you want your type to have a literal form. Red could add higher level features to make this easier, though the types you could create might be constrained by doing so, which means they will be more like existing types and add less unique value.
+
+While making your own types is a great learning experience, keeping the foundation of Red consistent is important, because Red is about data exchange as much as execution. The more custom types people add, the harder it is to share it with others. Fortunately, it's rare that you would *need* to add a new datatype. Red lets you build almost anything at the user level (what we sometimes call the mezzanine level), which is what you should do first anyway, to try out ideas. If you have a custom literal form to try, `system/lexer/pre-load` is your friend. 
+
+@rebolek shows [here](http://red.qyz.cz/dependent-types.html) how easy it is to experiment with dependent types in Red. Or @maximvl's experiments with [dynamic variables](https://gist.github.com/maximvl/2095276ba6000c644d11049227176e68) and [Common Lisp condition restarts](https://gist.github.com/maximvl/dcb8c4e9ef5d4db91f7a6b52da9b9cee). @numberjay even played with [persistent immutable blocks](https://gist.github.com/numberjay/3df8f13044145c6dde1918ea2cdfe3b8).
+
+Datatypes are a foundation of Red, as with other languages. But Red is quite different than, say, C++. Ask not whether you can add new types that look like native types, but ask yourself if you need to. Will the result truly be better that way. If so, maybe that's a candidate for a new type, if it's general enough. That's where talking to the community comes in. Some of them have used Redbol langs for decades, and have valuable instinct and experience. Look at Red/System as well. It's a dialect of Red.
