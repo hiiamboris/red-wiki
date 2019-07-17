@@ -59,3 +59,4 @@ Howler.js: https://github.com/goldfire/howler.js
 * [AudioMasher](https://audiomasher.org) - live audio and music programming environment based on [Sporth](http://paulbatchelor.github.io/proj/sporth.html), a Forth dialect for audio DSP.
 * [API History](http://shanekirk.com/2015/10/a-brief-history-of-windows-audio-apis/) - A brief history of Windows audio APIs.
 * R/S can be leveraged for writing Pure Data [externals](https://github.com/pure-data/externals-howto). No idea how Max/MSP handles that.
+* [Open Music](https://en.wikipedia.org/wiki/OpenMusic) - OO visual programming environment for musical composition, based on Common Lisp. Unlike conventional "patch-based" environments (e.g. PD, Max/MSP) the result of computation is displayed in a conventional musical notation. Has a moderately large and diverse library ecosystem (see the wiki page for more details).
