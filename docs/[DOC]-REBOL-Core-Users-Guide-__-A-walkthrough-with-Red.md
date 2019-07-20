@@ -27,7 +27,7 @@ AM and PM do not work in Red.
 
 ### 2.3 Dates
 
-[Red date! documentation](https://doc.red-lang.org/en/date.html)
+[Red date! documentation](https://doc.red-lang.org/en/datatypes/date.html)
 
 
 ### 2.4
