@@ -246,7 +246,7 @@ Add `--catch` on the command-line, it will force the console to stay open, even 
 
 # Cloning Objects
 
-`Make` clones referenced series (e.g., block! is a series) in an object, because this behavior best covers the common use-cases. Objects and maps are heavy datatypes. You most often want to keep a reference to those, not clone them. You can clone them manually using copy when you really need it. Trees of deep-copied objects or maps come from trying to bend the language to work in a purely OOP way. If Red you should model such trees using blocks.
+`Make` clones referenced series (e.g., block! is a series) in an object, because this behavior best covers the common use-cases. Objects and maps are heavy datatypes. You most often want to keep a reference to those, not clone them. You can clone them manually using copy when you really need it. Trees of deep-copied objects or maps come from trying to bend the language to work in a purely OOP way. In Red you should model such trees using blocks.
 
 # libRed and libRedRT
 
