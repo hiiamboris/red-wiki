@@ -1,0 +1,93 @@
+# Introduction
+CSV codec implements CSV/DSV parser and emiter for Red language. It implements
+RFC 4180 support with extension to support non-standard data.
+
+## Supported data formats
+Before explaining how each function works, let's have a look at how a table
+can be represented in Red. We will start with a simple table:
+
+```
+Name    | Mass  | Orbit
+-----------------------
+Mercury | 0.055 | 0.4
+Venus   | 0.815 | 0.7
+Earth   | 1.0   | 1.0
+Mars    | 0.107 | 1.5
+```
+
+This table can be represented in Red in more different ways. The simplest one
+is `block!`:
+
+```
+["Name" "Mass" "Orbit" "Mercury" 0.055 0.4 "Venus" 0.815 0.7 "Earth" 1.0 1.0 "Mars" 0.107 1.5]
+```
+
+I intentionally haven't formatted the block, so it's obvious that without
+additional knowledge of record length, it's hard to guess it. This leads us to
+second solution: `block!` of `block!`s:
+
+```
+[["Name" "Mass" "Orbit"]["Mercury" 0.055 0.4]["Venus" 0.815 0.7]["Earth" 1.0 1.0]["Mars" 0.107 1.5]]
+```
+
+This nicely represents original table and is probably closest to CSV data also.
+This is the default output of `load-csv` function. However there's one problem,
+it's not obvious if first `block!` is header or record. Which brings us to
+third solution: `block!` of `map!`s (or `object!`s, if you prefer):
+
+```
+[
+	#(Name: "Mercury" Mass: 0.055 Orbit: 0.4)
+	#(Name: "Venus" Mass: 0.815 Orbit: 0.7)
+	#(Name: "Earth" Mass: 1.0 Orbit: 1.0)
+	#(Name: "Mars" Mass: 0.107 Orbit: 1.5)
+]
+```
+
+This format is very obvious and self-explanatory. However also very redundant.
+Which brings us to last solution, `map!` (again, or `object!`) of columns:
+```
+
+#(
+	Name: ["Mercury" "Venus" "Earth" "Mars"]
+	Mass: [0.055 0.815 1.0 0.107]
+	Orbit: [0.4 0.7 1.0 1.5]
+)
+
+```
+The redundancy here is much lower but at the cost that you need to write
+special function to get one record.
+As I've shown above, each format has it's advantages and disadvantages. That's
+why it makes sense to support them all and let user decide which one to use
+while using sane default that's most similar to CSV data structure.
+
+## LOAD-CSV
+
+`load-csv` decodes `string!` of CSV data to Red `block!` or `map!`, depending on
+the mode. Usage is simple:
+
+	load-csv csv-data
+
+There are some refinements to modify function behavior:
+* `/with delimiter` - Use different delimiter. Default is comma (`,`).
+* `/header` - Treat first line as header. Will return `map!` with columns as keys.
+* `/map` - Return `map!` of columns. If `/header` is not used, columns are named
+automatically from A to Z, then from AA to ZZ etc. `/map/header` is same as
+`/header`.
+* `/block` - Return `block!` of `map!`s. Keys are named by columns using same
+rules as with `/map` refinement.
+* `/flat` - Return flat `block!` instead of `block!` of `block!`s.
+* `/trim` - Ignore spaces between quotes and delimiter.
+* `/quote qt-char` - Use different quotes character. Default is double quote (`"`). 
+
+Some refinements cannot be used together, for example `/map` and `block`. If you
+use an invalid combination of refinements, `load-csv` will throw an error.
+
+## TO-CSV
+
+`to-csv` encodes `block!`, `map!` or `object!` and returns `string!` of CSV data.
+There are some refinements to modify function behavior:
+
+* `/with delimiter` - Use different delimiter. Default is comma (`,`).
+* `/skip size` - Treat `block!` as table of records with `size` fields.
+* `/quote qt-char` - Use different quotes character. Default is double quote (`"`).
