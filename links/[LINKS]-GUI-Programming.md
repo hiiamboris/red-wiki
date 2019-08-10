@@ -29,3 +29,4 @@ External links appear in quotes.
 * [salcha by abdllhygt](https://github.com/abdllhygt/salcha)
 * [Red IDE article by Mike Parr](http://redlanguageblog.blogspot.com)
 * [REBOL/RED Editor 2.0 by Francois Jouen(LDCI)](https://github.com/ldci/RedEdit/blob/master/editor.2.0.1.r)
+* [Live layout-editor by toomasv](https://github.com/toomasv/layout-editor)
