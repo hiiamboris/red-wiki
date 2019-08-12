@@ -1,6 +1,6 @@
 # Introduction
 CSV codec implements CSV/DSV parser and emiter for Red language. It implements
-RFC 4180 support with extension to support non-standard data.
+[RFC 4180](https://tools.ietf.org/html/rfc4180) support with extension to support non-standard data.
 
 ## Supported data formats
 Before explaining how each function works, let's have a look at how a table
@@ -30,10 +30,11 @@ second solution: `block!` of `block!`s:
 [["Name" "Mass" "Orbit"]["Mercury" 0.055 0.4]["Venus" 0.815 0.7]["Earth" 1.0 1.0]["Mars" 0.107 1.5]]
 ```
 
-This nicely represents original table and is probably closest to CSV data also.
+This nicely represents the original table and is probably closest to CSV data also.
 This is the default output of `load-csv` function. However there's one problem,
 it's not obvious if first `block!` is header or record. Which brings us to
-third solution: `block!` of `map!`s (or `object!`s, if you prefer):
+third solution: `block!` of `map!`s (or `object!`s, if you prefer), called `as-records`
+in `load-csv`:
 
 ```
 [
@@ -45,21 +46,25 @@ third solution: `block!` of `map!`s (or `object!`s, if you prefer):
 ```
 
 This format is very obvious and self-explanatory. However also very redundant.
-Which brings us to last solution, `map!` (again, or `object!`) of columns:
-```
+Which brings us to last solution, `map!` (again, or `object!`) of columns,
+called `as-columns` in `load-csv`:
 
+```
 #(
 	Name: ["Mercury" "Venus" "Earth" "Mars"]
 	Mass: [0.055 0.815 1.0 0.107]
 	Orbit: [0.4 0.7 1.0 1.5]
 )
-
 ```
+
 The redundancy here is much lower but at the cost that you need to write
 special function to get one record.
-As I've shown above, each format has it's advantages and disadvantages. That's
-why it makes sense to support them all and let user decide which one to use
-while using sane default that's most similar to CSV data structure.
+As shown above, each format has its advantages and disadvantages. That's why
+it makes sense to support them all and let the user decide which one to use
+while using sane default that's most similar to CSV data structure. Choosing
+the right format depends on a lot of circumstances, for example, memory usage -
+column store is more efficient if you have more rows than columns. The bigger
+the difference, the more efficient.
 
 ## LOAD-CSV
 
@@ -69,18 +74,18 @@ the mode. Usage is simple:
 	load-csv csv-data
 
 There are some refinements to modify function behavior:
-* `/with delimiter` - Use different delimiter. Default is comma (`,`).
-* `/header` - Treat first line as header. Will return `map!` with columns as keys.
-* `/map` - Return `map!` of columns. If `/header` is not used, columns are named
-automatically from A to Z, then from AA to ZZ etc. `/map/header` is same as
+* `/with delimiter` - Use different delimiter. Default is a comma (`,`).
+* `/header` - Treat the first line as a header. Will return `map!` with columns as keys.
+* `/as-columns` - Return `map!` of columns. If `/header` is not used, columns are named
+automatically from A to Z, then from AA to ZZ, etc. `/as-columns/header` is the same as
 `/header`.
-* `/block` - Return `block!` of `map!`s. Keys are named by columns using same
-rules as with `/map` refinement.
+* `/as-records` - Return `block!` of `map!`s. Keys are named by columns using the same
+rules as with `/as-columns` refinement.
 * `/flat` - Return flat `block!` instead of `block!` of `block!`s.
 * `/trim` - Ignore spaces between quotes and delimiter.
-* `/quote qt-char` - Use different quotes character. Default is double quote (`"`). 
+* `/quote qt-char` - Use different quotes character. Default is the double quote (`"`). 
 
-Some refinements cannot be used together, for example `/map` and `block`. If you
+Some refinements cannot be used together, for example `/as-columns` and `/as-records`. If you
 use an invalid combination of refinements, `load-csv` will throw an error.
 
 ## TO-CSV
@@ -88,6 +93,6 @@ use an invalid combination of refinements, `load-csv` will throw an error.
 `to-csv` encodes `block!`, `map!` or `object!` and returns `string!` of CSV data.
 There are some refinements to modify function behavior:
 
-* `/with delimiter` - Use different delimiter. Default is comma (`,`).
+* `/with delimiter` - Use different delimiter. Default is a comma (`,`).
 * `/skip size` - Treat `block!` as table of records with `size` fields.
-* `/quote qt-char` - Use different quotes character. Default is double quote (`"`).
+* `/quote qt-char` - Use different quotes character. Default is the double quote (`"`).
