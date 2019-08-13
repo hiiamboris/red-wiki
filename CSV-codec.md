@@ -66,6 +66,12 @@ the right format depends on a lot of circumstances, for example, memory usage -
 column store is more efficient if you have more rows than columns. The bigger
 the difference, the more efficient.
 
+Bear in mind that the example above uses rich data types in the output, but the CSV
+codec doesn't do that itself. In order to keep the codec small and focused, it only
+parses the data into chunks of text and puts those into structures. Converting them
+to Red datatypes is beyond the scope of the codec, and is handled by other functions
+operating on the structures the codec produces.
+
 ## LOAD-CSV
 
 `load-csv` decodes `string!` of CSV data to Red `block!` or `map!`, depending on
