@@ -69,6 +69,6 @@ Use `map!` if you need a conventional associative array storage, and also in use
 1. For hashable values only, linear for the rest.
 1. As was said earlier, this does not mean that series actions can be applied to objects. `any-word!`s are bound to `object!` values and contain internal indices, which specify the offset of `any-word!`'s value in an object to which it is bound. <br> Aforementioned binding and indexing information is used to get values referred by words in constant time.
 1. Insertion or removal may result in series expansion or compaction, respectively.
-    - In the **worst-case** scenario, series' buffer needs to be moved to a new memory location (proportional to new series' size).
+    - In the **worst-case** scenario, series' buffer needs to be moved to a new memory location (proportional to new series' size);
     - In the **average case**, elements need to be shifted, either to make space for inserted value or to fill the gaps left after removal (proportional to number of elements inserted / removed);
     - In the **best-case** scenario (appending to or taking from the tail), only adjustment of series' internal pointers is required (constant).
