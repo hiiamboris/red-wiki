@@ -63,8 +63,8 @@ Use `map!` if you need a conventional associative array storage, and also in use
 |:-|:-:|:-:|:-:|:-:|
 | `series!` (excluding `hash!`) | Linear | Constant | Varies **(3)** | Varies  |
 | `object!` | Linear | Constant **(2)** | _N/A_ | _N/A_ |
-| `hash!` | Constant **(1)** | Linear | Varies + hashing of each inserted value (if hashable) | Varies + updating hashtable |
-| `map!` | Linear | _N/A_ | Constant + hashing of each key | Constant + updating hashtable |
+| `hash!` | Constant **(1)** | Constant | Varies + hashing of each inserted value (if hashable) | Varies + updating hashtable |
+| `map!` | Constant | _N/A_ | Constant + hashing of each key | Constant + updating hashtable |
 
 1. For hashable values only, linear for the rest.
 1. As was said earlier, this does not mean that series actions can be applied to objects. `any-word!`s are bound to `object!` values and contain internal indices, which specify the offset of `any-word!`'s value in an object to which it is bound. <br> Aforementioned binding and indexing information is used to get values referred by words in constant time.
