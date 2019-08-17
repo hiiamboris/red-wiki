@@ -25,7 +25,7 @@ Blocks are a bread and butter of Red programming used in all facets of coding: f
 
 Blocks are completely free-form and can hold values of any type, providing a convenient `series!` interface for their access.
 
-Series are sequential by nature, and search in them takes linear time, so as key/value queries; however, indexing operations take constant time, due to `series!`' internal optimizations.
+Series are arrays by nature, and search in them takes linear time, so as key/value queries; however, indexing operations take constant time, due to `series!`' internal optimizations.
 
 Use `block!` whenever you need a general-purpose container that you frequently update, shrink, expand and pass around between functions.
 
@@ -51,7 +51,7 @@ Use `hash!` for data that is updated less frequently and benefits from much fast
 
 Conceptually, maps take quick lookups from `hash!` and key/value interface from `object!`. This means that `map!` values act as dictionaries with unique keys and fast queries.
 
-Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and key's are restricted to hashable values.
+Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values.
 
 Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order.
 
