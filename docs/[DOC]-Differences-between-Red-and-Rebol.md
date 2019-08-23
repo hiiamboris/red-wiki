@@ -355,7 +355,7 @@ This leads to below differences:
 
 ## REFINEMENTS
 
-Refinements when not used their value is set to false, while in REBOL it is set to none.
+Default value for refinements is `false`, while in Rebol it's `none`.
 
 `refinement!` is currently not part of `any-word!` as in Rebol:
 
