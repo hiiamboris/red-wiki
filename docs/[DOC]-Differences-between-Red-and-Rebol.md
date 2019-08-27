@@ -26,8 +26,9 @@
 24. [LEXER](#lexer)
 25. [TO-LOGIC](#to-logic)
 26. [GET](#get)
-27. [EQUAL?](#equal)
-28. <a href="#what-what">??</a>
+27. [SET](#get)
+28. [EQUAL?](#equal)
+29. <a href="#what-what">??</a>
 
 ## COPY object!
 
@@ -401,6 +402,80 @@ That said, you have an option. `Make` creates a logic value of false if the spec
 |get 1     |Error     |Error     |1    |
 |get none  |Error     |none      |none |
 |--------------------------------------|
+```
+
+## SET
+
+Set has some differences in refinements and working:
+
+
+**REBOL**
+```
+>> help set
+...
+ARGUMENTS:
+     word -- Word or words to set (Type: any-word block object)
+     value -- Value or block of values (Type: any-type)
+
+REFINEMENTS:
+     /any -- Allows setting words to any value.
+     /pad -- For objects, if block is too short, remaining words are set to NONE.>> help set
+...
+```
+
+**RED**
+
+```
+>> help set
+...
+REFINEMENTS:
+     /any         => Allow UNSET as a value rather than causing an error.
+     /case        => Use case-sensitive comparison (path only).
+     /only        => Block or object value argument is set as a single value.
+     /some        => None values in a block or object value argument, are not set.
+```
+
+*Looking at the refinements:*
+
+REBOL only:
+
+`/PAD`
+
+RED Only:
+
+`/CASE`
+
+`/ONLY`
+
+`/SOME`
+
+Both have an `/ANY` refinement but it works differently: 
+
+RED `/any` => Allow UNSET as a value rather than causing an error.
+
+REBOL `/any` -- Allows setting words to any value.
+
+**NOTE:**
+
+`/pad` is the default behavior in Red.
+
+And you can have similar effect using `/some`:
+
+```
+>> ==: >>: none
+>> o: context [a: b: 0]
+>> b: set o [x]
+>> o
+== make object! [
+    a: 'x
+    b: none
+]
+>> o: context [a: b: 0]
+>> b: set/some o [x]
+>> o
+== make object! [
+    a: 'x
+    b: 0
 ```
 
 ## EQUAL?
