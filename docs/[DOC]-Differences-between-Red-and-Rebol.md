@@ -406,76 +406,30 @@ That said, you have an option. `Make` creates a logic value of false if the spec
 
 ## SET
 
-Set has some differences in refinements and working:
-
-
-**REBOL**
-```
->> help set
-...
-ARGUMENTS:
-     word -- Word or words to set (Type: any-word block object)
-     value -- Value or block of values (Type: any-type)
-
-REFINEMENTS:
-     /any -- Allows setting words to any value.
-     /pad -- For objects, if block is too short, remaining words are set to NONE.>> help set
-...
+Rebol has `/pad` refinement that sets remaining words to `none`, but in Red that's a default behavior; `/some` can be used to mimick Rebol convention and ignore remaining words.
+```red
+>> set/some [a b] [1] reduce [:a :b]
+== [1 unset]
+>> set [a b] [1] reduce [:a :b]
+== [1 none]
 ```
 
-**RED**
+`/any` works the same, and newly present `/case` with `/only` act according to their specs:
+```red
+>> attempt [a: 1 set 'a () ?? a]
+== none
+>> attempt [a: 1 set/any 'a () ?? a]
+a: unset!
 
-```
->> help set
-...
-REFINEMENTS:
-     /any         => Allow UNSET as a value rather than causing an error.
-     /case        => Use case-sensitive comparison (path only).
-     /only        => Block or object value argument is set as a single value.
-     /some        => None values in a block or object value argument, are not set.
-```
+>> block: [a 1 A 2] set 'block/A 3 block
+== [a 3 A 2]
+>> block: [a 1 A 2] set/case 'block/A 3 block
+== [a 1 A 3]
 
-*Looking at the refinements:*
-
-REBOL only:
-
-`/PAD`
-
-RED Only:
-
-`/CASE`
-
-`/ONLY`
-
-`/SOME`
-
-Both have an `/ANY` refinement but it works differently: 
-
-RED `/any` => Allow UNSET as a value rather than causing an error.
-
-REBOL `/any` -- Allows setting words to any value.
-
-**NOTE:**
-
-`/pad` is the default behavior in Red.
-
-And you can have similar effect using `/some`:
-
-```
->> ==: >>: none
->> o: context [a: b: 0]
->> b: set o [x]
->> o
-== make object! [
-    a: 'x
-    b: none
-]
->> o: context [a: b: 0]
->> b: set/some o [x]
->> o
-== make object! [
-    a: 'x
-    b: 0
+>> set [a b][1 2] reduce [a b]
+== [1 2]
+>> set/only [a b][1 2] reduce [a b]
+== [[1 2] [1 2]]
 ```
 
 ## EQUAL?
