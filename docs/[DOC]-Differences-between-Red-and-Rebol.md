@@ -2,32 +2,32 @@
 
 1. [`copy` on object](#copy-on-object)
 1. [`float!` vs `decimal!`](#float-vs-decimal)
-1. [FUNCTION vs FUNCT](#function-vs-funct)
-1. [LOCAL CONTEXTS FOR LOOPS](#local-contexts-for-loops)
-1. [BINDING TO SELF](#binding-to-self)
-1. [INVALID BLOCK SELECTOR RETURNS NONE](#invalid-block-selector-returns-none)
-1. [OBJECT INTROSPECTION](#object-introspection)
-1. [DIR? FUNCTION](#dir-function)
-1. [TO-DATE FUNCTION](#to-date-function)
-1. [RANDOM](#random)
-1. [DO](#do)
-1. [MAKE NONE](#make-none)
-1. [LAST](#last)
-1. [TAKE](#take)
-1. [TO-INTEGER](#to-integer)
-1. [LOAD](#load)
-1. [READ](#read)
-1. [ADJUST TIME BY SETTING TIMEZONE](#adjust-time-by-setting-timezone)
-1. [REPEND](#repend)
-1. [PARSE](#parse)
-1. [TO-TIME](#to-time)
-1. [SELECT SKIP](#select-skip)
-1. [REFINEMENTS](#refinements)
-1. [LEXER](#lexer)
-1. [TO-LOGIC](#to-logic)
-1. [GET](#get)
-1. [SET](#get)
-1. [EQUAL?](#equal)
+1. [`function` vs `funct`](#function-vs-funct)
+1. [Local contexts for loops](#local-contexts-for-loops)
+1. [Binding to `self`](#binding-to-self)
+1. [Invalid block selector returns `none`](#invalid-block-selector-returns-none)
+1. [Object introspection](#object-introspection)
+1. [`dir?`](#dir)
+1. [`to-date`](#to-date)
+1. [`random`](#random)
+1. [`do`](#do)
+1. [`make none`](#make-none)
+1. [`last`](#last)
+1. [`take`](#take)
+1. [`to-integer`](#to-integer)
+1. [`load`](#load)
+1. [`read`](#read)
+1. [Adjust time by setting timezone](#adjust-time-by-setting-timezone)
+1. [`repend`](#repend)
+1. [`parse`](#parse)
+1. [`to-time`](#to-time)
+1. [`select/skip`](#select-skip)
+1. [Refinements](#refinements)
+1. [Lexer](#lexer)
+1. [`to-logic`](#to-logic)
+1. [`get`](#get)
+1. [`set`](#get)
+1. [`equal?`](#equal)
 1. <a href="#what-what">??</a>
 
 ## `copy` on `object!`
@@ -137,11 +137,11 @@ The ```first```, ```second``` and ```third``` functions do not work on object! v
 
 Later versions of Rebol2 include ```words-of```, ```values-of``` and ```body-of``` though retain object introspection through ```first```, ```second``` and ```third```.  
 
-## DIR? FUNCTION
+## DIR?
 
 Under R2, `dir?` returns true based on whether the target is an actual directory on disk. Under Red, it returns true if the target *looks like* a directory, because the name ends with a path separator.
 
-## TO-DATE FUNCTION
+## TO-DATE
 
 In Rebol2 and Rebol3 ```to-date``` function works with string values but not in Red yet. So currently `to-date "2-May-2018"` will return an error. ```load``` can be used instead.
 
