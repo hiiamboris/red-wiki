@@ -28,7 +28,7 @@
 1. [`get`](#get)
 1. [`set`](#get)
 1. [`equal?`](#equal)
-1. <a href="#what-what">??</a>
+1. <code><a href="#what-what">??</a></code>
 
 ## `copy` on `object!`
 
