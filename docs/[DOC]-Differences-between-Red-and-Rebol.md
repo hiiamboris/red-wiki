@@ -1,7 +1,7 @@
 # Table of Contents
 
-1. [COPY object](#copy-object)
-1. [FLOAT vs DECIMAL](#float-vs-decimal)
+1. [`copy` on object](#copy-on-object)
+1. [`float!` vs `decimal!`](#float-vs-decimal)
 1. [FUNCTION vs FUNCT](#function-vs-funct)
 1. [LOCAL CONTEXTS FOR LOOPS](#local-contexts-for-loops)
 1. [BINDING TO SELF](#binding-to-self)
@@ -30,13 +30,11 @@
 1. [EQUAL?](#equal)
 1. <a href="#what-what">??</a>
 
-## COPY object!
+## `copy` on `object!`
 
-R2: `copy object!` is not supported.
-
-R3: `copy object!` does not rebind functions to the new copy.
-
-Red: `copy object!` rebinds functions to the new copy.
+* R2: not supported.
+* R3: does not rebind functions to the new copy.
+* Red: rebinds functions to the new copy.
 
 Example:
 
@@ -57,32 +55,26 @@ red>> o2/m    ;; Red
 == 99
 ```
 
-## FLOAT! vs DECIMAL!
+## `float!` vs `decimal!`
 
-Different name for the datatype implementing the [standard IEEE-754 64-bit binary floating-point format](http://en.wikipedia.org/wiki/Double-precision_floating-point_format).
+Different names for datatype implementing the [standard IEEE-754 64-bit binary floating-point format](http://en.wikipedia.org/wiki/Double-precision_floating-point_format).
 
-R2: `decimal!`
+* R2 & R3: `decimal!`<sup>[1](http://www.rebol.com/r3/docs/datatypes/decimal.html)</sup>
+* Red: `float!`<sup>[2](http://www.red-lang.org/2014/08/043-floating-point-support.html)</sup>
 
-R3: `decimal!` <sup>[1](http://www.rebol.com/r3/docs/datatypes/decimal.html)</sup>
-
-Red: `float!` <sup>[2](http://www.red-lang.org/2014/08/043-floating-point-support.html)</sup>
-
-
-## FUNCTION vs FUNCT
-
-_Summary_: Red's (and R3's) FUNCTION is like R2's FUNCT, they automatically collect /LOCAL words.
+## `function` vs `funct`
 
 R2:
-- FUNCTION is a 3-argument function constructor taking a SPEC block, a VARS (locals) block, and a BODY block. It is a mezzanine function.
-- FUNCT is a 2-argument function constructor taking a SPEC block, and a BODY block. SET-WORD!s in BODY are automatically (and deeply) collected as /LOCALs of the function. It is a mezzanine function.
+- `function` is a 3-argument function constructor taking a `spec` block, a `vars` (locals) block, and a `body` block. It is a mezzanine function.
+- `funct` is a 2-argument function constructor taking a `spec` block, and a `body` block. `set-word!`s in `body` are automatically (and deeply) collected as `/local`s of the function. It is a mezzanine function.
 
 R3:
-- FUNCTION is 2-argument auto-localising. It is a mezzanine function.
-- FUNCT is an alias for FUNCTION.
+- `function` is a 2-argument auto-localising mezzanine; collects `set-word!`s only.
+- `funct` is an alias for `function`.
 
 Red:
-- FUNCTION is 2-argument auto-localising. It is a native function.
-- FUNCT does not exist.
+- `function` is a 2-argument auto-localising native; collects `set-word!`s and words of iterators `foreach` and `repeat`.
+- `funct` does not exist.
 
 ## LOCAL CONTEXTS FOR LOOPS
 
