@@ -1,6 +1,6 @@
 # Table of Contents
 
-1. [`copy` on object](#copy-on-object)
+1. [`copy` on `object!`](#copy-on-object)
 1. [`float!` vs `decimal!`](#float-vs-decimal)
 1. [`function` vs `funct`](#function-vs-funct)
 1. [Local contexts for loops](#local-contexts-for-loops)
