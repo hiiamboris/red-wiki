@@ -6,12 +6,12 @@
 1. [Local contexts for loops](#local-contexts-for-loops)
 1. [Binding to `self`](#binding-to-self)
 1. [Invalid block selector returns `none`](#invalid-block-selector-returns-none)
-1. [Object introspection](#object-introspection)
+1. [Reflection](#reflection)
 1. [`dir?`](#dir)
 1. [`to-date`](#to-date)
 1. [`random`](#random)
 1. [`do`](#do)
-1. [`make none`](#make-none)
+1. [`make` with `none`](#make-with-none)
 1. [`last`](#last)
 1. [`take`](#take)
 1. [`to-integer`](#to-integer)
@@ -21,7 +21,7 @@
 1. [`repend`](#repend)
 1. [`parse`](#parse)
 1. [`to-time`](#to-time)
-1. [`select/skip`](#select-skip)
+1. [`select/skip`](#selectskip)
 1. [Refinements](#refinements)
 1. [Lexer](#lexer)
 1. [`to-logic`](#to-logic)
@@ -76,119 +76,67 @@ Red:
 - `function` is a 2-argument auto-localising native; collects `set-word!`s and words of iterators `foreach` and `repeat`.
 - `funct` does not exist.
 
-## LOCAL CONTEXTS FOR LOOPS
+## Local contexts for loops
 
-R2: Loops with words for counters or iterated values have a local context for them.
+* R2 & R3: loops with words for counters or iterated values have a local context for them.
+* Red: does not provide local contexts for loops, due to its high runtime cost: it requires rebinding (and eventually deep copying of the whole body block) each time the loop is about to be evaluated.
 
-R3: Loops with words counters or iterated values have a local context for them.
+## Binding to `self`
 
-Red: Does not provide a local context for loops, as it has an associated high runtime cost. It requires re-BINDing (and eventually COPYing the whole body block) each time the loop is about to be evaluated.
+* R2 & R3: either `'self` or `self` can be used for binding words to the context of an object.
+* Red: only `self`.
 
-## BINDING TO SELF
+## Invalid block selector returns `none`
 
-R2: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
+In Rebol, usage of invalid `word!` selector in path throws an error, while in Red it returns `none`.
 
-R3: You can use either ```'self``` or ```self``` when binding a word or block to the context of an object.
-
-Red: You can use only ```self``` when binding a word or block to the context of an object.
-
-
-## INVALID BLOCK SELECTOR RETURNS NONE
-
-Under Rebol, using an invalid index selector in a path throws an error, under Red it returns `none`. This is normally very helpful, but be careful if you're using words mapped to indexes and forget to make them a `get-word!` in the path. Used in calculations, e.g. following a `-` op, it can lead to error messages that aren't obvious:
-
-```red
-*** Script error: none! type is not allowed here
-*** Where: -
-```
-
-R2/R3:
-
+Rebol:
 ```rebol
->> blk: [image img 100x100 300x300]
-== [image img 100x100 300x300]
->> IDX_TL: 3
-== 3
->> blk/IDX_TL
-** Script Error: Invalid path value: IDX_TL
-** Near: blk/IDX_TL
->> blk/:IDX_TL
-== 100x100
+>> a: [] a/b
+** Script Error: Invalid path value: b
+** Where: halt-view
+** Near: a/b
 ```
 
 Red:
-
 ```red
-red>> blk: [image img 100x100 300x300]
-== [image img 100x100 300x300]
-red>> IDX_TL: 3
-== 3
-red>> blk/IDX_TL
+>> a: [] a/b
 == none
-red>> blk/:IDX_TL
-== 100x100
 ```
 
-## OBJECT INTROSPECTION
+## Reflection
 
-In Rebol2, an object! was inspected using the ```first```, ```second``` and ```third``` functions. ```first``` provided a block containing the words of the object including ```self``` as the first entry. ```second``` provided a block containing the values of the object again including the value of ```self``` as the beginning of the block. (The value of ```self``` being ```make object! [<object body>]```.) ```third``` returns block containing the object body and does not include ```self```. The body of an object is its complete spec block of its current state, which can be used to make the object.
+Historically, reflection on `object!` values in R2 was done with `first`, `second` and `third` functions, which return words, values and body of a given object, respectively. For `any-function!` values, `first` returns argument words and refinements, `second` returns body or `action!` / `native!` ID, and `third` returns spec.
 
-The ```first```, ```second``` and ```third``` functions do not work on object! values in Rebol3 or Red. They were replaced by the ```words-of```, ```values-of``` and ```body-of``` functions that return a block of words, a block of values and the object's body respectively. They do not include ```self```.
+Later versions included mezzanine reflectors `words-of`, `values-of`, `body-of` and `spec-of` for the same purposes, but retained previous conventions.
 
-Later versions of Rebol2 include ```words-of```, ```values-of``` and ```body-of``` though retain object introspection through ```first```, ```second``` and ```third```.  
+In R3, only `*-of` reflectors can be used, and `self` with object's back-reference are excluded from object's words and values blocks; `body-of` on `native!` and `action!` values yields `none`.
 
-## DIR?
+Red follows R3 convention, with an exception that `body-of` on `native!`s and `action!`s results in an internal error and `words-of` on `any-function!` values is not defined.
 
-Under R2, `dir?` returns true based on whether the target is an actual directory on disk. Under Red, it returns true if the target *looks like* a directory, because the name ends with a path separator.
+Both in R3 and Red `*-of` reflectors are wrappers on top of dedicated `reflect` action.
 
-## TO-DATE
+## `dir?`
 
-In Rebol2 and Rebol3 ```to-date``` function works with string values but not in Red yet. So currently `to-date "2-May-2018"` will return an error. ```load``` can be used instead.
+In R2, `dir?` returns `true` if given directory exists. In Red, it returns `true` if provided value syntactically looks like a directory, i.e. ends with a slash.
 
-```
->> load "2018/01/02"
-== 2-Jan-2018
+## `to-date`
 
->> to-date "2018/01/02"
-Script Error: cannot MAKE/TO date! from: "2018/01/02"
-```
+In Rebol, `to-date` function works with string values, but in Red this is currently not supported (note that this is subject to change). In either case, `load` can be used instead of string conversion.
 
-Please note that this is a temporary difference since Red's lexer in not in its final form yet.
+## `random`
 
-## RANDOM
+In R2, `random` on series shuffles its copy, but in R3 and Red series is modified in-place.
 
-In Rebol2, `random` copies the series argument before shuffles, in Rebol3 and Red, it modifies:
+## `do`
 
-```red
->> s: "12345"
-== "12345"
->> random s
-== "43512"
->> s
-== "43512" ("12345" in R2)
-```
+The values that get special treatment by `do` are: `[block! path! string! url! file! error!]`. Everything else is evaluated passively. This is by design, to eliminate variable arity (see [here](https://gitter.im/red/help?at=5ab285275f188ccc15df954b)).
 
-## DO
+## `make` with `none`
 
-The values that get special treatment by do are: [block! path! string! url! file! error!] Everything else is evaluated passively. This is by design, to eliminate variable arity. (See [here](https://gitter.im/red/help?at=5ab285275f188ccc15df954b))
+In R3 and Red, `make` generally doesn't accept `none` in spec argument and raise an error, which is different from R2:
 
-On R2 and R3
 ```rebol
->> type? do func [][1]
-== integer!
-```
-
-on Red
-```red
->> type? do func [][1]
-== function!
-```
-
-## MAKE NONE
-
-`make` generally doesn't accept `none` in spec argument on Red and raise error, which is compatible with Rebol3 but is different from Rebol2:
-
-```red
 make integer! none ; == 0
 make block!   none ; == []
 make file!    none ; == %""
@@ -196,43 +144,37 @@ make tag!     none ; == <>
 ...
 ```
 
-Above lines give error on Red. Similar issue happens with "" (empty string)
+Same applies to empty string:
 
-```red
+```rebol
 make integer! "" ; == 0 (R2)
 make path!    "" ; <empty path>
 ...
 ```
 
-These works on Rebol2 but not on Red / Rebol3.
-
-Also notice below difference:
+Also, there's a difference in `hash!` behavior:
 
 ```red
-m: make hash! none
-length? m
+length? make hash! none
 ```
 
-This returns 0 on Rebol2 but 1 on Red.
-Red creates a hash with one value (none) inside, but Rebol2 creates an empty hash.
+This returns `0` in R2 and `1` in Red.
 
-## LAST
+## `last`
 
-`last []` returns `none` on Red and R3, but returns `Out of range or past end` on R2.
+`last` on empty series returns `none` in Red and R3, but yields an error in R2.
 
-## TAKE
+## `take`
 
-`take []` returns `none` on all Red, R3 and R2.
+`take` on empty series returns `none` both in Red and Rebol, but `take/part ... 1` returns empty series in Rebol and `none` in Red.
 
-But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's behavior looks more consistent.
+## `to-integer`
 
-## TO-INTEGER
+`to-integer ""` returns error in Red and R3, but `0` in R2.
 
-`to-integer ""` returns error on Red and R3, but `0` on R2.
+## `load`
 
-## LOAD
-
-1. `load %file.txt` loads the content of the file and return one value (if there is just one value in the file) or a block of values (if there are more values in the file) on Red and R2, but returns a string on R3.
+1. `load` on `file!` loads file's content and return either one value or a block of values in Red and R2. In R3 it returns a string:
 
 ```red
 >> load %/c/file.txt
@@ -240,7 +182,7 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 == "abc^/def^/" ; R3
 ```
 
-2. `load %./` returns a block of files and folders on R2 and R3, but not on Red:
+2. `load %./` returns a block of files and folders in R2 and R3, but not in Red:
 
 ```red
 >> load %/c/
@@ -248,9 +190,9 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 *** Script Error: transcode does not allow block! for its <anon> argument ; Red
 ```
 
-## READ
+## `read`
 
-`read/lines/part` behaves different on Red, R2 and R3:
+`read/lines/part` behaves differently between Red and Rebol:
 
 ```red
 >> write/lines %file.txt ["one" "two" "three"]
@@ -265,13 +207,11 @@ But `take/part [] 1` returns empty block on R2 and R3, but `none` on Red. Red's 
 == ["one" "two" "three"] ; R2
 ```
 
-Note that full IO support will come with v0.7.0 to Red and current simple-io functionality may change.
+Note that this might change after 0.7.0 release.
 
-## ADJUST TIME BY SETTING TIMEZONE
+## Adjust time by setting timezone
 
-When setting timezone of a date value by `zone`, time will not be adjusted in R2, R3 and Red.
-
-When `timezone` is used to set, time adjusted, only Red has this feature:
+Setting timezone of `date!` value with `zone` won't adjust time in either language. But in Red, such adjustment works with `timezone`: 
 
 ```red
 >> d: now
@@ -282,32 +222,31 @@ When `timezone` is used to set, time adjusted, only Red has this feature:
 == 22-Dec-2018/3:53:52+05:00
 ```
 
-## REPEND
+## `repend`
 
-`repend` in Rebol is just a shortcut for the common `append ... reduce` pattern. This means that you still incur the cost of an extra block produced by reduce before append.
+`repend` in Rebol is just a shortcut for the common `append ... reduce` pattern. This means that you still incur the cost of an extra block produced by `reduce` before `append`.
 
-In Red, `repend` is the fusion of the `append ... reduce` pattern, so that no intermediary block is created (thanks to the efficient `reduce/into` call). This means that values are reduced and appended one by one in this case. It will behave the same way as `append ... reduce`, unless you rely on side-effects, like above modifying the accumulating series while reducing. In such cases, just fall back on `append ... reduce` in order to separate fully the reduction from the appending actions.
+In Red, `repend` is the fusion of `append` and  `reduce`, so that no intermediary block is created (thanks to the efficient `reduce/into` call). This means that values are reduced and appended one by one in this case. It will behave the same way as `append ... reduce`, unless you rely on side-effects, like above modifying the accumulating series while reducing. In such cases, just fall back on `append ... reduce` in order to separate fully the reduction from the appending actions.
 
-See the details [here](https://github.com/red/red/issues/3340)
+See the details [here](https://github.com/red/red/issues/3340).
 
-## PARSE
+## `parse`
 
 `path!`s are evaluated in R2 and R3 but not in Red:
 
 ```red
 >> b: [x 3]
 >> parse "aaa" [b/x "a"]
-== true (on R2 & R3)
-== false (on Red)
+== true (in R2 & R3)
+== false (in Red)
 ```
 
-There is already a ticket about it and it may change in the future: [#3528](https://github.com/red/red/issues/3528)
+* Related ticket: [#3528](https://github.com/red/red/issues/3528)
+* Also check `to` / `thru` difference described in #3679](https://github.com/red/red/issues/3679)
 
-Also check TO / THRU difference described in this issue [#3679](https://github.com/red/red/issues/3679)
+## `to-time`
 
-## TO-TIME
-
-In Red Meridian designations are not part of the time! form:
+In Red, Meridian designations are not part of the `time!` form:
 ```red
 >> load "01:00PM"
 == [1:00:00 PM]        ;Red
@@ -336,9 +275,9 @@ This leads to below differences:
 == Error ;R3
 ```
 
-## SELECT SKIP
+## `select/skip`
 
-`select/skip` returns a block (the record, see the help `? select`) in R2, returns a single value in R3 & Red:
+`select/skip` returns a block (the record, see `? select`) in R2 and a single value in R3 & Red:
 
 ```red
 >> select/skip [1 2 3 4 5 6] 1 3
@@ -346,9 +285,9 @@ This leads to below differences:
 == 2     ;R3 & Red
 ```
 
-## REFINEMENTS
+## Refinements
 
-Default value for refinements is `false`, while in Rebol it's `none`.
+Default value for refinements in Red is `false`, while in Rebol it's `none`.
 
 `refinement!` is currently not part of `any-word!` as in Rebol:
 
@@ -358,7 +297,7 @@ Default value for refinements is `false`, while in Rebol it's `none`.
 == false ;Red
 ```
 
-## LEXER
+## Lexer
 
 Red's and Rebol's lexers behave differently in some cases:
 
@@ -368,35 +307,34 @@ Red's and Rebol's lexers behave differently in some cases:
 == [/: a] ;Red
 ```
 
-## TO-LOGIC
+## `to-logic`
 
 `to-logic 0` returns `true` in Red and R3, but `false` in R2.
 
 Some people think zero should be falsey, based on how many other languages do it, and *their* instinct was to follow how C did it. But C has no concept of real logic values. So what we need to ask is what makes the most sense in Red (Red/System is a different story, because it's a C level language).
 
-Red chose to be consistent in how logic values are coerced, with only false and none mapping to false. Zero is a number, and no special case is made for it. Even unset! coerces to true.
+Red chose to be consistent in how logic values are coerced, with only false and none mapping to false. Zero is a number, and no special case is made for it. Even `unset!` coerces to `true`.
 
-That said, you have an option. `Make` creates a logic value of false if the spec is a numeric zero, including floats and percents.
+That said, you have an option. `Make` creates a logic value of `false` if the spec is a numeric zero, including floats and percents.
 
-## GET
+## get
 
+Given
 ```red
->> o: context [a: 1]
-
-|--------------------------------------|
-|          |Red       |R2        |R3   |
-|----------|----------|----------|-----|
-|get o     |[1]       |[1]       |[1]  |
-|get :o    |[1]       |[1]       |[1]  |
-|get o/a   |Error     |Error     |1    |
-|get 'o/a  |1         |Error     |1    |
-|get :o/a  |Error     |Error     |1    |
-|get 1     |Error     |Error     |1    |
-|get none  |Error     |none      |none |
-|--------------------------------------|
+o: make object! [a: 1]
 ```
 
-## SET
+|             | Red         | R2          | R3     |
+|:------------|:-----------:|:-----------:|:------:|
+| `get o`     | `[1]`       | `[1]`       | `[1]`  |
+| `get :o`    | `[1]`       | `[1]`       | `[1]`  |
+| `get o/a`   | *error*     | *error*     | `1`    |
+| `get 'o/a`  | `1`         | *error*     | `1`    |
+| `get :o/a`  | *error*     | *error*     | `1`    |
+| `get 1`     | *error*     | *error*     | `1`    |
+| `get none`  | *error*     | `none`      | `none` |
+
+## `set`
 
 Rebol has `/pad` refinement that sets remaining words to `none`, but in Red that's a default behavior; `/some` can be used to mimick Rebol convention and ignore remaining words.
 ```red
@@ -424,9 +362,9 @@ a: unset!
 == [[1 2] [1 2]]
 ```
 
-## EQUAL?
+## `equal?`
 
-`equal?` accepts `unset!` on Red and R3, but not on R2.
+`equal?` accepts `unset!` in Red and R3, but not in R2.
 
 ```
 >> equal? () ()
@@ -438,7 +376,7 @@ a: unset!
 
 ## ??
 
-In R2 & R3, `??` can take a literal value, and it returns it back, so can be used inside expressions:
+In R2 & R3, `??` takes a literal value and returns it back, so that it can be used inside expressions for debugging:
 ```
 >> 5 - ?? 2
 2
@@ -452,7 +390,7 @@ In Red, `??` returns `unset` and only accepts words and paths:
 *** Stack: ?? 
 ```
 
-The rationale behind `unset` is that REBOL console by default hid most of the values and one had to use `??` to see them:
+The rationale behind `unset` is that Rebol console by default hid most of the values and one had to use `??` to see them:
 ```
 >> f: does [something]
 >> o: make object! [a: 1]
@@ -465,14 +403,16 @@ o: make object! [
     a: 1
 ]
 ```
-while Red console honestly displays all the values:
+
+while Red console displays all the values:
 ```
 >> f: does [something]
 == func [][something]
 >> :f
 == func [][something]
 ```
-so `??` returning them would have led to output duplication, like this:
+
+So `??` returning them would have led to output duplication, like this:
 ```
 >> ?? o
 o: 
@@ -486,6 +426,7 @@ make object! [
     c: 3
 ]
 ```
+
 From within *Red expressions* `probe` should be used instead:
 ```
 >> 1 + probe 2
