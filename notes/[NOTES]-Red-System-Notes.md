@@ -130,3 +130,53 @@ Macros can be used to workaround that:
 #define relationship! [ struct! [ startNode [ node! ] endNode [ node! ] ] ]
 node!: alias struct! [ nextRel [ relationship! ] ]
 ```
+# Embedding #system in a Red function
+When using `#system` inside a Red function, it is important to note that Red functions are compiled to Red/System code.
+For that matter, the following code produces a compilation error:
+```
+Red []
+
+red-fun: function [][
+    #system [        
+
+        f: function [][        
+            print-line "doing something"
+        ]        
+        cpt: 0        
+        f
+    ]
+]
+```
+Compiler complains about `cpt` not being declared. This is because `red-fun` is compiled to a Red/System function and `#system` contents are inlined inside the Red/System `red-fun` function.
+This means the above code example is compiled to this Red/System code:
+```
+Red/System []
+
+red-fun: function [][       
+    f: function [][        
+        print-line "doing something"
+    ]        
+    cpt: 0        
+    f
+]
+```
+Since Red/System functions need explicit declaration of local variables, `cpt` is unknown to the compiler in `red-fun`.
+
+The correct way to embed a function within another with `#system` is:
+```
+Red []
+
+#system [
+    f: function [][
+        print-line "doing something"
+    ]
+    cpt: 0
+]
+red-fun: function [][
+    #system [f]
+]
+```
+Here, `cpt` is inlined outside the functions which is correct for the compiler.
+
+Note: as stated by Nenad Rakocevic:
+> the R/S compiler will let you declare and run the nested function, though it is not an officially supported feature, so we might deprecate it for 1.0.
