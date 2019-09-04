@@ -2,7 +2,7 @@
 
 Development of Linux backend for [Red's Graphical User Interface](https://doc.red-lang.org/en/gui.html), using version 3 of [Gtk+ library](https://en.wikipedia.org/wiki/GTK%2B).
 
-* Sources: https://github.com/rcqls/red/tree/GTK (_rcqls/red:GTK-dev_ branch)
+* Sources: https://github.com/red/red/tree/GTK
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
 * `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
 
@@ -22,7 +22,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 
 Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter.im/red/GTK?at=5c32ba4c26d86e4d5638d894) deprecated low-level API, used also by [SWT library](https://www.eclipse.org/swt/)
 
-*red/red:GTK* branch will be updated by Red's core developers team [whenever needed](https://gitter.im/red/GTK?at=5c3463bc1d1c2c3f9cdd2d41).
+[Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://gitter.im/red/GTK?at=5d4e965690bba62a124e933b).
 
 ## Links
 
