@@ -36,7 +36,7 @@ split: func [
 
 # Links to pages about `parse`
 
-* ["The reference for Red parse"](https://www.red-lang.org/2013/11/041-introducing-parse.html)
+* ["The reference for Red parse including examples __IPv4 address validation__, __elmail adress validator__, __math expression validation__, __HTML parser__, __interpreter for obfuscated language__"](https://www.red-lang.org/2013/11/041-introducing-parse.html)
 
 * ["A view links collected here on GitHub"](https://github.com/red/red/wiki/%5BDOC%5D-Parse#learning-resources-for-parse)
 
