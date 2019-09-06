@@ -1,6 +1,7 @@
 This page is for `parse` examples that show solutions and patterns to common problems.
 
-If you've never used `parse`, or as a dialect reference, look at https://www.red-lang.org/2013/11/041-introducing-parse.html
+If you've never used `parse`, or as a dialect reference, look at 
+https://www.red-lang.org/2013/11/041-introducing-parse.html
 
 Examples should be kept relatively small, but may be specific (drop in and use) or generalized patterns that give people a starting point to work from, since the example may not match their data exactly.
 
