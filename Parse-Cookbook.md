@@ -6,8 +6,8 @@ or check the links provided below.
 
 Examples should be kept relatively small, but may be specific (drop in and use) or generalized patterns that give people a starting point to work from, since the example may not match their data exactly.
 
-1. ["Split a string at a delimiter-pattern"](#split-a-string-at-a-delimiter-pattern)
-1. [Parse text and change keywords-pattern](Parse-text-and-change-keywords)
+1. [Split a string at a delimiter-pattern](#split-a-string-at-a-delimiter-pattern)
+1. [Parse text and change keywords-pattern](#Parse-text-and-change-keywords-pattern)
 1. []()
 
 
