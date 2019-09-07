@@ -9,7 +9,9 @@
 * ["Parse section from Red by Example"](http://www.red-by-example.org/parse.html)
 
 ***
-
+# Parse Cookbook
+https://github.com/red/red/wiki/Parse-Cookbook
+***
 # Notes about Parse
 
 [Parse always reaches the tail with some combinations of iterators and TO / THRU](https://github.com/red/red/issues/3679)
