@@ -62,10 +62,10 @@ print text
 ```
 Output:
 
-```diff
-+((edge ???<S>??? cloud) OR (edge SEQ1 of SEQ1 network*) OR (edge SEQ2 server) OR 
-+((iaas OR paas OR saas) ???<S>??? edge) OR (next_gen* SEQ2 cloud)) AND 
-+(G06F-009/5072 OR (H04L-067/10:H04L-067/1095) OR (H04L-067/12:H04L-067/125))/IPC/CPC
+```
+((edge ???<S>??? cloud) OR (edge SEQ1 of SEQ1 network*) OR (edge SEQ2 server) OR 
+((iaas OR paas OR saas) ???<S>??? edge) OR (next_gen* SEQ2 cloud)) AND 
+(G06F-009/5072 OR (H04L-067/10:H04L-067/1095) OR (H04L-067/12:H04L-067/125))/IPC/CPC
 ```
 
 # Links to pages about `parse`
