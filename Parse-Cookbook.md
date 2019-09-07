@@ -39,7 +39,7 @@ The need derived from transferring one patent query syntax into a different one.
 Simple Example: ``(text1+ 2W text2) OR (text3 3W text4+)`` --> ``(text1* SEQ2 text2) OR (text3 SEQ3 text4*)``
 Changes apply to ``<n>W --> SEQ<N>``, ``+ --> *`` and so on.
 
-```
+```Red
 text: {((edge S cloud) OR (edge W of W network+) OR (edge 2W server) OR ((iaas OR paas OR saas) S edge) 
 OR (next_gen+ 2W cloud))/TI/AB/CLMS AND (G06F-009/5072 OR (H04L-067/10:H04L-067/1095) OR 
 (H04L-067/12:H04L-067/125))/IPC/CPC}
@@ -89,5 +89,5 @@ Output:
 
 * ["Wikibook page on Rebol Parse including examples like ``remove-chars``"](https://en.wikibooks.org/wiki/Rebol_Programming/Language_Features/Parse/Parse_expressions)
 
-* ["stackoverflow Blog on parse and translate DLS using Red with Red code"](https://stackoverflow.com/questions/48454538/how-to-parse-and-translate-dsl-using-red-or-rebol)
+* ["stackoverflow Blog on parse and translate DSL using Red with Red code"](https://stackoverflow.com/questions/48454538/how-to-parse-and-translate-dsl-using-red-or-rebol)
 
