@@ -77,8 +77,15 @@ Output:
 
 * ["A beginner friendly Parse article by Michael Sydenham"](http://www.michaelsydenham.com/reds-parse-dialect/)
 
-* ["red-lang.org overview of Parse"](https://www.red-lang.org/2013/11/041-introducing-parse.html)
-
 * ["Parse chapter from Ungaretti's Red Language Notebook"](https://ungaretti.gitbooks.io/red-language-notebook/content/parse.html)
 
 * ["Parse section from Red by Example"](http://www.red-by-example.org/parse.html)
+
+* ["Rebol Core Users Guide Chapter 15 - Parsing"](http://www.rebol.com/docs/core23/rebolcore-15.html)
+
+* ["Parse tutorial for Rebol 2 found on codeconscious.com"] (http://www.codeconscious.com/rebol/parse-tutorial.html)
+
+* ["Introduction to Red Parse on hostilefork.com"] (http://blog.hostilefork.com/why-rebol-red-parse-cool/)
+
+* ["Wikibook page on Rebol Parse including examples like ``remove-chars``"](https://en.wikibooks.org/wiki/Rebol_Programming/Language_Features/Parse/Parse_expressions)
+
