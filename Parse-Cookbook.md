@@ -15,7 +15,7 @@ Examples should be kept relatively small, but may be specific (drop in and use) 
 
 Look no further than the standard `split` func's current incarnation. It shows how to use `collect` and `copy` to extract data as it moves through the string looking for delimiters.
 
-```
+```Red
 split: func [
 	{Break a string series into pieces using the provided delimiters} 
 	series [any-string!]
