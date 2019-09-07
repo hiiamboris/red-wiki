@@ -89,3 +89,5 @@ Output:
 
 * ["Wikibook page on Rebol Parse including examples like ``remove-chars``"](https://en.wikibooks.org/wiki/Rebol_Programming/Language_Features/Parse/Parse_expressions)
 
+* ["stackoverflow Blog on parse and translate DLS using Red with Red code"](https://stackoverflow.com/questions/48454538/how-to-parse-and-translate-dsl-using-red-or-rebol)
+
