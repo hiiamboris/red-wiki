@@ -6,6 +6,8 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
 * `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
 
+[Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://gitter.im/red/GTK?at=5d4e965690bba62a124e933b).
+
 ## Compilation (32-bit Linux)
 
 (see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) or [`reds project` page](https://github.com/rcqls/reds/blob/master/README-RedGTK.md) for quick installation notes about `red/GTK` requirements)
@@ -18,11 +20,11 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 1. Compile: `echo 'Rebol[] do/args %red.r "-r %environment/console/CLI/console.red"' | rebol +q -s`
 1. Test: `./console tests/react.test` should open a window with red/green/blue sliders that change color in a box next to them and color of text below them. More tests can be found in `tests` and `tests/gtk3` folders. You can also run console in interactive mode: `./console` and enter the line: `view [button "hello"]`.
 
-## Notes
+## Developer notes
 
-Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter.im/red/GTK?at=5c32ba4c26d86e4d5638d894) deprecated low-level API, used also by [SWT library](https://www.eclipse.org/swt/)
+For GTK, use official GTK docs. Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter.im/red/GTK?at=5c32ba4c26d86e4d5638d894) deprecated low-level API, used also by [SWT library](https://www.eclipse.org/swt/)
 
-[Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://gitter.im/red/GTK?at=5d4e965690bba62a124e933b).
+There is not much documentation available. You must rely on [official View documentation](https://doc.red-lang.org/en/view.html#) and `View` code – `modules/view` folder in Red's sources. GTK implementation sits in `modules/view/backends/gtk3`, with most important files: `gui.reds`, `gtk.reds`, `events.reds` and `handlers.reds`.
 
 ## Links
 
