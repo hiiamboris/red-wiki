@@ -8,7 +8,7 @@ Examples should be kept relatively small, but may be specific (drop in and use) 
 
 1. [Split a string at a delimiter-pattern](#split-a-string-at-a-delimiter-pattern)
 1. [Parse text and change keywords-pattern](#Parse-text-and-change-keywords-pattern)
-1. []()
+1. [Parse text where term is at end of line](#Parse-text-where-term-is-at-end-of-line)
 
 
 # Split a string at a delimiter (#drop-in)
@@ -30,7 +30,7 @@ split: func [
 	]
 ]
 ```
-
+***
 # Parse text and change keywords (#pattern)
 Use ``change`` to transform text including keywords. 
 
@@ -62,12 +62,35 @@ print text
 ```
 Output:
 
-```
+```Red
 ((edge ???<S>??? cloud) OR (edge SEQ1 of SEQ1 network*) OR (edge SEQ2 server) OR 
 ((iaas OR paas OR saas) ???<S>??? edge) OR (next_gen* SEQ2 cloud)) AND 
 (G06F-009/5072 OR (H04L-067/10:H04L-067/1095) OR (H04L-067/12:H04L-067/125))/IPC/CPC
 ```
+***
+# Parse text where term is at end of line
+The need derived from detecting a term only at the end of a line.
+Simple Example: detect ``OR`` in ``{abc def OR}`` respectively ``{abc def OR }`` with a trailing space.
+The answer is simple using the keyword ``end`` i.e.:  _return success if current input position is at end_.
+Usually examples go with a match phrase ``to end``.
 
+```Red
+OR-rule: [{OR} opt space end (print "{OR} detected")]
+```
+
+```Red
+>> parse {abc orc def OR } [some [OR-rule | {or} (print "stumbled on {or}") | skip]]
+stumbled on {or}
+{OR} detected
+== true
+>> parse {abc orc def} [some [OR-rule | {or} (print "stumbled on {or}") | skip]]
+stumbled on {or}
+== true
+>> parse {abc def ORC } [some [OR-rule | {or} (print "stumbled on {or}") | skip]]
+stumbled on {or}
+== true
+```
+***
 # Links to pages about `parse`
 
 * ["The reference for Red parse including examples like 
