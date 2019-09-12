@@ -51,7 +51,7 @@ Use `hash!` for data that is updated less frequently and benefits from much fast
 
 Conceptually, maps take quick lookups from `hash!` and key/value interface from `object!`. This means that `map!` values act as dictionaries with unique keys and fast queries.
 
-Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values.
+Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values. Map follows `construct` semantics, in a sense that it does not evaluate added keys.
 
 Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order.
 
