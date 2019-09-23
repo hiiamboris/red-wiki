@@ -120,13 +120,13 @@ Each approach has it's beauty.<br>
 ### paren!-based approach (by Vladimir)
 ```Red
 source: {
-    (abc OR def)/TI
-    (abc OR (def AND GHI))/TI
-    ((abc AND JKL) OR (def AND GHI))/TI
     ((((abc AND JKL) OR (def AND GHI))))/TI
 }
-probe parse load source [4 [paren! /TI]]
+probe parse load source [ [paren! /TI] ]
 ```
+Please note, that `load`is necessary to load the string into memory.<br>
+The use of `paren!` is instructive, i.e. just a check whether a series of items is enclosed in parantheses.
+
 ### Object-based approach (by Vladimir)
 ```Red
 source: trim/lines {
