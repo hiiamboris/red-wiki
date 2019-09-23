@@ -178,5 +178,5 @@ probe parse/case source grammar/rule
 
 * ["stackoverflow Blog on parse and translate DSL using Red with Red code"](https://stackoverflow.com/questions/48454538/how-to-parse-and-translate-dsl-using-red-or-rebol)
 
-* ["Helpin' Red -> Parse by Ungaretti"]
+* ["Helpin Red - Parse by Ungaretti"]
 (http://helpin.red/Parse.html)
