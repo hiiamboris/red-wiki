@@ -7,9 +7,9 @@ or check the [links](#Links-to-pages-about-parse) provided below.
 Examples should be kept relatively small, but may be specific (drop in and use) or generalized patterns that give people a starting point to work from, since the example may not match their data exactly.
 
 1. [Split a string at a delimiter-pattern](#split-a-string-at-a-delimiter-pattern)
-1. [Parse text and change keywords-pattern](#Parse-text-and-change-keywords-pattern)
-1. [Parse text where term is at end of line](#Parse-text-where-term-is-at-end-of-line)
-
+2. [Parse text and change keywords-pattern](#Parse-text-and-change-keywords-pattern)
+3. [Parse text where term is at end of line](#Parse-text-where-term-is-at-end-of-line)
+4. [Parse text with paired brackets](#Parse-text-with-paired-brackets)
 
 # Split a string at a delimiter (#drop-in)
 
@@ -91,6 +91,70 @@ stumbled on {or}
 == true
 ```
 ***
+# Parse text with paired brackets
+Different approaches to parse strings of the following outlook:<br>
+`(abc OR def)/TI`<br>
+So there are outer brackets and a /TI at the end. 
+We do not look inside the brackets, as long as there is a /TI at the end.
+It becomes tricky with the following strings:<br>
+`(abc OR (def AND GHI) )/TI` or <br>
+`( ( abc AND JKL) OR (def AND GHI))/TI` or <br>
+`( ( ((abc AND JKL) OR (def AND GHI) )) )/TI`<br>
+
+The result shall be a logic return `true`or `false`.<br>
+There shall be no "hidden" /TI inside the string.<br>
+The brackets shall be balanced.
+
+In gitter.im/red/help the following working solutions were provided.
+Each approach has it's beauty.<br>
+### Count-based approach (by Toomas)
+```Red
+[(pars: 0 yep: no) any [
+   #"(" (pars: pars + 1) 
+   | ")/TI" end (yep: true) 
+   | #")" (pars: pars - 1) 
+   | skip
+   ] if (all [pars = 1 yep])
+]
+```
+### paren!-based approach (by Vladimir)
+```Red
+source: {
+    (abc OR def)/TI
+    (abc OR (def AND GHI))/TI
+    ((abc AND JKL) OR (def AND GHI))/TI
+    ((((abc AND JKL) OR (def AND GHI))))/TI
+}
+probe parse load source [4 [paren! /TI]]
+```
+### Object-based approach (by Vladimir)
+```Red
+source: trim/lines {
+    (abc OR def)/TI
+    (abc OR (def AND GHI))/TI
+    ((abc AND JKL) OR (def AND GHI))/TI
+    ((((abc AND JKL) OR (def AND GHI))))/TI
+}
+
+grammar: object [
+    counter: 0
+    bump: func [delta][counter: counter + delta]
+    balanced?: does [zero? counter]
+    rule: [
+        some [
+            some [
+                  #"(" (bump +1) 
+                | #")" (bump -1)
+                | not "/TI" skip
+            ] 
+            "/TI" if (balanced?)
+        ]
+    ] 
+]
+probe parse/case source grammar/rule
+```
+***
+
 # Links to pages about `parse`
 
 * ["The reference for Red parse including examples like 
@@ -114,3 +178,5 @@ stumbled on {or}
 
 * ["stackoverflow Blog on parse and translate DSL using Red with Red code"](https://stackoverflow.com/questions/48454538/how-to-parse-and-translate-dsl-using-red-or-rebol)
 
+* ["Helpin' Red -> Parse by Ungaretti]
+(http://helpin.red/Parse.html)
