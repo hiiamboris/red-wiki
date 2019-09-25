@@ -71,8 +71,7 @@ Install HomeBrew by copying this line into the Terminal
 
 ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
-then install Lighttpd
-type this into the terminal:
+then install Lighttpd typing this into the terminal:
 
 ```brew install lighttpd```
 
