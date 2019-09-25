@@ -76,7 +76,7 @@ then install Lighttpd by typing this into the terminal:
 ```brew install lighttpd```
 
 then open the following file:
-```lighttpd/lighttpd.conf```
+```/lighttpd/lighttpd.conf```
 
 and add ```index.red``` like you see below:
 
@@ -103,3 +103,13 @@ cgi.assign                 = ( ".pl"  => "/usr/bin/perl",
                                ".py"  => "/usr/bin/python" )
 ```
 
+finally open this file:
+```
+/lighttpd/modules.conf
+```
+
+and un-comment this line:
+
+```
+include "conf.d/cgi.conf"
+```
