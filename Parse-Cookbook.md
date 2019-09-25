@@ -67,6 +67,38 @@ Output:
 ((iaas OR paas OR saas) ???<S>??? edge) OR (next_gen* SEQ2 cloud)) AND 
 (G06F-009/5072 OR (H04L-067/10:H04L-067/1095) OR (H04L-067/12:H04L-067/125))/IPC/CPC
 ```
+
+## Alt example
+
+Convert `MARKER <num>KEY` sections to `MARKER NEW-KEY<num>`.
+```
+digit=: charset "0123456789"
+
+mod-str: func [input /local num= =num mark][
+    input: copy input
+    num=: [copy =num some digit=]
+    parse  input [
+        any [
+            ["rfid " num= change #"W" "SEQ" insert =num]
+            | skip
+        ]
+    ]
+    input
+]
+
+s1: "(rfid 2W radio)"
+s2: "(rfid 10W frequency)"
+s3: "(rfid 999W frequency)"
+s4: "(rfid wwW frequency)"
+s5: "(rfid 99 frequency)"
+
+print mod-str s1
+print mod-str s2
+print mod-str s3
+print mod-str s4
+print mod-str s5
+```
+
 ***
 # Parse text where term is at end of line
 The need derived from detecting a term only at the end of a line.
