@@ -33,7 +33,7 @@ There is not much documentation available. You must rely on [official View docum
 * Last generated `console-view` from `rcqls/red:GTK-dev` branch: 
   * with camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-view
   * without camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-nocam
-* Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi): https://rebolek.com/builds/
+* Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi), [temporarily](https://gitter.im/red/GTK?at=5d7114a350508949d3df976f) out of service: https://rebolek.com/builds/
 
 ## Notes for experimental camera stuff
 
