@@ -86,10 +86,20 @@ index-file.names += (
 )
 ```
 
-then add the ```.red``` extension like you see below:
+then add the ```.red``` extension like you see below so red files can be executed:
 ```
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi", ".scgi", ".red" )
 ```
 
+then open the file located at ```/lighttpd/conf.d/cgi.conf```
+and add ```.red``` like you see below:
 
+```
+cgi.assign                 = ( ".pl"  => "/usr/bin/perl",
+                               ".cgi" => "/usr/bin/perl",
+                               ".rb"  => "/usr/bin/ruby",
+                               ".erb" => "/usr/bin/eruby",
+                               ".red" => "/usr/local/bin/red.dms",
+                               ".py"  => "/usr/bin/python" )
+```
 
