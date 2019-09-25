@@ -113,3 +113,8 @@ and un-comment this line:
 ```
 include "conf.d/cgi.conf"
 ```
+
+then start the server by typing this into the terminal:
+```
+lighttpd -f /usr/local/etc/lighttpd/lighttpd.conf
+```
