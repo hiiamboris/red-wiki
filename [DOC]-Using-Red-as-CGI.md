@@ -63,5 +63,14 @@ print now
 Now you are ready to test. Open a browser and point to `localhost/test.red` you should see the output of your script.
 
 
-## lighttpd Web Server on OS X Mojave
+## Lighttpd Web Server on OS X Mojave
+
+To use Red as CGI under lighttpd, follow the instructions below:
+
+Install HomeBrew by copying this line into the Terminal
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+
+then install Lighttpd
+type ```brew install lighttpd```
+
 
