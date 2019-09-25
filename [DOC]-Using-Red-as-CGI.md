@@ -71,8 +71,25 @@ Install HomeBrew by copying this line into the Terminal
 
 ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
-then install Lighttpd typing this into the terminal:
+then install Lighttpd by typing this into the terminal:
 
 ```brew install lighttpd```
+
+then open the following file:
+```lighttpd/lighttpd.conf```
+
+and add ```index.red``` like you see below:
+
+```
+index-file.names += (
+  "index.xhtml", "index.html", "index.htm", "default.htm", "index.red", "index.php"
+)
+```
+
+then add the ```.red``` extension like you see below:
+```
+static-file.exclude-extensions = ( ".php", ".pl", ".fcgi", ".scgi", ".red" )
+```
+
 
 
