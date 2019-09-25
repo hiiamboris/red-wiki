@@ -61,3 +61,7 @@ print now
 ```
 
 Now you are ready to test. Open a browser and point to `localhost/test.red` you should see the output of your script.
+
+
+## lighttpd Web Server on OS X Mojave
+
