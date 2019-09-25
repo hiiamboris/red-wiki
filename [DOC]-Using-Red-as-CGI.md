@@ -68,9 +68,12 @@ Now you are ready to test. Open a browser and point to `localhost/test.red` you 
 To use Red as CGI under lighttpd, follow the instructions below:
 
 Install HomeBrew by copying this line into the Terminal
+
 ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
 then install Lighttpd
-type ```brew install lighttpd```
+type this into the terminal:
+
+```brew install lighttpd```
 
 
