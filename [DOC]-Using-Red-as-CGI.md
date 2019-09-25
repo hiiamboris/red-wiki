@@ -86,6 +86,7 @@ index-file.names += (
 )
 ```
 
+
 then add the ```.red``` extension like you see below so red files can be executed:
 ```
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi", ".scgi", ".red" )
