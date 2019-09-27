@@ -106,7 +106,7 @@ cgi.assign                 = ( ".pl"  => "/usr/bin/perl",
 
 finally open this file:
 ```
-/lighttpd/modules.conf
+/usr/local/etc/lighttpd/lighttpd/modules.conf
 ```
 
 and un-comment this line:
