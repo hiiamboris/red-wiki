@@ -76,7 +76,7 @@ then install Lighttpd by typing this into the terminal:
 ```brew install lighttpd```
 
 then open the following file:
-```/lighttpd/lighttpd.conf```
+```/usr/local/etc/lighttpd/lighttpd.conf```
 
 and add ```index.red``` like you see below:
 
