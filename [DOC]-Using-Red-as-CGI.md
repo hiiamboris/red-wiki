@@ -92,7 +92,7 @@ then add the ```.red``` extension like you see below so red files can be execute
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi", ".scgi", ".red" )
 ```
 
-then open the file located at ```/lighttpd/conf.d/cgi.conf```
+then open the file located at ```/usr/local/etc/lighttpd/conf.d/cgi.conf```
 and add ```.red``` like you see below:
 
 ```
