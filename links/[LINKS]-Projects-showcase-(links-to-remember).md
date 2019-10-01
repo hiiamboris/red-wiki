@@ -9,6 +9,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [January 24, 2019 4:04 PM](https://gitter.im/red/help?at=5c49b7f3dab15872cee594cc) @NjinN [FlappyBird game (windows only)](https://github.com/NjinN/Recode/tree/master/Red/flappyBird)
 [(preview)](https://files.gitter.im/red/help/9IfN/flappybird.gif)
 - [June 05, 2019 10:55 AM](https://gitter.im/red/red/gui-branch?at=5cf78367b76eac527aa71016) @PlanetSizeCpu [Cave-In game](https://github.com/planetsizecpu/Cave-In)
+- [September 30, 2019 15:29](https://files.gitter.im/red/red/gui-branch/BgpY/Island_allleys_8x8.jpg) @GalenIvanov [Island Alleys](https://github.com/GalenIvanov/Games/blob/master/Island%20Alleys.red)
 
 # Developer tools
 - [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
