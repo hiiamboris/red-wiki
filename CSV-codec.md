@@ -94,6 +94,20 @@ rules as with `/as-columns` refinement.
 Some refinements cannot be used together, for example `/as-columns` and `/as-records`. If you
 use an invalid combination of refinements, `load-csv` will throw an error.
 
+If you want the default format, but to separate the header, this is an easy way to do it.
+```
+>> s: {a,b,c^/1,2,3^/4,5,6}
+== "a,b,c^/1,2,3^/4,5,6"
+>> data: load-csv s
+== [["a" "b" "c"] ["1" "2" "3"] ["4" "5" "6"]]
+>> hdr: take data
+== ["a" "b" "c"]
+>> data
+== [["1" "2" "3"] ["4" "5" "6"]]
+```
+
+The rationale for `/header`'s behavior is that it means it should be *used*, not just that it *exists*. 
+
 ## TO-CSV
 
 `to-csv` encodes `block!`, `map!` or `object!` and returns `string!` of CSV data.
