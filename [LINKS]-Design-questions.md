@@ -33,9 +33,8 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: how to solve inelegancies and dangers of `error? try`, `attempt` and `catch` on *arbitrary* code?
 - [The flaw of `error? try` approach #3755](https://github.com/red/red/issues/3755)
 
-#### Core: how to allow maps to have `none` values?
-- [Design notes on removing keys from MAP! values](https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values)
-- [Gitter discussion](https://gitter.im/red/red?at=5ce6ae55b313d7231416163d) after `remove/key` PR was merged.
+#### Web: how should cached versions of remote files be named (considering user friendliness, pathname length, sinitization of invalid chars)?
+- [Discussion in the PR 3124](https://github.com/red/red/pull/3124)
 
 #### Core: should operators use the result from funcs with literal arguments? (if `f: func [:x][x * 2]`, should `f 1 + 2` be equivalent to `(f 1) + 2`?)
 - [Gitter discussion, a few pages long](https://gitter.im/red/help?at=5d8e1f5a66c8b4512228a09d): key points are [how it failed in R3](https://gitter.im/red/help?at=5d8fb75c086a72719e7d5354), [why do we need it?](https://gitter.im/red/help?at=5d8fbfd9290b8c354af1d571), [example how this can be applied](https://gitter.im/red/help?at=5d8f8f15290b8c354af058c1)
@@ -54,6 +53,10 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 #### Core: :get-word function argument evaluation semantics: R2- or R3-like? (final?)
 - [Calling a function passed as get argument inside another function does not work #1850](https://github.com/red/red/issues/1850)
+
+#### Core: how to allow maps to have `none` values?
+- [Design notes on removing keys from MAP! values](https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values)
+- [Gitter discussion](https://gitter.im/red/red?at=5ce6ae55b313d7231416163d) after `remove/key` PR was merged.
 
 
 
