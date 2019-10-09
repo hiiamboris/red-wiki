@@ -24,6 +24,10 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### VID DSL: automatically bind (literal only?) actor & reaction bodies to the face?
 - [red/help March 13, 2019 10:17 PM](https://gitter.im/red/help?at=5c89572c1c18c82b3c07190d)
 
+#### Core: loop return values
+- [Discussion in #3158](https://github.com/red/red/issues/3158)
+- [Discussion in #2873](https://github.com/red/red/issues/2873)
+
 #### Core: behavior of series access outside the data boundaries
 - [red/bugs May 31, 2018 9:36 PM](https://gitter.im/red/bugs?at=5b1040cb361a950a662f019b)
 
