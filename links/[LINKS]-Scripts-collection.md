@@ -38,10 +38,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [RedIDE.red](https://gist.github.com/AlexanderBaggett/20ed905f7e77a30dab9cff0add62fa2b) - Red IDE
 
 		tags: view , vid
-* are1000 - 
-	* [graph.red](https://gist.github.com/are1000/238a1047d0c37fcd2b99ae5f0a705fc2) - 
-
-		tags: 
 * AresAndy - 
 	* [red-examples](https://github.com/AresAndy/red-examples) - Code examples for the Red programming language
 
