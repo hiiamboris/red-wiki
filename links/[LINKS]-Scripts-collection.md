@@ -1254,9 +1254,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [otp](https://github.com/planetsizecpu/otp) - One Time Pad/ssword pratice
 
 		tags: 
-	* [progress](https://github.com/planetsizecpu/progress) - Random progress bar test pratice
-
-		tags: 
 	* [test-rate](https://github.com/planetsizecpu/test-rate) - Rate testing pratice
 
 		tags: 
