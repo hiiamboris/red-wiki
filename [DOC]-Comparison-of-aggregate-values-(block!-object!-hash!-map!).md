@@ -35,7 +35,9 @@ Just like blocks, objects form the backbone of the language. Red's object model 
 
 Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time.
 
-~~Searching for `any-word!` value in object takes linear time.~~ _(`find` on `object!` was dropped off in favor of `in`)_ Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
+~~Searching for `any-word!` value in object takes linear time.~~ _(`find` on `object!` was dropped off in favor of `in` [7b1eeb7](https://github.com/red/red/commit/7b1eeb76a6eb2c5c31e8407637fea5664ace61c2))_
+
+Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
 
 Use `object!` to group functionally-related data together and encapsulate your code's logic. Don't follow classic OOP principles too strongly; instead, seek to leverage `object!`s in idiomatic ways: by using reactors, bindings and reflection.
 
