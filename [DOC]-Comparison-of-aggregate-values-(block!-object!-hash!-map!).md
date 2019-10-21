@@ -35,7 +35,7 @@ Just like blocks, objects form backbone of the language. Red's object model is i
 
 Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time.
 
-Searching for `any-word!` value in object takes linear time. Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
+~~Searching for `any-word!` value in object takes linear time.~~ _(`find` on `object!` was dropped off in favor of `in`)_ Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
 
 Use `object!` to group functionally-related data together and encapsulate your code's logic. Don't follow classic OOP principles too strongly; instead, seek to leverage `object!`s in idiomatic ways: by using reactors, bindings and reflection.
 
@@ -62,7 +62,7 @@ Use `map!` if you need a conventional associative array storage, and also in use
 | Datatype | Search | Indexing | Insertion | Removal |
 |:-|:-:|:-:|:-:|:-:|
 | `series!` (excluding `hash!`) | Linear | Constant | Varies **(3)** | Varies  |
-| `object!` | Linear | Constant **(2)** | _N/A_ | _N/A_ |
+| `object!` | _N/A_ | Constant **(2)** | _N/A_ | _N/A_ |
 | `hash!` | Constant **(1)** | Constant | Varies + hashing of each inserted value (if hashable) | Varies + updating hashtable |
 | `map!` | Constant | _N/A_ | Constant + hashing of each key | Constant + updating hashtable |
 
