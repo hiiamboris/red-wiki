@@ -33,10 +33,7 @@ Use `block!` whenever you need a general-purpose container that you frequently u
 
 Just like blocks, objects form the backbone of the language. Red's object model is influenced by prototype-based and reactive programming, without strictly adhering to an Object-Oriented paradigm. In this way, objects cannot form inheritance chains and act only as namespaces, grouping related values together and following information hiding principle.
 
-Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time.
-
-~~Searching for `any-word!` value in object takes linear time.~~
-<br> _(`find` on `object!` was dropped off in favor of `in` [7b1eeb7](https://github.com/red/red/commit/7b1eeb76a6eb2c5c31e8407637fea5664ace61c2))_
+Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time; key/value queries take linear time.
 
 Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
 
@@ -64,11 +61,12 @@ Use `map!` if you need conventional associative array storage, and also in use-c
 
 | Datatype | Search | Indexing | Insertion | Removal |
 |:-|:-:|:-:|:-:|:-:|
-| `series!` (excluding `hash!`) | Linear | Constant | Varies **(3)** | Varies  |
-| `object!` | _N/A_ | Constant **(2)** | _N/A_ | _N/A_ |
-| `hash!` | Constant **(1)** | Constant | Varies + hashing of each inserted value (if hashable) | Varies + updating hashtable |
+| `series!` (excluding `hash!`) | Linear | Constant | Varies <br> **(4)** | Varies  |
+| `object!` | Linear <br> **(1)** | Constant <br> **(3)** | _N/A_ | _N/A_ |
+| `hash!` | Constant <br> **(2)** | Constant | Varies + hashing of each inserted value (if hashable) | Varies + updating hashtable |
 | `map!` | Constant | _N/A_ | Constant + hashing of each key | Constant + updating hashtable |
 
+1. Concerns only key/value queries; `find` on `object!` is deprecated as being redundant with `in`.
 1. For hashable values only, linear for the rest.
 1. As was said earlier, this does not mean that series actions can be applied to objects. `any-word!`s are bound to `object!` values and contain internal indices, which specify the offset of `any-word!`'s value in an object to which it is bound. <br> Aforementioned binding and indexing information is used to get values referred by words in constant time.
 1. Insertion or removal may result in series expansion or compaction, respectively.
