@@ -2,7 +2,7 @@
 
 Red provides a flexible set of aggregate structures, each coming with its own trade-offs. Said trade-offs are not entirely obvious to beginners and newcomers, who frequently ask about the difference between `block!` and `hash!`, `hash!` and `map!`, `map!` and `object!`.
 
-This page addresses respective pros, cons and common use-cases of these datatypes.
+This page addresses the respective pros, cons and common use-cases of these datatypes.
 
 ### Table of contents
 
@@ -31,7 +31,7 @@ Use `block!` whenever you need a general-purpose container that you frequently u
 
 ### `object!`
 
-Just like blocks, objects form backbone of the language. Red's object model is influenced by prototype-based and reactive programming, without strictly adhering to an Object-Oriented paradigm. In this way, objects cannot form inheritance chains and act only as namespaces, grouping related values together and following information hiding principle.
+Just like blocks, objects form the backbone of the language. Red's object model is influenced by prototype-based and reactive programming, without strictly adhering to an Object-Oriented paradigm. In this way, objects cannot form inheritance chains and act only as namespaces, grouping related values together and following information hiding principle.
 
 Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time.
 
@@ -55,7 +55,7 @@ Unlike objects, map's entries can be freely updated or deleted, and map itself c
 
 Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order.
 
-Use `map!` if you need a conventional associative array storage, and also in use-cases that involve hierarchical JSON-like data or flat-file databases.
+Use `map!` if you need conventional associative array storage, and also in use-cases that involve hierarchical JSON-like data or flat-file databases.
 
 ### Algorithmic complexity
 
@@ -70,5 +70,5 @@ Use `map!` if you need a conventional associative array storage, and also in use
 1. As was said earlier, this does not mean that series actions can be applied to objects. `any-word!`s are bound to `object!` values and contain internal indices, which specify the offset of `any-word!`'s value in an object to which it is bound. <br> Aforementioned binding and indexing information is used to get values referred by words in constant time.
 1. Insertion or removal may result in series expansion or compaction, respectively.
     - In the **worst-case** scenario, series' buffer needs to be moved to a new memory location (proportional to new series' size);
-    - In the **average case**, elements need to be shifted, either to make space for inserted value or to fill the gaps left after removal (proportional to number of elements inserted / removed);
+    - In the **average case**, elements need to be shifted, either to make space for inserted value or to fill the gaps left after removal (proportional to the number of elements inserted / removed);
     - In the **best-case** scenario (appending to or taking from the tail), only adjustment of series' internal pointers is required (constant).
