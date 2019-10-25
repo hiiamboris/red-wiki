@@ -1254,9 +1254,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [otp](https://github.com/planetsizecpu/otp) - One Time Pad/ssword pratice
 
 		tags: 
-	* [test-rate](https://github.com/planetsizecpu/test-rate) - Rate testing pratice
-
-		tags: 
 * plugnburn - 
 	* [totp.red](https://gist.github.com/plugnburn/93af4a06ec54b0e6ac26b9b7ecf49be6) - TOTP in Red: One-time password generation library compatible with Google Authenticator
 
