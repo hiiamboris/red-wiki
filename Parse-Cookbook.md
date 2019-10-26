@@ -154,11 +154,10 @@ Each approach has it's beauty.<br>
 source: {
     ((((abc AND JKL) OR (def AND GHI))))/TI
 }
-probe parse load source [ [paren! /TI] ]
+probe parse load source [paren! /TI]
 ```
-Please note, that `load`is necessary to load the string into memory.<br>
-"Load" here loads a string from memory to global context.<br>
-If the load results in a single value, it will be returned. If it results in a block, the block will be returned. No evaluation of the block will be done; however, words in the block will be bound to the global context.
+
+`load` here is used to convert `string!` to a `block!` of values; see [this](https://github.com/red/red/wiki/%5BNOTES%5D-How-Red-Works---A-brief-explanation) page for a brief explanation.
 
 The use of `paren!` is instructive, i.e. just a check whether a series of items is enclosed in parantheses.
 
