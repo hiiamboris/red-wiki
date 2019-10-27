@@ -242,7 +242,17 @@ See the details [here](https://github.com/red/red/issues/3340).
 ```
 
 * Related ticket: [#3528](https://github.com/red/red/issues/3528)
-* Also check `to` / `thru` difference described in #3679](https://github.com/red/red/issues/3679)
+* Also check `to` / `thru` difference described in [#3679](https://github.com/red/red/issues/3679)
+
+---
+
+Integer after range values work in R2 and R3, but not supported in Red:
+
+```
+>> parse [9] [1 1 9]
+== true (R2 & R3)
+*** Script Error: PARSE - invalid rule or usage of rule: 9 (Red)
+```
 
 ## `to-time`
 
