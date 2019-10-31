@@ -65,5 +65,15 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 - [Design notes on removing keys from MAP! values](https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values)
 - [Gitter discussion](https://gitter.im/red/red?at=5ce6ae55b313d7231416163d) after `remove/key` PR was merged.
 
+# See also
 
+https://github.com/red/red/wiki/[NOTES]-Design-Deliberations
+
+https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values
+
+https://github.com/red/red/wiki/[NOTES]-WITH-function-design
+
+https://github.com/red/red/wiki/[LINKS]-JOIN-REJOIN-COMBINE-MERGE-EXTEND-CONCAT-design-ideas
+
+https://github.com/red/red/wiki/[NOTES]-Trig-Functions-Behavior-and-Design
 
