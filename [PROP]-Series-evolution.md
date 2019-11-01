@@ -249,8 +249,8 @@ where
 	k₁ = Kₘ₁ₜ,
 	k₂ = Kₘ₂ₜ,
 	[change* m₁ m₂ o]:				;) helper func
-		[rem m₁ O₁ₜ],		if (0 ≤ O₁ₜ < Nₖ₁ₜ) and (0 ≤ o)
 		[ins m₁ O₁ₜ Bₖ₂ₜ(o)],	if (0 ≤ O₁ₜ ≤ Nₖ₁ₜ) and (0 ≤ o)
+		[rem m₁ O₁ₜ+1],		if (0 < O₁ₜ+1 < Nₖ₁ₜ) and (0 ≤ o)
 		[ofs m₁ 1],
 		[change* m₁ m₂ o+1],	if o < Nₖ₂ₜ	;) until we reach m₂ tail
 		= m₁					;) return m₁ after the last changed value
@@ -268,6 +268,7 @@ m2: skip "123" -2
 ;)      ^ e remains because it was after m₂-th tail
 ```
 This brings sort of symmetry: items before the head and items after the tail are applied from m₂ to m₁ using the same rules.
+Note it should also work if applied to the same buffer twice (k₁=k₂).
 
 And so on...
 
@@ -438,10 +439,10 @@ Will this ever work for reduce/compose/repend when `m` contains code that modifi
 ```
 (select m x) = (first find/tail m x),	when m is a series (x can be too)
 ```
-When `m1` and `m2` are series:
+When `m1` and `m2` are series (even if of the same buffer):
 ```
-(change m1 m2) = (remove m1 /part length? m2  insert m1 m2)
-(change m1 m2 /part p) = (remove m1 /part p  insert m1 m2)
+(change m1 m2) = (m3: copy m2  remove m1 /part length? m2  insert m1 m3)
+(change m1 m2 /part p) = (m3: copy m2  remove m1 /part p  insert m1 m3)
 ```
 See https://github.com/red/red/issues/4099 about this one:
 ```
