@@ -158,8 +158,9 @@ Let's use `()` notation for them.
 ```
 ```
 (pick m j) =
-	Bₖₜ(j+Oₘₜ-1),	if 1 ≤ j+Oₘₜ ≤ Nₖₜ
-	none		otherwise
+	Bₖₜ(j+Oₘₜ-1),	if (j > 0) and (1 ≤ j+Oₘₜ ≤ Nₖₜ)
+	Bₖₜ(j+Oₘₜ),	if (j < 0) and (1 ≤ j+Oₘₜ ≤ Nₖₜ)
+	none		otherwise (including j = 0)
 where
 	k = Kₘₜ
 	none is a special value (none ∊ V)
