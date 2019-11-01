@@ -20,7 +20,7 @@ These features have been requested for inclusion in Red/System V2.
 
 7. Allow byte! as index. See [issue #318] (https://github.com/red/Red/issues/318).
 
-8. Replace #define pre-processor construct. The options are explained in [Pre-processor #define replacement](https://github.com/red/Red/wiki/Alternatives-to-Red-System-pre-processor-%23define).
+8. Replace #define pre-processor construct. The options are explained in [Pre-processor #define replacement](https://github.com/red/red/wiki/[ARCHIVE]-Alternatives-to-Red-System-pre-processor-%23define).
 
 9. Allow empty struct! definitions. See [issue #194] (https://github.com/red/Red/issues/194).
 
