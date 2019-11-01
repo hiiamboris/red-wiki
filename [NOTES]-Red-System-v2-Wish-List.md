@@ -52,19 +52,17 @@ These features have been requested for inclusion in Red/System V2.
 
 23. Add 'FUNCTION definition in addition to 'FUNC. [Details] (https://github.com/red/red/wiki/[PROP]-Add-'FUNCTION-definition-in-addition-to-'FUNC).
 
-24. Extend type declarations to include initial value. [Details] (https://github.com/red/Red/wiki/Extend-type-declarations-to-include-initial-value).
+24. Extend type declarations to include initial value. [Details] (https://github.com/red/red/wiki/[PROP]-Extend-type-declarations-to-include-initial-value).
 
-25. Provide a simple way to initialise repeating characters in c-string! values. [Details] (https://github.com/red/Red/wiki/Provide-a-simple-way-to-initialise-repeating-characters-in-strings).
+25. Provide a simple way to initialise repeating characters in c-string! values. [Details] (https://github.com/red/red/wiki/[PROPOSAL]-Provide-a-simple-way-to-initialise-repeating-characters-in-strings).
 
-26. Add array capabilities. See [ideal array capabilities] (https://github.com/red/Red/wiki/Proposition-for-ideal-array-capabilities).
+26. Add array capabilities. See [ideal array capabilities] (https://github.com/red/red/wiki/[PROP]-Proposition-for-ideal-array-capabilities).
 
-27. Formalise the support of local functions. See [local functions] (https://github.com/red/Red/wiki/Local-functions).
+27. Formalise the support of local functions. See [local functions] (https://github.com/red/red/wiki/[NOTES]-Local-functions).
 
-28. Allow constants to be defined within a namespace. [Details] (https://github.com/red/Red/wiki/Namespace constants).
+28. Allow constants to be defined within a namespace. [Details] (https://github.com/red/Red/wiki/[NOTES]-Namespace-constants).
 
-29. Expose all standard numeric types. [Details] (https://github.com/red/Red/wiki/Expose-all-standard-numeric-types).
-
-30. Allow function specs as an argument in function pointer specs. See [issue #259] (https://github.com/red/Red/issues/259).
+29. Expose all standard numeric types. [Details] (https://github.com/red/Red/wiki/[PROP]-Expose-all-standard-numeric-types).
 
 31. Optimise 'DOES. [Details] (https://github.com/red/Red/wiki/Optimised-'DOES).
 
