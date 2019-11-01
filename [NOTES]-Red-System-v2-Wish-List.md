@@ -74,15 +74,15 @@ These features have been requested for inclusion in Red/System V2.
 
 35. Add a symbol! type. [Details] (https://github.com/red/Red/wiki/symbol!).
 
-36. Allow function overloading. [Details] (https://github.com/red/Red/wiki/Function-Overloading).
+36. Allow function overloading. [Details] (https://github.com/red/red/wiki/[PROP]-Function-overloading).
 
 37. Additional struct! features. [Details] (https://github.com/red/Red/wiki/Additional-struct!-features).
 
-38. Implement get-word for logic! values. [Details] (https://github.com/red/Red/wiki/Logic!-Get-Word). See [issue #534] (https://github.com/red/Red/issues/534).
+38. Implement get-word for logic! values. [Details] (https://github.com/red/red/wiki/[NOTES]-Logic!-Get-Word). See [issue #534] (https://github.com/red/Red/issues/534).
 
 39. Add binding to external variables. It would be nice to check C variables such as errno.
 
-40. Function returns struct! by value (found in some C bindings). [Details] (https://github.com/red/Red/wiki/Struct!-By-Value).
+40. Function returns struct! by value (found in some C bindings). [Details] (https://github.com/red/red/wiki/[ARCHIVE]-Struct!-By-Value).
 
 ## Rejected
 These features will not be incorporated into Red/System V2.
