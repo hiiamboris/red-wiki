@@ -50,7 +50,7 @@ These features have been requested for inclusion in Red/System V2.
 
 22. Add .rsrc entry in the data directory of the PE emitter. See [issue #471] (https://github.com/red/Red/issues/471).
 
-23. Add 'FUNCTION definition in addition to 'FUNC. [Details] (https://github.com/red/Red/wiki/Add-'FUNCTION-definition-in-addition-to-'FUNC).
+23. Add 'FUNCTION definition in addition to 'FUNC. [Details] (https://github.com/red/red/wiki/[PROP]-Add-'FUNCTION-definition-in-addition-to-'FUNC).
 
 24. Extend type declarations to include initial value. [Details] (https://github.com/red/Red/wiki/Extend-type-declarations-to-include-initial-value).
 
