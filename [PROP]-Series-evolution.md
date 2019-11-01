@@ -248,6 +248,7 @@ An advanced example PoC:
 where
 	k₁ = Kₘ₁ₜ,
 	k₂ = Kₘ₂ₜ,
+	k₂ ≠ k₁,			;) simplified version - will only work properly on different buffers
 	[change* m₁ m₂ o]:				;) helper func
 		[ins m₁ O₁ₜ Bₖ₂ₜ(o)],	if (0 ≤ O₁ₜ ≤ Nₖ₁ₜ) and (0 ≤ o)
 		[rem m₁ O₁ₜ+1],		if (0 < O₁ₜ+1 < Nₖ₁ₜ) and (0 ≤ o)
@@ -268,7 +269,6 @@ m2: skip "123" -2
 ;)      ^ e remains because it was after m₂-th tail
 ```
 This brings sort of symmetry: items before the head and items after the tail are applied from m₂ to m₁ using the same rules.
-Note it should also work if applied to the same buffer twice (k₁=k₂).
 
 And so on...
 
