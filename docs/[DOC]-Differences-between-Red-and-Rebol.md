@@ -135,7 +135,7 @@ The values that get special treatment by `do` are: `[block! path! string! url! f
 
 ## `if`
 
-In RED `if` has no `/else` refinement
+`if` in Red has no `/else` (R2, equivalent to `either`) and `/only` (R3, returns `block!` branch as-is) refinements.
 
 ## `make` with `none`
 
