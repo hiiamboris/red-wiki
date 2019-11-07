@@ -120,6 +120,6 @@ then start the server by typing this into the terminal:
 lighttpd -f /usr/local/etc/lighttpd/lighttpd.conf
 ```
 
-when you submit an HTML form POST in RED use the variable INPUT to read the text being sent
+when you submit an HTML form POST in RED use the function `input` to read the text being sent
 
 it will take some time the first time since RED will be compiling
