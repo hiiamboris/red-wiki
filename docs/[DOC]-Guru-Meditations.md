@@ -53,6 +53,7 @@
 1. [Compiling CLI console with View engine](#compiling-cli-console-with-view-engine)
 1. [Using `load` with `/next` and `/trap`](#using-load-with-next-and-trap)
 1. [Convert `c-string!` to `red-string!`](#convert-c-string-to-red-string)
+1. [Checking if a word belongs to a function](#checking-if-a-word-belongs-to-a-function)
 
 # Debugging
 [Moved](https://github.com/red/red/wiki/%5BDOC%5D-Debugging)
@@ -816,3 +817,11 @@ foo: routine [
 
 print replace foo "C" "Red"
 ```
+
+# Checking if a word belongs to a function
+
+There's `in obj 'word` for objects, but nothing like that for functions (do we need it?).
+
+Some workarounds:
+- `:fun = context? bind 'word :fun` (`=` is strict when it comes to functions)
+- `not none? find spec-of :fun 'word`
