@@ -8,6 +8,7 @@ We need to figure out how to format this page, so we can see if a site or channe
     - https://rosettacode.org/wiki/Metaprogramming
 - https://rosetta.alhur.es Idea for Red for X programmers, both as a site and a desktop app
 - https://exercism.io
+  - For blockers and status, see [here](https://github.com/exercism/request-new-language-track/issues/45)
 - http://www.tutorialspoint.com A huge tutorials library
 - https://www.tutorialspoint.com/codingground.htm Online terminals, compilers, interpreters and editors
 - https://adventofcode.com/ Advent of Code programming puzzles
