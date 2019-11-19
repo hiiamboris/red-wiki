@@ -12,7 +12,7 @@ If you want to process data passed to CGI, I suggest using [HTTP tools](https://
 
 For the `GET` method, query string is in `http-headers/query-string`.
 
-For the `POST` method, you can get the POST data using `input`:
+For the `POST` method, you can get the POST data using `input` or `read-stdin`:
 
 ```red
 #!/usr/local/bin/red
@@ -21,6 +21,18 @@ print "Content-type: text/html^/"
 print rejoin ["Post data: " mold input]
 ```
 
+Please note that `input` is good for textual data only if you want to get binary data, you need to use `read-stdin` and pre-allocate binary buffer:
+
+```red
+#!/usr/local/bin/red
+Red[]
+length: 100'000
+read-stdin data: make binary! length length
+print "Content-type: text/html^/"
+print rejoin ["Post data: " mold read-stdin]
+```
+
+Be sure that you allocate big enough buffer, as `read-stdin` won't auto expand the buffer.
 ## Under IIS 8.5
 
 To use Red as CGI under IIS, follow the instructions below:
