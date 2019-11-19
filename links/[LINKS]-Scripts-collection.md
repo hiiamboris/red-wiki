@@ -1195,10 +1195,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [wav-reader-test.reds](https://gist.github.com/Oldes/2ead960c4134a9799b0a) - Experimental WAV file parser
 
 		tags: 
-* oliverthomasklein - 
-	* [RGBtoPPM](https://github.com/oliverthomasklein/RGBtoPPM) - Create PPM files using separate RGB files  with image editing.
-
-		tags: 
 ## P
 * patchank - 
 	* [bluemix-material](https://github.com/patchank/bluemix-material) - Bluemix Materials
