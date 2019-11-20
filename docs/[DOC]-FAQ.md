@@ -61,3 +61,11 @@ In `probe south`, the `south` word is not defined explicitly. That is, the compi
 
 https://stackoverflow.com/questions/43379932/access-error-invalid-utf-8-encoding-ffd8ffe0/43383454#43383454
 
+# Searching for RED documentation and sites on the web:
+
+RED language has coverage from numerous web sites but being RED a common word, when searching on google and similar engines, the risk of having incorrect results, or no result, is high. The best way to get them is by searching for: 
+`"RED Language <topic>"`  instead of using just  `"RED + <topic>"`. Example:  If you want to search for `"RED Objects"`, write "`RED Language Objects"` in your preferred search engine.
+
+
+
+
