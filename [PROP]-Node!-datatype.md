@@ -330,6 +330,8 @@ We can provide friendly accessors as functions: `inbound-of node`, `payload-of n
 - `[left-expression op right-expression]` - parse tree (AST) infix operator (one of the exprs = none if it's unary)
 - `[function 'func-apply [arguments list]]` - function application
 
+- `[subject predicate object]` - Semantic triple: the core of RDF and associative databases.
+
 We can model data flow, electronic cicruits, bloodline tree, whatever... only imagination is the limit.
 All these tasks can be represented using this **single building block**... with only a **size of a `cell!`**:
 ```
