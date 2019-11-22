@@ -354,7 +354,7 @@ red-node!: alias struct! [
 - not user-extendable in any way, so no need to check for block's length or if given words are present in the object
 
 **Open questions** are:
-- how `node!` will support **references to scalars**
+- how `node!` will **support references** to scalars and other series (need to know their type, header), including other `node!`s. In other words, how to reliably reference another cell, and at the same time, keep the graph structure small
 - how to best test for **equality** and how to optimize it for faster **lookups**,
 as having an arrow `[src value tgt]` one can look for a particular item in that block (say, `src`),
 but a `node!` will have to be searched for as **a single value**
