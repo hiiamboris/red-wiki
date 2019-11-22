@@ -24,4 +24,6 @@ Pull items from these lists and add new sections as someones champions them
 - https://rosettacode.org/wiki/Help:Similar_Sites 
 - https://alternativeto.net/software/rosetta-code/
 
+# Other
+
 - https://stackshare.io/red Here anyone can share her technology stack, also add a justification ("decision")
