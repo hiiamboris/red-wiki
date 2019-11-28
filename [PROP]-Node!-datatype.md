@@ -315,6 +315,7 @@ We can provide friendly accessors as functions: `inbound-of node`, `payload-of n
 - `[previous value next]` - doubly linked list entry
 
 - `[left payload right]` - binary tree node
+- `[parent face! [pane]]` - possible VID faces tree node
 
 - `[inputs relation outputs]` - one way to model reactivity: where relation is a node
 - `[source-relation obj/path target-relation]` - an arrow in this reactivity model
