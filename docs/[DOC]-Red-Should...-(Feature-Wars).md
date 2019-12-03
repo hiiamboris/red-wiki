@@ -20,7 +20,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Class-Based OOP](#class-based-oop)
 1. [Use XXX Syntax](#use-xxx-syntax)
 1. [Easier Custom Datatypes](#easier-custom-datatypes)
-1. []()
+1. [Support Variable Arity Functions](#support-variable-arity-functions)
 1. []()
 1. []()
 
@@ -55,3 +55,7 @@ Consider, too, whether you just want tagged structures (blocks, objects, maps), 
 @rebolek shows [here](http://red.qyz.cz/dependent-types.html) how easy it is to experiment with dependent types in Red. Or @maximvl's experiments with [dynamic variables](https://gist.github.com/maximvl/2095276ba6000c644d11049227176e68) and [Common Lisp condition restarts](https://gist.github.com/maximvl/dcb8c4e9ef5d4db91f7a6b52da9b9cee). @numberjay even played with [persistent immutable blocks](https://gist.github.com/numberjay/3df8f13044145c6dde1918ea2cdfe3b8).
 
 Datatypes are a foundation of Red, as with other languages. But Red is quite different than, say, C++. Ask not whether you can add new types that look like native types, but ask yourself if you need to. Will the result truly be better that way. If so, maybe that's a candidate for a new type, if it's general enough. That's where talking to the community comes in. Some of them have used Redbol langs for decades, and have valuable instinct and experience. Look at Red/System as well. It's a dialect of Red.
+
+# Support Variable Arity Functions
+
+Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. If someone figures out how to make variable arity funcs clean, efficient, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
