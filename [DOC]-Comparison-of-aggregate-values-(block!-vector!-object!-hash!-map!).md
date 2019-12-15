@@ -43,7 +43,7 @@ As such, the main advantages of `vector!` are convenient math operations and mem
 | `float!`   | 32 64        |
 | `percent!` | 64           |
 
-It should be noted that `vector!` does not catch math overflow errors, and all math / bitwise operations are performed in place (i.e. they mutate vector) and element-wise (i.e. in a linear fashion).
+It should be noted that `vector!` does not catch math overflow errors, and all math / bitwise actions are performed in place (i.e. they mutate vector) and element-wise (i.e. in a linear fashion).
 
 Use `vector!` for numerical tasks or to effectively store groups of scalar values.
 
