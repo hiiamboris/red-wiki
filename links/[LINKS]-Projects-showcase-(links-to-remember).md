@@ -3,14 +3,14 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 # Games
 - [June 26, 2018 10:07 PM](https://gitter.im/red/red/gui-branch?at=5b328ee272b31d3691f5dd45) @cryptowyrm [Match-3 game](https://github.com/cryptowyrm/red-scripts/blob/master/match3.red) [(preview)](https://lh3.googleusercontent.com/hpF3IioogCA1MG3sul6CWjwlGAyGqr9tyE0twpqoChyIR0l3pIlVK8k5qUNBODL8ul0qJ88vEkCL)
 - [July 10, 2018 10:01 PM](https://gitter.im/red/red?at=5b45029463042f2df366c431) @hiiamboris [RETRIS game demo](https://gitlab.com/hiiamboris/retris/tree/master)
-- [January 23, 2019 4:12 PM](https://gitter.im/red/help?at=5c48684e8ce4bb25b8f918c4) @hyzwhu [4x4 tile game](https://github.com/hyzwhu/red-2048) [(preview)](https://files.gitter.im/red/help/lC9w/g4.gif)
+- [January 23, 2019 4:12 PM](https://gitter.im/red/help?at=5c48684e8ce4bb25b8f918c4) @hyzwhu ["2048" tile game](https://github.com/hyzwhu/red-2048) [(preview)](https://files.gitter.im/red/help/lC9w/g4.gif)
 - [January 23, 2019 4:12 PM](https://gitter.im/red/help?at=5c48684e8ce4bb25b8f918c4) @hyzwhu [RedBOX game (port of ReBOX)](https://github.com/hyzwhu/redbox) [(preview)](https://files.gitter.im/red/help/8S4U/1.gif)
 - [January 24, 2019 4:04 PM](https://gitter.im/red/help?at=5c49b7f3dab15872cee594cc) @NjinN [Gobang game](https://github.com/NjinN/Recode/tree/master/Red/gobang) [(preview)](https://files.gitter.im/red/help/pHXw/gobang.gif)
 - [January 24, 2019 4:04 PM](https://gitter.im/red/help?at=5c49b7f3dab15872cee594cc) @NjinN [FlappyBird game (windows only)](https://github.com/NjinN/Recode/tree/master/Red/flappyBird)
 [(preview)](https://files.gitter.im/red/help/9IfN/flappybird.gif)
 - [June 05, 2019 10:55 AM](https://gitter.im/red/red/gui-branch?at=5cf78367b76eac527aa71016) @PlanetSizeCpu [Cave-In game](https://github.com/planetsizecpu/Cave-In)
 - [September 30, 2019 3:29 PM](https://gitter.im/red/red/gui-branch?at=5d91f526fcb47b627fefd967) @GalenIvanov [Island Alleys](https://github.com/GalenIvanov/Games/blob/master/Island%20Alleys.red) [(preview)](https://files.gitter.im/red/red/gui-branch/BgpY/Island_allleys_8x8.jpg)
-- [December 10, 2019 5:04 PM](https://gitter.im/red/red/welcome?at=5defa5ea6a85195b9e30c847) @Palaing [2048 tile game](http://rosettacode.org/wiki/2048#Red)
+- [December 10, 2019 5:04 PM](https://gitter.im/red/red/welcome?at=5defa5ea6a85195b9e30c847) @Palaing ["2048" tile game](http://rosettacode.org/wiki/2048#Red)
 
 # Developer tools
 - [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
