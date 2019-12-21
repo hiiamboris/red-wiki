@@ -7,7 +7,6 @@
 1. [Binding to `self`](#binding-to-self)
 1. [Invalid block selector returns `none`](#invalid-block-selector-returns-none)
 1. [Reflection](#reflection)
-1. [`Get` on `Action!`](#Get-On-Action)
 1. [`dir?`](#dir)
 1. [`to-date`](#to-date)
 1. [`random`](#random)
@@ -117,44 +116,6 @@ In R3, only `*-of` reflectors can be used, and `self` with object's back-referen
 Red follows R3 convention, with an exception that `body-of` on `native!`s and `action!`s results in an internal error and `words-of` on `any-function!` values is not defined.
 
 Both in R3 and Red `*-of` reflectors are wrappers on top of dedicated `reflect` action.
-
-## `Get` on `Action!`
-
-Get on a word set as `Action!` returns `action` in Rebol and the specs block in Red
-
-Rebol:
-
-```
->> probe get 'select
-action
-```
-
-Red:
-
-```
->> probe get 'select
-make action! [[{Find a value in a series and return the next value, or NONE} 
-    series [series! any-object! map! none!] 
-    value [any-type!] 
-    /part "Limit the length of the search" 
-    length [number! series!] 
-    /only "Treat a series search value as a single value" 
-    /case "Perform a case-sensitive search" 
-    /same {Use "same?" as comparator} 
-    /any "TBD: Use * and ? wildcards in string searches" 
-    /with "TBD: Use custom wildcards in place of * and ?" 
-    wild [string!] 
-    /skip "Treat the series as fixed size records" 
-    size [integer!] 
-    /last "Find the last occurrence of value, from the tail" 
-    /reverse {Find the last occurrence of value, from the current index} 
-    return: [any-type!]
-]]
-== make action! [[{Find a value in a series and return the next value, or NONE} 
-    series [series! any-object! map! none!] 
-    value [any-type!] 
-    /part "Lim...
-```
 
 ## `dir?`
 
