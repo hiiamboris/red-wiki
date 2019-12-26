@@ -18,6 +18,15 @@ Define `>>` as `none` to be able to copy Red codes from web pages and paste them
 
 `>>: none`
 
+## CLI console key bindings
+
+Instead of keys like `Home` and `End` which might not work in some terminals or platforms common readline key bindings like `C-a` (Control+a) or `C-e` can be used to go to beginning or the end of input line.
+
+More supported keys can be found [there](https://github.com/red/red/blob/master/environment/console/CLI/input.red#L45), most of them act like in any readline compatible app.
+
+## Rlwrap as readline compatible interface for Red console
+
+If key bindings provided by CLI console not enough then command like `rlwrap -i -a ~/.red/console*` (assuming that rlwrap installed in the system) will run console with readline library wrapper as a primary input interface providing more readline compatible key bindings. Now it have some output artefacts, but some of those issues may be solved with additional rlwrap configuration.
 
 ## Shell shortcuts
 
