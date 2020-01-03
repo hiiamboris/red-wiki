@@ -2,9 +2,12 @@
 
 Development of Linux backend for [Red's Graphical User Interface](https://doc.red-lang.org/en/gui.html), using version 3 of [Gtk+ library](https://en.wikipedia.org/wiki/GTK%2B).
 
-* Sources: https://github.com/red/red/tree/GTK
+* Sources: https://github.com/red/red/tree/GTK (official Red repo, GTK branch)
 * Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
-* `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
+* Precompiled binaries:
+  * https://static.red-lang.org/dl/branch/GTK/linux/red-latest – official dev builds for x86 architecture
+  * https://rebolek.com/builds/ – community nightly builds by @rebolek, x86 and ARM (Raspberry Pi)
+  * `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch, may be outdated) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
 
 [Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://gitter.im/red/GTK?at=5d4e965690bba62a124e933b).
 
@@ -33,7 +36,7 @@ There is not much documentation available. You must rely on [official View docum
 * Last generated `console-view` from `rcqls/red:GTK-dev` branch: 
   * with camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-view
   * without camera stuff: https://cqls.dyndoc.fr/users/RCqls/Red/console-nocam
-* Automated Linux builds from Red/GTK branch for x86 and ARM (Raspberry Pi), [temporarily](https://gitter.im/red/GTK?at=5d7114a350508949d3df976f) out of service: https://rebolek.com/builds/
+* What is done and what is missing: https://trello.com/c/aoO1zUGr/156-gtk3-gui-backend
 
 ## Notes for experimental camera stuff
 
@@ -73,4 +76,4 @@ which launchs a camera viewer. Normally if this test passes camera is supposed t
 
 * Some floating point arithmetic [give strange results](https://gitter.im/red/GTK?at=5c41de8df780a1521f2de084) on GTK branch and a specific LOCALE. For example `load "0.00000152"` returns `0.0` or `5 / 2.0` returns `2,5.0`.
 
-There is a workaround for LOCALE bug, use this to run Red: `LC_ALL=C path/to/console-view`
+There is a workaround for LOCALE bug. Just use "C" locale, like this: `LC_ALL=C path/to/console-view`
