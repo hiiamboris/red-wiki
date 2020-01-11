@@ -1150,10 +1150,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [exceedingly-well-Red](https://github.com/nmartinet/exceedingly-well-Red) - Red tests & experiments
 
 		tags: 
-* noctisdb - 
-	* [Red](https://github.com/noctisdb/Red) - Testing Red lang.
-
-		tags: 
 * nodrygo - 
 	* [brick.red](https://gist.github.com/nodrygo/a5aced657681946ca4d0b504dee2e845) - tentative simplissime de jeux briques
 
