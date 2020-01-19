@@ -133,3 +133,26 @@ But the set-words are still collected:
     x: unset
 ]
 ```
+
+# Conversions with `map!`
+
+Should we be able to convert objects and maps into each other using to or make (or at least object into map, as ordered into orderless collection)?
+```
+>> make map! object [a: 1]
+*** Script Error: cannot MAKE/TO map! from: make object! [a: 1]
+*** Where: make
+*** Stack:  
+
+>> object #(a: 1)
+*** Script Error: object does not allow map! for its spec argument
+*** Where: object
+*** Stack: object
+```
+
+From the designer:
+
+Map->object: would only work on a subset of possible maps.
+
+Object->map: binding info would be lost, making evaluation of code held inside the map error out.
+
+You can still use an intermediate block to force conversions in such cases, if really needed. You can also write a routine if memory usage or performance is a show-stopper.
