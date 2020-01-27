@@ -27,7 +27,7 @@ The major source of leverage in Red comes from a combination of one or many [key
 1. Availability of powerful PEG-like [parser](https://github.com/9214/docs/blob/parse/en/parse.adoc) embedded in the language, which allows verification/validation of composite values in accordance with a specific format;
 1. Support for the object-oriented reactive [model](https://doc.red-lang.org/en/reactivity.html) and ownership [system](https://www.red-lang.org/2016/03/060-red-gui-system.html) — this permits tracking, discarding, undoing and redoing changes applied to data structures, making possible implementations of constraint-based testing frameworks, design-by-contract and various forms of self-protecting and self-healing code;
 1. Emphasis on linguistic abstraction, which encourages the creation of embedded domain-specific languages (dialects) with their own type discipline (e.g. [Red/System](https://static.red-lang.org/red-system-specs.html)) or extension of the base language (e.g. [dependent types](http://red.qyz.cz/dependent-types.html));
-1. Embeddability, whereby Red can be used from confines of a preferred type system via [libRed API](https://doc.red-lang.org/en/libred.html).**`‡`**
+1. Embeddability, whereby Red can be used from the confines of a preferred type system via [libRed API](https://doc.red-lang.org/en/libred.html).**`‡`**
 
 It is worth remembering that type system is a formalized set of self-imposed constraints, which aids programmers in dealing with the essential complexity of a given task. Knowing that and having points of leverage at their disposal, idiomatic Red programmers design their _own_ culture and discipline of programming, based on the first-hand experience with the problem domain.**`§`**
 
@@ -37,6 +37,6 @@ It is worth remembering that type system is a formalized set of self-imposed con
 
 **`†`** To the extent possible in the light of Red's highly dynamic nature.
 
-**`‡`** Due to a wide gap between type systems of Red and other languages, this typically narrows the range of usable datatypes to integers, strings, floats and boolean values.
+**`‡`** Due to a wide gap between type systems of Red and other languages, this typically narrows the range of usable datatypes to integers, strings, floats, and boolean values.
 
 **`§`** Cf. Seymour Pappert's concept of microworlds; Rebol (and therefore Red) are influenced by Logo in this regard.
