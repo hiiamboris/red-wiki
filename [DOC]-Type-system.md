@@ -5,7 +5,7 @@ Key points that need to be understood before evaluating Red on the merits of its
 1. Red is both interpreted **and** compiled;
 1. Red has a rich type system (**+50** datatypes) and a **high** degree of polymorphism;
 1. **Everything** in Red is a value; **each** value is a [first-class citizen](https://en.wikipedia.org/wiki/First-class_citizen) with a datatype and zero **`*`** or more **unique** literal forms.
-1. Red does **not** have neither "scopes" nor "variables", in the sense in which these terms are used in the mainstream languages.
+1. Red does **not** have "scopes" or "variables", in the sense in which these terms are used in the mainstream languages.
 
 ### Classification
 
