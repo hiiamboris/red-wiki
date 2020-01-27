@@ -15,7 +15,7 @@ With that being said, Red's type system loosely falls in the following categorie
 |:-|:-|
 | Dynamic | Each value has an associated type tag; type verification is carried at run-time by the interpreter. |
 | Strong | Type declarations affect only parameters of functions and are used to establish the invariants; there are no implicit type conversions. |
-| Inferred | Type of value is "inferred" from its literal form at load-time (i.e. during conversion from textual source to in-memory data format); syntax determines semantics. It is possible to construct/convert a value from/to a given type at run-time. |
+| Inferred | Type of value is "inferred" from its literal form at load-time (i.e. during conversion from textual source to in-memory data format); syntax determines semantics. Also, it is possible to construct/convert a value from/to a given type at run-time. |
 | Structural | Comparable types share the same structural elements (at the level of in-memory data format). Types that share a subset of features are grouped together into [type hierarchy](https://github.com/toomasv/red-type-hierarchy). |
 | Gradual | Compiler performs a simple form of static checking **\***, the rest is delegated to run-time. |
 | Latent | Types are associated with values, not "variables". What tends to be misrepresented as "variable" is itself a value with a datatype (see [key point **#4**](#Introduction)). |
@@ -25,6 +25,7 @@ With that being said, Red's type system loosely falls in the following categorie
 The major source of leverage in Red comes from a combination of one or many [key points](#Introduction) with:
 
 1. Availability of powerful PEG-like [parser](https://github.com/9214/docs/blob/parse/en/parse.adoc) embedded in the language, which allows verification/validation of composite values in accordance with a specific format;
+1. Support for the object-oriented reactive [model](https://doc.red-lang.org/en/reactivity.html) and ownership [system](https://www.red-lang.org/2016/03/060-red-gui-system.html) — this permits tracking, discarding, undoing and redoing changes applied to data structures, making possible implementations of constraint-based testing frameworks, design-by-contract and various forms of self-protecting and self-healing code;
 1. Emphasis on linguistic abstraction, which encourages the creation of embedded domain-specific languages (dialects) with their own type discipline (e.g. [Red/System](https://static.red-lang.org/red-system-specs.html)) or extension of the base language (e.g. [dependent types](http://red.qyz.cz/dependent-types.html));
 1. Embeddability, whereby Red can be used from confines of a preferred type system via [libRed API](https://doc.red-lang.org/en/libred.html) **†**.
 
