@@ -11,6 +11,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [June 05, 2019 10:55 AM](https://gitter.im/red/red/gui-branch?at=5cf78367b76eac527aa71016) @PlanetSizeCpu [Cave-In game](https://github.com/planetsizecpu/Cave-In)
 - [September 30, 2019 3:29 PM](https://gitter.im/red/red/gui-branch?at=5d91f526fcb47b627fefd967) @GalenIvanov [Island Alleys](https://github.com/GalenIvanov/Games/blob/master/Island%20Alleys.red) [(preview)](https://files.gitter.im/red/red/gui-branch/BgpY/Island_allleys_8x8.jpg)
 - [December 10, 2019 5:04 PM](https://gitter.im/red/red/welcome?at=5defa5ea6a85195b9e30c847) @Palaing ["2048" tile game](http://rosettacode.org/wiki/2048#Red)
+- [January 27, 2020 12:18 PM](https://gitter.im/red/red/gui-branch?at=5e2eaaf63482927279373f37) @GalenIvanov [Looper puzzle](https://github.com/GalenIvanov/Games/blob/master/Looper.red) [(preview)](https://raw.githubusercontent.com/GalenIvanov/Games/master/Looper.jpg) [(video)](https://www.youtube.com/watch?v=emjGl_HVc70)
 
 # Developer tools
 - [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
