@@ -23,12 +23,12 @@ AV vendors that most commonly flag Red toolchain or binaries compiled with it, i
 
 ### Contributing factors
 
-Multiple factors are at play in this issue, the common denominator being the usage of extremely poor heuristics by AVs mixed with one or many Red language design aspects.
+Multiple factors are at play in this issue, the common denominator being the exclusive usage of extremely poor heuristics instead of unique signatures by AVs mixed with one or many Red language design aspects.
 
 | Design aspect | Factor |
 |-|-|
 | Small | [Runtime library](https://github.com/red/red/blob/414cdb325f90b3a8eec3731549f3aa05dfee2d72/runtime/red.reds) and dynamic user code **`*`** contained in every PE (see above) are serialized and stored in [RedBin](https://doc.red-lang.org/en/redbin.html) format, which is then compressed with [custom CRUSH algorithm](https://github.com/red/red/blob/414cdb325f90b3a8eec3731549f3aa05dfee2d72/runtime/crush.reds) **`†`**; at boot-time, the runtime library is uncompressed into memory. Compressed data has high entropy, which, coupled with the uncompression process, is a common feature of a "generic malware" (that's how AVs usually mark Red binaries). |
-| Custom toolchain | Toolchain is built from scratch and features custom linker and compiler; PE layout differs from common formats used by Visual Studio and GCC linkers, big part `DATA` segment is compressed (see above); compiler output is currently unoptimized. Some AVs view custom PE layout as suspicious and likely treat unoptimized CPU usage as a part of malware's profile. |
+| Custom toolchain | Toolchain is built from scratch and features custom linker and compiler; PE layout differs from common formats used by Visual Studio and GCC linkers, big part `DATA` segment is compressed (see above); compiler output is currently unoptimized. Static analysis techniques used by some AVs mark PE layout as suspicious and likely treat opcode usage statistics as one matching malware's profile signature (e.g. use of register-memory instructions). |
 | Batteries included | Runtime library is dense and feature-packed; in order to stay compact, it heavily relies on underlying OS API, some of which are considered to be "blacklisted" by AV vendors: file access and networking (for ports and general I/O), keyboard handling (required for View GUI system), cryptography (mainly hashing functions), screenshot capture (`to image!` on View face) &c. |
 
 All the above are pure speculations, since the Red team never received any feedback or analysis details from vendors which it contacted with a whitelist request (e.g. [Avira](https://twitter.com/red_lang/status/887970289618829312) and [Norton](https://github.com/red/red/issues/500#issuecomment-24805674)).
