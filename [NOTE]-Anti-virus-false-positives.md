@@ -55,7 +55,7 @@ For application developers:
 * Whitelist all Red-related local folders.
 * Use `--no-compress` option which will omit RedBin (de)compression; obviously, this comes at the cost of increased binary size. Use [UPX](https://upx.github.io/) if the binary size is of paramount concern to you.
 * Compile console from sources; the process is painless and straightforward (see README for details).
-* Use code signing and either nourish [CA bureaucratic monopoly](https://it.slashdot.org/story/19/06/02/0042209/ask-slashdot-what-to-do-when-your-certificate-authority-suddenly-revokes-your-cert) or rely on self-signed certificates.
+* Use code signing, being aware of possible [CA issues](https://it.slashdot.org/story/19/06/02/0042209/ask-slashdot-what-to-do-when-your-certificate-authority-suddenly-revokes-your-cert) or rely on self-signed certificates.
 
 ---
 
