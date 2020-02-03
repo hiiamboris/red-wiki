@@ -45,7 +45,7 @@ Last but not least, Red is in constant and active development, which means that 
 ### What you can do
 
 In general:
-* [DYOR](https://www.urbandictionary.com/define.php?term=DYOR). Red is an open-source project with code freely available for review.
+* DYOR. Red is an open-source project with code freely available for review.
 * In case of a doubt, don't trust only your AV and scan suspicious binary on [VirusTotal](https://www.virustotal.com).
 * Report any false-positives to your AV vendor; ideally, request a manual review by AV analysis team and whitelisting.
 * Switch to a more reliable AV, or don't use AV at all and follow safe practices. 
