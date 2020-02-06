@@ -53,7 +53,7 @@ Just like blocks, objects form the backbone of the language. Red's object model 
 
 Objects provide a key/value interface and cannot be indexed with `series!` actions; its keys are strictly limited to `set-word!` datatype, and accessing its values via bounded words takes constant time; key/value queries take linear time.
 
-Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, object can be used as a prototype for another object.
+Once created, objects cannot be extended with new entries (*this may change in later versions*), nor can existing entries be deleted; however, an object can be used as a prototype for another object.
 
 Use `object!` to group functionally-related data together and encapsulate your code's logic. Don't follow classic OOP principles too strongly; instead, seek to leverage `object!`s in idiomatic ways: by using reactors, bindings and reflection.
 
@@ -61,9 +61,9 @@ Use `object!` to group functionally-related data together and encapsulate your c
 
 Hashes are ordered series, and can be queried and indexed just like blocks, without imposing any limitations on types of stored values.
 
-Unlike blocks, hashes have much faster lookups, but insertions and removals are slower due to internal hashtable operations, so as creation of new `hash!` value from existing `block!` prototype. It should be noted that only hashable values are added to hashtable's index.
+Unlike blocks, hashes have much faster lookups, but insertions and removals are slower due to internal hashtable operations, so as the creation of new `hash!` value from existing `block!` prototype. It should be noted that only hashable values are added to hashtable's index.
 
-Use `hash!` for data that is updated less frequently and benefits from much faster lookups.
+Use `hash!` for data that is updated less frequently and benefits from much faster lookups. Remember that usage of `hash!` pays off only for a large number of entries; for smaller numbers, using `block!` with key/value queries will suffice.
 
 ### `map!`
 
@@ -71,7 +71,7 @@ Conceptually, maps take quick lookups from `hash!` and key/value interface from 
 
 Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values. Map follows `construct` semantics, in a sense that it does not evaluate added keys.
 
-Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order.
+Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order. Just like with hashes, usage of `map!` pays off only for a large number of entries.
 
 Use `map!` if you need conventional associative array storage, and also in use-cases that involve hierarchical JSON-like data or flat-file databases.
 
