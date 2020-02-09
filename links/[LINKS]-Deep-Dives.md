@@ -14,3 +14,5 @@ External links appear in quotes.
 * [Why you have to copy series values, by @DocKimbel](https://github.com/red/red/wiki/%5BDOC%5D-Why-you-have-to-copy-series-values)
 
 * [Function Evalutation](https://github.com/red/red/wiki/%5BDOC%5D-Function-Evaluation)
+
+* [Type System](https://github.com/red/red/wiki/[DOC]-Type-system)
