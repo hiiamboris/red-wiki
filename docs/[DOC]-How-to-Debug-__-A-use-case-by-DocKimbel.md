@@ -1,4 +1,4 @@
-_Copied from this [Bug report](https://github.com/red/red/issues/1983)_
+_Copied from this [Bug report](https://github.com/red/red/issues/1983#issuecomment-225108511)_
 
 <p>First thing to do is to compile the above code in debug mode <code>-d</code> option) or re-compile a GUI console version in debug mode with <code>do/args %red/red.r "-d -r red/environment/console/gui-console.red"</code> Many assertions and debug logs through the Red runtime code are not available in release mode.</p>
 
