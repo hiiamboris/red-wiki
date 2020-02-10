@@ -40,6 +40,20 @@ print-symbol
 
 Remember that Red's toolchain is minimal, building from source is fast and easy, and the source base is small and well organized. And if you've only ever worked at the Red level, a small amount of time learning some Red/System can go a long way. Even if you aren't confident you could write a fix, you may help save others time, and have fun exploring in the process. Don't be afraid.
 
+# strace (Linux only)
+
+([source](https://gitter.im/red/bugs?at=5e41255c3716b919ba0bd53d))
+
+When despite compiling with `-d` option, you get no debug info:
+
+```
+*** Runtime Error 1: access violation
+*** Cannot determine source file/line info.
+***
+```
+> Such crash reports usually mean that it crashed inside a system call. Try running it using `strace` and see if you can pinpoint the crashing system call.
+
+
 # See also:
 
 - https://github.com/red/red/ (readme shows command line switches, of which a few are debugging related)
