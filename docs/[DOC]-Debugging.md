@@ -53,6 +53,7 @@ When despite compiling with `-d` option, you get no debug info:
 ```
 > Such crash reports usually mean that it crashed inside a system call. Try running it using `strace` and see if you can pinpoint the crashing system call.
 
+https://www.howtoforge.com/linux-strace-command/
 
 # See also:
 
