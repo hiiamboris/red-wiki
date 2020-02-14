@@ -20,7 +20,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 1. Download *REBOL*: `wget http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz && tar xzvf rebol-core-278-4-3.tar.gz && cp releases/rebol-core/rebol red/`
 1. `cd red`
 1. Edit `environment/console/CLI/console.red`, and add `Needs: View` line inside `Red []` block.
-1. Compile: `echo 'Rebol[] do/args %red.r "-r %environment/console/CLI/console.red"' | rebol +q -s`
+1. Compile: `echo 'Rebol[] do/args %red.r "-r %environment/console/CLI/console.red"' | ./rebol +q -s`
 1. Test: `./console tests/react.test` should open a window with red/green/blue sliders that change color in a box next to them and color of text below them. More tests can be found in `tests` and `tests/gtk3` folders. You can also run console in interactive mode: `./console` and enter the line: `view [button "hello"]`.
 
 ## Developer notes
