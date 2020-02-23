@@ -18,6 +18,14 @@ Define `>>` as `none` to be able to copy Red codes from web pages and paste them
 
 `>>: none`
 
+## Prompt
+
+You can customize the prompt in the console to a fixed string, or a function that returns a string:
+```
+system/console/prompt: does [append what-dir " >> "]
+system/console/prompt: does [append form now " >> "]
+```
+
 ## CLI console key bindings
 
 Instead of keys like `Home` and `End` which might not work in some terminals or platforms common readline key bindings like `C-a` (Control+a) or `C-e` can be used to go to beginning or the end of input line.
