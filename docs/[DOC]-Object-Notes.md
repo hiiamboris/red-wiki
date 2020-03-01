@@ -36,6 +36,20 @@ make object! [
 
 The word `a` is first added to the context to which `o` is bound. By the time `a: a` is evaluated `a` exists in the context but is unset.
 
+When an object is created, the evaluation process collects all the set words in the spec, then evaluates the spec in the context of the new object. So same-named words become a circular reference. Literal values don't have this problem:
+```
+>> make object! [name: name]
+*** Script Error: name has no value
+*** Where: name
+*** Stack:  
+
+>> make object! [name: 'yy name: name]
+== make object! [
+    name: 'yy
+]
+```
+Here, the second `name:` ref looks up the first one successfully, so there's no error.
+
 You need to supply the context of the `a` to which you wish to bind the `a` in the object context. For example, you can reference the global context or use the `in` function:
 
 ```red
