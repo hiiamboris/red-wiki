@@ -130,7 +130,9 @@ Macros can be used to workaround that:
 #define relationship! [ struct! [ startNode [ node! ] endNode [ node! ] ] ]
 node!: alias struct! [ nextRel [ relationship! ] ]
 ```
+
 # Embedding #system in a Red function
+
 When using `#system` inside a Red function, it is important to note that Red functions are compiled to Red/System code.
 For that matter, the following code produces a compilation error:
 ```
@@ -180,3 +182,12 @@ Here, `cpt` is inlined outside the functions which is correct for the compiler.
 
 Note: as stated by Nenad Rakocevic:
 > the R/S compiler will let you declare and run the nested function, though it is not an officially supported feature, so we might deprecate it for 1.0.
+
+# Known problems
+
+## either
+
+`either` should not be used as a part of expression, for example this gives incorrect result (bug [#3620](https://github.com/red/red/issues/3620)):
+```
+print 1 * 1 + either 0 <> 0 [1][0]    ;-- should print "1", but prints a random integer on each run.
+```
