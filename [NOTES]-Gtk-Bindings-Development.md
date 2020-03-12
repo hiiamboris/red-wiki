@@ -16,7 +16,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 (see [rcqls/docker-red-gtk Dockerfile](https://github.com/rcqls/docker-red-gtk/blob/master/Dockerfile) or [`reds project` page](https://github.com/rcqls/reds/blob/master/README-RedGTK.md) for quick installation notes about `red/GTK` requirements)
 
 1. Install 32-bit dependencies: `at-spi2-core, libgtk-3-bin`
-1. Download code: `git clone -b GTK https://github.com/rcqls/red.git`
+1. Download code: `git clone -b GTK https://github.com/red/red.git`
 1. Download *REBOL*: `wget http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz && tar xzvf rebol-core-278-4-3.tar.gz && cp releases/rebol-core/rebol red/`
 1. `cd red`
 1. Edit `environment/console/CLI/console.red`, and add `Needs: View` line inside `Red []` block.
