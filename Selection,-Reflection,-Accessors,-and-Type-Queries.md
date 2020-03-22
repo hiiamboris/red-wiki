@@ -54,3 +54,19 @@ https://github.com/red/REP/issues/68
 - `?` vs `-of` suffix
 - avoiding name conflicts
 - `of op!` (incl. Boris' examples)
+
+
+### Chat Notes
+
+I agree that we shouldn't have to do textual analysis. My point in starting the wiki page is to lay out the current state of affairs, and create docs as we reason about changes. For example, can we agree that we should not strive for 100% consistency?
+
+m: USD$100
+m/currency == 'USD      ; R2 used FIRST and SECOND for money parts
+currency-of m == 'USD
+Currency-of seems OK, but what about [x-of y-of user-of julian-of away?-of ...]? What are the use cases where path notation doesn't suffice? Note that reflection (as it stands now) is used for information you can't get that way. It's internal, and read-only. The currency of a money value is just a component value.
+
+Now, say we go for consistency, even if some names seem so bad that I imagine they'd never be used. What about type-of for event!? Do we go for consistency and change type? for type checking, or use it for property access? We can't have both. That's a case we know about today, but once we lay down hard and fast rules about naming=semantics and "all accessors must have an associated function" Red becomes much more strict, and a victim of its own rules if we want to choose what to include. Thanks to Vladimir for linking to https://wiki.c2.com/?BondageAndDisciplineLanguage recently.
+
+That said, if we think only in terms of datatypes, it shouldn't get too out of hand, right? Wrong. No matter how much we tell people not to, they will create new datatypes for their own needs. And that's OK. A good thing even.
+
+Remember that I'm thinking through this along with you. Today we have a few ways to get at things (see the new wiki page). The small number of general interfaces [select pick reflect], along with type specific accessors avoid global naming conflicts. The more names we make global, and the more properties there are to access, the more confusion and conflict there will be. So we should strive to reduce conflict (both mentally and technically), and only adding things that address real pain points, which may mean being patient and waiting for people to feel a pain.
