@@ -11,6 +11,19 @@ Red is flexible. Unlike some languages where there's a single way to do somethin
 
 # Reflection
 
+Reflection provides details or meta information about a value, which is separate from its "data space" (for lack of a better term). Here's an example:
+```
+>> o: object [body: [body block]]
+== make object! [
+    body: [body block]
+]
+>> body-of o
+== [body: [body block]]
+>> o/body
+== [body block]
+```
+
+
 ## Reflect
 
 `Reflect` is an action, so each type can support its own rules about what values may be selected and by what names. 
