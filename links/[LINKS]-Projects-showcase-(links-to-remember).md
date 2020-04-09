@@ -37,7 +37,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [August 15, 2018 22:14](https://gitter.im/red/help?at=5b746d1f5b07ae730ac20312) @toomasv A value between range.
 
 # Miscellanea
-- [March 27, 2018 4:58 AM](https://gitter.im/red/red/gui-branch?at=5aba23db7c3a01610d7c1ebe) @PlanetSizeCPU [GUI Designer](https://github.com/planetsizecpu/forms/blob/master/forms_dynamic.red)
+- [March 27, 2018 4:58 AM](https://gitter.im/red/red/gui-branch?at=5aba23db7c3a01610d7c1ebe) @PlanetSizeCPU [GUI Designer](https://github.com/planetsizecpu/forms/blob/master/forms.red)
 - [March 27, 2018 7:17 PM](https://gitter.im/red/red?at=5abaed3fc574b1aa3e3d67ad) @hiiamboris [Pure Functional Dialect](https://github.com/hiiamboris/red-pure-fun)
 - [April 1, 2018 13:10 PM](https://gitter.im/red/red/gui-branch?at=5ac0be4292f5d6205780e609) @PlanetSizeCPU [One Time Pad/ssword Generator](https://github.com/planetsizecpu/otp)
 - [May 31, 2018 2:43 AM](https://gitter.im/red/chit-chat?at=5b0fb5c9361a950a662cd0de) @rebolek Gitter User stats
