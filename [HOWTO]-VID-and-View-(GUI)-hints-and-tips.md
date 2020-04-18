@@ -63,7 +63,7 @@ view [a: area do [a/menu: []]]
 view [
     size 200x400
     base
-        on-wheel [face/offset/y: face/offset/y + (5 * event/picked)]
+        on-wheel [face/offset/y: to integer! round face/offset/y + (5 * event/picked)]
         on-created [set-focus face]
 ]
 ```
@@ -74,7 +74,7 @@ The key part is giving focus to the face where you define the `on-wheel` handler
 view/options [size 200x400 b: base][
     actors: object [
         on-wheel: func [face event][
-            b/offset/y: b/offset/y + (5 * event/picked)
+            b/offset/y: to integer! round b/offset/y + (5 * event/picked)
         ]
     ]
 ]
