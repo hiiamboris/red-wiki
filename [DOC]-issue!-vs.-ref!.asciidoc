@@ -35,7 +35,7 @@ Values of both datatypes can be used to represent generic alphanumeric identifie
 
 The symbol table does not live under the purview of the garbage collector, which means that memory allocated to the symbol is reclaimed only after program termination. Since symbols are represented as integer IDs, comparison between them is instantaneous — **O(1)** in contrast to **O(n)** of `any-string!`; this also means that two identical symbols resolve to the same ID and do not waste an extra space.
 
-In addition to that, Red supports symbol aliasing, whereas case-varying symbols are linked (aliased) together in a chain that terminates with the first instance of a said symbol.
+In addition to that, Red supports symbol aliasing, thereby case-varying symbols are linked (aliased) together in a chain that terminates with the first instance of a said symbol.
 
 ### Summary
 
