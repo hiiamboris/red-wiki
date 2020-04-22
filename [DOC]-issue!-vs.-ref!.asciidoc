@@ -11,7 +11,7 @@ This article briefly discusses the key differences between `issue!` and `ref!` d
 
 ### History
 
-Historically, `issue!` in Rebol2 was a string-like datatype, originally devised as a denotation for serial numbers and identifiers of any kind. In Rebol3 the implementation was changed to symbol-like one, which was dictated by a primary use case for `issue!` values at the time — keywords in various preprocessors.
+Historically, `issue!` in Rebol2 was a string-like datatype, originally devised as a denotation for serial numbers and identifiers of any kind. In Rebol3 the implementation was changed to symbol-like one, which was dictated by a primary use case for `issue!` values at the time — directives in various preprocessors.
 
 ### Rationale
 
