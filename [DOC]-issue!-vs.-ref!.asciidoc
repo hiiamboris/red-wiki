@@ -41,7 +41,7 @@ In addition to that, Red supports symbol aliasing, whereas case-varying symbols 
 
 The summary of key differences between `issue!` and `ref!` can be found in the table below.
 
-[options="header" cols="1,2,2"]
+[options="header" cols="3*^"]
 |===
 | Datatype | `issue!` | `ref!`
 
@@ -77,4 +77,4 @@ An outline of practical use-cases for these datatypes is as follows:
 A relatively small, fixed set of symbols that are frequently searched and tested for identity (e.g. keywords, keys in associative arrays).
 
 `ref!`::
-A large number of diverse identifiers that are created and operated upon at runtime (e.g. social media handlers).
+A large number of diverse identifiers that are created and operated upon at runtime (e.g. social media handles, generic identifiers).
