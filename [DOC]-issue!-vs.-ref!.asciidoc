@@ -62,8 +62,8 @@ The summary of key differences between `issue!` and `ref!` can be found in the t
 | **O(n)**
 
 | Storage
-| Unique values peruse the same symbol identifier
-| Unique values hold their own data buffers
+| Same values reuse the same symbol identifier
+| Same values hold their own data buffers
 
 | Reclamation
 | Permanently stored in the symbol table
