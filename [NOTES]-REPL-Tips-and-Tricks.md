@@ -2,6 +2,13 @@
 
 Here you can find useful tips and functions you might want to use in REPL (Red's CLI or GUI console). Please add yours if you have one.
 
+## Executing the REPL
+
+Don't use `red --cli` when you want to invoke the Red CLI console from another app. Just call directly the CLI console executable (in the Red cache folder, or compile one in the working folder). `red --cli` is just a handy shortcut when wanting to invoke the CLI console from the shell command-line.
+
+Red.exe is a R2-encapped binary with a non-standard booting sequence that often does not play well when called by third-party apps. When Red.exe is used to invoke the console, it acts as a proxy by sub-calling the right console executable. 
+Just avoid the overhead and possible trouble by calling the console exe directly in such cases.
+
 ## Start-up script
 
 You can create a shortcut to `red.exe` on your taskbar or start menu with below parameters to execute a startup script.
