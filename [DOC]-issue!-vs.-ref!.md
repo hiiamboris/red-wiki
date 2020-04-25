@@ -1,13 +1,15 @@
+### Introduction
+
 This article briefly discusses the key differences between `issue!` and `ref!` datatypes, pointing out their respective features, drawbacks, and intended use-cases.
 
 ### Table of Contents
 
-. <<History>>
-. <<Rationale>>
-. <<Comparison>>
-.. <<String>>
-.. <<Symbol>>
-. <<Summary>>
+1. [History](#History)
+1. [Rationale](#Rationale)
+1. [Comparison](#Comparison)
+    1. [String](#String)
+    1. [Symbol](#Symbol)
+1. [Summary](#Summary)
 
 ### History
 
@@ -31,7 +33,7 @@ Values of both datatypes can be used to represent generic alphanumeric identifie
 
 #### Symbol
 
-`issue!` is a part of `all-word!` typeset, which encompasses symbolic values such as `word!` or `refinement!`. Implementation-wise, symbols are https://en.wikipedia.org/wiki/String_interning[interned strings]; they are immutable objects that are represented as indices (IDs, identifiers) into a symbol table (aka string pool) in which they are stored. 
+`issue!` is a part of `all-word!` typeset, which encompasses symbolic values such as `word!` or `refinement!`. Implementation-wise, symbols are [interned strings](https://en.wikipedia.org/wiki/String_interning); they are immutable objects that are represented as indices (IDs, identifiers) into a symbol table (aka string pool) in which they are stored. 
 
 The symbol table does not live under the purview of the garbage collector, which means that memory allocated to the symbol is reclaimed only after program termination. Since symbols are represented as integer IDs, comparison between them is instantaneous — **O(1)** in contrast to **O(n)** of `any-string!`; this also means that two identical symbols resolve to the same ID and do not waste an extra space.
 
@@ -41,40 +43,16 @@ In addition to that, Red supports symbol aliasing, thereby case-varying symbols 
 
 The summary of key differences between `issue!` and `ref!` can be found in the table below.
 
-[options="header" cols="3*^"]
-|===
-| Datatype | `issue!` | `ref!`
-
-| Typeset
-| `all-word!`
-| `any-string!`
-
-| Implementation
-| Symbol
-| String
-
-| Mutability
-| Immutable
-| Mutable
-
-| Comparison
-| **O(1)**
-| **O(n)**
-
-| Storage
-| Same values reuse the same symbol identifier
-| Same values hold their own data buffers
-
-| Reclamation
-| Permanently stored in the symbol table
-| Garbage collected
-
-|===
+| Datatype | `issue!` | `ref!` |
+|:--|:-:|:-:|
+| Typeset | `all-word!` | `any-string!` |
+| Implementation | Symbol | String |
+| Mutability | Immutable | Mutable |
+| Comparison | **O(1)** | **O(n)** |
+| Storage | Same values reuse the same symbol identifier | Same values hold their own data buffers |
+| Reclamation | Permanently stored in the symbol table | Garbage collected |
 
 An outline of practical use-cases for these datatypes is as follows:
 
-`issue!`::
-A relatively small, fixed set of symbols that are frequently searched and tested for identity (e.g. keywords, keys in associative arrays).
-
-`ref!`::
-A large number of diverse identifiers that are created and operated upon at runtime (e.g. social media handles, generic identifiers).
+* `issue!` — a relatively small, fixed set of symbols that are frequently searched and tested for identity (e.g. keywords, keys in associative arrays);
+* `ref!` — a large number of diverse identifiers that are created and operated upon at runtime (e.g. social media handles, generic identifiers).
