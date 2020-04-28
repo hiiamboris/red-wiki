@@ -12,7 +12,7 @@ The place for **discussion** is here: https://github.com/red/REP/issues/54
     + [Modifying functions](#modifying-functions)
   * [High-level definitions](#high-level-definitions)
   * [Invariants](#invariants)
-    + [Free (unconstrained) index](#free--unconstrained--index)
+    + [Free (unconstrained) index](#free-unconstrained-index)
     + [Indexing consistency](#indexing-consistency)
     + [/part symmetry](#-part-symmetry)
     + [Ideal appending /into](#ideal-appending--into)
