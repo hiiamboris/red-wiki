@@ -1,6 +1,6 @@
 # Indexing model
 
-Indexing in Red / System is 1-based and continuous; this means that `/1` gives a pointed value and` /0` gives a value before it.
+Indexing in Red/System is 1-based and continuous; this means that `/1` gives a pointed value and` /0` gives a value before it.
 
 # What do `#system` and `#system-global` do, when used in Red?
 
