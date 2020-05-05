@@ -1,3 +1,7 @@
+# Indexing model
+
+Indexing in Red / System is 1-based and continuous; this means that `/1` gives a pointed value and` /0` gives a value before it.
+
 # What do `#system` and `#system-global` do, when used in Red?
 
 `#system` includes the argument block of Red/System code at current position in the generated R/S source code resulting from Red code compilation. `#system-global` works similarly, but places the argument code in the global space, outside of the Red runtime and user code contexts. Normally, you use routines to interface Red and R/S code, though those directives can come 
