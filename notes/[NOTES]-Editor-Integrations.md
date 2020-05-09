@@ -43,7 +43,7 @@ this will compile the Red file that is on your screen and execute it
 
 [Makeshift IDE for RED Language development](https://github.com/Ungaretti/Makeshift-IDE-for-Red-language) - Instructions for making a portable Red IDE out of Notepad++ by [Ungaretti](https://ungaretti.github.io/)
 
-[Rededitor](http://helpin.red/Rededitor.html) - A pre-made portable Red IDE made from Notepad++ by [Ungaretti](https://ungaretti.github.io/) similar to the makeshift IDE he explains how to make above
+[Rededitor](http://helpin.red/Rededitor.html) - A pre-made portable Red IDE using Notepad++ by [Ungaretti](https://ungaretti.github.io/) similar to the makeshift IDE he explains how to make above
 
 ### [Editplus](https://editplus.com)
 Download syntax coloring, auto-complete and cliptext files from this [page](https://editplus.com/others.html) by searching for "Red programming language" or directly from [here](https://editplus.com/dn.php?n=red.zip).
