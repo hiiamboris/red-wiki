@@ -1,4 +1,4 @@
-This page is *mainly* intended to host links to open design questions so that less active community members may give their input to influence and bring closer the final outcome. Yet feel free to add also explanations of the current designs and arguments on design corner stones that arise from time to time.
+This page is *mainly* intended to host links to open design questions so that less active community members may give their input to influence and bring closer the final outcome. Yet feel free to add also explanations of the current designs and arguments on design cornerstones that arise from time to time.
 
 The page is not intended to mirror the [red/REP repo](https://github.com/red/REP/issues), only to be an addition to it.
 
@@ -37,7 +37,7 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: how to solve inelegancies and dangers of `error? try`, `attempt` and `catch` on *arbitrary* code?
 - [The flaw of `error? try` approach #3755](https://github.com/red/red/issues/3755)
 
-#### Web: how should cached versions of remote files be named (considering user friendliness, pathname length, sinitization of invalid chars)?
+#### Web: how should cached versions of remote files be named (considering user-friendliness, pathname length, sanitization of invalid chars)?
 - [Discussion in the PR 3124](https://github.com/red/red/pull/3124)
 
 #### Core: should operators use the result from funcs with literal arguments? (if `f: func [:x][x * 2]`, should `f 1 + 2` be equivalent to `(f 1) + 2`?)
@@ -46,9 +46,6 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 #### Core: should percent type allow scientific notation, and should it be constrained in range?
 - [Gitter discussion, a few days long](https://gitter.im/red/bugs?at=5e9866725706b414e1ceec2f)
-
-#### Core: how money datatype equality and comparison rules should work?
-- [Gitter discussion, a few days long](https://gitter.im/red/red?at=5e8ee18c38198d56a18ed4b7)
 
 #### VID DSL: should `panel` face draw a `text` facet on it?
 - [PR #4073 that removes it on Windows as it was buggy](https://github.com/red/red/pull/4073)
