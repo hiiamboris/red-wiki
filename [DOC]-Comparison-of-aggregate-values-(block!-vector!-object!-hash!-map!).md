@@ -55,7 +55,7 @@ Objects provide a key/value interface and cannot be indexed with `series!` actio
 
 Once created, objects cannot be extended with new entries (*this may change in the future*), nor can existing entries be deleted; however, an object can be used as a prototype for another object.
 
-Use `object!` to group functionally-related data together and encapsulate your code's logic. Don't follow classic OOP principles too strongly; instead, seek to leverage `object!`s in idiomatic ways: by using reactors, bindings and reflection.
+Use `object!` to group functionally-related data together and encapsulate your code's logic. Don't follow classic OOP principles too strongly; instead, seek to leverage `object!`s in idiomatic ways: by using reactors, bindings and reflection with ownership system.
 
 ### `hash!`
 
