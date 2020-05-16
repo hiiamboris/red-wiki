@@ -69,13 +69,11 @@ Use `hash!` for data that is updated less frequently and benefits from much fast
 
 Conceptually, maps take quick lookups from `hash!` and key/value interface from `object!`. This means that `map!` values act as dictionaries with unique keys and fast queries.
 
-Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values. Map follows `construct` semantics, in a sense that it does not evaluate added keys.
+Unlike objects, map's entries can be freely updated or deleted, and map itself can be populated with new key/value pairs. In newly added entries only keys are hashed, and keys are restricted to hashable values. Map follows `construct` semantics, in a sense that it does not evaluate added keys, and differs from objects in not supporting `get and `set` (*this may change in the future*).
 
 Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not guarantee to preserve key order. Just like with hashes, usage of `map!` pays off only for a large number of entries.
 
 Use `map!` if you need conventional associative array storage, and also in use-cases that involve hierarchical JSON-like data or flat-file databases.
-
-Note that you can use `get/set` on objects, but not maps. `Get` is a shortcut to `values-of`, which could be supported, but `set` doesn't match their behavior well, as key order is not guaranteed.
 
 ### Algorithmic complexity
 
