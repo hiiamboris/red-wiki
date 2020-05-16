@@ -75,6 +75,8 @@ Unlike hashes, maps are unordered, and therefore cannot be indexed. Maps do not 
 
 Use `map!` if you need conventional associative array storage, and also in use-cases that involve hierarchical JSON-like data or flat-file databases.
 
+Note that you can use `get/set` on objects, but not maps. `Get` is a shortcut to `values-of`, which could be supported, but `set` doesn't match their behavior well, as key order is not guaranteed.
+
 ### Algorithmic complexity
 
 | Datatype | Search | Indexing | Insertion | Removal |
