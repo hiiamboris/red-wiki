@@ -13,8 +13,17 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [December 10, 2019 5:04 PM](https://gitter.im/red/red/welcome?at=5defa5ea6a85195b9e30c847) @Palaing ["2048" tile game](http://rosettacode.org/wiki/2048#Red)
 - [January 27, 2020 12:18 PM](https://gitter.im/red/red/gui-branch?at=5e2eaaf63482927279373f37) @GalenIvanov [Looper puzzle](https://github.com/GalenIvanov/Games/blob/master/Looper.red) [(preview)](https://raw.githubusercontent.com/GalenIvanov/Games/master/Looper.jpg) [(video)](https://www.youtube.com/watch?v=emjGl_HVc70)
 
+# Alternative Red implementations
+- [May 13, 2020 3:41 AM](https://gitter.im/red/red?at=5ebb422c7c04b92f535d21c6) @ALANVF [Red.js - A web runtime for Red](https://github.com/ALANVF/Red.js)
+
 # Developer tools
 - [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
+
+# Libraries
+- @rebolek [Parsers and HTTP tools](https://github.com/rebolek/red-tools)
+- [January 1, 2020](https://www.red-lang.org/2020/01/happy-new-year.html#more) @hiiamboris [Command line interface support](https://gitlab.com/hiiamboris/red-cli)
+- [March 28, 2020 10:56 PM](https://gitter.im/red/red/gui-branch?at=5e7fabfa59057617f04a56a7) @hiiamboris [Automatic window resize handling](https://gitlab.com/hiiamboris/red-elastic-ui)
+- [May 2, 2020 7:31 PM](https://gitter.im/red/red?at=5eada04797338850a2e28d2d) @hiiamboris [A collection of mezzanines and macros](https://gitlab.com/hiiamboris/red-mezz-warehouse)
 
 # VID examples & experiments
 - [January 31, 2018 3:41 PM](https://gitter.im/red/red/gui-branch?at=5a71c79f475054191749c292) @toomasv [Matrix demo](https://gist.github.com/toomasv/e77df7ac18beee352f343b0729fb0a7a)
@@ -41,3 +50,4 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [March 27, 2018 7:17 PM](https://gitter.im/red/red?at=5abaed3fc574b1aa3e3d67ad) @hiiamboris [Pure Functional Dialect](https://github.com/hiiamboris/red-pure-fun)
 - [April 1, 2018 13:10 PM](https://gitter.im/red/red/gui-branch?at=5ac0be4292f5d6205780e609) @PlanetSizeCPU [One Time Pad/ssword Generator](https://github.com/planetsizecpu/otp)
 - [May 31, 2018 2:43 AM](https://gitter.im/red/chit-chat?at=5b0fb5c9361a950a662cd0de) @rebolek Gitter User stats
+
