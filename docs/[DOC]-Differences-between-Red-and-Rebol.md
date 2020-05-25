@@ -30,6 +30,7 @@
 1. [`set`](#get)
 1. [`equal?`](#equal)
 1. <code><a href="#what-what">??</a></code>
+1. [`all`](#all)
 
 ## `copy` on `object!`
 
@@ -381,7 +382,7 @@ a: unset!
 
 `equal?` accepts `unset!` in Red and R3, but not in R2.
 
-```
+```red
 >> equal? () ()
 == true (Red & R3)
 ** Script Error: equal? is missing its value1 argument (R2)
@@ -398,7 +399,7 @@ In R2 & R3, `??` takes a literal value and returns it back, so that it can be us
 == 3
 ```
 In Red, `??` returns `unset` and only accepts words and paths:
-```
+```red
 >> ?? 1
 *** Script Error: ?? does not allow integer! for its 'value argument
 *** Where: ??
@@ -420,7 +421,7 @@ o: make object! [
 ```
 
 while Red console displays all the values:
-```
+```red
 >> f: does [something]
 == func [][something]
 >> :f
@@ -428,7 +429,7 @@ while Red console displays all the values:
 ```
 
 So `??` returning them would have led to output duplication, like this:
-```
+```red
 >> ?? o
 o: 
 make object! [
@@ -443,8 +444,16 @@ make object! [
 ```
 
 From within *Red expressions* `probe` should be used instead:
-```
+```red
 >> 1 + probe 2
 2
 == 3
+```
+
+## all
+
+```red
+>> all []
+== none ; in Red
+== true ; in R2 & R3
 ```
