@@ -4,7 +4,7 @@
 
 [RED Wallet: the tiny, simple, fast and secure wallet!](https://www.red-lang.org/)
 
-"BeardPower" has kindly authored a [beginner's guide](https://github.com/BeardPower/red/wiki/Introduction-to-token-sales,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs, wallets and cryptocurrencies.
+"BeardPower" has kindly authored a [beginner's guide](https://github.com/BeardPower/red/wiki/Introduction-to-token-sales,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs (Initial Coin Offerings), wallets and cryptocurrencies.
 
 
 ## Quick navigation
