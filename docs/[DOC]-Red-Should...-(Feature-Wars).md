@@ -21,7 +21,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Use XXX Syntax](#use-xxx-syntax)
 1. [Easier Custom Datatypes](#easier-custom-datatypes)
 1. [Support Variable Arity Functions](#support-variable-arity-functions)
-1. []()
+1. [Sandboxing](#sandboxing)
 1. []()
 
 # Immutability
@@ -59,3 +59,11 @@ Datatypes are a foundation of Red, as with other languages. But Red is quite dif
 # Support Variable Arity Functions
 
 Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. If someone figures out how to make variable arity funcs clean, efficient, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
+
+# Sandboxing
+
+Red is incredibly dynamic, such that one script can load (or create) and run many others. This makes it natural to be want to be able to dynamically fetch and run third-party data from within another script. Cue the security concerns. For example, a script with a connection to a database, may want to load and run another script, but might want to ensure that the third-party script will not access the database directly.
+
+Similar possible scenarios abound. Red is obviously too dynamic to be able to statically verify the safety of any script. Instead Red could provide sandboxing, perhaps as its own datatype, that could allow the script creating the sandbox to control what words were available to any code being evaluated within the sandbox. Such sandboxes could feature safe defaults but ultimately allow the controlling code to adjust permissions.
+
+Such a feature could be important for creating a safe wider ecosystem of Red code.
