@@ -4,7 +4,7 @@ Red & Rebol are data formats first, before being programming languages. This has
 
 What does that mean in practice?
 
-In almost all non-Lisp languages, you go from a textual representation of your source code to an AST which is compiled/interpreted. That is not the case in Red/Rebol, the text representation is LOADed as Red data and put in a block, illustrated by this example:
+In almost all non-Lisp languages, you go from a textual representation of your source code to an AST (abstract syntax tree) which is compiled/interpreted. That is not the case in Red/Rebol, the text representation is LOADed as Red data and put in a block, illustrated by this example:
 
 ```red
 red>> src: {test: func [input /local s][s: "hello" append s input]}
