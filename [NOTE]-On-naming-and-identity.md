@@ -73,7 +73,7 @@ You can be such a developer/contributor too, and, thanks to the project's scope 
 
 ---
 
-**\*** Interestingly, red is one of the 3 universal colors, among black and white. This fact strengthens the idea of Red being a "primordial" base for other languages that it can embed (dialects) and be embedded in (libRed).
+**\*** Interestingly, red is one of the 3 universal [color terms](https://en.wikipedia.org/wiki/Basic_Color_Terms:_Their_Universality_and_Evolution), among black and white. This fact ties relative expressions to [linguistic relativity](https://en.wikipedia.org/wiki/Linguistic_relativity_and_the_color_naming_debate), and strengthens the idea of Red being a "primordial" base for other languages that it can embed (dialects) and be embedded in (libRed).
 
 **†** This is by no means a general rule. [Perl 6 → Raku renaming](https://github.com/Raku/problem-solving/issues/81), for example, was an intentional casting aside of historical bonds, and aimed to improve both Perl 5 and Perl 6 project identities.
 
