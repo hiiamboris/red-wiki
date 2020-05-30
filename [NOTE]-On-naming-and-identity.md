@@ -48,7 +48,7 @@ It does not end here, however. Red-the-language is not a thing in itself, but a 
 
 Now to the main point: why changing the name to something else is viewed as detrimental?
 
-First and foremost, it hurts project's identity; it could have made sense to come up with a different name at nascent stages of development, but now, when Red slowly but steadily starts to accumulate critical mass and has quite a bit of story behind it, that would only cause confusion and diminish media coverage area, rendering all previous mentions of the project obsolete.
+First and foremost, it hurts project's identity; it could have made sense to come up with a different name at nascent stages of development, but now, when Red slowly but steadily starts to gain traction and has quite a bit of story behind it, that would only cause confusion and diminish media coverage area, rendering all previous mentions of the project obsolete.
 
 Secondly, it's not that simple, and would require a total re-branding. As Red matures, it spawns an ecosystem of companies and corporate entities that support and back it up, such as Red Foundation or Redlake Technologies. Establishing a commercial arm of the project is a no small feat, and renaming it mid-way is a thorny path potentially leading to trademark issues with entrepreneurial red-tape (no pun intended).
 
