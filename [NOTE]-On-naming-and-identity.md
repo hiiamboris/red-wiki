@@ -16,7 +16,7 @@ At this time and place, however, such renaming proposals do more harm than good,
 > The named is the mother of ten thousand things.
 > <br> **— Lao Tzu**
 
-The folk legend says that Red, as a name, was conceived as an acronym for Rebol's Extended Dialect. While it is true that Red carries the torch lit by Rebol, the etymology itself is after-the-fact theorizing and abductive reasoning: REBOL was an acronym (Relative Expression Based Object Language), so as it's predecessor LAVA (Language for Audio and Video Applications).
+The folk legend says that Red, as a name, was conceived as an acronym for Rebol's Extended Dialect. While it is true that Red carries the torch lit by Rebol, the etymology itself is after-the-fact theorizing and abductive reasoning: REBOL was an acronym (Relative Expression Based Object Language), so as its conceptual predecessor LAVA (Language for Audio and Video Applications).
 
 The actual origin of the name (that we take up as an authoritative) is that Red is a shortcut for "reduce", or rather it is a _reduced_ version of "reduce". That makes Red both context-sensitive and [autological](https://en.wikipedia.org/wiki/Autological_word) word, which reflects language's core semantic concepts and mechanisms (such as binding, series model, homoiconicity, and meta-circularity) and makes itself into the "Reduce software complexity" motto.
 
@@ -52,7 +52,7 @@ Secondly, it's not that simple, and would require a total re-branding. As Red ma
 
 Lastly, such renaming does not really address the main problem it was designed to solve: searchability and public awareness. The most common complaint about Red's name is that it's too common and can be easily confused with a color — that is correct, but entirely misses the point. **\***
 
-Taken from the context of software, Go is not an ancient board game, Rust is not an iron oxid, Python and Pony are not animals, C is not a letter, and C# is not a musical note. What differentiates these (and many others) programming languages is not their name, but the critical mass they managed to achieve in the course of their development. As it was said earlier, renaming won't help Red to achieve this mass, and, in fact, might even diminish it. **†**
+Taken in the context of software, Go is not an ancient board game, Rust is not an iron oxid, Python and Pony are not animals, C is not a letter, and C# is not a musical note. What differentiates these (and many others) programming languages is not their name, but the critical mass they managed to achieve in the course of their development. As it was said earlier, renaming won't help Red to achieve this mass, and, in fact, might even diminish it. **†**
 
 And this brings us to the last point: how this critical mass can be achieved.
 
