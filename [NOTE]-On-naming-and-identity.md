@@ -54,7 +54,7 @@ Secondly, it's not that simple, and would require a total re-branding. As Red ma
 
 Lastly, such renaming does not really address the main problem it was designed to solve: searchability and public awareness. The most common complaint about Red's name is that it's too common and can be easily confused with a color — that is correct, but entirely misses the point. **\***
 
-Taken in the context of software, Go is not an ancient board game, Rust is not an iron oxid, Python and Pony are not animals, C is not a letter, and C# is not a musical note. What differentiates these (and many others) programming languages is not their name, but the critical mass they managed to achieve in the course of their development. As it was said earlier, renaming won't help Red to achieve this mass, and, in fact, might even diminish it. **†**
+Taken in the context of software, Go is not an ancient board game, Rust is not an iron oxid, Python is not an animal, Java is not a type of coffee bean, C is not a letter, and C# is not a musical note. What differentiates these (and many others) programming languages is not their name, but the critical mass they managed to achieve in the course of their development. As it was said earlier, renaming won't help Red to achieve this mass, and, in fact, might even diminish it. **†**
 
 And this brings us to the last point: how this critical mass can be achieved.
 
