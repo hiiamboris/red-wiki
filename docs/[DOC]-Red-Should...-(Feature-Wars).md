@@ -22,7 +22,6 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Easier Custom Datatypes](#easier-custom-datatypes)
 1. [Support Variable Arity Functions](#support-variable-arity-functions)
 1. [Sandboxing](#sandboxing)
-1. [Implement ports, to allow network programming, especially for database access]
 1. []()
 
 # Immutability
@@ -62,10 +61,3 @@ Datatypes are a foundation of Red, as with other languages. But Red is quite dif
 Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. If someone figures out how to make variable arity funcs clean, efficient, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
 
 # Sandboxing
-
-# Implement ports, to allow network programming, especially for database access
-
-A number of existing Rebol programs such as business applications, maintenance scripts, administration tools, etc. rely on a database backend, which they access through drivers such as the ones from SoftInnov (https://www.softinnov.org/rebol/pgsql.shtml and https://www.softinnov.org/rebol/pgsql.shtml).
-Red could certainly gain some attention by allowing access to such databases.  NoSQL databases should also be addressed, at some point.
-
-Ports implementation seems to be the obvious choice, in order to implement such features.  However, other solutions may be possible, maybe by using Red/System to bind to a client library (for instance, libpq C library for postgresql).
