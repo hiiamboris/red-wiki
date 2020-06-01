@@ -22,7 +22,9 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Easier Custom Datatypes](#easier-custom-datatypes)
 1. [Support Variable Arity Functions](#support-variable-arity-functions)
 1. [Sandboxing](#sandboxing)
+1. [JS as a Back End Target](#js-as-a-back-end-target)
 1. []()
+
 
 # Immutability
 
@@ -61,3 +63,11 @@ Datatypes are a foundation of Red, as with other languages. But Red is quite dif
 Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. If someone figures out how to make variable arity funcs clean, efficient, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
 
 # Sandboxing
+
+# JS as a Back End Target
+
+It sounds appealing, on the surface, but the costs...oh, the costs. Targeting JS is not beyond the team's technical ability. That should be made very clear. But we have this mission, this goal, this purpose in life, to fight software complexity. As soon as we buy into that world, we lose a piece of our soul, and are then sitting on top of a big pile of...stuff. And people will use all those libs and frameworks, which are not designed to be anything like Red, so now we've just added to the polyglot stack of languages and concepts. So we shouldn't do it, because it will just hurt the poor web devs. ;^)
+
+Red running on every possible platform would be a great thing. But being on those platforms won't make Red successful. It has to achieve a certain level of success first. So it's not that we are against this, it's just not a priority. It raises a lot of questions as well, because JS is not just an isolated language in practical use. It is the core of an ecosystem that branches out in many directions, from the DOM (and how View/VID translate there), to frameworks, to changes in the language, to node.js as a runtime.
+
+But there's another approach: Write a Red interpreter in JS. Gabriele Santilli (@giesse) had his Topaz project to experiment with the idea, and @ALANVF has [Red.js](https://github.com/ALANVF/Red.js) in the works. This doesn't answer all the questions, but lets people look for answers and raises more. Remember that a big part of Red is the format, while JS has JSON, so it's a great way to explore ideas in a concrete context and see how things fit together.
