@@ -949,6 +949,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [iterated-faces.red](https://gist.github.com/luce80/fc8825613a4e8aeedcf700ec47aae518) - Create iterated faces in Red as those found in Rebol View
 
 		tags: 
+	* [mold-red.red](https://gist.github.com/luce80/bfa8b54ca8c7e726723072786cad56fa) - Mold the System object
+
+		tags: debug
 	* [resize-image.red](https://gist.github.com/luce80/e34516e5248b629badfd4016dda6cbb8) - Draw Image Resizing Test with reaction
 
 		tags: 
