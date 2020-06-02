@@ -1,5 +1,13 @@
 (NB: Feel free to append new questions at the bottom.)
 
+# The Name
+
+Red is a descendant of Rebol. Rebol was originally all caps, as an acronym for Relative Expression-Based Object Language. It was pronounced rebel, not ree-ball, and people thought it was a COBOL like language. But it was unique, which was good for searches. Naming is hard.
+
+The questions and comments we get most about the name are what it stands for, and that it's too common a word, so hard to get good search results. We call ourselves Reducers, and you can think of Red as a language with the goal of (red)ucing complexity. Or you can just think of it as a nice, short name. We have fun thinking of backronyms too of course. 
+
+As to coming up with a unique name that's easier to search on, it's not a solution. You can search for "Red lang ..." or "Red language ..." to narrow results, just as you needed to for Go, Rust, and others before your tracking search engine learned what you really wanted. We are in good company, with Go, Rust, C, Ruby, Python, Swift, Elm, and others, but also appreciate unique names that designers have chosen for their creations.
+
 # Technical
 
 **Q. What do you mean by "full-stack language"? Isn't JS one?**
