@@ -170,3 +170,11 @@ Map->object: would only work on a subset of possible maps.
 Object->map: binding info would be lost, making evaluation of code held inside the map error out.
 
 You can still use an intermediate block to force conversions in such cases, if really needed. You can also write a routine if memory usage or performance is a show-stopper.
+
+# Ownership & deeply reactive code
+
+`face!`s and `deep-reactor!`s are relying on the ownership system. Currently a series can only have one owner. That means when the series gets modified, only the owner will be able to react to the change.
+
+E.g. if you are using the same draw block in 2 faces, and you modify that block, only one face will update it's displayed content. See https://github.com/red/red/issues/4480 for an example. 
+
+Also worth noting, `on-change*` event, e.g. `face/draw: new-block`, transfers ownership of `new-block` to `face`.
