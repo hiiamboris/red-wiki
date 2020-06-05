@@ -75,6 +75,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 - [PR that summarizes the issue](https://github.com/red/red/pull/4455)
 - [Gitter discussion, a few days long](https://gitter.im/red/red?at=5e8ee18c38198d56a18ed4b7)
 
+#### Core: what should empty `any []` and `all []` return?
+- [Discussion in issue #4469](https://github.com/red/red/issues/4469#issuecomment-635450881)
+
 # See also
 
 https://github.com/red/red/wiki/[NOTES]-Design-Deliberations
