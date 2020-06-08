@@ -102,6 +102,7 @@ Anything missing here?
 - "pinned" columns/rows (including headers), unaffected by the scrollers
 - synchronized scrolling of 2 tables? probably too much work: will require tables to coordinate their row heights - easier to unify 2 tables into one
 - cells spanning multiple columns and/or rows
+- named column groups - automatically span multiple columns, require a multi-line header
 
 **Editing**
 - editable and read-only modes for a cell (row, column) that can be switched on the fly (e.g. formula / formatted result)
@@ -120,7 +121,8 @@ Anything missing here?
 
 **Filtering**
 - filters for each column
-- embedded UI to leverage these filters
+- chains of filters (`or`-ed/`and`-ed)
+- embedded UI to leverage these filters - [example](https://www.ag-grid.com/)
 
 **Interaction**
 - tab navigation forth and back (row then column, or column then row) - requires an ability to scroll to a specific cell, and exposure of table layout to the navigation algorithm, including which cells are editable
@@ -130,6 +132,7 @@ Anything missing here?
 - rows resize (spreadsheets only?)
 - rows reodering by dragging ?
 - addition of new (empty) rows by the user
+- box-like selection of a range of cells, with export capability
 
 **Description**
 - would be nice to leverage VID: `table [column 100 "Header 1" [cell "this" cell "that"] ... column 200 "Header 2" ...]` (that's what I'm able to do [here](https://gitlab.com/hiiamboris/red-mezz-warehouse/-/blob/master/table.red), but makes the whole table quite heavy)
