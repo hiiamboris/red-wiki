@@ -34,6 +34,16 @@ append system/codecs reduce [
 
 * I suspect that the reason for the way it is currently implemented is to allow streaming encoders and decoders; but it would perhaps be better to have a simple common case where `load` and `save` do the work for you and have a flag to indicate if the codec supports streaming; you'd want to use ports for that anyway and not have the codecs deal with `file!` or `url!` directly
 
+## URLs vs files
+
+In the case of `url!` data is read with `read/info/binary` and the decoder is selected based on MIME type.
+
+`Decode` is also called for `file!` values where it selects the decoder based on the file suffix.
+
+Unless you feed a `url!` to `decode` manually, it can't encounter it.
+
+If you have `string!`, `decode` is not used; `transcode` is used as it doesn't know the type of the data (unless you use `/as`)
+
 # JSON & CSV Codecs
 
 Here you can find the [JSON Codec](https://github.com/red/red/commit/cc74e4a5842014bcbe195d7a41f7f4c6d640dbeb) and [CSV Codec](https://github.com/red/red/pull/3981/files) implementations as examples.
