@@ -31,6 +31,7 @@
 1. [`equal?`](#equal)
 1. <code><a href="#what-what">??</a></code>
 1. [`all`](#all)
+1. [vid 'panel](#vid panel]
 
 ## `copy` on `object!`
 
@@ -456,4 +457,39 @@ From within *Red expressions* `probe` should be used instead:
 >> all []
 == none ; in Red
 == true ; in R2 & R3
+```
+## vid panel
+
+* R2: Any 'layout can be used as a subpanel
+
+* Red: Use 'layout/only to create subpanels (or only use the contents of the subpanel's pane)
+
+This code - simplified from Rebol's How-To page for subpanels (http://www.rebol.com/how-to/subpanels.html
+) - does not work in Red:
+
+```
+main: layout [
+    h1 "Subpanel Examples"
+    button "Panel 1" [panels/pane: panel1 show panels]
+    button "Panel 2" [panels/pane: panel2 show panels]
+	return
+    panels: panel 220x140 []
+]
+panel1: layout [h2 "Panel 1"]
+panel2: layout [h2 "Panel 2"]
+view main
+```
+
+The two alternative ways to fix it are shown here:
+```
+main: layout [
+    h1 "Subpanel Examples"
+    button "Panel 1" [panels/pane: panel1/PANE show panels]  ; fixed with PANE
+    button "Panel 2" [panels/pane: panel2 show panels]
+	return
+    panels: panel 220x140 []
+]
+panel1: layout [h2 "Panel 1"]
+panel2: layout/ONLY [h2 "Panel 2"]   ; fixed with /ONLY
+view main
 ```
