@@ -460,9 +460,9 @@ From within *Red expressions* `probe` should be used instead:
 ```
 ## vid panel
 
-* R2: Any 'layout can be used as a subpanel
+* R2: Any `layout` can be used as a subpanel
 
-* Red: Use 'layout/only to create subpanels (or only use the contents of the subpanel's pane)
+* Red: Use `layout/only` to create subpanels (or only use the contents of the subpanel's pane)
 
 This code - simplified from Rebol's How-To page for subpanels (http://www.rebol.com/how-to/subpanels.html
 ) - does not work in Red:
