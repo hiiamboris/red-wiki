@@ -31,7 +31,7 @@
 1. [`equal?`](#equal)
 1. <code><a href="#what-what">??</a></code>
 1. [`all`](#all)
-1. [vid 'panel](#vid panel]
+1. [vid `panel`](#vid panel)
 
 ## `copy` on `object!`
 
