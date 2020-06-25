@@ -57,9 +57,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [RedAdb](https://github.com/bitbegin/RedAdb) - Adb rewrited in Red
 
 		tags: 
-	* [RedSCard](https://github.com/bitbegin/RedSCard) - 
-
-		tags: 
 ## C
 * CFTheMaster - 
 	* [discord.red](https://github.com/CFTheMaster/discord.red) - An unofficial red wrapper for the Discord API 
