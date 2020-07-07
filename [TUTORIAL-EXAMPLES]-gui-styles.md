@@ -89,6 +89,7 @@ view [
     b "click me"
 ]
 ```
+`on-actor` are normal functions so we can call it like `face/on-actor face event` instead of `do-actor...`. `do-actor` has some error checking (like checking whenever or not the event is supported) but it is intended for internal use. It can be changed or removed.
 
 # Default actor
 Default actor is triggered without `on-actor` text, as in `view [base [print 'default-actor] ]`. Here, default actor is `on-down` (mouse press) and it runs `[print 'default-actor]`.   
@@ -155,7 +156,7 @@ print ['t2 'var-a t2/var-a 'var-b t2/var-b]
 
 ## Global custom fields
 
-Setting fields with `with` will not set a field for each style. It will be "global" (will it change?):
+Setting fields with `with` will not set a field for each style. The field will be kept in one place:
 ```
 view [
     style text'': text
@@ -405,6 +406,18 @@ If you do not add to evt-names this will show:
 ; *** Where: in
 ; *** Stack: view do-events do-actor do-safe do-actor 
 ```
+# More about `init` & `with`
+They both can be used for setting fields but they are more powerful. They bind (link to) the face object and they evaluate the block. We can run any code here.
+```
+view [
+    style foo: base "basic text" red 
+        with [
+            probe text: to-string data: random 42
+        ]
+    foo blue
+]
+```
+Here I am using `probe`, `to-string` and `random` functions.
 
 # Source, links etc
 https://gitter.im/red/help?at=5f033e92fa0c9221fc816712  
@@ -412,3 +425,4 @@ https://www.red-lang.org/2017/07/063-macos-gui-backend.html
 https://www.red-lang.org/2019/02/january-2019-update.html  
 https://gitter.im/red/help?at=5ef826d0fa0c9221fc6543af  
 https://gitter.im/red/red/gui-branch?at=5ef9beae47fdfd21edf08cc0  
+https://gitter.im/red/help?at=5f035196405be935cde4f71d
