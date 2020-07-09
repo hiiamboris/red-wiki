@@ -32,7 +32,7 @@
 1. <code><a href="#what-what">??</a></code>
 1. [`all`](#all)
 1. [`panel`](#vid-panel)
-1. [`system/options/boot`](#system-options-boot-is-string!-not-a-file!)
+1. [`system/options/boot`](#systemoptionsboot-is-string-not-a-file)
 
 ## `copy` on `object!`
 
