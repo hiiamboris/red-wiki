@@ -32,6 +32,7 @@
 1. <code><a href="#what-what">??</a></code>
 1. [`all`](#all)
 1. [`panel`](#vid-panel)
+1. [`system/options/boot`](#system-options-boot-is-string!-not-a-file!)
 
 ## `copy` on `object!`
 
@@ -493,3 +494,9 @@ panel1: layout [h2 "Panel 1"]
 panel2: layout/ONLY [h2 "Panel 2"]   ; fixed with /ONLY
 view main
 ```
+
+# `system/options/boot` is `string!` not a `file!`
+
+Yes. For now. %environment/functions.red@extract-boot-args simply breaks up the args from the OS but doesn't convert them to Red values. Red follows R2 here, with the exception that it keeps options/boot consistent with the rest of them, by not changing it. Options/path, OTOH, is changed by change-dir, so it is a Red file.
+
+That said, it's something we may revisit. R2's design here confused people more than once. It's true that system/script/args is just the raw string, which you can load, but the naming doesn't make it clear for a feature that should be used quite heavily. Since they current options don't limit you, the way we'll probably deal with this is to hide them behind a CLI dialect.
