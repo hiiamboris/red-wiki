@@ -29,11 +29,6 @@ AM and PM do not work in Red.
 
 [Red date! documentation](https://doc.red-lang.org/en/datatypes/date.html)
 
-
-### 2.4
-No money! datatype in Red.
-
-
 ### 2.5 Tuples
 
 `2.3.0   ==  tuple!`
