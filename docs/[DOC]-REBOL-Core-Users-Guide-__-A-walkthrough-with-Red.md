@@ -147,7 +147,7 @@ if any [
 
 `print modified? %file.txt`
 
-`modified?` is not defined in Red.
+`modified?` is not defined in Red. You can use `query` on files for now, but it's a subject to redesign, and returns a UTC timestamp.
 
 
 ### 12. Networking
