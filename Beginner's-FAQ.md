@@ -19,6 +19,9 @@ Type `help` in the Red console to learn how to access the built-in documentation
 7. [Ask us](https://gitter.im/red/help), we are here to help! 
 When everything else fails, the Red community is here for you. Also, make sure to say "hi" in our [Welcome chat room](https://gitter.im/red/red/welcome).
 
+# A command is not working as expected, what should I do?
+The issue may have been fixed in one of the [latest automated builds](https://www.red-lang.org/p/download.html), give it a try.
+
 # I have been reading Rebol Docs, but not everything works in Red, why?
 While both languages share similar look'n'feel, Red is not entirely compatible with Rebol and is not developed with that goal in mind; it tries to take the best parts from both Rebol2 and Rebol3, bringing its own design novelty when needed.
 
