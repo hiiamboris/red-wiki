@@ -8,7 +8,7 @@ Type `help` in the Red console to learn how to access the built-in documentation
 
 2. [Red By Example](https://www.red-by-example.org/) - Here you will find a library of usage examples that hopefully will shed some light on what you are trying to accomplish.
 
-3. [Red Official Documentation](https://github.com/red/docs/blob/master/en/SUMMARY.adoc) -  It's currently under construction, but maybe what you are looking for is already there.
+3. [Red Official Documentation](https://github.com/red/docs/blob/master/en/SUMMARY.adoc) -  It's currently under construction, but hopefully what you are looking for is already there.
 
 4. Rebol Docs, specially [Rebol/Core Manual](http://www.rebol.com/docs/core23/rebolcore.html) - Red has a lot in common with its older Rebol brother. While there are many differences between them, specially as Red's development advances, you may find an analogue solution for what you are looking for in the Rebol's realm.   
 
