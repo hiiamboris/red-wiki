@@ -26,3 +26,5 @@ As Red user manual is not quite finished yet, [REBOL/Core manual](http://www.reb
 
 For a non-exhaustive list of differences between Rebol and Red, check out [this](https://github.com/red/red/wiki/%5BDOC%5D-Differences-between-Red-and-Rebol) wiki page.
 
+# I'm feeling overwhelmed right now, what should I do?
+For anyone new to Red, remember to play, have fun, explore, and give yourself time. Because it looks familiar in many ways, we want to carry over things we know from other programming languages. That works to some extent, then you step into the deep part of the lake and flounder around for a while. Be patient with yourself, enjoy the ride and don't forget that the community is here for you!
