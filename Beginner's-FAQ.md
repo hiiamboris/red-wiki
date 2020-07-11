@@ -19,7 +19,7 @@ Type `help` in the Red console to learn how access the built-in documentation. D
 7. [Ask us](https://gitter.im/red/help), we are here to help! 
 When everything else fails, the Red community is here for you. Also, make sure to say hi in our [Welcome chat room](https://gitter.im/red/red/welcome).
 
-# I have been looking at the Rebol Docs a lot, but not everything works in Red, why?
+# I have been reading Rebol Docs, but not everything works in Red, why?
 While both languages share similar look'n'feel, Red is not entirely compatible with Rebol and is not developed with that goal in mind; it tries to take the best parts from both Rebol2 and Rebol3, bringing its own design novelty when needed.
 
 As Red user manual is not quite finished yet, [REBOL/Core manual](http://www.rebol.com/docs/core23/rebolcore.html) is usually recommended as newcomer's starting point; one can read it with [this](https://github.com/red/red/wiki/%5BDOC%5D-REBOL-Core-Users-Guide-__-A-walkthrough-with-Red) walkthrough at hand and then progress thru a [list](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources) of other learning resources if deemed necessary.
