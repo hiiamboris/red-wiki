@@ -1,11 +1,6 @@
 ## Welcome to the Red programming language wiki!
 
-### NEWS ITEM - Tokens, Wallets and Cryptocurrencies.
-
-[RED Wallet: the tiny, simple, fast and secure wallet!](https://www.red-lang.org/)
-
-"BeardPower" has kindly authored a [beginner's guide](https://github.com/BeardPower/red/wiki/Introduction-to-token-sales,-wallets-and-cryptocurrencies) for members of the Red Community who are unfamiliar with ICOs (Initial Coin Offerings), wallets and cryptocurrencies.
-
+Wikis are wonderful and terrible things. Easy to add and update content, but not as easy to organize. Contributions in both areas are welcome. 
 
 ## Quick navigation
 ***
@@ -34,6 +29,7 @@
 <td valign="top">
 Follow along with our short getting started guide.<br> 
 If you prefer, you can go directly to our <a href="https://www.red-lang.org/p/download.html">downloads</a> page.
+Once you have Red up and running, the <a href="https://github.com/red/red/wiki/Beginner's-FAQ">Beginner's FAQ</a> gives you some initial sign-posts.
 </td>
   
 <td valign="top">
