@@ -10,6 +10,7 @@ Examples should be kept relatively small, but may be specific (drop in and use) 
 2. [Parse text and change keywords-pattern](#Parse-text-and-change-keywords-pattern)
 3. [Parse text where term is at end of line](#Parse-text-where-term-is-at-end-of-line)
 4. [Parse text with paired brackets](#Parse-text-with-paired-brackets)
+5. [Keep, keep pick and keep copy](#Keep-keep-pick-and-keep-copy)
 
 # Split a string at a delimiter (#drop-in)
 
@@ -188,7 +189,34 @@ grammar: object [
 probe parse/case source grammar/rule
 ```
 ***
+# Keep, keep pick and keep copy
 
+As explained [here](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditations#parse-collectkeep-options-combined-with-tothru-rules), 
+`keep` by itself collects a single value or a list of values in range-capturing mode.
+
+This may yield a block of heterogeneous values, like `char!` mixed with `string!` in the following example:
+```
+>> parse "a,bc," [collect some [keep to "," skip]]
+== [#"a" "bc"]
+```
+To get a series of homogeneous values, use:
+
+* `keep pick` to collect all the matched values separately - eg.:
+```
+>> parse "a,bc," [collect some [keep pick to "," skip]]
+== [#"a" #"b" #"c"]
+```
+    
+* `keep copy <word>` to collect all the matched values as a series (of same type as the input) - eg.:
+```
+>> parse "a,bc," [collect some [keep copy _ to "," skip]]
+== ["a" "bc"]
+```
+(`_` above is just a throwaway `word!`, could be x or z)
+
+See this [discussion](https://gitter.im/red/help?at=5f0c99923e4a827d19c35da8) for more on that subject.
+
+***
 # Links to pages about `parse`
 
 * ["The reference for Red parse including examples like 
