@@ -1,5 +1,8 @@
+1. [Check balanced parens](#check-balanced-parens)
+
 
 # Check balanced parens (@toomasv)
+
 ```
 Sometimes you can also use the new transcode to check your strings for balanced parens:
 >> transcode/trace %{a(b(c)d)e}% func [e i t l o][[open close] print [e mold i]]
