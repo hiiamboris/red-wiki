@@ -1,6 +1,6 @@
 
 # Check balanced parens (@toomasv)
-
+```
 Sometimes you can also use the new transcode to check your strings for balanced parens:
 >> transcode/trace %{a(b(c)d)e}% func [e i t l o][[open close] print [e mold i]]
 open "(b(c)d)e"
@@ -27,3 +27,4 @@ close ")e"
 *** Syntax Error: (line 1) missing ( at )e
 *** Where: transcode
 *** Stack:
+```
