@@ -1,7 +1,9 @@
 1. [Check balanced parens](#check-balanced-parens)
 
 
-# Check balanced parens (@toomasv)
+# Check balanced parens
+
+Credits: (@toomasv)
 
 ```
 Sometimes you can also use the new transcode to check your strings for balanced parens:
