@@ -22,10 +22,6 @@ When everything else fails, the Red community is here for you. Also, make sure t
 # A command is not working as expected, what should I do?
 The issue may have been fixed in one of the [latest automated builds](https://www.red-lang.org/p/download.html), give it a try.
 
-# Why `random` always gives me the same sequence?
-That's an intentional design behavior to allow reproducibility by default (some refer to it as a _soft randomness_). In other words, being able to track what sequence random is producing makes it a lot easier when you need to fix some bug in your code.
-In order to get a proper random sequence, first you need to initialize the random function with a seed using `random/seed`. A common reliable seed is the current time, so you could use `random/seed now/time`. After that, `random` will generate random sequences calculated based on the current time.
-
 # I have been reading Rebol Docs, but not everything works in Red, why?
 While both languages share similar look'n'feel, Red is not entirely compatible with Rebol and is not developed with that goal in mind; it tries to take the best parts from both Rebol2 and Rebol3, bringing its own design novelty when needed.
 
