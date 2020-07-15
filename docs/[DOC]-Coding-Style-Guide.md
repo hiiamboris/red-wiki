@@ -11,6 +11,7 @@
 * [Comments](#comments)
 * [String syntax](#string-syntax)
 * [New line usage](#new-line-usage)
+* [Common Refinement Names](#common-refinement-names)
 
 ### Introduction
 
@@ -431,3 +432,13 @@ One exception to the rule is when a single-line string includes the " character 
 ### New line usage
 
 TBD
+
+### Common Refinement Names
+
+TBD: Draft notes only so far
+
+Some refinement names are used by multiple functions. Keeping names and behavior consistent helps everyone. Behavior can't always match, because some functions may be series oriented and others word oriented, or have different general purposes. e.g. `find/any and select/any` are consistent, while `set/any and get/any` are consistent. `/All` may have different behavior, but can still generally mean "completeness" in some sense.
+
+In addition, common refinements may take arguments, and those names should be consistent as well. e.g. `/into`, `/part`, `/skip` and their respective `output, length, size` parameters.
+
+`/deep /only /into /part /as /next /index /any /all /last /case /reverse /skip`
