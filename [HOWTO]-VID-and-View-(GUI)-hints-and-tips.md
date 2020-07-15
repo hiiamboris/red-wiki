@@ -249,3 +249,30 @@ context [
     ]
 ]
 ```
+
+# Panel layouts
+
+Panels are just sub `layout`s, but can have an optional divider value for grid layouts. Something to note is that the divider value is used based on `across/below` for the panel. If you use `across`, the default, it's the number of columns, for `below` it's the number of rows. You can choose what's best for each case. As an example, you could make the `text` faces wider here, to prevent the text lists from overlapping, or you can use the second example and the `text-list` widths are taken into account.
+
+```
+panel 3 [
+	text "A"  
+	text "B" 
+	text "C"   
+	text-list data ["a" "aa" "aaa"]
+	text-list data ["b" "bb" "bbb"]
+	text-list data ["c" "cc" "ccc"]
+]
+```
+
+```
+panel 2 [
+	below
+	text "A"  
+	text-list data ["a" "aa" "aaa"]
+	text "B" 
+	text-list data ["b" "bb" "bbb"]
+	text "C"   
+	text-list data ["c" "cc" "ccc"]
+]
+```
