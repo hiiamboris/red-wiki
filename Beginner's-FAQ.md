@@ -25,9 +25,9 @@ The issue may have been fixed in one of the [latest automated builds](https://ww
 # I have been reading Rebol Docs, but not everything works in Red, why?
 While both languages share similar look'n'feel, Red is not entirely compatible with Rebol and is not developed with that goal in mind; it tries to take the best parts from both Rebol2 and Rebol3, bringing its own design novelty when needed.
 
-As the Red user manual is not quite finished yet, [REBOL/Core manual](http://www.rebol.com/docs/core23/rebolcore.html) is usually recommended as newcomer's starting point; one can read it with [this](https://github.com/red/red/wiki/%5BDOC%5D-REBOL-Core-Users-Guide-__-A-walkthrough-with-Red) walkthrough at hand and then progress thru a [list](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources) of other learning resources if deemed necessary.
+As the Red user manual is not quite finished yet, [REBOL/Core manual](http://www.rebol.com/docs/core23/rebolcore.html) is usually recommended as newcomer's starting point; one can read it with [this](https://github.com/red/red/wiki/%5BDOC%5D-REBOL-Core-Users-Guide-__-A-walkthrough-with-Red) walkthrough at hand and then progress through a [list](https://github.com/red/red/wiki/%5BLINKS%5D-Learning-resources) of other learning resources if deemed necessary.
 
 For a non-exhaustive list of differences between Rebol and Red, check out [this](https://github.com/red/red/wiki/%5BDOC%5D-Differences-between-Red-and-Rebol) wiki page.
 
-# I'm feeling overwhelmed right now, what should I do?
+# I'm feeling overwhelmed, what should I do?
 For anyone new to Red, remember to play, have fun, explore, and give yourself time. Because it looks familiar in many ways, we want to carry over things we know from other programming languages. That works to some extent, then you step into the deep part of the lake and flounder around for a while. Be patient with yourself, enjoy the ride and don't forget that the community is here for you!
