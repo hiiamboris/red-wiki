@@ -754,6 +754,8 @@ With bit effort, you can use this feature to fake variadic functions, but then y
 
 Red appears to follow R3 style.
 
+(TBD: create an example from https://github.com/red/red/issues/1850 that users can play with)
+
 # `--no-runtime` option
 You can get the compiler to output the "pure" machine code of a Red/System program by using the `--no-runtime` option. It will not include the Red runtime so you can't use `print` in the program. (You would need to write your own input and output routines).
 
