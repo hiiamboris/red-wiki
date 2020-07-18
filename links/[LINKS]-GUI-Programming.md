@@ -3,13 +3,13 @@ External links appear in quotes.
 
 #### Official Red documentation pages:
 
-* ["GUI System"](https://doc.red-lang.org/en/gui.html)
+* ["GUI System"](https://github.com/red/docs/blob/master/en/gui.adoc)
 
-* ["View Engine"](https://doc.red-lang.org/en/view.html)
+* ["View Engine"](https://github.com/red/docs/blob/master/en/view.adoc)
 
-* ["VID Dialect"](https://doc.red-lang.org/en/vid.html)
+* ["VID Dialect"](https://github.com/red/docs/blob/master/en/vid.adoc)
 
-* ["Draw Dialect"](https://doc.red-lang.org/en/draw.html)
+* ["Draw Dialect"](https://github.com/red/docs/blob/master/en/draw.adoc)
 
 
 #### Additional information:
