@@ -346,6 +346,8 @@ view [now-text]
 ; 17:32:16
 ```
 
+See https://github.com/red/REP/issues/82 for the **dangers of using `init`.**
+
 ## Difference between `init` & `on-create`
 Only (?) with `init` you can change a face:
 ```
