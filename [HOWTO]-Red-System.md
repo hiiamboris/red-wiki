@@ -4,7 +4,7 @@
 
 Even though functions don't have names in Redbol languages, here @9214 shows us how to get the word used to call a function, if any:
 
-```
+```red
 Red [
     Date: 3-Aug-2020
     Note: "Compile in release mode."
@@ -14,17 +14,17 @@ Red [
 
 name?: routine [/local frame name body?][
     frame: stack/ctop
+    name:  as red-value! none-value
     until [
         body?: frame/header and stack/FLAG_IN_FUNC <> 0
         frame: frame - 1
         if body? [
-            name: word/push* frame/header >> 8 and FFFFh
-            SET_RETURN(name)
-            exit
+            name: as red-value! word/push* frame/header >> 8 and FFFFh
+            break
         ]
         frame = stack/cbottom
     ]
-    SET_RETURN(none-value)
+    SET_RETURN(name)
 ]
 
 foo: does [print ["My name is" name?]]
