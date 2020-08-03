@@ -1,5 +1,9 @@
 # Red/System HowTo
 
+This is a Red/System how-to page. Feel free to add complete Red/System functions or solutions involves Red/System (like routines).
+
+Check [Guru Meditations](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditation) for other Red/System notes and also [Red/System Language Specification](https://static.red-lang.org/red-system-specs.html).
+
 ## How to get function name
 
 Even though functions don't have names in Redbol languages, here @9214 shows us how to get the word used to call a function, if any:
@@ -35,3 +39,19 @@ probe name?
 ```
 
 [Here](https://gitter.im/red/red?at=5f271d5cb9bc40357bb25be8) you can find another version.
+
+## How to convert `c-string!` to `red-string!`
+
+```
+Red [Note: "compile with -r flag"]
+
+foo: routine [
+    /local c-string red-string
+][
+    c-string: "this is a C string!"
+    red-string: string/load c-string length? c-string UTF-8
+    SET_RETURN(red-string)
+]
+
+print replace foo "C" "Red"
+```
