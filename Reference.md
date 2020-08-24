@@ -23,4 +23,4 @@ External links appear in quotes.
 
 * [Red Enhancement Proposals](https://github.com/red/red/wiki/%5BDOC%5D-REP---Red-Enhancement-Proposals)
 
-* [How-Red-Works---A-brief-explanation](https://github.com/red/red/wiki/%5BNOTES%5D-How-Red-Works---A-brief-explanation)
+* [How-Red-Works---A-brief-explanation](https://github.com/red/red/wiki/%5BDOC%5D-How-Red-works,-a-brief-explanation)
