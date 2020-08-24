@@ -1,6 +1,6 @@
 # Learning resources for Parse.
 
-* ["A beginner friendly Parse article by Michael Sydenham"](http://www.michaelsydenham.com/reds-parse-dialect/)
+* ["Official Parse documentation"](https://github.com/red/docs/blob/master/en/parse.adoc)
 
 * ["red-lang.org overview of Parse"](https://www.red-lang.org/2013/11/041-introducing-parse.html)
 
