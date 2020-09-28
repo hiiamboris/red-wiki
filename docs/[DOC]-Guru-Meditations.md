@@ -618,6 +618,10 @@ probe write/info http://httpbin.org/put [
 ]
 
 probe write/info http://httpbin.org/put [HEAD]
+
+; HTTPS is also possible
+set [status headers body] write/info https://httpbin.org/get [GET]
+probe load-json body
 ```
 
 # RGB image data via FFI
