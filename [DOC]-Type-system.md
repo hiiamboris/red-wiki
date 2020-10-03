@@ -39,4 +39,4 @@ It is worth remembering that type system is a formalized set of self-imposed con
 
 **`‡`** Due to a wide gap between type systems of Red and other languages, this typically narrows the range of usable datatypes to integers, strings, floats, and boolean values.
 
-**`§`** Cf. Seymour Pappert's concept of microworlds; Rebol (and therefore Red) are influenced by Logo in this regard.
+**`§`** Cf. Seymour Papert's concept of microworlds; Rebol (and therefore Red) are influenced by Logo in this regard.
