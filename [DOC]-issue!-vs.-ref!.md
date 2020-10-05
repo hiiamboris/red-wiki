@@ -27,7 +27,7 @@ Values of both datatypes can be used to represent generic alphanumeric identifie
 
 #### String
 
-`ref!` belongs to `any-string!` typeset, which is an umbrella term for mutable string-like series, other examples being `tag!` or `file!`. Internally, such strings are mutable binary buffers containing UTF-8 data; they are allocated on the heap and reclaimed by the garbage collector when no longer needed.
+`ref!` belongs to `any-string!` typeset, which is an umbrella term for string-like series, other examples being `tag!` or `file!`. Internally, such strings are mutable binary buffers containing UTF-8 data; they are allocated on the heap and reclaimed by the garbage collector when no longer needed.
 
 `any-string!` values are extremely flexible and versatile but can become a performance bottleneck in cases where intensive lookup operations are needed. Note also that two strings, while being identical in form and content, still require separate buffers to hold their data.
 
