@@ -1,0 +1,40 @@
+### About
+
+This article briefly discusses the release model that the Red project adopted and how it affects you as a developer.
+
+### Description
+
+Red follows the so-called _rolling release_ model, in which improvements and additions to the codebase are made om a daily basis and become automatically available as _nightly builds_ of the Red toolchain, or as commits in the Git version control system (VCS).
+
+This model is also complemented by periodic _point releases_ which consolidate a set of developed features and extra efforts of bug fixing, regression testing (including manual testing of all the View backends) together into manually versioned _stable builds_, which are then followed by a changelog and release announcement in the form of one or many official blog articles.
+
+### Types of builds
+
+Thus, Red provides two build flavors, each serving a different purpose:
+
+Nightly::
+An up-to-date "carbon copy" of the codebase that is created with every commit. A moving target for the evaluation of new features and bug reporting. Suitable for active contributors and Red followers in general, but might not be stable enough for the development of large projects and software products.
+
+Stable::
+A historical artifact that "stabilizes" the ever-changing flow of commits into a lasting structure. Made for showcasing, media coverage, checking out the https://github.com/red/code[official examples]. Suitable for newcomers evaluating Red on its merits, and, depending on the type of software and development practices, for the creation of applications that favor stability over bleeding-edge features.
+
+Both types of the builds are provided purely for convenience and ease of end-user distribution, and because of general unavailability of Rebol SDK licenses required footnote:[This is a constraint that stems from the usage of Rebol2 during the bootstrapping phase. Rebol SDK will not be required once Red becomes self-hosted.] for building an executable binary from a set of scripts (the process called _encapping_). An established practice among contributors is to https://github.com/red/red#running-red-from-the-sources-for-contributors[build Red from sources], either at the tip of the development branch or at the specific commit. As a matter of fact, the toolchain binary is just an encapped Red codebase with a convenient command-line wrapper.
+
+### Development progress
+
+The scope of the project differs from those that use regular and frequent releases (e.g. Rust with 6-week release cycle), cutting across both low- and high-level aspects of language design and encompassing multiple problem domains, from systems programming to daily scripting. Structurally, the Red team is relatively small, with its members scattered around the globe yet centralizing their complementary skill-sets around the roadmap established by the https://github.com/dockimbel[project leader].
+
+For these reasons, the development is often carried out in multiple branches in parallel (sometimes privately) and synchronized with the upstream only when the developed milestone is deemed to be stable and feature-complete enough for the review and public use. As such, neither nightly nor stable builds alone represent the current state of the project, and are not indicative of the development progress: nightly builds accumulate the changes made only in the main development branch, and stable builds become technically outdated the moment they are versioned, since the development never ceases.
+
+### Staying up-to-date
+
+It follows that the state of the project, in all its breadth, can be grasped only with the birds-eye overview of all the https://github.com/red/red/branches[official development branches] and the https://www.red-lang.org/[official blog] announcements. For those who are unfamiliar (or uncomfortable) with Git VCS or building from sources, the Red team provides automated nightly builds for the Big-3 platforms:
+
+```
+https://static.red-lang.org/dl/branch/<branch>/<platform>/red-latest[.exe]
+
+<branch>   : branch name (see Github repository)
+<platform> : platform name (win, linux, mac)
+```
+
+Furthermore, to help track the development progress both in the official and private branches, as well as to curate the projects in the Red ecosystem, there exists the official https://progress.red-lang.org[aggregator] of Red-related Github repositories and gists.
