@@ -2,7 +2,7 @@
 
 This page lists dependencies for major Linux distributions required by Red/View GTK backend.
 
-### Ubuntu
+### Debian
 
 #### 64-bit
 ```
