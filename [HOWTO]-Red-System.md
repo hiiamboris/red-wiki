@@ -2,7 +2,7 @@
 
 This is a Red/System how-to page. Feel free to add complete Red/System functions or solutions involves Red/System (like routines).
 
-Check [Guru Meditations](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditation) for other Red/System notes and also [Red/System Language Specification](https://static.red-lang.org/red-system-specs.html).
+Check [Guru Meditations](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditations) for other Red/System notes and also [Red/System Language Specification](https://static.red-lang.org/red-system-specs.html).
 
 ## How to get function name
 
