@@ -1,0 +1,116 @@
+### About
+
+This note briefly lists some not-yet-documented features of Red.
+
+#### `copy/part` with `pair!`
+
+`copy` is the only (or the first among many) actions that accepts `pair!` argument for its `/part` refinement; `pair!` in such case denotes a "slice" to copy over:
+
+- `x` coordinate denotes an offset relative to series' index, inclusively;
+- `y` coordinate denotes an offset relative to series' index, exclusively.
+
+This feature appears to be either buggy or inconsistent. See https://github.com/red/red/commit/8bd0195e[design discussion].
+
+*Examples*
+```red
+>> block: at [a b c x d e f] 4
+== [x d e f]
+
+>> copy/part block -3x0
+== [a b c]
+>> copy/part block -100x0 ; why?
+== [a b c x d e f]
+
+>> copy/part block 5x-1 ; always the case if Y <= X
+== []
+
+>> copy/part block 0x3 ; 0 is treated as -1
+== [c x d]
+>> copy/part block -1x3 ; ???
+== [c x d e]
+```
+
+#### `changed` reflector in objects
+
+Objects permit tracking cummulative changes to their fields via `changed` reflector, which returns a block of words, denoting modified fields.
+
+Appears to ignore bulk changes made by `set`.
+
+*Examples*
+
+```red
+>> foo: object [x: 1 y: 2]
+== make object! [
+    x: 1
+    y: 2
+]
+
+>> set foo [bar baz]
+== [bar baz]
+>> reflect foo 'changed
+== []
+
+>> do bind [x: y: 0] foo
+== 0
+>> reflect foo 'changed
+== [x y]
+```
+
+`modify` can be used to clear the accumulated changes by passing `none` (the only accepted type of argument in this case):
+
+```red
+>> modify foo 'changed none
+== make object! [
+    x: 0
+    y: 0
+]
+>> reflect foo 'changed
+== []
+
+>> set 'foo/x 1
+== 1
+>> reflect foo 'changed
+== [x]
+>> put foo 'y 2
+== 2
+>> reflect foo 'changed
+== [x y]
+```
+
+#### `pick` and bitsets
+
+`pick` can be used to check if a given `char!` value (or a block/string of them, or a UCP numeral, or even a charset spec) belongs to character set denoted by `bitset!` value.
+
+*Example*
+```red
+>> upper: charset [#"A" - #"Z"]
+== make bitset! #{00000000000000007FFFFFE0}
+
+>> pick upper to float! #"O"
+== true
+>> pick upper to integer! #"z"
+== false
+
+>> pick upper uppercase "abracadabra"
+== true
+>> pick upper "abracadabra"
+== false
+
+>> pick upper [#"X" #"O"]
+== true
+>> pick upper [#"x" #"O"]
+== false
+
+>> pick charset [#"A" - #"C"] [#"C" - #"E"] ; intersection
+== true
+>> pick charset [#"A" - #"C"] [#"D" - #"E"] ; no common elements
+== false
+```
+
+Same holds for path notation:
+```red
+>> upper/(#"Y")
+== true
+>> upper/(#"i")
+== false
+```
