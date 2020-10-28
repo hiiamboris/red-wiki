@@ -32,9 +32,7 @@ This feature appears to be either buggy or inconsistent. See https://github.com/
 
 #### `changed` reflector in objects
 
-Objects permit tracking cummulative changes to their fields via `changed` reflector, which returns a block of words, denoting modified fields.
-
-Appears to ignore bulk changes made by `set`.
+Objects permit tracking cumulative changes to their fields via `changed` reflector, which returns a block of words, denoting modified fields.
 
 *Examples*
 
