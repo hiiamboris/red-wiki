@@ -34,7 +34,7 @@ The actual origin of the name (that we take up as an authoritative) is that Red 
 >> view [base with [color: last block]]
 ```
 
-It does not end here, however. Red-the-language is not a thing in itself, but a foothold for other dialects and language environments that can be built on top of it, thanks to a shared data format: names such as Red/System, Red/View or Red/C3 all take their root in Red, and, in a way, refine Red's semantics, narrowing/reducing it down to a domain-specific purpose.
+It does not end here, however. Red-the-language is not a thing in itself, but a foothold for other dialects and language environments that can be built on top of it, thanks to a shared data format: names such as Red/System, Red/View or Red/C3 all take their root in Red, and, in a way, *refine* Red's semantics, narrowing/reducing it down to a domain-specific purpose.
 
 ```red
 >> type? /system
