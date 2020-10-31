@@ -1,16 +1,14 @@
 ### About
 
-This page lists dependencies for major Linux distributions required by Red/View GTK backend.
+This page lists dependencies for major Linux distributions required by Red/View GTK backend. Core dependencies are listed on the official [download page](https://www.red-lang.org/p/download.html).
 
 ### Debian
 
 #### 64-bit
+
 ```
 sudo dpkg --add-architecture i386
 sudo apt-get update
-# Core Red dependencies:
-sudo apt-get install -y libc6:i386 libcurl3:i386
-# GTK-specific dependencies:
 sudo apt-get install -y libgtk-3.0:i386 libcanberra-gtk3-module:i386
 ```
 
