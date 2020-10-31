@@ -1,6 +1,10 @@
 ### About
 
-This page lists dependencies for major Linux distributions required by Red/View GTK backend. Core dependencies are listed on the official [download page](https://www.red-lang.org/p/download.html).
+This page lists dependencies for major Linux distributions required by Red/View GTK backend.
+
+Core dependencies are listed on the official [download page](https://www.red-lang.org/p/download.html).
+
+If you don't need a View module, compile the console with `--no-view` flag (see `--help` output for more info).
 
 ### Debian
 
