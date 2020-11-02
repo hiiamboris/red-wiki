@@ -113,7 +113,7 @@ Same holds for path notation:
 == false
 ```
 
-#### Binary resources
+#### Executable's resources
 
 An excerpt from https://www.red-lang.org/2016/03/060-red-gui-system.html[here].
 
