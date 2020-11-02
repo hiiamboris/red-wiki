@@ -135,4 +135,4 @@ If no Icon option is specified, a default Red icon will be provided.
 
 #### Including binary data
 
-`#include-binary` preprocessor directive accepts `file!` or `string!` argument that denotes a path to binary data to be inlined as `binary!` value. Useful for embedding application resources, at the cost of beefing up the resulting executable size.
+`#include-binary` preprocessor directive accepts `file!` or `string!` argument that denotes a file path to binary data to be inlined as `binary!` value. Useful for embedding application resources, at the cost of beefing up the resulting executable size.
