@@ -13,14 +13,14 @@ If you don't need a View module, compile the console with `--no-view` flag (see 
 ```
 sudo dpkg --add-architecture i386
 sudo apt-get update
-sudo apt-get install -y libgtk-3.0:i386 libcanberra-gtk3-module:i386
+sudo apt-get install -y libgtk-3.0:i386 libcanberra-gtk3-module:i386 libgdk-pixbuf2.0-0:i386
 ```
 
 #### 32-bit
 
 ```
 sudo apt-get update
-sudo apt-get install -y libgtk-3.0 libcanberra-gtk3-module
+sudo apt-get install -y libgtk-3.0 libcanberra-gtk3-module libgdk-pixbuf2.0-0
 ```
 
 ### CentOS
