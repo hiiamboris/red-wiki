@@ -1439,10 +1439,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [toy-stack-compiler.red](https://gist.github.com/Skrylar/07bc34904ea74a4b32f6) - 
 
 		tags: 
-* snotbubble - 
-	* [fulltardie](https://github.com/snotbubble/fulltardie) - what's up next
-
-		tags: 
 * soapdog - 
 	* [btc.red](https://gist.github.com/soapdog/ab67db55ec6e7386eb68542d5d3df64b) - Calculo de rendimento em BTC na Walltime
 
