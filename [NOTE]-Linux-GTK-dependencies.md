@@ -6,7 +6,7 @@ Core dependencies are listed on the official [download page](https://www.red-lan
 
 If you don't need a View module, compile the console with `--no-view` flag (see `--help` output for more info).
 
-### Debian
+### Debian/Ubuntu
 
 #### 64-bit
 
