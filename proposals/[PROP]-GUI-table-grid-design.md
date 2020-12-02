@@ -211,3 +211,9 @@ A fourth design requirement is the ability to store and apply table states for u
 A fifth design requirement is that row and column references are never physical. This was an infuriating part of RebGUI's TABLE, until some functions were added to clunkily convert physical row IDs into logical row IDs. In 99.9% of cases, you want to get and set selection data from sorted row and column order, not from the physical order.
 
 I may release the source for it at some point, when the table widget is integrated into our program and depending if I'm allowed to do that.
+
+
+# References
+
+- https://www.ag-grid.com/
+- https://www.microsoft.com/en-us/research/uploads/prod/2020/04/extended_gridlets_esop.pdf
