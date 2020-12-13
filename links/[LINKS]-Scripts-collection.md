@@ -70,10 +70,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [red-horizon](https://github.com/cromo/red-horizon) - Personal exploration of the Red programming language http://www.red-lang.org/
 
 		tags: 
-* cwt8805 - 
-	* [RedScripts](https://github.com/cwt8805/RedScripts) - some code in red programming language
-
-		tags: 
 * Cybarite - 
 	* [Duplicate-Directory.Red](https://gist.github.com/Cybarite/2bdaef12e256b9add8e77319687b97d3) - Duplicate-Directory
 
