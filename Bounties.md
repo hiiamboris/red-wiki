@@ -6,11 +6,11 @@ Here are all the open bounties for Red.
 
 *PayPal money transfer*
 
-* ListView VID Component: **600 USD** GiuseppeC. 
+* TABLE VID Component: **600 USD** GiuseppeC. 
 
 *PayPal Money Transfer*
 
-* Addition to the ListView component with DATAGRID functions (extended ListView with Telerik UI like Datagrid): **3.000 USD** *Viayuve
+* Addition to the TABLE VID component with DATAGRID functions (extended ListView with Telerik UI like Datagrid): **3.000 USD** *Viayuve
 
 *(Ethereum or any other electronic coin)*
 
