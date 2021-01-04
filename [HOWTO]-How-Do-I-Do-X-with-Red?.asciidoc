@@ -196,6 +196,57 @@ REFINEMENTS:
 '''
 ### Graphics (VID and View)
 
+* Make basic editor
+
+```red
+view/options/flags [
+	title "Basic Editor"
+	editor: area 800x600 on-change [face/parent/actors/saved?: no]
+][
+	menu: ["File" ["Open" open "Save" save "Quit" quit]] 
+	actors: object [
+		on-menu: func [face event][
+			switch event/picked [
+				open [
+					if file: request-file [
+						editor/text: read file
+						face/text: form file
+					]
+				] 
+				save [
+					if file: request-file/save/file file [
+						write file editor/text 
+						saved?: yes
+					]
+				] 
+				quit [check-saving]
+			]
+		]
+		on-close: does [check-saving]
+		on-resizing: func [face event][
+			editor/size: face/size - 20
+		]
+		check-saving: does [either saved? [unview][confirm unview]] ; or `quit` but this kills console too
+		saved?: yes 
+		file: none 
+		confirm: does [
+			view [
+				title "Confirm"
+				text "Save file?" return 
+				button "Yes" [
+					file: any [file "New"]
+					if file: request-file/save/file file [
+						write file editor/text
+					]
+					unview
+				] 
+				button "No" [unview]
+			]
+		]
+	]
+] 'resize
+```
+
 * Add examples...
 
 '''
