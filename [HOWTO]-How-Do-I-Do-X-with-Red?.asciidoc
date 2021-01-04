@@ -250,6 +250,7 @@ view/options/flags [
 					]
 				] 
 				save [
+					file: any [file "New"]
 					if file: request-file/save/file file [
 						write file editor/text 
 						saved?: yes
