@@ -62,48 +62,6 @@ Who are you? ME
 == "ME"
 ```
 
-* Get the current directory
-
-```red
->> what-dir
-== %/home/gt/
-```
-
-* List the contents of the current directory
-
-```red
-> list-dir %Downloads/
-	jdk-15.0.1_linu...  	20201104_003631...  	20201107_105256...  
-	Get_Programming...  
-```
-
-```red
->> list-dir what-dir
-	Pictures/           	.themes/            	tmp/                
-	.profile            	red                 	.lazarus/           
-	.gtkrc-xfce         	email               	HowDo.adoc          
-	pm-tup.hs           	.sudo_as_admin_...  	Documents/    
-```
-
-`help list-dir` in the Red console.
-
-```red
->> help list-dir
-USAGE:
-     LIST-DIR dir
-
-DESCRIPTION: 
-     Displays a list of files and directories from given folder or current one. 
-     LIST-DIR is a function! value.
-
-ARGUMENTS:
-     dir          [any-type!] "Folder to list."
-
-REFINEMENTS:
-     /col         => Forces the display in a given number of columns.
-        n            [integer!] "Number of columns."
-```
-
 * Read from a file, or url
 
 ```red 
@@ -206,7 +164,49 @@ REFINEMENTS:
         encoding     [word!] 
 ```
 
-Interrogating stuff
+Interogating stuff
+
+* Get the current directory
+
+```red
+>> what-dir
+== %/home/gt/
+```
+
+* List the contents of the current directory
+
+```red
+> list-dir %Downloads/
+	jdk-15.0.1_linu...  	20201104_003631...  	20201107_105256...  
+	Get_Programming...  
+```
+
+```red
+>> list-dir what-dir
+	Pictures/           	.themes/            	tmp/                
+	.profile            	red                 	.lazarus/           
+	.gtkrc-xfce         	email               	HowDo.adoc          
+	pm-tup.hs           	.sudo_as_admin_...  	Documents/    
+```
+
+`help list-dir` in the Red console.
+
+```red
+>> help list-dir
+USAGE:
+     LIST-DIR dir
+
+DESCRIPTION: 
+     Displays a list of files and directories from given folder or current one. 
+     LIST-DIR is a function! value.
+
+ARGUMENTS:
+     dir          [any-type!] "Folder to list."
+
+REFINEMENTS:
+     /col         => Forces the display in a given number of columns.
+        n            [integer!] "Number of columns."
+```
 
 * Get file size - `size?`
 
@@ -229,6 +229,7 @@ Interrogating stuff
 >> exists? %some-file.txt
 == false
 ```
+
 
 '''
 ### Graphics (VID and View)
