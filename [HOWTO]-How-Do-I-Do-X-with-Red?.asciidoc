@@ -5,6 +5,8 @@ __This is intended to be a collaborative list of how to perform common programmi
 
 '''
 
+Printing stuff
+
 * Print a value followed by a newline - `print`
 
 ```red
@@ -35,6 +37,8 @@ n: 42
 == 42
 
 ```
+
+Reading stuff
 
 * Get console user input - `input`
 
@@ -117,6 +121,13 @@ REFINEMENTS:
 
 ```
 
+* Read a specific line from a file - `read/lines`, `pick`
+
+```red
+>> pick read/lines %day1.txt 42
+== "1912"
+```
+
 `help read` in the Red console.
 
 ```red
@@ -142,6 +153,8 @@ REFINEMENTS:
      /as          => Read with the specified encoding, default is 'UTF-8.
         encoding     [word!] 
 ```
+
+Writing stuff
 
 * Write to a File or URL
 
@@ -191,6 +204,30 @@ REFINEMENTS:
         access       [block!] 
      /as          => Write with the specified encoding, default is 'UTF-8.
         encoding     [word!] 
+```
+
+Interrogating stuff
+
+* Get file size - `size?`
+
+ From: https://rosettacode.org/wiki/File_size#Red
+
+```red
+>> size? %input.txt
+== 39244
+
+>> size? %/c/input.txt
+== 39244
+```
+
+* Check if a file exists - `exists?`
+
+```red
+> exists? %day1.txt
+== true
+
+>> exists? %some-file.txt
+== false
 ```
 
 '''
