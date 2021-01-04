@@ -1,0 +1,149 @@
+__This is intended to be a collaborative list of how to perform common programming tasks with Red.__
+
+### Input and Output (IO)
+
+'''
+
+* Print a value followed by a newline
+
+```red
+>> print "Hello Red"
+Hello Red
+```
+
+```red
+>> print ["2 x 2 =" 2 * 2]
+2 x 2 = 4
+```
+
+* Print a word and the value it refers to - `??`
+
+```red
+>> n: 42
+== 42
+
+>> ?? n
+n: 42
+```
+
+* Print something and return its value - `probe`
+
+```red
+>> probe n
+42
+== 42
+
+```
+* Get console user input - `input`
+
+```red
+>> i: input   ; set i to the value of returned from the input function
+
+hi
+== "hi"
+```
+
+```red
+>> i
+== "hi"
+```
+
+* Get console user input with a prompt -  `ask`
+
+```red
+>> i: ask "Who are you? "
+Who are you? ME
+== "ME"
+```
+
+* Get the current directory
+```red
+>> what-dir
+== %/home/gt/
+```
+
+* List the contents of the current directory
+```red
+> list-dir %Downloads/
+	jdk-15.0.1_linu...  	20201104_003631...  	20201107_105256...  
+	Get_Programming...  
+```
+
+```red
+>> list-dir what-dir
+	Pictures/           	.themes/            	tmp/                
+	.profile            	red                 	.lazarus/           
+	.gtkrc-xfce         	email               	HowDo.adoc          
+	pm-tup.hs           	.sudo_as_admin_...  	Documents/    
+```
+
+`help list-dir` in the Red console.
+
+```red
+>> help list-dir
+USAGE:
+     LIST-DIR dir
+
+DESCRIPTION: 
+     Displays a list of files and directories from given folder or current one. 
+     LIST-DIR is a function! value.
+
+ARGUMENTS:
+     dir          [any-type!] "Folder to list."
+
+REFINEMENTS:
+     /col         => Forces the display in a given number of columns.
+        n            [integer!] "Number of columns."
+```
+
+* Read from a file, or url
+```red 
+>> read %day1.txt
+== {1810^/1729^/1857^/1777^/1927^/1936^/1797^/1719^/1703^/1758^/1768^/2008^/1963^/1925^/1919^/...
+```
+
+```red
+>> read %Downloads/
+== [%jdk-15.0.1_linux-x64_bin.deb %20201104_003631.jpg %20201107_105256.jpg %Ge...
+```
+```red
+>> read https://www.red-lang.org/p/getting-started.html
+== {<!DOCTYPE html>^/<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xh...
+
+```
+
+`help read` in the Red console.
+
+```red
+> help read
+USAGE:
+     READ source
+
+DESCRIPTION: 
+     Reads from a file, URL, or other port. 
+     READ is an action! value.
+
+ARGUMENTS:
+     source       [file! url!] 
+
+REFINEMENTS:
+     /part        => Partial read a given number of units (source relative).
+        length       [number!] 
+     /seek        => Read from a specific position (source relative).
+        index        [number!] 
+     /binary      => Preserves contents exactly.
+     /lines       => Convert to block of strings.
+     /info        => 
+     /as          => Read with the specified encoding, default is 'UTF-8.
+        encoding     [word!] 
+```
+
+* Write to a File or URL
+
+Add examples...
+
+'''
+### Graphics (VID and View)
+
+* Add examples...
+
