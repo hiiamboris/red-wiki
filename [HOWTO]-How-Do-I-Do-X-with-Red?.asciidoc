@@ -35,6 +35,7 @@ n: 42
 == 42
 
 ```
+
 * Get console user input - `input`
 
 ```red
@@ -58,12 +59,14 @@ Who are you? ME
 ```
 
 * Get the current directory
+
 ```red
 >> what-dir
 == %/home/gt/
 ```
 
 * List the contents of the current directory
+
 ```red
 > list-dir %Downloads/
 	jdk-15.0.1_linu...  	20201104_003631...  	20201107_105256...  
@@ -98,6 +101,7 @@ REFINEMENTS:
 ```
 
 * Read from a file, or url
+
 ```red 
 >> read %day1.txt
 == {1810^/1729^/1857^/1777^/1927^/1936^/1797^/1719^/1703^/1758^/1768^/2008^/1963^/1925^/1919^/...
