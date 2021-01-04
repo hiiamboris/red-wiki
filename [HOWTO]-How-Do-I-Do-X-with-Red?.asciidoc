@@ -210,8 +210,6 @@ REFINEMENTS:
 
 * Get file size - `size?`
 
- From: https://rosettacode.org/wiki/File_size#Red
-
 ```red
 >> size? %input.txt
 == 39244
