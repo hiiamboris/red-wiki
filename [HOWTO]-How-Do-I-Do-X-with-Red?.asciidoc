@@ -147,3 +147,39 @@ Add examples...
 
 * Add examples...
 
+### TBD
+
+- Install Red
+- Use the REPL, play with Red, try red
+- Write a function
+- Include type specs for function args
+- Define an array/map/struct
+- Specify a datatype for a variable
+- Create an OOP class
+- Inherit from an object
+- Implement an OO interface
+- Create private/protected members in an object
+- Find out what methods an object or datatype supports
+- Find out what datatypes are available in Red, and how to use them
+- Enforce immutability
+- Pass values by reference or by value to functions
+- Create a lambda/anonymous function
+- Get the name of the function being called
+- Read and write files
+- Make HTTP requests (read URLs)
+- Access an API that uses JSON
+- Use command line arguments to Red scripts
+- Call/launch other programs, including redirecting I/O
+- Call C functions in DLLs
+- Compile and cross compile
+- Import a library, load a module, use a package manager
+- Create a GUI
+- Set the title for a GUI window
+- Set the icon for an EXE
+- Use HTML in a Red GUI
+- Write Javascript code in Red
+- Include a web-browser component in a Red GUI
+- Do machine learning
+- Use regular expressions
+- Split a string
+- Parse a string
