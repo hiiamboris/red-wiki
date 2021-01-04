@@ -6,17 +6,19 @@ Developing a problem-solving mindset is a core skill in becoming a good programm
 1. Red's console `help` command is your personal helper! 
 Type `help` in the Red console to learn how to access the built-in documentation. Don't be afraid, Red's internal documentation is very concise so you can get a grasp of the main information in a glance. Try typing `help help` to see how `help` itself operates.
 
-2. [Red By Example](https://www.red-by-example.org/) - Here you will find a library of usage examples that hopefully will shed some light on what you are trying to accomplish.
+2. [How Do I Do X with Red?](https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F) - Quick usage examples for common tasks.
 
-3. [Red Official Documentation](https://github.com/red/docs/blob/master/en/SUMMARY.adoc) -  It's currently under construction, but hopefully what you are looking for is already there.
+3. [Red By Example](https://www.red-by-example.org/) - Here you will find a library of usage examples that hopefully will shed some light on what you are trying to accomplish.
 
-4. Rebol Docs, specially [Rebol/Core Manual](http://www.rebol.com/docs/core23/rebolcore.html) - Red has a lot in common with its older Rebol brother. While there are many differences between them, specially as Red's development advances, you may find an analogue solution for what you are looking for in the Rebol's realm.   
+4. [Red Official Documentation](https://github.com/red/docs/blob/master/en/SUMMARY.adoc) -  It's currently under construction, but hopefully what you are looking for is already there.
 
-5. [Red Wiki](https://github.com/red/red/wiki) - It's growing every day and the best part: you can contribute!
+5. Rebol Docs, specially [Rebol/Core Manual](http://www.rebol.com/docs/core23/rebolcore.html) - Red has a lot in common with its older Rebol brother. While there are many differences between them, specially as Red's development advances, you may find an analogue solution for what you are looking for in the Rebol's realm.   
 
-6. Search "redlang + your-question" in your favorite web search engine - As the Red community grows, so does Red presence online!
+6. [Red Wiki](https://github.com/red/red/wiki) - It's growing every day and the best part: you can contribute!
 
-7. [Ask us](https://gitter.im/red/help), we are here to help! 
+7. Search "redlang + your-question" in your favorite web search engine - As the Red community grows, so does Red presence online!
+
+8. [Ask us](https://gitter.im/red/help), we are here to help! 
 When everything else fails, the Red community is here for you. Also, make sure to say "hi" in our [Welcome chat room](https://gitter.im/red/red/welcome).
 
 # Q. A command is not working as expected, what should I do?
