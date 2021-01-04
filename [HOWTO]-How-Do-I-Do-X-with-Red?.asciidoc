@@ -4,7 +4,7 @@ __This is intended to be a collaborative list of how to perform common programmi
 
 '''
 
-* Print a value followed by a newline
+* Print a value followed by a newline - `print`
 
 ```red
 >> print "Hello Red"
@@ -37,7 +37,7 @@ n: 42
 * Get console user input - `input`
 
 ```red
->> i: input   ; set i to the value of returned from the input function
+>> i: input   ; set i to the value returned from the input function
 
 hi
 == "hi"
