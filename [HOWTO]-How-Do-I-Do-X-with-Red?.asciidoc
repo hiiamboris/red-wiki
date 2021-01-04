@@ -1,5 +1,6 @@
 __This is intended to be a collaborative list of how to perform common programming tasks with Red.__
 
+
 ### Input and Output (IO)
 
 '''
@@ -140,16 +141,65 @@ REFINEMENTS:
 
 * Write to a File or URL
 
-Add examples...
+```red
+>> write %Hi.adoc "### Hello"
+```
+```red
+>> my-asciidoc: {
+{    '''
+{    * Write to a file
+{    
+{    ```red
+{    write %Hi.adoc "### Hello"
+{    ```
+{    }
+== {^/'''^/* Write to a file^/^/```red^/write %Hi.adoc "### Hello"^/```^/}
+```
+```red
+>> write/append %Hi.adoc my-asciidoc
+```
+
+`help write` in the Red console.
+
+```red
+>> help write
+USAGE:
+     WRITE destination data
+
+DESCRIPTION: 
+     Writes to a file, URL, or other port. 
+     WRITE is an action! value.
+
+ARGUMENTS:
+     destination  [file! url! port!] 
+     data         [any-type!] 
+
+REFINEMENTS:
+     /binary      => Preserves contents exactly.
+     /lines       => Write each value in a block as a separate line.
+     /info        => 
+     /append      => Write data at end of file.
+     /part        => Partial write a given number of units.
+        length       [number!] 
+     /seek        => Write at a specific position.
+        index        [number!] 
+     /allow       => Specifies protection attributes.
+        access       [block!] 
+     /as          => Write with the specified encoding, default is 'UTF-8.
+        encoding     [word!] 
+```
 
 '''
 ### Graphics (VID and View)
 
 * Add examples...
 
+'''
+
 ### TBD
 
-- Install Red
+* Install Red: https://www.red-lang.org/p/download.html
+
 - Use the REPL, play with Red, try red
 - Write a function
 - Include type specs for function args
@@ -181,5 +231,29 @@ Add examples...
 - Include a web-browser component in a Red GUI
 - Do machine learning
 - Use regular expressions
-- Split a string
+* Split a string - `split`
+```red
+>> split "abc,def,gh" #","
+== ["abc" "def" "gh"]
+
+>> split "Hello Red" space
+== ["Hello" "Red"]
+```
+
+`help split` in the Red console.
+
+```red
+>> help split
+USAGE:
+     SPLIT series dlm
+
+DESCRIPTION: 
+     Break a string series into pieces using the provided delimiters. 
+     SPLIT is a function! value.
+
+ARGUMENTS:
+     series       [any-string!] 
+     dlm          [string! char! bitset!] 
+
+```
 - Parse a string
