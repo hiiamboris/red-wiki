@@ -2,10 +2,9 @@ __This is intended to be a collaborative list of how to perform common programmi
 
 
 ### Input and Output (IO)
-
 '''
 
-Printing stuff
+*Printing stuff*
 
 * Print a value followed by a newline - `print`
 
@@ -38,7 +37,7 @@ n: 42
 
 ```
 
-Reading stuff
+*Reading stuff*
 
 * Get console user input - `input`
 
@@ -112,7 +111,7 @@ REFINEMENTS:
         encoding     [word!] 
 ```
 
-Writing stuff
+*Writing stuff*
 
 * Write to a File or URL
 
@@ -164,7 +163,7 @@ REFINEMENTS:
         encoding     [word!] 
 ```
 
-Interogating stuff
+*Interogating stuff*
 
 * Get the current directory
 
@@ -210,6 +209,8 @@ REFINEMENTS:
 
 * Get file size - `size?`
 
+ From: https://rosettacode.org/wiki/File_size#Red
+
 ```red
 >> size? %input.txt
 == 39244
@@ -232,7 +233,27 @@ REFINEMENTS:
 '''
 ### Graphics (VID and View)
 
-* Make basic editor
+* Create a Window (bare minimum) +
+
+```red
+view []
+```
+
+* Create a Window with a title and size constraints 
+
+```red
+view [title "HAL 9000" size 800x600]
+```
+
+Start with `VID` for easy graphics: https://github.com/red/docs/blob/master/en/vid.adoc 
+
+Move to the `View` for more power: https://github.com/red/docs/blob/master/en/view.adoc
+
+Have a look at `Draw` if you're into drawing things: https://github.com/red/docs/blob/master/en/draw.adoc
+
+'''
+
+* A basic editor
 
 ```red
 view/options/flags [
@@ -250,7 +271,6 @@ view/options/flags [
 					]
 				] 
 				save [
-					file: any [file "New"]
 					if file: request-file/save/file file [
 						write file editor/text 
 						saved?: yes
@@ -285,7 +305,52 @@ view/options/flags [
 ] 'resize
 ```
 
-* Add examples...
+'''
+
+### Strings
+
+* Split a string - `split`
+```red
+>> split "abc,def,gh" #","
+== ["abc" "def" "gh"]
+
+>> split "Hello Red" space
+== ["Hello" "Red"]
+```
+
+`help split` in the Red console
+
+* Replace values in a string - `replace`
+
+```red
+>> s: "Red is fun?"
+== "Red is fun?"
+
+>> replace s "?" "!"
+== "Red is fun!"
+
+>> replace/all "Mississippi" "i" "*"
+== "M*ss*ss*pp*"
+
+```
+
+`help replace` in the Red console.
+
+
+* Remove whitespace or other pesky characters - `trim`
+
+```red
+>> trim/all "one two three"
+== "onetwothree"
+
+>> trim/with "one two three" "t"
+== "one wo hree"
+
+```
+
+`help trim` in the Red console.
+
+** Parse a string
 
 '''
 
@@ -298,17 +363,23 @@ view/options/flags [
 - Include type specs for function args
 - Define an array/map/struct
 - Specify a datatype for a variable
+
+
+* Objects: https://www.red-lang.org/search?q=Object
+
 - Create an OOP class
 - Inherit from an object
 - Implement an OO interface
 - Create private/protected members in an object
 - Find out what methods an object or datatype supports
+
+'''
+
 - Find out what datatypes are available in Red, and how to use them
 - Enforce immutability
 - Pass values by reference or by value to functions
 - Create a lambda/anonymous function
 - Get the name of the function being called
-- Read and write files
 - Make HTTP requests (read URLs)
 - Access an API that uses JSON
 - Use command line arguments to Red scripts
@@ -316,37 +387,9 @@ view/options/flags [
 - Call C functions in DLLs
 - Compile and cross compile
 - Import a library, load a module, use a package manager
-- Create a GUI
-- Set the title for a GUI window
 - Set the icon for an EXE
 - Use HTML in a Red GUI
 - Write Javascript code in Red
 - Include a web-browser component in a Red GUI
 - Do machine learning
 - Use regular expressions
-* Split a string - `split`
-```red
->> split "abc,def,gh" #","
-== ["abc" "def" "gh"]
-
->> split "Hello Red" space
-== ["Hello" "Red"]
-```
-
-`help split` in the Red console.
-
-```red
->> help split
-USAGE:
-     SPLIT series dlm
-
-DESCRIPTION: 
-     Break a string series into pieces using the provided delimiters. 
-     SPLIT is a function! value.
-
-ARGUMENTS:
-     series       [any-string!] 
-     dlm          [string! char! bitset!] 
-
-```
-- Parse a string
