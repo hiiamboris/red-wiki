@@ -285,7 +285,7 @@ view/options/flags [
 			editor/size: face/size - 20
 		]
 		on-resize: func [face event][on-resizing face none]
-		check-saving: does [either saved? [unview][confirm unview]] ; or `quit` but this kills console too
+		check-saving: does [unless saved? [confirm] unview] ; or `quit` but this kills console too
 		saved?: yes 
 		file: none 
 		confirm: does [
