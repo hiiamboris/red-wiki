@@ -382,6 +382,7 @@ view/options/flags [
 - Use command line arguments to Red scripts
 - Call/launch other programs, including redirecting I/O
 - Call C functions in DLLs
+- Convert Red/System values to the Red ones
 - Compile and cross compile
 - Import a library, load a module, use a package manager
 - Set the icon for an EXE
