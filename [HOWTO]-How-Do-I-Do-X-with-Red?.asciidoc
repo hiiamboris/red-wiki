@@ -264,19 +264,8 @@ view/options/flags [
 	actors: object [
 		on-menu: func [face event][
 			switch event/picked [
-				open [
-					if file: request-file [
-						editor/text: read file
-						face/text: form file
-					]
-				] 
-				save [
-					file: any [file "New"]
-					if file: request-file/save/file file [
-						write file editor/text 
-						saved?: yes
-					]
-				] 
+				open [open-file face] 
+				save [save-file] 
 				quit [check-saving]
 			]
 		]
@@ -288,17 +277,24 @@ view/options/flags [
 		check-saving: does [unless saved? [confirm] unview] ; or `quit` but this kills console too
 		saved?: yes 
 		file: none 
+		open-file: func [face][
+			if file: request-file [
+				editor/text: read file
+				face/text: form file
+			]
+		]
+		save-file: does [
+			file: any [file "New"]
+			if file: request-file/save/file file [
+				write file editor/text 
+				saved?: yes
+			]
+		]
 		confirm: does [
 			view [
 				title "Confirm"
 				text "Save file?" return 
-				button "Yes" [
-					file: any [file "New"]
-					if file: request-file/save/file file [
-						write file editor/text
-					]
-					unview
-				] 
+				button "Yes" [save-file unview] 
 				button "No" [unview]
 			]
 		]
