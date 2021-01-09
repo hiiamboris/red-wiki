@@ -1731,10 +1731,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [monica-cluster-utils](https://github.com/zalf-rpm/monica-cluster-utils) - 
 
 		tags: 
-* Zamlox - 
-	* [red-tools](https://github.com/Zamlox/red-tools) - 
-
-		tags: svg , xml
 * zduch4c - 
 	* [forth-interpreter](https://github.com/zduch4c/forth-interpreter) - Forh interpreter written in Red.
 
