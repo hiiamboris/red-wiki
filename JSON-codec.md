@@ -9,6 +9,8 @@ There are many ways to approach these goals, and experiments to show how Red all
 
 Something else to consider is that if we have a standard data model on the Red side, the libs can be intermixed in apps, depending on the needs. Maybe decoding should be fast, but encoding needs to be flexible. 
 
+> January-2020 note: The JSON codec is now a mix of Red, using `parse`, and Red/System (R/S) to optimize string decoding. 
+
 # References, comparisons, benchmarks, etc.
 
 - https://www.json.org/json-en.html
