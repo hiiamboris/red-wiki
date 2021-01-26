@@ -13,5 +13,11 @@ Something else to consider is that if we have a standard data model on the Red s
 
 # References, comparisons, benchmarks, etc.
 
+It would be interesting to see how a JSON parser modeled on Red's fast lexer performs. But the more important comparison is how fast Red can `load` Red data compared to how fast other langs can "load" JSON such that it's usable in an application. And this is important not only because we want to show Red's power and performance, but because JSON wasn't designed to be processed quickly. It was designed to be easy to parse and long-lasting. Red is the same, but much richer. So we need to look at the lifecycle of the data from production thru consumption to result. We can also compare redbin to binary equivalents of other formats.
+
 - https://www.json.org/json-en.html
 - https://medium.com/tourradar/working-efficiently-with-json-in-go-cb80dcca0466
+- https://github.com/simdjson/simdjson King of the hill C++ lib using SIMD instructions. Quite a few test files as well.
+- https://chadaustin.me/2013/01/json-parser-benchmarking/
+- https://lemire.me/blog/2018/05/03/how-fast-can-you-parse-json/
+
