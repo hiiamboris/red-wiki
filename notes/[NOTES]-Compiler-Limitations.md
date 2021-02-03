@@ -25,6 +25,11 @@ f 3 4
 
 When compiled and executed this code, it doesn't print anything. Use `-e` (encapped mode)
 
+# Construct
+
+https://github.com/red/red/issues/4815
+
+
 # Function assignment chaining
 
 See: https://github.com/red/red/issues/3862
