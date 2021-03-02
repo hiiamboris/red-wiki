@@ -30,7 +30,7 @@ If the Options/settings... in console is altered a config file is created:
 
 ## Catalina
 
-Until Red is natively 64-but, you need to use a container or other solution.
+Until Red is natively 64-bit, you need to use a container or other solution.
 
 - https://github.com/rebolek/red-tools/wiki/Red-on-Catalina
 
