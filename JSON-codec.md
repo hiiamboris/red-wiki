@@ -23,3 +23,6 @@ We can also compare redbin to binary equivalents of other formats.
 - https://chadaustin.me/2013/01/json-parser-benchmarking/
 - https://lemire.me/blog/2018/05/03/how-fast-can-you-parse-json/
 
+# Cycles
+
+- https://github.com/red/red/issues/4691
