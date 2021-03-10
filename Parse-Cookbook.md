@@ -214,6 +214,48 @@ To get a series of homogeneous values, use:
 ```
 (`_` above is just a throwaway `word!`, could be x or z)
 
+# Collect all set words
+
+```
+data: [
+    foo: 33
+    bar: 66
+	id: 123
+	lots: [
+		lot: [name: "blackberry"]
+		lot: [name: "apple"]
+		lot: [
+			name: "bananas"
+            number: 43
+			obj: [ price: 44 ]
+			obj: [ price: 44 ]
+			]
+	]
+]		
+```
+
+collect all set words:
+
+```		
+ parse data rule: [
+     some [
+            set w set-word! (probe w) | not block! skip
+         |  ahead block! into rule     
+     ]
+ ]
+
+```
+
+collect all set-words that values are `block!`:
+```
+parse data rule: [
+    some [
+           ahead [set-word! block!] set w set-word! (probe w) | not block! skip
+        |  ahead block! into rule     
+    ]
+]
+```
+
 See this [discussion](https://gitter.im/red/help?at=5f0c99923e4a827d19c35da8) for more on that subject.
 
 ***
