@@ -12,23 +12,23 @@ is:
 
 ```
 permutations: function [
-	"Return a block containing all the permutations of the series"
-	series [series!]
+    "Return a block containing all the permutations of the series"
+    series [series!]
 ][
-	drop: [head remove find copy series val]    ; used like a subroutine
-	either 1 = length? series [series][
-		collect [
-			foreach val series [
-				foreach p permutations do drop [
-					keep/only either any-block? series [
-						to series compose [(val) (p)]
-					][
-						make series reduce [val p]
-					]
-				]
-			]
-		]
-	]
+    drop: [head remove find copy series val]    ; used like a subroutine
+    either 1 = length? series [series][
+        collect [
+            foreach val series [
+                foreach p permutations do drop [
+                    keep/only either any-block? series [
+                        to series compose [(val) (p)]
+                    ][
+                        make series reduce [val p]
+                    ]
+                ]
+            ]
+        ]
+    ]
 ]
 print mold permutations [a b c]
 print mold permutations 'a/b/c
@@ -81,36 +81,36 @@ can instantly return you the 1000 billionth permutation of the alphabet:
 
 ```
 nth-permutation: func [
-	array-in [block! string!]
-	nth [integer!]
-	/local
-	fact array-mid array-out
+    array-in [block! string!]
+    nth [integer!]
+    /local
+    fact array-mid array-out
 ][
-	fact: func [ "Reverse factorial calculator"
-	n-in [integer!]
-	/local n-out nn c digit fact-n
+    fact: func [ "Reverse factorial calculator"
+    n-in [integer!]
+    /local n-out nn c digit fact-n
 ][
-	n-out: copy []
-	c: n-in
-	nn: 0
-	while [c <> 0] [
-		nn: nn + 1
-		append n-out c // nn
-		c: to-integer (c / nn)
-	]
-	return n-out
+    n-out: copy []
+    c: n-in
+    nn: 0
+    while [c <> 0] [
+        nn: nn + 1
+        append n-out c // nn
+        c: to-integer (c / nn)
+    ]
+    return n-out
 ]
-	nth: max 0 absolute nth  ;; sanitize input
-	array-mid: copy/deep array-in
-	array-out: make array-in []
+    nth: max 0 absolute nth  ;; sanitize input
+    array-mid: copy/deep array-in
+    array-out: make array-in []
 
-	fact-n: fact (nth - 1)
-	while [(length? fact-n) < length? array-in] [append fact-n 0]
-	foreach digit reverse fact-n [
-		append array-out pick array-mid (digit + 1)
-		remove at array-mid (digit + 1)
-	]
-	return array-out
+    fact-n: fact (nth - 1)
+    while [(length? fact-n) < length? array-in] [append fact-n 0]
+    foreach digit reverse fact-n [
+        append array-out pick array-mid (digit + 1)
+        remove at array-mid (digit + 1)
+    ]
+    return array-out
 ]
 ```
 
@@ -139,12 +139,12 @@ based indexing, and I've gone for 1-based.
 
 ```
 ith-perm: function [a i] [
-	also r: make a n: length? a: copy a
-	loop n [
-		append/only r take skip a i // n
-		i: to 1 i / n
-		n: n - 1
-	]
+    also r: make a n: length? a: copy a
+    loop n [
+        append/only r take skip a i // n
+        i: to 1 i / n
+        n: n - 1
+    ]
 ]
 ```
 
@@ -179,11 +179,11 @@ swap should be faster in practice but the order is less natural:
 
 ```
 ith-perm: function [a i] [
-	also a: copy a
-	forall a [
-		swap a skip a i // n: length? a
-		i: to 1 i / n
-	]
+    also a: copy a
+    forall a [
+        swap a skip a i // n: length? a
+        i: to 1 i / n
+    ]
 ]
 ```
 
@@ -196,8 +196,8 @@ turning The Great Red Optimizer (that's you all) loose
 ```
 fac: function [n][m: #(0 1) any [m/:n m/:n: n * fac n - 1]]
 all-perms: function [a] [
-	also r: make [] n: fac length? a
-	repeat i n [append/only r ith-perm a i - 1]
+    also r: make [] n: fac length? a
+    repeat i n [append/only r ith-perm a i - 1]
 ]
 ```
 
@@ -205,17 +205,9 @@ or
 
 ```
 all-perms: func [a] [
-	map-each/only i fac length? a [ith-perm a i - 1]
+    map-each/only i fac length? a [ith-perm a i - 1]
 ]
 ```
 
 if HOFs are allowed ;)
-
-
-# Profiling
-
-
-
-# Conclusion
-
 
