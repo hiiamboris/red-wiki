@@ -211,3 +211,50 @@ all-perms: func [a] [
 
 if HOFs are allowed ;)
 
+> Rebol2Red @Rebol2Red 10:57
+
+Like a challenge which I can't solve? How about writing dynamic loops to use for permutations.
+
+```
+;-----------------------------------------------------------------------
+; PERMUTATIONS (No duplicates per group. The groups are 1234 1234 1234)
+;-----------------------------------------------------------------------
+permutationsblock:  copy []
+permutations: 0
+repeat a 4 [
+repeat b 4 [if (a = b) [continue]
+repeat c 4 [if (c = b) or (c = a) [continue]
+repeat d 4 [if (d = c) or (d = b) or (d = a) [continue]
+
+    repeat e 4 [
+    repeat f 4 [if (f = e) [continue]
+    repeat g 4 [if (g = f) or (g = e) [continue]
+    repeat h 4 [if (h = g) or (h = f) or (h = e) [continue]
+
+        repeat i 4 [ 
+        repeat j 4 [if (j = i) [continue]
+        repeat k 4 [if (k = j) or (k = i) [continue]
+        repeat l 4 [if (l = k) or (l = j) or (l = i) [continue]
+
+            rec: copy ""
+            append rec reduce [a b c d e f g h i j k l]
+            append/only permutationsblock rec
+            ;probe permutationsblock ; DO NOT USE THIS! BECAUSE OF PRINTING THIS LASTS FOREVER!
+            permutations: permutations + 1
+
+         ]]]]
+    ]]]]
+]]]]
+;-----------------------------------------------------------------------
+; print ["Permutations - no repetitions:" permutations]
+;-----------------------------------------------------------------------
+write/lines %permutations-no-repetitions-4x3.txt permutationsblock
+;-----------------------------------------------------------------------
+; wait 3 ; is this needed? (because i think that a slower systems needs time to write a file
+;-----------------------------------------------------------------------
+call "start notepad permutations-no-repetitions-4x3.txt"
+```
+
+I need dynamic loops or optimisation.
+
+Note: The number of permutations is: 13824
