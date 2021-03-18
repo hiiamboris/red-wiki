@@ -64,3 +64,27 @@ A new idea, not listed above, but close to others. We'll add a `/key` refinement
 While this seems like the best choice, it won't come particularly cheap. `Remove` is an action, and therefore implemented for each type independently. Each instance must be updated to support the new refinement and its argument, even if only to return an error saying they don't support that refinement. Interaction with `/part` must also be considered. It seems best to make `/part` and `/key` mutually exclusive. However, if they're mutually exclusive, we could argue again for `remove/part`.
 
 The new refinement could also be used for series values, replacing the `remove-key` idea above. And if we have `extend`, it could be the opposite of that for objects (though the naming isn't great for that).
+
+## Usage Notes
+
+### Blocks as keys
+
+```
+>> blk: [[a b] 1 [b c] 2]
+== [[a b] 1 [b c] 2]
+>> remove/key blk [[a b]]
+== [[b c] 2]
+```
+
+It's a bit awkward, because it uses find rather than find/only internally for series. It should probably use find/only as it doesn't take the block length into account, and that's a bug IMO.
+
+```
+>> blk: [ a b 1  b c 2]
+== [a b 1 b c 2]
+>> remove/key blk [a b]
+== [1 b c 2]
+```
+
+You can't currently create maps with blocks as keys, so it should probably throw an error with your call @semseddin.
+
+The design was never to have it remove multiple keys in a block, which would make it impossible to use for block keys, should maps support them in the future.
