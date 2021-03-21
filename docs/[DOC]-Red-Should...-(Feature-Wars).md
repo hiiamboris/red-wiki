@@ -23,7 +23,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Support Variable Arity Functions](#support-variable-arity-functions)
 1. [Sandboxing](#sandboxing)
 1. [JS as a Back End Target](#js-as-a-back-end-target)
-1. []()
+1. [Sigils to denote destructive functions]()
 
 
 # Immutability
@@ -71,3 +71,181 @@ It sounds appealing, on the surface, but the costs...oh, the costs. Targeting JS
 Red running on every possible platform would be a great thing. But being on those platforms won't make Red successful. It has to achieve a certain level of success first. So it's not that we are against this, it's just not a priority. It raises a lot of questions as well, because JS is not just an isolated language in practical use. It is the core of an ecosystem that branches out in many directions, from the DOM (and how View/VID translate there), to frameworks, to changes in the language, to node.js as a runtime.
 
 But there's another approach: Write a Red interpreter in JS. Gabriele Santilli (@giesse) had his Topaz project to experiment with the idea, and @ALANVF has [Red.js](https://github.com/ALANVF/Red.js) in the works. This doesn't answer all the questions, but lets people look for answers and raises more. Remember that a big part of Red is the format, while JS has JSON, so it's a great way to explore ideas in a concrete context and see how things fit together.
+
+# Sigils to denote destructive functions
+
+
+@gltewalt:matrix.org
+
+Should Red adopt the lexical indicator"!" at the end of function names for destructive functions?
+
+----
+
+@hiiamboris
+
+No, it would conflict with datatypes. I like this idea actually, since I first seen it in some other lang. But that means no compatibility with Rebol.
+
+----
+
+@greggirwin
+
+@gltewalt:matrix.org no. ! is used for datatype notation.
+And because we don't view mutability as dangerous, if we use a warning sigil it should be for other things, like "Boris wrote this func, so you can trust it to work but you may not understand the code." :^)
+
+----
+
+@hiiamboris
+
+:D
+
+----
+
+@gltewalt:matrix.org
+
+A symbol at the end is an easy way to know at a glance. Use the Irwin smiley face
+
+----
+
+@greggirwin
+
+Or we could do this: danger⚠: func [] []
+I'm a fan of sigils when used appropriately and in moderation.
+
+----
+
+@hiiamboris
+
+reverse☠: func ["DESTRUCTS YOUR SERIES!!1" series..][..]
+Seriously though, I find that one gets used pretty quickly to which functions are modifying. It's not a problem in programming, only in learning.
+
+----
+
+@greggirwin
+
+That's how we deprecate functions. Rename the old ones based on why they were deprecated. Bug, crash, turtle for slow ones.
+And we have a standard practice of noting modifiers in doc strings.
+There's nothing preventing people from doing that kind of thing in their own libs of course. It may be very effective in some cases.
+
+----
+
+@gltewalt:matrix.org
+
+It's not just in the learning. It's also about the remembering. Neither are necessary if there is a lexical indicator at the end of a function name. Self documenting.
+borisize*
+
+----
+@hiiamboris
+
+;) I would have supported the initiative if not for Rebol roots.
+
+----
+
+@greggirwin
+
+@gltewalt:matrix.org propose a different sigil then. Red won't use ! to denote mutability without very strong arguments behind it. Even better, evidence that it helps.
+
+----
+
+@gltewalt
+
+I just did. *
+
+There are no great other ascii symbols, though
+People may be used to * for pointers
+
+----
+
+@greggirwin
+
+borisize* v * n* vdoesn't look great to me. Good point on pointers. Lexical space is tight, so it's tough.
+
+Consider this, do you want to write append! every time, rather than append. What about insert!, change!, replace!, sort!, remove-each!? Modify some code and see what it looks like if you denote all current modifying funcs this way. It would be interesting to see.
+Thanks for the link to the construct issue. I'll note that as well.
+
+----
+
+@gltewalt
+
+Yeah that might get kind of noisy if you have a big chunk of code that contains a bunch of modifiers
+The ruby way is to have a non destructibe version and a destructive version where appropriate. remove! and remove
+
+----
+
+@greggirwin
+Which comes back to the point that mutability is not the exception in Red, it's the norm.
+
+----
+
+@gltewalt
+
+Well it's not exactly the exception in ruby either
+Just thought I'd throw it out there and see what others think.
+
+----
+
+@greggirwin
+
+And they have 2 versions of each func for those cases, right? We don't want that.
+
+----
+
+@gltewalt
+
+Yes
+Can we at least get Irwin smiley face in certain error messages?
+
+----
+
+@greggirwin
+
+@gltewalt could I impose on you to add a section, and notes from this chat to https://github.com/red/red/wiki/%5BDOC%5D-Red-Should...-(Feature-Wars) ?
+
+----
+
+@Oldes
+
+@gltewalt maybe you should just use some editor which allows you to create own group of key-words and set it right color which suits your feel of danger.
+
+----
+
+@giesse
+
+@gltewalt it's very easy to remember.
+Assume all functions mutate the input series. Add copy if you don't want that.
+If you need to optimize your code, then look at the source of the functions you are using and remove any redundant copy.
+
+----
+
+@gltewalt
+
+It's not about my feel for what is dangerous, its a general inquiry and proposal to see what red users think about it. Or if they think about it.
+
+----
+
+@greggirwin
+
+@gltewalt we can add smileys to error messages when it's the user's fault, but we don't want them to feel too bad about it. :^)
+
+----
+
+@rebolek
+
+We can also make adaptive errors:
+
+>> context [err-count: 0 errors: ["x must be integer!" "you made the same error again, x must be integer!" "are you kidding me? I already told you that x must be integer!"] set 'f func [x][unless integer? x [err-count: err-count + 1 do make error! pick errors err-count]]]
+
+>> f "a"
+*** User Error: "x must be integer!"
+*** Where: do
+*** Stack: f  
+
+>> f "a"
+*** User Error: "you made the same error again, x must be integer!"
+*** Where: do
+*** Stack: f  
+
+>> f "a"
+*** User Error: {are you kidding me? I already told you that x must be integer!}
+*** Where: do
+*** Stack: f
+
