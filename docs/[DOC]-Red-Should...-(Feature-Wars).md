@@ -23,7 +23,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Support Variable Arity Functions](#support-variable-arity-functions)
 1. [Sandboxing](#sandboxing)
 1. [JS as a Back End Target](#js-as-a-back-end-target)
-1. [Sigils to denote destructive functions]()
+1. [Sigils to denote destructive functions](#sigils-to-denote-destructive-functions)
 
 
 # Immutability
