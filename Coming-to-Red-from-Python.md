@@ -5,10 +5,10 @@ You might be wondering “Why I need to learn Red, when I have Python at hand?�
 -	Red can be cross-compiled to different platforms (Windows, WindowsXP, Linux, Linux-ARM, RPi, Darwin,  macOS, Syllable, FreeBSD, Android, Android-x86).
 -	Red has a fully reactive cross-platform native GUI system, with a UI Domain-specific language (DSL) - View and drawing DSL – Draw.
 -	Red has a powerful [PEG]( https://en.wikipedia.org/wiki/Parsing_expression_grammar) parser DSL – Parse, that is highly readable and maintainable, unlike regex.
--       [Red/system](https://static.red-lang.org/red-system-specs.html) is a low level (think C) DSL, aimed at low-level system programming and higher performance. 
+-	[Red/system](https://static.red-lang.org/red-system-specs.html) is a low level (think C) DSL, aimed at low-level system programming and higher performance. 
 -	Red has an elegant and consistent syntax, allowing for easy learning. 
 -	Red comes with a rich set of built-in [datatypes](https://github.com/red/docs/blob/master/en/datatypes.adoc) - more than 50.
--       All these make Red a full-stack language ("from metal to meta") that can be used for writing everything from drivers and operating systems, through applications, scripts, Domain-specific languages and metaprogramming.
+-	All these make Red a full-stack language ("from metal to meta") that can be used for writing everything from drivers and operating systems, through applications, scripts, Domain-specific languages and metaprogramming.
 
 
 
