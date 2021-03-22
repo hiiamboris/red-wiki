@@ -22,6 +22,8 @@
 
 ### [Coming from REBOL?](https://github.com/red/red/wiki/%5BLINKS%5D-Coming-from-REBOL)
 
+### [Coming to Red from another language](https://github.com/red/red/wiki/Coming-to-Red-from-another-language)
+
 ### [Deep Dives](https://github.com/red/red/wiki/%5BLINKS%5D-Deep-Dives)
 
 ### [News Feeds](https://github.com/red/red/wiki/News-Feeds)
