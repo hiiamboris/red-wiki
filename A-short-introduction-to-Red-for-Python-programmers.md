@@ -4,11 +4,11 @@ A Red program is a sequence of Red values - everything is data before it’s eva
 A special category of values is word. A word! is a symbolic value that can be used like a variable (the `!` at the end denotes a datatype). Red does not have identifiers nor keywords. Words do not store values, they point to values in some context – the global context by default.
 Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: ! & ' * + - . < = > ? _ | ~` 
 Here are some valid words:
-•	foo
-•	foo+bar
-•	Fahrenheit451 
-•	C°
-•	__ (two underscores)
+* foo
+* foo+bar
+* Fahrenheit451 
+* C°
+* __ (two underscores)
 
 Words can’t start with a digit and can’t contain any control characters, whitespace characters, and punctuation characters from the ASCII subset: / \ ^ , [ ] ( ) { } " # $ % @ : ;
 
@@ -18,9 +18,9 @@ At a semantic level, the Red program consist of expressions and not values. An e
 
 Functions in Red always have a fixed number of arguments (fixed arity), as opposed to Python, where one can have default arguments and variable-length arguments. Functions are called by their name followed by the arguments – no need of parentheses nor commas.
 
-•	print  “Hello, world!”
-•	add 2 3
-•	find "Red" "e"
+* print  “Hello, world!”
+* add 2 3
+* find "Red" #"e"
 
 Operators are always binary operations, like `+` (addition), `-` (subtraction) and so on.
 
