@@ -78,6 +78,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: what should empty `any []` and `all []` return?
 - [Discussion in issue #4469](https://github.com/red/red/issues/4469#issuecomment-635450881)
 
+#### Introduce `single? map`, but not `last? map` ?
+- [Gitter discussion](https://gitter.im/red/red?at=605a2c463b9278255bcb3283)
+
 # See also
 
 https://github.com/red/red/wiki/[NOTES]-Design-Deliberations
