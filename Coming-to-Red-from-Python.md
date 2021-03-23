@@ -14,6 +14,8 @@ You might be wondering â€œWhy I need to learn Red, when I have Python at hand?â€
 
 However, Red still doesn't have Python's reach ecosystem - for example we don't have any analogues of numpy/scipi. The module system is yet to be completed, as well as a set of higher order functions. At the moment of writing Red is 32 bit.
 
+## [A short introduction to Red for Python programmers](https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers)
+
 ## Common tasks and how to do them in Red
 
 ## Red functions for the Python programmers
