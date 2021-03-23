@@ -53,6 +53,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: do we want `/deep` refinement for `take`?
 - [red/bugs April 27, 2020 10:38 PM](https://gitter.im/red/bugs?at=5ea734ae568e5258e48a9dca)
 
+#### Introduce `single? map`, but not `last? map` ?
+- [Gitter discussion](https://gitter.im/red/red?at=605a2c463b9278255bcb3283)
+
 # Historical questions & explanations
 
 #### Arguments on why paths evaluate picked items (so-called active accessors)
@@ -77,9 +80,6 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 #### Core: what should empty `any []` and `all []` return?
 - [Discussion in issue #4469](https://github.com/red/red/issues/4469#issuecomment-635450881)
-
-#### Introduce `single? map`, but not `last? map` ?
-- [Gitter discussion](https://gitter.im/red/red?at=605a2c463b9278255bcb3283)
 
 # See also
 
