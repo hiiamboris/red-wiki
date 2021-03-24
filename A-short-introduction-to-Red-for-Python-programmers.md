@@ -50,8 +50,8 @@ Since the function arguments aren’t enclosed in parentheses, a programmer must
 
 Evaluation order can be changed by the use of parentheses: 
 
-``
-`2 + (3 * 4)    ; evaluates to 14
+```
+2 + (3 * 4)    ; evaluates to 14
 (length? "abcd") / 2
 ```
 
