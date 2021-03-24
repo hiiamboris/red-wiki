@@ -3,6 +3,7 @@ A Red program is a sequence of Red values - everything is data before it’s eva
 
 A special category of values is word. A word! is a symbolic value that can be used like a variable (the `!` at the end denotes a datatype). Red does not have identifiers nor keywords. Words do not store values, they point to values in some context – the global context by default.
 Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: ! & ' * + - . < = > ? _ | ~` 
+
 Here are some valid words:
 * foo
 * foo+bar
@@ -29,6 +30,8 @@ Evaluation of the operands of operators has precedence over function application
 * 2 + 2    ; evaluates to 4
 * 2 + 3 * 4 ; evaluates to 20, not 14!
 * max 3 + 4 5 ; evaluates to 7
+
+As you may have guessed, `;` starts a comment until the end of the line. 
 
 Let’s take for example the following expression:
 
