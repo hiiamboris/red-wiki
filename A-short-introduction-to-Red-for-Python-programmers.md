@@ -18,20 +18,21 @@ At a semantic level, the Red program consist of expressions and not values. An e
 
 Functions in Red always have a fixed number of arguments (fixed arity), as opposed to Python, where one can have default arguments and variable-length arguments. Functions are called by their name followed by the arguments – no need of parentheses nor commas.
 
-`print  “Hello, world!”`
-`add 2 3`
-`find "Red" #"e"`
+`print  “Hello, world!”
+add 2 3
+find "Red" #"e"`
 
 Operators are always binary operations, like `+` (addition), `-` (subtraction) and so on.
 
 Evaluation of the operands of operators has precedence over function application and binding. There is no precedence between any two operators. 
 
-`2 + 2    ; evaluates to 4`
-`2 + 3 * 4 ; evaluates to 20, not 14!`
-`max 3 + 4 5 ; evaluates to 7`
+`2 + 2    ; evaluates to 4
+2 + 3 * 4 ; evaluates to 20, not 14!
+max 3 + 4 5 ; evaluates to 7`
 
 Let’s take for example the following expression:
-`square-root 4 + 5`
+`square-root 4 + 5
+
 The operator `+` has precedence over the function `square-root` and that’s why Red first adds 5 to 4 and only then finds the square root of 9, resulting in 3.0.
 
 
