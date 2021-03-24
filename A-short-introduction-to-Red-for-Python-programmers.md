@@ -62,24 +62,29 @@ If we had written `length? "abcd" / 2`, it would have resulted in an error, beca
 Red has a rich set of datatypes. Here are some types to start with:
 
 * Integer! - 32-bit numbers with no decimal point.
+
 1234, +1234, -1234, 60'000'000
 
 * Float! - 64-bit positive or negative number that contains a decimal point.
+
 +123.4, -123.4, 0042.0, 60'000'12'3.4
 
 * logic! – Boolean values
+
 true false, yes no, on off
 
-set-word! - Sets a reference to a value.
-text: "Python and Red"
-The set-word! datatype sets a reference to a value.
+* set-word! - Sets a reference to a value.
 
+text: "Python and Red"
 
 * char! - Unicode code points.
+
 #"a", #"^C", #"^(esc)"
 
 * string! - Sequence of Unicode code points (char! values) wrapped in quotes.
+
 “Red”
+
 Unlike “Python”, strings in red are mutable. 
 For  example, compare this Python code
 ```
@@ -100,14 +105,19 @@ with Red:
 ```
 
 * block! - Collections of data or code that can be evaluated at any point in time. Values and expressions in a block are not evaluated by default. This is one of the most versatile Red types.
+
 [], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]
 
 * paren! - Immediately evaluated block!. Evaluation can be suppressed by using quote before a paren value. Unquoted paren values will return the type of the last expression.
+
 (1 2 3), (3 * 4), (x + 5)
+
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
  * path! - Series of values delimited by slashes /. Limited in the types of values that they can contain.
+
 buffer/1, a/b/c
+
 Path notation is used for indexing a block. Please note that Red uses 1-based indexing.
 The following Python code
 ```
