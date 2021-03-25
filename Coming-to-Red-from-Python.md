@@ -19,5 +19,8 @@ However, Red still doesn't have Python's reach ecosystem - for example we don't 
 ## Common tasks and how to do them in Red
 
 ## Red functions for the Python programmers
+
+## Draft outline
    
+## Notes
 
