@@ -12,7 +12,7 @@ You might be wondering â€œWhy I need to learn Red, when I have Python at hand?â€
 
 [More about Red features](https://www.red-lang.org/p/about.html)
 
-However, Red still doesn't have Python's reach ecosystem - for example we don't have any analogues of numpy/scipi. The module system is yet to be completed, as well as a set of higher order functions. At the moment of writing Red is 32 bit.
+However, Red still doesn't have Python's rich ecosystem - for example we don't have any analogues of numpy/scipi. The module system is yet to be completed, as well as a set of higher order functions. At the moment of writing Red is 32 bit.
 
 ## [A short introduction to Red for Python programmers](https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers)
 
@@ -23,4 +23,10 @@ However, Red still doesn't have Python's reach ecosystem - for example we don't 
 ## Draft outline
    
 ## Notes
+### Thoughts for the 'why' section,
+"Python is an amazing tool capable at almost every programming task imaginable, unless you have to deploy it. Oh, it can be done, no arguments there. But as soon as things get beyond "my linux box", the headaches grow exponentially. Eventually, we all just want to burn down the house. Perhaps Red can be your lighter."
+
+"... At the moment of writing, Red is 32bit. But nothing in the python ecosystem is as powerful as parse, nor is python nearly as flexible. There is nothing like trying something for yourself though so lets dig in!"
+
+### Some examples to consider
 
