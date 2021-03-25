@@ -1,10 +1,8 @@
-# A short introduction to Red
-
 Red is a homoiconic language (Red is its own meta-language and own data-format) and an important paradigm it uses is “code is data”. 
 A Red program is a sequence of Red values - everything is data before it’s evaluated. The execution of a Red program is done by evaluating each of its constituent values in turn, according to the evaluation rules.
 ### Words
 A special category of values is word. A word! is a symbolic value that can be used like a variable (the `!` at the end denotes a datatype). Red does not have identifiers nor keywords. Words do not store values, they point to values in some context – the global context by default.
-Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: ! & ' * + - . < = > ? _ | ~` 
+Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: `! & ' * + - . < = > ? _ | ~`` 
 
 Here are some valid words:
 
@@ -16,7 +14,18 @@ C°
 __ (two underscores)
 ```
 
-Words can’t start with a digit and can’t contain any control characters, whitespace characters, and punctuation characters from the ASCII subset: / \ ^ , [ ] ( ) { } " # $ % @ : ;
+Words can’t start with a digit and can’t contain any control characters, whitespace characters, and punctuation characters from the ASCII subset: `/ \ ^ , [ ] ( ) { } " # $ % @ : ;`
+
+The presence of `! & ' * + - . < = > ? _ | ~`` in words leads to the implication that they must be delimited by spaces, tabs or [](){}. In Python you can write:
+```
+a+b
+1and a>b
+```
+In Red you always need to put spaces between words:
+```
+a + b
+1 and a > b
+```
 
 Please note that Red is case insensitive.
 
@@ -104,6 +113,10 @@ with Red:
 == "ABCD"
 ```
 
+Multiline strings are enclosed in {} and can contain double-quotes:
+{This text is
+split in "two" lines} 
+
 * block! - Collections of data or code that can be evaluated at any point in time. Values and expressions in a block are not evaluated by default. This is one of the most versatile Red types.
 
 [], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]
@@ -114,9 +127,9 @@ with Red:
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
- * path! - Series of values delimited by slashes /. Limited in the types of values that they can contain.
+ * path! - Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
 
-buffer/1, a/b/c
+buffer/1, a/b/c, data/(base + offs)
 
 Path notation is used for indexing a block. Please note that Red uses 1-based indexing.
 The following Python code
@@ -133,3 +146,55 @@ Can be written in Red as follows:
 >> mylist/1
 == 3
 ```
+
+One can access the nested values in a block using as many levels of `/` as needed:
+
+```
+>> a: [1 [2 3] "456"]
+== [1 [2 3] "456"]
+>> a/1
+== 1
+>> a/2
+== [2 3]
+>> a/2/2
+== 3
+>> a/3/1
+== #"4"
+```
+
+* map! - Associative array of key/value pairs.
+#( ), #(a: 1 b: “two”)
+The keys can be any type of the following [typesets]( https://github.com/red/docs/blob/master/en/typesets.adoc): 
+ [scalar!]( https://github.com/red/docs/blob/master/en/typesets.adoc#scalar), [all-word!]( https://github.com/red/docs/blob/master/en/typesets.adoc#all-word), [any-string!]( https://github.com/red/docs/blob/master/en/typesets.adoc#any-string)
+
+* object! - Named or unnamed contexts that contain word: value pairs.
+```
+xy: make object! [
+    x: 45
+    y: 12
+    mult: func[k][x + y * k]    
+]
+```
+Please not that at this time it is not possible to extend an object with new word: value pairs.
+The objects in Red are prototype-based, and not class-based. 
+You can create a new object `xyz` using `xy` as a prototype and describe just the new pairs:
+
+```
+>> xyz: make xy [z: 1000]
+== make object! [
+    x: 45
+    y: 12
+    mult: func [k][x + y * k]
+    z: 1000
+]
+```
+
+* function! 
+
+* refinement!
+
+* pair! - Two-dimensional coordinates (two integers separated by a `x`)
+1x2, -5x0, -3x-25
+The pair fields can be accessed by /x and /y refinments (or /1 and /2)
++, -, *, /, %, //, add, subtract, multiply, divide, remainder, and mod can be used with pair! values.
+
