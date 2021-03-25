@@ -16,7 +16,7 @@ __ (two underscores)
 
 Words can’t start with a digit and can’t contain any control characters, whitespace characters, and punctuation characters from the ASCII subset: `/ \ ^ , [ ] ( ) { } " # $ % @ : ;`
 
-The presence of `! & ' * + - . < = > ? _ | ~`` in words leads to the implication that they must be delimited by spaces, tabs or [](){}. In Python you can write:
+The presence of `! & ' * + - . < = > ? _ | ~`` in words leads to the implication that they must be delimited by spaces, tabs or `[](){}`. In Python you can write:
 ```
 a+b
 1and a>b
@@ -94,7 +94,7 @@ text: "Python and Red"
 
 “Red”
 
-Unlike “Python”, strings in red are mutable. 
+Unlike “Python”, strings in Red are mutable. 
 For  example, compare this Python code
 ```
 >>> txt = "abcd"
@@ -163,7 +163,9 @@ One can access the nested values in a block using as many levels of `/` as neede
 ```
 
 * map! - Associative array of key/value pairs.
+
 #( ), #(a: 1 b: “two”)
+
 The keys can be any type of the following [typesets]( https://github.com/red/docs/blob/master/en/typesets.adoc): 
  [scalar!]( https://github.com/red/docs/blob/master/en/typesets.adoc#scalar), [all-word!]( https://github.com/red/docs/blob/master/en/typesets.adoc#all-word), [any-string!]( https://github.com/red/docs/blob/master/en/typesets.adoc#any-string)
 
