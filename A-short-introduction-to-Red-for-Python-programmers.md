@@ -16,7 +16,7 @@ __ (two underscores)
 
 Words can’t start with a digit and can’t contain any control characters, whitespace characters, and punctuation characters from the ASCII subset: `/ \ ^ , [ ] ( ) { } " # $ % @ : ;`
 
-The presence of `! & ' * + - . < = > ? _ | ~`` in words leads to the implication that they must be delimited by spaces, tabs or `[](){}`. In Python you can write:
+The presence of `! & ' * + - . < = > ? _ | ~`` in words leads to the implication that they must be delimited by spaces, tabs or \[]\(){}. In Python you can write:
 ```
 a+b
 1and a>b
