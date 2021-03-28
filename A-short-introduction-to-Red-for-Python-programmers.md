@@ -162,7 +162,7 @@ One can access the nested values in a block using as many levels of `/` as neede
 == #"4"
 ```
 
-* map! - Associative array of key/value pairs.
+* map! - Associative array of key/value pairs (similar to Python's dictionary)
 
 #( ), #(a: 1 b: “two”)
 
@@ -191,12 +191,47 @@ You can create a new object `xyz` using `xy` as a prototype and describe just th
 ]
 ```
 
-* function! 
+* function! - user-defined functions. Functions have specification and body:
 
-* refinement!
+```x+y: function [x y][x + y]```
+
+There are also other kinds of functions - func, does, has - that will be explained in more details in a section dedicated to functions.
+
+* op! - Infix function of two arguments.
+
+`+ - * / // % ^`
+
+* refinement! - Refinement! values are symbolic values that are used as modifiers to functions or as extensions to objects, files, urls, or paths.
+
+
+```
+>> replace/all "Mississippi" #"i" #"e"
+== "Messesseppe"
+```
+
+Without the `/all` refinement only the first "i" would be changed to "e".
+
 
 * pair! - Two-dimensional coordinates (two integers separated by a `x`)
+
+
 1x2, -5x0, -3x-25
+
 The pair fields can be accessed by /x and /y refinments (or /1 and /2)
-+, -, *, /, %, //, add, subtract, multiply, divide, remainder, and mod can be used with pair! values.
+`+, -, *, /, %, //, add, subtract, multiply, divide, remainder, and mod` can be used with pair! values.
+
+
+* date! - Calendar dates, relying on the Gregorian calendar.
+
+28-03-2021, 28/Mar/2021, 28-March-2021, 2021-03-28
+
+As you can see, different input formats for literal dates are accepted. 
+
+The fields of any `date!` value can be accessed using path accessors - `/date`, `/year`, `/month`, `day` (or alternatively just `/1` `/2` `/3` `/4`) 
+
+One can use addition and subtraction operations with date!, as well as with date! and integer!. Dates will be explored in a special section.
+
+* tuple! - Three to twelve positive integers separated by decimal points. Used for representing RGB and RGBA color values, ip addresses, and version numbers. 
+
+`255.255.255.0`
 
