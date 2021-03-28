@@ -2,7 +2,7 @@
 
 This note briefly lists some not-yet-documented features of Red.
 
-#### `copy/part` with `pair!`
+### `copy/part` with `pair!`
 
 `copy` is the only (or the first among many) actions that accepts `pair!` argument for its `/part` refinement; `pair!` in such case denotes a "slice" to copy over:
 
@@ -30,7 +30,7 @@ This feature appears to be either buggy or inconsistent. See https://github.com/
 == [c x d e]
 ```
 
-#### `changed` reflector in objects
+### `changed` reflector in objects
 
 Objects permit tracking cumulative changes to their fields via `changed` reflector, which returns a block of words, denoting modified fields.
 
@@ -75,7 +75,7 @@ Objects permit tracking cumulative changes to their fields via `changed` reflect
 == [x y]
 ```
 
-#### `pick` and bitsets
+### `pick` and bitsets
 
 `pick` can be used to check if a given `char!` value (or a block/string of them, or a UCP numeral, or even a charset spec) belongs to character set denoted by `bitset!` value.
 
@@ -113,11 +113,11 @@ Same holds for path notation:
 == false
 ```
 
-#### Executable's resources
+### Executable's resources
 
 An excerpt from https://www.red-lang.org/2016/03/060-red-gui-system.html[here].
 
-Icons and other "resources" are now supported for inclusion in Windows executables. They can be set from Red's main script header, these are the currently supported options:
+Icons and other "resources" are now supported for inclusion in Windows executables *(TBD: check the other platforms)*. They can be set from Red's main script header, these are the currently supported options:
 
 ```
 Icon: file! or block! of files
@@ -133,6 +133,26 @@ Trademarks:  string!
 
 If no Icon option is specified, a default Red icon will be provided.
 
-#### Including binary data
+### Including binary data
 
 `#include-binary` preprocessor directive accepts `file!` or `string!` argument that denotes a file path to binary data to be inlined as `binary!` value. Useful for embedding application's resources, at the cost of beefing up the size of the resulting executable.
+
+### Raw strings
+
+A lexical form for `string!` values that treats its content literally, without a need for escape sequences.
+
+*Example*
+
+```red
+>> {kawaii ^^_^^}
+== "kawaii ^^_^^"
+>> %{kawaii ^_^}%
+== "kawaii ^^_^^"
+```
+
+The number of `%` symbols on both sides should be equal, to address the unlikely event where the string itself contains `}%`-like patterns:
+
+```red
+>> %%{raw strings end with }% followed by 0 or more %}%%
+== "raw strings end with }% followed by 0 or more %"
+```
