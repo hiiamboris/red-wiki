@@ -72,27 +72,27 @@ Red has a rich set of datatypes. Here are some types to start with:
 
 * Integer! - 32-bit numbers with no decimal point.
 
-1234, +1234, -1234, 60'000'000
+`1234, +1234, -1234, 60'000'000`
 
 * Float! - 64-bit positive or negative number that contains a decimal point.
 
-+123.4, -123.4, 0042.0, 60'000'12'3.4
+`+123.4, -123.4, 0042.0, 60'000'12'3.4`
 
 * logic! – Boolean values
 
-true false, yes no, on off
+`true false, yes no, on off`
 
 * set-word! - Sets a reference to a value.
 
-text: "Python and Red"
+`text: "Python and Red"`
 
 * char! - Unicode code points.
 
-#"a", #"^C", #"^(esc)"
+`#"a", #"^C", #"^(esc)"`
 
 * string! - Sequence of Unicode code points (char! values) wrapped in quotes.
 
-“Red”
+`“Red”`
 
 Unlike “Python”, strings in Red are mutable. 
 For  example, compare this Python code
@@ -114,22 +114,22 @@ with Red:
 ```
 
 Multiline strings are enclosed in {} and can contain double-quotes:
-{This text is
-split in "two" lines} 
+`{This text is
+split in "two" lines}`
 
 * block! - Collections of data or code that can be evaluated at any point in time. Values and expressions in a block are not evaluated by default. This is one of the most versatile Red types.
 
-[], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]
+`[], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]`
 
 * paren! - Immediately evaluated block!. Evaluation can be suppressed by using quote before a paren value. Unquoted paren values will return the type of the last expression.
 
-(1 2 3), (3 * 4), (x + 5)
+`(1 2 3), (3 * 4), (x + 5)`
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
  * path! - Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
 
-buffer/1, a/b/c, data/(base + offs)
+`buffer/1, a/b/c, data/(base + offs)`
 
 Path notation is used for indexing a block. Please note that Red uses 1-based indexing.
 The following Python code
@@ -164,7 +164,7 @@ One can access the nested values in a block using as many levels of `/` as neede
 
 * map! - Associative array of key/value pairs (similar to Python's dictionary)
 
-#( ), #(a: 1 b: “two”)
+`#( ), #(a: 1 b: “two”)`
 
 The keys can be any type of the following [typesets]( https://github.com/red/docs/blob/master/en/typesets.adoc): 
  [scalar!]( https://github.com/red/docs/blob/master/en/typesets.adoc#scalar), [all-word!]( https://github.com/red/docs/blob/master/en/typesets.adoc#all-word), [any-string!]( https://github.com/red/docs/blob/master/en/typesets.adoc#any-string)
@@ -215,7 +215,7 @@ Without the `/all` refinement only the first "i" would be changed to "e".
 * pair! - Two-dimensional coordinates (two integers separated by a `x`)
 
 
-1x2, -5x0, -3x-25
+`1x2, -5x0, -3x-25`
 
 The pair fields can be accessed by /x and /y refinments (or /1 and /2)
 `+, -, *, /, %, //, add, subtract, multiply, divide, remainder, and mod` can be used with pair! values.
@@ -223,7 +223,7 @@ The pair fields can be accessed by /x and /y refinments (or /1 and /2)
 
 * date! - Calendar dates, relying on the Gregorian calendar.
 
-28-03-2021, 28/Mar/2021, 28-March-2021, 2021-03-28
+`28-03-2021, 28/Mar/2021, 28-March-2021, 2021-03-28`
 
 As you can see, different input formats for literal dates are accepted. 
 
@@ -235,3 +235,59 @@ One can use addition and subtraction operations with date!, as well as with date
 
 `255.255.255.0`
 
+### Blocks and series
+
+A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of [series!](https://github.com/red/docs/blob/master/en/typesets.adoc#series) with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
+
+Blocks in Red are similar to Python’s lists, but don’t forget that blocks are not evaluated until it’s necessary. Compare these code snippets:
+
+Python
+```
+>>> p_list=[2+3,5]
+>>> p_list
+[5, 5]
+```
+
+Red
+```
+>> red-block: [2 + 3 5]
+== [2 + 3 5]
+```
+As you can see, red-block remains unchanged, while p_list is formed by the evaluated values of its constituents.
+
+Blocks are created by enclosing values (separated by a whitespaces) in square brackets `[ ]`
+```
+[1 2 3]
+[42 6 * 7 “forty-two” forty two]
+
+Except literally, blocks can be created at runtime using a `make` constructor: 
+
+```
+>> make block! 20
+== []
+```
+
+The above code creates and empty block pre-allocated for 20 elements.
+
+
+Block can also be created by converting other values:
+
+```
+>> msg: "send %reference.pdf to mail@site.com at 11:00"
+== "send %reference.pdf to mail@site.com at 11:00"
+>> type? msg
+== string!
+>> to block! msg
+== [send %reference.pdf to mail@site.com at 11:00:00]`
+```
+
+Here `msg` is of string! type. When converted to a `block!`, each part of the string is converted to a Red value (of course if it represents  a valid Red value):
+```
+>> foreach value to block! msg [print type? value]
+word
+file
+word
+email
+word
+time
+```
