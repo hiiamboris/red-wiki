@@ -24,14 +24,14 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
 
 ## Draft outline
    ### A short introduction to Red for Python programmers
-       #### Words
-       #### Evaluation order
-       #### Datatypes
-       #### Blocks and series
-       #### Functions
-       #### View
-       #### Draw
-       #### Parse
+   #### Words
+   #### Evaluation order
+   #### Datatypes
+   #### Blocks and series
+   #### Functions
+   #### View
+   #### Draw
+   #### Parse
 
 ## Notes
 
