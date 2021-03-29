@@ -235,6 +235,7 @@ One can use addition and subtraction operations with date!, as well as with date
 
 `255.255.255.0`
 
+
 ### Blocks and series
 
 A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of [series!](https://github.com/red/docs/blob/master/en/typesets.adoc#series) with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
@@ -259,6 +260,7 @@ Blocks are created by enclosing values (separated by a whitespaces) in square br
 ```
 [1 2 3]
 [42 6 * 7 “forty-two” forty two]
+```
 
 Except literally, blocks can be created at runtime using a `make` constructor: 
 
