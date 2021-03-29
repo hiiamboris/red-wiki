@@ -12,8 +12,8 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [September 30, 2019 3:29 PM](https://gitter.im/red/red/gui-branch?at=5d91f526fcb47b627fefd967) @GalenIvanov [Island Alleys](https://github.com/GalenIvanov/Games/blob/master/Island%20Alleys.red) [(preview)](https://files.gitter.im/red/red/gui-branch/BgpY/Island_allleys_8x8.jpg)
 - [December 10, 2019 5:04 PM](https://gitter.im/red/red/welcome?at=5defa5ea6a85195b9e30c847) @Palaing ["2048" tile game](http://rosettacode.org/wiki/2048#Red)
 - [January 27, 2020 12:18 PM](https://gitter.im/red/red/gui-branch?at=5e2eaaf63482927279373f37) @GalenIvanov [Looper puzzle](https://github.com/GalenIvanov/Games/blob/master/Looper.red) [(preview)](https://raw.githubusercontent.com/GalenIvanov/Games/master/Looper.jpg) [(video)](https://www.youtube.com/watch?v=emjGl_HVc70)
-- [April 03 2020 14:36](https://gitter.im/red/red/gui-branch?at=5e871fafcc4b7b6f6641ec00) @GalenIvanov [Tangram](https://github.com/GalenIvanov/Games/blob/master/Tangram.red)
-- [May 05 2020 15:18](https://gitter.im/red/red/gui-branch?at=5eb159a25cd4fe50a3ee91f2) @GalenIvanov [Izzi puzzle](https://github.com/GalenIvanov/Games/blob/master/Izzi.red)
+- [April 03 2020 14:36](https://gitter.im/red/red/gui-branch?at=5e871fafcc4b7b6f6641ec00) @GalenIvanov [Tangram](https://github.com/GalenIvanov/Games/blob/master/Tangram.red) [(preview)](https://github.com/GalenIvanov/Games/blob/master/Tangram.png)
+- [May 05 2020 15:18](https://gitter.im/red/red/gui-branch?at=5eb159a25cd4fe50a3ee91f2) @GalenIvanov [Izzi puzzle](https://github.com/GalenIvanov/Games/blob/master/Izzi.red) [(preview)](https://github.com/GalenIvanov/Games/blob/master/Izzi%20-%20solving.png)
 
 # Alternative Red implementations
 - [May 13, 2020 3:41 AM](https://gitter.im/red/red?at=5ebb422c7c04b92f535d21c6) @ALANVF [Red.js - A web runtime for Red](https://github.com/ALANVF/Red.js)
@@ -46,7 +46,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [May 16, 2018 10:08 PM](https://gitter.im/red/sandbox?at=5afc81c11cfca775e114253f) @toomasv [Date-picker](https://gist.github.com/toomasv/1234d616d8e43a4e49efaa7c1a06c9c9)
 - [July 7, 2018 8:58 PM](https://gitter.im/red/sandbox?at=5b40ff2da99e1e52b71e6ca4) @toomasv [Logic-gates example](https://github.com/toomasv/gates)
 - [August 15, 2018 22:14](https://gitter.im/red/help?at=5b746d1f5b07ae730ac20312) @toomasv A value between range.
-- [February 21 2019 12:13](https://gitter.im/red/red/gui-branch?at=5c6e79c37667931e2fd808ef) @GalenIvanov [L-systems explorer](https://github.com/GalenIvanov/Graphics-Red/blob/master/L-systems.red) 
+- [February 21 2019 12:13](https://gitter.im/red/red/gui-branch?at=5c6e79c37667931e2fd808ef) @GalenIvanov [L-systems explorer](https://github.com/GalenIvanov/Graphics-Red/blob/master/L-systems.red) [(preview)](https://github.com/GalenIvanov/Graphics-Red/blob/master/L-Systems.png)
 
 # Miscellanea
 - [March 27, 2018 4:58 AM](https://gitter.im/red/red/gui-branch?at=5aba23db7c3a01610d7c1ebe) @PlanetSizeCPU [GUI Designer](https://github.com/planetsizecpu/forms)
