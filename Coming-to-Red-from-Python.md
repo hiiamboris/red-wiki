@@ -23,7 +23,16 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
 ## Red functions for the Python programmers
 
 ## Draft outline
-   
+   ### A short introduction to Red for Python programmers
+       #### Words
+       #### Evaluation order
+       #### Datatypes
+       #### Blocks and series
+       #### Functions
+       #### View
+       #### Draw
+       #### Parse
+
 ## Notes
 
 ### Some examples to consider
