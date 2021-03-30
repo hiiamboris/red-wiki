@@ -256,7 +256,7 @@ Red
 ```
 As you can see, red-block remains unchanged, while p_list is formed by the evaluated values of its constituents.
 
-Blocks are created by enclosing values (separated by a whitespaces) in square brackets `[ ]`
+Blocks are created by enclosing values (separated by whitespaces) in square brackets `[ ]`
 ```
 [1 2 3]
 [42 6 * 7 “forty-two” forty two]
@@ -284,12 +284,125 @@ Block can also be created by converting other values:
 ```
 
 Here `msg` is of string! type. When converted to a `block!`, each part of the string is converted to a Red value (of course if it represents  a valid Red value):
+
 ```
->> foreach value to block! msg [print type? value]
-word
-file
-word
-email
-word
-time
+>> foreach value to block! msg[print [value  ":" type? value]]
+send : word
+reference.pdf : file
+to : word
+mail@site.com : email
+at : word
+11:00:00 : time
 ```
+
+The above code iterates over the items of the block created from a string using `to` conversion and prints the value and its type.
+
+Please note that `to` function (technically it’s an [`action!`]( https://github.com/red/docs/blob/master/en/datatypes/action.adoc) expects a datatype OR an example value to which to convert the given value. This means that instead of `block!` we can use any literal block, even`[]`:
+
+```
+>> to [] msg
+== [send %reference.pdf to mail@site.com at 11:00:00]
+```
+
+Now that you know what a block is and how you create one, let’s try to access block’s items. Let’s work with ` data: [3 1 4 1 5 9]`.  The simplest way one can reference an item in a block is using the item’s index in the block. Unlike Python, Red uses 1-based indexing. So, to get the first item we use `path notation` and an integer index:
+
+```
+data/1
+== 3
+>> data/2
+== 1
+```
+
+Alternatively, we can use `pick`:
+
+```
+>> pick data 3
+== 4
+```
+
+Please note that in Red it’s not possible to use `path notation` to index a literal block (or series). It’s perfectly valid to write in Python:
+
+```
+>>> [2,3,1][2]
+1
+```
+To achieve a similar behavior in red we use `pick`:
+
+```
+>> pick [2 3 1] 3
+== 1
+```
+
+A useful feature of `pick` is the possibility to use a `logic!` value for the index. The `true` value refers to the first item in the block (series) and the `false` value – to the second item.
+
+```
+>> pick data 2 > 3
+== 1
+>> pick data 2 < 3
+== 3
+```
+
+Speaking of first and second items of a block, Red has predefined functions for accessing the first 5 items of a series:
+
+```
+>> first data
+== 3
+>> second data
+== 1
+>> third data
+== 4
+>> fourth data
+== 1
+>> fifth data
+== 5
+```
+
+Let’s consider another block of values: ` signal: [a 2 7 b 1 8 c 2 8] `. Here `a b c` are just `word!`s – that is they represent themselves until they 	have some value in some context. 
+
+```
+>> first signal
+== a
+```
+So , the first item if `signal` is just `a`. 
+
+```
+>> type? first signal
+== word!
+```
+If we try to get the value `a` refers to, we get an error:
+
+```
+>> get first signal
+*** Script Error: a has no value
+*** Where: get
+*** Stack:  
+```
+However, if we assign `a` value in the current (global) context, the first item of `signal` will be referring to it:
+
+```
+>> a: "abc"
+== "abc"
+>> get first signal
+== "abc"
+```
+Of what use are the words in a block? We can use them to mark positions in the block for an easy access:
+
+```
+== 7
+>> signal/a
+== 2
+>> signal/b
+== 1
+>> signal/c
+== 2
+```
+
+Alternatively, we can use `select` to find a value in a series and get the value after it:
+
+```
+>> select signal 'a
+== 2
+>> select signal 2
+== 7
+>>
+
