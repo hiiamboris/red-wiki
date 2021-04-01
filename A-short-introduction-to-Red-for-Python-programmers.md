@@ -405,6 +405,7 @@ Alternatively, we can use `select` to find a value in a series and get the value
 >> select signal 2
 == 7
 >>
+```
 
 Let’s try to navigate within a block/series. Our new block will be `b: [1 2.0 #"3" "four"]`
 
