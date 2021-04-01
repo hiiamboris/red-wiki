@@ -487,8 +487,8 @@ We can find the length of a series using `length?`:
 
 We can check if a series is at its head (first index) or tail with `head?` and `tail?` respectively:
 
-``
-`>> b
+```
+>> b
 == [1 2.0 #"3" "four"]
 >> head? b
 == true
