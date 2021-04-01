@@ -406,3 +406,108 @@ Alternatively, we can use `select` to find a value in a series and get the value
 == 7
 >>
 
+Let’s try to navigate within a block/series. Our new block will be `b: [1 2.0 #"3" "four"]`
+
+`head` returns a series at its first index. Please note – the entire series, not the element at that position.
+
+```
+>> b
+== [1 2.0 #"3" "four"]
+>> head b
+== [1 2.0 #"3" "four"]
+```
+
+Similarly, there is `tail` that returns a series at the index after its last value.
+
+```
+>> tail b
+== []
+```
+
+Here `[]` is an empty block – there are no elements in the series at its tail.
+
+If we are interested in the elements of a series between its head and tail, we can use `next` to iterate over the series. `next` returns a series at the next index:
+
+```
+>> next b
+== [2.0 #"3" "four"]
+>>
+```
+Please be careful - `next` doesn’t update the series, that’s why you need to use a `set-word!` to re-assign it:
+
+```
+>> next b
+== [2.0 #"3" "four"]
+>> b
+== [1 2.0 #"3" "four"]
+>> b: next b
+== [2.0 #"3" "four"]
+>> b
+== [2.0 #"3" "four"]
+```
+
+Let’s compare Red’s `next` to Python’s `next()` method. 
+
+```
+>>> a = [1,'2',[1,2,3]]
+>>> a_it = iter(a)
+>>> next(a_it)
+1
+>>> next(a_it)
+'2'
+>>> next(a_it)
+[1, 2, 3]
+```
+
+Python’s next()` returns a single element and not the list. If at any point you convert the iterator to a list using `list(a_it)` or `[*a_it]`, the iterator is exhausted and a subsequent call to `next(a_it)` raises a `StopIteration` exception. 
+
+We said that `head` refers to the series at its first index – index 1. We can check the current index of a series with `index?`
+
+```
+>> b
+== [2.0 #"3" "four"]
+>> index? b
+== 2
+>> head b
+== [1 2.0 #"3" "four"]
+>> index? head b
+== 1
+>> index? tail b
+== 5
+```
+Don’t forget that `tail` returns the series at the index after its last item. So `index? tail b` returns one more than the length of `b`.
+
+We can find the length of a series using `length?`:
+
+```
+>> length? b
+== 4
+```
+
+We can check if a series is at its head (first index) or tail with `head?` and `tail?` respectively:
+
+``
+`>> b
+== [1 2.0 #"3" "four"]
+>> head? b
+== true
+>> b: next b
+== [2.0 #"3" "four"]
+>> head? b
+== false
+>> b: tail b
+== []
+>> tail? b
+== true
+```
+
+We saw that we can go from head to tail in a series using `next`. Similarly, we can go backwards with `back`:
+
+```
+>> b
+== [1 2.0 #"3" "four"]
+>> tail b
+== []
+>> back tail b
+== ["four"]
+```
