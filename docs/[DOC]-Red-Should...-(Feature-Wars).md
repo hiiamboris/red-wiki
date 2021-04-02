@@ -60,7 +60,7 @@ Datatypes are a foundation of Red, as with other languages. But Red is quite dif
 
 # Support Variable Arity Functions
 
-Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. If someone figures out how to make variable arity funcs clean, efficient, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
+Red already has free ranging evaluation, refinements, and the ability to pass blocks of values. The first makes variable arity hard, the other two are how you do it idiomatically in Red. If someone figures out how to make variable arity funcs clean, efficient, unambiguous, and easy to understand when used (consider more than C or Lisp style code), we'll hire them. But we'll have them work on other features. :^)
 
 # Sandboxing
 
