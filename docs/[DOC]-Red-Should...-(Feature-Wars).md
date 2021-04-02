@@ -4,7 +4,7 @@ As language trends change, certain feature requests will come up again and again
 
 If you really, adamantly, deeply feel that Red *must* have your feature-of-choice or it is doomed to failure, and its value isn't immediately clear to the team (who will respond by slapping their collective foreheads and raining down RED tokens upon you), the onus is on you to prove its worth and viability as an integral part of the language. The burden is *not* on Team Red, or its designer to justify why it shouldn't be added. 
 
-That said, some new features will be great, and we all want to improve Red. So dig in, do your homework, defend your position, arm yourself with objective facts and hard numbers ("too slow" and "much faster" are not numbers, in case you were wondering), and make it impossible for us to refute your claims about objective benefit. Then, and this is the hard part, make it clear that you understand Red and show how your new feature dovetails beautifully into its design and architecture. That's how you win.
+That said, some new features will be great, and we all want to improve Red. So dig in, do your homework, defend your position, arm yourself with objective facts and hard numbers ("too slow" and "much faster" are not numbers, in case you were wondering; nor is "scale" a unit of measure), and make it impossible for us to refute your claims about objective benefit. Then, and this is the hard part, make it clear that you understand Red and show how your new feature dovetails beautifully into its design and architecture. That's how you win.
 
 
 # Table of Contents
