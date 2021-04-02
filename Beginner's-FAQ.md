@@ -4,7 +4,7 @@ Have you just started your Red adventure and got a lot of questions? Check some 
 Developing a problem-solving mindset is a core skill in becoming a good programmer, so keeping that in mind, try to find the answer you are looking for  following these 7 fail-proof steps:
 
 1. Red's console `help` command is your personal helper! 
-Type `help` in the Red console to learn how to access the built-in documentation. Don't be afraid, Red's internal documentation is very concise so you can get a grasp of the main information in a glance. Try typing `help help` to see how `help` itself operates.
+Type `help` in the Red console to learn how to access the built-in documentation. Don't be afraid, Red's internal documentation is very concise so you can get a grasp of the main information in a glance.
 
 2. [How Do I Do X with Red?](https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F) - Quick usage examples for common tasks.
 
