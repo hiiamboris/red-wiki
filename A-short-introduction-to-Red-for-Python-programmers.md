@@ -512,3 +512,74 @@ We saw that we can go from head to tail in a series using `next`. Similarly, we 
 >> back tail b
 == ["four"]
 ```
+
+
+Both `next` and `back` change the current index of a series one step at a time. In contrast, `skip` allows bigger “jumps” relative to the current index. 
+
+```
+>> head? b
+== true
+>> skip b 2
+== [#"3" "four"]
+```
+
+The series is at its head (first index) and we are `skip`ping 2 indices. The result is the series 2 indices after its head:
+
+```
+>> index? skip b 2
+== 3
+```
+ Don’t forget that the series head has index 1. We can use negative offset as a second argument to `skip`:
+
+```
+>> skip tail b -2
+== [#"3" "four"]
+```
+We start at the tail of `b` and go two steps backwards, we will get the series two indices before its tail.
+
+```
+>> index? tail b
+== 5
+>> index? skip tail b -2
+== 3
+```
+Please note that `skip`, `next` and `back` don’t go beyond series’ head/tail:
+
+```
+>> index? skip b 20
+== 5
+>> index? skip tail b -20
+== 1
+>>
+```
+
+The `at` functions has functionality similar to `skip`, but returns the series at a given index, instead of at an offset (relative to the current index).
+
+```
+>> head? b
+== true
+>> skip b 1
+== [2.0 #"3" "four"]
+>> at b 1
+== [1 2.0 #"3" "four"]
+```
+
+`at` allows a negative integer for its `index` argument:
+
+```
+>> at tail b -1
+== ["four"]
+```
+
+We will finish our tour of series navigation functions with `offset?`. Not surprisingly, It returns the offset between two series positions.
+
+```
+>> offset? b tail b
+== 4
+>> b
+== [1 2.0 #"3" "four"]
+>> subtract index? tail b index? b
+== 4
+```
+
+As you can see, `offset?` is the difference between two indices in a series. 
