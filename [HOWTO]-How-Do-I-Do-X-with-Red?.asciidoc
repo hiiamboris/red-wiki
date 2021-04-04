@@ -4,7 +4,7 @@ __This is intended to be a collaborative list of how to perform common programmi
 '''
 *Help Command*
 
-* Display help about the help command = `help`
+* Display help about the help command `help`
 The help command is a very powerful tool. Typing `help` at the repl will display information about all of the things help can do for you. Some really important callouts:
    - `help print` will display information about the `print` function.
    - `help "print"` will display all functions which have the string "print" in them, or their descriptions. Notice the `"`!
