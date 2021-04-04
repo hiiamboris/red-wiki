@@ -1,5 +1,43 @@
 __This is intended to be a collaborative list of how to perform common programming tasks with Red.__
 
+### Use Help
+'''
+*Help Command*
+
+* Display help about the help command = `help`
+The help command is a very powerful tool. Typing `help` at the repl will display information about all of the things help can do for you. Some really important callouts:
+   - `help print` will display information about the `print` function.
+   - `help "print"` will display all functions which have the string "print" in them, or their descriptions. Notice the `"`!
+   - `?? print` will display the source code for the print function.
+
+```red
+>> help
+        Use HELP or ? to view built-in docs for functions, values 
+	for contexts, or all values of a given datatype:
+
+		help append
+		? system
+		? function!
+
+	To search for values by name, use a word:
+
+		? pri
+		? to-
+
+	To also search in function specs, use a string:
+
+		? "pri"
+		? "issue!"
+
+	Other useful functions:
+
+		??     - Display a word and the value it references
+		probe  - Print a molded value
+		source - Show a function's source code
+		what   - Show a list of known functions or words
+		about  - Display version number and build date
+		quit   - Leave the Red console
+```
 
 ### Input and Output (IO)
 '''
