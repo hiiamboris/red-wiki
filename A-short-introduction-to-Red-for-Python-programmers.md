@@ -583,3 +583,107 @@ We will finish our tour of series navigation functions with `offset?`. Not surpr
 ```
 
 As you can see, `offset?` is the difference between two indices in a series. 
+
+#### Getting several values from a series at once
+ 
+We saw how one can access a single value from a series using index and path notation, `pick` and `select`. It is very often necessary to get more than one value from a series at once. In such cases we use `copy`.
+ 
+```
+>> c: copy b
+== [1 2.0 #"3" "four"]
+```
+ 
+Here we created a new series `c` with values that are copies of the values of `b`. If we just used a `set-word!` without the `copy` function,  we would have created a reference to `b`. In such case any change in either `b` or `c` would result in changing the other, as they share a single series:
+ 
+```
+>> b
+== [1 2.0 #"3" "four"]
+>> c: b
+== [1 2.0 #"3" "four"]
+>> b/1: 11
+== 11
+>> b
+== [11 2.0 #"3" "four"]
+>> c
+== [11 2.0 #"3" "four"]
+```
+
+If want to copy just a part of the series, we can use `copy` with refinement `/part`. The first argument indicates where to start, the second – how many elements to copy.
+
+
+```
+>> b: [1 2.0 #"3" "four"]
+== [1 2.0 #"3" "four"]
+>> copy/part b 2
+== [1 2.0]
+>> copy/part at b 2 2
+== [2.0 #"3"]
+>> copy/part tail b -3
+== [2.0 #"3" "four"]
+>>
+```
+
+In the second example we start not at the head of the series, but at its second index.
+
+
+You can think of `copy/part` as using Python slices:
+
+
+```
+>>> a=[1,2.0,'3','four']
+>>> a[:2]
+[1, 2.0]
+>>> a[-3:]
+[2.0, '3', 'four']
+```
+
+You might be now wondering if it’s possible to mimic Pythons slicing with a step in Red. Python does it using the third parameter of the slice notation.
+
+
+```
+a[::2]
+[1, '3']
+```
+
+Red uses a different function for this - `extract`:
+
+```
+>> extract b 2
+== [1 #"3"]
+>> extract next b 2
+== [2.0 "four"]
+
+```
+
+#### Adding element to a series
+
+Until now we were only taking elements from a series. Let’s see how to add new items. If we need to add one or more elements at the tail of a series, we do it with `append`:
+
+```
+>> append b 5
+== [1 2.0 #"3" "four" 5]
+```
+
+We can append several copies of the element using `/dup` refinement:
+
+```
+>> append/dup b 6 3
+== [1 2.0 #"3" "four" 5 6 6 6]
+```
+
+We can add elements at any position in a series using `insert`
+
+``` 
+>> b: [1 2.0 #"3" "four" 5 6 6 6]
+== [1 2.0 #"3" "four" 5 6 6 6]
+>> insert b 'zero
+== [1 2.0 #"3" "four" 5 6 6 6]
+>> b
+== [zero 1 2.0 #"3" "four" 5 6 6 6]
+>> insert/only at b 2 [2]
+== [1 2.0 #"3" "four" 5 6 6 6]
+>> b
+== [zero [2] 1 2.0 #"3" "four" 5 6 6 6]
+```
+
+Please note that we need to use the `only` refinement when we need the new element be added as a block, otherwise the block contents would be added.
