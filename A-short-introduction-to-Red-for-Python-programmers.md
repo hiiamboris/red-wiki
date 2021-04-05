@@ -407,6 +407,8 @@ Alternatively, we can use `select` to find a value in a series and get the value
 >>
 ```
 
+#### Traversing a series
+
 Let’s try to navigate within a block/series. Our new block will be `b: [1 2.0 #"3" "four"]`
 
 `head` returns a series at its first index. Please note – the entire series, not the element at that position.
