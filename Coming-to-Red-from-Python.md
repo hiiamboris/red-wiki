@@ -37,3 +37,13 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
 
 ### Some examples to consider
 
+## Potential Gotchas
+### Namespaces
+Red uses namespaces in their pure sense: just a way to allow the same symbol to mean different things in different contexts. There is a lot of additional baggage with the concept of a namespace though so generally Red programmers like to refer to namespaces as contexts. Contexts are straightforward but their simplicity can have consequences that seem odd. Particularly if you think of them as python-like namespaces.
+
+#### What are Contexts?
+Contexts are just lookup tables for symbols. The symbol `cookie` in context `A` might mean `"chocolate"`. Whereas in context `B`, the same symbol might mean `"vanilla"`. So far, very much like pythonic namespaces. Under the hood though, each instance of a symbol has a reference to its context. So the lookup for a symbol doesn't assume a context (namespace). In Red, the lookup for a symbol instance first reads its context, then looks up what the symbol means in that context.
+
+This means you can have two lexically identical symbols `[cookie cookie]` which will be resolved as two independent values. The first cookie's context having been set to `A` while the second set to `B`. It's pretty neat. Especially because you can do this context swapping at runtime, whereas pythonic namespaces are effectively "hard coded" at runtime.
+
+There are some fun brain teasing examples of this, often having to do with spoons, that the community has made over the years that might help show both the power, and potential for insanity, contexts bring. Before getting to them, just know that certain keywords <insert list here> affect context for the symbols defined with them. But, most importantly: nothing lexical affects them in any way. Blocks do not create contexts. When you read this next time, trying to figure out a variable clobbering, just know that we've all been here and are happy to help you sort things out.
