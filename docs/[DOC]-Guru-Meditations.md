@@ -1,6 +1,6 @@
 ## Table of Contents
 
-1. [Contexts and Binding](#cab)
+1. [Contexts and Binding](#contexts-and-binding)
 1. [Debugging](#debugging)
 1. [Red/System Boxing](#redsystem-boxing)
 1. [Decorated Native Names](#decorated-native-names)
