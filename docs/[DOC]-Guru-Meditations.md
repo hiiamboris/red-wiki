@@ -1,6 +1,6 @@
 ## Table of Contents
 
-1. [Contexts, and Binding](#CB)
+1. [Contexts and Binding](#cab)
 1. [Debugging](#debugging)
 1. [Red/System Boxing](#redsystem-boxing)
 1. [Decorated Native Names](#decorated-native-names)
@@ -56,7 +56,7 @@
 1. [Convert `c-string!` to `red-string!`](#convert-c-string-to-red-string)
 1. [Checking if a word belongs to a function](#checking-if-a-word-belongs-to-a-function)
 
-# Contexts, and Binding
+# Contexts and Binding
 
 ## Contexts (are not scopes), by Vladimir Vasilyev @9214
 
