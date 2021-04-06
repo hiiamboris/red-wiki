@@ -245,6 +245,10 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [red-false](https://github.com/eranws/red-false) - a compiler for FALSE language written in Red (in less than 50 lines of code)
 
 		tags: 
+* exercism - 
+	* [exercism/red](https://github.com/exercism/red) - Red track for Exercism, a crowdsourced self-teaching site with mentorship over 50+ languages.
+
+		tags: education , training , tutorial
 ## F
 * feihong - 
 	* [red-quickstart](https://github.com/feihong/red-quickstart) - Feihong's Red quickstart
