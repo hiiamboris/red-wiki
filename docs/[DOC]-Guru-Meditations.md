@@ -1,5 +1,6 @@
 ## Table of Contents
 
+1. [Contexts, and Binding](#CB)
 1. [Debugging](#debugging)
 1. [Red/System Boxing](#redsystem-boxing)
 1. [Decorated Native Names](#decorated-native-names)
@@ -54,6 +55,94 @@
 1. [Using `load` with `/next` and `/trap`](#using-load-with-next-and-trap)
 1. [Convert `c-string!` to `red-string!`](#convert-c-string-to-red-string)
 1. [Checking if a word belongs to a function](#checking-if-a-word-belongs-to-a-function)
+
+# Contexts, and Binding
+
+## Contexts (are not scopes), by Vladimir Vasilyev @9214
+
+A `context` is a namespace. A namespace is a mapping between a symbol and its associated value. A scope is an ordered chain of namespaces. There are no scopes in Red because there's no ordering or relation between namespaces, they are all separate from one another, and provided to you by "proxy" values, such as object!, error! or function!.
+
+Scope almost always implies lexical scoping, which makes people think that Red has lexical scoping delineated by lexical blocks with [ and ] instead of curly braces. This in turn makes them think that words are variables. And at this point, the learning curve turns into a roller coaster, and leads to an unsalvageable conceptual trainwreck.
+
+
+## Binding, by Vladimir Vasilyev @9214
+
+Binding is quite a simple concept, I'm still puzzled why people fail to grasp it.
+
+Suppose you are jogging outside of town, in rural park of some sort. Another person runs towards you, pointing behind your back and yelling "rock!". You can deduce, from the context where this phrase is spelled out (rural park, nature, trees, earth, rocks), that by "rock" he means "a solid mineral".
+
+Suppose you are on a music festival with your friend. Your friend point behind your back and says "rock!". You can deduce, purely from your surroundings (music, genres, nearby moshpit, guitar riffs that you hear), that by "rock" he means "musical genre".
+    
+Suppose you are on some wrestling contest, as a spectator. The guy nearby you, who looks like a paparazzo, points behind your back and squeaks "The Rock!". Again, from the context, you can deduce that he probably just saw Dwayne Johnson entering the ring.
+    
+Suppose you and your teenage son decided to do some Jolly Cooperation in Dark Souls; you play together and then you hear him screaming "OMG it's The Rock!". From the context of the game's lore, you can deduce that you are about to get rolled in the ground by Havel the Rock and restart at the nearby bonfire.
+
+In all of the examples, "rock" is a word that has a different meaning, depending on the context where it is used: "mineral" in the rural park, "musical genre" in the music festival, "Dwayne" in wrestling contest and "game boss" in Dark Souls.
+
+Now, suppose you see the following phrase: "I slipped up on a rock while listening to rock and contemplating if The Rock would defeat The Rock on his first playthrough in DS". Each "rock" here has the same spelling, but different meaning, that is, they are homonyms. 
+
+What determines the meaning of a given word? The context in which it is used. In plain English, you can infer it from surrounding words and phrases:
+
+----
+    (slipped, legs, ground) -> mineral
+    (listening, music, festival) -> genre
+    (defeat, person, wrestler) -> Dwayne
+    (playthrough, game lore, Dark Souls) -> Havel
+----
+
+This is essentially what Red lets you do - to create homonyms. You can have [rock rock rock rock] block where each rock means a different thing, where it is bound to a specific context. Not only that, but you can also change the meaning of any word, simply by altering its binding. Binding is this invisible thread woven through each and every any-word! value; if you pull it, you find the meaning of a word (or absence of it).
+
+```red
+>> rocks: []
+== []
+
+>> append rocks bind 'rock rural-park: context [rock: "mineral"]
+== [rock]
+
+>> append rocks bind 'rock festival: context [rock: "genre"]
+== [rock rock]
+
+>> append rocks bind 'rock wrestling: context [rock: "Dwayne"]
+== [rock rock rock]
+
+>> append rocks bind 'rock dark-souls: context [rock: "Havel"]
+== [rock rock rock rock]
+
+>> reduce rocks
+== ["mineral" "genre" "Dwayne" "Havel"]
+```
+
+This is why "scoping" and "variables" make no sense in Red.
+
+Scopes form chains, but contexts are completely independent of one another; they are essentially namespaces ("semantic fields" if you wish). Rebol just tries to fake them, cloaking itself as a thing that "kinda-sorta looks like an Algol-family language with functions, lexical scope and conventional while loops and stuff".
+
+Variables, in turn, are memory slots that can hold content that varies (hense the name) over time. Words are not variables - the only thing that can change in them is their binding, but that's completely implicit. They are not memory slots, they are the content of slots (value slots, that is) with an extra pointer to another value.
+
+And here is the punchline:
+
+```red
+>> cutlery: [spoon spoon spoon spoon]
+== [spoon spoon spoon spoon]
+
+>> set cutlery 'spoon
+== spoon
+
+>> print cutlery
+spoon spoon spoon spoon
+
+>> phrase: split "There is no spoon" space
+== ["There" "is" "no" "spoon"]
+
+>> forall cutlery [bind cutlery context [spoon: take phrase]]
+== [spoon]
+
+>> cutlery
+== [spoon spoon spoon spoon]
+
+>> print cutlery
+There is no spoon
+```
+
 
 # Debugging
 [Moved](https://github.com/red/red/wiki/%5BDOC%5D-Debugging)
