@@ -930,9 +930,22 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 * loziniak - 
-	* [safenet.red](https://github.com/loziniak/safenet.red) - 
+	* [libssl-crypt](https://github.com/loziniak/libssl-crypt) - Symmetric key encryption/decryption using LibSSL
 
-		tags: 
+		tags: crypto , encryption
+	* [red-scripts](https://github.com/loziniak/red-scripts) - Various scripts in Red language
+
+		tags: http , test , tdd , json
+	* [Regroup](https://github.com/loziniak/regroup) - A script for sorting Friendica contacts in groups by posting frequency
+
+		tags: social , fediverse
+	* [resize-deep](https://github.com/robotix-pl/resize-deep) - Our simplistic attempt to approach fluid VID layout
+
+		tags: vid , layout , fluid , flow
+	* [safenet.red](https://github.com/loziniak/safenet.red) - Red bindings for Safe Network
+
+		tags: network , crypto , safenet
+
 * luce80 - 
 	* [add-script.red](https://gist.github.com/luce80/e7228b556b52cb093364ee1992018317) - Help update red scripts collection list
 
