@@ -942,9 +942,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [resize-deep](https://github.com/robotix-pl/resize-deep) - Our simplistic attempt to approach fluid VID layout
 
 		tags: vid , layout , fluid , flow
-	* [safenet.red](https://github.com/loziniak/safenet.red) - Red bindings for Safe Network
+	* [sn_ffi](https://github.com/loziniak/sn_ffi) - Red bindings for Safe Network
 
-		tags: network , crypto , safenet
+		tags: network , crypto , safenet , ffi
 
 * luce80 - 
 	* [add-script.red](https://gist.github.com/luce80/e7228b556b52cb093364ee1992018317) - Help update red scripts collection list
