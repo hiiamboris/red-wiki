@@ -673,6 +673,32 @@ We can append several copies of the element using `/dup` refinement:
 == [1 2.0 #"3" "four" 5 6 6 6]
 ```
 
+Python has two separate methods for adding new elements to a list as a single value or multiple values - `append()` and `extend()
+
+```
+>>> a=[1,2,3,4]
+>>> a.append(5)
+>>> a
+[1, 2, 3, 4, 5]
+>>> a.append([6,7])
+>>> a
+[1, 2, 3, 4, 5, [6, 7]]
+>>> a.extend([8,9])
+>>> a
+[1, 2, 3, 4, 5, [6, 7], 8, 9]
+```
+
+Red uses the `/only` refinement to append the new value as block:
+
+```
+>> a: [1 2 3 4]
+== [1 2 3 4]
+>> append a [5 6]
+== [1 2 3 4 5 6]
+>> append/only a [7 8]
+== [1 2 3 4 5 6 [7 8]]
+```
+
 We can add elements at any position in a series using `insert`
 
 ``` 
@@ -689,3 +715,65 @@ We can add elements at any position in a series using `insert`
 ```
 
 Please note that we need to use the `only` refinement when we need the new element be added as a block, otherwise the block contents would be added.
+
+#### Removing items from a series
+
+We can remove values from a series using `remove`:
+
+```
+>> s: "Hello world!"
+== "Hello world!"
+>> remove s
+== "ello world!"
+>> s
+== "ello world!"
+>>
+```
+
+`remove`  returns the series at the same index after removing
+
+
+The argument can be a series at some specific index:
+
+```
+s: "Hello world!"
+== "Hello world!"
+>> remove at s 6
+== "world!"
+>> s
+== "Helloworld!"
+```
+
+If we need to remove more than one value, we can use the `/part` refinement:
+
+```
+>> remove/part at s 6 3
+== "ld!"
+>> s
+== "Hellold!"
+>>
+```
+
+
+Sometimes the whole series should the emptied, or all elements after certain index to be removed. It can be done with `remove/part`, but there is a special function for this - `clear`. It removes series values from current index to tail and returns the new tail.
+
+```
+>> s: "Hello world!"
+== "Hello world!"
+>> clear at s 6
+== ""
+>> s
+== "Hello"
+```
+
+There are cases when you need to append a value to a series if it’s not found in the series, otherwise remove it. Red uses `alter` for this operation.
+
+```
+a: [1 2 3 4 5 4]
+== [1 2 3 4 5 4]
+>> alter a 4
+== false
+>> a
+== [1 2 3 5 4]
+```
+In this example there were two 4. `alter` removed the first one and returned `false` - this means that the value has been removed and not added.
