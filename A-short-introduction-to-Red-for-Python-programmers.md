@@ -2,7 +2,7 @@ Red is a homoiconic language (Red is its own meta-language and own data-format) 
 A Red program is a sequence of Red values - everything is data before it’s evaluated. This makes one able to *express any task using syntax that best suits it*. The execution of a Red program is done by evaluating each of its constituent values in turn, according to the evaluation rules.
 ### Words
 A special category of values is word. A word! is a symbolic value that can be used like a variable (the `!` at the end denotes a datatype). Red does not have identifiers nor keywords. Words do not store values, they point to values in some context – the global context by default.
-Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: `! & ' * + - . < = > ? _ | ~`` 
+Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: `! & ' * + - . < = > ? _ | ~` 
 
 Here are some valid words:
 
@@ -731,6 +731,14 @@ We can remove values from a series using `remove`:
 ```
 
 `remove`  returns the series at the same index after removing
+In Python you use `del` to remove an item at the specified index (I’ll mention `pop()` in a subsequent section):
+
+```
+>>> a=[3,1,4,1,5]
+>>> del a[2]
+>>> a
+[3, 1, 1, 5]
+```
 
 
 The argument can be a series at some specific index:
@@ -777,3 +785,72 @@ a: [1 2 3 4 5 4]
 == [1 2 3 5 4]
 ```
 In this example there were two 4. `alter` removed the first one and returned `false` - this means that the value has been removed and not added.
+
+
+
+#### Changing values in series
+
+To change a value (or consecutive values) in Red we use `change`. We need to indicate the series we want to change and the new value. If we give a single value, the value at the current index of the series will be changed to the new value:
+
+```
+>> a: [3 1 4 1 5]
+== [3 1 4 1 5]
+>> change at a 2 10
+== [4 1 5]
+>> a
+== [3 10 4 1 5]
+>>
+```
+
+This corresponds to Python’s assignment that refers to the item’s index within a list:
+
+```
+>>> a=[3,1,4,1,5]
+>>> a[1]=10
+>>> a
+[3, 10, 4, 1, 5]
+```
+
+If the new value is a block, Red will change the values starting at the current index with the values from the block, appending the new values if needed:
+
+```
+>> b: [2 3 1]
+== [2 3 1]
+>> change at b 2 [4 5 6 7]
+== []
+>> b
+== [2 4 5 6 7]
+```
+
+In contrast, Python changes a single value with a single value, keeping the list:
+
+```
+>>> b=[2,3,1]
+>>> b[1]=[4,5,6,7]
+>>> b
+[2, [4, 5, 6, 7], 1]
+```
+
+If we need to do a similar thing in Red, we would use the `/only` refinement (please note how the similar actions are described with the same word - `only` in this case, analogous to `/only` in `append` and `insert`)
+
+```
+>> b: [2 3 1]
+== [2 3 1]
+>> change/only at b 2 [4 5 6 7]
+== [1]
+>> b
+== [2 [4 5 6 7] 1]
+```
+
+If we need to change a given number of values with several values, we can do it with the `/part`  refinement:
+
+```
+>> b: [2 3 1]
+== [2 3 1]
+>> change/part at b 2 [4 5 6 7] 1
+== [1]
+>> b
+== [2 4 5 6 7 1]
+```
+
+#### Moving values within series
