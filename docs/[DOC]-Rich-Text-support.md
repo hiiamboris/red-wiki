@@ -104,6 +104,11 @@ The whole face area is used for displaying the rich text, starting at upper left
 
 Draw facet can still be used and it will be rendered on top of the rich text display.
 
+**Example**
+```
+view [rich-text "hello" with [data: [2x3 bold]]]
+```
+
 ### Multi-box mode
 
 In this mode, an arbitrary number of rich text areas can be displayed inside the same rich-text face. In order to achieve that, each rich text area is specified using the `text` keyword in Draw dialect.
