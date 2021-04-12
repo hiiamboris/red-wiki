@@ -8,6 +8,12 @@ print "Content-type: text/html^/"
 print rejoin ["Hello world from Red " system/version]
 ```
 
+
+to print the HTTP header:
+```
+call/wait/output "printenv" o: "" print o
+```
+
 If you want to process data passed to CGI, I suggest using [HTTP tools](https://github.com/rebolek/red-tools/blob/master/http-tools.red) that will read HTTP headers and parse them to `http-headers` object. This object has same structure as Rebol's `system/options/cgi`, described [here](http://www.rebol.com/docs/cgi2.html#section-6).
 
 For the `GET` method, query string is in `http-headers/query-string`.
