@@ -761,8 +761,7 @@ If we need to remove more than one value, we can use the `/part` refinement:
 == "Hellold!"
 >>
 ```
-
-
+One way to do this in Python is to use `del` with list slicing, like `del a[2:5]`
 Sometimes the whole series should the emptied, or all elements after certain index to be removed. It can be done with `remove/part`, but there is a special function for this - `clear`. It removes series values from current index to tail and returns the new tail.
 
 ```
@@ -854,3 +853,110 @@ If we need to change a given number of values with several values, we can do it 
 ```
 
 #### Moving values within series
+
+Every series is an ordered collection of elements. Sometimes we need to change the order of the elements in a block/series. In such cases, we use `move`:
+
+```
+>> a: ["red" "green" "blue" "yellow"]
+== ["red" "green" "blue" "yellow"]
+>> move back tail a next a
+== ["blue"]
+>> a
+== ["red" "yellow" "green" "blue"]
+```
+ The two arguments to `move` are just series – that’s why we can move elements from one series to another, not just from one position in a series to another position in the same series:
+
+```
+>> b: ["cyan" "magenta"]
+== ["cyan" "magenta"]
+>> move at a 2 b
+== ["green" "blue"]
+>> b
+== ["yellow" "cyan" "magenta"]
+```
+`move` has a `/part` refinement too for moving more than one element at once.
+
+When we need to exchange a single element between series, we use `swap`:
+```
+>> a
+== ["red" "green" "blue"]
+>> b
+== ["yellow" "cyan" "magenta"]
+>> swap a b
+== ["yellow" "green" "blue"]
+>> a
+== ["yellow" "green" "blue"]
+>> b
+== ["red" "cyan" "magenta"]
+```
+
+#### Taking elements from series
+
+We saw that we could remove elements from series. Sometimes we need to use these elements and not just discard them. This is done using `take`:
+
+```
+>> a
+== ["yellow" "green" "blue"]
+>> color: take a
+== "yellow"
+>> color
+== "yellow"
+>> a
+== ["green" "blue"]
+```
+
+The element at the current index was removed from the series, and returned as result. `/part` refinement is available in `take’ too. Use `/last` when you need to take element(s) from the tail of a series. 
+Python’s `pop()` is similar to Red’s `take` (with no `/part` refinement)
+
+```
+>>> a=[3,1,4,1,5]
+>>> last_a=a.pop()
+>>> a
+[3, 1, 4, 1]
+>>> last_a
+5
+```
+
+```
+>> a: [3 1 4 1 5]
+== [3 1 4 1 5]
+>> last-a: take/last a
+== 5
+>> a
+== [3 1 4 1]
+```
+
+### Series as sets
+
+Sometimes we only need to know what the series elements are, regardless of their count and order. In such cases we treat the series as a set. 
+We re move the duplicates in a series using `unique`:
+
+```
+>> a: [3 1 4 1 5]
+== [3 1 4 1 5]
+>> unique a
+== [3 1 4 5] 
+>> a
+== [3 1 4 1 5]
+>> unique "AbracadABra"
+== "Abrcd"
+```
+
+ Please note that in the last example Red has removed the lowercase `a` to. By default, Red is case insensitive. In order to distinguish between uppercase ans lowercase characters, we need to use the `case` refinement:
+
+``` 
+>> unique/case "AbracadABra"
+== "AbracdB"
+```
+
+The series is not updated by the call to `unique` - you need to reassign it if you want to use the result as a new value for the series.
+Please note that there is no `set` datatype in Red as in Python:
+
+```
+>>> a=[3,1,4,1,5]
+>>> set_a=set(a)
+>>> set_a
+{1, 3, 4, 5}
+>>> type(set_a)
+<class 'set'>
+```
