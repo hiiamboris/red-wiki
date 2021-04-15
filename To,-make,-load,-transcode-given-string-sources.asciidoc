@@ -7,19 +7,19 @@ Drafting notes to facilitate discussion of string conversions to different types
 |type   |to      |make    |load    |transcode/one|Notes
 |*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
 |*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
-|*logic!*|*#[true]*|true|true|true|Only *#[true]/#[false]*, not on/off or yes/no; leading and trailing whitespace allowed
+|*logic!*|see note|see note|true|true|Only *#[true]/#[false]*, not on/off or yes/no; leading and trailing whitespace allowed. For to/make see [this](https://github.com/red/red/wiki/%5BDOC%5D-%60to%60-vs-%60make%60)
 |*char!*|*#"a"*|a|a|#"a"|to/make use the first char of the string only; leading and trailing whitespace allowed for load/transcode
 |*integer!*|*123*|123|123.45|123.45|Given "123.45" to/make don't allow leading whitespace; trailing whitespace is OK. Load/transcode load floats as floats.
 |*float!*|*123.45*|123.45|123.45|123.45|Given "123.45" to/make don't allow leading or trailing whitespace.
 |*percent!*|*50%*|50%|50%|50%|Given "50%" to/make allow trailing whitespace, but not leading whitespace.
+|*pair!*|*1x2*|1x2|1x2|1x2|Given "1x2" to/make allow leading whitespace, but not trailing whitespace.
+|*tuple!*|*1.2.3*|1.2.3|1.2.3|1.2.3|Given "1.2.3" to/make allow leading whitespace, but not trailing whitespace.
 |BREAK|TO|BE|CONTINUED|...
 |===
 
 [width="50%", options="header"]
 |===
 
-|*pair!*|*1x2*|1x2|1x2|1x2|1x2
-|*tuple!*|*1.2.3*|1.2.3|1.2.3|1.2.3|1.2.3
 
 |*date!*|*now/date*|10-Jun-2018|10-Jun-2018|10-Jun-2018|10-Jun-2018
 |*time!*|*now/time*|21:07:47|21:07:47|21:07:47|21:07:47
