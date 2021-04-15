@@ -1,0 +1,78 @@
+Drafting notes to facilitate discussion of string conversions to different types.
+
+* **Note:** Github will not process the table width correctly, resulting in the sidebar obscuring a portion of this table. We are investigating workarounds. Use the bottom scrollbar to navigate the table.
+
+### String conversions
+[width="50%", options="header"]
+|===
+
+|type |to|make|load|transcode/one|Notes
+|*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
+|*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
+
+|*logic!*|*#[true]*|true|true|true|Only `#[true]/#[false]`, not on/off or yes/no; leading and trailing whitespace allowed
+
+|BREAK|TO|BE|CONTINUED|...
+
+|*char!*|*#"a"*|a|a|#"a"|#"a"
+
+|*integer!*|*123*|123|123|123|123
+|*float!*|*123.456*|123.456|123.456|123.456|123.456
+|*percent!*|*50%*|50%|50%|50%|50%
+|*pair!*|*1x2*|1x2|1x2|1x2|1x2
+|*tuple!*|*1.2.3*|1.2.3|1.2.3|1.2.3|1.2.3
+
+|*date!*|*now/date*|10-Jun-2018|10-Jun-2018|10-Jun-2018|10-Jun-2018
+|*time!*|*now/time*|21:07:47|21:07:47|21:07:47|21:07:47
+
+|*word!*|*'abc*|abc|abc|abc|abc
+|*set-word!*|*quote abc:*|abc|abc|abc:|abc:
+|*lit-word!*|*quote 'abc*|abc|abc|'abc|'abc
+|*get-word!*|*quote :abc*|abc|abc|:abc|:abc
+|*refinement!*|*/abc*|abc|abc|/abc|/abc
+|*issue!*|*#abc*|abc|abc|#abc|#abc
+
+|*block!*|*[1 2 3]*|123|1 2 3|[1 2 3]|[1 2 3]
+|*paren!*|*quote (1 2 3)*|123|1 2 3|(1 2 3)|(1 2 3)
+|*hash!*|*make hash! [1 2 3]*|123|1 2 3|make hash! ...|make hash! ...
+
+|*path!*|*'a/b/c*|a/b/c|a/b/c|a/b/c|a/b/c
+|*lit-path!*|*quote 'a/b/c*|'a/b/c|'a/b/c|'a/b/c|'a/b/c
+|*set-path!*|*quote a/b/c:*|a/b/c:|a/b/c:|a/b/c:|a/b/c:
+|*get-path!*|*quote :a/b/c*|:a/b/c|:a/b/c|:a/b/c|:a/b/c
+
+|*string!*|*"abc"*|abc|abc|"abc"|"abc"
+|*file!*|*%abc.def*|abc.def|abc.def|%abc.def|%abc.def
+|*url!*|*http://abc.def*|http://abc.def|http://abc.def|http://abc.def|http://abc.def
+|*tag!*|*&lt;a href="red-lang.org"&gt;*|a href="red-lang.org"|&lt;a href="red-lang.org"&gt;|&lt;a href="red-lang.org"&gt;|&lt;a href="red-lang.org"&gt;
+|*email!*|*user@host.com*|user@host.com|user@host.com|user@host.com|user@host.com
+
+|*vector!*|*make vector! [1 2 3]*|1 2 3|1 2 3|make vector! ...|make vector! ...
+|*image!*|*make image! 2x2*|make image! ...|make image! ...|make image! ...|make image! ...
+|*binary!*|*#{313233}*|123|#{313233}|#{313233}|#{313233}
+|*bitset!*|*charset "abc"*|make bitset! ...|make bitset! ...|make bitset! ...|make bitset! ...
+
+|*map!*|*#(a: 1 b: 2)*|a: 1
+b: 2|a: 1
+b: 2|#(
+    a: 1
+    b: 2
+)|#(
+    a: 1
+    b: 2
+)
+|*object!*|*object [a: 1 b: 2]*|a: 1
+b: 2|a: 1
+b: 2|make object! ...|make object! ...
+
+|*error!*|*try [1 / 0]*|*** Math Error: ...|*** Math Error: ...|make error! ...|make error! ...
+
+|*native!*|*:if*|?native?|?native?|make native! ...|make native! ...
+|*action!*|*:add*|?action?|?action?|make action! ...|make action! ...
+|*op!*|*:+*|?op?|?op?|make op! ...|make op! ...
+|*function!*|*func [a b][a + b]*|?function?|?function?|func[...][...]|func[...][...]
+|*routine!*|*:event?*|?routine?|?routine?|routine[...][...]|routine[...][...]
+
+|*datatype!*|*action!*|action|action|action!|action!
+|*typeset!*|*number!*|make typeset! ...|make typeset! ...|make typeset! ...|make typeset! ...
+|===
