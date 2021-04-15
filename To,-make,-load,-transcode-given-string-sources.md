@@ -5,6 +5,7 @@ Drafting notes to facilitate discussion of string conversions to different types
 ### String conversions
 [width="50%", options="header"]
 |===
+
 |type |to|make|load|transcode/one|Notes
 |*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
 |*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
@@ -14,6 +15,7 @@ Drafting notes to facilitate discussion of string conversions to different types
 
 [width="50%", options="header"]
 |===
+
 |*char!*|*#"a"*|a|a|#"a"|#"a"
 
 |*integer!*|*123*|123|123|123|123
