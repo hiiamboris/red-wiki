@@ -8,17 +8,16 @@ Drafting notes to facilitate discussion of string conversions to different types
 |*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
 |*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
 |*logic!*|*#[true]*|true|true|true|Only *#[true]/#[false]*, not on/off or yes/no; leading and trailing whitespace allowed
+|*char!*|*#"a"*|a|a|#"a"|to/make use the first char of the string only; leading and trailing whitespace allowed for load/transcode
+|*integer!*|*123*|123|123.45|123.45|Given "123.45" to/make don't allow leading whitespace; trailing whitespace is OK. Load/transcode load floats as floats.
+|*float!*|*123.45*|123.45|123.45|123.45|Given "123.45" to/make don't allow leading or trailing whitespace.
+|*percent!*|*50%*|50%|50%|50%|Given "50%" to/make allow trailing whitespace, but not leading whitespace.
 |BREAK|TO|BE|CONTINUED|...
 |===
 
 [width="50%", options="header"]
 |===
 
-|*char!*|*#"a"*|a|a|#"a"|#"a"
-
-|*integer!*|*123*|123|123|123|123
-|*float!*|*123.456*|123.456|123.456|123.456|123.456
-|*percent!*|*50%*|50%|50%|50%|50%
 |*pair!*|*1x2*|1x2|1x2|1x2|1x2
 |*tuple!*|*1.2.3*|1.2.3|1.2.3|1.2.3|1.2.3
 
