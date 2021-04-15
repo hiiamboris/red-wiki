@@ -5,15 +5,15 @@ Drafting notes to facilitate discussion of string conversions to different types
 ### String conversions
 [width="50%", options="header"]
 |===
-
 |type |to|make|load|transcode/one|Notes
 |*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
 |*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
-
 |*logic!*|*#[true]*|true|true|true|Only `#[true]/#[false]`, not on/off or yes/no; leading and trailing whitespace allowed
-
 |BREAK|TO|BE|CONTINUED|...
+|===
 
+[width="50%", options="header"]
+|===
 |*char!*|*#"a"*|a|a|#"a"|#"a"
 
 |*integer!*|*123*|123|123|123|123
