@@ -1,6 +1,11 @@
+= A short introduction to Red for Python programmers
+:toc:
+:toclevels: 3
+
+
 Red is a homoiconic language (Red is its own meta-language and own data-format) and an important paradigm it uses is “code is data”. 
 A Red program is a sequence of Red values - everything is data before it’s evaluated. This makes one able to *express any task using syntax that best suits it*. The execution of a Red program is done by evaluating each of its constituent values in turn, according to the evaluation rules.
-### Words
+== Words
 A special category of values is word. A word! is a symbolic value that can be used like a variable (the `!` at the end denotes a datatype). Red does not have identifiers nor keywords. Words do not store values, they point to values in some context – the global context by default.
 Words are formed by one or more characters from the entire Unicode range, including punctuation characters from the ASCII subset: `! & ' * + - . < = > ? _ | ~` 
 
@@ -29,7 +34,7 @@ a + b
 
 Please note that Red is case insensitive.
 
-### Evaluation order
+== Evaluation order
 At a semantic level, the Red program consist of expressions and not values. An expression groups one or more values, and may be formed in three ways: as an application of a (prefix) function, as an infix expression which uses an operator, or as a binding of a word to refer to a value.
 
 Functions in Red always have a fixed number of arguments (fixed arity), as opposed to Python, where one can have default arguments and variable-length arguments. Functions are called by their name followed by the arguments – no need of parentheses nor commas.
@@ -66,19 +71,22 @@ Evaluation order can be changed by the use of parentheses:
 
 If we had written `length? "abcd" / 2`, it would have resulted in an error, because Red would first try to divide “abcd” by 2.
 
-### [Datatypes](https://github.com/red/docs/blob/master/en/datatypes.adoc)
+== [Datatypes](https://github.com/red/docs/blob/master/en/datatypes.adoc)
 
 Red has a rich set of datatypes. Here are some types to start with:
 
-* Integer! - 32-bit numbers with no decimal point.
+=== integer!
+32-bit numbers with no decimal point.
 
 `1234, +1234, -1234, 60'000'000`
 
-* Float! - 64-bit positive or negative number that contains a decimal point.
+=== float!
+ 64-bit positive or negative number that contains a decimal point.
 
 `+123.4, -123.4, 0042.0, 60'000'12'3.4`
 
-* logic! – Boolean values
+=== logic!
+Boolean values
 
 `true false, yes no, on off`
 
@@ -86,11 +94,13 @@ Red has a rich set of datatypes. Here are some types to start with:
 
 `text: "Python and Red"`
 
-* char! - Unicode code points.
+=== char!
+Unicode code points.
 
 `#"a", #"^C", #"^(esc)"`
 
-* string! - Sequence of Unicode code points (char! values) wrapped in quotes.
+=== string!
+Sequence of Unicode code points (char! values) wrapped in quotes.
 
 `“Red”`
 
@@ -117,17 +127,20 @@ Multiline strings are enclosed in {} and can contain double-quotes:
 `{This text is
 split in "two" lines}`
 
-* block! - Collections of data or code that can be evaluated at any point in time. Values and expressions in a block are not evaluated by default. This is one of the most versatile Red types.
+=== block!
+Collections of data or code that can be evaluated at any point in time. Values and expressions in a block are not evaluated by default. This is one of the most versatile Red types.
 
 `[], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]`
 
-* paren! - Immediately evaluated block!. Evaluation can be suppressed by using quote before a paren value. Unquoted paren values will return the type of the last expression.
+=== paren!
+Immediately evaluated block!. Evaluation can be suppressed by using quote before a paren value. Unquoted paren values will return the type of the last expression.
 
 `(1 2 3), (3 * 4), (x + 5)`
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
- * path! - Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
+ === path!
+Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
 
 `buffer/1, a/b/c, data/(base + offs)`
 
@@ -162,14 +175,17 @@ One can access the nested values in a block using as many levels of `/` as neede
 == #"4"
 ```
 
-* map! - Associative array of key/value pairs (similar to Python's dictionary)
+=== map!
+Associative array of key/value pairs (similar to Python's dictionary)
 
 `#( ), #(a: 1 b: “two”)`
 
 The keys can be any type of the following [typesets]( https://github.com/red/docs/blob/master/en/typesets.adoc): 
  [scalar!]( https://github.com/red/docs/blob/master/en/typesets.adoc#scalar), [all-word!]( https://github.com/red/docs/blob/master/en/typesets.adoc#all-word), [any-string!]( https://github.com/red/docs/blob/master/en/typesets.adoc#any-string)
 
-* object! - Named or unnamed contexts that contain word: value pairs.
+=== object!
+Named or unnamed contexts that contain word: value pairs.
+
 ```
 xy: make object! [
     x: 45
@@ -191,18 +207,22 @@ You can create a new object `xyz` using `xy` as a prototype and describe just th
 ]
 ```
 
-* function! - user-defined functions. Functions have specification and body:
+=== function!
+user-defined functions. Functions have specification and body:
 
 ```x+y: function [x y][x + y]```
 
 There are also other kinds of functions - func, does, has - that will be explained in more details in a section dedicated to functions.
 
-* op! - Infix function of two arguments.
+=== op!
+
+Infix function of two arguments.
 
 `+ - * / // % ^`
 
-* refinement! - Refinement! values are symbolic values that are used as modifiers to functions or as extensions to objects, files, urls, or paths.
+=== refinement!
 
+Refinement! values are symbolic values that are used as modifiers to functions or as extensions to objects, files, urls, or paths.
 
 ```
 >> replace/all "Mississippi" #"i" #"e"
@@ -211,9 +231,8 @@ There are also other kinds of functions - func, does, has - that will be explain
 
 Without the `/all` refinement only the first "i" would be changed to "e".
 
-
-* pair! - Two-dimensional coordinates (two integers separated by a `x`)
-
+=== pair!
+Two-dimensional coordinates (two integers separated by a `x`)
 
 `1x2, -5x0, -3x-25`
 
@@ -221,7 +240,9 @@ The pair fields can be accessed by /x and /y refinments (or /1 and /2)
 `+, -, *, /, %, //, add, subtract, multiply, divide, remainder, and mod` can be used with pair! values.
 
 
-* date! - Calendar dates, relying on the Gregorian calendar.
+=== date!
+
+Calendar dates, relying on the Gregorian calendar.
 
 `28-03-2021, 28/Mar/2021, 28-March-2021, 2021-03-28`
 
@@ -231,12 +252,14 @@ The fields of any `date!` value can be accessed using path accessors - `/date`, 
 
 One can use addition and subtraction operations with date!, as well as with date! and integer!. Dates will be explored in a special section.
 
-* tuple! - Three to twelve positive integers separated by decimal points. Used for representing RGB and RGBA color values, ip addresses, and version numbers. 
+=== tuple!
+
+Three to twelve positive integers separated by decimal points. Used for representing RGB and RGBA color values, ip addresses, and version numbers. 
 
 `255.255.255.0`
 
 
-### Blocks and series
+== Blocks and series
 
 A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of [series!](https://github.com/red/docs/blob/master/en/typesets.adoc#series) with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
 
@@ -256,6 +279,8 @@ Red
 ```
 As you can see, red-block remains unchanged, while p_list is formed by the evaluated values of its constituents.
 
+=== Creating blocks
+
 Blocks are created by enclosing values (separated by whitespaces) in square brackets `[ ]`
 ```
 [1 2 3]
@@ -270,7 +295,6 @@ Except literally, blocks can be created at runtime using a `make` constructor:
 ```
 
 The above code creates and empty block pre-allocated for 20 elements.
-
 
 Block can also be created by converting other values:
 
@@ -303,6 +327,8 @@ Please note that `to` function (technically it’s an [`action!`]( https://githu
 >> to [] msg
 == [send %reference.pdf to mail@site.com at 11:00:00]
 ```
+
+=== Accessing block elements
 
 Now that you know what a block is and how you create one, let’s try to access block’s items. Let’s work with ` data: [3 1 4 1 5 9]`.  The simplest way one can reference an item in a block is using the item’s index in the block. Unlike Python, Red uses 1-based indexing. So, to get the first item we use `path notation` and an integer index:
 
@@ -407,7 +433,7 @@ Alternatively, we can use `select` to find a value in a series and get the value
 >>
 ```
 
-#### Traversing a series
+=== Traversing a series
 
 Let’s try to navigate within a block/series. Our new block will be `b: [1 2.0 #"3" "four"]`
 
@@ -515,7 +541,6 @@ We saw that we can go from head to tail in a series using `next`. Similarly, we 
 == ["four"]
 ```
 
-
 Both `next` and `back` change the current index of a series one step at a time. In contrast, `skip` allows bigger “jumps” relative to the current index. 
 
 ```
@@ -586,7 +611,7 @@ We will finish our tour of series navigation functions with `offset?`. Not surpr
 
 As you can see, `offset?` is the difference between two indices in a series. 
 
-#### Getting several values from a series at once
+=== Getting several values from a series at once
  
 We saw how one can access a single value from a series using index and path notation, `pick` and `select`. It is very often necessary to get more than one value from a series at once. In such cases we use `copy`.
  
@@ -627,7 +652,6 @@ If want to copy just a part of the series, we can use `copy` with refinement `/p
 
 In the second example we start not at the head of the series, but at its second index.
 
-
 You can think of `copy/part` as using Python slices:
 
 
@@ -657,7 +681,7 @@ Red uses a different function for this - `extract`:
 
 ```
 
-#### Adding element to a series
+=== Adding element to a series
 
 Until now we were only taking elements from a series. Let’s see how to add new items. If we need to add one or more elements at the tail of a series, we do it with `append`:
 
@@ -716,7 +740,7 @@ We can add elements at any position in a series using `insert`
 
 Please note that we need to use the `only` refinement when we need the new element be added as a block, otherwise the block contents would be added.
 
-#### Removing items from a series
+=== Removing items from a series
 
 We can remove values from a series using `remove`:
 
@@ -739,7 +763,6 @@ In Python you use `del` to remove an item at the specified index (I’ll mention
 >>> a
 [3, 1, 1, 5]
 ```
-
 
 The argument can be a series at some specific index:
 
@@ -785,9 +808,7 @@ a: [1 2 3 4 5 4]
 ```
 In this example there were two 4. `alter` removed the first one and returned `false` - this means that the value has been removed and not added.
 
-
-
-#### Changing values in series
+=== Changing values in series
 
 To change a value (or consecutive values) in Red we use `change`. We need to indicate the series we want to change and the new value. If we give a single value, the value at the current index of the series will be changed to the new value:
 
@@ -852,7 +873,7 @@ If we need to change a given number of values with several values, we can do it 
 == [2 4 5 6 7 1]
 ```
 
-#### Moving values within series
+=== Moving values within series
 
 Every series is an ordered collection of elements. Sometimes we need to change the order of the elements in a block/series. In such cases, we use `move`:
 
@@ -890,7 +911,7 @@ When we need to exchange a single element between series, we use `swap`:
 == ["red" "cyan" "magenta"]
 ```
 
-#### Taking elements from series
+=== Taking elements from series
 
 We saw that we could remove elements from series. Sometimes we need to use these elements and not just discard them. This is done using `take`:
 
@@ -926,7 +947,7 @@ Python’s `pop()` is similar to Red’s `take` (with no `/part` refinement)
 == [3 1 4 1]
 ```
 
-### Series as sets
+=== Series as sets
 
 Sometimes we only need to know what the series elements are, regardless of their count and order. In such cases we treat the series as a set. 
 We re move the duplicates in a series using `unique`:
@@ -960,3 +981,7 @@ Please note that there is no `set` datatype in Red as in Python:
 >>> type(set_a)
 <class 'set'>
 ```
+
+Red provides the following operations on data sets: `union`, `difference` and `inrestect`.
+
+
