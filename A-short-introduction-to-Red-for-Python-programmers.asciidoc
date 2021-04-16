@@ -226,7 +226,9 @@ You can create a new object `xyz` using `xy` as a prototype and describe just th
 
 user-defined functions. Functions have specification and body:
 
-----x+y: function [x y][x + y]----
+----
+x+y: function [x y][x + y]
+----
 
 There are also other kinds of functions - func, does, has - that will be explained in more details in a section dedicated to functions.
 
@@ -278,7 +280,7 @@ Three to twelve positive integers separated by decimal points. Used for represen
 
 == Blocks and series
 
-A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of [series!](https://github.com/red/docs/blob/master/en/typesets.adoc#series) with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
+A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of link:/https://github.com/red/docs/blob/master/en/typesets.adoc#series[series!] with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
 
 Blocks in Red are similar to Python’s lists, but don’t forget that blocks are not evaluated until it’s necessary. Compare these code snippets:
 
@@ -290,15 +292,18 @@ Python
 ----
 
 Red
+
 ----
 >> red-block: [2 + 3 5]
 == [2 + 3 5]
 ----
+
 As you can see, red-block remains unchanged, while p_list is formed by the evaluated values of its constituents.
 
 === Creating blocks
 
 Blocks are created by enclosing values (separated by whitespaces) in square brackets `[ ]`
+
 ----
 [1 2 3]
 [42 6 * 7 “forty-two” forty two]
@@ -369,6 +374,7 @@ Please note that in Red it’s not possible to use `path notation` to index a li
 >>> [2,3,1][2]
 1
 ----
+
 To achieve a similar behavior in red we use `pick`:
 
 ----
@@ -406,12 +412,14 @@ Let’s consider another block of values: ` signal: [a 2 7 b 1 8 c 2 8] `. Here 
 >> first signal
 == a
 ----
+
 So , the first item if `signal` is just `a`. 
 
 ----
 >> type? first signal
 == word!
 ----
+
 If we try to get the value `a` refers to, we get an error:
 
 ----
@@ -420,6 +428,7 @@ If we try to get the value `a` refers to, we get an error:
 *** Where: get
 *** Stack:  
 ----
+
 However, if we assign `a` value in the current (global) context, the first item of `signal` will be referring to it:
 
 ----
@@ -428,6 +437,7 @@ However, if we assign `a` value in the current (global) context, the first item 
 >> get first signal
 == "abc"
 ----
+
 Of what use are the words in a block? We can use them to mark positions in the block for an easy access:
 
 ----
@@ -479,6 +489,7 @@ If we are interested in the elements of a series between its head and tail, we c
 == [2.0 #"3" "four"]
 >>
 ----
+
 Please be careful - `next` doesn’t update the series, that’s why you need to use a `set-word!` to re-assign it:
 
 ----
@@ -521,6 +532,7 @@ We said that `head` refers to the series at its first index – index 1. We can 
 >> index? tail b
 == 5
 ----
+
 Don’t forget that `tail` returns the series at the index after its last item. So `index? tail b` returns one more than the length of `b`.
 
 We can find the length of a series using `length?`:
@@ -573,12 +585,14 @@ The series is at its head (first index) and we are `skip`ping 2 indices. The res
 >> index? skip b 2
 == 3
 ----
- Don’t forget that the series head has index 1. We can use negative offset as a second argument to `skip`:
+
+Don’t forget that the series head has index 1. We can use negative offset as a second argument to `skip`:
 
 ----
 >> skip tail b -2
 == [#"3" "four"]
 ----
+
 We start at the tail of `b` and go two steps backwards, we will get the series two indices before its tail.
 
 ----
@@ -587,6 +601,7 @@ We start at the tail of `b` and go two steps backwards, we will get the series t
 >> index? skip tail b -2
 == 3
 ----
+
 Please note that `skip`, `next` and `back` don’t go beyond series’ head/tail:
 
 ----
@@ -654,7 +669,6 @@ Here we created a new series `c` with values that are copies of the values of `b
 
 If want to copy just a part of the series, we can use `copy` with refinement `/part`. The first argument indicates where to start, the second – how many elements to copy.
 
-
 ----
 >> b: [1 2.0 #"3" "four"]
 == [1 2.0 #"3" "four"]
@@ -670,7 +684,6 @@ If want to copy just a part of the series, we can use `copy` with refinement `/p
 In the second example we start not at the head of the series, but at its second index.
 
 You can think of `copy/part` as using Python slices:
-
 
 ----
 >>> a=[1,2.0,'3','four']
@@ -801,6 +814,7 @@ If we need to remove more than one value, we can use the `/part` refinement:
 == "Hellold!"
 >>
 ----
+
 One way to do this in Python is to use `del` with list slicing, like `del a[2:5]`
 Sometimes the whole series should the emptied, or all elements after certain index to be removed. It can be done with `remove/part`, but there is a special function for this - `clear`. It removes series values from current index to tail and returns the new tail.
 
@@ -902,7 +916,8 @@ Every series is an ordered collection of elements. Sometimes we need to change t
 >> a
 == ["red" "yellow" "green" "blue"]
 ----
- The two arguments to `move` are just series – that’s why we can move elements from one series to another, not just from one position in a series to another position in the same series:
+
+The two arguments to `move` are just series – that’s why we can move elements from one series to another, not just from one position in a series to another position in the same series:
 
 ----
 >> b: ["cyan" "magenta"]
@@ -912,9 +927,11 @@ Every series is an ordered collection of elements. Sometimes we need to change t
 >> b
 == ["yellow" "cyan" "magenta"]
 ----
+
 `move` has a `/part` refinement too for moving more than one element at once.
 
 When we need to exchange a single element between series, we use `swap`:
+
 ----
 >> a
 == ["red" "green" "blue"]
