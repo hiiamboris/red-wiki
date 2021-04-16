@@ -151,7 +151,7 @@ Immediately evaluated block!. Evaluation can be suppressed by using quote before
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
- === `path!`
+=== path!
 
 Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
 
@@ -195,7 +195,7 @@ Associative array of key/value pairs (similar to Python's dictionary)
 `#( ), #(a: 1 b: “two”)`
 
 The keys can be any type of the following link:/https://github.com/red/docs/blob/master/en/typesets.adoc[typesets]: 
-link:/https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], link:/ https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
+link:/https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
 
 === object!
 
@@ -997,7 +997,7 @@ We re move the duplicates in a series using `unique`:
 == "Abrcd"
 ----
 
- Please note that in the last example Red has removed the lowercase `a` to. By default, Red is case insensitive. In order to distinguish between uppercase ans lowercase characters, we need to use the `case` refinement:
+Please note that in the last example Red has removed the lowercase `a` to. By default, Red is case insensitive. In order to distinguish between uppercase ans lowercase characters, we need to use the `case` refinement:
 
 ---- 
 >> unique/case "AbracadABra"
