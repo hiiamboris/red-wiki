@@ -60,7 +60,9 @@ max 3 + 4 5   ; evaluates to 7
 As you may have guessed, `;` starts a comment until the end of the line. 
 Let’s take for example the following expression:
 
-```square-root 4 + 5```
+```
+square-root 4 + 5
+```
 
 The operator `+` has precedence over the function `square-root` and that’s why Red first adds 5 to 4 and only then finds the square root of 9, resulting in 3.0.
 
