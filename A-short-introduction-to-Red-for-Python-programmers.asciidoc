@@ -983,5 +983,3 @@ Please note that there is no `set` datatype in Red as in Python:
 ```
 
 Red provides the following operations on data sets: `union`, `difference` and `inrestect`.
-
-
