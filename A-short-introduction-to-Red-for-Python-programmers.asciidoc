@@ -151,7 +151,7 @@ Immediately evaluated block!. Evaluation can be suppressed by using quote before
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
 
- === path!
+ === `path!`
 
 Series of values delimited by slashes /. Limited in the types of values that they can contain – integers, words or parens.
 
@@ -194,8 +194,8 @@ Associative array of key/value pairs (similar to Python's dictionary)
 
 `#( ), #(a: 1 b: “two”)`
 
-The keys can be any type of the following [typesets]( https://github.com/red/docs/blob/master/en/typesets.adoc): 
- [scalar!]( https://github.com/red/docs/blob/master/en/typesets.adoc#scalar), [all-word!]( https://github.com/red/docs/blob/master/en/typesets.adoc#all-word), [any-string!]( https://github.com/red/docs/blob/master/en/typesets.adoc#any-string)
+The keys can be any type of the following link:/https://github.com/red/docs/blob/master/en/typesets.adoc[typesets]: 
+link:/https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], link:/ https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
 
 === object!
 
@@ -343,7 +343,7 @@ at : word
 
 The above code iterates over the items of the block created from a string using `to` conversion and prints the value and its type.
 
-Please note that `to` function (technically it’s an [`action!`]( https://github.com/red/docs/blob/master/en/datatypes/action.adoc) expects a datatype OR an example value to which to convert the given value. This means that instead of `block!` we can use any literal block, even`[]`:
+Please note that `to` function (technically it’s an link:/https://github.com/red/docs/blob/master/en/datatypes/action.adoc[`action!`]) expects a datatype OR an example value to which to convert the given value. This means that instead of `block!` we can use any literal block, even`[]`:
 
 ----
 >> to [] msg
