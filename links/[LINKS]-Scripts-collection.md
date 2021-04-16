@@ -269,6 +269,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 
 		tags: 
 ## G
+* GalenIvanov - 
+	* [prime-sieve](https://github.com/GalenIvanov/Red-examples/blob/main/prime-sieve.red) - prime numbers sieve using `remove-each` 
+		tags: 
 * geekyi - 
 	* [fry.red](https://gist.github.com/geekyi/844a15e506ce9c6b12a83e78df750295) - 
 
