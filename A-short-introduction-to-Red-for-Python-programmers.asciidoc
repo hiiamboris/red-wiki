@@ -1016,4 +1016,25 @@ Please note that there is no `set` datatype in Red as in Python:
 <class 'set'>
 ----
 
-Red provides the following operations on data sets: `union`, `difference` and `intersect`.
+Red provides the following operations on data sets: `union`, `difference` and `intersect`. 
+
+== Conditionals
+
+As we said before, Red does not have any keywords. Where some other programming languages use special constructs for control flow, Red uses (native) functions.
+
+=== If
+
+When we want to execute some code depending on a condition, we use `if `. It expects two arguments:  a conditional expression and a block to evaluate. If the conditional expression is true, the block is evaluated, otherwise the function returns none.
+Using blocks as code is a common pattern in Red. Blocks stay unevaluated until feeded into some function. 
+
+----
+>> hooray!: [print "Weekend at last!"]
+== [print "Weekend at last!"]
+>> if now/weekday > 5 hooray!
+Weekend at last!
+>> now/weekday
+== 6
+----
+`hooray!` is just a block consisting of a word! `print` and a string! “Weekend at last!”. Red just makes the `set-word!` `hooray!` to refer to the literal block that follows. At this point, `print` inside the block is just a word and doesn’t mean anything. 
+
+The conditional expression in our example is `now/weekday > 5`. `now` is a native function that returns a value of `date!`  datatype, set to the current date and time. `/weekday` is a `refinement!` to `now` that determines which day of the week is a given date, 1 for Monday. So we simply check if the weekday is greater then Friday and if it is, we want the block that we have given as a second argument evaluated. More often the then-block argument of `if` is a literal block, but don’t forget that if could have been declared and even changed before its use. Or it can be changed after its first use and used for other purposes.
