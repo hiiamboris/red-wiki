@@ -1075,7 +1075,7 @@ Now it’s the right time to compare the comparison operators in Python and Red:
 |===
 
 
-Note that the simple comparison is just `=` in Red. There is `==` too, but it performs a more strict comparison, taking also under account the datatypes of the values:
+Note that the simple comparison is just `=` in Red. There is `==` too, but it performs a stricter comparison, taking also under account the datatypes of the values:
 
 ----
 >> 345 = 345.0
@@ -1096,3 +1096,58 @@ Note that the simple comparison is just `=` in Red. There is `==` too, but it pe
 >> not 10 > 20
 == true
 ----
+
+=== Unless
+You can write `if not condition`, but there is a convenient function for this pattern, `unless`:
+
+---- 
+>> a: 10
+== 10
+>> unless a >= 20 [print "a is less then 20"]
+a is less then 20
+---- 
+
+=== Either
+`if` and `unless` execute the code in the then-block when the condition is met; they do not provide an alternative. If you need to execute an appropriate code for the either Boolean results of a condition, you use `either`:
+
+---- 
+>> print either now/weekday > 5 ["Weekend"]["workday"]
+workday
+---- 
+
+As you can see, `either` corresponds to Pythons `if-else` statement – if the condition is true, the first block is executed, otherwise – the second one.
+
+If you need to reproduce the Pythonic `if-elif-else`, you’ll need to cascade two or more `eiter` function calls: `either cond1 [true-block-1][either cond2[true-block-2][false-block]]`.
+
+=== Case
+
+Sometimes you need to select one block of code to execute from many, based on which one has a true condition.
+
+---- 
+color: "Red"
+RYB-type: case [
+    find ["Red" "Yellow" "Blue"] color ["Primary color"]
+    find ["Orange" "Green" "Purple"] color ["Secondary color"]
+    find ["Vermilion" "Amber" "Chartreuse" "Teal" "Violet" "Magenta"] color ["Tertiary color"]
+]
+print RYB-type
+---
+Primary color
+---- 
+
+The syntax is `case block`, where `block` is a block of pairs, each pair consisting of condition and block to execute. `case` evaluates the block after the first true condition.
+One important thing to remember about `case` is that the pairs don’t have to be connected in any way. There’s a `/all` refinement, that evaluates the block after all true conditions.
+
+---- 
+color: "Teal"
+case/all [
+    true [prin [form color " is a "]]
+    find ["Red" "Yellow" "Blue"] color [print "Primary color"]
+    find ["Orange" "Green" "Purple"] color [print "Secondary color"]
+    find ["Vermilion" "Amber" "Chartreuse" "Teal" "Violet" "Magenta"] color [print "Tertiary color"]
+true [print "Analysls complete! "]
+]
+---
+Teal  is a Tertiary color
+Analysls complete!
+---- 
