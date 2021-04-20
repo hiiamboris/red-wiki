@@ -1136,7 +1136,7 @@ Primary color
 ---- 
 
 The syntax is `case block`, where `block` is a block of pairs, each pair consisting of condition and block to execute. `case` evaluates the block after the first true condition.
-One important thing to remember about `case` is that the pairs don’t have to be connected in any way. There’s a `/all` refinement, that evaluates the block after all true conditions.
+One important thing to remember about `case` is that the pairs don’t have to be connected in any way. There’s a `/all` refinement, that evaluates the block after every true condition.
 
 ---- 
 color: "Teal"
@@ -1150,4 +1150,82 @@ true [print "Analysls complete! "]
 ---
 Teal  is a Tertiary color
 Analysls complete!
+----
+
+=== Switch
+
+Another form of branching is achieved using `switch`. It accepts a value of any type as a first argument and a block, consisting of any number of value – block pairs as its second argument. The block after the value that matches the first argument is evaluated.
+
 ---- 
+n: 2
+switch n [
+    1 ["one"]
+    2 ["two"]
+    3 ["three"]
+]
+---
+"two"
+---- 
+
+If the value is not found in the block, `switch` returns `none`. If you need it to return some specific value in case the first argument is not found, use `/default` refinement:
+
+---- 
+color: "Orange"
+switch/default color [
+    "Blue" [0.0.255]
+    "Red" [255.0.0]
+    "Beige" [255.228.196]
+] [0.0.0]
+--- 
+0.0.0
+---- 
+
+Python doesn’t have a `switch` or `case` statement yet (Python 3.10 is going to have a `match/case` syntax. Until then you can use `if/elif/else` statement, or use a `get()` method with a dictionary as a workaround.
+
+=== Or, and, xor, any, all
+
+Very often the Boolean condition is not a simple one but compound, consisting of different parts combined using logcal operators. We already used `not`, which returns the logical complement of a value. 
+
+`or` returns `true` if either of the arguments or both of them are true.
+
+---- 
+>> a: 10
+== 10
+>> a > 0 or (a < 20)
+== true
+---- 
+
+Please note the use of parentheses around the right hand side argument of `or`. This is due to the fact that `or` is an op! (infix function) and there is no precedence. The left-hand side argument is if type `logic!` (`a > 0` is evaluated to `true`) and if there were no parentheses, Red would have tried to calculate `true or a` first. But `a` is a number and that would have resulted in an error.
+
+`and` returns `true` only if both arguments are `true`.
+
+`xor` returns true if only one of the arguments is true.
+
+`or`, `and` and `xor` are also used for the bitwise operations on numbers.
+
+Sometimes there are a lot of conditons that should be combined. It is often more convenient to use `all`/`any` functions. Let’s change our last example so that it uses `all`:
+
+---- 
+>> all [a > 0 a < 20]
+== true
+---- 
+
+So, `all` takes a block of values, evaluates them and returns `true` if they are all true, or `none` otherwise. 
+
+In order to demonstrate `any`, let’s pretend that we want to check if a given point is outside of a given rectangle. The point is defined as a `pair!` of integers and the rectangle – as two pairs of integers (it’s top-left and bottom-right corners).
+
+---- 
+p: 50x23	; point with x = 50,  y = 23
+tl: 40x40	; top-left corner, x = 40, y = 40
+br: 100x100	; bottom-right corner, x = 100, y = 100
+any [
+    p/x < tl/x
+    p/y < tl/y
+    p/x > br/x
+    p/y > br/y
+]
+ ---
+true
+---- 
+
+The `y` coordinate of our point is less than the `y` coordinate of the top-left corner of the rectangle. Only this condition is true, but it is sufficient to know that the point lies outside of the rectangle.
