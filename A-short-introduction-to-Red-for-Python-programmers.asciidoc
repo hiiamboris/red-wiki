@@ -1229,3 +1229,67 @@ true
 ---- 
 
 The `y` coordinate of our point is less than the `y` coordinate of the top-left corner of the rectangle. Only this condition is true, but it is sufficient to know that the point lies outside of the rectangle.
+
+Be carefull when you try to apply some patterns you may have adopted with Python: in Python empty strings / lists / tuples / dictionaries etc. have `falsy` Boolean values, zero numeric values – too. This is not the case in Red:
+
+---- 
+>> to logic! []
+== true
+>> to logic! ""
+== true
+>> to logic! #()
+== true
+>> to logic! 0
+== true
+>> to logic! 0.0
+== true
+---- 
+
+On the other hand, the Boolean value of `none` is `false`:
+
+--- 
+>> to logic! none
+== false
+----
+ 
+== Loops
+
+=== Loop
+
+The simplest of the looping constructs in Red is `loop`. It takes a value (an integer! or a float! – that is automatically truncated to an integer) and a block as its arguments and evaluates the block as many times as the value. Of course the value can be a word and not just a literal numeric value.
+
+---- 
+>> loop 5 [print "I Am a Strange Loop"]
+I Am a Strange Loop
+I Am a Strange Loop
+I Am a Strange Loop
+I Am a Strange Loop
+I Am a Strange Loop
+---- 
+
+=== Repeat
+
+`repeat` is the more useful cousin of `loop`. It evaluates a given block a predefined number of times, while a loop counter keeps a track of the iterations.
+
+---- 
+>> n: 4
+== 4
+>> repeat count n [print["Iteratioon number" count]]
+Iteratioon number 1
+Iteratioon number 2
+Iteratioon number 3
+Iteratioon number 4 
+---- 
+
+Here `n` is the number of times to evaluate the block and `count` is the iteration counter.
+
+=== While
+=== Until
+
+=== Forever
+
+=== Foreach
+
+=== Forall
+
+=== Remove-each
