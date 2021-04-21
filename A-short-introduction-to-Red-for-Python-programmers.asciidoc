@@ -1247,7 +1247,7 @@ Be carefull when you try to apply some patterns you may have adopted with Python
 
 On the other hand, the Boolean value of `none` is `false`:
 
---- 
+----
 >> to logic! none
 == false
 ----
