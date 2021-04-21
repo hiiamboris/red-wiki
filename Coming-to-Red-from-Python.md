@@ -28,7 +28,7 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
    #### Evaluation order ✓
    #### Datatypes ✓
    #### Blocks and series ✓
-   #### Conditionals
+   #### Conditionals ✓
    #### Looping
    #### Functions
    #### View
