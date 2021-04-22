@@ -945,6 +945,131 @@ When we need to exchange a single element between series, we use `swap`:
 == ["red" "cyan" "magenta"]
 ----
 
+=== Sorting series
+
+A special case of moving values within series is sorting. The goal of sorting is to arrange the elements of a series according some criterion, for example a number list from smallest number to the largest. 
+
+---- 
+>> a: [53 81 67 51 13 4 3 71 48 92]
+== [53 81 67 51 13 4 3 71 48 92]
+>> sort copy a
+== [3 4 13 48 51 53 67 71 81 92]
+>> a
+== [53 81 67 51 13 4 3 71 48 92]
+---- 
+
+When used without refinemens, `sort` arranges the items in ascending order, as it’s seen from the example above. `sort` modifies the series, that’s why you need to make a copy of your data if you still need the original arrangement.  The Python analogues are as follows:
+
+
+. Sorting in Python and Red
+[cols="1,1"] 
+|===
+|Python |Red
+
+|list.sort()
+|sort list
+
+|sorted(list)
+| sort/copy list
+|===
+
+
+When you need to sort in descending order, use the `/reverse` refinement:
+
+---- 
+>> days: ["Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"]
+== ["Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" ...
+>> probe sort/reverse days
+["Wednesday" "Tuesday" "Thursday" "Sunday" "Saturday" "Monday" "Friday"]
+== ["Wednesday" "Tuesday" "Thursday" "Sunday" "Saturday" "Monday" "Friday"] 
+---- 
+
+You can sort just the initial part of a series using the `/part` refinement:
+
+---- 
+>> text: ["Lorem" "ipsum" "dolor" "sit" "amet," "consectetur" "adipiscing" "elit."]
+== ["Lorem" "ipsum" "dolor" "sit" "amet," "consectetur" "adipiscing" "elit."]
+>> sort/part text 5
+== ["amet," "dolor" "ipsum" "Lorem" "sit" "consectetur" "adipiscing" "elit."]
+---- 
+
+You can see that only the first five words have been sorted and the remaining block stayed unsorted.
+
+An interesting feature of `sort` is that it can treat the series as a set of fixed size records. Let’s illustrate this concept with the following example. Let’s assume we have the following `map` 
+
+---- 
+>> id-name-map: #(3 “John” 5 “Johan” 1 “Ivan” 2 “Jean” 4 “Giovanni” 6 “Juan”)
+== #(
+    3 “John”
+    5 “Johan”
+    1 “Ivan”
+    2 “Jean”
+    4 “Giovanni”
+    6 “Juan”
+)
+>> id-name-map/3
+== “John”
+>> id-name-block: to block! id-name-map
+== [
+    3 “John” 
+    5 “Johan” 
+    1 “Ivan” 
+    2 “Jean” 
+    4 “Giovanni” 
+    6 “Juan...
+>> id-name-block/3
+== 5
+>> sort/skip id-name-block 2
+== [
+    1 “Ivan” 
+    2 “Jean” 
+    3 “John” 
+    4 “Giovanni” 
+    5 “Johan” 
+    6 “Juan...
+---- 
+
+`id-name-map` is a `map` that associates an id to a name (note that it’s not guaranteed that the key-value pairs are in any specific order in a map; `sort` doesn’t work on maps). We convert the map to a block. The block `id-name-block` is flat and id – name pairs are preserved. We sort the block using the `/skip` refinement with value 2 – that is `sort` treates the block as a set of records with size 2 by their first firld. It sorts the `id` s and the names “associated” with them. 
+
+When we treat a series as fixed size records, we can also use `/all` - it compares all fields.
+
+It is possible to use `/compare` refinement. It accepts a number (offset) or a function. When the argument to `/compare` is an offset, we also need to use the `/skip` refinement, because it supposes we treat the series as fixed size records. It uses the offset to sort the records by their `n` th field, where `n` is the argument to `/compare`.
+
+---- 
+>> shapes: [
+[        triangle 50 255
+[        rectangle 225 340
+[        square 200 200
+[    ]
+== [
+    triangle 50 255 
+    rectangle 225 340 
+    square 200 200
+]
+>> sort/skip/compare copy shapes 3 1
+== [
+    rectangle 225 340 
+    square 200 200 
+    triangle 50 255
+]
+>> sort/skip/compare copy shapes 3 2
+== [
+    triangle 50 255 
+    square 200 200 
+    rectangle 225 340
+]
+>> sort/skip/compare copy shapes 3 3
+== [
+    square 200 200 
+    triangle 50 255 
+    rectangle 225 340
+]
+---- 
+
+We have a block of 9 values, whicj we want to treat as records of size 3 – that is the name of the shape, it’s `x` coordinate and it’s `y` coordinate. ` sort/skip/compare copy shapes 3 1` sorts the block as records of size 3 (`/skip` and parameter 3) by the 1st value of each record (`/compare` with argument 1). The next examples demonstrate sorting according to the 2nd (`x` coordinate) and 3rd (`y` coordinate) fields.
+
+When the argument to the `/compare` refinement is a function, it needs to be a function with exactly 2 arguments, because it will be called for each successive pair of the input.
+
 === Taking elements from series
 
 We saw that we could remove elements from series. Sometimes we need to use these elements and not just discard them. This is done using `take`:
@@ -1274,16 +1399,18 @@ I Am a Strange Loop
 ---- 
 >> n: 4
 == 4
->> repeat count n [print["Iteratioon number" count]]
-Iteratioon number 1
-Iteratioon number 2
-Iteratioon number 3
-Iteratioon number 4 
+>> repeat count n [print["Iteration number" count]]
+Iteration number 1
+Iteration number 2
+Iteration number 3
+Iteration number 4 
 ---- 
 
 Here `n` is the number of times to evaluate the block and `count` is the iteration counter.
 
 === While
+
+
 === Until
 
 === Forever
