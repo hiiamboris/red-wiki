@@ -970,7 +970,7 @@ When used without refinemens, `sort` arranges the items in ascending order, as i
 |sort list
 
 |sorted(list)
-| sort/copy list
+| sort copy list
 |===
 
 
