@@ -643,6 +643,8 @@ We will finish our tour of series navigation functions with `offset?`. Not surpr
 
 As you can see, `offset?` is the difference between two indices in a series. 
 
+=== Finding values in series
+
 === Getting several values from a series at once
  
 We saw how one can access a single value from a series using index and path notation, `pick` and `select`. It is very often necessary to get more than one value from a series at once. In such cases we use `copy`.
@@ -902,7 +904,10 @@ If we need to change a given number of values with several values, we can do it 
 == [1]
 >> b
 == [2 4 5 6 7 1]
-----
+---- 
+
+=== Replace 
+
 
 === Moving values within series
 
@@ -1066,9 +1071,17 @@ It is possible to use `/compare` refinement. It accepts a number (offset) or a f
 ]
 ---- 
 
-We have a block of 9 values, whicj we want to treat as records of size 3 – that is the name of the shape, it’s `x` coordinate and it’s `y` coordinate. ` sort/skip/compare copy shapes 3 1` sorts the block as records of size 3 (`/skip` and parameter 3) by the 1st value of each record (`/compare` with argument 1). The next examples demonstrate sorting according to the 2nd (`x` coordinate) and 3rd (`y` coordinate) fields.
+We have a block of 9 values, which we want to treat as records of size 3 – that is the name of the shape, it’s `x` coordinate and it’s `y` coordinate. ` sort/skip/compare copy shapes 3 1` sorts the block as records of size 3 (`/skip` and parameter 3) by the 1st value of each record (`/compare` with argument 1). The next examples demonstrate sorting according to the 2nd (`x` coordinate) and 3rd (`y` coordinate) fields.
 
-When the argument to the `/compare` refinement is a function, it needs to be a function with exactly 2 arguments, because it will be called for each successive pair of the input.
+When the argument to the `/compare` refinement is a function, it needs to be a function with exactly 2 arguments, because it will be called for each two elements that are currently sorted. We’ll talk about functions in more details in a dedicated section. For the moment let’s just sort a block of strings according to their length:
+
+---- 
+colors: ["transparent" "gray" "red" "white" "beige" "aqua" "black" "blue"]
+sort/compare colors func[x y][(length? x) <  length? y]
+== ["red" "gray" "blue" "aqua" "black" "white" "beige" "transparent"]
+---- 
+
+I’ve used an anonymous function with two arguments `x` and `y`, that compares wherher the length of the first argument is less than the length of the second. `sort` used this function an argument for the `/compare` refinement and sorted the strings according the comparison in the function.
 
 === Taking elements from series
 
@@ -1394,7 +1407,7 @@ I Am a Strange Loop
 
 === Repeat
 
-`repeat` is the more useful cousin of `loop`. It evaluates a given block a predefined number of times, while a loop counter keeps a track of the iterations.
+`repeat` is the more useful cousin of `loop`. It evaluates a given block a predefined number of times, while a loop counter keeps a track of the iterations. The starting value of the counter is 1.
 
 ---- 
 >> n: 4
@@ -1408,8 +1421,38 @@ Iteration number 4
 
 Here `n` is the number of times to evaluate the block and `count` is the iteration counter.
 
+You can think of `repeat x y []`  as Python’s `for x in range(y): …` (Just don’t forget that Red starts the repeat counter at 1):
+
+---- 
+>>> for n in range(5): print(n)
+0
+1
+2
+3
+4
+---- 
+
 === While
 
+When it’s not known in advance how many times a loop will be exexcuted, it’s a good idea to use `while` or `until`. `while` takes a condition-block and a body-block as arguments and evaluates the body as long as the condition evaluates to truthy value.
+
+---- 
+>> text: "Red is a next-gen programming language, strongly inspired by REBOL "
+== {Red is a next-gen programming language, strongly inspired by REBOL }
+>> while [not empty? text][print take/part text index? find text space]
+Red 
+is 
+a 
+next-gen 
+programming 
+language, 
+strongly 
+inspired 
+by 
+REBOL 
+---- 
+
+In the example above the condition block is `[not empty? text]` - we simply check if there are still some characters left  in `text` and if there are, we evaluate the body. We find the next space in `text`, get its index, and take (remove) and print this part (substring) of `text. After each step the condition is checked and if it’s still true, the body is evaluated again.
 
 === Until
 
