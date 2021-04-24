@@ -61,6 +61,10 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Arguments on why paths evaluate picked items (so-called active accessors)
 - [red/red February 28, 2019 9:46 PM](https://gitter.im/red/red?at=5c782ca0c1cab53d6f53dd6d)
 
+#### Why `x` throws an error if `x` is unset (and more on rationale behind `unset` invention)
+- [April 24, 2021 2:52 PM](https://gitter.im/red/help?at=60840673b6a4714a29e4227d) (starts at [April 23, 2021 12:22 AM](https://gitter.im/red/help?at=6081e904b6a4714a29df402b) )
+- [an old R3 discussion on whether unset is truthy/falsey/error](http://www.rebol.net/cgi-bin/r3blog.r?view=0207)
+
 #### Command line argument parsing rules
 - [PR #3870 and references from there](https://github.com/red/red/pull/3870)
 
