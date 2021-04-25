@@ -1452,11 +1452,34 @@ by
 REBOL 
 ---- 
 
-In the example above the condition block is `[not empty? text]` - we simply check if there are still some characters left  in `text` and if there are, we evaluate the body. We find the next space in `text`, get its index, and take (remove) and print this part (substring) of `text. After each step the condition is checked and if it’s still true, the body is evaluated again.
+In the example above the condition block is `[not empty? text]` - we simply check if there are still some characters left  in `text` and if there are, we evaluate the body. We find the next space in `text`, get its index, and take (remove) and print this part (substring) of `text`. After each step the condition is checked and if it’s still true, the body is evaluated again.
+
+`while` loop in Red is analogous to Pythons `while` loop.
 
 === Until
+In contrast to `while`, `until` requires only one block. The block is evaluated until the last value in the block is true. This means that the block is executed at least once, whereas with `while` the execution of the block can be skipped altogether. 
+
+Let’s‘ see `until` in action with the follwong example. It demonstrates a simple conversion of a number from decimal to binary number system:
+
+---- 
+num: 13
+base: 2
+digits: copy []
+until [
+   insert digits num % base
+   zero? num: to-integer num / base
+]
+---- 
+
+---- 
+>> probe digits
+[1 1 0 1]
+---- 
+
+`num` is the number we want to convert to binary, `base` is the new number system base (changing it allows for the code to work for other number systems) and `digits` is an empty block that will contain the digits after conversion. We start a `until` loop, find the remainder from dividing the current value of `num` to `base` and insert the remainder to the head of `digits` (I inserted  the elements instead of appended them because otherwise I would need to reverse the block at the end). Then I find the new value of num by dividing it by `base` and casting it to an integer. The last value in the block is the result of checking `num` against `0` with `zero?`.  If it is false (`num` is not zero), we are not finished yet, so we loop again with the new value of `num`; otherwise we exit the loop.
 
 === Forever
+Well, `forever` does what it’s name implies – loops through the block that follows and executes it indefinitely.
 
 === Foreach
 
