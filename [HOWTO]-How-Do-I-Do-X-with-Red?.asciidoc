@@ -383,16 +383,16 @@ view/options/flags [
 
 ```
 
-`help trim ` in the Red console.
+```help trim``` in the Red console.
 
-* Convert a string so it can be read by a browser
+* Convert a string (ex: file name) so it can be read by a browser
 
 ```red
 >> to file! enhex "0!  @#ok.png"
 == %"0%21%20%20%40%23ok.png"
 ```
 
-`help enhex ` in the Red console.
+```help enhex``` in the Red console.
 
 
 
