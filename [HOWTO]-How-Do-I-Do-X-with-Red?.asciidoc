@@ -379,25 +379,20 @@ view/options/flags [
 == "onetwothree"
 
 >> trim/with "one two three" "t"
-== "one wo hree"
+== "one two hree"
 
 ```
 
-```help trim``` in the Red console.
+`help trim` in the Red console.
 
 * Convert a string (ex: file name) so it can be read by a browser - `enhex`
 
 ```red
 >> to file! enhex "0!  @#ok.png"
-== "onetwothree"
-
->> trim/with "one two three" "t"
 == %"0%21%20%20%40%23ok.png"
-
 ```
 
-```help enhex``` in the Red console.
-
+`help enhex ` in the Red console.
 
 
 ** Parse a string
