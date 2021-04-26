@@ -1454,7 +1454,7 @@ REBOL
 
 In the example above the condition block is `[not empty? text]` - we simply check if there are still some characters left  in `text` and if there are, we evaluate the body. We find the next space in `text`, get its index, and take (remove) and print this part (substring) of `text`. After each step the condition is checked and if it’s still true, the body is evaluated again.
 
-`while` loop in Red is analogous to Pythons `while` loop.
+`while` loop in Red is analogous to Python’s `while` loop.
 
 === Until
 In contrast to `while`, `until` requires only one block. The block is evaluated until the last value in the block is true. This means that the block is executed at least once, whereas with `while` the execution of the block can be skipped altogether. 
@@ -1483,6 +1483,94 @@ Well, `forever` does what it’s name implies – loops through the block that f
 
 === Foreach
 
+`foreach is most probably the most frequently used looping construct in Red.  It expects three arguments as follows:
+
+`foreach 'word series body`
+
+`word` is a word (or block of words) that is set to the current value of the series at each iteration. `series` is the series to iterate and `body` is a block of expressions to be evaluated at each iteration. 
+
+---- 
+>> foreach toy ["car" "doll" "puppy" "robot" "teddy bear"][print toy]
+car
+doll
+puppy
+robot
+teddy bear
+---- 
+
+When `word` is a block of words, that many values are taken from the series current index onward and the words are assigned that values.
+
+---- 
+>> foreach [toy qty] ["car" 2 "doll" 3 "puppy" 1 "robot" 1 "teddy bear" 2][print [toy ":" qty]]
+car : 2
+doll : 3
+puppy : 1
+robot : 1
+teddy bear : 2
+---- 
+I’m sure you have already guessed that Red’s `foreach` is almost analogous to Python’s `for var in iterable: code`:
+
+---- 
+ >>> for toy in ["car","doll","puppy","robot","teddy bear"]: print(toy)
+car
+doll
+puppy
+robot
+teddy bear
+---- 
+
+There is a slight, but important, difference though. When in Red we use a block of words, at each iteration `foreach` takes exactly as many values from the series as the number of words in the block. That is, the series is treated as a flat list and the structure of each value is not important. At the opposite, when we use `for` with two or more variables in Python, the list is expected to be constructed of lists/tuples, each with exactly the same number of items as there are variables:
+
+---- 
+>>> for toy,qty in [("car",2),("doll",3),("puppy",1),("robot",1),("teddy bear",2)]:
+print(toy,qty)
+
+car 2
+doll 3
+puppy 1
+robot 1
+teddy bear 2
+---- 
+
+Python’s `for` consumes exactly one value from the iterable at each step, no matter how many variables/items in the substructure.
+
+
 === Forall
+
+We saw that `foreach` traverses the series, getting one value from it at a time.  We may think its functionality is similar to this code:
+
+---- 
+toys: ["car" "doll" "puppy" "robot" "teddy bear"]
+repeat idx length? toys [
+    print[toys/:idx]
+]
+--- 
+car
+doll
+puppy
+robot
+teddy bear
+---- 
+
+In fact, the index/position in the series is not explicitly known with `foreach` - all we know is the current value of the series (of course we can add a counter and update it at each iteration, but that’s different story).
+
+That’s why Red has another looping function - `forall` - that exposes the series at each iteration.
+
+`forall 'word body` evaluates the body for all values in the series (‘word refers to series we want to iterate over).
+
+Have you noticed the `’` in front of `word`? This is very important. As you remember, I used a literal block in the `foreach` example. I could have set a word to refer to it and use it as an argument to `foreach`, that’s completely fine. There is no freedom of choice with `forall` - it must be a `word` and cannot be a literal block! The reason is simple – we use the word itself to refer to the series at each iteration (there is no additional word to set).
+
+What `forall` does is start at the head and go to the next series at each iteration:	
+---- 
+>> forall toys [probe toys]
+["car" "doll" "puppy" "robot" "teddy bear"]
+["doll" "puppy" "robot" "teddy bear"]
+["puppy" "robot" "teddy bear"]
+["robot" "teddy bear"]
+["teddy bear"]
+== ["teddy bear"]
+---- 
+
+Have you spot the difference with `foreach`? In our example `toys` refers to the entire series, not to a particular value at some index.
 
 === Remove-each
