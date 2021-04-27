@@ -1558,7 +1558,7 @@ That’s why Red has another looping function - `forall` - that exposes the seri
 
 `forall 'word body` evaluates the body for all values in the series (‘word refers to series we want to iterate over).
 
-Have you noticed the `’` in front of `word`? This is very important. As you remember, I used a literal block in the `foreach` example. I could have set a word to refer to it and use it as an argument to `foreach`, that’s completely fine. There is no freedom of choice with `forall` - it must be a `word` and cannot be a literal block! The reason is simple – we use the word itself to refer to the series at each iteration (there is no additional word to set).
+Did you notice the `'` in front of `word`? This is very important. As you remember, I used a literal block in the `foreach` example. I could have set a word to refer to it and use it as an argument to `foreach`, that’s completely fine. There is no freedom of choice with `forall` - it must be a `word` and cannot be a literal block! The reason is simple – we use the word itself to refer to the series at each iteration (there is no additional word to set).
 
 What `forall` does is start at the head and go to the next series at each iteration:	
 ---- 
@@ -1571,6 +1571,46 @@ What `forall` does is start at the head and go to the next series at each iterat
 == ["teddy bear"]
 ---- 
 
-Have you spot the difference with `foreach`? In our example `toys` refers to the entire series, not to a particular value at some index.
+Did you observe the difference with `foreach`? In our example `toys` refers to the entire series, not to a particular value at some index. This means that at each iteration we know where exactly in the series are we. 
+The above example can be written in Python using `for` loop with `range()` from 0 to the length of the list and a slice starting at the current loop variable at each iteration:
+
+---- 
+>>> toys = ["car","doll","puppy","robot","teddy bear"]
+>>> for idx in range(len(toys)): print(toys[idx:])
+
+['car', 'doll', 'puppy', 'robot', 'teddy bear']
+['doll', 'puppy', 'robot', 'teddy bear']
+['puppy', 'robot', 'teddy bear']
+['robot', 'teddy bear']
+['teddy bear']
+---- 
+
+
+
+We can easily use all series navigation functions with `toys` - `next back index? head? tail?` etc. inside the body of a `forall` loop:
+
+---- 
+>> forall toys[print[length? toys tail? next toys]]
+5 false
+4 false
+3 false
+2 false
+1 true
+---- 
+
+`forall` loop is very useful when we want to change all the values of the series in place. Let’s consider the following simple case: we have a list of numbers and want it updated after multiplying each of them by some coefficient. 
+
+---- 
+>> a: [2 3 11 7 16]
+== [2 3 11 7 16]
+>> coef: 2.5
+== 2.5
+>> forall a[a/1: coef * a/1]
+== 40.0
+>> a
+== [5.0 7.5 27.5 17.5 40.0]
+---- 
+
+Since `a` refers to the series as a whole, we need to tell Red that we want the item at the current index to be multiplied by the coefficient – that’s why we used `a/1`.
 
 === Remove-each
