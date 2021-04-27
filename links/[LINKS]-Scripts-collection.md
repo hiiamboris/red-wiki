@@ -1485,10 +1485,6 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [redscripts](https://github.com/StephaneVeneri/redscripts) - 
 
 		tags: 3dviewer
-* sylvievathoux - 
-	* [red](https://github.com/sylvievathoux/red) - 
-
-		tags: 
 ## T
 * tentamen - 
 	* [twitter-logo.red](https://github.com/tentamen/drawing/blob/master/twitter-logo.red) - Twitter Logo
