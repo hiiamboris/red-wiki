@@ -1614,3 +1614,48 @@ We can easily use all series navigation functions with `toys` - `next back index
 Since `a` refers to the series as a whole, we need to tell Red that we want the item at the current index to be multiplied by the coefficient – that’s why we used `a/1`.
 
 === Remove-each
+
+`remove-each 'word data body` - traverses `data`, sets `word` to the current value of `data` at each iteration and removes the current value if `body` returns a truthy value.
+
+---- 
+words: ["premium" "launch" "false" "minister" "breathe" "dawn" "raw" "earthquake" "grow" "entertainment"]
+remove-each w words[(length? w) > 6]
+== ["launch" "false" "dawn" "raw" "grow"]
+---- 
+
+At each iteration we check if the length of `w` is greater than 6. If it is, `remove-each` removes the value from `words`.
+
+== Functions
+
+Until now we have been looking at how to use Red’s predefined functions. It’s now time to learn how to define our own functions.
+
+Functions can be created using one of the predefined words `func`, `function`, `has`, or `does`, or using `make` with `function!` as its first argument (type). Let’s start with a simple example:
+
+---- 
+square: func[n][n * n]
+---- 
+
+---- 
+>> square 9
+== 81
+---- 
+
+We define `square` to be a function with one argument `n`, that returns its argument squared (multiplied by itself): `n * n`. As you can see, the arguments are enclosed in a block that is the first argument to `func`. This block is said to be the function’s specification. The second block, the function’s body, contains all the expressions that the function evaluates. The last computed value in the body is returned as a result of the function. If the result should be returned earlier than the last expression in the body due to branching, we can use `return` followed by a value/expression.
+
+Let’s see what are the differences between the four types of functions I mentioned above.
+
+=== func
+
+=== function
+
+=== has
+
+=== does
+
+=== Function specification
+
+=== Refinements
+
+=== op!
+
+=== routine!
