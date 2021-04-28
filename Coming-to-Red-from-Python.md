@@ -29,8 +29,9 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
    #### Datatypes ✓
    #### Blocks and series ✓
    #### Conditionals ✓
-   #### Looping
-   #### Functions
+   #### Looping ✓
+   #### Functions =
+   #### Misc (date, vectors, files...)
    #### View
    #### Draw
    #### Parse
