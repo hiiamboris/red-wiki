@@ -1615,7 +1615,7 @@ Since `a` refers to the series as a whole, we need to tell Red that we want the 
 
 === Remove-each
 
-`remove-each 'word data body` - traverses `data`, sets `word` to the current value of `data` at each iteration and removes the current value if `body` returns a truthy value.
+`remove-each 'word data body` - traverses `data`, sets `word` to the current value of `data` at each iteration and removes the current value if `body` returns truthy value.
 
 ---- 
 words: ["premium" "launch" "false" "minister" "breathe" "dawn" "raw" "earthquake" "grow" "entertainment"]
@@ -1627,7 +1627,7 @@ At each iteration we check if the length of `w` is greater than 6. If it is, `re
 
 == Functions
 
-Until now we have been looking at how to use Red’s predefined functions. It’s now time to learn how to define our own functions.
+Until now we have been using Red’s predefined functions. It’s now time to learn how to define our own functions.
 
 Functions can be created using one of the predefined words `func`, `function`, `has`, or `does`, or using `make` with `function!` as its first argument (type). Let’s start with a simple example:
 
@@ -1640,7 +1640,45 @@ square: func[n][n * n]
 == 81
 ---- 
 
-We define `square` to be a function with one argument `n`, that returns its argument squared (multiplied by itself): `n * n`. As you can see, the arguments are enclosed in a block that is the first argument to `func`. This block is said to be the function’s specification. The second block, the function’s body, contains all the expressions that the function evaluates. The last computed value in the body is returned as a result of the function. If the result should be returned earlier than the last expression in the body due to branching, we can use `return` followed by a value/expression.
+We define `square` to be a function with one argument `n`, that returns its argument squared (multiplied by itself): `n * n`. As you can see, the arguments are enclosed in a block that is the first argument to `func`. That block is said to be the function’s specification. The second block, the function’s body, contains all the expressions that the function evaluates. The last computed value in the body is returned as a result of the function. If the result should be returned earlier than the last expression in the body due to branching, we can use `return` followed by a value/expression.
+
+
+=== Function specification
+
+As we saw, the function specification block contains the arguments that the function needs for its workings. Arguments are the only mandatory fields of the function specification (for functions with agruments).  There can be other fields though, that make functions better documented and more powerful. 
+
+==== Docstring 
+
+An optional string that may be used to document the purpose and working of the function. It precedes the arguments.
+
+==== Arguments specification
+
+One or more words, each followed by optional block of the allowed datatypes for the argument, followed by optional string that describes the argument.
+
+==== Refinements
+
+Refinements are optional.  In the context of functions refinements are symbolic values that are used as modifiers to function’s behavior. They start with forward slash `/`, followed by one or more Unicode characters, including punctuation characters from the ASCII subset: `! & ' * + - . < = > ? _ | ~{backtick}`.  Refinements can have optional documenting string, as well as optional arguments with the same syntax as the ordinary function arguments.
+
+==== Return
+
+The function specification can have a return section – that is `return:` followed by a block with the result’s allowed typesets (TBD).
+
+Let’s update our function with a more detailed specification and add a refinement `/limit`. 
+
+---- 
+square: func[
+    "Squares the input"
+    n [number!] "Number to be squared"
+     /limit "limit the result up to"
+    lim [integer!] "return the limit if the squared value is greater "
+    return: [number!]
+][
+    result: n * n
+    result: either limit [min result lim][result]
+]
+---- 
+
+
 
 Let’s see what are the differences between the four types of functions I mentioned above.
 
@@ -1652,10 +1690,9 @@ Let’s see what are the differences between the four types of functions I menti
 
 === does
 
-=== Function specification
-
 === Refinements
 
 === op!
 
 === routine!
+
