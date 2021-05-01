@@ -1154,7 +1154,71 @@ Please note that there is no `set` datatype in Red as in Python:
 <class 'set'>
 ----
 
-Red provides the following operations on data sets: `union`, `difference` and `intersect`. 
+Red provides the following operations on data sets: `union`, `difference`, `intersect` and `exclude`. 
+
+== Code as data
+
+As you already know, an important paradigm in Red is “code is data”. We said that everything is just data until evaluated. 
+
+=== Load
+
+Usually every computer program starts as text that is analyzed, parsed and interpreted/compiled. Red has the `load` function that reads and evaluates a source and returns a value or block of values.
+
+---- 
+>> src: {n: 5 loop n [print "Hello world!"]}
+== {n: 5 loop n [print "Hello world!"]}
+>> src->code: load src
+== [n: 5 loop n [print "Hello world!"]]
+>> foreach item src->code [print[mold item ":" type? item]]
+n: : set-word
+5 : integer
+loop : word
+n : word
+[print "Hello world!"] : block
+---- 
+
+`src` is a string. We load it to a block named scr->code. Red has analyzed the string and converted each part to a Red-value. I used `foreach` to traverse the block and print the molded (more about molding will follow soon) value and its Red type.
+
+`load` has several refinements like `/next` (loads only the next value), `/part` (limits the loading to a certain position) or `/as` (specifies the type of data – e.g. bmp, gif, jpeg, png)
+
+=== Do
+
+When we want not only to load the data (convert it to Red values), but to execute it, we use `do`. It evaluates and executes all the values and returns the last one.
+
+---- 
+>> src->code
+== [n: 5 loop n [print "Hello world!"]]
+>> do src->code
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+---- 
+
+Here we used `do` to execute a block of Red values (`src->code`). Note that we could use `do` just as easily with `src`, that is with a string value.  
+
+---- 
+>> do src
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+---- 
+
+`do` has `/next` refinement too (do only the next value)
+
+=== Reduce
+
+=== Rejoin
+
+=== Repend
+
+=== Form
+
+=== Mold
+
 
 == Conditionals
 
