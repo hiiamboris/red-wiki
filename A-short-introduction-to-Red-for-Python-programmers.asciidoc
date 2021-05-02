@@ -1177,7 +1177,7 @@ n : word
 [print "Hello world!"] : block
 ---- 
 
-`src` is a string. We load it to a block named scr->code. Red has analyzed the string and converted each part to a Red-value. I used `foreach` to traverse the block and print the molded (more about molding will follow soon) value and its Red type.
+`src` is a string. We load it to a block named scr->code. Red has analyzed the string and converted each part to a Red-value. I used `foreach`to traverse the block and print the molded (more about molding will follow soon) value and its Red type.
 
 `load` has several refinements like `/next` (loads only the next value), `/part` (limits the loading to a certain position) or `/as` (specifies the type of data – e.g. bmp, gif, jpeg, png)
 
@@ -1210,6 +1210,47 @@ Hello world!
 `do` has `/next` refinement too (do only the next value)
 
 === Reduce
+
+`reduce` returns a copy of a block with all its expressions evaluated. This is very useful when we need to use the data from a block that was created dynamically in another function or DSL (like View or Draw).
+
+---- 
+>> str: "some text"
+== "some text"
+>> n: 10
+== 10
+>> data: ['num 2 * n 'len length? str]
+== ['num 2 * n 'len length? str]
+>> reduce data
+== [num 20 len 9]
+---- 
+
+`data` is composed of seven values with the following datatypes: lit-word, integer, word, word, lit-word ,word and word. What `reduce` does is get the values words refer to, evaluate all the expressions and collect the results in a block. `lit-words` evaluate to themselves, that’s why they remain in the reduced block.
+
+---- 
+>> select reduce data 'num
+== 20
+---- 
+
+You can use the `/into` refinement of `reduce` - it allows you to append the results from `reduce` to the block you have given as an argument to `/into`, instead of creating a new block.
+ 
+=== Compose
+
+`compose` is similar to `reduce` but it only evaluates the parens in a block.
+
+---- 
+>> set [x  y size] [32 25 20]
+== [32 25 20]
+>> x
+== 32
+>> y
+== 25
+>> size
+== 20
+>> compose[circle (as-pair x * size y * size) 100]
+== [circle 640x500 100]
+---- 
+
+`x`, `y` and `size` are all words that have values in the current context. `as-pair` is a Red function that takes two numbers and returns a `pair!` composed of them. `circle` is part of `Draw` dialect and draws a circle (or an ellipse) with given center (a pair of coordinates) and a radius (or radii for ellipses). If I use `compose` in the example above, I would get en error `*** Script Error: circle has no value` - that’s why in the previous example I used `lit-words` (`'num` and `'len`).
 
 === Rejoin
 
@@ -1759,4 +1800,5 @@ Let’s see what are the differences between the four types of functions I menti
 === op!
 
 === routine!
+
 
