@@ -1250,11 +1250,60 @@ You can use the `/into` refinement of `reduce` - it allows you to append the res
 == [circle 640x500 100]
 ---- 
 
-`x`, `y` and `size` are all words that have values in the current context. `as-pair` is a Red function that takes two numbers and returns a `pair!` composed of them. `circle` is part of `Draw` dialect and draws a circle (or an ellipse) with given center (a pair of coordinates) and a radius (or radii for ellipses). If I use `compose` in the example above, I would get en error `*** Script Error: circle has no value` - that’s why in the previous example I used `lit-words` (`'num` and `'len`).
+`x`, `y` and `size` are all words that have values in the current context. `as-pair` is a Red function that takes two numbers and returns a `pair!` composed of them. `circle` is part of `Draw` dialect and draws a circle (or an ellipse) with given center (a pair of coordinates) and a radius (or radii for ellipses). If I had used `reduce` in the example above, I would have gotten an error `*** Script Error: circle has no value` - that’s why in the previous example I used `lit-words` (`'num` and `'len`).
 
 === Rejoin
 
+`rejoin` reduces and joins a block of values. 
+
+---- 
+>> toy: "dog"
+== "dog"
+>> qty: 10
+== 10
+>> toy-ref: rejoin[toy ": " qty " pieces"]
+== "dog: 10 pieces"
+---- 
+
+`rejoin` evaluates all the values in the block and joins them to a new series. The type of the result is implied by the first value of the block:
+
+---- 
+>> rejoin [qty [20 12]]
+== "1020 12"
+>> rejoin [[20 12 ] qty]
+== [20 12 10]
+>> rejoin ["file" %.ext]
+== "file.ext"
+>> rejoin [%file  ".ext"]
+== %file.ext
+---- 
+ 
 === Repend
+
+`repend` appends a reduced value to a series and returns the series head:
+
+---- 
+>> toy2: "doll"
+== "doll"
+>> qty2: 12
+== 12
+>> repend copy toy-ref ["; " toy2 ": " qty2 " pieces"]
+== "dog: 10 pieces; doll: 12 pieces"
+---- 
+Note how `repend` reduces the values before appending them, in contrast to `append`:
+
+---- 
+>> values: [20 15]
+== [20 15]
+>> repend copy values [qty qty2]
+== [20 15 10 12]
+>> append copy values [qty qty2]
+== [20 15 qty qty2]
+---- 
+
+`append` does not evaluate the values, as seen from the example above - `qty` and `qty2` remain just words.
+
+`repend` has a refinement `/only` for appending a block of values as a block (of reduced values).
 
 === Form
 
