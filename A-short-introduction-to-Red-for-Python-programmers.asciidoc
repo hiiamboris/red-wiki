@@ -1209,6 +1209,8 @@ Hello world!
 
 `do` has `/next` refinement too (do only the next value)
 
+`do` is similar to Python 3 `exec()` function. Don’t forget that `do` returns the result of the last evaluation; `exec()` doesn’t return any value (returns `None`). Python’s `eval()` returns a value, but it only accepts a single expression.
+
 === Reduce
 
 `reduce` returns a copy of a block with all its expressions evaluated. This is very useful when we need to use the data from a block that was created dynamically in another function or DSL (like View or Draw).
@@ -1307,8 +1309,35 @@ Note how `repend` reduces the values before appending them, in contrast to `appe
 
 === Form
 
+`form` returns a user-friendly string representation of a value:
+
+---- 
+>> a: ["red" "orange" "yellow"]
+== ["red" "orange" "yellow"]
+>> form a
+== "red orange yellow"
+---- 
+
 === Mold
 
+`mold` returns a source format string representation of a value.
+
+---- 
+>> mold a
+== {["red" "orange" "yellow"]}
+>> m: #(a 10 b[3 1 2])
+== #(
+    a: 10
+    b: [3 1 2]
+)
+>> mold m
+== {#(^/    a: 10^/    b: [3 1 2]^/)}
+>> print mold m
+#(
+    a: 10
+    b: [3 1 2]
+)
+---- 
 
 == Conditionals
 
@@ -1778,6 +1807,34 @@ remove-each w words[(length? w) > 6]
 ---- 
 
 At each iteration we check if the length of `w` is greater than 6. If it is, `remove-each` removes the value from `words`.
+
+== Collect/Keep
+
+Very often, we traverse a series and gather all or some of the elements (possibly after some transformation) in a new series. We saw that `forall` is very handy when we are concerned with all of the series’ elements – we can change them in place. When we want to gather the elements in a new series, one option is to start with an empty series, loop through all of the elements of the existing series and append the ones we are interested in to the newly allocated series:
+
+---- 
+>> numbers: copy[]
+== []
+>> numbers: collect[loop 10[keep random 50]]
+== [3 31 17 1 13 4 3 21 48 42]
+>> numbers: [3 31 17 1 13 4 3 21 48 42]
+== [3 31 17 1 13 4 3 21 48 42]
+>> even-nums: copy[]
+== []
+>> foreach n numbers[if even? n[append even-nums n]]
+== [4 48 42]
+---- 
+An alternative to the above code is to use the `collect` - it accepts a block and collects in a new block all the values that have been passed to its `keep` function. Let’s rewrite the last example using `collect`:
+
+---- 
+>> numbers
+== [3 31 17 1 13 4 3 21 48 42]
+>> even-nums: collect[foreach n numbers[if even? n[keep n]]]
+== [4 48 42]
+---- 
+
+We can use `/into` refinement of `collect` to append the newly collected items into a specified buffer (that can be an existing or a new block), instead of in a new block.
+
 
 == Functions
 
