@@ -277,6 +277,11 @@ Three to twelve positive integers separated by decimal points. Used for represen
 
 `255.255.255.0`
 
+=== bitset!
+
+A `bitset!` is an array of bits used to store boolean values.
+
+`make bitset! #"A"` `make bitset! "abc"`
 
 == Blocks and series
 
@@ -829,6 +834,23 @@ Sometimes the whole series should the emptied, or all elements after certain ind
 == "Hello"
 ----
 
+A special case of removing items from series is getting rid of whitespaces from srtings or `none` from blocks. Red has a special function for this operation - `trim`:
+
+---- 
+>> txt: "   Removes space from a string or NONE from a block.  "
+== {   Removes space from a string or NONE from a block.  }
+>> trim txt
+== "Removes space from a string or NONE from a block."
+>> trim/all txt
+== "RemovesspacefromastringorNONEfromablock."
+>> trim/with txt #"e"
+== "RmovsspacfromastringorNONEfromablock."
+>> data
+== [345 none 1123 none none 0 -34]
+>> trim reduce data
+== [345 1123 0 -34]
+---- 
+
 There are cases when you need to append a value to a series if it’s not found in the series, otherwise remove it. Red uses `alter` for this operation.
 
 ----
@@ -839,6 +861,7 @@ a: [1 2 3 4 5 4]
 >> a
 == [1 2 3 5 4]
 ----
+
 In this example there were two 4. `alter` removed the first one and returned `false` - this means that the value has been removed and not added.
 
 === Changing values in series
@@ -906,8 +929,31 @@ If we need to change a given number of values with several values, we can do it 
 == [2 4 5 6 7 1]
 ---- 
 
-=== Replace 
+While `change` changes a series based on index, `replace` changes the series based on value/pattern.
 
+`replace` series pattern value – replaces a pattern (a specific value or a `parse` rule) in a series (any-block!, aby-string!, binary! or vector!) with a new value, in place.
+
+---- 
+>> fruit: "Äpfel"
+== "Äpfel"
+>> replace fruit #"Ä" "Ae"
+== "Aepfel"
+>> data: [pos: 10x10 speed: 3x2 mass: 20 grid: 10x10]
+== [pos: 10x10 speed: 3x2 mass: 20 grid: 10x10]
+>> replace/all data 10x10 5x5
+== [pos: 5x5 speed: 3x2 mass: 20 grid: 5x5]
+---- 
+
+As you see, we can replace pairs in blocks as easiliy as characters in strings. 
+
+Although `parse` needs a separate tutorial, lets see how `replace` can benefit from using a `parse` rule for its pattern:
+
+---- 
+>> replace/all data pair! 0x0
+== [pos: 0x0 speed: 0x0 mass: 20 grid: 0x0]
+---- 
+
+I used the last value of ` data` block from the previous example and the simple `pair!` rule with `replace/all` - it replaced all values of `pair!`  datatype in the block with a new value – `0x0`.
 
 === Moving values within series
 
@@ -964,7 +1010,6 @@ A special case of moving values within series is sorting. The goal of sorting is
 ---- 
 
 When used without refinemens, `sort` arranges the items in ascending order, as it’s seen from the example above. `sort` modifies the series, that’s why you need to make a copy of your data if you still need the original arrangement.  The Python analogues are as follows:
-
 
 . Sorting in Python and Red
 [cols="1,1"] 
@@ -1155,6 +1200,48 @@ Please note that there is no `set` datatype in Red as in Python:
 ----
 
 Red provides the following operations on data sets: `union`, `difference`, `intersect` and `exclude`. 
+
+=== String-specific functions
+
+Let’s take a look at some functions that works only in string series.
+
+`split` breaks a string into pieces using the specified delimiter(s). The delimiter can be a character, a string, or a bitset.
+
+---- 
+>> legend: "Break a string series into pieces using the provided delimiters"
+== {Break a string series into pieces using the provided delimiters}
+>> split legend space
+== ["Break" "a" "string" "series" "into" "pieces" "using" "the" "provided" "delimiters"]
+---- 
+
+`space` is a predefined value for the space character `#” “`. The result of `split` is a block of strings. Spliting on string values is straightforward:
+
+---- 
+>> split "Mississippi" "ss"
+== ["Mi" "i" "ippi"]
+---- 
+
+A `bitset!` is an array of bits that is used to store boolean values. Bitset indexing is zero based with 1 values representing `true`, and 0 values representing `false`.  Bitsets are used to model sets of non-negative integers such as Unicode Code Points.
+
+---- 
+>> make bitset! #"A"   ; create a bitset with bit 65 set
+== make bitset! #{000000000000000040}
+>> make bitset! "hi"   ; create a bitset with bits 104 and 105 set
+== make bitset! #{00000000000000000000000000C0}
+---- 
+
+Red provides a shortcut for `make bitset!` - `charset`. This is what we are going to use in our example of splitting on a bitset. Let’s split a string on vowels `aoeiu`:
+
+---- 
+>> str: "A vowel is a syllabic speech sound pronounced..."
+== "A vowel is a syllabic speech sound pronounced..."
+>> vowel: charset "AOEIUaoeiu"
+== make bitset! #{000000000000000044410400444104}
+>> split str vowel
+== ["" " v" "w" "l " "s " " syll" "b" "c sp" "" "ch s" "" "nd pr" "n" "" "nc" "d..."]
+---- 
+
+`pad` - as its name implies, pads a string (or a formed value) with spaces, on the right side by default. 
 
 == Code as data
 
