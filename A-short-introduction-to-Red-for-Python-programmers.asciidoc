@@ -1243,6 +1243,56 @@ Red provides a shortcut for `make bitset!` - `charset`. This is what we are goin
 
 `pad` - as its name implies, pads a string (or a formed value) with spaces, on the right side by default. 
 
+---- 
+>> pad "text" 10
+== "text      "
+---- 
+
+Use the `/left` refinement when you need to pad the string on the left side.
+
+---- 
+>> foreach n [999 15 7 1078][print pad/left n 4]
+ 999
+  15
+   7
+1078
+---- 
+
+I will introduce the `foreach` loop in a subsequent section – it goes through all the items in a series. In this example, I printed each element of the block padded with spaces to four characters on the left side. You can use another character for padding with `/with` refinement.
+
+When you need to change the case of a string, you can use `lowercase` and `uppercase`:
+
+---- 
+>> lowercase "Red and Python"
+== "red and python"
+>> uppercase "red and python"
+== "RED AND PYTHON"
+---- 
+
+Note that they change the string in place – make a `copy` when you need to preserve the original formatting. Python’s `upper()` and `lower()` methods return a new string.
+
+Red provides functions to encode/decode strings and binary! values to/from binary-coded strings. `enbase` encodes a string into a binary-coded string; `debase` decodes a binary-coded string to binary value. The possible bases are 2, 16, 58 and 64. The default is BASE-64. Use `/base` refinement with when you need one of 2, 16 or 58.
+
+---- 
+>> enbase "binary-coded"
+== "YmluYXJ5LWNvZGVk"
+>> debase "YmluYXJ5LWNvZGVk"
+== #{62696E6172792D636F646564}
+>> to-string debase "YmluYXJ5LWNvZGVk"
+== "binary-coded"
+---- 
+
+Note that `debase` returns a `binary!` - that’s why you need to convert the result explicitly to a string when necessary.
+
+---- 
+>> enbase/base "15" 2
+== "0011000100110101"
+>> enbase/base to-binary 15 2
+== "00000000000000000000000000001111"
+---- 
+
+In the example above, you can see how you can convert decimal integers to binary. 
+
 == Code as data
 
 As you already know, an important paradigm in Red is “code is data”. We said that everything is just data until evaluated. 
@@ -1425,6 +1475,8 @@ Note how `repend` reduces the values before appending them, in contrast to `appe
     b: [3 1 2]
 )
 ---- 
+
+`mold` is similar to Python’s `repr()` function.
 
 == Conditionals
 
