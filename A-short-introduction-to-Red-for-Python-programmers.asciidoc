@@ -1293,6 +1293,8 @@ Note that `debase` returns a `binary!` - that’s why you need to convert the re
 
 In the example above, you can see how you can convert decimal integers to binary. 
 
+You can use `compress` to compress data of `any-string!` or `binary!` type and `decompress` to decompress it. ZLIB and DEFLATE formats are supported.
+
 == Code as data
 
 As you already know, an important paradigm in Red is “code is data”. We said that everything is just data until evaluated. 
@@ -2013,37 +2015,61 @@ Refinements are optional.  In the context of functions refinements are symbolic 
 
 The function specification can have a return section – that is `return:` followed by a block with the result’s allowed typesets (TBD).
 
-Let’s update our function with a more detailed specification and add a refinement `/limit`. 
+==== Locals
+
+The optional argument /local may be used to list the words that are local for the function.
+
+
+Let’s update the `square` function with a more detailed specification and add a refinement. 
 
 ---- 
-square: func[
+square-c: func[
     "Squares the input"
     n [number!] "Number to be squared"
-     /limit "limit the result up to"
-    lim [integer!] "return the limit if the squared value is greater "
+    /scale "multiply the result with a coefficient"
+    coef [number!] "multiplier"
     return: [number!]
+    /local result
 ][
     result: n * n
-    result: either limit [min result lim][result]
+    result: result * either scale [coef][1]
 ]
 ---- 
 
+=== Refinements
 
+Let me explain how refinements work with test calls to the function `square-c` we just defined:
 
-Let’s see what are the differences between the four types of functions I mentioned above.
+---- 
+>> square-c 25
+== 625
+>> square-c/scale 25 1.25
+== 781.25
+---- 
+
+In the body of our function we first calculate `result` to be the argument `n` multiplied by itself (squared). Then we multupliy it by either `coef` or 1, depending on the presence of `/scale` refinement. Note that `result` is defined to be local for the function body.
+
+Refinements don’t always need to have arguments - in many cases they work as flags. However, when they have arguments, we can use a slightly different logic. Instead of checking the refinement for existence, we can check directly if its argument exists:
+
+----
+square-c: func[n  /scale coef][ n * n * any [coef 1]]
+----
+
+We multiply `n` by `n` and then by the first truthy value in the block following `any` - `coef` if exists (if the function was called with `/scale` refinemet), otherwise by 1.
+
+Let’s see what are the differences between the four types of functions I mentioned earlier.
 
 === func
 
+The built-in function `func` is defined as shorthand for `make function!`. All words that are not listed after `/local` in the function’s specification are bound to the global context. That means that if we hadn’t marked `result` as local in our `square-c` function, had we had a word in the global context named `result`, it would be set to the value of `result` from the `square-c` body.
+
 === function
+
 
 === has
 
 === does
 
-=== Refinements
-
 === op!
 
 === routine!
-
-
