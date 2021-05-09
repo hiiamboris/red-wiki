@@ -2065,11 +2065,44 @@ The built-in function `func` is defined as shorthand for `make function!`. All w
 
 === function
 
+`function` is similar to func, but it adds all set-words and words from iterators found in the body to the list of local arguments except the ones that occur in a block following the `/extern` refinement
 
 === has
 
+`has` defines a function without other arguments than local words, thus `has [<arguments>] <block>` is equivalent to `func [/local <arguments>] <block>`.
+
 === does
+
+`does` defines a function with no arguments, so `does <block>` is equal to `func [ ] <block>`
+
+=== routine!
+
+`routine` is a function with a Red specification and Red/System body. The routine specification takes Red datatypes as arguments and return value, and automatically converts them to appropriate Red/System types when called. A program that contains `routine` values can not be interpreted, it should be compiled since it contains Red/System (low level) code.
 
 === op!
 
-=== routine!
+`op!` values are infix functions of exactly two arguments. They are constructed from existing functions, including `native!`, `action!` and `routine!`. `op!` takes evaluation precedence over other function types. 
+
+Let’s demonstrate the creation of an `op!` value with a simple `range` function:
+
+---- 
+..: make op! function[a b][
+    collect[
+        while[a <= b][
+            keep a
+            a: a + 1 
+        ]
+    ]
+]
+---- 
+
+We define `..` to be an `op!`, constructed from a function of two arguments. The function itself just loops over and collects the integer values that are in the closed interval formed by the function’s arguments. 
+
+---- 
+>> 1 .. 5
+== [1 2 3 4 5]
+>> foreach n 40 .. 42 [print n]
+40
+41
+42
+---- 
