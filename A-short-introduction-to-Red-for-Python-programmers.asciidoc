@@ -2105,4 +2105,28 @@ We define `..` to be an `op!`, constructed from a function of two arguments. The
 40
 41
 42
----- 
+----
+
+== Parse
+
+Parse dialect is an embedded domain-specific language (DSL) of Red that allows concise processing of input series with grammar rules.
+
+Coming from Python, you are most probably familiar wit regular expressions. Regexes are sequences of characters that specifie search patterns, usually used by string-searching algorithms for "find" or "find and replace" operations on strings. Red `Parse` provides this string-level functionality and much more – it works not only with `any-string!` , but also with `binary!` and `any-block!` series. That means that `parse` is capable of parsing blocks of Red values too.
+
+The usage is as follows:
+
+`parse input rules`.
+
+`input` is any `series!` value except for `image!` and `vector!`. `rules` is a `block!` value with valid Parse dialect content (top-level rule).
+
+By default, `parse` returns `logic!` value to indicate whether or not provided grammar rules succeeded in fully matching the input series. However, it is possible for `parse` to return a `block!` instead of `logic!` value, when `collect` rule is used.
+
+Also by defualt `parse` is case-insensitive, following Red semantics. We can use the `/case` refinement to enable the case-sensitivity.
+
+=== Types of input
+
+The working of `parse` rules depends on the type of input series. When parsing `any-block!`, matching by character set has no meaning and always fails. When the input is of `any-string!` type,  matching by datatype or type set is not supported. For `binary!` the matching by datatype or type set is supported for UTF-8 encoded values; such match succeeds if matched portion of the input represents one of the datatype’s literal forms, blank characters before tokens are automatically skipped.
+
+Please refer to link:/https://github.com/red/docs/blob/master/en/parse.adoc[Parse documentation] for complete and more formal description of `parse`. 
+
+I’ll some basic exmaples of parsing strings, blocks and binaries.
