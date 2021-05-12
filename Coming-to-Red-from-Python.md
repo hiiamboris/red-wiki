@@ -31,10 +31,10 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
    #### Conditionals ✓
    #### Looping ✓
    #### Functions ✓
-   #### Misc (date, vectors, files...) ==
+   #### Parse ==
    #### View
    #### Draw
-   #### Parse
+
 
 ## Notes
 
