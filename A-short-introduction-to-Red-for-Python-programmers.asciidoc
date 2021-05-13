@@ -2129,4 +2129,62 @@ The working of `parse` rules depends on the type of input series. When parsing `
 
 Please refer to link:/https://github.com/red/docs/blob/master/en/parse.adoc[Parse documentation] for complete and more formal description of `parse`. 
 
-I’ll some basic exmaples of parsing strings, blocks and binaries.
+I’ll give some basic examples of parsing strings, blocks and binaries.
+
+=== Parsing strings
+
+---- 
+>> parse "Mississippi" ["Mi" 2 "ssi" "ppi"]
+== true
+---- 
+
+Here we parse the string "Mississippi" with a block of rules as follows:
+
+* "Mi" – a literal string
+* 2 "ssi" – exactly two consecutive "ssi" ("ssissi")
+* "ppi" – a literal string
+
+---- 
+>> parse "Red lang" ["Red " ["f" | "l"] "ang"]
+== true
+---- 
+
+* "Red " – a literal string
+* ["f" | "l"] – a subrule that introduces two alternatives: "f" or "l".
+* “ang” – a literal string 
+
+When parsing strings, instead of numerous "|", we can use charsets:
+
+---- 
+>> f-or-l: charset "fl"
+== make bitset! #{0000000000000000000000000208}
+>> parse "Red lang" ["Red " f-or-l "ang"]
+== true
+---- 
+
+`f-or-l` rule checks if at the current position is a single character from the charset "fl".
+
+Suppose we want to validate a hypothetical serial number that consists of three groups of four hexadecimal digits, separated by hyphens, for example `1A2B-3C4D-5E6F`
+
+---- 
+digits: charset "0123456789"
+letters: charset "abcdefABCDEF"
+hex: union digits letters
+group: [4 hex]
+ser-num: [group "-" group "-" group]
+str: "1A2B-3C4D-5E6F"
+---- 
+
+---- 
+>> parse str ser-num
+== true
+>> parse "1A2B-3C4D-5E6." ser-num
+== false
+---- 
+
+Let’s change our parsing rule so that it allows the groups be composed of 3 or 4 hexadecimal digits. We only need to change the `group` rule to `[3 4 hex]` - now it looks for 3 to 4 (inclusive) digits.
+
+---- 
+>> parse "A23B-3C4-5E4" ser-num
+== true
+---- 
