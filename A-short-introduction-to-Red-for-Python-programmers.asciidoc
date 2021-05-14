@@ -2188,3 +2188,33 @@ Let’s change our parsing rule so that it allows the groups be composed of 3 or
 >> parse "A23B-3C4-5E4" ser-num
 == true
 ---- 
+
+When a part of the input is not necessarily present (it is optional), we can use `opt` before the rule – it means that the rule is repeated zero or one times. `any` corresponds to zero or more repetitions of the rule; `some` - one or more repetitions. Lookahead is done using `ahead`.
+
+Let’s try to implement a rule that validates a floating point number.
+
+---- 
+zero: charset "0"
+non-zero: charset "123456789"
+digit: union zero non-zero
+float: [
+    opt "-"
+	[digit ahead dot 
+  | non-zero some digit]
+	dot
+	some digit
+]
+---- 
+
+---- 
+>> parse "-0.23" float
+== true
+>> parse "-.23" float
+== false
+>> parse "10.35" float
+== true
+>> parse "03.35" float
+== false
+---- 
+
+For this exercise, I decided to treat the floating numbers having an unnecessary leading zero as invalid, is it’s seen in the last example. So, we start with an optional “-“ (opt "-"), then we check for either a single digit, followed by a dot (`digit ahead dot`) or digits that don’t start with a zero (`non-zero some digit `). The rest is trivial - `dot` followed by one or more digits.
