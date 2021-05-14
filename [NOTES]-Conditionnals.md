@@ -87,4 +87,4 @@ case [ false [] true [] ]  ;= unset  ====> true in R2/R3
 ### Related conversation/issues
 * initial discussion on (1) :  https://gitter.im/red/help?at=609d4d8d9f2c352db109513b
 * issue opened on (1) : 
-* other related issues red/red#4482 which links to red/red#4469 and a red/REP#85
+* other related issues [red/red#4482](https://github.com/red/red/issues/4482) which links to [red/red#4469](https://github.com/red/red/issues/4469) and a [red/REP#85](https://github.com/red/REP/issues/85)
