@@ -2145,11 +2145,12 @@ Here we parse the string "Mississippi" with a block of rules as follows:
 * "ppi" – a literal string
 
 ---- 
->> parse "Red lang" ["Red " ["f" | "l"] "ang"]
+>> parse "Red lang" ["Red" space ["f" | "l"] "ang"]
 == true
 ---- 
 
-* "Red " – a literal string
+* "Red" – a literal string
+* space 
 * ["f" | "l"] – a subrule that introduces two alternatives: "f" or "l".
 * “ang” – a literal string 
 
@@ -2158,7 +2159,7 @@ When parsing strings, instead of numerous "|", we can use charsets:
 ---- 
 >> f-or-l: charset "fl"
 == make bitset! #{0000000000000000000000000208}
->> parse "Red lang" ["Red " f-or-l "ang"]
+>> parse "Red fang" ["Red" space f-or-l "ang"]
 == true
 ---- 
 
@@ -2199,8 +2200,8 @@ non-zero: charset "123456789"
 digit: union zero non-zero
 float: [
     opt "-"
-	[digit ahead dot 
-  | non-zero some digit]
+        [digit ahead dot 
+       | non-zero some digit]
 	dot
 	some digit
 ]
@@ -2217,4 +2218,43 @@ float: [
 == false
 ---- 
 
-For this exercise, I decided to treat the floating numbers having an unnecessary leading zero as invalid, is it’s seen in the last example. So, we start with an optional “-“ (opt "-"), then we check for either a single digit, followed by a dot (`digit ahead dot`) or digits that don’t start with a zero (`non-zero some digit `). The rest is trivial - `dot` followed by one or more digits.
+For this exercise, I decided to treat the floating numbers having an unnecessary leading zero as invalid, is it’s seen in the last example. So, we start with an optional “-“ (` opt "-"`), then we check for either a single digit, followed by a dot (`digit ahead dot`) or digits that don’t start with a zero (`non-zero some digit`). The rest is trivial - `dot` followed by one or more digits.
+
+When we want to advance the position one step forward, we use `skip`.
+
+---- 
+>> parse "abc"["a" skip "c"]
+== true
+>> parse "a.c"["a" skip "c"]
+== true
+---- 
+
+`skip` matches any value and could fail only if the input position is at the tail of the series.
+
+When it is necessary to skip more than one position, we can use `to` or `thru`. 
+
+---- 
+delimiter: [space | tab | lf | cr | end]
+text: {Red	is a full-stack
+programming  language}
+print-words: [
+    any [
+        any delimiter
+        copy word to delimiter (print word)
+        any delimiter
+    ]
+]
+---- 
+
+---- 
+>> parse text print-words
+Red
+is
+a
+full-stack
+programming
+language
+== true
+---- 
+
+I used the opportunity to introduce a couple of new concepts besides `to` with this example. What it does is print the words in a string, where the words are seperated from one another with whitespaces. Let go through it. `delimiter` is rule that introduces the white spaces – space, tab, linefeed or carriage return. I’ve also added `end` to them, so that the end of the input is taken into account. The rule`print-words` consists only of `any`, followed by a block as its rule. This rule will be matched one or more times. It works as follows – first we go thru any whitespaces with `any delimiter`, then `copy word to delimiter (print word)` advances the input position to the next whitespace. Here’s the first new concept - `copy word` copies to `word` the result of the rule that follows `to delimiter`. So this part pf the code effectively extracts the words. Please note that `copy` in `parse` is different from `copy` outside of the DSL. What follows is `(print word)`. This is very powerful concept in `parse` - parentheses enclose a code that is treated as regular Red code and not `parse`.  This way the code in parentheses is evaluated if the rule preceding it succeeds. Finally there is one more "any delimiter".
