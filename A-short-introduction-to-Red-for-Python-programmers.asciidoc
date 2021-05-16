@@ -2258,3 +2258,56 @@ language
 ---- 
 
 I used the opportunity to introduce a couple of new concepts besides `to` with this example. What it does is print the words in a string, where the words are seperated from one another with whitespaces. Let go through it. `delimiter` is rule that introduces the white spaces – space, tab, linefeed or carriage return. I’ve also added `end` to them, so that the end of the input is taken into account. The rule`print-words` consists only of `any`, followed by a block as its rule. This rule will be matched one or more times. It works as follows – first we go thru any whitespaces with `any delimiter`, then `copy word to delimiter (print word)` advances the input position to the next whitespace. Here’s the first new concept - `copy word` copies to `word` the result of the rule that follows `to delimiter`. So this part pf the code effectively extracts the words. Please note that `copy` in `parse` is different from `copy` outside of the DSL. What follows is `(print word)`. This is very powerful concept in `parse` - parentheses enclose a code that is treated as regular Red code and not `parse`.  This way the code in parentheses is evaluated if the rule preceding it succeeds. Finally there is one more "any delimiter".
+
+=== Parsing blocks
+
+When we parse blocks, we work with Red values. Let’s start with a simple example:
+
+---- 
+>> parse [2 + 3][integer! word! integer!]
+== true
+---- 
+The block we are parsing consists of three values, that’s why we can use three parsing rules in the rules block. Note that `+` is just a word until is evaluated, when it becomes the `+` operation (`op!`).
+
+Let’s make a parse rule that validates a block, representing a binary operation in the form `a op b`, where `a` and `b` are literal numbers, and `op` is an `op!`  value (an infix function of two arguments). 
+
+---- 
+bin-op: [
+    number!
+    o: skip
+    if (all[word? o/1 op? get o/1])
+    number!
+]
+---- 
+
+---- 
+>> parse [2 * 17] bin-op
+== true
+>> parse [a ** 3] bin-op
+== false
+>> parse [4 print 3] bin-op
+== false
+---- 
+
+We start our rule with `number!` - it matches one value, that is a literal number. Then we have `o: skip` - this sets the word `o` to the current input position and skips the next value. `o` is a series, `o/1` refers to the skipped value. What we do next is check whether the type of the skipped value is `op!` - `if (all[word? o/1 op? get o/1])`. Here `if` is part of `parse`, and not of the regular Red. It succeeds if a given Red expression evaluates to true and never advances the input (we already advanced the input with `skip`). Remember that `+` is just a word? That’s why we first check if `o` is of type `word!` (`word? o`), and if it is, does this word refer to an `op!` value  (`op? get o/1`). The rule end with the right operand, a `number!`. 
+
+Let’s finish our short introduction to parsing blocks with another example – let’s check if a block consist of a single value, repetead one or more times. (Of course there is a short way to do it without `parse` - `single? unique block`).
+
+---- 
+rpt: [set w skip (r: reduce['quote w]) any r]
+---- 
+
+---- 
+>> parse [42 42 42 42] rpt
+== true
+>> parse [42 42 43 42] rpt
+== false
+>> parse [+ + + +] rpt
+== true
+>> parse [+ + + - /] rpt
+== false
+>> parse ["Red" "Red" "Red"] rpt
+== true
+---- 
+
+Our rule `rpt` starts with setting a word `w` to the first value at the input start and skipping it. Next, we escape to regular Red and evalueat the code in the parentheses - `r: reduce['quote w]`, that generates a rule `r`that we’ll use later. The logic of the rule is to match the literal value we set `w` to refer to. For this we will use `quote`. `quote` uses the value that follows it literally, that’s why we can’t just write `quote w` - it would mean that we are going to match literal `w`’s. What we do instead is to make a block that consist of `quote`, followed by the evaluated value of `w`. We could use alternatively `r: compose[quote (w)]`. Finally, we repeat the `r` rule zero or more times with `any r`.  If it succeds, then the block consists of a unique element.
