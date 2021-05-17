@@ -2311,3 +2311,104 @@ rpt: [set w skip (r: reduce['quote w]) any r]
 ---- 
 
 Our rule `rpt` starts with setting a word `w` to the first value at the input start and skipping it. Next, we escape to regular Red and evalueat the code in the parentheses - `r: reduce['quote w]`, that generates a rule `r`that we’ll use later. The logic of the rule is to match the literal value we set `w` to refer to. For this we will use `quote`. `quote` uses the value that follows it literally, that’s why we can’t just write `quote w` - it would mean that we are going to match literal `w`’s. What we do instead is to make a block that consist of `quote`, followed by the evaluated value of `w`. We could use alternatively `r: compose[quote (w)]`. Finally, we repeat the `r` rule zero or more times with `any r`.  If it succeds, then the block consists of a unique element.
+
+=== Parsing binary!
+
+`binary!` value is a series of bytes, so we can match the input to individual bytes :
+
+---- 
+>> parse #{CAFE} [#{CA} #{FE}]
+== true
+---- 
+
+#{CA} is 202 in decimal; #{FE} is 254, so we can make a `bitset!` consisting of these values and match against the bitset:
+
+---- 
+>> bs: make bitset! [202 254]
+== make bitset! #{0000000000000000000000000000000000000000000000000020000000000002}
+>> parse #{CAFE} [any bs]
+== true
+---- 
+
+Of course we can match series of bytes: 
+
+---- 
+>> parse #{001234CAFE0000} [to #{CAFE} to end]
+== true
+---- 
+
+As we already said, matching by datatype or type set is supported for UTF-8 encoded values (spaces are automatically skipped):  
+
+---- 
+>> parse to binary! "Red: lang" [set-word! word!]
+== true
+---- 
+
+You can (and definately should, if you want to master `parse`) check the link:/https://github.com/red/red/wiki/%5BDOC%5D-Parse[dedicated resources for learning `parse`]
+
+== View
+
+The Red/View (or just View) is a graphic system for the Red programming language. It provides a Virtual tree of objects as programming interface. The virtual tree is built using face objects; each face object maps to a graphic component on the display in a two-way binding. Face objects are clones of `face!` template object. A field in face object is called a facet. Facets include type, offset, size, text. Image color, menu, font, state, as well as many others.
+
+=== Face types
+
+* Base
+* Text
+* Button
+* Toggle
+* Check
+* Radio
+* Field
+* Area
+* Text-list
+* Drop-list
+* Drop-down
+* Calendar
+* Progress
+* Slider
+* Camera
+* Panel
+* Tab-panel
+* Window
+* Screen
+* Group-box
+
+=== Events
+
+* down
+* up
+* mid-down
+* mid-up
+* alt-down
+* alt-up
+* aux-down
+* aux-up
+* drag-start
+* drag
+* drop
+* click
+* dbl-click
+* over
+* move
+* resize
+* moving
+* resizing
+* wheel
+* zoom
+* pan
+* rotate
+* two-tap
+* press-tap
+* key-down
+* key
+* key-up
+* enter
+* focus
+* unfocus
+* select
+* change
+* menu
+* close
+* time
+
+
