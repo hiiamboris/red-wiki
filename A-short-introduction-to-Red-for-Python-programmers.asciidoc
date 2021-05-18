@@ -49,7 +49,7 @@ find "Red" #"e"
 
 Operators are always binary operations, like `+` (addition), `-` (subtraction) and so on.
 
-Evaluation of the operands of operators has precedence over function application and binding. There is no precedence between any two operators. This is different from Python, where the operators have different link:/https://docs.python.org/3/reference/expressions.html#operator-precedence[precedence]
+Evaluation of the operands of operators has precedence over function application and binding. There is no precedence between any two operators. This is different from Python, where the operators have different https://docs.python.org/3/reference/expressions.html#operator-precedence[precedence]
 
 ----
 2 + 2      ; evaluates to 4
@@ -77,7 +77,7 @@ Evaluation order can be changed by the use of parentheses:
 
 If we had written `length? "abcd" / 2`, it would have resulted in an error, because Red would first try to divide “abcd” by 2.
 
-== link:/https://github.com/red/docs/blob/master/en/datatypes.adoc[Datatypes]
+== https://github.com/red/docs/blob/master/en/datatypes.adoc[Datatypes]
 
 Red has a rich set of datatypes. Here are some types to start with:
 
@@ -194,8 +194,8 @@ Associative array of key/value pairs (similar to Python's dictionary)
 
 `#( ), #(a: 1 b: “two”)`
 
-The keys can be any type of the following link:/https://github.com/red/docs/blob/master/en/typesets.adoc[typesets]: 
-link:/https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], link:/https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
+The keys can be any type of the following https://github.com/red/docs/blob/master/en/typesets.adoc[typesets]: 
+https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
 
 === object!
 
@@ -285,7 +285,7 @@ A `bitset!` is an array of bits used to store boolean values.
 
 == Blocks and series
 
-A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of link:/https://github.com/red/docs/blob/master/en/typesets.adoc#series[series!] with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
+A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of https://github.com/red/docs/blob/master/en/typesets.adoc#series[series!] with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
 
 Blocks in Red are similar to Python’s lists, but don’t forget that blocks are not evaluated until it’s necessary. Compare these code snippets:
 
@@ -348,7 +348,7 @@ at : word
 
 The above code iterates over the items of the block created from a string using `to` conversion and prints the value and its type.
 
-Please note that `to` function (technically it’s an link:/https://github.com/red/docs/blob/master/en/datatypes/action.adoc[`action!`]) expects a datatype OR an example value to which to convert the given value. This means that instead of `block!` we can use any literal block, even`[]`:
+Please note that `to` function (technically it’s an https://github.com/red/docs/blob/master/en/datatypes/action.adoc[`action!`]) expects a datatype OR an example value to which to convert the given value. This means that instead of `block!` we can use any literal block, even`[]`:
 
 ----
 >> to [] msg
@@ -2127,7 +2127,7 @@ Also by defualt `parse` is case-insensitive, following Red semantics. We can use
 
 The working of `parse` rules depends on the type of input series. When parsing `any-block!`, matching by character set has no meaning and always fails. When the input is of `any-string!` type,  matching by datatype or type set is not supported. For `binary!` the matching by datatype or type set is supported for UTF-8 encoded values; such match succeeds if matched portion of the input represents one of the datatype’s literal forms, blank characters before tokens are automatically skipped.
 
-Please refer to link:/https://github.com/red/docs/blob/master/en/parse.adoc[Parse documentation] for complete and more formal description of `parse`. 
+Please refer to https://github.com/red/docs/blob/master/en/parse.adoc[Parse documentation] for complete and more formal description of `parse`. 
 
 I’ll give some basic examples of parsing strings, blocks and binaries.
 
@@ -2344,7 +2344,7 @@ As we already said, matching by datatype or type set is supported for UTF-8 enco
 == true
 ---- 
 
-You can (and definately should, if you want to master `parse`) check the link:/https://github.com/red/red/wiki/%5BDOC%5D-Parse[dedicated resources for learning `parse`]
+You can (and definately should, if you want to master `parse`) check the https://github.com/red/red/wiki/%5BDOC%5D-Parse[dedicated resources for learning `parse`]
 
 == View
 
@@ -2425,12 +2425,12 @@ The code is a block, supplied as an argument to `view` dialect. `title` sets the
 
 === Resources on VID and View
 
-==== link:/github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
+==== https://github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
 
-==== link:/github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
+==== https://github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
 
-==== link:/www.red-by-example.org/vid.html[Red by Example - VID]
+==== http://www.red-by-example.org/vid.html[Red by Example - VID]
 
-==== link:/helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
+==== http://helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
 
 
