@@ -2411,4 +2411,26 @@ The Red/View (or just View) is a graphic system for the Red programming language
 * close
 * time
 
+Here’s a short example: 
+
+---- 
+view[
+    title "View test"
+    txt: field 100x20 on-key-up [btn/text: txt/text]
+    btn: button 100x20 [unview]
+]
+---- 
+
+The code is a block, supplied as an argument to `view` dialect. `title` sets the title of the window. We then define an edit field named `txt`, with dimensions 100 by 20 pixels. `on-key-up` defines the behavior when the key is released. `btn` is a button with dimensions 100 by 20 pixels. The block that follows describes the actions when the button is clicked – in this case `unview` closes the window. Back to txt’s `on-key-up` - when a key is released in the edit field, the `bnt` text is updated with txt’s text. 
+
+=== Resources on VID and View
+
+==== link:/https://github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
+
+==== link:/https://github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
+
+==== link:/https://www.red-by-example.org/vid.html[Red by Example - VID]
+
+==== link:/http://helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
+
 
