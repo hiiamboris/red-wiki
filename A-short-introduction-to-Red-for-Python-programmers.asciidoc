@@ -2425,12 +2425,12 @@ The code is a block, supplied as an argument to `view` dialect. `title` sets the
 
 === Resources on VID and View
 
-==== link:/https://github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
+==== link:/github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
 
-==== link:/https://github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
+==== link:/github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
 
-==== link:/https://www.red-by-example.org/vid.html[Red by Example - VID]
+==== link:/www.red-by-example.org/vid.html[Red by Example - VID]
 
-==== link:/http://helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
+==== link:/helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
 
 
