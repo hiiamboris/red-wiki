@@ -18,23 +18,11 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
 
 ## [A short introduction to Red for Python programmers](https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers)
 
-## Common tasks and how to do them in Red
+## Common tasks and how to do them in Red ==
 
 ## Red functions for the Python programmers
 
 ## Draft outline
-   ### A short introduction to Red for Python programmers
-   #### Words ✓
-   #### Evaluation order ✓
-   #### Datatypes ✓
-   #### Blocks and series ✓
-   #### Conditionals ✓
-   #### Looping ✓
-   #### Functions ✓
-   #### Parse ==
-   #### View
-   #### Draw
-
 
 ## Notes
 
