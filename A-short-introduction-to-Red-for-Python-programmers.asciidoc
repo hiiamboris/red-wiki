@@ -2423,14 +2423,65 @@ view[
 
 The code is a block, supplied as an argument to `view` dialect. `title` sets the title of the window. We then define an edit field named `txt`, with dimensions 100 by 20 pixels. `on-key-up` defines the behavior when the key is released. `btn` is a button with dimensions 100 by 20 pixels. The block that follows describes the actions when the button is clicked – in this case `unview` closes the window. Back to txt’s `on-key-up` - when a key is released in the edit field, the `bnt` text is updated with txt’s text. 
 
+Since this is meant to be a short introduction to Red, I’m not going into details of View. Here are some useful links: 
+
 === Resources on VID and View
 
-==== https://github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
+* https://github.com/red/docs/blob/master/en/view.adoc[Red/View Graphic Engine]
 
-==== https://github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
+* https://github.com/red/docs/blob/master/en/vid.adoc[Visual Interface Dialect]
 
-==== http://www.red-by-example.org/vid.html[Red by Example - VID]
+* http://www.red-by-example.org/vid.html[Red by Example - VID]
 
-==== http://helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
+* http://helpin.red/GUI.html[Ungaretti’s Helpin'Red - GUI]
 
 
+== https://github.com/red/docs/blob/master/en/draw.adoc[Draw]
+
+Draw is a dialect of Red language that provides a simple declarative way to specify 2D drawing operations. Such operations are expressed as lists of ordered commands (using blocks of values), which can be freely constructed and changed at run-time.
+
+Draw blocks can be rendered directly on top of an image using the draw function, or inside a View face using the draw facet.
+
+The basic drawing sommand are: `Line`, `Triangle`, `Box`, `Polygon`, `Circle`, `Ellipse`, `Arc`, `Curve`, `Spline`, `Image`, `Text`, `Font`.
+
+The pen (the outline drawing of a drawing command) can be one of the following: `Color pen`, `Linear gradient pen`, `Radial gradient pen`, `Diamond gradient pen`, `Pattern pen`, `Bitmap pen`.
+
+The fill-pen (the filling mode for the drawing commands) can be `Color fill`, `Linear gradient fill`, `Radial gradient fill`, `Diamond gradient fill`, `Pattern fill`, `Bitmap fill`.
+
+`line-width`, `line-join` and `line-cap` control the line operations.
+
+Here’s a short example:
+
+---- 
+my-font: make font![name: "Verdana" size: 30 color: red]
+view[
+    base 500x500 white
+    draw[
+        pen yellow
+        fill-pen red
+        box 10x10 100x100
+        line-width 5
+        pen red
+        fill-pen sky
+        circle 250x250 100
+        pen red
+        font my-font
+        text 400x450 "Red"
+    ]
+]
+---- 
+
+We first create a `font!` object to be used later. We then make a GUI, consisting of a simple `base` component (think a rectangle) with size 50x500 pixels which color is set to white. The `draw`  commands are going to be renedered in this `base`.  What follows is a `box`, drawn with yellow pen and filled with red color. The box’s top-left corner is at coordinate 10x10; its bottom-right corner is at 100x100. Then we change the pen to red and the fill-pen to sky in order to draw a `circle` centered at 250x250 with radius 100 pixels. Finally, we load the previously declared `font` and use it to render a `text` at coordinates 400x450. 
+
+When we need to use words instead of literal values in a `draw` block, we can use `reduce` or (more conveniently) `compose`. Let’s say we have a word `cntr` that refers to a pair 100x100 and `radius` that refers to 100. We can use these words in a `draw` block and draw a circle with center at `cntr` and radius `radius` as follows:
+
+---- 
+draw compose[circle (cntr) (radius)]
+---- 
+ 
+Of course the values these words refer to can be changed dynamically. 
+
+You can check these links for more information and examples on `Draw`:
+
+* https://www.red-by-example.org/draw.html[Red by example - Draw]
+* http://helpin.red/Draw.html[Helpin’ Red - Draw]
