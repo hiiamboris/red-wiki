@@ -1,3 +1,5 @@
+Related: https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F[[HOWTO\]-How-Do-I-Do-X-with-Red?]
+
 :toc:
 
 :toclevels: 3
