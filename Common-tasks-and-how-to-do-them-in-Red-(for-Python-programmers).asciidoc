@@ -1,0 +1,135 @@
+Related: https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F[[HOWTO\]-How-Do-I-Do-X-with-Red?]
+
+:toc:
+
+:toclevels: 3
+
+== Files and directories
+
+=== Selecting a directory
+
+`request-dir` displays a dialogue for the user to select a directory. Returns full directory path. You can set the starting directory with `/dir` refinement:
+
+---- 
+doc-dir: request-dir/dir %/C/Users/Owner/Documents/
+---- 
+
+You can set the title of the dialogue with `/title` refinement and provide a string for its `text` argument.
+
+=== Selecting a file
+
+Similarly, you can use `request-file` to select a file. You can set a default file or directory with `/file` refinement. Provide filters with `/filters`. The argument to this refinement is a block of name (`string!`) and type (`file!` or `string!`) pairs.
+
+---- 
+>> request-file/file/filter %"/C/Red-lang/Rededitor-11/examples/" ["red" %*.red]
+== %"/C/Red-lang/Rededitor-11/examples/7- Draw/71 - Draw demo.red"
+---- 
+
+The `/multi` refinement of `request-file` allows multiple file selection, the results are returned as a block.
+
+=== Reading from a file
+
+---- 
+== file: %README.md
+>> read file
+== {Red Programming Language^/------------------------^/^/**Red** is a new programming lan...
+---- 
+
+`read` takes an argument (`source`) of type `file!`, `url!` or `port!` and reads the contents of the source. If the source is a directory, `read` returns a block of elements of `file!` type.
+
+---- 
+>> red-master: %"/D/red-master/"
+== %/D/red-master/
+>> red-files: read red-master
+== [%.appveyor.yml %.editorconfig %.gitattributes-sample %.github/ %.gitignore-sample %...
+>> foreach file red-files[print [file "->" either dir? file["dir"]["file"]]]
+.appveyor.yml -> file
+.editorconfig -> file
+.gitattributes-sample -> file
+.github/ -> dir
+.gitignore-sample -> file
+.travis.yml -> file
+boot.red -> file
+bridges/ -> dir
+BSD-3-License.txt -> file
+BSL-License.txt -> file
+build/ -> dir
+CODE_OF_CONDUCT.md -> file
+compiler.r -> file
+CONTRIBUTING.md -> file
+docs/ -> dir
+environment/ -> dir
+lexer.r -> file
+libRed/ -> dir
+modules/ -> dir
+quick-test/ -> dir
+README.md -> file
+red.r -> file
+run-all.r -> file
+runtime/ -> dir
+system/ -> dir
+tests/ -> dir
+usage.txt -> file
+utils/ -> dir
+version.r -> file
+---- 
+
+=== Read/lines
+
+If we are reading from a text file, it makes sense to be able to get the file content as separate lines. We can first read the file and split the string on `newline`. `read` provides a refinement `/lines` that splits the text on `newline` and thus returns a block of strings.
+
+---- 
+>> usage: read/lines %/D/red-master/usage.txt
+== ["" "Usage: red [command] [options] [file]" "" {[file]: any Red or Red/System source...
+>> length? usage
+== 95
+---- 
+
+=== Reading binary files
+
+When the file we want to read does not consist of ASCII characters, we need to read it as a binary file. We use the `/binary` refinement with `read`:
+
+
+---- 
+>> bin: read/binary %/D/red-master/usage.txt
+== #{
+0A55736167653A20726564205B636F6D6D616E645D205B6F7074696F6E735D20
+5B66696C655D0A0A...
+>> length? bin
+== 4460
+>> to string! copy/part bin 60
+== {^/Usage: red [command] [options] [file]^/^/[file]: any Red or R}
+---- 
+
+You can start reading from specific position in a file with `/seek` refinement and limit the length of the content that is read with `/part`.
+
+As you might have observed, in Red you don’t need to open the file in advance and indicate the reading mode, as you do in Python:
+
+---- 
+>>> red_usage = open('D:/red-master/usage.txt', 'r')
+>>> lines = red_usage.readlines()
+>>> len(lines)
+95
+>>> lines[1]
+'Usage: red [command] [options] [file]\n'
+---- 
+
+=== Writing to a file
+
+=== Write/lines
+
+=== Writing as a binary file
+
+== JSON/CSV
+
+=== load-json
+
+=== to-json
+
+=== load-csv
+
+=== to-csv
+
+== Working with dates
+
+== Images
