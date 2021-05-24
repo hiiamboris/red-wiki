@@ -1,8 +1,8 @@
-Related: https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F[[HOWTO\]-How-Do-I-Do-X-with-Red?]
-
 :toc:
 
 :toclevels: 3
+
+Related: https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F[[HOWTO\]-How-Do-I-Do-X-with-Red?]
 
 == Files and directories
 
@@ -114,7 +114,60 @@ As you might have observed, in Red you don’t need to open the file in advance 
 'Usage: red [command] [options] [file]\n'
 ---- 
 
+=== Reading from URL
+
+Reading from web is just as easy as reading a local file:
+
+---- 
+>> red-about: read https://www.red-lang.org/p/about.html
+== {<!DOCTYPE html>^/<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xml...
+---- 
+
 === Writing to a file
+
+Red uses `write` to  write data into file, url or other port. The format is following:
+
+`write destination data`, where `destination` can be `file!`, `url!` or `port!`. `data` can be of any type.
+
+---- 
+>> block:  [1 2 3.4 "Four" [5 6 7] print "Hello"]
+== [1 2 3.4 "Four" [5 6 7] print "Hello"]
+>> write %block.txt block
+>> read %block.txt
+== {[1 2 3.4 "Four" [5 6 7] print "Hello"]}
+----
+
+We can append data at the end of an existing file using the `/append` refinement of `write:
+
+---- 
+>> write/append %block.txt " ; some text"
+>> read %block.txt
+== {[1 2 3.4 "Four" [5 6 7] print "Hello"] ; some text}
+---- 
+
+You can write at a specific position in a file using `/seek` - just don’t forget that this way you overwrite the existing data.
+
+When the data you write to a file is Red code, it’s better for you to use `save` instead of `write`.  `save` removes the enclosing brackets. The code written to a file with `save` can be executed with simple call to `do`.
+
+---- 
+loop-code: [
+Red [] 
+    n: 5 
+    loop n [
+        print "Hello world!"
+    ] 
+]
+save %loop-code.red loop-code
+---- 
+ 
+---- 
+>> do %loop-code.red
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+---- 
 
 === Write/lines
 
