@@ -171,11 +171,97 @@ Hello world!
 
 === Write/lines
 
+You can write each value in a block as a separate line in a file using the `/lines` refinement:
+
+---- 
+colors: ["red" "orange" "yellow" "green" "blue" ["indigo" "violet"]]
+write/lines %colors.txt colors
+---- 
+
+The file `colors.txt` will look like this:
+
+---- 
+red
+orange
+yellow
+green
+blue
+["indigo" "violet"]
+---- 
+
 === Writing as a binary file
+
+When you need to write your data as a binary file, use the `/binary` refinement – it preserves the contents exactly.
+
+You can use `save`  with refinement `/as` to save an image created within Red as a graphics file (bmp, gif, jpeg or png):
+
+---- 
+>> img: make image! [200x200 255.255.255]
+== make image! [200x200 #{
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFF...
+>> img: draw img[pen sky line-width 3 circle 100x100 80]
+== make image! [200x200 #{
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFF...
+>> save/as %circle.png img 'png
+---- 
+ 
+We create an image `img` with dimensions 200x200 pixels and white background. We then draw a circle with radius 80 centered at 100x100. (You can see the image directly from Red GUI console by typing `? (img)`). We finally save the image as .png file titled `circle.png`.
 
 == JSON/CSV
 
 === load-json
+
+Red’s `load-json` function converts a JSON string to Red data.  Suppose you have the following json data, saved in `sample2.json` file:
+
+---- 
+{
+   "firstName": "Joe",
+   "lastName": "Jackson",
+   "gender": "male",
+   "age": 28,
+   "address": {
+       "streetAddress": "101",
+       "city": "San Diego",
+       "state": "CA"
+   },
+   "phoneNumbers": [
+       { "type": "home", "number": "7349282382" }
+   ]
+}
+---- 
+ 
+We can read the file contents and apply `load-json` to the string:
+
+---- 
+>> sample: load-json read %sample2.json
+== #(
+    firstName: "Joe"
+    lastName: "Jackson"
+    gender: "male"
+    age: 28
+    address: #(
+        streetAddress: ...
+>> probe sample
+#(
+    firstName: "Joe"
+    lastName: "Jackson"
+    gender: "male"
+    age: 28
+    address: #(
+        streetAddress: "101"
+        city: "San Diego"
+        state: "CA"
+    )
+    phoneNumbers: [#(
+        type: "home"
+        number: "7349282382"
+    )]
+)
+---- 
+
+As you see, the result is a map, populated by key-value pairs of data from the .json file
 
 === to-json
 
