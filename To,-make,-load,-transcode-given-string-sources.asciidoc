@@ -1,5 +1,9 @@
 Drafting notes to facilitate discussion of string conversions to different types.
 
+### Related tickets
+
+https://github.com/red/red/issues/4863
+
 ### String conversions
 [width="50%", options="header"]
 |===
