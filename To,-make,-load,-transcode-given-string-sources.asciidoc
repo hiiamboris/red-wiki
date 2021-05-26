@@ -2,7 +2,7 @@ Drafting notes to facilitate discussion of string conversions to different types
 
 ### Related tickets
 
-[PARSE binary includes spaces into datatype match](https://github.com/red/red/issues/4863)
+https://github.com/red/red/issues/4863[PARSE binary includes spaces into datatype match]
 
 ### String conversions
 [width="50%", options="header"]
