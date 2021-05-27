@@ -264,8 +264,83 @@ We can read the file contents and apply `load-json` to the string:
 As you see, the result is a map, populated by key-value pairs of data from the .json file
 
 === to-json
+`to-json` converts Red data to a JSON string. Let’s convert the following Red data:
+
+---- 
+car: #(
+    make: "Porsche"
+	model: 959
+	engine-type: "boxer 6"
+	engine-size: 2849
+    power: 450
+	torque: 500
+    top-speed: 322
+)
+---- 
+
+to JSON string:
+
+---- 
+>> to-json car
+== {{"make":"Porsche","model":959,"engine-type":"boxer 6","engine-size":2849,"power":450,"torque":500,"top-speed":322}}
+---- 
+
+We can use the `/pretty` refinement to make the output pretty, providing a string for its `indent` argument:
+
+---- 
+>> print to-json/pretty car "    "
+{
+    "make": "Porsche",
+    "model": 959,
+    "engine-type": "boxer 6",
+    "engine-size": 2849,
+    "power": 450,
+    "torque": 500,
+    "top-speed": 322
+}
+---- 
 
 === load-csv
+
+Suppose we have a file called US_cities.csv with the following content:
+
+.US cities by population
+[width="80%",cols="1,2,2,1",options="header"]
+|====
+|2019 rank|City|State|2019 estimate
+|1|New York| New York|8,336,817
+|2|Los Angeles| California|3,979,576
+|3|Chicago| Illinois|2,693,976
+|4|Houston| Texas|2,320,268
+|5|Phoenix| Arizona|1,680,992
+|6|Philadelphia| Pennsylvania|1,584,064
+|7|San Antonio| Texas|1,547,253
+|8|San Diego| California|1,423,851
+|9|Dallas| Texas|1,343,573
+|====
+
+---- 
+>>cities: load-csv read %us_cities.csv
+== [["2019 rank" "City" "State" "2019 estimate"] ["1" "New York" "New York" "8,336,817"] ["2" "Los Angeles" "California" ...
+>> length? cities
+== 10
+---- 
+
+`cities` is a block of blocks. Let’s probe each block on a separate line:
+
+---- 
+>> foreach row cities[probe row]
+["2019 rank" "City" "State" "2019 estimate"]
+["1" "New York" "New York" "8,336,817"]
+["2" "Los Angeles" "California" "3,979,576"]
+["3" "Chicago" "Illinois" "2,693,976"]
+["4" "Houston" "Texas" "2,320,268"]
+["5" "Phoenix" "Arizona" "1,680,992"]
+["6" "Philadelphia" "Pennsylvania" "1,584,064"]
+["7" "San Antonio" "Texas" "1,547,253"]
+["8" "San Diego" "California" "1,423,851"]
+["9" "Dallas" "Texas" "1,343,573"]
+---- 
 
 === to-csv
 
