@@ -317,13 +317,14 @@ Suppose we have a file called US_cities.csv with the following content:
 |7|San Antonio| Texas|1,547,253
 |8|San Diego| California|1,423,851
 |9|Dallas| Texas|1,343,573
+|10|San Jose| California|1,021,795
 |====
 
 ---- 
 >>cities: load-csv read %us_cities.csv
 == [["2019 rank" "City" "State" "2019 estimate"] ["1" "New York" "New York" "8,336,817"] ["2" "Los Angeles" "California" ...
 >> length? cities
-== 10
+== 11
 ---- 
 
 `cities` is a block of blocks. Let’s probe each block on a separate line:
@@ -340,9 +341,102 @@ Suppose we have a file called US_cities.csv with the following content:
 ["7" "San Antonio" "Texas" "1,547,253"]
 ["8" "San Diego" "California" "1,423,851"]
 ["9" "Dallas" "Texas" "1,343,573"]
+["10" "San Jose" "California" "1,021,795"]
 ---- 
 
+The default delimiter is comma. Use `/with` refinement to change it.
+
+`load-csv` has other refinements that allow you to load the data as columns or records.
+
+---- 
+>> cities: load-csv/header read %us_cities.csv
+== #(
+    "2019 rank" ["1" "2" "3" "4" "5" "6" "7" "8" "9" "10"]
+    "City" ["New York" "Los Angeles" "Chicago" "Houston"...
+>> type? cities
+== map!
+>> keys-of cities
+== ["2019 rank" "City" "State" "2019 estimate"]
+---- 
+
+`/header` treats the first line as header and implies `/as-columns` if `/as-records` is not used. As you see, `load-csv/header` returns a map with keys that correspond to the items in the first line of the .csv file. The values are the columns:
+
+---- 
+>> foreach key keys-of cities[print[key "->" mold cities/:key]]
+2019 rank -> ["1" "2" "3" "4" "5" "6" "7" "8" "9" "10"]
+City -> ["New York" "Los Angeles" "Chicago" "Houston" "Phoenix" "Philadelphia" "San Antonio" "San Diego" "Dallas" "San Jose"]
+State -> ["New York" "California" "Illinois" "Texas" "Arizona" "Pennsylvania" "Texas" "California" "Texas" "California"]
+2019 estimate -> ["8,336,817" "3,979,576" "2,693,976" "2,320,268" "1,680,992" "1,584,064" "1,547,253" "1,423,851" "1,343,573" "1,021,795"]
+---- 
+
+If you use `/as-columns` refinement (not `/header`), Red doesn’t use the first line as header but automatically names the columns A, B, C etc.:
+
+---- 
+>> cities: load-csv/as-columns read %us_cities.csv 
+== #(
+    "A" ["2019 rank" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10"]
+    "B" ["City" "New York" "Los Angeles" "Chicago" "Houston" ...
+>> foreach key keys-of cities[print[key "->" mold cities/:key]]
+A -> ["2019 rank" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10"]
+B -> ["City" "New York" "Los Angeles" "Chicago" "Houston" "Phoenix" "Philadelphia" "San Antonio" "San Diego" "Dallas" "San Jose"]
+C -> ["State" "New York" "California" "Illinois" "Texas" "Arizona" "Pennsylvania" "Texas" "California" "Texas" "California"]
+D -> ["2019 estimate" "8,336,817" "3,979,576" "2,693,976" "2,320,268" "1,680,992" "1,584,064" "1,547,253" "1,423,851" "1,343,573" "1,021,795"]
+---- 
+
+`load-csv/as-records` returns a block of records (one record per row), each record is a map which keys are named automatically A, B, C… and values are taken from the corresponding row:
+
+---- 
+>> cities: load-csv/as-records read %us_cities.csv
+== [#(
+    "A" "2019 rank"
+    "B" "City"
+    "C" "State"
+    "D" "2019 estimate"
+) #(
+    "A" "1"
+    "B" "New York"
+    "C" "New...
+>> length? cities
+== 11
+---- 
+
+Most detailed result is obtained by using `load-csv` with `/header/as-records` refinements. It returns a block of records (one record per row excluding the first row). Each record is map with keys taken from the header (the first row) and values – the corresponding values at that row/column:
+
+---- 
+>> cities: load-csv/header/as-records read %us_cities.csv 
+== [#(
+    "2019 rank" "1"
+    "City" "New York"
+    "State" "New York"
+    "2019 estimate" "8,336,817"
+) #(
+    "2019 rank" "2"
+ ...
+
+>> last cities
+== #(
+    "2019 rank" "10"
+    "City" "San Jose"
+    "State" "California"
+    "2019 estimate" "1,021,795"
+)
+---- 
+
+If you don’t need the data to be grouped, you can use the `/flat` refinement. In such case `load-csv` returns a flat block with length rows*columns:
+
+---- 
+
+>> cities: load-csv/flat read %us_cities.csv
+== ["2019 rank" "City" "State" "2019 estimate" "1" "New York" "New York" "8,336,817" "2" "Los Angeles" "California" "3,979,576" "3...
+>> length? cities
+== 44
+---- 
+
+You need to know the dimensions of your .csv table.
+
 === to-csv
+
+
 
 == Working with dates
 
