@@ -320,6 +320,8 @@ Suppose we have a file called US_cities.csv with the following content:
 |10|San Jose| California|1,021,795
 |====
 
+`load-csv` converts CSV text to a block of rows, where each row is a block of fields:
+
 ---- 
 >>cities: load-csv read %us_cities.csv
 == [["2019 rank" "City" "State" "2019 estimate"] ["1" "New York" "New York" "8,336,817"] ["2" "Los Angeles" "California" ...
@@ -436,7 +438,46 @@ You need to know the dimensions of your .csv table.
 
 === to-csv
 
+`to-csv` converts the input value to CSV data. The input can be one of the following types: `block!`, `map!` or `object!`. It may be a block of fixed size records, a block of block records, or map columns.
 
+Let’s save the predefined colors to a .csv file. We can extract the colors using the following expression:
+
+---- 
+>> colors: parse to [] system/words[collect[any[keep[set-word! tuple!] | skip]]]
+== [[
+    Red: 255.0.0
+] [
+    white: 255.255.255
+] [
+    transparent: 0.0.0.255
+] [
+  ...
+---- 
+
+We parse the `words` fields of the `system` object and extract the `set-word!` s that are followed by a `tuple!` value. The result is a block of block records. We can now save it as a .csv file:
+
+---- 
+>> write %colors.csv to-csv colors
+---- 
+
+Let’s try to load what we have just written:
+
+---- 
+>> colors2: load-csv read %colors.csv
+== [["Red" "255.0.0"] ["white" "255.255.255"] ["transparent" "0.0.0.255"] ["gray" "128.... 
+----
+
+You can provide `to-csv` with a flat block of data to be saved as a 2d table – use the `/skip` refinement. It will treat the block as a table of records with fixed length, indicated by the `size` argument of the refinement.
+
+---- 
+>> data: collect[loop 100 [keep random 100]]
+== [53 81 67 51 13 4 3 71 48 92 6 51 54 38 19 14 2 19 14 24 76 75 61 3 98 76 7 17 15 68...
+>> write %grid-10-by-10.csv to-csv/skip data 10
+---- 
+
+In the example above, I created a list of 100 random integers from 1 to 100, then saved the list as a .csv file. As explained before, the `/skip` refinement with argument `10` treated the flat 100-element block as a table of records with length 10. The resulting file `%grid-10-by-10.csv` has 10 rows and 10 columns.
+
+You can instruct `to-csv` to use delimiter different than the default comma with the refinement `/with` and provide the new delimiting character (or string) as its `delimiter` argument.
 
 == Working with dates
 
