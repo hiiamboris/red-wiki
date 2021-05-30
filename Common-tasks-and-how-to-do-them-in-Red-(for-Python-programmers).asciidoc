@@ -481,4 +481,45 @@ You can instruct `to-csv` to use delimiter different than the default comma with
 
 == Working with dates
 
+Red has a convenient `date!` datatype, which greatly facilitates the work with dates. `date!` has various literal formats to work with, here are some of them:
+
+---- 
+>> now/date
+== 30-May-2021
+>> reduce[2021-May-30 30-5-2021 30/05/2021 2021-W21-7 2021-150]
+== [30-May-2021 30-May-2021 30-May-2021 30-May-2021 30-May-2021]
+---- 
+
+`now` returns the current date and time, `/date` returns date only. The block after `reduce` consists of 5 `date!` values that have different format, but evaluate to the same date – 30-May-2021. The formats used are as follows: `<yyyy><sep><mon><sep><dd>`, `<dd><sep><m><sep><yyyy>`, `<dd><sep><mm><sep><yyyy>`, `<yyyy><sep>W<ww><sep><d>` and `<yyyy><sep><ddd>` respectively. 
+
+-	`<yyyy>` - 3 or 4 digits representing the year (4 digits for ISO dates);
+-	`<sep>`  - separator - `-` or `/`
+-	`<mon>` - 3 letters representing the beginning of the month;
+-	`<m>` -  1 or 2 digits representing the month
+-	`<mm>`  - 2 digits representing the month
+-	`<d>` is one digit, representing the day in the week (1 to 7);
+-	`<dd>` - 1 or 2 digits representing the day of the month;
+-	`<ddd>` - 3 digits representing the day of the year;
+-	`<ww>` - 2 digits representing the week of the year.
+
+Dates can be created not only literally, but also dynamically, using a `make` constructor or `to` conversion.
+
+---- 
+>> make date! [30 5 2021]
+== 30-May-2021
+>> make date! [2021 5 30]
+== 30-May-2021
+---- 
+
+As you see, we provide a block of three values to `make` with first argument `date!`. The values in the block are three integers for the day, month and year respectively. The day and the year can be swapped, if the date is unambiguous.
+
+When we use `to` to create a date, we provide a block with 0 to 3 values, or a single integer. 
+
+---- 
+>> to date! []
+== 1-Jan-0000
+>> to date! 0
+== 1-Jan-1970/0:00:00
+---- 
+
 == Images
