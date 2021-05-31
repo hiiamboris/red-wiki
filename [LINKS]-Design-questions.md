@@ -65,6 +65,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 - [April 24, 2021 2:52 PM](https://gitter.im/red/help?at=60840673b6a4714a29e4227d) (starts at [April 23, 2021 12:22 AM](https://gitter.im/red/help?at=6081e904b6a4714a29df402b) )
 - [an old R3 discussion on whether unset is truthy/falsey/error](http://www.rebol.net/cgi-bin/r3blog.r?view=0207)
 
+### Why loops do not make their words local to loop body, but rely on `function` to do that?
+- https://github.com/red/red/issues/972#issuecomment-851476989
+
 #### Command line argument parsing rules
 - [PR #3870 and references from there](https://github.com/red/red/pull/3870)
 
