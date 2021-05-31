@@ -481,6 +481,8 @@ You can instruct `to-csv` to use delimiter different than the default comma with
 
 == Working with dates
 
+=== Literal formats
+
 Red has a convenient `date!` datatype, which greatly facilitates the work with dates. `date!` has various literal formats to work with, here are some of them:
 
 ---- 
@@ -502,6 +504,8 @@ Red has a convenient `date!` datatype, which greatly facilitates the work with d
 -	`<ddd>` - 3 digits representing the day of the year;
 -	`<ww>` - 2 digits representing the week of the year.
 
+=== make date!
+
 Dates can be created not only literally, but also dynamically, using a `make` constructor or `to` conversion.
 
 ---- 
@@ -513,6 +517,8 @@ Dates can be created not only literally, but also dynamically, using a `make` co
 
 As you see, we provide a block of three values to `make` with first argument `date!`. The values in the block are three integers for the day, month and year respectively. The day and the year can be swapped, if the date is unambiguous.
 
+=== to date!
+
 When we use `to` to create a date, we provide a block with 0 to 3 values, or a single integer. 
 
 ---- 
@@ -521,5 +527,45 @@ When we use `to` to create a date, we provide a block with 0 to 3 values, or a s
 >> to date! 0
 == 1-Jan-1970/0:00:00
 ---- 
+
+Calling `to date!`, or `to-date` with an empty block results in `January 1st 0000`. In contrast, if we give it `0`, `to-date` returns the Unix epoch. So, a single integer as a parameter to `to-date` represents the number of seconds that have elapsed since the Unix epoch.
+Let’s explore what happens when we use a block with a single integer:
+
+---- 
+>> to-date [99]
+== 9-Apr-0000
+>> to-date [100]
+== 31-Dec-0099
+---- 
+
+Unlike `make date!` which only accepts valid dates, `to date!` can be provided with a block of up to  3 arbitrary large numbers (including floating numbers) that are converted to a `date!`. When the single number is less than 100, it is treated as number of days, as seen in the above example. 
+
+Don’t forget that Red uses 1-based indexing. That’s why using `0` gives the previous day (or month, or year!)
+
+---- 
+>> to-date [32 5 2021]
+== 1-Jun-2021
+>> to-date [0 6 2021]
+== 31-May-2021
+>> to-date [1 0 2021]
+== 1-Dec-2020
+>> to-date [0]
+== 31/Dec/-1
+---- 
+
+=== Arithmetic operations on dates
+
+As implied by the examples in the previous section, Red makes the arithmetic on dates easy. All comparators can be applied on dates; `min` and `max` work with dates; you can sort a block of dates too:
+
+---- 
+>> 31-05-2021 > 31-12-2021
+== false
+>> max 01-06-2021 31-12-2021
+== 31-Dec-2021
+>> sort collect[loop 10[keep random 31-12-2021]]
+== [29-Oct-0192 8-Jan-0219 23-Nov-0259 29-Aug-0307 23-May-0507 26-Oct-0623 1-Jan-0768 18-May-1559 9-Jan-1564 10-Apr-1930]
+---- 
+
+
 
 == Images
