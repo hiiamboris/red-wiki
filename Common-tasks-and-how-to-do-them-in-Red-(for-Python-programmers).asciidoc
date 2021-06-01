@@ -504,6 +504,8 @@ Red has a convenient `date!` datatype, which greatly facilitates the work with d
 -	`<ddd>` - 3 digits representing the day of the year;
 -	`<ww>` - 2 digits representing the week of the year.
 
+A `date!` value fields can be easily accessed using the following path accessors: `date day hour isoweek julian minute month second time timezone week weekday year yearday zone`
+
 === make date!
 
 Dates can be created not only literally, but also dynamically, using a `make` constructor or `to` conversion.
@@ -566,6 +568,46 @@ As implied by the examples in the previous section, Red makes the arithmetic on 
 == [29-Oct-0192 8-Jan-0219 23-Nov-0259 29-Aug-0307 23-May-0507 26-Oct-0623 1-Jan-0768 18-May-1559 9-Jan-1564 10-Apr-1930]
 ---- 
 
+We can add/subtract values to/from any date! field; the result is normalized:
 
+---- 
+>> today: now/date
+== 1-Jun-2021
+>> today+5w: today
+== 1-Jun-2021
+>> today+5w/day: today+5w/day + 35
+== 36
+>> today+5w
+== 6-Jul-2021
+---- 
+
+When we add or subtract an integer value to/from a date vale, it is interpreted as number of days:
+
+---- 
+>> today - 1
+== 31-May-2021
+>> today + 365
+== 1-Jun-2022
+---- 
+
+When we subtract two dates, the result is a signed number of days between the two dates:
+
+---- 
+>> 1-6-2021 - 16-11-1993
+== 10059
+>> 31-12-2000 - 01-07-2012
+== -4200
+---- 
+
+If we use `difference` with two dates as arguments, the result is the signed difference between the two dates as `time!` value:
+
+---- 
+>> t2: now/precise
+== 1-Jun-2021/13:37:27.113+03:00
+>> difference t2 to date! 0
+== 450706:37:27.113
+>> difference t2 1970-01-01/00:00:00
+== 450706:37:27.113
+---- 
 
 == Images
