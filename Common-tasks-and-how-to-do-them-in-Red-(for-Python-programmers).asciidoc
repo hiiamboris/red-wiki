@@ -263,6 +263,19 @@ We can read the file contents and apply `load-json` to the string:
 
 As you see, the result is a map, populated by key-value pairs of data from the .json file
 
+
+=== load/as %file ‘json
+`load-json` converts a string to Red values. You can directly load a .json file as Red data using `load` with refinement `/as` and argument `’json`. It employs the Red codec system:
+
+---- 
+>> data: load/as %example_1.json 'json
+== #(
+    fruit: "Apple"
+    size: "Large"
+    color: "Red"
+)
+---- 
+
 === to-json
 `to-json` converts Red data to a JSON string. Let’s convert the following Red data:
 
@@ -272,7 +285,7 @@ car: #(
 	model: 959
 	engine-type: "boxer 6"
 	engine-size: 2849
-    power: 450
+power: 450
 	torque: 500
     top-speed: 322
 )
@@ -299,6 +312,14 @@ We can use the `/pretty` refinement to make the output pretty, providing a strin
     "top-speed": 322
 }
 ---- 
+
+=== save/as %file data 'json
+
+You can save Red data to a .json file using `save/as`  with argument 'json:
+---- 
+>> save/as %porsche959.txt car 'json
+---- 
+
 
 === load-csv
 
@@ -436,6 +457,17 @@ If you don’t need the data to be grouped, you can use the `/flat` refinement. 
 
 You need to know the dimensions of your .csv table.
 
+=== load/as %file 'csv
+
+As with .json files, you can `load` .csv files directly as Red data:.
+
+---- 
+>> data: load/as %addresses.csv 'csv
+== [["John" "Doe" "120 jefferson st." "Riverside" " NJ" " 08075"] ["Jack" "McGi...
+---- 
+
+Returns a block of blocks.
+
 === to-csv
 
 `to-csv` converts the input value to CSV data. The input can be one of the following types: `block!`, `map!` or `object!`. It may be a block of fixed size records, a block of block records, or map columns.
@@ -478,6 +510,18 @@ You can provide `to-csv` with a flat block of data to be saved as a 2d table –
 In the example above, I created a list of 100 random integers from 1 to 100, then saved the list as a .csv file. As explained before, the `/skip` refinement with argument `10` treated the flat 100-element block as a table of records with length 10. The resulting file `%grid-10-by-10.csv` has 10 rows and 10 columns.
 
 You can instruct `to-csv` to use delimiter different than the default comma with the refinement `/with` and provide the new delimiting character (or string) as its `delimiter` argument.
+
+=== save/as %file data 'csv
+
+You can save Red data direcrly as a .csv file:
+
+---- 
+>> save/as %addresses2.csv data 'csv
+>> data2: load/as %addresses2.csv 'csv
+== [["John" "Doe" "120 jefferson st." "Riverside" " NJ" " 08075"] ["Jack" "McGi...
+---- 
+
+`data` was organized as a block of blocks.
 
 == Working with dates
 
@@ -609,5 +653,22 @@ If we use `difference` with two dates as arguments, the result is the signed dif
 >> difference t2 1970-01-01/00:00:00
 == 450706:37:27.113
 ---- 
+
+=== Predefined months and days names
+
+You can access the predefined months and days names in the `system/locale` object like this:
+
+---- 
+>> probe system/locale/months
+[
+    "January" "February" "March" "April" "May" "June" 
+    "July" "August" "September" "October" "November" "December"
+]
+>> probe system/locale/days
+[
+    "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"
+]
+----
+
 
 == Images
