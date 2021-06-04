@@ -669,6 +669,76 @@ You can access the predefined months and days names in the `system/locale` objec
     "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"
 ]
 ----
+== Clipboard
 
+=== read-clipboard
 
-== Images
+You can access the contents of the system clipboard using `read-clipboard`. 
+
+.read-clipboard
+[width="80%",cols="1,2",options="header"]
+|====
+|clipboard content|Red value
+|failure|false
+|empty|none
+|text|string!
+|file(s)|block! of file!(s)
+|image|image!
+|====
+
+So, when the clipboard contains text, `read-clipboard` returns a Red `string!`:
+
+---- 
+>> read-clipboard
+== {:toc:^/^/:toclevels: 3^/^/Related: https://github.com/red/red/wiki/%5BHOWTO%5D-...
+---- 
+
+If the clipboard contains one or more files, `read-clipboard` returns a block of files, with full path:
+
+---- 
+>> files: read-clipboard
+== [%/C/ProgramData/Red/gui-console-2021-4-22-42035.exe %/C/ProgramData/Red/gui...
+>> print files
+/C/ProgramData/Red/gui-console-2021-4-22-42035.exe /C/ProgramData/Red/gui-console-2021-5-17-6838.exe /C/ProgramData/Red/gui-console-2021-5-19-43168.exe
+---- 
+
+When in the clipboard is an image, `read-clipboard` returns an `image!` object:
+
+---- 
+>> img: read-clipboard
+== make image! [1920x1080 #{
+    2A579A2A579A2A579A2A579A2A579A2A579A2A579A2A579A...
+---- 
+
+You can use it in your code (in `view` layout, `draw` and so on) or simply display it from the GUI console with `? (img)`
+
+=== write-clipboard
+
+You write content to the system clipboard with `write-clipboard`.  
+
+You can clear the clipboard with `write-clipboard none`.  Other datatypes that you can use with `write-clipboard` are `string!`, `block!` (of `file!` values) and `image!`.
+
+---- 
+>> text: "Cross-platform native GUI system, with a UI DSL and drawing DSL"
+== {Cross-platform native GUI system, with a UI DSL and drawing DSL}
+>> write-clipboard text
+== true
+---- 
+
+---- 
+>> files: [%/C/Gal/Tools/57.csv %/C/Gal/Tools/55.csv %/C/Gal/Tools/52.csv]
+== [%/C/Gal/Tools/57.csv %/C/Gal/Tools/55.csv %/C/Gal/Tools/52.csv]
+>> write-clipboard files
+== true
+---- 
+
+---- 
+>> img: make image! [200x200 255.255.255]
+== make image! [200x200 #{
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF...
+>> draw img[line-width 5 pen sky circle 100x100 80]
+== make image! [200x200 #{
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF...
+>> write-clipboard img
+== true
+---- 
