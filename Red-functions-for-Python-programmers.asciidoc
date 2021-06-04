@@ -1,0 +1,17 @@
+.Most common functions in Python and their analogues in Red
+[options="header"]
+|====
+|Python function|Red function or code|Datatypes and typesets
+|len| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
+|print|<<print-notes,print>>|any-type!
+|====
+
+anchor:length-notes[]
+*length?*
+
+Returns the number of values in the series, from the current index to the tail.
+
+anchor:print-notes[]
+*print*
+
+Outputs a value followed by a newline.
