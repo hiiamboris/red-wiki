@@ -9,7 +9,30 @@
 anchor:length-notes[]
 *length?*
 
-Returns the number of values in the series, from the current index to the tail.
+Returns the number of values in the `series!`, from the current index to the tail , or the number of elements needed to store the value, if it is of one of the following types: `port!` `bitset!` `map!` `tuple!` `none!`. 
+
+`series!` is a `typeset!` consisting of the following datatypes: block! paren! string! file! url! path! lit-path! set-path! get-path! vector! hash! binary! tag! email! image!
+
+---- 
+>> length? [loop 10 [print "Hello World!"]]  ; a block! with 3 values
+== 3
+>> length? mold [loop 10 [print "Hello World!"]] ; `mold` returns a string!
+== 32
+>> file: %/C/ProgramData/Red/gui-console-2021-5-19-43168.exe  ; a file!
+== %/C/ProgramData/Red/gui-console-2021-5-19-43168.exe
+>> length? file
+== 50
+---- 
+
+In the last example `file` has a value of `file!` datatype. File! values represent file names or directory names and paths. File! is a member of the following typesets: any-string!, series!, so it is kind of string. `length? file` returns the length of the string representing the file name and not the size of the file it may refer to. 
+
+---- 
+>> red-lang-doc: https://github.com/red/docs/blob/master/en/SUMMARY.adoc ;  url!
+== https://github.com/red/docs/blob/master/en/SUMMARY.adoc
+>> length? red-lang-doc
+== 55
+---- 
+
 
 anchor:print-notes[]
 *print*
