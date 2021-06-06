@@ -2,16 +2,22 @@
 [options="header"]
 |====
 |Python function|Red function or code|Datatypes and typesets
-|len| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
-|print|<<print-notes,print>>|any-type!
+|len()| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
+|print()|<<print-notes,print>>|any-type!
 |====
 
 anchor:length-notes[]
 *length?*
 
-Returns the number of values in the `series!`, from the current index to the tail , or the number of elements needed to store the value, if it is of one of the following types: `port!` `bitset!` `map!` `tuple!` `none!`. 
+_Python_
 
-`series!` is a `typeset!` consisting of the following datatypes: block! paren! string! file! url! path! lit-path! set-path! get-path! vector! hash! binary! tag! email! image!
+`len(s)` returns the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set)
+
+_Red_
+
+`length?` returns the number of values in the `series!`, from the current index to the tail , or the number of elements needed to store the value, if it is of one of the following types: `port!` `bitset!` `map!` `tuple!` `none!`. 
+
+(`series!` is a `typeset!` consisting of the following datatypes: `block!` `paren!` `string!` `file!` `url!` `path!` `lit-path!` `set-path!` `get-path!` `vector!` `hash!` `binary!` `tag!` `email!` `image!`)
 
 ---- 
 >> length? [loop 10 [print "Hello World!"]]  ; a block! with 3 values
@@ -33,8 +39,105 @@ In the last example `file` has a value of `file!` datatype. File! values represe
 == 55
 ---- 
 
+---- 
+>> length? 'a/b/c/d/e/f/2 ; path!
+== 7
+>> length? to binary! "123456789" ; binary!
+== 9
+---- 
+
+The length of an `image!` value is the number of its pixels: 
+---- 
+>> img: make image! [100x100 255.255.255]
+== make image! [100x100 #{
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF...
+>> length? img
+== 10000   ; 100x100
+----
+
+The above examples showed the length of values that are `series!`. Let’s 
+
+The length of the `bitset!` is computed as the smallest multiple of 8 needed to fit the highest bit number (0-origin): 
+
+---- 
+>> bits: make bitset![80 87]
+== make bitset! #{0000000000000000000081}
+>> length? bits
+== 88
+>> bits: make bitset![80 87 88]
+== make bitset! #{000000000000000000008180}
+>> length? bits
+== 96
+>> length? charset "AB"
+== 72
+>> length? charset "ABCDEFGH"
+== 80
+---- 
+
+The length of a `map!` value is the number of its keys:
+
+---- 
+>> m: system/locale/months
+== [
+    "January" "February" "March" "April" "May" "June" 
+    "July" "August" "Septem...
+>> freq: #()
+== #()
+>> foreach c form m[freq/:c: 1 + any[freq/:c 0]]
+== 9
+>> probe freq
+#(
+    #"J" 3
+    #"a" 5
+    #"n" 2
+    #"u" 6
+    #"r" 9
+    #"y" 4
+    #" " 11
+    #"F" 1
+    #"e" 11
+    #"b" 5
+    #"M" 2
+    #"c" 3
+    #"h" 1
+    #"A" 2
+    #"p" 2
+    #"i" 1
+    #"l" 2
+    #"g" 1
+    #"s" 1
+    #"t" 3
+    #"S" 1
+    #"m" 3
+    #"O" 1
+    #"o" 2
+    #"N" 1
+    #"v" 1
+    #"D" 1
+)
+>> length? freq
+== 27
+---- 
+
+The length of a tuple is the number of its elements:
+
+---- 
+>> img/1
+== 255.255.255.0  ; rgba
+>> length? img/1
+== 4
+---- 
+
+If you wonder the purpose of the question mark at the end of `length?` - here’s the answer: 
+
+
+[quote, Coding-Style-Guide]
+Function names should strive to be single-word verbs, in order to express an action. . .   A noun or an adjective followed by a question mark is also accepted. Often, it denotes that the return value is of logic! type, but this is not a strict rule, as it is handy to form single-word action names for retrieving a property (e.g. length?, index?)
+
 
 anchor:print-notes[]
 *print*
 
 Outputs a value followed by a newline.
+
+
