@@ -1,3 +1,5 @@
+ 
+
 .Most common functions in Python and their analogues in Red
 [options="header"]
 |====
@@ -134,10 +136,94 @@ If you wonder the purpose of the question mark at the end of `length?` - here’
 [quote, Coding-Style-Guide]
 Function names should strive to be single-word verbs, in order to express an action. . .   A noun or an adjective followed by a question mark is also accepted. Often, it denotes that the return value is of logic! type, but this is not a strict rule, as it is handy to form single-word action names for retrieving a property (e.g. length?, index?)
 
+{empty} +
+{empty} +
 
 anchor:print-notes[]
 *print*
 
-Outputs a value followed by a newline.
 
+_Python_ 
+
+`print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`
+Print `objects` to the text stream `file`, separated by `sep` and followed by `end`. `sep`, `end`, `file` and `flush`, if present, must be given as keyword arguments.
+
+_Red_
+
+`print` outputs a value followed by a newline. If the argument is a single value, there is no need to enclose it in brackets.
+
+---- 
+>> print pi
+3.141592653589793
+>> numbers: [13 1 7 11 13 4 3 11 8 12]
+== [13 1 7 11 13 4 3 11 8 12]
+>> print numbers
+13 1 7 11 13 4 3 11 8 12
+>> print ["PRINT" "is" "a" "native!" "value"]
+PRINT is a native! value
+---- 
+
+When the argument is a `block!`, `print` reduces it before ouput:
+
+---- 
+>> toy: "Dog"
+== "Dog"
+>> amount: $23
+== $23.00
+>> tax: 10%
+== 10%
+>> print["The price of" toy "is" 1 + tax * amount]
+The price of Dog is $25.30
+---- 
+
+Of course all the values in a block we want to print must have values:
+
+---- 
+>> block: [a b [c d]]
+== [a b [c d]]
+>> print block
+*** Script Error: a has no value
+*** Where: print
+*** Stack:
+---- 
+
+You can still print the block from the example above – you first need to `mold` it (to get its source format string representation):
+
+---- 
+>> print mold block
+[a b [c d]]
+---- 
+
+In fact Red does have a built-in function that does exactly the same - `probe`:
+
+---- 
+>> probe block
+[a b [c d]]
+== [a b [c d]]
+---- 
+
+In addition, `probe` returns the printed value:
+
+---- 
+>> length? probe block
+[a b [c d]]
+== 3
+---- 
+
+When you don’t want the printed output to end with a new line, use `prin` instead of `print`: 
+
+---- 
+>> prin "Hello" print " World!"
+Hello World!
+---- 
+
+Sometimes you need a new line to be inserted between the values of a single call to `print`. The newline character in Red is indicated by `#"^/"`. There are two words predefined to this value: `newline` and `lf`:
+
+---- 
+>> print ['Red "^/is a next-gen" newline 'programming lf 'language]
+Red 
+is a next-gen 
+programming 
+language
+---- 
 
