@@ -1,11 +1,11 @@
- 
 
 .Most common functions in Python and their analogues in Red
 [options="header"]
 |====
-|Python function|Red function or code|Datatypes and typesets
+|Python function|Red function or code|Datatypes and typesets / Notes
 |len()| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
 |print()|<<print-notes,print>>|any-type!
+|format()|<<format-notes,N/A>>|Not implemented yet
 |====
 
 anchor:length-notes[]
@@ -227,3 +227,52 @@ programming
 language
 ---- 
 
+
+anchor:format-notes[]
+*String Formatting*
+
+
+_Python_
+
+The `format()` method formats the specified value(s) and insert them inside the string's placeholder. The placeholder is defined using curly brackets: {}. The values are passed as positional and/or keyword arguments. Inside the placeholders you can add a formatting type to format the result, like alignment and number formats.
+
+_Red_ 
+
+Red doesn’t currently have a single function that can mimic Python’s `format()`. In most simple cases you can use `rejoin`:
+
+---- 
+>> name: "Red"
+== "Red"
+>> type: "full-stack"
+== "full-stack"
+>> rejoin [name " is a " type " programming language"]
+== "Red is a full-stack programming language"
+---- 
+
+Here’s a simple function that formats a string. It takes a string as its first parameter and sets the placeholders to the corresponding named values found in the second argument – a block with “keyword” parameters:
+
+---- 
+format: function[
+    {Simple string formatting. Uses a block of keyword parameters to set the values of placeholders}
+    str [string!] "String to format" 
+    val [block!]  "A block with set-word - value pairs"
+][
+    parse str[
+        any[
+            to remove "{" 
+            change copy subs to remove "}" (select val to set-word! subs)
+        ]
+    ]
+    str    
+]
+---- 
+
+---- 
+>> print format {My name is {name}. I'm {age} years old.}[age: 36 name: "John"]
+My name is John. I'm 36 years old.
+---- 
+
+
+We can add some formatting types to the above function and make it more useful. Here’s a https://github.com/GalenIvanov/format[link] to a tiny formatting DSL.
+
+There is much more sophisticated experimental Red dialect dedicated to formatting:  https://github.com/greggirwin/red-formatting[Red-formatting]
