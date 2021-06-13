@@ -1,3 +1,4 @@
+ 
 
 .Most common functions in Python and their analogues in Red
 [options="header"]
@@ -6,6 +7,7 @@
 |len()| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
 |print()|<<print-notes,print>>|any-type!
 |format()|<<format-notes,N/A>>|Not implemented yet
+|isinstance()|<<isinstance-notes,various>>|all types
 |====
 
 anchor:length-notes[]
@@ -273,6 +275,80 @@ My name is John. I'm 36 years old.
 ---- 
 
 
-We can add some formatting types to the above function and make it more useful. Here’s a https://github.com/GalenIvanov/format[link] to a tiny formatting DSL.
+We can add some formatting types to the above function and make it more useful. Here’s a https://github.com/GalenIvanov/format[tiny formatting DSL].
 
 There is much more sophisticated experimental Red dialect dedicated to formatting:  https://github.com/greggirwin/red-formatting[Red-formatting]
+
+
+anchor:isinstance-notes[]
+*Type checking*
+
+_Python_
+`isinstance(object, type)` returns `True` if the specified object is of the specified type, otherwise `False`.
+
+---- 
+>>> a = 123
+>>> isinstance(a,int)
+True
+>>> text = 'Hello world!'
+>>> isinstance(text,str)
+True
+---- 
+
+_Red_ 
+
+Red doesn’t have a single function to check if a value is of the specified type. Instead, there is a separate function for each datatype and typeset. This is similar to Racket’s predicate functions.
+
+---- 
+>> a: 123
+== 123
+>> integer? a
+== true
+>> number? a
+== true
+>> string? "Hello world!"
+== true
+>> any-string! any-string?
+>> any-string? %orders-May-2021.csv
+== true
+>> block? [print now/date]
+== true
+>>
+---- 
+
+It is very easy to write an `isinstance` function in Red:
+
+---- 
+isinstance: function[object type][
+    types: make typeset! to [] type
+    find types type? :object
+]
+---- 
+
+The type can be a single datatype, a typeset or a block of datatypes (can be unrelated types).
+ 
+Here are some tests:
+---- 
+>> print isinstance 1.23 [integer! float!]
+true
+>> print isinstance 1.23 number!
+true
+>> print isinstance 1.23 float!
+true
+>> print isinstance 1.23 [string! float!]
+true
+>> print isinstance "1.23" string!
+true
+>> print isinstance %contents.pdf any-string!
+true
+>> print isinstance [print "Hello world!"] block!
+true
+>> print isinstance "1.23" number!
+false
+>> print isinstance 1.23  integer!
+false
+>> print isinstance 123 [string! float!]
+false
+---- 
+
+
