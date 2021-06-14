@@ -1,5 +1,6 @@
  
 
+
 .Most common functions in Python and their analogues in Red
 [options="header"]
 |====
@@ -8,6 +9,8 @@
 |print()|<<print-notes,print>>|any-type!
 |format()|<<format-notes,N/A>>|Not implemented yet
 |isinstance()|<<isinstance-notes,various>>|all types
+|str()|<<str-notes,form>>|all types
+|int()|<<int-notes,to-integer>>|number! string!
 |====
 
 anchor:length-notes[]
@@ -351,4 +354,86 @@ false
 false
 ---- 
 
+anchor:str-notes[]
+*String representation of an object*
 
+_Python_
+
+`str(object, encoding=encoding, errors=errors)` converts the specified value into a “readable” string. 
+
+_Red_ 
+
+While not 100% equivalent to Python’s `str()`, `form` is Red’s way to give a user-friendly string representation of a value.
+
+---- 
+>> form 123
+== "123"
+>> form "123"
+== "123"
+>> form [1 2 3]
+== "1 2 3"
+---- 
+
+Note that the result of `form` is ambiguous – like Python’s `str()` - both integer `123` and `string`  “123”` are formed as `”123”`. The same is in Python:
+
+---- 
+>>> str(123)
+'123'
+>>> str('123')
+'123'
+---- 
+ 
+That means that the result of `form` can’t always be loaded back to the original type of the value. 
+
+
+anchor:int-notes[]
+*Conversion to integer*
+
+_Python_
+
+`int(x, base=10)` returns an integer object from a number or string. If `base` is given, then x must be a string, bytes, or bytearray instance representing an integer literal in radix base.
+
+_Red_
+
+Use `to-integer value` to convert a `number!`, `char!`, `string!` or `binary!` value  to integer:
+
+---- 
+>> num: [65.78 6578% #"A" "65" #{00000041}]
+== [65.78 6578% #"A" "65" #{00000041}]
+>> foreach n num[print to-integer n]
+65
+65
+65
+65
+65
+---- 
+
+`to-integer` is an alias for `to integer!`. It can be further shortened to `to 1` - you can use any other integer instead of 1, as well as a word that refers to an integer value.
+
+Red doesn’t currently provide a function for integer conversion from number bases different than 10, but it is an easy task:
+
+---- 
+from-base: function[
+    {Converts x from a string of chars [0-9 A-Z] in radix base to decimal}
+    x    [string!]
+    base [integer!]
+][
+    c: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    n: 0
+    foreach i x[
+        n: n * base - 1 + index? find c i
+    ]
+]
+---- 
+
+Here are some tests:
+
+---- 
+>> print from-base "1101" 2
+13
+>> print from-base "FF" 16
+255
+>> print from-base "9IX" 36
+12345
+---- 
+ 
