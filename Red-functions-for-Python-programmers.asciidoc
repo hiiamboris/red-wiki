@@ -484,3 +484,84 @@ Here are some tests:
 ---- 
 
 Here’s a more elaborated https://gist.github.com/toomasv/0e3244375afbedce89b3719c8be7eac0[Range function for multiple datatypes]
+
+Puthon’s `range()` returns an immutable sequence and can be used directly with `for`, `zip`, `enumerate` and other constructs/functions. It can also be passed to `iter()` and then its elements accessed sequentially with `next()` until exhaustion. A range object can be converted to a list with `list()`. 
+
+Lets’ try to make a function `lazy-range` in Red that does not generate the entire list at once but create a range object. `lazy-range` will accept the same arguments as our earlier `range` function. It returns a single element when request with `/next?`. The `/size` field contains the total number of elements. Unlike Python, I added a `/reset` field that resets the current element to the starting value. There is also a `/list` field that generates a list of all the elements in the range from the current element to the end.
+
+---- 
+lazy-range: function[
+    _end [integer!]
+    /from 
+        start [integer!]
+    /by
+        step  [integer!]
+][
+    _start: either from [_end][1]
+    _end:   either from [start][_end]
+    _step:  any [step 1]
+
+    make object! [
+        start: _start
+        end:   _end
+        step:  _step
+        curr:  start
+        size:  to-integer absolute end - start + step / step
+        cmp?:  get pick[< >]step > 0 
+
+        next?: does [
+            also curr curr: either all[not none? curr curr cmp? end][
+                curr + step
+            ][
+                none
+            ]
+        ]
+        
+        reset: does [curr: start]
+        list: does[collect[while[not none? curr][keep next?]]]
+    ]
+]
+---- 
+
+Let’s make some tests:
+
+---- 
+>> r: lazy-range 10
+== make object! [
+    start: 1
+    end: 10
+    step: 1
+    curr: 1
+    size: 10...
+>> r/curr
+== 1
+>> r/next?
+== 1
+>> r/next?
+== 2
+>> r/next?
+== 3
+>> r/list
+== [4 5 6 7 8 9 10]
+>> r/curr
+== none
+>> r/reset
+== 1
+>> r/curr
+== 1
+---- 
+
+---- 
+>> even20: lazy-range/from/by 2 20 2
+== make object! [
+    start: 2
+    end: 20
+    step: 2
+    curr: 2
+    size: 10...
+>> even20/list
+== [2 4 6 8 10 12 14 16 18 20]
+>> even20/reset
+== 2
+---- 
+
