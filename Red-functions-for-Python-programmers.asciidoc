@@ -1,3 +1,6 @@
+ 
+
+
 
 .Most common functions in Python and their analogues in Red
 [options="header"]
@@ -10,6 +13,8 @@
 |str()|<<str-notes,form>>|all types
 |int()|<<int-notes,to-integer>>|number! string!
 |range()|<<range-notes,N/A>>|Not implemented
+|open()|<<open-notes,N/A>>|Not necessary
+|list()|<<list-notes,N/A>>| N/A
 |====
 
 anchor:length-notes[]
@@ -501,12 +506,12 @@ lazy-range: function[
     _end:   either from [start][_end]
     _step:  any [step 1]
 
-    make object! [
+    l-range: make object! [
         start: _start
         end:   _end
         step:  _step
         curr:  start
-        size:  to-integer absolute end - start + step / step
+        size:  absolute end - start + step / step
         cmp?:  get pick[< >]step > 0 
 
         next?: does [
@@ -533,8 +538,6 @@ Let’s make some tests:
     step: 1
     curr: 1
     size: 10...
->> r/curr
-== 1
 >> r/next?
 == 1
 >> r/next?
@@ -543,11 +546,11 @@ Let’s make some tests:
 == 3
 >> r/list
 == [4 5 6 7 8 9 10]
->> r/curr
+>> r/next
 == none
 >> r/reset
 == 1
->> r/curr
+>> r/next
 == 1
 ---- 
 
@@ -564,4 +567,178 @@ Let’s make some tests:
 >> even20/reset
 == 2
 ---- 
+
+
+anchor:open-notes[]
+*Open file*
+
+_Pyton_
+Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised.
+
+_Red_
+In Red you don’t need to make a call to a special function to open a file, you just do what you need with the file – read, write and so on. The binary mode is indicated with `/binary` refinement.
+
+
+anchor:list-notes[]
+*List cosntructor*
+
+_Python_
+
+`list()` takes an iterable object as input and adds its elements to a newly created list.
+
+_Red_
+
+`to-block` conversion does similar job for some datatypes – it is convenient to use with `map!` and `path!` values:
+
+---- 
+>> user: #(name: "Peter" id: 43152)
+== #(
+    name: "Peter"
+    id: 43152
+)
+>> to-block user
+== [
+    name: "Peter" 
+    id: 43152
+]
+>> path: 'object/prop/coords/top-left
+== object/prop/coords/top-left
+>> to-block path
+== [object prop coords top-left]
+---- 
+
+Here’s a simple function that takes a value and returns a block of values:
+
+---- 
+list: function[
+    src  
+    /into
+        buf
+][
+    dst: any [buf make block! 100]
+    
+    append dst switch/default type?/word src [
+        string! 
+        tuple! 
+        binary! 
+        bitset! [collect[repeat idx length? src[keep src/:idx]]]
+        pair!   [reduce [src/x src/y]]
+        file!
+        url!    [parse src[collect[any[keep to[some "/" | end] some "/"]]]]
+        date!   [collect[repeat idx 14[keep src/:idx]]]
+    ][
+        to-block src
+    ]
+]
+---- 
+
+Let’s do some tests with compound and scalar datatypes:
+
+---- 
+foreach value compose [
+    [Red functions for Python programmers]
+    #(name: "Peter" id: 43152)
+    'system/locale/months
+    "Hello world"
+    (to-binary 123456)
+    (make bitset! [1 2 3 5 6])
+    3.1.4.1.5
+    23x45
+    %"/C/Program Files/GIMP 2/bin/gimp-2.10.exe"
+    https://github.com/red/docs/blob/master/en/typesets.adoc#series
+    (now)
+    42
+    110%
+][print [mold value lf type? value lf mold list value lf]]  
+---- 
+
+---- 
+[Red functions for Python programmers] 
+block 
+[Red functions for Python programmers] 
+
+#(
+    name: "Peter"
+    id: 43152
+) 
+map 
+[
+    name: "Peter" 
+    id: 43152
+] 
+
+'system/locale/months 
+lit-path 
+[
+    system locale months
+] 
+
+"Hello world" 
+string 
+[#"H" #"e" #"l" #"l" #"o" #" " #"w" #"o" #"r" #"l" #"d"] 
+
+#{0001E240} 
+binary 
+[0 1 226 64] 
+
+make bitset! #{76} 
+bitset 
+[true true true false true true false false] 
+
+3.1.4.1.5 
+tuple 
+[3 1 4 1 5] 
+
+23x45 
+pair 
+[23 45] 
+
+%"/C/Program Files/GIMP 2/bin/gimp-2.10.exe" 
+file 
+[#"C" 
+    %"Program Files" 
+    %"GIMP 2" 
+    %bin 
+    %gimp-2.10.exe
+] 
+
+https://github.com/red/docs/blob/master/en/typesets.adoc#series 
+url 
+[
+    https: 
+    github.com 
+    red 
+    docs 
+    blob 
+    master 
+    en 
+    typesets.adoc#series
+] 
+
+18-Jun-2021/14:10:52+03:00 
+date 
+[18-Jun-2021 2021 6 18 3:00:00 14:10:52 14 10 52.0 5 169 3:00:00 25 24] 
+
+42 
+integer 
+[
+    42
+] 
+
+110% 
+percent 
+[
+    110%
+]
+---- 
+
+---- 
+b: [1 2 3]
+probe list/into 4.5.6.7.8.9 b
+---- 
+
+---- 
+[1 2 3 4 5 6 7 8 9]
+---- 
+
 
