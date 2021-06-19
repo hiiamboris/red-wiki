@@ -1,6 +1,6 @@
  
 
-
+The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
 [options="header"]
@@ -15,6 +15,8 @@
 |range()|<<range-notes,N/A>>|Not implemented
 |open()|<<open-notes,N/A>>|Not necessary
 |list()|<<list-notes,N/A>>| N/A
+|super()|<<super-notes,N/A>>|NA
+|set()|<<set-notes,unique>>|block! hash! string!
 |====
 
 anchor:length-notes[]
@@ -741,4 +743,40 @@ probe list/into 4.5.6.7.8.9 b
 [1 2 3 4 5 6 7 8 9]
 ---- 
 
+anchor:super-notes[]
+*Super*
+
+_Python_ 
+
+The `super()` function returns a temporary object of the parent class that allows access to all of its methods to its child class.
+
+_Red_
+
+Objects in Red are based on prototypes and not on classes – that’s why there is no need of Python’s `super()` in Red.
+
+
+anchor:set-notes[]
+*Sets*
+
+_Pyton_
+`set()` returns a new set object, optionally with elements taken from an iterable.
+
+_Red_ 
+
+Red doesn’t currently have a separate `set` datatype, but provides several functions for working with data sets with no duplicates. We can make a set from a series using `unique`:
+
+---- 
+>> colors: [Red Green Blue Yellow Red]
+== [Red Green Blue Yellow Red]
+>> color-set: unique colors
+== [Red Green Blue Yellow]
+---- 
+
+`color-set` is still a `block!` (with the duplicates removed) and not a `set` object like in Python. We can append an existing value to it:
+
+---- 
+>> append color-set 'Red
+== [Red Green Blue Yellow Red]
+---- 
+For comparison, Python’s `add()` method adds a given element to a set if the element is not present in the set. 
 
