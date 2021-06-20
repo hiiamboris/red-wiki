@@ -15,8 +15,10 @@ The table below is based on the “Builtin Python Functions” section of https:
 |range()|<<range-notes,N/A>>|Not implemented
 |open()|<<open-notes,N/A>>|Not necessary
 |list()|<<list-notes,N/A>>| N/A
-|super()|<<super-notes,N/A>>|NA
+|super()|<<super-notes,N/A>>|N/A
 |set()|<<set-notes,unique>>|block! hash! string!
+|dict()|<<dict-notes,to-map>>|block!
+|getattr()|<<getattr-notes,get>>|object! 
 |====
 
 anchor:length-notes[]
@@ -779,4 +781,82 @@ Red doesn’t currently have a separate `set` datatype, but provides several fun
 == [Red Green Blue Yellow Red]
 ---- 
 For comparison, Python’s `add()` method adds a given element to a set if the element is not present in the set. 
+
+anchor:dict-notes[]
+*Associative arrays*
+
+_Python_
+
+`dict()` creates a new dictionary initialized from an optional positional argument and a possibly empty set of keyword arguments.
+
+
+_Red_
+
+Red uses `map!` datatype to represent associative arrays of key/value pairs. Except using literal syntax `#(<key> <value>...)`, a `map!` value can be created from a block, with `to-map` conversion, resembling Python’s `dict()` used with a set of keyword arguments:
+
+---- 
+abook: [
+title  "Creatures of Light and Darkness"
+	author "Roger Zelazny"
+	year   1969
+	type   Novel
+genre  "Science fiction"
+]
+>> type? abook
+== block!
+>> mbook: to-map abook
+== #(
+    title: "Creatures of Light and Darkness"
+    author: "Roger Zelazny"
+    year...
+>> type? mbook
+== map!
+]
+---- 
+
+
+anchor:getattr-notes[]
+*Getting attribute of an object*
+
+_Python_
+
+`getattr(object, name[, default])` returns the value of the named attribute of object; `name` must be a string. `getattr(x, 'foobar')` is equivalent to `x.foobar`. If the named attribute does not exist, `default` is returned if provided.
+
+_Red_ 
+
+Values of objects fields are referenced using path notation in Red. An alternative is to use the `get` function:
+
+---- 
+album: make object![
+	title: "Caress of Steel"
+	artist: "Rush"
+	year: 1975
+	genre: "Progressive rock"
+	country: "Canada"
+]
+>> album/title
+== "Caress of Steel"
+>> get in album 'artist
+== "Rush"
+>> get in album to-word "year"
+== 1975
+---- 
+
+If we want to recreate the Python’s `getattr()` function and specify the attribute as a string, we need to use approach from the last example: 
+
+---- 
+getattr: func[
+    obj  [object!]
+    attr [string!]
+][
+    get in obj to-word attr
+]
+---- 
+
+---- 
+>> getattr album "title"
+== "Caress of Steel"
+>> getattr album "genre"
+== "Progressive rock"
+---- 
 
