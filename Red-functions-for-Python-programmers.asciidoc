@@ -1,4 +1,3 @@
- 
 
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
@@ -9,8 +8,8 @@ The table below is based on the “Builtin Python Functions” section of https:
 |len()| <<length-notes,length?>>|series! port! bitset! map! tuple! none!
 |print()|<<print-notes,print>>|any-type!
 |format()|<<format-notes,N/A>>|Not yet implemented
-|isinstance()|<<isinstance-notes,various>>|all types
-|str()|<<str-notes,form>>|all types
+|isinstance()|<<isinstance-notes,various>>|any-type!
+|str()|<<str-notes,form>>|any-type!
 |int()|<<int-notes,to-integer>>|number! string!
 |range()|<<range-notes,N/A>>|Not implemented
 |open()|<<open-notes,N/A>>|Not necessary
@@ -19,6 +18,9 @@ The table below is based on the “Builtin Python Functions” section of https:
 |set()|<<set-notes,unique>>|block! hash! string!
 |dict()|<<dict-notes,to-map>>|block!
 |getattr()|<<getattr-notes,get>>|object! 
+|hasattr()|<<hasattr-notes,N/A>>|object!
+|type()|<<type-notes,type?>>|any-type!
+|float()|<<float-notes,to-float>>|string! number!
 |====
 
 anchor:length-notes[]
@@ -816,7 +818,7 @@ genre  "Science fiction"
 
 
 anchor:getattr-notes[]
-*Getting attribute of an object*
+*Get an attribute of an object*
 
 _Python_
 
@@ -859,4 +861,83 @@ getattr: func[
 >> getattr album "genre"
 == "Progressive rock"
 ---- 
+
+anchor:hasattr-notes[]
+*Check if an object has a given attribute*
+
+_Python_ 
+`hasattr(object, name)` accepts an object as its first argument and a string for its second one. Returns `True` if the strings is the name of one of the object’s  attributes, `False` if not. 
+
+_Red_ 
+
+Red doesn’t have such a function, but is easy to implement one. We can do it in Python’s manner, where `hassattr()` calls `getattr(object, name)` and sees whether it raises an AttributeError or not:
+
+---- 
+hasattr: function[
+    obj  [object!]
+    attr [string!]
+][
+    either error? try[get in obj to-word attr][false][true]
+]
+---- 
+
+---- 
+person: make object! [
+   name: "Eva"
+   age: 50
+   country: "Sweden"
+>> print hasattr person "name"
+true
+>> print hasattr person "color"
+false
+]
+---- 
+
+We can do it in another, probably more idiomatic for Red way, checking the `words-of` the object for the attribute, converted to word:
+
+---- 
+hasattr: function[
+    obj  [object!]
+    attr [string!]
+][
+    not none? find words-of obj to-word attr
+]
+----  
+
+anchor:type-notes[]
+*Get the type a word refers to*
+
+_Python_
+
+`type()` - when called with one argument, returns the type of an object. With three arguments, return a new type object.
+
+_Red_
+
+`type?` returns the datatype of a value. If used with the `/word` refinement, returns a `word!` value instead of a `datatype!`:
+
+---- 
+>> type? :print
+== native!
+>> type? type? :print
+== datatype!
+>> type?/word :print
+== native!
+>> type? type?/word :print
+== word!
+>> (type? type? :print) = type? type?/word :print
+== false
+---- 
+
+
+anchor:float-notes[]
+*Convert string to a floating point number*
+
+_Python_ 
+
+`float([x])` returns a floating point number constructed from a number or string x.
+
+_Red_ 
+
+`to-float` converts to `float!` value.
+
 
