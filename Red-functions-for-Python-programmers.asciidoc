@@ -21,6 +21,7 @@ The table below is based on the “Builtin Python Functions” section of https:
 |hasattr()|<<hasattr-notes,N/A>>|object!
 |type()|<<type-notes,type?>>|any-type!
 |float()|<<float-notes,to-float>>|string! number!
+|enumerate()|<<enumerate-notes,N/A>>|N/A
 |====
 
 anchor:length-notes[]
@@ -940,4 +941,116 @@ _Red_
 
 `to-float` converts to `float!` value.
 
+---- 
+>> to-float "123"
+== 123.0
+>> to-float "123.45"
+== 123.45
+>> to-float "1.2345e2"
+== 123.45
+---- 
+
+anchor:enumerate-notes[]
+*Enumerating iterables*
+
+_Python_
+
+`enumerate(iterable, [start=0])` returns an enumerate object. `iterable` must be a sequence, an iterator, or some other object which supports iteration. The __next__() method of the iterator returned by `enumerate()` returns a tuple containing a count (from start which defaults to 0) and the values obtained from iterating over `iterable`.
+
+_Red_
+
+Red doesn’t have a function similar to `enumerate()`, but let’s try to write one:
+
+---- 
+enumerate: function[
+    series [series!]
+    /start
+        pos  [integer!]
+][
+    make object! [
+        s: series
+        i: any [pos 1]
+        next: does [
+            unless tail? s [
+                reduce [
+                    also i i: i + 1
+                    take s
+                ]
+            ]
+        ]
+    ]
+]
+---- 
+
+`enumerate`  takes a series as its argument and returns an object. That object’s `next` field is a function that consumes an element of the series and uses the element along with a counter to create a block, that is returned to the user. The starting index can be set using the `/start` refinement.
+
+Here are some examples:
+
+---- 
+>> enum-colors: enumerate ["Red" "Orange" "Yellow" "Green" "Blue" "Indigo" "Violet"]
+== make object! [
+    s: ["Red" "Orange" "Yellow" "Green" "Blue" "Ind...
+>> probe enum-colors/next
+[1 "Red"]
+== [1 "Red"]
+>> loop 7 [probe enum-colors/next]
+[2 "Orange"]
+[3 "Yellow"]
+[4 "Green"]
+[5 "Blue"]
+[6 "Indigo"]
+[7 "Violet"]
+none
+---- 
+
+As you see, `/next` returns `none` when the series is exhausted.
+
+---- 
+>> enum-digits: enumerate/start ["zero" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine"] 0
+== make object! [
+    s: ["zero" "one" "two" "three" "four" "five" "s...
+>> while[not none tuple: enum-digits/next][probe tuple]
+[0 "zero"]
+[1 "one"]
+[2 "two"]
+[3 "three"]
+[4 "four"]
+[5 "five"]
+[6 "six"]
+[7 "seven"]
+[8 "eight"]
+[9 "nine"]
+---- 
+`enumerate` works with other `series!` too: 
+
+---- 
+>> enum-str: enumerate "Programming"
+== make object! [
+    s: "Programming"
+    i: 1
+    next: func [][
+  ...
+>> enum-str/next
+== [1 #"P"]
+>> enum-str/next
+== [2 #"r"]
+>> enum-str/next
+== [3 #"o"]
+---- 
+
+---- 
+>> enum-bin: enumerate/start to-binary "Hello world!" 0
+== make object! [
+    s: #{48656C6C6F20776F726C6421}
+    i: 0
+    nex...
+>> enum-bin/next
+== [0 72]
+>> enum-bin/next
+== [1 101]
+>> enum-bin/next
+== [2 108]
+>> enum-bin/next
+== [3 108]
+---- 
 
