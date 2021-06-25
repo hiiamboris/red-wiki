@@ -1,3 +1,5 @@
+See also: [Error Messages](https://github.com/red/red/wiki/%5BNotes%5D-Error-Messages)
+
 # Error values
 
 ## error!
