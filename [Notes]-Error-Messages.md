@@ -7,5 +7,5 @@ One of the blocking point for the above text<=>code mapping is the limited `cell
 
 Ideas and suggestions are welcome here, as well as links to other systems that do things well, along with a summary of why they're good. Bad examples are also welcome. 
 
-
+Remember that we can't always just do what other languages or tools do, but we can learn from them.
 
