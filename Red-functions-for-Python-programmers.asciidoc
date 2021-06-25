@@ -22,6 +22,8 @@ The table below is based on the “Builtin Python Functions” section of https:
 |type()|<<type-notes,type?>>|any-type!
 |float()|<<float-notes,to-float>>|string! number!
 |enumerate()|<<enumerate-notes,N/A>>|N/A
+|sorted()|<<sorted-notes,sort copy>>|series!
+|max()|<<max-notes,max>>|scalar! series!
 |====
 
 anchor:length-notes[]
@@ -1053,4 +1055,94 @@ As you see, `/next` returns `none` when the series is exhausted.
 >> enum-bin/next
 == [3 108]
 ---- 
+
+anchor:sorted-notes[]
+*Sorting*
+
+_Python_
+
+`sorted(iterable, *, key=None, reverse=False)`  returns a new sorted list from the items in `iterable`. `key` specifies a function of one argument that is used to extract a comparison key from each element in `iterable`
+
+_Red_
+
+Similarly to Python’s `sort()` method, Red’s `sort` sorts the series in place.  When we need to preserve the ordering of the original series, we can use `sort copy`:
+
+---- 
+>> colors: ["Red" "Orange" "Yellow" "Green" "Blue" "Indigo" "Violet"]
+== ["Red" "Orange" "Yellow" "Green" "Blue" "Indigo" "Violet"]
+>> sorted-colors: sort copy colors
+== ["Blue" "Green" "Indigo" "Orange" "Red" "Violet" "Yellow"]
+>> colors
+== ["Red" "Orange" "Yellow" "Green" "Blue" "Indigo" "Violet"]
+---- 
+
+More details on `sort` can be found https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers#sorting-series[here]
+
+anchor:max-notes[]
+*Finding the maximum of two values*
+
+_Python_
+
+`max()` returns the largest item in an iterable or the largest of two or more arguments.
+
+_Red_
+
+Red’s `max` function accepts exactly two arguments and returns the greater of the two values. Here is an example of function that returns the maximum value in a series:
+
+---- 
+max-series: function[
+    series [series!]
+    /compare
+        comparator [integer! any-function!]
+    
+][
+    cmax: series/1
+    cmp: any[
+        get pick [comparator greater?]any-function? :comparator
+        greater?
+    ]
+    either integer? :comparator[
+        forall series[
+            cmax: either cmp cmax/:comparator series/1/:comparator[
+                cmax
+            ][
+                series/1
+            ]
+        ]
+    ][
+        forall series[
+            cmax: either cmp cmax series/1[
+                cmax
+            ][
+                series/1
+            ]
+        ]
+    ]
+]
+---- 
+
+It expects a `series!` for its argument. If no refinement is used, the function uses `greater?` to compare the values. If the `/compare` refinement is used with an `integer!` argument, the first argument must be a block of blocks and the `n-th` values in each block are compared using `greater?`. If the argument for `/compare` is a function, then the values are compared using this function. The function must have arity two and must return a `logic!` value. Here are some tests:
+
+---- 
+>> print max-series [1 3 2 5 4]
+5
+>> cmp-min: :lesser?
+>> print max-series/compare [1 3 2 5 4] :cmp-min
+1
+>> colors: ["Red" "Orange" "Yellow" "Green" "Blue" "Ultraviolet" "Indigo" "Violet"]
+>> cmp-len: func[a b][(length? a) >= length? b]
+>> print max-series colors
+Yellow
+>> print max-series/compare colors :cmp-len
+Ultraviolet
+>> tuples: [
+        ["a" 2]
+        ["c" 1]
+        ["b" 5]
+        ["d" 4]
+]
+>> probe max-series/compare tuples 2
+["b" 5]
+---- 
+
 
