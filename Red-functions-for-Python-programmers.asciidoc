@@ -24,7 +24,11 @@ The table below is based on the “Builtin Python Functions” section of https:
 |enumerate()|<<enumerate-notes,N/A>>|N/A
 |sorted()|<<sorted-notes,sort copy>>|series!
 |max()|<<max-notes,max>>|scalar! series!
+|repr()|<<repr-notes,mold>>|any-type!
+|zip()|<<zip-notes, N/A>>|N/A
 |====
+
+The code, provided in this article for the cases when Red does not have a corresponding function to the Python one, just demonstrates a possible solution. 
 
 anchor:length-notes[]
 *length?*
@@ -1145,4 +1149,74 @@ Ultraviolet
 ["b" 5]
 ---- 
 
+anchor:repr-notes[]
+*Printable representation of values/objects *
 
+_Python_
+
+`repr()` returns a printable representation of the given object. For many types, this function makes an attempt to return a string that would yield an object with the same value when passed to eval(), otherwise the representation is a string enclosed in angle brackets that contains the name of the type of the object.
+
+_Red_
+
+`mold` returns a source format string representation of a value. 
+
+---- 
+>> user: [name: "Ivan" id: 4321]
+== [name: "Ivan" id: 4321]
+>> form user
+== "name Ivan id 4321"
+>> s-user: mold user
+== {[name: "Ivan" id: 4321]}
+>> new-user: load s-user
+== [name: "Ivan" id: 4321]
+---- 
+
+Please note the difference between `form` and `mold` - the result of `mold` can (in most cases) be loaded back to a value equal to the original one.
+
+anchor:zip-notes[]
+*Aggregating elements from iterables (series)*
+
+_Python_
+
+`zip(*iterables)`  makes an iterator that aggregates elements from each of the iterables.
+
+_Red_
+
+Red doesn’t currently have a zip function. 
+
+Here is a simple `zip` function that reurns an object (let’s call it a zip object). The zip object has two function fields: `/next` returns the next tuple, formed by the series values. `/list` creates a block of blocks (tuples) from the current position in the series until the exhaustion of the shortest series.
+
+---- 
+zip: function[
+    series [block!]
+][
+    make object! [
+        iter: series
+        idx: 1
+
+        next: has[result item len][
+            len: length? iter
+            result: collect[foreach item iter[keep any[item/:idx []]]]
+            either len = length? result[idx: idx + 1 result][none]
+        ]
+        
+        list: has[tuple][
+            collect[while[tuple: next][keep/only tuple]]    
+        ]
+    ]
+]
+---- 
+
+Let’s test it:
+
+---- 
+s1: ["Red" "Yellow" "Green" "Cyan" "Blue" "Magenta"]
+s2: [1 2 3 4 5 6 7 8 9]
+sz: zip reduce [s1 s2]
+>> probe sz/next
+["Red" 1]
+== ["Red" 1]
+>> probe sz/list 
+[["Yellow" 2] ["Green" 3] ["Cyan" 4] ["Blue" 5] ["Magenta" 6]]
+== [["Yellow" 2] ["Green" 3] ["Cyan" 4] ["Blue" 5] ["Magenta" 6]]
+---- 
