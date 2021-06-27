@@ -1220,3 +1220,58 @@ sz: zip reduce [s1 s2]
 [["Yellow" 2] ["Green" 3] ["Cyan" 4] ["Blue" 5] ["Magenta" 6]]
 == [["Yellow" 2] ["Green" 3] ["Cyan" 4] ["Blue" 5] ["Magenta" 6]]
 ---- 
+ 
+The above solution has a side effect though – you can access the zip object’s `iter` field (the intermediate block before zipping) from the outside, without a function call. If we want to encapsulate it, we can go for a different solution that uses an internal `map!` to store the series to be zipped.
+
+---- 
+zip: function[
+    id [word!]
+    /init
+        series [block!]
+    /list 
+][
+    buf: #()
+    pass: [collect[foreach item buf/:id[keep any[take item []]]]]
+    either init[
+        buf/:id: series
+    ][
+        unless buf/:id [return none]
+        either list[
+            result: collect[
+                while[
+                    (length? tuple: do pass) = length? buf/:id
+                ][
+                    keep/only tuple
+                ]
+            ]
+        ][
+            result: do pass
+            if (length? result) < length? buf/:id [
+                remove/key buf id
+                result: none
+            ]
+        ]
+        result
+    ]
+]
+----  
+
+Here are some tests: 
+
+---- 
+>> zip/init 'z1 [["Haskell" "Smalltalk" "Python" "Red"] ["functional" "OOP" "Multi-paradigm" "Full-stack"]]
+>> probe zip 'z1
+== ["Haskell" "functional"]
+>> probe zip/list 'z1
+== [["Smalltalk" "OOP"] ["Python" "Multi-paradigm"] ["Red" "Full-stack"]]
+---- 
+
+---- 
+>> zip/init 'z2 [[1 2 3]["red" "green" "blue"][apple leaves skies]]
+>> probe zip 'z2
+== [1 "red" apple]
+>> probe zip 'z2
+== [2 "green" leaves]
+>> probe zip/list 'z2
+== [[3 "blue" skies]]
+---- 
