@@ -1,7 +1,11 @@
-## Welcome to the Red programming language wiki!
+# Download
 
-Wikis are wonderful and terrible things. Easy to add and update content, but not as easy to organize. Contributions in both areas are welcome. 
+## Windows
+Release|Download
+-|-|
+v2.5.1|[red-064_windows.rar](https://linkify.me/hE8dobm)
 
+[](ubuntu16.04)
 ## Quick navigation
 ***
 <table>
