@@ -1,3 +1,4 @@
+
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
@@ -1301,8 +1302,80 @@ anchor:map-notes[]
 
 _Python_
 
-Return an iterator that applies function to every item of iterable, yielding the results. If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel. With multiple iterables, the iterator stops when the shortest iterable is exhausted.
+`map(function, iterable, ...)` returns an iterator that applies function to every item of iterable, yielding the results. If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel. With multiple iterables, the iterator stops when the shortest iterable is exhausted.
 
 _Red_
 
-Red doesn’t currently have a `map` function (Higher Order Functions are in making). In many cases a solution involving `collect / keep` and `foreach` (or `forall`) is sufficient. Let’s try to make one:
+Red doesn’t currently have a `map` function (Higher Order Functions are in making). In many cases a solution involving `collect / keep` and `foreach` (or `forall`) is sufficient. Let’s try to make one. 
+
+I’ll first introduce an additional function, `reduce-by`:
+
+---- 
+accumulate: function [
+    "Applies fn cumulatively to acc and each value in series, updating acc"
+    series [series!]
+    fn     [any-function!] "A function of two arguments"
+    acc    
+][
+    foreach item series [acc: fn acc item]
+]
+---- 
+
+`accumulate` is similar to Python functools’ `reduce()`. It is introduced to facilitate the way we determine the shortest series in the cases when we map a function to several series at once.
+
+We can demonstrate its use by the following example:
+
+---- 
+>> print accumulate [1 2 3 4] :add 0
+10
+---- 
+
+Here we accumulate the sum of the values 1 through 4, starting with 0.
+
+Here is the `map` function itself:
+
+---- 
+map: function [
+    "Evaluates a function for all values in a series and returns the results."
+    series [series!]
+    fn     [any-function!]
+    /only  "Applies the function to the items of all subseries in parallel"
+][
+    collect [
+        either only [
+            repeat i accumulate series func[a b][min a length? b] length? series/1 [
+                fn-call: clear []
+                insert fn-call :fn
+                repeat j length? series [append/only fn-call series/:j/:i]
+                keep/only do fn-call
+            ]
+        ][
+            foreach item series [keep/only fn item]
+        ]
+    ]
+]
+----  
+The first argument to `map` is the series we want to apply the `fn` function (second argument) to. The optional argument – the refinement `/only` instructs the function that the series is treated as a block of blocks; the arity of `fn` must match the number of elements in the series.
+
+Let’s first test `map` with a function of one argument:
+
+---- 
+>> probe map ["red" "green" "blue"] :length?
+[3 5 4]
+---- 
+`length?` is applied to each string in the block and the partial results are collected and then returned.
+
+Here are two test of `map` using the `only` refinement:
+
+---- 
+>> probe map/only [[1 2 3 4] [10 11 12]] :add
+[11 13 15]
+>> suffix-has: func [src char len][to-logic find at tail src negate len char]
+>> probe map/only [["red" "green" "blue"] ["r" "e" "b" "a"] [2 3 2]] :suffix-has
+[false true false]
+---- 
+
+In the first example we simply add up the corresponding numbers in two lists. Please note that the length of the result is equal to the length of the shortest of the two input lists.
+
+The second example demonstrates the use of a user-defined function of 3 arguments - `suffix-has` -  that checks if the last `len` characters of `src` include `char`. We call `map/only` with a block of three blocks as its `series` argument and `:suffix-has` for its `fn` argument.
+
