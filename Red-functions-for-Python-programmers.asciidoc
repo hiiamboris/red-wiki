@@ -28,7 +28,16 @@ The table below is based on the “Builtin Python Functions” section of https:
 |zip()|<<zip-notes, example>>| series!
 |tuple()|<<tuple-notes,N/A>>|N/A
 |map()|<<map-notes,example>>|series!
+|min()|<<min-notes,min, example>>|scalar! series!
 |====
+
+### Other frequently used Python features
+
+<<slicing-notes,Slicing>>
+
+<<list-comprehension-notes,List comprehensions>>
+
+* * * 
 
 The code, provided in this article for the cases when Red does not have a corresponding function to the Python one, just demonstrates a possible solution. All these functions are written in pure Red  (mezzanine functions). If the performance is of greatest importance, they can be written in Red/System (which is outside the scope of this article)
 
@@ -1085,7 +1094,7 @@ Similarly to Python’s `sort()` method, Red’s `sort` sorts the series in plac
 More details on `sort` can be found https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers#sorting-series[here]
 
 anchor:max-notes[]
-*Finding the maximum of two values*
+*Finding the maximum of two values or the largest item in a series*
 
 _Python_
 
@@ -1378,4 +1387,78 @@ Here are two test of `map` using the `only` refinement:
 In the first example we simply add up the corresponding numbers in two lists. Please note that the length of the result is equal to the length of the shortest of the two input lists.
 
 The second example demonstrates the use of a user-defined function of 3 arguments - `suffix-has` -  that checks if the last `len` characters of `src` include `char`. We call `map/only` with a block of three blocks as its `series` argument and `:suffix-has` for its `fn` argument.
+
+anchor:min-notes[]
+*Finding the smallest of two values or the smallest item in a series*
+
+_Python_
+
+`min()` returns the smallest item in an iterable or the smallest of two or more arguments.
+
+_Red_
+
+Red’s `min` function accepts exactly two arguments and returns the smaller of the two values. 
+
+Here is a `min-series` function that returns the smallest item in a series (it is almost identical to our previous `max-series` function – the only important difference is the choice of the default comparator - `lesser?` instead of `greater?`):
+
+---- 
+min-series: function [
+    series [series!]
+    /compare
+        comparator [integer! any-function!]
+    
+][
+    cmin: series/1
+    cmp: any [
+        get pick [comparator lesser?] any-function? :comparator
+        lesser?
+    ]
+    either integer? :comparator[
+        forall series [
+            cmin: either cmp cmin/:comparator series/1/:comparator[
+                cmin
+            ][
+                series/1
+            ]
+        ]
+    ][
+        forall series [
+            cmin: either cmp cmin series/1 [
+                cmin
+            ][
+                series/1
+            ]
+        ]
+    ]
+]
+---- 
+
+Let’s do a trivial test:
+
+---- 
+>> print min-series [3 1 4 1 5]
+1
+---- 
+
+The test below demonstrates the use of the `/compare` refinement. The comparator function `cmp-sum` returns `true` if the sum of the numbers in the first argument is lesser than the sum of the items of the second argument. This way `min-series` will return the block with the smallest sum:
+
+---- 
+>> cmp-sum: func [a b][(sum a) < sum b]
+>> probe min-series/compare [[5 10] [1 2 3 4] [2 4 6] [4 5] [42]] :cmp-sum
+[4 5]
+---- 
+
+* * *
+
+### Other frequently used Python features
+
+anchor:slicing-notes[]
+*Slicing*
+
+Python supports slice notation for any sequential data type like lists, strings, tuples, bytes, bytearrays, and ranges.
+
+anchor:list-comprehension-notes[]
+*List comprehensions*
+
+
 
