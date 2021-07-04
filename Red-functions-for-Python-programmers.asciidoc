@@ -1,4 +1,3 @@
-
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
@@ -1455,10 +1454,95 @@ The test below demonstrates the use of the `/compare` refinement. The comparator
 anchor:slicing-notes[]
 *Slicing*
 
-Python supports slice notation for any sequential data type like lists, strings, tuples, bytes, bytearrays, and ranges.
+Python supports slice notation for any sequential data type like lists, strings, tuples, bytes, bytearrays, and ranges. Slicing is a flexible tool to build new lists  out of an existing list.
+
+Red doesn't have a built-in slicing mechanism. Here is a function that achieves similar results. Please note that Red uses 1-based indexing. `start` and `stop` create an inclusive range. The syntax is as follows:
+
+`slice series spec`, where `series`is a series! value and `spec` is a block of optional `start`, `stop` and `step` values, separated by `/` (`:` has a special meaning in Red associated with `set-word!` and `get-word!` types).
+
+---- 
+slice: function [
+    "Returns a copy of series; the items and their order are specified in spec"
+    series [series!]
+    spec   [word! block!]
+][
+    len: length? series
+    start: to?: stop: step: none
+    parse spec [
+       opt [set start integer!]
+       opt [quote / (to?: true)]
+       opt [set stop integer!]
+       opt [quote /]
+       opt [set step integer!]
+    ]
+    
+    case [
+        empty? spec [return series]
+        (start <> none) and not to? [return series/:start]
+        (step <> none) and not any [start stop] [
+            either positive? step [start: 1 stop: len][start: len stop: 1]
+        ]
+        all [none? start integer? stop integer? step] [
+            start: either positive? step [1][len]
+        ]    
+        true [
+            start: any [start 1]
+            stop:  any [stop len]
+            step:  any [step 1]
+        ]     
+    ]
+    
+    cmp?: get pick[<= >=] positive? step
+    result: collect [
+        while[start cmp? stop][
+            either series? item: series/:start [
+                keep/only item
+            ][
+                keep item 
+            ]    
+            start: start + step
+        ]
+    ]
+    
+    if string? series [result: rejoin result]
+    result
+]
+----  
+
+We can test the `slice` function as follows:
+
+----
+foreach test [
+    [slice "Python" []]
+    [slice "Red" [2]]
+    [slice ["Logo" "Rebol" "Red"] [2 /]]
+    [slice ["Logo" "Rebol" "Red"] [/ 2]]
+    [slice "Programming" [/ / 1]]
+    [slice "Programming" [/ / 2]]
+    [slice "Programming" [/ / -1]]
+    [slice [1 2 3 4 5 6] [2 / 5 / 1]]
+    [slice "Python" [/]]
+    [slice "Programming" [2 / / 2]]
+    [slice "Rebol" [4 / 2 / -1]]
+    [slice [[1] [2 3] [4 5 6] [7] 8 9] [5 / 2 / -1]]
+][print [mold test "->" mold do test]]
+---- 
+
+---- 
+[slice "Python" []] -> "Python"
+[slice "Red" [2]] -> #"e"
+[slice ["Logo" "Rebol" "Red"] [2 /]] -> ["Rebol" "Red"]
+[slice ["Logo" "Rebol" "Red"] [/ 2]] -> ["Logo" "Rebol"]
+[slice "Programming" [/ / 1]] -> "Programming"
+[slice "Programming" [/ / 2]] -> "Pormig"
+[slice "Programming" [/ / -1]] -> "gnimmargorP"
+[slice [1 2 3 4 5 6] [2 / 5 / 1]] -> [2 3 4 5]
+[slice "Python" [/]] -> "Python"
+[slice "Programming" [2 / / 2]] -> "rgamn"
+[slice "Rebol" [4 / 2 / -1]] -> "obe"
+[slice [[1] [2 3] [4 5 6] [7] 8 9] [5 / 2 / -1]] -> [8 [7] [4 5 6] [2 3]]
+Intro
+----
 
 anchor:list-comprehension-notes[]
 *List comprehensions*
-
-
-
