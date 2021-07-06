@@ -1,3 +1,4 @@
+
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
@@ -1526,6 +1527,10 @@ foreach test [
     [slice "Rebol" [4 / 2 / -1]]
     [slice [[1] [2 3] [4 5 6] [7] 8 9] [5 / 2 / -1]]
 ][print [mold test "->" mold do test]]
+text: "An Introduction"
+i: 4
+j: 8
+slice text reduce [i '/ j]
 ---- 
 
 ---- 
@@ -1546,3 +1551,60 @@ Intro
 
 anchor:list-comprehension-notes[]
 *List comprehensions*
+
+List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
+
+Red doesn’t currently have built-in list comprehensions. Here is a simple function that takes a block as specification and returns a new list generated according the rules in the specification:
+
+---- 
+list-comp: func [
+    "Generates a new series based on spec"
+    spec [block!]
+][
+    lists: copy []
+    expr: cond: none
+    parse spec [
+        copy expr to quote | skip ; 
+        some [
+            set key set-word!
+            set val [word! | block!]
+            (put lists to-word key val)
+        ]
+        opt [quote ? copy cond to end]
+    ]
+    cond: any [cond [true]]
+    code: make block! 100
+    append code compose/deep [if all [(cond)] [keep/only (expr)]]
+    foreach [val key] reverse lists [
+        cur-loop: reduce ['foreach key val]
+        append/only cur-loop code
+        code: cur-loop
+    ]
+    code: append/only copy [collect] code
+    do code
+]
+---- 
+
+The `spec` block has the following syntax: `[expr | id: block … <? cond …>]`
+
+`expr` is an expression that uses the value of `id1` (and possibly all other identifiers). `id` is a set-word! that gets the values of `block` one after another. If there are more than one `id` and `block`, the function goes through all the possible Cartesian products of the values. `cond` is an optional condition(s) that must be `true` for the current value(s) of `id`(s) in order for the function to apply `expr` to the value(s) and keep the result in the output series. The expression is separated by the `id: block` part by `|`, and the condition part is marked with `?`. Here are some test of the `list-comp` function:
+
+---- 
+>> number-list: [1 2 3 4 5]
+>> probe list-comp [x * x | x: number-list]
+[1 4 9 16 25]
+>> probe list-comp [x * x | x: [1 2 3 4 5 6 7 8] ? even? x x > 3]
+[16 36 64]
+>> probe list-comp [length? s | s: ["Red" "Orange" "green" "Blue"] ? s/1 < #"a"]
+[3 6 4]
+>> threshold: 5
+>> probe list-comp [as-pair x y | x: [1 2 3] y: [4 5 6 7] ? y > threshold]
+[1x6 1x7 2x6 2x7 3x6 3x7]
+>> nums: [[1 2 3] [4 5 6 7] [8 9]]
+>> probe list-comp [reverse copy x | x: nums ? 2 < length? x]
+[[3 2 1] [7 6 5 4]]
+---- 
+
+The `list-comp` function works by parsing the `spec` block, extracting the `expr`, `id: block` and `cond` parts, generating Red code based on the `collect / foreach / keep` pattern and evaluating the code. The code itself makes a block (of blocks if necessary) that is returned as result. The drawback is that the entire resulting block is kept in RAM.
+
+We can create a generator-like function that doesn’t take additional memory but instead yields the current item upon request.
