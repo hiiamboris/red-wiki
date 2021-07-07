@@ -1,4 +1,3 @@
-
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
@@ -1583,7 +1582,7 @@ list-comp: func [
     code: append/only copy [collect] code
     do code
 ]
----- 
+---- 	
 
 The `spec` block has the following syntax: `[expr | id: block … <? cond …>]`
 
@@ -1607,4 +1606,134 @@ The `spec` block has the following syntax: `[expr | id: block … <? cond …>]`
 
 The `list-comp` function works by parsing the `spec` block, extracting the `expr`, `id: block` and `cond` parts, generating Red code based on the `collect / foreach / keep` pattern and evaluating the code. The code itself makes a block (of blocks if necessary) that is returned as result. The drawback is that the entire resulting block is kept in RAM.
 
-We can create a generator-like function that doesn’t take additional memory but instead yields the current item upon request.
+We can create a generator-like function that doesn’t take additional memory for the result, but instead yields the current item upon request.
+
+---- 
+mixed-base: function [
+    n    [integer!]
+    base [block!]
+][
+    d: make block! length? base
+    foreach b reverse copy base [
+        insert d n % b + 1
+        n: to-integer n / b
+    ]
+    d
+]
+
+gen-list: func [
+    "Generates a new `lazy` series based on spec"
+    id   [word!]
+    /init
+        spec [block!]
+][
+    list-map: #()
+    either init [
+        _vars:  copy []
+        _lists: copy []
+        _bases: copy []
+        _limit: 1         
+        expr: cond: none
+        
+        parse spec [
+            copy expr to quote | skip 
+            some [
+                set key set-word! (append _vars to-word key)
+                set val [word! | block!] (append/only _lists reduce val
+                                          append _bases len: length? reduce val
+                                          _limit: _limit * len)
+            ]
+            opt [quote ? copy cond to end]
+        ]
+        cond: any [cond [true]]
+        _code: make block! 100
+        append _code compose/deep [if all [(cond)] [(expr)]]
+        
+        list-map/:id: make object! [
+            vars: _vars
+            lists: _lists
+            bases: _bases
+            idx: 0
+            limit: _limit
+            code: make function! reduce [_vars _code]
+        ]
+    ][
+        either all [list-map/:id list-map/:id/idx < list-map/:id/limit][
+            until [
+                list-map/:id/idx: list-map/:id/idx + 1
+                values: mixed-base list-map/:id/idx - 1 list-map/:id/bases
+                repeat idx length? values [
+                    values/:idx: list-map/:id/lists/:idx/(values/:idx)
+                ]
+                do reduce append copy [:list-map/:id/code] values
+            ]    
+        ][
+            none
+        ]
+    ]
+]
+---- 
+
+
+The first call to `gen-list` must be with the `/init` refinement – it will create a record in the functions’s internal map for the `is` that is provided. The next calls should be just `gen-list 'id`:
+
+---- 
+>> number-list: [1 2 3 4 5]
+>> probe gen-list/init 'x2 [x * x | x: number-list]
+>> gen-list 'x2
+== 1
+>> gen-list 'x2
+== 4
+>> gen-list 'x2
+== 9
+>> gen-list 'x2
+== 16
+>> gen-list 'x2
+== 25
+>> gen-list 'x2
+== none
+---- 
+
+---- 
+>> threshold: 5
+== 5
+>> gen-list/init 'xp [as-pair x y | x: [1 2 3] y: [4 5 6 7] ? y > threshold]
+>> gen-list 'xp
+== 1x6
+>> while [res: gen-list 'xp][print res]
+1x7
+2x6
+2x7
+3x6
+3x7
+>>
+---- 
+
+---- 
+>> gen-list/init 'cart3  [reduce [x y z] | x: [1 2 3] y: [4 5 6 7] z: [8 9]]
+>> while [res: gen-list 'cart3][probe res]
+[1 4 8]
+[1 4 9]
+[1 5 8]
+[1 5 9]
+[1 6 8]
+[1 6 9]
+[1 7 8]
+[1 7 9]
+[2 4 8]
+[2 4 9]
+[2 5 8]
+[2 5 9]
+[2 6 8]
+[2 6 9]
+[2 7 8]
+[2 7 9]
+[3 4 8]
+[3 4 9]
+[3 5 8]
+[3 5 9]
+[3 6 8]
+[3 6 9]
+[3 7 8]
+[3 7 9]
+---- 
