@@ -1675,7 +1675,7 @@ gen-list: func [
 ---- 
 
 
-The first call to `gen-list` must be with the `/init` refinement – it will create a record in the functions’s internal map for the `is` that is provided. The next calls should be just `gen-list 'id`:
+The first call to `gen-list` must be with the `/init` refinement – it will create a record in the functions’s internal map for the `id` that is provided. The next calls should be just `gen-list 'id`:
 
 ---- 
 >> number-list: [1 2 3 4 5]
@@ -1737,3 +1737,41 @@ The first call to `gen-list` must be with the `/init` refinement – it will cre
 [3 7 8]
 [3 7 9]
 ---- 
+
+The `gen-list` function processes the `spec` in a way similar to the previous `list-comp` function. The difference is that when called with `/init`, it registers a new entry into its internal map with key the `id` and value – an object for the provided specification. The object contains a block of the series identifiers, the series themselves, a block with the lengths of each series and a function to be evaluated for each set of values. 
+
+As I said, the function doesn’t create an entire block at once, but yields a single value for each value in the original block (or each item of the Cartesian product of the input blocks) that satisfies the conditions. This is done using the concept of an https://code.jsoftware.com/wiki/Essays/Odometer[odometer] (or ranged permutations). If we need to loop over a single series `s`, we will do it `length? s` times. When we need to make a Cartesian product with values of all supplied series, we’ll need to loop the product of lengths of all the series times (nested loops). For example, if want to make the Cartesian product of the following three series: [1 2],  [3 4 5] and [6 7 8 9], we’ll end up with 2 * 3 * 4 or 24 iterations. This give us the idea for a “lazy” way to generate the results.
+
+We will initialize a counter to 0 and will be increasing its value at each function call, until we finally reach the product of all lengths. In order to map the counter (an integer!) to a block of integers, representing the indices of interest at each iteration, we need to convert the counter to a mixed base number system. The bases (radices) will be the lengths of the series. Here’s an example of the helper function `mixed-base`:
+
+---- 
+repeat i 2 * 3 * 4 [print [mixed-base i - 1 [2 3 4]]]
+1 1 1
+1 1 2
+1 1 3
+1 1 4
+1 2 1
+1 2 2
+1 2 3
+1 2 4
+1 3 1
+1 3 2
+1 3 3
+1 3 4
+2 1 1
+2 1 2
+2 1 3
+2 1 4
+2 2 1
+2 2 2
+2 2 3
+2 2 4
+2 3 1
+2 3 2
+2 3 3
+2 3 4
+---- 
+
+Please note that a general-use function converting a number to a mixed base system will return numbers from 0 to respective lengths – 1 – I have corrected the result to be useful for Red’s 1-based indexing. As you can check, these are all the combinations for indexing into the above mentioned three series: [1 2],  [3 4 5] and [6 7 8 9].
+
+So, when called with counter 1, the `gen-list` function will convert it to a block of integers depending on the given base – [2 3 4] in our case – or [1 1 1]. Next call will increase the counter to 2 and the result will be [1 1 2] – the last index is increased first, simulating a deepest nesting. Thus, increasing the counter, we will eventually reach 24 (this is 2 * 3 * 4) which maps to [2 3 4]. Each one of these blocks with indices is used to extract a value from the corresponding series and feed the set of values to the function specified in the `spec block`. 
