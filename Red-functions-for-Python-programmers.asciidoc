@@ -1658,14 +1658,14 @@ gen-list: func [
             code: make function! reduce [_vars _code]
         ]
     ][
-        either all [list-map/:id list-map/:id/idx < list-map/:id/limit][
+        either all [obj: list-map/:id obj/idx < obj/limit][
             until [
-                list-map/:id/idx: list-map/:id/idx + 1
-                values: mixed-base list-map/:id/idx - 1 list-map/:id/bases
+                obj/idx: obj/idx + 1
+                values: mixed-base obj/idx - 1 obj/bases
                 repeat idx length? values [
-                    values/:idx: list-map/:id/lists/:idx/(values/:idx)
+                    values/:idx: obj/lists/:idx/(values/:idx)
                 ]
-                do reduce append copy [:list-map/:id/code] values
+                do reduce append copy [:obj/code] values
             ]    
         ][
             none
