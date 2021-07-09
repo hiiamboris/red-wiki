@@ -1,3 +1,4 @@
+
 The table below is based on the “Builtin Python Functions” section of https://medium.com/@robertbracco1/most-common-python-functions-aafdc01b71ef[Most Common Python Functions] article.
 
 .Most common functions in Python and their analogues in Red
@@ -89,7 +90,7 @@ The length of an `image!` value is the number of its pixels:
 == 10000   ; 100x100
 ----
 
-The above examples showed the length of values that are `series!`. Let’s 
+The above examples showed the length of values that are `series!`. Let’s see how it works with the other supported datatypes.
 
 The length of the `bitset!` is computed as the smallest multiple of 8 needed to fit the highest bit number (0-origin): 
 
@@ -117,7 +118,7 @@ The length of a `map!` value is the number of its keys:
     "July" "August" "Septem...
 >> freq: #()
 == #()
->> foreach c form m[freq/:c: 1 + any[freq/:c 0]]
+>> foreach c form m [freq/:c: 1 + any [freq/:c 0]]
 == 9
 >> probe freq
 #(
@@ -204,7 +205,7 @@ When the argument is a `block!`, `print` reduces it before ouput:
 == $23.00
 >> tax: 10%
 == 10%
->> print["The price of" toy "is" 1 + tax * amount]
+>> print ["The price of" toy "is" 1 + tax * amount]
 The price of Dog is $25.30
 ---- 
 
@@ -284,13 +285,13 @@ Red doesn’t currently have a single function that can mimic Python’s `format
 Here’s a simple function that formats a string. It takes a string as its first parameter and sets the placeholders to the corresponding named values found in the second argument – a block with “keyword” parameters:
 
 ---- 
-format: function[
+format: function [
     {Simple string formatting. Uses a block of keyword parameters to set the values of placeholders}
     str [string!] "String to format" 
     val [block!]  "A block with set-word - value pairs"
 ][
-    parse str[
-        any[
+    parse str [
+        any [
             to remove "{" 
             change copy subs to remove "}" (select val to set-word! subs)
         ]
@@ -349,8 +350,8 @@ Red doesn’t have a single function to check if a value is of the specified typ
 It is very easy to write an `isinstance` function in Red:
 
 ---- 
-isinstance: function[object type][
-    types: make typeset! to [] type
+isinstance: function [object type][
+    types: make typeset! to block! type
     find types type? :object
 ]
 ---- 
@@ -427,7 +428,7 @@ Use `to-integer value` to convert a `number!`, `char!`, `string!` or `binary!` v
 ---- 
 >> num: [65.78 6578% #"A" "65" #{00000041}]
 == [65.78 6578% #"A" "65" #{00000041}]
->> foreach n num[print to-integer n]
+>> foreach n num [print to-integer n]
 65
 65
 65
@@ -437,17 +438,46 @@ Use `to-integer value` to convert a `number!`, `char!`, `string!` or `binary!` v
 
 `to-integer` is an alias for `to integer!`. It can be further shortened to `to 1` - you can use any other integer instead of 1, as well as a word that refers to an integer value.
 
-Red doesn’t currently provide a function for integer conversion from number bases different than 10, but it is an easy task:
+Red has a pair of functions - `enbase` and `debase` that convert to/from binary-coded string. They support bases 64 (default), 58, 16 and 2. The base can be changed using the `/base` refinement. 
+
+`enbase`  accepts `binary!` and `string!` values:
 
 ---- 
-from-base: function[
+>> enbase "Python and Red"
+== "UHl0aG9uIGFuZCBSZWQ="
+>> enbase/base to binary! 13 2
+== "00000000000000000000000000001101"
+---- 
+
+As you can see, in order to convert a number to base 2 representation, we first need to convert it to `binary!`.
+
+Lets’ convert the last result back to an integer:
+
+---- 
+>> to integer! debase/base "00000000000000000000000000001101" 2
+== 13
+---- 
+
+Please note that the binary-coded strings in base 2 are left-padded with zeroes to a length multiple of 8. So our previous example could have been like this (imagine you import the binary data from the outside):
+
+---- 
+>> to integer! debase/base "00001101" 2
+== 13
+>> debase/base "0001101" 2  ; not a multiple of 8
+== none
+---- 
+
+Red doesn’t currently provide a function for integer conversion from arbitrary number bases different than 10, but it is an easy task:
+
+---- 
+from-base: function [
     {Converts x from a string of chars [0-9 A-Z] in radix base to decimal}
     x    [string!]
     base [integer!]
 ][
     c: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     n: 0
-    foreach i x[n: n * base - 1 + index? find c i]
+    foreach i x [n: n * base - 1 + index? find c i]
 ]
 ---- 
 
@@ -476,20 +506,20 @@ _Red_
 Red doesn’t have a built-in solution that covers the functionality of Python’s `range()` sequence. It is easy to write a function that generates a list of numbers in a range, that is Python’s `list(range(x))`. Here’s one way to do it:
 
 ---- 
-range: function[
+range: function [
     _end [integer!]
     /from 
         start [integer!]
     /by
         step  [integer!]
 ][
-    _start: either from[_end][1]
-    _end: either from[start][_end]
+    _start: either from [_end][1]
+    _end: either from [start][_end]
     step: any [step 1]
     rng: make block! (absolute _end - _start / step)
-    cmp?: get pick[<= >=]step > 0
+    cmp?: get pick [<= >=] step > 0
     
-    while[_start cmp? _end][
+    while [_start cmp? _end][
         append rng _start
         _start: _start + step
     ]
@@ -518,7 +548,7 @@ Puthon’s `range()` returns an immutable sequence and can be used directly with
 Lets’ try to make a function `lazy-range` in Red that does not generate the entire list at once but create a range object. `lazy-range` will accept the same arguments as our earlier `range` function. It returns a single element when request with `/next?`. The `/size` field contains the total number of elements. Unlike Python, I added a `/reset` field that resets the current element to the starting value. There is also a `/list` field that generates a list of all the elements in the range from the current element to the end.
 
 ---- 
-lazy-range: function[
+lazy-range: function [
     _end [integer!]
     /from 
         start [integer!]
@@ -535,10 +565,10 @@ lazy-range: function[
         step:  _step
         curr:  start
         size:  absolute end - start + step / step
-        cmp?:  get pick[< >]step > 0 
+        cmp?:  get pick [< >]step > 0 
 
         next?: does [
-            also curr curr: either all[not none? curr curr cmp? end][
+            also curr curr: either all [not none? curr curr cmp? end][
                 curr + step
             ][
                 none
@@ -546,7 +576,7 @@ lazy-range: function[
         ]
         
         reset: does [curr: start]
-        list: does[collect[while[not none? curr][keep next?]]]
+        list: does [collect [while [not none? curr][keep next?]]]
     ]
 ]
 ---- 
@@ -595,7 +625,7 @@ Let’s make some tests:
 anchor:open-notes[]
 *Open file*
 
-_Pyton_
+_Python_
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised.
 
 _Red_
@@ -633,7 +663,7 @@ _Red_
 Here’s a simple function that takes a value and returns a block of values:
 
 ---- 
-list: function[
+list: function [
     src  
     /into
         buf
@@ -644,11 +674,11 @@ list: function[
         string! 
         tuple! 
         binary! 
-        bitset! [collect[repeat idx length? src[keep src/:idx]]]
+        bitset! [collect [repeat idx length? src [keep src/:idx]]]
         pair!   [reduce [src/x src/y]]
         file!
-        url!    [parse src[collect[any[keep to[some "/" | end] some "/"]]]]
-        date!   [collect[repeat idx 14[keep src/:idx]]]
+        url!    [parse src [collect [any [keep to [some "/" | end] some "/"]]]]
+        date!   [collect [repeat idx 14 [keep src/:idx]]]
     ][
         to-block src
     ]
@@ -846,7 +876,7 @@ _Red_
 Values of objects fields are referenced using path notation in Red. An alternative is to use the `get` function:
 
 ---- 
-album: make object![
+album: make object! [
 	title: "Caress of Steel"
 	artist: "Rush"
 	year: 1975
@@ -864,7 +894,7 @@ album: make object![
 If we want to recreate the Python’s `getattr()` function and specify the attribute as a string, we need to use approach from the last example: 
 
 ---- 
-getattr: func[
+getattr: func [
     obj  [object!]
     attr [string!]
 ][
@@ -877,6 +907,28 @@ getattr: func[
 == "Caress of Steel"
 >> getattr album "genre"
 == "Progressive rock"
+>> getattr album "label"
+*** Script Error: get does not allow none! for its word argument
+*** Where: get
+*** Stack: getattr  
+---- 
+
+Please note that `getattr` errors for keys that don’t exist, as seen from the last example. We can change our function to return `none` for non-existing keys by replacing `get in` with `select`:
+
+---- 
+getattr: func [
+    obj  [object!]
+    attr [string!]
+][
+    select obj to-word attr
+]
+---- 
+
+Let’s test it with the same object and a key that is not present in it:
+
+---- 
+>> getattr album "label"
+== none
 ---- 
 
 anchor:hasattr-notes[]
@@ -890,11 +942,11 @@ _Red_
 Red doesn’t have such a function, but is easy to implement one. We can do it in Python’s manner, where `hassattr()` calls `getattr(object, name)` and sees whether it raises an AttributeError or not:
 
 ---- 
-hasattr: function[
+hasattr: function [
     obj  [object!]
     attr [string!]
 ][
-    either error? try[get in obj to-word attr][false][true]
+    to logic! in obj to-word attr
 ]
 ---- 
 
@@ -905,21 +957,23 @@ person: make object! [
    country: "Sweden"
 >> print hasattr person "name"
 true
->> print hasattr person "color"
+>> print hasattr person "town"
 false
 ]
 ---- 
 
-We can do it in another, probably more idiomatic for Red way, checking the `words-of` the object for the attribute, converted to word:
+We can do it in another, way, checking the `words-of` the object for the attribute, converted to word:
 
 ---- 
-hasattr: function[
+hasattr: function [
     obj  [object!]
     attr [string!]
 ][
     not none? find words-of obj to-word attr
 ]
 ----  
+
+This method is “heavier” though, as it has to build the block of words.
 
 anchor:type-notes[]
 *Get the type a word refers to*
@@ -943,6 +997,19 @@ _Red_
 == word!
 >> (type? type? :print) = type? type?/word :print
 == false
+---- 
+
+Please be cautious when forming the results of `type`. Note the difference in the `form` ed representation of `type?` and `type?/word`:
+
+---- 
+>> type? "specification"
+== string!
+>> form type? "specification"
+== "string"
+>> type?/word "specification"
+== string!
+>> form type?/word "specification"
+== "string!"
 ---- 
 
 
@@ -978,7 +1045,7 @@ _Red_
 Red doesn’t have a function similar to `enumerate()`, but let’s try to write one:
 
 ---- 
-enumerate: function[
+enumerate: function [
     series [series!]
     /start
         pos  [integer!]
@@ -1025,7 +1092,7 @@ As you see, `/next` returns `none` when the series is exhausted.
 >> enum-digits: enumerate/start ["zero" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine"] 0
 == make object! [
     s: ["zero" "one" "two" "three" "four" "five" "s...
->> while[not none tuple: enum-digits/next][probe tuple]
+>> while [tuple: enum-digits/next][probe tuple]
 [0 "zero"]
 [1 "one"]
 [2 "two"]
@@ -1104,27 +1171,27 @@ _Red_
 Red’s `max` function accepts exactly two arguments and returns the greater of the two values. Here is an example of function that returns the maximum value in a series:
 
 ---- 
-max-series: function[
+max-series: function [
     series [series!]
     /compare
         comparator [integer! any-function!]
     
 ][
     cmax: series/1
-    cmp: any[
+    cmp: any [
         get pick [comparator greater?]any-function? :comparator
         greater?
     ]
-    either integer? :comparator[
-        forall series[
-            cmax: either cmp cmax/:comparator series/1/:comparator[
+    either integer? :comparator [
+        forall series [
+            cmax: either cmp cmax/:comparator series/1/:comparator [
                 cmax
             ][
                 series/1
             ]
         ]
     ][
-        forall series[
+        forall series [
             cmax: either cmp cmax series/1[
                 cmax
             ][
@@ -1144,7 +1211,7 @@ It expects a `series!` for its argument. If no refinement is used, the function 
 >> print max-series/compare [1 3 2 5 4] :cmp-min
 1
 >> colors: ["Red" "Orange" "Yellow" "Green" "Blue" "Ultraviolet" "Indigo" "Violet"]
->> cmp-len: func[a b][(length? a) >= length? b]
+>> cmp-len: func [a b][(length? a) >= length? b]
 >> print max-series colors
 Yellow
 >> print max-series/compare colors :cmp-len
@@ -1197,21 +1264,21 @@ Red doesn’t currently have a zip function.
 Here is a simple `zip` function that reurns an object (let’s call it a zip object). The zip object has two function fields: `/next` returns the next tuple, formed by the series values. `/list` creates a block of blocks (tuples) from the current position in the series until the exhaustion of the shortest series.
 
 ---- 
-zip: function[
+zip: function [
     series [block!]
 ][
     make object! [
         iter: series
         idx: 1
 
-        next: has[result item len][
+        next: has [result item len][
             len: length? iter
-            result: collect[foreach item iter[keep any[item/:idx []]]]
-            either len = length? result[idx: idx + 1 result][none]
+            result: collect [foreach item iter [keep any [item/:idx []]]]
+            either len = length? result [idx: idx + 1 result][none]
         ]
         
-        list: has[tuple][
-            collect[while[tuple: next][keep/only tuple]]    
+        list: has [tuple][
+            collect [while [tuple: next][keep/only tuple]]    
         ]
     ]
 ]
@@ -1234,21 +1301,21 @@ sz: zip reduce [s1 s2]
 The above solution has a side effect though – you can access the zip object’s `iter` field (the intermediate block before zipping) from the outside, without a function call. If we want to encapsulate it, we can go for a different solution that uses an internal `map!` to store the series to be zipped.
 
 ---- 
-zip: function[
+zip: function [
     id [word!]
     /init
         series [block!]
     /list 
 ][
     buf: #()
-    pass: [collect[foreach item buf/:id[keep any[take item []]]]]
-    either init[
+    pass: [collect [foreach item buf/:id [keep any [take item []]]]]
+    either init [
         buf/:id: series
     ][
         unless buf/:id [return none]
-        either list[
-            result: collect[
-                while[
+        either list [
+            result: collect [
+                while [
                     (length? tuple: do pass) = length? buf/:id
                 ][
                     keep/only tuple
@@ -1288,7 +1355,7 @@ Here are some tests:
 
 The above `zip`  function has one argument when called without any refinement, `id`, which must be of ` word!` type. It will be used as a reference, as well as for a key in the function’s internal map that stores the data for the different calls. Note that it is initialized simply by `buf: #()`. Since there is no `copy` in from of `#()`, the contents of the map will persist between the function calls.
 
-When called with the `/init` refinement, the function expects in addition to the `id` argument a block of blocks that are to be zipped. If you need to zip two blocks – let’s say `names` and `addresses`, you need to supply them to `zip` as follows: `zip/init 'person reduce[names addresses]`. This will add a new `person` key to the `zip`’s internal map, with value – a block containing the `names` and `addresses` blocks. The map can’t be accessed from outside the function.
+When called with the `/init` refinement, the function expects in addition to the `id` argument a block of blocks that are to be zipped. If you need to zip two blocks – let’s say `names` and `addresses`, you need to supply them to `zip` as follows: `zip/init 'person reduce [names addresses]`. This will add a new `person` key to the `zip`’s internal map, with value – a block containing the `names` and `addresses` blocks. The map can’t be accessed from outside the function.
 
 We can get the successive tuples (blocks) by calling `zip ‘person`. When there are no elements left in any one of the blocks, `zip` will return `none`.  Note that the element extraction is done using `take` - that means the data is destructed and can be referenced only once.
 
@@ -1303,7 +1370,16 @@ Tuples are immutable sequences, typically used to store collections of heterogen
 
 _Red_ 
 
-Red doesn’t have a function similar to Python’s `tuple()` - values of composite types in Red are mutable.
+Red doesn’t have a function similar to Python’s `tuple()` - values of composite types in Red are mutable. 
+
+Red `tuple!` datatype is used to represent RGB and RGBA color values, ip addresses, and version numbers. A `tuple!` value consists of three to twelve positive integers the range 0 – 255 separated by decimal points.
+
+---- 
+>> ? Red
+RED is a tuple! value: 255.0.0
+>> type? 255.255.255.0
+== tuple!
+---- 
 
 anchor:map-notes[]
 *Mapping functions to blocks/lists*
@@ -1351,7 +1427,7 @@ map: function [
 ][
     collect [
         either only [
-            repeat i accumulate series func[a b][min a length? b] length? series/1 [
+            repeat i accumulate series func [a b][min a length? b] length? series/1 [
                 fn-call: clear []
                 insert fn-call :fn
                 repeat j length? series [append/only fn-call series/:j/:i]
@@ -1412,9 +1488,9 @@ min-series: function [
         get pick [comparator lesser?] any-function? :comparator
         lesser?
     ]
-    either integer? :comparator[
+    either integer? :comparator [
         forall series [
-            cmin: either cmp cmin/:comparator series/1/:comparator[
+            cmin: either cmp cmin/:comparator series/1/:comparator [
                 cmin
             ][
                 series/1
@@ -1475,7 +1551,7 @@ slice: function [
        opt [quote /]
        opt [set step integer!]
     ]
-    
+
     case [
         empty? spec [return series]
         (start <> none) and not to? [return series/:start]
@@ -1484,26 +1560,29 @@ slice: function [
         ]
         all [none? start integer? stop integer? step] [
             start: either positive? step [1][len]
-        ]    
+        ]
         true [
             start: any [start 1]
             stop:  any [stop len]
             step:  any [step 1]
-        ]     
+        ]
     ]
+
+    if start < 1 [start: len + start]
+    if stop < 1 [stop: len + stop]
     
-    cmp?: get pick[<= >=] positive? step
+    cmp?: get pick [<= >=] positive? step
     result: collect [
-        while[start cmp? stop][
+        while [start cmp? stop][
             either series? item: series/:start [
                 keep/only item
             ][
-                keep item 
-            ]    
+                keep item
+            ]
             start: start + step
         ]
     ]
-    
+
     if string? series [result: rejoin result]
     result
 ]
@@ -1520,6 +1599,9 @@ foreach test [
     [slice "Programming" [/ / 1]]
     [slice "Programming" [/ / 2]]
     [slice "Programming" [/ / -1]]
+    [slice "Python" [0 / -4 / -1]]
+    [slice "Python" [-2 / / ]]
+    [slice "Python" [/ -1]]
     [slice [1 2 3 4 5 6] [2 / 5 / 1]]
     [slice "Python" [/]]
     [slice "Programming" [2 / / 2]]
@@ -1540,6 +1622,9 @@ slice text reduce [i '/ j]
 [slice "Programming" [/ / 1]] -> "Programming"
 [slice "Programming" [/ / 2]] -> "Pormig"
 [slice "Programming" [/ / -1]] -> "gnimmargorP"
+[slice "Python" [0 / -4 / -1]] -> "nohty"
+[slice "Python" [-2 / /]] -> "hon"
+[slice "Python" [/ -1]] -> "Pytho"
 [slice [1 2 3 4 5 6] [2 / 5 / 1]] -> [2 3 4 5]
 [slice "Python" [/]] -> "Python"
 [slice "Programming" [2 / / 2]] -> "rgamn"
