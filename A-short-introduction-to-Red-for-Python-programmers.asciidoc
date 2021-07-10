@@ -99,15 +99,11 @@ Boolean values
 
 `true false, yes no, on off`
 
-* set-word! - Sets a reference to a value.
-
-`text: "Python and Red"`
-
 === char!
 
 Unicode code points.
 
-`#"a", #"^C", #"^(esc)"`
+`#"a", #"^C", #"^(esc)", #"^(41)"`
 
 === string!
 
@@ -145,7 +141,7 @@ Collections of data or code that can be evaluated at any point in time. Values a
 `[], [one 2 "three"], [print 1.23], [x + y], [dbl: func[x][2 * x]]`
 
 === paren!
-Immediately evaluated block!. Evaluation can be suppressed by using quote before a paren value. Unquoted paren values will return the type of the last expression.
+Immediately evaluated block!. Evaluation can be suppressed by using `quote` before a paren value. Unquoted paren values will return the type of the last expression.
 
 `(1 2 3), (3 * 4), (x + 5)`
 
@@ -199,7 +195,7 @@ https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], https:
 
 === object!
 
-Named or unnamed contexts that contain word: value pairs.
+Named or unnamed contexts that contain `word: value` pairs.
 
 ----
 xy: make object! [
@@ -208,7 +204,7 @@ xy: make object! [
     mult: func[k][x + y * k]    
 ]
 ----
-Please not that at this time it is not possible to extend an object with new word: value pairs.
+Please note that at this time it is not possible to extend an object with new `word: value` pairs.
 The objects in Red are prototype-based, and not class-based. 
 You can create a new object `xyz` using `xy` as a prototype and describe just the new pairs:
 
@@ -240,9 +236,11 @@ Infix function of two arguments.
 
 === refinement!
 
-Refinement! values are symbolic values that are used as modifiers to functions or as extensions to objects, files, urls, or paths.
+Refinement! values are symbolic values that are used as modifiers to functions or as extensions to objects, files, urls, or paths, but they are also valid standalone values.
 
-----
+`option: /reverse`
+
+---- 
 >> replace/all "Mississippi" #"i" #"e"
 == "Messesseppe"
 ----
@@ -273,7 +271,7 @@ One can use addition and subtraction operations with date!, as well as with date
 
 === tuple!
 
-Three to twelve positive integers separated by decimal points. Used for representing RGB and RGBA color values, ip addresses, and version numbers. 
+Three to twelve positive integers in the range from 0 to 255 separated by decimal points. Used for representing RGB and RGBA color values, ip addresses, and version numbers. 
 
 `255.255.255.0`
 
@@ -287,7 +285,7 @@ A `bitset!` is an array of bits used to store boolean values.
 
 A block is a set of values arranged in some order. They can represent collections of data or code that can be evaluated upon request. Blocks are a type of https://github.com/red/docs/blob/master/en/typesets.adoc#series[series!] with no restriction on the type of values that can be referenced. A block, a string, a list, a URL, a path, an email, a file, a tag, a binary, a bitset, a port, a hash, an issue, and an image are all series and can be accessed and processed in the same way with the same small set of series functions
 
-Blocks in Red are similar to Python’s lists, but don’t forget that blocks are not evaluated until it’s necessary. Compare these code snippets:
+Blocks in Red are similar to Python’s lists, but don’t forget that blocks are not evaluated by default. Compare these code snippets:
 
 Python
 ----
@@ -357,20 +355,24 @@ Please note that `to` function (technically it’s an https://github.com/red/doc
 
 === Accessing block elements
 
-Now that you know what a block is and how you create one, let’s try to access block’s items. Let’s work with ` data: [3 1 4 1 5 9]`.  The simplest way one can reference an item in a block is using the item’s index in the block. Unlike Python, Red uses 1-based indexing. So, to get the first item we use `path notation` and an integer index:
+Now that you know what a block is and how you create one, let’s try to access block’s items. Let’s work with
+
+`data: ["Red" "Yellow" "Green" "Cyan" "Blue" "Magenta"]`
+
+The simplest way one can reference an item in a block is using the item’s index in the block. Unlike Python, Red uses 1-based indexing. So, to get the first item we use `path notation` and an integer index:
 
 ----
-data/1
-== 3
+>> data/1
+== "Red"
 >> data/2
-== 1
+== "Yellow"
 ----
 
 Alternatively, we can use `pick`:
 
 ----
 >> pick data 3
-== 4
+== "Green"
 ----
 
 Please note that in Red it’s not possible to use `path notation` to index a literal block (or series). It’s perfectly valid to write in Python:
@@ -389,27 +391,27 @@ To achieve a similar behavior in red we use `pick`:
 
 A useful feature of `pick` is the possibility to use a `logic!` value for the index. The `true` value refers to the first item in the block (series) and the `false` value – to the second item.
 
-----
+---- 
+>> pick data 3 < 5
+== "Red"
 >> pick data 2 > 3
-== 1
->> pick data 2 < 3
-== 3
+== "Yellow"
 ----
 
 Speaking of first and second items of a block, Red has predefined functions for accessing the first 5 items of a series:
 
 ----
 >> first data
-== 3
+== "Red"
 >> second data
-== 1
+== "Yellow"
 >> third data
-== 4
+== "Green"
 >> fourth data
-== 1
+== "Cyan"
 >> fifth data
-== 5
-----
+== "Blue"
+---- 
 
 Let’s consider another block of values: ` signal: [a 2 7 b 1 8 c 2 8] `. Here `a b c` are just `word!`s – that is they represent themselves until they 	have some value in some context. 
 
@@ -575,7 +577,7 @@ We saw that we can go from head to tail in a series using `next`. Similarly, we 
 == ["four"]
 ----
 
-Both `next` and `back` change the current index of a series one step at a time. In contrast, `skip` allows bigger “jumps” relative to the current index. 
+Both `next` and `back` address the relative index of a series one position at a time. In contrast, `skip` allows bigger “jumps” relative to the current index. 
 
 ----
 >> head? b
