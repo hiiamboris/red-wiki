@@ -676,6 +676,36 @@ Here we created a new series `c` with values that are copies of the values of `b
 == [11 2.0 #"3" "four"]
 ----
 
+When the series contains nested values, they are normally copied as a reference:
+
+---- 
+>> colors: [warm: ["red" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+== [warm: ["red" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+>> colors-copy: copy colors
+== [warm: ["red" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+>> colors/warm/1: "papaya"
+== "papaya"
+>> colors
+== [warm: ["papaya" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+>> colors-copy
+== [warm: ["papaya" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+---- 
+
+As you see, the change in the original series leads to a change in the copy. In order to avoid this, you need to use `copy/deep` - it copies the nested values too:
+
+---- 
+>> colors-deep-copy: copy/deep colors
+== [warm: ["papaya" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+>> colors/warm/1: "red"
+== "red"
+>> colors
+== [warm: ["red" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+>> colors-deep-copy
+== [warm: ["papaya" "yellow" "orange"] cool: ["blue" "green" "purple"]]
+---- 
+
+Red’s `copy/deep` is similar to Python’s `copy.deepcopy()` 
+
 If want to copy just a part of the series, we can use `copy` with refinement `/part`. The first argument indicates where to start, the second – how many elements to copy.
 
 ----
@@ -722,7 +752,7 @@ Red uses a different function for this - `extract`:
 
 === Adding element to a series
 
-Until now we were only taking elements from a series. Let’s see how to add new items. If we need to add one or more elements at the tail of a series, we do it with `append`:
+Until now we were only copying elements from a series. Let’s see how to add new items. If we need to add one or more elements at the tail of a series, we do it with `append`:
 
 ----
 >> append b 5
@@ -853,22 +883,65 @@ A special case of removing items from series is getting rid of whitespaces from 
 == [345 1123 0 -34]
 ---- 
 
-There are cases when you need to append a value to a series if it’s not found in the series, otherwise remove it. Red uses `alter` for this operation.
+=== Taking elements from series
+
+We saw that we could remove elements from series. Sometimes we need to use these elements and not just discard them. This is done using `take`:
 
 ----
-a: [1 2 3 4 5 4]
-== [1 2 3 4 5 4]
->> alter a 4
-== false
 >> a
-== [1 2 3 5 4]
+== ["yellow" "green" "blue"]
+>> color: take a
+== "yellow"
+>> color
+== "yellow"
+>> a
+== ["green" "blue"]
 ----
 
-In this example there were two 4. `alter` removed the first one and returned `false` - this means that the value has been removed and not added.
+The element at the current index was removed from the series, and returned as result. `/part` refinement is available in `take’ too. Use `/last` when you need to take element(s) from the tail of a series. 
+Python’s `pop()` is similar to Red’s `take` (with no `/part` refinement)
+
+----
+>>> a=[3,1,4,1,5]
+>>> last_a=a.pop()
+>>> a
+[3, 1, 4, 1]
+>>> last_a
+5
+----
+
+----
+>> a: [3 1 4 1 5]
+== [3 1 4 1 5]
+>> last-a: take/last a
+== 5
+>> a
+== [3 1 4 1]
+----
 
 === Changing values in series
 
-To change a value (or consecutive values) in Red we use `change`. We need to indicate the series we want to change and the new value. If we give a single value, the value at the current index of the series will be changed to the new value:
+The easiest way to change a value in a series in Red is to use path notation and specify the index of the value we want to change: 
+
+---- 
+>> a: [3 1 4 1 5]
+== [3 1 4 1 5]
+>> a/2: 10
+== 10
+>> a
+== [3 10 4 1 5]
+---- 
+
+This corresponds to Python’s assignment that refers to the item’s index within a list:
+
+----
+>>> a=[3,1,4,1,5]
+>>> a[1]=10
+>>> a
+[3, 10, 4, 1, 5]
+----
+
+To change a value (or consecutive values) in Red wecan also use `change`. We need to indicate the series we want to change and the new value. If we give a single value, the value at the current index of the series will be changed to the new value:
 
 ----
 >> a: [3 1 4 1 5]
@@ -878,15 +951,6 @@ To change a value (or consecutive values) in Red we use `change`. We need to ind
 >> a
 == [3 10 4 1 5]
 >>
-----
-
-This corresponds to Python’s assignment that refers to the item’s index within a list:
-
-----
->>> a=[3,1,4,1,5]
->>> a[1]=10
->>> a
-[3, 10, 4, 1, 5]
 ----
 
 If the new value is a block, Red will change the values starting at the current index with the values from the block, appending the new values if needed:
@@ -1129,42 +1193,6 @@ sort/compare colors func[x y][(length? x) <  length? y]
 ---- 
 
 I’ve used an anonymous function with two arguments `x` and `y`, that compares wherher the length of the first argument is less than the length of the second. `sort` used this function an argument for the `/compare` refinement and sorted the strings according the comparison in the function.
-
-=== Taking elements from series
-
-We saw that we could remove elements from series. Sometimes we need to use these elements and not just discard them. This is done using `take`:
-
-----
->> a
-== ["yellow" "green" "blue"]
->> color: take a
-== "yellow"
->> color
-== "yellow"
->> a
-== ["green" "blue"]
-----
-
-The element at the current index was removed from the series, and returned as result. `/part` refinement is available in `take’ too. Use `/last` when you need to take element(s) from the tail of a series. 
-Python’s `pop()` is similar to Red’s `take` (with no `/part` refinement)
-
-----
->>> a=[3,1,4,1,5]
->>> last_a=a.pop()
->>> a
-[3, 1, 4, 1]
->>> last_a
-5
-----
-
-----
->> a: [3 1 4 1 5]
-== [3 1 4 1 5]
->> last-a: take/last a
-== 5
->> a
-== [3 1 4 1]
-----
 
 === Series as sets
 
@@ -1581,7 +1609,7 @@ workday
 
 As you can see, `either` corresponds to Pythons `if-else` statement – if the condition is true, the first block is executed, otherwise – the second one.
 
-If you need to reproduce the Pythonic `if-elif-else`, you’ll need to cascade two or more `eiter` function calls: `either cond1 [true-block-1][either cond2[true-block-2][false-block]]`.
+If you need to reproduce the Pythonic `if-elif-else`, you’ll need to cascade two or more `either` function calls: `either cond1 [true-block-1][either cond2[true-block-2][false-block]]`.
 
 === Case
 
@@ -1618,17 +1646,16 @@ Analysls complete!
 
 === Switch
 
-Another form of branching is achieved using `switch`. It accepts a value of any type as a first argument and a block, consisting of any number of value – block pairs as its second argument. The block after the value that matches the first argument is evaluated.
+Another form of branching is achieved using `switch`. It accepts a value of any type as a first argument and a block, consisting of any number of sets  - values followed by a block - as its second argument. The block after the value that matches the first argument is evaluated.
 
 ---- 
-n: 2
-switch n [
-    1 ["one"]
-    2 ["two"]
-    3 ["three"]
+switch 5 [
+    1 2 3 ['low]
+    4 5 6 ['mid]
+    7 8 9 ['high]
 ]
 ---
-"two"
+"mid"
 ---- 
 
 If the value is not found in the block, `switch` returns `none`. If you need it to return some specific value in case the first argument is not found, use `/default` refinement:
@@ -1667,14 +1694,16 @@ Please note the use of parentheses around the right hand side argument of `or`. 
 
 `or`, `and` and `xor` are also used for the bitwise operations on numbers.
 
-Sometimes there are a lot of conditons that should be combined. It is often more convenient to use `all`/`any` functions. Let’s change our last example so that it uses `all`:
+Sometimes there are a lot of conditons that should be combined. It is often more convenient to use `all` and `any` functions. Let’s change our last example so that it uses `all`:
 
 ---- 
->> all [a > 0 a < 20]
-== true
+>> all [a > 0 a < 20 30]
+== 30
 ---- 
 
-So, `all` takes a block of values, evaluates them and returns `true` if they are all true, or `none` otherwise. 
+So, `all` takes a block of values, evaluates them and returns the last evaluated value if all are truthy, or `none` otherwise. 
+
+`any` evaluates and returns the first truthy value, if any; else NONE.
 
 In order to demonstrate `any`, let’s pretend that we want to check if a given point is outside of a given rectangle. The point is defined as a `pair!` of integers and the rectangle – as two pairs of integers (it’s top-left and bottom-right corners).
 
@@ -1884,7 +1913,7 @@ That’s why Red has another looping function - `forall` - that exposes the seri
 
 `forall 'word body` evaluates the body for all values in the series (‘word refers to series we want to iterate over).
 
-Did you notice the `'` in front of `word`? This is very important. As you remember, I used a literal block in the `foreach` example. I could have set a word to refer to it and use it as an argument to `foreach`, that’s completely fine. There is no freedom of choice with `forall` - it must be a `word` and cannot be a literal block! The reason is simple – we use the word itself to refer to the series at each iteration (there is no additional word to set).
+Did you notice the `'` in front of `word` in the function spec? This is very important. As you remember, I used a literal block in the `foreach` example. I could have set a word to refer to it and use it as an argument to `foreach`, that’s completely fine. There is no freedom of choice with `forall` - it must be a `word` and cannot be a literal block! The reason is simple – we use the word itself to refer to the series at each iteration (there is no additional word to set).
 
 What `forall` does is start at the head and go to the next series at each iteration:	
 ---- 
@@ -2079,7 +2108,7 @@ The built-in function `func` is defined as shorthand for `make function!`. All w
 
 === routine!
 
-`routine` is a function with a Red specification and Red/System body. The routine specification takes Red datatypes as arguments and return value, and automatically converts them to appropriate Red/System types when called. A program that contains `routine` values can not be interpreted, it should be compiled since it contains Red/System (low level) code.
+`routine` is a function with a Red specification and Red/System body. The routine specification takes Red datatypes as arguments and return value, and automatically converts them to appropriate Red/System types when called. A program that contains `routine` values can not be interpreted, it must be compiled since it contains Red/System (low level) code.
 
 === op!
 
@@ -2111,9 +2140,9 @@ We define `..` to be an `op!`, constructed from a function of two arguments. The
 
 == Parse
 
-Parse dialect is an embedded domain-specific language (DSL) of Red that allows concise processing of input series with grammar rules.
+The Parse dialect is an embedded domain-specific language (DSL) of Red that allows concise processing of input series with grammar rules.
 
-Coming from Python, you are most probably familiar wit regular expressions. Regexes are sequences of characters that specifie search patterns, usually used by string-searching algorithms for "find" or "find and replace" operations on strings. Red `Parse` provides this string-level functionality and much more – it works not only with `any-string!` , but also with `binary!` and `any-block!` series. That means that `parse` is capable of parsing blocks of Red values too.
+Coming from Python, you are most probably familiar with regular expressions. Regexes are sequences of characters that specify search patterns, usually used by string-searching algorithms for "find" or "find and replace" operations on strings. Red `Parse` provides this string-level functionality and much more – it works not only with `any-string!` , but also with `binary!` and `any-block!` series. That means that `parse` is capable of parsing blocks of Red values too.
 
 The usage is as follows:
 
@@ -2259,7 +2288,7 @@ language
 == true
 ---- 
 
-I used the opportunity to introduce a couple of new concepts besides `to` with this example. What it does is print the words in a string, where the words are seperated from one another with whitespaces. Let go through it. `delimiter` is rule that introduces the white spaces – space, tab, linefeed or carriage return. I’ve also added `end` to them, so that the end of the input is taken into account. The rule`print-words` consists only of `any`, followed by a block as its rule. This rule will be matched one or more times. It works as follows – first we go thru any whitespaces with `any delimiter`, then `copy word to delimiter (print word)` advances the input position to the next whitespace. Here’s the first new concept - `copy word` copies to `word` the result of the rule that follows `to delimiter`. So this part pf the code effectively extracts the words. Please note that `copy` in `parse` is different from `copy` outside of the DSL. What follows is `(print word)`. This is very powerful concept in `parse` - parentheses enclose a code that is treated as regular Red code and not `parse`.  This way the code in parentheses is evaluated if the rule preceding it succeeds. Finally there is one more "any delimiter".
+I used the opportunity to introduce a couple of new concepts besides `to` with this example. What it does is print the words in a string, where the words are separated from one another with whitespaces. Let’s go through it. `delimiter` is rule that introduces the white spaces – space, tab, linefeed or carriage return. I’ve also added `end` to them, so that the end of the input is taken into account. The rule`print-words` consists only of `any`, followed by a block as its rule. This rule will be matched one or more times. It works as follows – first we go thru any whitespaces with `any delimiter`, then `copy word to delimiter (print word)` advances the input position to the next whitespace. Here’s the first new concept - `copy word` copies to `word` the result of the rule that follows `to delimiter`. So this part pf the code effectively extracts the words. Please note that `copy` in `parse` is different from `copy` outside of the DSL. What follows is `(print word)`. This is very powerful concept in `parse` - parentheses enclose a code that is treated as regular Red code and not `parse`.  This way the code in parentheses is evaluated if the rule preceding it succeeds. Finally there is one more "any delimiter".
 
 === Parsing blocks
 
@@ -2293,7 +2322,7 @@ bin-op: [
 
 We start our rule with `number!` - it matches one value, that is a literal number. Then we have `o: skip` - this sets the word `o` to the current input position and skips the next value. `o` is a series, `o/1` refers to the skipped value. What we do next is check whether the type of the skipped value is `op!` - `if (all[word? o/1 op? get o/1])`. Here `if` is part of `parse`, and not of the regular Red. It succeeds if a given Red expression evaluates to true and never advances the input (we already advanced the input with `skip`). Remember that `+` is just a word? That’s why we first check if `o` is of type `word!` (`word? o`), and if it is, does this word refer to an `op!` value  (`op? get o/1`). The rule end with the right operand, a `number!`. 
 
-Let’s finish our short introduction to parsing blocks with another example – let’s check if a block consist of a single value, repetead one or more times. (Of course there is a short way to do it without `parse` - `single? unique block`).
+Let’s finish our short introduction to parsing blocks with another example – let’s check if a block consists of a single value, repetead one or more times. (Of course there is a short way to do it without `parse` - `single? unique block`).
 
 ---- 
 rpt: [set w skip (r: reduce['quote w]) any r]
@@ -2346,7 +2375,7 @@ As we already said, matching by datatype or type set is supported for UTF-8 enco
 == true
 ---- 
 
-You can (and definately should, if you want to master `parse`) check the https://github.com/red/red/wiki/%5BDOC%5D-Parse[dedicated resources for learning `parse`]
+You can (and definitely should, if you want to master `parse`) check the https://github.com/red/red/wiki/%5BDOC%5D-Parse[dedicated resources for learning `parse`]
 
 == View
 
