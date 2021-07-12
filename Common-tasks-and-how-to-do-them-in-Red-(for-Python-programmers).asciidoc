@@ -87,7 +87,7 @@ If we are reading from a text file, it makes sense to be able to get the file co
 
 === Reading binary files
 
-When the file we want to read does not consist of ASCII characters, we need to read it as a binary file. We use the `/binary` refinement with `read`:
+When the file we want to read does not consist of Unicode characters, we need to read it as a binary file. We use the `/binary` refinement with `read`:
 
 
 ---- 
@@ -264,11 +264,22 @@ We can read the file contents and apply `load-json` to the string:
 As you see, the result is a map, populated by key-value pairs of data from the .json file
 
 
-=== load/as %file ‘json
-`load-json` converts a string to Red values. You can directly load a .json file as Red data using `load` with refinement `/as` and argument `’json`. It employs the Red codec system:
+=== load %file.json  and load/as %file.txt 'json
+`load-json` converts a string to Red values. You can directly load a .json file as Red data using `load`. It employs the Red codec system:
 
 ---- 
->> data: load/as %example_1.json 'json
+>> data: load  %example_1.json
+== #(
+    fruit: "Apple"
+    size: "Large"
+    color: "Red"
+)
+---- 
+
+If the file had an extension different than `.json` - for example `.txt` - we can load it using `load/as` and argument for the refinement `'json`: 
+
+---- 
+>> data: load/as %example_1.txt 'json
 == #(
     fruit: "Apple"
     size: "Large"
@@ -457,12 +468,19 @@ If you don’t need the data to be grouped, you can use the `/flat` refinement. 
 
 You need to know the dimensions of your .csv table.
 
-=== load/as %file 'csv
+=== load %file.csv and load/as %file.txt 'csv
 
 As with .json files, you can `load` .csv files directly as Red data:.
 
 ---- 
->> data: load/as %addresses.csv 'csv
+>> data: load %addresses.csv
+== [["John" "Doe" "120 jefferson st." "Riverside" " NJ" " 08075"] ["Jack" "McGi...
+---- 
+
+If the file had an extension different than `.csv`, we can still load it directly using `load/as` with argument to the refinement `'csv`:
+
+---- 
+>> data: load/as %addresses.dat 'csv
 == [["John" "Doe" "120 jefferson st." "Riverside" " NJ" " 08075"] ["Jack" "McGi...
 ---- 
 
@@ -741,4 +759,4 @@ You can clear the clipboard with `write-clipboard none`.  Other datatypes that y
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF...
 >> write-clipboard img
 == true
----- 
+----
