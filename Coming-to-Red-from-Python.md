@@ -22,11 +22,7 @@ However, Red still doesn't have Python's rich ecosystem - for example we don't h
 
 ## [Red functions for Python programmers](https://github.com/red/red/wiki/Red-functions-for-Python-programmers)
 
-## Draft outline
-
 ## Notes
-
-### Some examples to consider
 
 ## Potential Gotchas
 ### Namespaces
