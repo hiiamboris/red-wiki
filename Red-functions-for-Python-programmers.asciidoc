@@ -1638,7 +1638,7 @@ anchor:list-comprehension-notes[]
 
 List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
 
-Red doesn’t currently have built-in list comprehensions. Here is a simple function that takes a block as specification and returns a new list generated according the rules in the specification:
+Red doesn’t currently have built-in list comprehensions. Here is a simple function that takes a block as specification and returns a new list generated according the rules in the specification. You don't need to understand this code, just note how little code it takes to extend Red at the user level, in a way that works like a native language feature.:
 
 ---- 
 list-comp: func [
