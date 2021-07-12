@@ -1,20 +1,21 @@
 ## Why Red?
 
-Python is an amazing tool capable at almost every programming task imaginable, unless you have to deploy it. Oh, it can be done, no arguments there. But as soon as things get beyond "my linux box", the headaches grow exponentially. Eventually, we all just want to burn down the house. Perhaps Red can be your lighter.
+Python is an amazing tool capable at almost every programming task imaginable. So it's logical to ask “Why should I learn Red, when I have Python at hand?” One reason is that it's good for your brain. Stretch yourself and learn something, anything new. Red and Python are _very_ different languages and you may find ideas or techniques that you can put in your Python toolbox. We also point out that Red is fun to play with. Like Python, you can tinker easily. Sometimes it helps to take a break from real work in your day-job language, but keep your brain in the _realm_ of programming. Play with ideas out of context and you may have sudden insights; the proverbial a-ha moment. Finally, there are things Red is really good at. You may find you like doing things in Red that Python doesn't focus on.
 
-You might be wondering “Why I need to learn Red, when I have Python at hand?” Well, you probably don’t need to learn yet another programming language, but before you decide for yourself, consider the following:
--	Red is interpreted, but can be compiled. The resulting executable files are around 1MB, with no dependencies.
--	Red can be cross-compiled to different platforms (Windows, WindowsXP, Linux, Linux-ARM, RPi, Darwin,  macOS, Syllable, FreeBSD, Android, Android-x86).
+Consider the following:
+
+-	Red is interpreted, but can be compiled. The resulting executable files are around 1MB, with no dependencies. The "no dependencies" part is important if you want to easily share them. Nothing for users to do but drop your exe in a folder.
+-	Red can be cross-compiled to different platforms (Windows, WindowsXP, Linux, Linux-ARM, RPi, Darwin,  macOS, Syllable, FreeBSD, Android, Android-x86) _from_ any plaeform. That's built in. No external compilers, hardware, or setup necessary.
 -	Red has a fully reactive cross-platform native GUI system, with a UI Domain-specific language (DSL) - VID and drawing DSL – Draw.
--	Red has a powerful [PEG]( https://en.wikipedia.org/wiki/Parsing_expression_grammar) parser DSL – Parse, that is highly readable and maintainable, unlike regex.
--	[Red/system](https://static.red-lang.org/red-system-specs.html) is a low level (think C) DSL, aimed at low-level system programming and higher performance. 
--	Red has an elegant and consistent syntax, allowing for easy learning. 
--	Red comes with a rich set of built-in [datatypes](https://github.com/red/docs/blob/master/en/datatypes.adoc) - more than 50.
--	All these make Red a full-stack language ("from metal to meta") that can be used for writing everything from drivers and operating systems, through applications, scripts, to Domain-specific languages and metaprogramming.
+-	Red has a powerful [PEG]( https://en.wikipedia.org/wiki/Parsing_expression_grammar) parser DSL – `Parse`, that is highly readable and maintainable. Via `parse`, Red is really a language construction toolkit.
+-	[Red/system](https://static.red-lang.org/red-system-specs.html) is a low level (think C) DSL, aimed at low-level system programming and higher performance. Where other scripting languages require you to write extensions in C (for which you need a compiler and a different syntax in your head), in Red the only thing that changes is the semantics. Basically, you give up high level language features at the system level, but have total control.
+-	Red has an elegant and consistent syntax, and both GUI and console mode REPLs, allowing for easy learning. 
+-	Red comes with a rich set of built-in [datatypes](https://github.com/red/docs/blob/master/en/datatypes.adoc) - more than 50. Red is really a "data first" language, and is fully homoiconic. That means it is its own data format. So while you can use JSON and CSV (their codecs are built in), you'll only ever need to (or want to) for interoperability.
+-	Red is a full-stack language ("from metal to meta") that can be used for writing everything from drivers and operating systems, through applications, scripts, to domain-specific languages and metaprogramming.
 
 [More about Red features](https://www.red-lang.org/p/about.html)
 
-However, Red still doesn't have Python's rich ecosystem - for example we don't have any analogues of numpy/scipi. The module system is yet to be completed, as well as a set of higher order functions. At the moment of writing Red is 32 bit. But nothing in the python ecosystem is as powerful as parse, nor is python nearly as flexible. There is nothing like trying something for yourself though so lets dig in!
+However, and importantly, Red doesn't yet have Python's rich ecosystem - for example there are no analogues of numpy/scipi. The module system is yet to be completed, as well as a set of higher order functions. At the moment of writing Red is 32-bit. But nothing in the Python ecosystem is as powerful as `parse` for building DSLs, nor is python nearly as flexible. There is nothing like trying something for yourself though so lets dig in!
 
 ## [A short introduction to Red for Python programmers](https://github.com/red/red/wiki/A-short-introduction-to-Red-for-Python-programmers)
 
