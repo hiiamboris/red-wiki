@@ -652,6 +652,79 @@ As you can see, `offset?` is the difference between two indices in a series.
 
 === Finding values in series
 
+To search a `series!` (or a `bitset!`,`typeset!`, or a `map!`) for a value, use `find`:
+
+---- 
+>> find "Red is a full-stack programming language" "full"
+== "full-stack programming language"
+>> find [a: 345.5 b: 56] integer!
+== [56]
+>> find "Red" charset "aoeiu"
+== "ed"
+---- 
+
+`find` returns the series where a value is found, or NONE.
+
+It has several refinements:
+
+`/part` limits the length of the search, a `length`  argument must be supplied.
+
+`/only` treats a series search value as a single value. Please note the difference:
+
+---- 
+>> find [1 2 3 4 [2 3] 5]  [2 3]
+== [2 3 4 [2 3] 5]
+>> find/only [1 2 3 4 [2 3] 5]  [2 3]
+== [[2 3] 5]
+---- 
+
+` /case` perform a case-sensitive search.
+
+`/skip` treat the series as fixed size records, a `size` argument is expected. 
+
+---- 
+>> find "abcdef" #"d"
+== "def"
+>> find/skip "abcdef" #"d" 2
+== none
+---- 
+
+In the second example the input is treted as a series of length 2 records (you can think of it as ["ab" "cd" "ef"]) and #”d” is none of them.
+
+`/last` finds the last occurrence of value, from the tail:
+
+---- 
+>> find/last "Mississippi" "ssi"
+== "ssippi"
+---- 
+
+`/reverse` finds the last occurrence of value, from the current index:
+
+---- 
+>> find/reverse find/last "Mississippi" "ssi" "s"
+== "sissippi"
+---- 
+
+`/tail` returns the tail of the match found, rather than the head.
+
+---- 
+>> find/tail %report.pdf #"."
+== %pdf
+---- 
+
+`/match` match at current index only and return tail of match:
+
+---- 
+>> find "abracadabra" "abra"
+== "abracadabra"
+>> find next "abracadabra" "abra"
+== "abra"
+>> find/match "abracadabra" "abra"
+== "cadabra"
+>> find/match next "abracadabra" "abra"
+== none
+---- 
+
 === Getting several values from a series at once
  
 We saw how one can access a single value from a series using index and path notation, `pick` and `select`. It is very often necessary to get more than one value from a series at once. In such cases we use `copy`.
