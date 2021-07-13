@@ -5,7 +5,7 @@ Python is an amazing tool capable at almost every programming task imaginable. S
 Consider the following:
 
 -	Red is interpreted, but can be compiled. The resulting executable files are around 1MB, with no dependencies. The "no dependencies" part is important if you want to easily share them. Nothing for users to do but drop your exe in a folder.
--	Red can be cross-compiled to different platforms (Windows, WindowsXP, Linux, Linux-ARM, RPi, Darwin,  macOS, Syllable, FreeBSD, Android, Android-x86) _from_ any plaeform. That's built in. No external compilers, hardware, or setup necessary.
+-	Red can be cross-compiled to different platforms (Windows, WindowsXP, Linux, Linux-ARM, RPi, Darwin,  macOS, Syllable, FreeBSD, Android, Android-x86) _from_ any platform. That's built in. No external compilers, hardware, or setup necessary.
 -	Red has a fully reactive cross-platform native GUI system, with a UI Domain-specific language (DSL) - VID and drawing DSL – Draw.
 -	Red has a powerful [PEG]( https://en.wikipedia.org/wiki/Parsing_expression_grammar) parser DSL – `Parse`, that is highly readable and maintainable. Via `parse`, Red is really a language construction toolkit.
 -	[Red/system](https://static.red-lang.org/red-system-specs.html) is a low level (think C) DSL, aimed at low-level system programming and higher performance. Where other scripting languages require you to write extensions in C (for which you need a compiler and a different syntax in your head), in Red the only thing that changes is the semantics. Basically, you give up high level language features at the system level, but have total control.
