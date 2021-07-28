@@ -48,6 +48,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [July 7, 2018 8:58 PM](https://gitter.im/red/sandbox?at=5b40ff2da99e1e52b71e6ca4) @toomasv [Logic-gates example](https://github.com/toomasv/gates)
 - [August 15, 2018 22:14](https://gitter.im/red/help?at=5b746d1f5b07ae730ac20312) @toomasv A value between range.
 - [February 21 2019 12:13](https://gitter.im/red/red/gui-branch?at=5c6e79c37667931e2fd808ef) @GalenIvanov [L-systems explorer](https://github.com/GalenIvanov/Graphics-Red/blob/master/L-systems.red) [(preview)](https://github.com/GalenIvanov/Graphics-Red/blob/master/L-Systems.png)
+- [(July 28 2020 25:35](https://gitter.im/red/red/gui-branch?at=61014f109e84ba381e4475ef) @GalenIvanov [TruTiles](https://github.com/GalenIvanov/Graphics-Red/blob/master/TruTiles.red) [(preview)](https://github.com/GalenIvanov/Graphics-Red/blob/master/TruTiles.png?raw=true)
 
 # Miscellanea
 - [March 27, 2018 4:58 AM](https://gitter.im/red/red/gui-branch?at=5aba23db7c3a01610d7c1ebe) @PlanetSizeCPU [GUI Designer](https://github.com/planetsizecpu/forms)
