@@ -24,7 +24,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Sandboxing](#sandboxing)
 1. [JS as a Back End Target](#js-as-a-back-end-target)
 1. [Sigils to denote destructive functions](#sigils-to-denote-destructive-functions)
-1. [Inline Comments](@inline-comments)
+1. [Inline Comments](#inline-comments)
 
 # Immutability
 
