@@ -24,7 +24,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Sandboxing](#sandboxing)
 1. [JS as a Back End Target](#js-as-a-back-end-target)
 1. [Sigils to denote destructive functions](#sigils-to-denote-destructive-functions)
-
+1. [Inline Comments](@inline-comments)
 
 # Immutability
 
@@ -128,3 +128,51 @@ Side note, when it comes to how we address errors due to misuse of functions, @r
 *** Where: do
 *** Stack: f
 ```
+
+# Inline Comments
+
+Described [here](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Block_comments), block comments let you intersperse comments within expressions. As someone noted, it seems easy:
+
+> It is not a feature that is hard to achieve, as it is merely telling the lexer to discard whatever characters is between two delimiters.
+
+So we can start with the syntax. It has to be a new lexical form. C uses `/* ~ */`, as do others. Can we use that? Well, those delimiters are both illegal today, in that they aren't a legal refinement or a legal word respectively, so it won't break anything. But what if we add a `muldiv` function, and want an `op!` version that is denoted as `*/`? Not likely we'd do that in Red proper, but it might be a good fit in a numeric dialect, or many of them. Powershell uses `<# ~ #>`, but that's already a `tag!` in Red. Most other syntaxes used have the same problem. It's almost ironic that the C syntax is one of the more viable.
+
+So let's say we adopt that syntax. Now we have to decide if block comments can be nested. Curly brace strings are counted, so they can be used inside. But then you have to escape any that would cause a count mismatch in opening and closing braces. You can get around that with the new raw string format. So how should nested block comments work? Do we say you _can't_ nest them? As soon as we do, someone will cite that as a limitation and block comments as an incomplete feature. This is how things grow. It's easy to solve a basic problem if you're looking closely at only that problem. Forests and trees.
+
+But let's assume we can get everyone to agree on nesting behavior and syntax. What is their runtime behavior? Remember, Red is a data oriented language. Everything is a value, and whether it's important changes based on when and where it is evaluated. If we discard block comment content, we have an entirely new concept in Red: vanishing values. No problem for almost any other language, but what that means is that you can _never_ exchange those values. If you want them to exist, you would have to pass their entire "environment" as an unlexed string. An alternative would be to load them, as a new datatype with a distinct lexical form, and then have the interpreter and compiler ignore them. Now you have a new problem. _You_ know how you're using them, but since they are just a new type of value (an `any-string!` type), someone may want to legitimately use them in a dialect. Maybe a C lang dialect.
+
+There are interesting questions here, and certainly problems to solve. e.g. the DTrace engineers figured out a way to "leave no trace" when it's turned off, but still activate when needed. We'd like to do the same for some features (yes, like instrumentation).
+
+What we have to ask is: is there another way to solve this problem? And the answer is Yes in this case.
+
+1) You can put a value in the middle of your Red code and it will be happily "ignored" if it falls outside any other expression. That is, it just evaluates to itself. Another benefit of blocks not being automatically evaluated.
+
+2) Reformat your code so you can use inline (single line) comments. Red is freeform, so this does not affect anything but human readers. This approach may even help, because authors sometimes write long expressions that is clear in _their_ wetware, but readers may benefit from things being in smaller chunks.
+
+3) A context this came up in what the desire to comment out parts of a VID layout. VID is a dialect, so plays by its own evaluation rules. If you don't want to use single line comments, you can make your own disappearing values with `compose`:
+```
+view compose [
+    text "Hello" (comment { bold }) gray
+    (comment { 
+    button "Btn1"
+    button "Btn2"
+    })
+    button "Btn3"
+]
+```
+
+4) Another approach, which applies everywhere, is to think of your pieces as data, and assembled them as such. This requires a different mindset, but can be quite powerful. Here's the same example done another way:
+```
+temp-btns: [
+    button "Btn1"
+    button "Btn2"
+]
+;tmp-btns: none  ; uncomment this to turn the temp buttons off
+view probe compose [
+    text "Hello" (comment { bold }) gray
+    (temp-btns)
+    button "Btn3"
+]
+```
+
+This feature points out, as do many others, that Red offers solutions other languages can't. 
