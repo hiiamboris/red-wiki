@@ -24,7 +24,7 @@ That said, some new features will be great, and we all want to improve Red. So d
 1. [Sandboxing](#sandboxing)
 1. [JS as a Back End Target](#js-as-a-back-end-target)
 1. [Sigils to denote destructive functions](#sigils-to-denote-destructive-functions)
-1. [Inline Comments](#inline-comments)
+1. [Block Comments](#block-comments)
 
 # Immutability
 
@@ -129,7 +129,7 @@ Side note, when it comes to how we address errors due to misuse of functions, @r
 *** Stack: f
 ```
 
-# Inline Comments
+# Block Comments
 
 Described [here](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Block_comments), block comments let you intersperse comments within expressions. As someone noted, it seems easy:
 
