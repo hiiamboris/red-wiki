@@ -1,3 +1,5 @@
+# Pointers
+
 ```red
 Red/System [
     Title:   "Pointers"
@@ -56,4 +58,158 @@ Pointer values are changed
 0.0 0 Bye bye crual world!
 And the structure too! 
 0.0 0 Bye bye crual world!
+```
+
+# Strings
+
+```red
+Red [
+    Title:   "Strings"
+    Author:  "ldci"
+]
+
+;--the way to share global Red words with Red/System code
+
+s: "Hello Red"                ;--string variable
+b: #{48656C6C6F20526564}    ;--same string as binary
+
+;--Red/System routines
+getString: routine [return: [string!]][
+    as red-string! #get 's
+]
+
+getBinary: routine [return: [binary!]][
+    as red-binary! #get 'b
+]
+
+;--Red code
+print ["Test String: " getString]
+append s " is amazing"
+print ["Test String: " getString]
+print ["Test Binary: " getBinary]
+```
+
+Results:
+
+```red
+Test String:  Hello Red
+Test String:  Hello Red is amazing
+Test Binary:  #{48656C6C6F20526564}
+```
+
+# Vectors (Arrays)
+
+```red
+Red [
+    Title:   "Arrays"
+    Author:  "ldci"
+]
+
+;-- Basic Red Code
+arr1: [1 2 3 4 5 6 7 8 9 10]
+arr2: [512.0 255.0 127.0 64.0 32.0 16.0 8.0 4.0 2.0 1.0]
+
+Print  "Red Array"
+n: length? arr1
+i: 1
+while [i <= n][
+    print [i ": " arr1/:i]
+    i: i + 1
+]
+
+;--Now with routines for integer array
+
+readIntegerArray: routine [ 
+        array [block!] 
+        /local 
+        i             [integer!] 
+        int [        red-integer!] 
+        value tail     [red-value!]
+][
+    print ["size: " block/rs-length? array lf]
+    value: block/rs-head array
+    tail: block/rs-tail array
+    print ["value: " value lf]
+    print ["Tail : " tail lf]
+    i: 1
+    while [value < tail][
+        int: as red-integer! value
+        print [i ": " int " " int/value lf]
+        value: value + 1
+        i: i + 1
+    ]
+]
+
+;--and float array
+
+readFArray: routine [
+    array [block!] 
+    /local 
+    i             [integer!] 
+    f             [red-float!] 
+    value tail     [red-value!]
+][
+    print ["size: " block/rs-length? array lf]
+    value: block/rs-head array
+    tail: block/rs-tail array
+    print ["value: " value lf]
+    print ["Tail : " tail lf]
+    i: 1
+    while [value < tail][
+        f: as red-float! value
+        print [i ": " f " "  f/value lf]
+        value: value + 1
+        i: i + 1
+    ]
+]
+print newline
+print ["Integer array"]
+readIntegerArray arr1
+print newline
+print ["Float array"]
+readFArray arr2
+```
+
+```red
+Red Array
+1 : 1
+2 : 2
+3 : 3
+4 : 4
+5 : 5
+6 : 6
+7 : 7
+8 : 8
+9 : 9
+10 : 10
+
+Integer array
+size: 10
+value: 023EFD20
+Tail : 023EFDC0
+1: 023EFD20 1
+2: 023EFD30 2
+3: 023EFD40 3
+4: 023EFD50 4
+5: 023EFD60 5
+6: 023EFD70 6
+7: 023EFD80 7
+8: 023EFD90 8
+9: 023EFDA0 9
+10: 023EFDB0 10
+
+Float array
+size: 10
+value: 023EFDD8
+Tail : 023EFE78
+1: 023EFDD8 512
+2: 023EFDE8 255
+3: 023EFDF8 127
+4: 023EFE08 64
+5: 023EFE18 32
+6: 023EFE28 16
+7: 023EFE38 8
+8: 023EFE48 4
+9: 023EFE58 2
+10: 023EFE68 1
 ```
