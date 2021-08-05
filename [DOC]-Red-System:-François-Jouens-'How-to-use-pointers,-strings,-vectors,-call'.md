@@ -275,7 +275,7 @@ Red Routine :  7
 Red Routine :  948
 ```
 
-# Access and Modify global Red variables
+# Red variables
 
 ```red
 Red [
