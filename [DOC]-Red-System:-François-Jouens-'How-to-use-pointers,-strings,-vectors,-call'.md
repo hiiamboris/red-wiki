@@ -170,6 +170,8 @@ print ["Float array"]
 readFArray arr2
 ```
 
+Results: 
+
 ```red
 Red Array
 1 : 1
@@ -258,7 +260,7 @@ print ["Red Routine : " alea]
 print ["Red Routine : " alea]
 ```
 
-Result:
+Results:
 
 ```red
 Red Version :  0.6.4
@@ -271,4 +273,71 @@ Red Function:  676
 Red Routine :  222
 Red Routine :  7
 Red Routine :  948
+```
+
+# Access and Modify global Red variables
+
+```red
+Red [
+    Title:   "Red variables"
+    Author:  "ldci"
+]
+
+;--3 Red programming rules: Readability, Reliability and Reusability.
+
+;--the way to access and modify global Red variables
+
+i: 100             ;--integer!
+f: 0.0             ;--float!
+s: "Hello Red"     ;--string!
+
+getInt: routine [/local int][
+    int: as red-integer! #get 'i
+    int/value: int/value + 100
+    int/value
+]
+
+getFloat: routine [/local fl][
+    fl: as red-float! #get 'f
+    fl/value: fl/value + pi
+    fl/value
+]
+
+;--Some Red scalars can use boxing to return a Red value
+getIntBoxing: routine [/local int][
+    int: as red-integer! #get 'i
+    integer/box int/value + 250
+]
+
+getFloatBoxing: routine [/local fl][
+    fl: as red-float! #get 'f
+    float/box fl/value + pi / 2.0
+]
+
+getString: routine [/local st ptr][
+    st: as red-string! #get 's
+    ptr: " and Red/System"                ;--just a c-string! considered as pointer
+    string/concatenate-literal st ptr    ;--append ptr values to string
+    as c-string! string/rs-head st        
+]
+
+print ["Red words values: " i f s]
+print ["Routines can modify Red words values"]
+print ["Test Integer:" getInt]
+print ["Test Boxing: " getIntBoxing]
+print ["Test Float:  " getFloat]
+print ["Test Boxing: " getFloatBoxing]
+print ["Test String: " getString]
+```
+
+Results:
+
+```red
+Red words values:  100 0.0 Hello Red
+Routines can modify Red words values
+Test Integer: 200
+Test Boxing:  350
+Test Float:   3.141592653589793
+Test Boxing:  1.570796326794897
+Test String:  Hello Red and Red/System
 ```
