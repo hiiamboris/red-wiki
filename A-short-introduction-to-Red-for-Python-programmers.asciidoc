@@ -42,7 +42,7 @@ At a semantic level, the Red program consist of expressions and not values. An e
 Functions in Red always have a fixed number of arguments (fixed arity), as opposed to Python, where one can have default arguments and variable-length arguments. Functions are called by their name followed by the arguments – no need of parentheses nor commas.
 
 ----
-print  “Hello, world!”
+print  "Hello, world!”
 add 2 3
 find "Red" #"e"
 ----
@@ -75,7 +75,7 @@ Evaluation order can be changed by the use of parentheses:
 (length? "abcd") / 2
 ----
 
-If we had written `length? "abcd" / 2`, it would have resulted in an error, because Red would first try to divide “abcd” by 2.
+If we had written `length? "abcd" / 2`, it would have resulted in an error, because Red would first try to divide "abcd” by 2.
 
 == https://github.com/red/docs/blob/master/en/datatypes.adoc[Datatypes]
 
@@ -103,15 +103,15 @@ Boolean values
 
 Unicode code points.
 
-`#"a", #"^C", #"^(esc)", #"^(41)"`
+`#"a", #"^C", #"^(esc)", #"^(41)", #"^(20AC)"`
 
 === string!
 
 Sequence of Unicode code points (char! values) wrapped in quotes.
 
-`“Red”`
+`"Red"`
 
-Unlike “Python”, strings in Red are mutable. 
+Unlike  Python, strings in Red are mutable. 
 For  example, compare this Python code
 ----
 >>> txt = "abcd"
@@ -146,6 +146,18 @@ Immediately evaluated block!. Evaluation can be suppressed by using `quote` befo
 `(1 2 3), (3 * 4), (x + 5)`
 
 Please note that if `x` doesn’t have a value in the current context, the last example will throw an error.
+
+
+---- 
+>> (1 + 10)
+== 11
+>> type? (1 + 10)
+== integer!
+>> quote (1 + 10)
+== (1 + 10)
+>> type? quote (1 + 10)
+== paren!
+---- 
 
 === path!
 
@@ -188,7 +200,7 @@ One can access the nested values in a block using as many levels of `/` as neede
 
 Associative array of key/value pairs (similar to Python's dictionary)
 
-`#( ), #(a: 1 b: “two”)`
+`#( ), #(a: 1 b: "two")`
 
 The keys can be any type of the following https://github.com/red/docs/blob/master/en/typesets.adoc[typesets]: 
 https://github.com/red/docs/blob/master/en/typesets.adoc#scalar[scalar!], https://github.com/red/docs/blob/master/en/typesets.adoc#all-word[all-word!], https://github.com/red/docs/blob/master/en/typesets.adoc#any-string[any-string!]
@@ -218,9 +230,11 @@ You can create a new object `xyz` using `xy` as a prototype and describe just th
 ]
 ----
 
+You can find more about Red’s aggregate values  https://github.com/red/red/wiki/%5BDOC%5D-Comparison-of-aggregate-values-(block!-vector!-object!-hash!-map!)[here]
+
 === function!
 
-user-defined functions. Functions have specification and body:
+user-defined functions. Functions have specification (a block that contains the arguments that the function needs for its workings and other optional information) and body (a block containing expressions):
 
 ----
 x+y: function [x y][x + y]
@@ -277,9 +291,15 @@ Three to twelve positive integers in the range from 0 to 255 separated by decima
 
 === bitset!
 
-A `bitset!` is an array of bits used to store boolean values.
+A `bitset!` is an array of bits used to store boolean values. Bitset indexing is zero based with 1 values representing true, and 0 values representing false.Bitsets are used to model sets of non-negative integers such as Unicode Code Points.
+
 
 `make bitset! #"A"` `make bitset! "abc"`
+
+---- 
+>> make bitset! #"A"   ; create a bitset with bit 65 set
+== make bitset! #{000000000000000040}
+---- 
 
 == Blocks and series
 
@@ -309,7 +329,7 @@ Blocks are created by enclosing values (separated by whitespaces) in square brac
 
 ----
 [1 2 3]
-[42 6 * 7 “forty-two” forty two]
+[42 6 * 7 "forty-two" forty two]
 ----
 
 Except literally, blocks can be created at runtime using a `make` constructor: 
@@ -1187,35 +1207,35 @@ You can see that only the first five words have been sorted and the remaining bl
 An interesting feature of `sort` is that it can treat the series as a set of fixed size records. Let’s illustrate this concept with the following example. Let’s assume we have the following `map` 
 
 ---- 
->> id-name-map: #(3 “John” 5 “Johan” 1 “Ivan” 2 “Jean” 4 “Giovanni” 6 “Juan”)
+>> id-name-map: #(3 "John" 5 "Johan" 1 "Ivan" 2 "Jean" 4 "Giovanni" 6 "Juan")
 == #(
-    3 “John”
-    5 “Johan”
-    1 “Ivan”
-    2 “Jean”
-    4 “Giovanni”
-    6 “Juan”
+    3 "John"
+    5 "Johan"
+    1 "Ivan"
+    2 "Jean"
+    4 "Giovanni"
+    6 "Juan"
 )
 >> id-name-map/3
-== “John”
+== "John"
 >> id-name-block: to block! id-name-map
 == [
-    3 “John” 
-    5 “Johan” 
-    1 “Ivan” 
-    2 “Jean” 
-    4 “Giovanni” 
-    6 “Juan...
+    3 "John"
+    5 "Johan"
+    1 "Ivan"
+    2 "Jean"
+    4 "Giovanni"
+    6 "Juan...
 >> id-name-block/3
 == 5
 >> sort/skip id-name-block 2
 == [
-    1 “Ivan” 
-    2 “Jean” 
-    3 “John” 
-    4 “Giovanni” 
-    5 “Johan” 
-    6 “Juan...
+    1 "Ivan"
+    2 "Jean"
+    3 "John"
+    4 "Giovanni"
+    5 "Johan"
+    6 "Juan...
 ---- 
 
 `id-name-map` is a `map` that associates an id to a name (note that it’s not guaranteed that the key-value pairs are in any specific order in a map; `sort` doesn’t work on maps). We convert the map to a block. The block `id-name-block` is flat and id – name pairs are preserved. We sort the block using the `/skip` refinement with value 2 – that is `sort` treates the block as a set of records with size 2 by their first firld. It sorts the `id` s and the names “associated” with them. 
@@ -1317,7 +1337,7 @@ Let’s take a look at some functions that works only in string series.
 == ["Break" "a" "string" "series" "into" "pieces" "using" "the" "provided" "delimiters"]
 ---- 
 
-`space` is a predefined value for the space character `#” “`. The result of `split` is a block of strings. Spliting on string values is straightforward:
+`space` is a predefined value for the space character `#" "`. The result of `split` is a block of strings. Spliting on string values is straightforward:
 
 ---- 
 >> split "Mississippi" "ss"
@@ -1600,7 +1620,7 @@ Weekend at last!
 >> now/weekday
 == 6
 ----
-`hooray!` is just a block consisting of a word! `print` and a string! “Weekend at last!”. Red just makes the `set-word!` `hooray!` to refer to the literal block that follows. At this point, `print` inside the block is just a word and doesn’t mean anything. 
+`hooray!` is just a block consisting of a word! `print` and a string! "Weekend at last!". Red just makes the `set-word!` `hooray!` to refer to the literal block that follows. At this point, `print` inside the block is just a word and doesn’t mean anything. 
 
 The conditional expression in our example is `now/weekday > 5`. `now` is a native function that returns a value of `date!`  datatype, set to the current date and time. `/weekday` is a `refinement!` to `now` that determines which day of the week is a given date, 1 for Monday. So we simply check if the weekday is greater then Friday and if it is, we want the block that we have given as a second argument evaluated. More often the then-block argument of `if` is a literal block, but don’t forget that if could have been declared and even changed before its use. Or it can be changed after its first use and used for another purposes.
 
@@ -2256,7 +2276,7 @@ Here we parse the string "Mississippi" with a block of rules as follows:
 * "Red" – a literal string
 * space 
 * ["f" | "l"] – a subrule that introduces two alternatives: "f" or "l".
-* “ang” – a literal string 
+* "ang" – a literal string 
 
 When parsing strings, instead of numerous "|", we can use charsets:
 
@@ -2322,7 +2342,7 @@ float: [
 == false
 ---- 
 
-For this exercise, I decided to treat the floating numbers having an unnecessary leading zero as invalid, is it’s seen in the last example. So, we start with an optional “-“ (` opt "-"`), then we check for either a single digit, followed by a dot (`digit ahead dot`) or digits that don’t start with a zero (`non-zero some digit`). The rest is trivial - `dot` followed by one or more digits.
+For this exercise, I decided to treat the floating numbers having an unnecessary leading zero as invalid, is it’s seen in the last example. So, we start with an optional "-" (` opt "-"`), then we check for either a single digit, followed by a dot (`digit ahead dot`) or digits that don’t start with a zero (`non-zero some digit`). The rest is trivial - `dot` followed by one or more digits.
 
 When we want to advance the position one step forward, we use `skip`.
 
@@ -2589,3 +2609,5 @@ You can check these links for more information and examples on `Draw`:
 
 * https://www.red-by-example.org/draw.html[Red by example - Draw]
 * http://helpin.red/Draw.html[Helpin’ Red - Draw]
+
+
