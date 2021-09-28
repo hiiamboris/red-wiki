@@ -26,6 +26,7 @@ Install with `ctrl+shift+P` (windows/linux) or `cmd+shift+P` (mac) and type "Ins
 ```
 
 this will compile the Red file that is on your screen and execute it
+
 ### [Howl](https://howl.io/)
 [rokf/howl-red](https://github.com/rokf/howl-red)
 
@@ -49,6 +50,9 @@ this will compile the Red file that is on your screen and execute it
 Download syntax coloring, auto-complete and cliptext files from this [page](https://editplus.com/others.html) by searching for "Red programming language" or directly from [here](https://editplus.com/dn.php?n=red.zip).
 
 Extract and copy all files to `%APPDATA%\Editplus` then open `Tools / Preferences / Settings & Syntax` add Red to file types, enter `red;reds` to file extension, select syntax (.stx) and auto-complete (.acp) files, configure colors then apply.
+
+### CudaText
+[loziniak/cudatext-red](https://github.com/loziniak/cudatext-red)
 
 ## Red Native
 
