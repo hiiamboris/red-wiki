@@ -34,3 +34,4 @@
 
 ### [Rededitor](http://helpin.red/Rededitor.html)
 
+### [Other integrations](https://github.com/red/red/wiki/%5BNOTES%5D-Editor-Integrations)
