@@ -53,8 +53,9 @@ Extract and copy all files to `%APPDATA%\Editplus` then open `Tools / Preference
 
 ### CudaText
 
-[CudaText wiki](https://wiki.freepascal.org/CudaText_plugins#LSP_server_for_Red)
-[loziniak/cudatext-red](https://github.com/loziniak/cudatext-red)
+[CudaText wiki](https://wiki.freepascal.org/CudaText_plugins#LSP_server_for_Red)\
+[loziniak/cudatext-red](https://github.com/loziniak/cudatext-red)\
+Lexer for highlighting can be found [here](https://github.com/Alexey-T/CudaText-lexers/tree/master/Red)
 
 ## Red Native
 
