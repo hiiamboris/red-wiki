@@ -52,6 +52,8 @@ Download syntax coloring, auto-complete and cliptext files from this [page](http
 Extract and copy all files to `%APPDATA%\Editplus` then open `Tools / Preferences / Settings & Syntax` add Red to file types, enter `red;reds` to file extension, select syntax (.stx) and auto-complete (.acp) files, configure colors then apply.
 
 ### CudaText
+
+[CudaText wiki](https://wiki.freepascal.org/CudaText_plugins#LSP_server_for_Red)
 [loziniak/cudatext-red](https://github.com/loziniak/cudatext-red)
 
 ## Red Native
