@@ -36,3 +36,12 @@ yum install -y gtk3.i686
 ```
 yum install -y gtk3
 ```
+
+### Void Linux
+
+#### 64-bit
+```
+xbps-install -y void-repo-multilib
+xbps-install -S
+xbps-install -y glibc-32bit libcurl-32bit gdk-pixbuf-32bit
+```
