@@ -61,3 +61,8 @@ For application developers:
 **`*`** The one processed by the interpreter (i.e. wrapped in `do` call), or, in case of Encap mode, everything;
 
 **`†`** Chosen for a good balance between compression ratio and (de)compression speed.
+
+
+# Other langs have this problem too.
+
+- https://go.dev/doc/faq#virus
