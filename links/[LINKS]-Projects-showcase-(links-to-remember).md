@@ -14,6 +14,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [January 27, 2020 12:18 PM](https://gitter.im/red/red/gui-branch?at=5e2eaaf63482927279373f37) @GalenIvanov [Looper puzzle](https://github.com/GalenIvanov/Games/blob/master/Looper.red) [(preview)](https://raw.githubusercontent.com/GalenIvanov/Games/master/Looper.jpg) [(video)](https://www.youtube.com/watch?v=emjGl_HVc70)
 - [April 03 2020 14:36](https://gitter.im/red/red/gui-branch?at=5e871fafcc4b7b6f6641ec00) @GalenIvanov [Tangram](https://github.com/GalenIvanov/Games/blob/master/Tangram.red) [(preview)](https://github.com/GalenIvanov/Games/blob/master/Tangram.png)
 - [May 05 2020 15:18](https://gitter.im/red/red/gui-branch?at=5eb159a25cd4fe50a3ee91f2) @GalenIvanov [Izzi puzzle](https://github.com/GalenIvanov/Games/blob/master/Izzi.red) [(preview)](https://github.com/GalenIvanov/Games/blob/master/Izzi%20-%20solving.png)
+- [November 29, 2021 11:29 PM](https://gitter.im/red/red/gui-branch?at=61a53828a9c8eb44c404f5ec) @Boum69 [Boum breaker](https://github.com/Boum69/Boum-Breaker) [(preview)](https://files.gitter.im/55b1d8290fc9f982beaacceb/u6vD/Boum-Breaker.gif)
 
 # Alternative Red implementations
 - [May 13, 2020 3:41 AM](https://gitter.im/red/red?at=5ebb422c7c04b92f535d21c6) @ALANVF [Red.js - A web runtime for Red](https://github.com/ALANVF/Red.js)
