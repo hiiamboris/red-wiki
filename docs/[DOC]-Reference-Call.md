@@ -328,3 +328,7 @@ http://www.rebol.com/article/0004.html
 https://stackoverflow.com/questions/41889113/rebol-3-reading-stdin-efficiently-line-by-line-to-make-awk-like-tool
 
 Note that any references to system/port, e.g., in the R3 SO notes, won't work, as we don't have ports and full I/O yet. Soon though.
+
+# Related Chats
+
+https://gitter.im/red/red?at=61b0ed16a9c8eb44c41d6810
