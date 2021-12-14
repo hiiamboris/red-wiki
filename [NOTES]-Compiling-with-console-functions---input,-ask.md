@@ -13,7 +13,7 @@ Examples:
 
 `red -r Darwin your-red-program.red`
 
-`red -r MSDOS your-red-program.red`
+`red -r -t MSDOS your-red-program.red`
 
 To make print work after compilation on Windows you need the latest build, and must compile with `red -t MSDOS your-red-program.red`
 
