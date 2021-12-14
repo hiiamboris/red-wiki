@@ -1,7 +1,10 @@
 To compile a script that uses the `input` or `ask` functions, you will need:
+* Download latest `red`
 
-* Red sources
-
+  * For Windows: https://static.red-lang.org/dl/auto/win/red-latest.exe
+  * For Linux: https://static.red-lang.org/dl/auto/linux/red-latest
+  * For macOS: https://static.red-lang.org/dl/auto/mac/red-latest
+  
 * Include the following line at the beginning of your script: 
 `#include %environment/console/CLI/input.red`
 
@@ -9,14 +12,14 @@ To compile a script that uses the `input` or `ask` functions, you will need:
 
 Examples:
 
-`red -r Linux your-red-program.red`
+For Linux:
+`red -r -t Linux your-red-program.red`
 
-`red -r Darwin your-red-program.red`
+For macOS:
+`red -r -t Darwin your-red-program.red`
 
+For Windows:
 `red -r -t MSDOS your-red-program.red`
-
-To make print work after compilation on Windows you need the latest build, and must compile with `red -r -t MSDOS your-red-program.red`
-
 
 ***
 
