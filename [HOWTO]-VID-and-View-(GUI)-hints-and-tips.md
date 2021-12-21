@@ -276,3 +276,32 @@ panel 2 [
 	text-list data ["c" "cc" "ccc"]
 ]
 ```
+
+# How to create a custom title bar for a window
+
+From @hiiamboris. `/flags 'no-title` is used to suppress the standard title bar, and `/tight` is used so faces fit right to the edge of the OS window, without any padding around them.
+
+```
+p: none
+view/flags/tight [
+    ; Main title bar area
+    base 300x20
+        on-up [p: none]
+        on-down [p: event/offset]
+        all-over on-over [
+            if p [
+                fp: face/parent fp/offset: fp/offset + event/offset - p
+            ]
+        ]
+        draw [
+            line-width 0 fill-pen linear magenta cyan box 0x0 300x20 text 1x1 "My custom title bar"
+        ]
+    ; Close box
+    base 20x20 cyan
+        draw [line 3x3 16x16 line 3x16 16x3]
+        on-down [unview] return
+    ; Client area
+    base white 320x300 "workspace"
+] 'no-title
+```
+
