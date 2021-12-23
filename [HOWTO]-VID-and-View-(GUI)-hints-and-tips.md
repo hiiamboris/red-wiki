@@ -305,3 +305,12 @@ view/flags/tight [
 ] 'no-title
 ```
 
+# Changing text list text color
+
+You can't make each item a different color, but you can set the color based on what's selected. Credit to @hiiamboris.
+
+```
+view [
+    t: text-list white black data ["red" "green" "blue"] on-change [t/font/color: do t/data/(t/selected)]
+]
+```
