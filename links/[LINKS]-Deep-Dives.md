@@ -3,7 +3,7 @@ External links appear in quotes.
 
 * [Guru Meditations](https://github.com/red/red/wiki/%5BDOC%5D-Guru-Meditations)
 
-* [to vs. make](https://github.com/red/red/wiki/%60to%60-vs-%60make%60)
+* [to vs. make](https://github.com/red/red/wiki/%5BDOC%5D-%60to%60-vs-%60make%60)
 
 * [Design Deliberations](https://github.com/red/red/wiki/%5BNOTES%5D-Design-Deliberations)
 
