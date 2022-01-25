@@ -58,6 +58,10 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 # Historical questions & explanations
 
+#### Why `none`, `false`, `true` are not keywords in Red?
+- [red/bugs January 25, 2022 8:44 PM](https://gitter.im/red/bugs?at=61f03716742c3d4b21b5c7c9), [begins here](https://gitter.im/red/bugs?at=61f032dbd41a5853f96ac5c4)
+- TL;DR: we may want these to be words for dialects, refinements, object fields and datatype uniformity of loaded external data
+
 #### Arguments on why paths evaluate picked items (so-called active accessors)
 - [red/red February 28, 2019 9:46 PM](https://gitter.im/red/red?at=5c782ca0c1cab53d6f53dd6d)
 
