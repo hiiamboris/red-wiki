@@ -314,3 +314,7 @@ view [
     t: text-list white black data ["red" "green" "blue"] on-change [t/font/color: do t/data/(t/selected)]
 ]
 ```
+
+# Base face can hold only base faces in its pane (sub-layout)
+
+GDI+ could hold other faces too, but had some problems also; D2D can hold only base faces.
