@@ -1,4 +1,4 @@
-In most langs, code is evaluated when compiled, or interpreted. And that code is fixed. If you want added flexibility, you have to build it yourself. For example, let's say you have a switch statement in your code:
+In most languages, code is evaluated when compiled, or interpreted. And that code is fixed. If you want added flexibility, you have to build it yourself. For example, let's say you have a switch statement in your code:
 
 ```
 while [not empty? str: ask "What say you? "][
