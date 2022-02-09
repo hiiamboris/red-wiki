@@ -97,7 +97,6 @@ output:
         language [text! "Czech" attr! [type "root"]] ; tag with text and attributes
         markup []                                    ; empty tag
         text! "Ending^/"                             ; textual data, see above
-        ]
     ]
 ]
 ```
