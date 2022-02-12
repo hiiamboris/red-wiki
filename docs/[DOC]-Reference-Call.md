@@ -320,7 +320,7 @@ Some commands will return ansi chars. **Call** detect this case and chars greate
 The **dir** command returns wide-char not translated, the **tree** or **ping** command returns ansi chars translated.
 
 ## 32/64 bit issues
-Since red is working in 32 bit environment, some calls need to be done differently.  Particularly files in `\Windows\System32` are not what you expect.  With file explorer you might find `c:\Windows\System32\OpenSSH\ssh.exe`. But that is a 64bit program and not visible for `red`, in fact the whole OpenSSH directory is missing.  The reason is that with a 32 bit progam you are not looking into `c:\Windows\System32` but redirected to `c:Windows\SysWoW64` and in that directory 'OpenSSH' does not exist. (Naming conventions are really  confusing. One would expect System32 to be special for 32 bit programs!).
+Since red is working in 32 bit environment, some calls need to be done differently.  Particularly files in `\Windows\System32` are not what you expect.  With file explorer you might find `c:\Windows\System32\OpenSSH\ssh.exe`. But that is a 64bit program and not visible for `red`, in fact the whole OpenSSH directory is missing.  The reason is that with a 32 bit progam you are not looking into `c:\Windows\System32` but redirected to `c:Windows\SysWoW64` and in that directory `OpenSSH` does not exist. (Naming conventions are really  confusing. One would expect System32 to be special for 32 bit programs!).
 
 You can see what red sees by running the 32 bit cmd from `C:\Windows\SysWoW64\`.
 
