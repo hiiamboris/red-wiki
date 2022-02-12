@@ -324,6 +324,12 @@ Since red is working in 32 bit environment, some calls need to be done different
 
 You can see what red sees by running the 32 bit cmd from `C:\Windows\SysWoW64\`.
 
+Sample calls:
+```
+call/output "c:\windows\sysnative\cmd.exe /c dir c:\Windows\System32" o2: ""   print o2
+
+<Add more as you see fit>
+```
 
 However, there is a solution to run the 64bit programs under `c:\Windows\System32` because the 64 bit version is mapped to `c:\Windows\sysnative\`. One reason that directory is hard to find is that it is not visible, you have to spell out the directory `sysnative`, tab completion does not help you.
 
