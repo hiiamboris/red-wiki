@@ -319,6 +319,16 @@ In that case ping.exe writes out Ansi.  Then when ping.exe exits and releases co
 Some commands will return ansi chars. **Call** detect this case and chars greater than #"^(7F)" are translated to space char.
 The **dir** command returns wide-char not translated, the **tree** or **ping** command returns ansi chars translated.
 
+## 32/64 bit issues
+Since red is working in 32 bit environment, some calls need to be done differently.  Particularly files in `\Windows\System32` are not what you expect.  With file explorer you might find `c:\Windows\System32\OpenSSH\ssh.exe`. But that is a 64bit program and not visible for `red`, in fact the whole OpenSSH directory is missing.  The reason is that with a 32 bit progam you are not looking into `c:\Windows\System32` but redirected to `c:Windows\SysWoW64` and in that directory 'OpenSSH' does not exist. (Naming conventions are really  confusing. One would expect System32 to be special for 32 bit programs!).
+
+You can see what red sees by running the 32 bit cmd from `C:\Windows\SysWoW64\`.
+
+
+However, there is a solution to run the 64bit programs under `c:\Windows\System32` because the 64 bit version is mapped to `c:\Windows\sysnative\`. One reason that directory is hard to find is that it is not visible, you have to spell out the directory `sysnative`, tab completion does not help you.
+
+So instead of calling `c:\Windows\System32\OpenSSH\ssh.exe` call `c:\Windows\sysnative\OpenSSH\ssh.exe`  and it should work.
+
 # Call
 
 Use `help call` to see all the options. For more detailed notes, here are some old Rebol docs. Red aims to be highly compatible, but also tries to improve things.
