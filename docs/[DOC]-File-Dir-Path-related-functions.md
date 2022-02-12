@@ -37,6 +37,7 @@ Note that `file!` values in Red are file *names*, not file *contents*. Access to
 | `to-red-file`     | Converts a local system file path to a Red file path.| 
 | `what-dir`        | Return current dir, as a Red file path. Normalized to have a trailing slash.| 
 | `glob`            | [Recursively list files/directories matching patterns (currently unofficial).](https://gist.github.com/hiiamboris/605a4ab6831a247ac987789f4d578ef1)| 
+| `query`           | Returns the file creation date |
 
 # Call
 [Full reference here](https://github.com/red/red/wiki/Reference-Call)
