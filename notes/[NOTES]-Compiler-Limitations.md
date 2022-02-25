@@ -31,6 +31,9 @@ When compiled and executed this code, it doesn't print anything. Use `-e` (encap
 
 https://github.com/red/red/issues/4815
 
+# Self
+
+https://github.com/red/red/issues/5018
 
 # Function assignment chaining
 
