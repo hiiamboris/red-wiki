@@ -1,4 +1,4 @@
-We use `port/extra` to set the TLS port for now. Need to find a better way to do it. The supported settings are as follows:
+We use `port/extra` to configure the TLS port for now. Need to find a better way to do it. The supported settings are as follows:
 
 |         key         | datatype | description                                        |
 |:-------------------:|:--------:|----------------------------------------------------|
