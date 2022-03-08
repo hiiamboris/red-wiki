@@ -56,11 +56,11 @@ For network ports and file port, `make`, `open`, `close` and `query` are synchro
 ## Port Events
 The events supported by the port depends on the type of the port.
 
-| Scheme\Event      | read | wrote | connect | accept | close | EOF |
+| Scheme\Event      | read | wrote | connect | accept | close | error |
 |:-----------------:|------|-------|---------|--------|-------|-----|
-| TCP               | yes  | yes   | yes     | yes    | yes   | no  |
-| TLS               | yes  | yes   | yes     | yes    | yes   | no  |
-| UDP               | yes  | yes   | no      | no     | yes   | no  |
+| TCP               | yes  | yes   | yes     | yes    | yes   | yes  |
+| TLS               | yes  | yes   | yes     | yes    | yes   | yes  |
+| UDP               | yes  | yes   | no      | no     | yes   | yes  |
 | FILE              | yes  | yes   | yes     | no     | yes   | yes |
 
 ## Using Ports
