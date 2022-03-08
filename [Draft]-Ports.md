@@ -64,7 +64,7 @@ The events supported by the port depends on the type of the port.
 | FILE              | yes  | yes   | yes     | no     | yes   | yes |
 
 ## Using Ports
-an AWAKE handler function must be provided to process the callback events. Each time you perform an asynchronous action, you'll get a callback event once it's finished. 
+An AWAKE handler function must be provided to process the callback events. Each time you perform an asynchronous action, you'll get a callback event once it's finished. 
 
 Here is an example of a server and a client that send a small message back and forth. Both the sides use asynchronous I/O.
 
@@ -132,7 +132,7 @@ client/awake: func [event /local port] [
 wait client
 ```
 
-**Note** that we only support single `insert` and `copy` for now, the following code may not work properly.
+**Note** that we only support single `insert` and `copy` for now. That means you should not perform the same action before the previous one finished. The following code may not work properly.
 ```
 client/awake: func [event /local port] [
     port: event/port
