@@ -66,7 +66,7 @@ The events supported by the port depends on the type of the port.
 ## Using Ports
 An AWAKE handler function must be provided to process the callback events. Each time you perform an asynchronous action, you'll get a callback event once it's finished. 
 
-Here is an example of a server and a client that send a small message back and forth. Both the sides use asynchronous I/O.
+Here is an example of a server and a client that send a small message back and forth. Both the sides use asynchronous I/O. A TLS version is [here](https://github.com/red/red/wiki/%5BDraft%5D-TLS-port). 
 
 ### Pong Server
 Here is the TCP server. It accepts connections and waits for a ping packet. Then, it responds with a pong packet.
