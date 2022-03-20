@@ -21,7 +21,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 
 # Developer tools
 - [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
-- [March 20, 2022 6:58 AM](https://gitter.im/red/red/gui-branch?at=6236a662f43b6d783f0d40ca) @mikeyaunish [Direct Code (GUI builder)](https://github.com/mikeyaunish/direct-code) [(video)](https://www.youtube.com/watch?v=hd1QUSH04iw)
+- [March 20, 2022 6:58 AM](https://gitter.im/red/red/gui-branch?at=6236a662f43b6d783f0d40ca) @mikeyaunish [Direct Code (GUI builder)](https://github.com/mikeyaunish/direct-code) [(preview)](https://user-content.gitter-static.net/0823b0c8c6e946daf695320e4dcd61df40f4a6df/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f32393331363532352f3135393134373231312d66353865383238322d353863382d343030332d393464302d3663303566313139373739362e676966) [(video)](https://www.youtube.com/watch?v=hd1QUSH04iw)
 
 # Libraries
 - @rebolek [Parsers and HTTP tools](https://github.com/rebolek/red-tools)
