@@ -318,3 +318,11 @@ view [
 # Base face can hold only base faces in its pane (sub-layout)
 
 GDI+ could hold other faces too, but had some problems also; D2D can hold only base faces.
+
+# When to use `options`, `extra` and `with`
+
+Let's say you create a template for a new style and want to add a `config` to set  it up. Where to put it? You have at least three options: create a new facet in template, put your config in `options` facet, or put it in `extra` facet. 
+
+Advice from @hiiamboris: If `config` is a facet that lives with the widget, `with` is the most direct way to work with it, and it will be easier to access if one wants. If it's just data that gets read and discarded then `options` wins because it doesn't require you to allocate a facet for it. Or if you think this data is not going to be accessed by anyone, thus you kind of hide it.
+
+`extra` is perhaps best to keep free and available for users to deploy.
