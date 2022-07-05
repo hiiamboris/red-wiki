@@ -6,8 +6,8 @@
 
 |type |expression|to-string|form|mold|mold/all
 |*unset!*|*( )*|_error_|_empty string_|unset|unset
-|*none!*|*#[none]*|_error_|none|none|none
-|*logic!*|*#[true]*|true|true|true|true
+|*none!*|*#[none]*|_error_|none|none|#[none]
+|*logic!*|*#[true]*|true|true|true|#[true]
 |*char!*|*#"a"*|a|a|#"a"|#"a"
 |*integer!*|*123*|123|123|123|123
 |*float!*|*123.456*|123.456|123.456|123.456|123.456
