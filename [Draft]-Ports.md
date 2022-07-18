@@ -148,20 +148,38 @@ client/awake: func [event /local port] [
 ```
 
 ## Waiting on a Port
-A program synchronize with the port by using the WAIT function. When a port is opened, it will be tracked internally. So you can open many ports and wait on them, no need to pass them to WAIT function.
+A program synchronize with the port by using the WAIT function. 
+
+* You can wait on a single port or a block of ports. `WAIT` will return either after **all the ports were closed** or timeout.
 
 ```
 port1: open tls://www.red-lang.org
 port1/awake: :my-tls-awake-handler
 port2: open file:///E/movies/movie1.avi
 port2/awake: :my-file-awake-handler
-wait 10   ;-- timeout in 10 seconds if no event received
+
+;; timeout in 10 seconds if no event received
+wait reduce [10 port1 port2]
+
+;; Or you can wait infinite time
+;; wait reduce [port1 port2]
 ```
-For a server which need to wait infinite time, wait on the port directly or pass `-1` as timeout.
+Wait on a server port.
 ```
 server: open tcp://:8123
 server/awake: :my-server-awake-handler
-wait server   ;-- or wait -1
+wait server
+```
+
+* Passing an integer to `WAIT`, `WAIT` will return either after **received an event** or timeout.
+```
+port: open tcp://online-data.com
+copy port
+
+forever [
+   wait 10
+   if port/data [break]
+]
 ```
 
 When using ports in view, we don't have to use `wait` explicitly. The event loop in view will also handle I/O events.
