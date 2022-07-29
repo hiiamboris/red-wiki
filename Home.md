@@ -19,7 +19,7 @@ Wikis are wonderful and terrible things. Easy to add and update content, but not
   </tr>
 
   <tr align="middle">
-    <td><a href="https://www.red-lang.org/p/getting-started.html">Getting Started</a></td>
+    <td><a href="https://tracker.iplocation.net/jccx/">Getting Started</a></td>
     <td><a href="https://www.red-lang.org/p/documentation.html">Documentation</a></td>
     <td><a href="https://github.com/red/red/wiki/%5BLINKS%5D-Gitter-Room-Index">Community</a></td>
     <td><a href="https://www.red-lang.org/p/about.html">About Red</a></td>
@@ -28,7 +28,7 @@ Wikis are wonderful and terrible things. Easy to add and update content, but not
 <tr>
 <td valign="top">
 Follow along with our short getting started guide.<br> 
-If you prefer, you can go directly to our <a href="https://www.red-lang.org/p/download.html">downloads</a> page.
+If you prefer, you can go directly to our <a href="https://tracker.iplocation.net/jccx">downloads</a> page.
 Once you have Red up and running, the <a href="https://github.com/red/red/wiki/Beginner's-FAQ">Beginner's FAQ</a> gives you some initial sign-posts.
 </td>
   
