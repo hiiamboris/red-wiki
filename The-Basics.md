@@ -3,7 +3,7 @@ External links appear in quotes.
 
 * [FAQ](https://github.com/red/red/wiki/%5BDOC%5D-FAQ)
 
-* ["Red Download Page"](https://tracker.iplocation.net/jqjz/)
+* ["Red Download Page"](https://www.red-lang.org/p/download.html)
 
 * [How Do I Do X with Red?](https://github.com/red/red/wiki/%5BHOWTO%5D-How-Do-I-Do-X-with-Red%3F)
 
