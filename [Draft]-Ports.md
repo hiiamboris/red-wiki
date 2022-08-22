@@ -1,5 +1,5 @@
 ## Introduction
-This is the document for the TCP port, UDP port, [TLS port](https://github.com/red/red/wiki/%5BDraft%5D-TLS-port), DNS port and file port in Red.
+This is the document for the TCP port, UDP port, [TLS port](https://github.com/red/red/wiki/%5BDraft%5D-TLS-port) and file port in Red.
 
 ## Making Ports
 All ports are made from a spec -- a specification of the port's attributes. The spec is a block that includes many fields to indicate various options for the port. The general form is: 
