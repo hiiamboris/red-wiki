@@ -1,11 +1,8 @@
-Non-offical labeled links are all non-offical & external.
-
-***
-
 ## Red
 
 ### Tutorials and Guides
 
+* Offical: [Parse Cookbook](https://github.com/red/red/wiki/Parse-Cookbook)
 * Offical: [GUI Overview](https://doc.red-lang.org/en/gui.html)
 * [Getting started with Red](http://redprogramming.com/Getting%20Started.html)
 * [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/)
