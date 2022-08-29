@@ -8,7 +8,7 @@
 * [Learn Red in Y minutes](https://learnxinyminutes.com/docs/red/)
 * [Red for Hopeless Programmers - Part 1](https://dev.to/lepinekong/red-for-hopeless-programmers---part-i-3g0)
 * [Red for Hopeless Programmers - Part 2](https://dev.to/lepinekong/red-for-hopeless-programmers---part-ii-258)
-* [Red For Hopeless Programmers - Part 3](https://dev.to/lepinekong/red-for-hopeless-programmers-iii-31a2)
+* [Red for Hopeless Programmers - Part 3](https://dev.to/lepinekong/red-for-hopeless-programmers-iii-31a2)
 
 ### Blog and Websites
 
