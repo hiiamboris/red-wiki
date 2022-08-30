@@ -179,6 +179,7 @@ This returns `0` in R2 and `1` in Red.
 ## `to-integer`
 
 `to-integer ""` returns error in Red and R3, but `0` in R2.
+
 See also: FIX: issue [#5147](https://github.com/red/red/issues/5147) (Question on the behavior of parsing integers).
 
 ## `load`
