@@ -93,7 +93,25 @@ So `append "hello "` appends directly to the `"hello "` string which happened to
 
 ### How to remedy?
 
-**Use a copy!** I now know that I'm modifying the `"hello "` string, so I should make a copy before modifying it:
+**Use a copy!** 
+
+Each series you see is actually a pointer to some memory location where it's data is held. When I write:
+```
+>> other: data
+```
+I don't copy the data, I just create another word (`other`) pointing to the same data:
+```
+>> same? other data
+== true
+```
+So everywhere in my code where I have a link to that `data`, I will be modifying the same thing in memory. 
+`copy` can help by copying the data and returning a link to it's copy:
+```
+>> other: copy data
+>> same? other data
+== false
+```
+Now that I now know how `copy` works, and I know I'm modifying the `"hello "` string above, I can make a string's copy so I would not modify the original:
 ```
 >> f: func [][print append copy "hello " "world"]
 == func [][print append copy "hello " "world"]
