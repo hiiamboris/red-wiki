@@ -58,6 +58,10 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 # Historical questions & explanations
 
+#### Why do we have to copy literal series manually?
+- [some arguments](https://gitter.im/red/red?at=6317441a6837563d1cbeb44c), [begins here](https://gitter.im/red/red?at=6317294e99949962934fba9b)
+- TL;DR: simpler to play in console, less automatic copy/deeps required for loaded code, but mostly just a historical choice
+
 #### Why `none`, `false`, `true` are not keywords in Red?
 - [red/bugs January 25, 2022 8:44 PM](https://gitter.im/red/bugs?at=61f03716742c3d4b21b5c7c9), [begins here](https://gitter.im/red/bugs?at=61f032dbd41a5853f96ac5c4)
 - TL;DR: we may want these to be words for dialects, refinements, object fields and datatype uniformity of loaded external data
