@@ -111,7 +111,7 @@ So everywhere in my code where I have a link to that `data`, I will be modifying
 >> same? other data
 == false
 ```
-Now that I now know how `copy` works, and I know I'm modifying the `"hello "` string above, I can make a string's copy so I would not modify the original:
+Now that I know how `copy` works, and I know I'm modifying the `"hello "` string above, I can make a string's copy so I would not modify the original:
 ```
 >> f: func [][print append copy "hello " "world"]
 == func [][print append copy "hello " "world"]
