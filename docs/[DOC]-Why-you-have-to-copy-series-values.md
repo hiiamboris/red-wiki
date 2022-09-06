@@ -1,3 +1,115 @@
+# Explanation for totally hopeless dummies
+
+I write a niiiice function:
+```
+>> f: func [] [print append "hello " "world"]
+```
+It works!:
+```
+>> f
+hello world
+```
+Or does it?
+```
+>> f
+hello worldworld
+>> f
+hello worldworldworld
+>> f
+hello worldworldworldworld
+```
+What the hell???!!?!
+```
+>> source f
+f: func [][print append "hello worldworldworldworld" "world"]
+```
+That's not the function I wrote!! I'm being hacked!! :(
+
+### So what's the problem?
+
+Now watch the process as it happens. The very fundamentals explained step by step.
+
+```
+>> f: func [] [print append "hello " "world"]
+```
+That above is **not a function** yet. Until I press `<Enter>` in console, it's just a *string!* of 42 chars (hmm what a number).
+
+When I press `<Enter>`, console internally `load`s the string: this is when chars become Red data. Let's imitate that:
+```
+>> load {f: func [] [print append "hello " "world"]}
+== [f: func [] [print append "hello " "world"]]
+```
+So from `load` I got a *block!* `[f: func [] [print append "hello " "world"]]`.
+
+But hold your horses! In this block there is no function yet:
+```
+>> foreach value load {f: func [] [print append "hello " "world"]} [?? value]
+value: f:
+value: func
+value: []
+value: [print append "hello " "world"]
+```
+Pfft. This is **just data**. 4 values. Nothing interesting, except that some of these values are *series!*. Series include blocks and strings, so there are 4 series in the loaded block `[f: func [] [print append "hello " "world"]]`:
+- `[]`
+- `[print append "hello " "world"]`
+- `"hello "`
+- `"world"`
+
+**4 series** loaded! Remember that!
+
+Now, the magical moment when we start thinking of our data as code happens when we pass our data to the `do` function. **All code is data before it's evaluated!** And `do` does the evaluation.
+
+Next step console peforms on loaded string is evaluates it with `do`. Let's try that manually:
+```
+>> data: [f: func [] [print append "hello " "world"]]
+>> do data
+== func [][print append "hello " "world"]
+```
+Note: what `==` returns is a single value. Which is now assigned to `f`:
+```
+>> :f
+== func [][print append "hello " "world"]
+>> type? :f
+== function!
+```
+Now I have a single *function!* instead of the 4 values. How so?
+
+`func` is a function constructor that took 2 blocks (`[]` and `[print append "hello " "world"]`) as arguments and created a *function!*. But as you can see from `:f` output, `f` still has all those 4 loaded series!
+
+And the key is... **`func` did not copy any of that!** OK, almost. It did actually copy the body, but not deeply, so strings remained the same:
+```
+>> last data
+== [print append "hello " "world"]
+>> last last data
+== "world"
+>> body-of :f
+== [print append "hello " "world"]
+>> last body-of :f
+== "world"
+>> same? (last last data) (last body-of :f)
+== true
+```
+So `append "hello "` appends directly to the `"hello "` string which happened to slip into the function's body block. Modifies it in place **every time function is called**.
+
+### How to remedy?
+
+**Use a copy!** I now know that I'm modifying the `"hello "` string, so I should make a copy before modifying it:
+```
+>> f: func [][print append copy "hello " "world"]
+== func [][print append copy "hello " "world"]
+>> f
+hello world
+>> f
+hello world
+>> f
+hello world
+```
+It works! Woohoo!! Now I'm a Red ace, envy you greenies ;)
+
+For a deeper explanation go ahead and read below. A lot of super useful info there if you're ready to grok it!
+
+# A designer's view
+
 Red's designer (Nenad Rakocevic) here. Let me try to shed some light on this fundamental topic.
 
 Red & Rebol are data formats first, before being programming languages. This has many implications and is overlooked by most newcomers. Rebol documentation did not stress this fact enough. Red will try to do a better job at that.
