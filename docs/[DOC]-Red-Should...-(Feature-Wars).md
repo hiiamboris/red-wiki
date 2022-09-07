@@ -28,6 +28,33 @@ That said, some new features will be great, and we all want to improve Red. So d
 
 # Immutability
 
+We can argue the technical merits of mutability, but let's start with questions. Those are often easier and save time on work that turns out not to be worth pursuing.
+
+1) Is mutability *proven* to be an improvement for *every* language? No. Here we can say that almost *nothing* is proven in the realm of programming language design, even with the few studies that have been done. Given that it's not proven for every language...
+
+2) Is it a better fit for some languages, given their overall designs (one element of which may be that data is mutable by default)? Sure, but likely because it fits *with* the overall language design and goals. Like static typing, there are costs and benefits.
+
+3) How many people complain about it? Mostly new people or those experienced with the language? Trick question? You get used to things, but sometimes a feature aggravates experienced users even more. Do the same percentage of people using immutable languages complain that they want to relax things sometimes, or improve performance? Do users leave the language over it, once they get used to it?
+
+4) Is what Redbol langs do now simple to implement and easy to reason about, even if you have to learn the rules? That is: series are mutable and you need to use `copy`. What else is there to learn?
+
+5) Is it a likely improvement, a lateral move, or will it make things worse? All opinion and conjecture, right?
+
+6) If we want to build immutablity-oriented dialects in Red, can we? How hard is that? Just wrap things and `copy` internally, yes? We can even make funcs that have custom specs to copy their mutable args if so denoted. It's also something an analyzer can check and tooling can help with. If we are immutable at the core, how hard is it to go the other way, either at the mezz level or using some unlock/copy-on-write internals? I'll wait while you figure it out. Where is our time best spent?
+
+7) Immutability is the poster child for functional programming (FP). Has FP won? Is it widespread? No, I don't mean trendy with the cool kids. I mean, how much software in the world runs on it, as a percentage? How many people understand it well and use it effectively? OH! You got me! Spreadsheets. Doesn't count here. Important in the grand scheme, at the application and conceptual level, but a constrained paradigm suited for...a dialect. Still, they're data too, and I think people think that seeing a cell change means the cell changed. That said, immutability *is* a good fit for pure FP because of the fundamental design goals.
+
+8) Is it a good fit for Red? My (Gregg's) gut says no, but I have a lot of history and bias. That still counts, as does others' experience. Do those who use Redbol langs develop software effectively? Do we know what *kinds* of systems it's better suited to? Is it likely that some architectures play well with mutability and we can suggest those to people? Yup, a large team working on a monolith wants more guarantees and less trust. A modular system where pieces are potentially ad hoc and done quickly...that's what dynamic, high level languages are for right? To get out of your way.
+
+N) The key question is: WHY WOULD WE DO THIS? A leading reason is `avoid "why do I have to `copy`" kind of problems?`, but there is no free lunch. You can't ask that question in isolation. Problem X goes away. Problems Y and Z surface to take its place. Language design is like breeding animals. You want puppies but you get hydrae.
+
+N+1) Is mutability *better* than immutability? Of course not. It's just different. Context is everything.
+
+N+2) Have I (Gregg) personally been bitten by mutability? If it were a snake, I'd be long dead; but it's not. I've been nipped a lot, and bitten hard a few times. My bias right now is that I'd rather do that than suffer the death by a thousand cuts every time it *wouldn't* have hurt me but I still had to suffer. But it's the Devil I know. For me, mutability fits with Red's overall design as a data oriented language.
+
+Ultimately, new people will always trip over syntax and semantics, as will experienced authors. Our goal, as I see it, is to find the balance between ease of use for neophytes and limitless power for experts. I think immutability by default will add pain for both in the long term.
+
+
 # Lexical Scoping
 
 # Variables
