@@ -58,28 +58,28 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 
 # Historical questions & explanations
 
-#### Why do we have to copy literal series manually?
+#### Core: Why do we have to copy literal series manually?
 - [some arguments](https://gitter.im/red/red?at=6317441a6837563d1cbeb44c), [begins here](https://gitter.im/red/red?at=6317294e99949962934fba9b)
 - TL;DR: simpler to play in console, less automatic copy/deeps required for loaded code, but mostly just a historical choice
 
-#### Why `none`, `false`, `true` are not keywords in Red?
+#### Core: Why `none`, `false`, `true` are not keywords in Red?
 - [red/bugs January 25, 2022 8:44 PM](https://gitter.im/red/bugs?at=61f03716742c3d4b21b5c7c9), [begins here](https://gitter.im/red/bugs?at=61f032dbd41a5853f96ac5c4)
 - TL;DR: we may want these to be words for dialects, refinements, object fields and datatype uniformity of loaded external data
 
-#### Arguments on why paths evaluate picked items (so-called active accessors)
+#### Core: Arguments on why paths evaluate picked items (so-called active accessors)
 - [red/red February 28, 2019 9:46 PM](https://gitter.im/red/red?at=5c782ca0c1cab53d6f53dd6d)
 
-#### Why `x` throws an error if `x` is unset (and more on rationale behind `unset` invention)
+#### Core: Why `x` throws an error if `x` is unset (and more on rationale behind `unset` invention)
 - [April 24, 2021 2:52 PM](https://gitter.im/red/help?at=60840673b6a4714a29e4227d) (starts at [April 23, 2021 12:22 AM](https://gitter.im/red/help?at=6081e904b6a4714a29df402b) )
 - [an old R3 discussion on whether unset is truthy/falsey/error](http://www.rebol.net/cgi-bin/r3blog.r?view=0207)
 
-#### Why loops do not make their words local to loop body, but rely on `function` to do that?
+#### Core: Why loops do not make their words local to loop body, but rely on `function` to do that?
 - https://github.com/red/red/issues/972#issuecomment-851476989
 
 #### Command line argument parsing rules
 - [PR #3870 and references from there](https://github.com/red/red/pull/3870)
 
-#### Why word and a single-word path are different (despite the visual similarity)
+#### Core: Why word and a single-word path are different (despite the visual similarity)
 - [reddit - on words vs paths confusion](https://www.reddit.com/r/redlang/comments/86kdwr/on_words_vs_paths_confusion/)
 
 #### Core: :get-word function argument evaluation semantics: R2- or R3-like? (final?)
