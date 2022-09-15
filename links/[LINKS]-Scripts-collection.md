@@ -968,6 +968,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [resize-image.red](https://gist.github.com/luce80/e34516e5248b629badfd4016dda6cbb8) - Draw Image Resizing Test with reaction
 
 		tags: 
+	* [scroller-test-resize.red](https://gist.github.com/luce80/55bfd71f68716d6e996effa9b99f4a1e) - Resizing scroller example
+
+		tags: resize scroller
 ## M
 * m4l1c3 - 
 	* [red-fuzz](https://github.com/m4l1c3/red-fuzz) - A simple fuzzer written in red
