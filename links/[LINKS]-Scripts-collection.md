@@ -965,6 +965,9 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [mold-red.red](https://gist.github.com/luce80/bfa8b54ca8c7e726723072786cad56fa) - Mold the System object
 
 		tags: debug
+	* [Red-vid-styles.red](https://gist.github.com/luce80/433286c66d98997aff6e69fbd6323a35) - Some useful Red View/VID styles
+
+		tags: VID , numeric field
 	* [resize-image.red](https://gist.github.com/luce80/e34516e5248b629badfd4016dda6cbb8) - Draw Image Resizing Test with reaction
 
 		tags: 
