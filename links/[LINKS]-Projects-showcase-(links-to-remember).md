@@ -28,7 +28,7 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [January 1, 2020](https://www.red-lang.org/2020/01/happy-new-year.html#more) @hiiamboris [Command line interface support](https://gitlab.com/hiiamboris/red-cli)
 - [March 28, 2020 10:56 PM](https://gitter.im/red/red/gui-branch?at=5e7fabfa59057617f04a56a7) @hiiamboris [Automatic window resize handling](https://gitlab.com/hiiamboris/red-elastic-ui)
 - [May 2, 2020 7:31 PM](https://gitter.im/red/red?at=5eada04797338850a2e28d2d) @hiiamboris [A collection of mezzanines and macros](https://gitlab.com/hiiamboris/red-mezz-warehouse)
-- [May 14, 2021 4:21 PM](https://gitter.im/red/red?at=609e79745ca66330b0419ebc) @hiiamboris [Draw-based widgets \('spaces'\)](https://gitlab.com/hiiamboris/red-spaces)
+- [May 14, 2021 4:21 PM](https://gitter.im/red/red?at=609e79745ca66330b0419ebc) @hiiamboris [Draw-based widgets \(Spaces\)](https://codeberg.org/hiiamboris/red-spaces)
 
 # VID examples & experiments
 - [January 31, 2018 3:41 PM](https://gitter.im/red/red/gui-branch?at=5a71c79f475054191749c292) @toomasv [Matrix demo](https://gist.github.com/toomasv/e77df7ac18beee352f343b0729fb0a7a)
