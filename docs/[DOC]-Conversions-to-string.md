@@ -37,4 +37,4 @@ For types in `any-function!`, only the function type is given by `to-string` and
 * `form :if` => `"?native?"`, similar for `action!`, `op!`, `function!` and `routine!`
 
 ### Complete table
-This is found [here](https://github.com/red/red/wiki/Table-for-to-string-etc.) 
+This is found [here](https://github.com/red/red/wiki/%5BDOC%5D-Table-for-to-string-etc.) 
