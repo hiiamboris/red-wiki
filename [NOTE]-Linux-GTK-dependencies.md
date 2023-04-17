@@ -44,6 +44,13 @@ xbps-install -S
 xbps-install -y glibc-32bit libcurl-32bit gdk-pixbuf-32bit
 ```
 
+### ArchLinux
+
+#### 64-bit
+```
+sudo pacman -S lib32-gtk3
+```
+
 ### Armbian
 
 Tested on Armbian_22.08.0_Aml_s905l3a_bullseye_5.15.62_server
