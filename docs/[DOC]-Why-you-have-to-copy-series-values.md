@@ -1,4 +1,4 @@
-# Explanation for totally hopeless dummies
+# A real (Hello) world example.
 
 I write a niiiice function:
 ```
