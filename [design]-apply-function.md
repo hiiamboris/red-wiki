@@ -32,22 +32,30 @@ NOTE: Old model names are in comments until new model names are defined.
 ```
 output: copy []
 emit: func [value][
+
 	; original
 	either block? value [append output value][append/only output value]
+
 	; a.1)
 	only: block? value
 	append/:only output value
+
 	; a.2)
 	only: block? value
 	apply 'append/:only [output value]
+
 	; b) NR§1)
 	apply/all 'append [output value false none block? value]
+
 	; c.1)
 	apply 'append/:only [output value block? value]
+
 	; c.2)
 	apply/safer 'append/:only [output value (block? value)]
+
 	; NR§2.1	This doesn't make fixed refinements distinct
 	apply :append [series value /only]
+
 	; BB4.2) BM§op-ref-2)
 	apply 'append [series value /only block? value]
 ]
@@ -62,6 +70,7 @@ emit: func [value][
 	res: append/:only/:dup output value 3
 	res
 ]
+
 ; c.2
 emit: func [value][
 	; dupe values 3 times if they are blocks
@@ -84,24 +93,32 @@ dup: function [
 	/string "Return a string instead of a block"
 ][
 	series: copy either string [""] [[]]	; applies to all versions
+
 	; a.1
 	append/dup/:only series value count
+
 	; a.2
 	apply 'append/dup/:only [series value count]
+
 	; b NR§1
 	apply/all 'append [series value false none only true count]
 	;?? Is it correct that fixed args are not pass in the block?
+
 	; c.1
 	apply 'append/dup/:only [series value block? value count] ; Are both of these legal?
 	apply 'append/dup/:only [series value count block? value]
+
 	; c.2
 	apply/safer 'append/dup/:only [series value (block? value) count] ; Are both of these legal?
 	apply/safer 'append/dup/:only [series value count (block? value)]
+
 	; NR§2.1	This doesn't make fixed refinements distinct
 	apply :append [series value /dup count /only]
 	apply :append [series value /only /dup count]
+
 	; BB4.2) BM§op-ref-2)
 	apply 'append [series value /only only /dup true count]
+
 ]
 ```
 
@@ -121,24 +138,32 @@ repend': func [
 		count [integer!]
 ][
 	value: reduce :value
+
 	; a.1
 	res: append/:dup/:only series value count
+
 	; a.2
 	apply 'append/:dup/:only [series value count]
+
 	; b NR§1
 	apply/all 'append [series value false none only dup count]
+
 	; c.1
 	apply 'append/:dup/:only [series value dup count only] ; Are both of these legal?
 	apply 'append/:dup/:only [series value only dup count]
 	apply 'append/:dup/:only [series value dup only count] ; No way to catch reversed logics, right?
+
 	; c.2
 	apply/safer 'append/dup/:only [series value (block? value) count] ; Are both of these legal?
 	apply/safer 'append/dup/:only [series value count (block? value)]
+
 	; NR§2.1	This doesn't make fixed refinements distinct
 	apply :append [series value /dup count /only]
 	apply :append [series value /only /dup count]
+
 	; BB4.2) BM§op-ref-2)
 	apply 'append [series value /only only /dup dup count]
+
 ]
 ```
 
