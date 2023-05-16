@@ -54,6 +54,7 @@ emit: func [value][
 	apply/safer 'append/:only [output value (block? value)]
 
 	; NR§2.1	This doesn't make fixed refinements distinct
+	only: block? value
 	apply :append [series value /only]
 
 	; BB4.2) BM§op-ref-2)
