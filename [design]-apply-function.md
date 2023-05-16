@@ -350,10 +350,125 @@ alter': function [
 		; series value /part length /only /dup count
 		apply 'append [input value /only :only]
 	  ; body body body body
-
+	  
+	; context carryover (#5)
+	series: input					;-- can also be renamed in the function spec?
+	apply :find 'local
+		; for append a.1) is preferable
+		
 ]
 toggle: :alter'
 ```
+
+## EX-5
+
+Dynamic refinement simple case.
+
+`capture-face` definition: https://codeberg.org/hiiamboris/red-view-test-system/src/commit/571f9d8e0725120e29d3c5afac07c0c40c53ece1/visuals.red#L91	
+
+unordered key/value pairs with word shortcuts (original mezz impl):
+```
+	img: apply capture-face [
+		face:  layout
+		real:  real
+		with:  not real  img: img
+		whole: whole
+	]
+or
+	img: apply capture-face [
+		real whole
+		face: layout
+		with: not real  img
+	]
+```
+a.1)
+```
+	with: not real							;-- blocks usage of `with` function in the calling function's body
+	with': :system/words/with				;-- workaround
+	img: capture-face/:real/:with/:whole layout img
+```
+BB4.2) BM§op-ref-2)
+```
+	img: apply capture-face [
+		layout
+		/real  real
+		/with  not real  img
+		/whole whole
+	]
+```
+
+## EX-6
+
+Dynamic refinement trickier case.
+
+`send-request` definition: https://gitlab.com/rebolek/castr/-/blob/master/client-tools.red#L361
+
+unordered key/value pairs with word shortcuts (original mezz impl):	
+```
+	response: apply send-request [
+		method
+		link:    url
+		data:    post
+		content: data
+		with:    yes  args: compose/only [...]
+	]
+```
+a.1)
+```
+	data2: data					;-- preserve data from being overridden
+	data:  post
+	send-request/:data/with method url data2 compose/only [...]
+	data:  data2				;-- restore data for further usage
+```
+BB4.2) BM§op-ref-2)
+```
+	response: apply send-request [
+		method url
+		/data post data
+		/with yes  compose/only [...]
+	]
+```
+
+## EX-6
+
+Function is unknown, defined in the object by the user, and may or may not support used refinements, and declares them in any order.
+
+original code:
+```
+	spec:    spec-of :draw
+	on?:     find spec /on
+	window?: find spec /window
+	draw: case [
+		all [on? window?] [draw/window/on xy1 xy2 canvas fill-x fill-y]
+		window?           [draw/window    xy1 xy2                     ]
+		on?               [draw/on                canvas fill-x fill-y]
+		'else             [draw                                       ]
+	]
+```
+using current (slow) mezz `apply` implementation:
+```
+	apply draw [window xy1 xy2 on canvas fill-x fill-y]
+```
+a.1) b)
+```
+	not applicable here - code will be the same as the original
+```
+BB4.2) BM§op-ref-2) - only works if this mode supports /quiet refinement
+```
+	apply/quiet draw [
+		/window window xy1 xy2
+		/on     on canvas fill-x fill-y
+	]
+```
+context carryover (#5) - as a replacement for /quiet
+```
+	;-- defined outside somewhere - to limit the set of carried arguments to only those known by the caller
+	proxy-draw: func [draw /window xy1 xy2 /on canvas fill-x fill-y] [apply draw 'draw]
+	;-- actual call:
+	proxy-draw/window/on :draw xy1 xy2 canvas fill-x fill-y
+```
+
+
 
 # Comments and voting
 
