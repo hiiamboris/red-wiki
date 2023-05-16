@@ -1,6 +1,6 @@
 APPLY is proving to be a challenge to design. There are too many ways to do it, some of which compete for a particular interface model. Most importantly, we have to consider how easy it will be to use correctly, as well as how flexible it is for power users.
 
-An important aspect is that we need to compare apples to apples. If we add an example for one model, we have to include versions of it for all other models for comparison. The examples may into different use case scenarios.
+An important aspect is that we need to compare apples to apples. If we add an example for one model, we have to include versions of it for all other models for comparison. The examples may fall into different use case scenarios.
 
 We've been all over the map on this, and need to consolidate to avoid losing our minds further.
 
@@ -89,10 +89,11 @@ emit: func [value][
 emit: func [value][
 	; dupe values 3 times if they are blocks
 	only: dup: block? value 
-	; if NOT a block, count is not consumed, so we have to be aware
-	; and not just make it the last expression in the func.
-	res: append/:only/:dup output value 3
-	res
+	; if NOT a block, count *IS*  consumed, which differs from a normal func call.
+	append/:only/:dup output value 3
+	; If the behavior worked like a regular func, we'd have to do this.
+	;res: append/:only/:dup output value 3
+	;res
 ]
 
 ; c.2
@@ -126,7 +127,10 @@ dup: function [
 
 	; b NR§1
 	apply/all 'append [series value false none only true count]
-	;?? Is it correct that fixed args are not pass in the block?
+	;?? Are refinement args enforced as `logic!`, Or is literal `/dup` evaluated as truthy, and still OK?
+
+	; The following c* question being, if a refinement is fixed, not dynamic, does its arg(s)
+	; have to fall in the same order as refinements in the path.
 
 	; c.1
 	apply 'append/dup/:only [series value block? value count] ; Are both of these legal?
