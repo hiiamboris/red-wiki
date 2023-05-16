@@ -88,21 +88,30 @@ Does this fall under /tracing?
 
 This is where we document and name each interface option. e.g.
 
-raw: all args are required, but trailing false/none can be omitted.
+## raw
+
+All args are required, but trailing false/none can be omitted.
+
 ```
 apply function! block
 apply :foo [<arg1> <arg2> ...]
 <syntax>
 ```
 
-straight-sugar: Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
+## straight-sugar
+
+Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
+
 ```
 path! <args> ; free ranging
 append/dup/:only series value count ; /dup is fixed, /only is dynamic
 <syntax>
 ```
 
-semi-sweet: Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
+## semi-sweet
+
+Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
+
 ```
 apply [lit-word! lit-path!] block!
 apply 'append/dup/:only [series value count]
