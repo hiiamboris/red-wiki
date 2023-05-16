@@ -114,6 +114,7 @@ dup: function [
 	apply/safer 'append/dup/:only [series value count (block? value)]
 
 	; NR§2.1	This doesn't make fixed refinements distinct
+	dup: true
 	apply :append [series value /dup count /only]
 	apply :append [series value /only /dup count]
 
