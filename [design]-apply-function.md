@@ -12,7 +12,25 @@ We should have examples for each.
 
 # Models
 
-This is where we document and name each interface option.
+This is where we document and name each interface option. e.g.
+
+raw: all args are required, but trailing false/none can be omitted.
+`apply function! block`
+`apply :foo [<arg1> <arg2> ...]`
+<syntax>
+
+straight-sugar: Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
+`path! <args>` ; free ranging
+`append/dup/:only series value count` ; /dup is fixed, /only is dynamic
+<syntax>
+
+semi-sweet: Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
+`apply [lit-word! lit-path!] block!`
+`apply 'append/dup/:only [series value count]`
+<syntax>
+
+
+As we can't seem to build consensus on any set of models, perhaps we can start with which models do have consensus (e.g. raw and straight-sugar). From there we decide what use cases those *don't* fit, and look for the next best model that fills those gaps. We also need to prioritize the case cases.
 
 
 # Examples
