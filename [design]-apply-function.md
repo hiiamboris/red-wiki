@@ -10,6 +10,80 @@ See: https://github.com/greggirwin/red-hof/blob/master/apply.md#use-cases
 
 We should have examples for each.
 
+Dynamic arguments are the norm, of course but refinements are not, and they may also specify args (params) to go with them. That's the pain point in Red, without `apply` because you end up dispatching with `either` or `case` and using hard-coded paths for the refinements.
+
+## Extend
+
+Function extension
+
+## Trace
+
+Tracing calls
+
+```
+sys-find: :find
+my-find: func spec-of :sys-find [
+	; dump args, do extra stuff.
+	; call sys-find
+]
+```
+
+## Propagate
+
+Passing around a set of refinements+arguments. Simliar to Extend.
+
+```
+dup: function [
+	{Returns a new block with the fill value duplicated n times.} 
+	value
+	count [integer!] "Negative numbers are treated as zero" 
+	/only
+	/string "Return a string instead of a block"
+][
+	series: copy either string [""] [[]]
+	append/dup/:only series value count
+]
+
+repend': func [
+	{Appends a reduced value to a series and returns the series head} 
+	series [series!] 
+	value 
+	/only "Insert block types as single values (overrides /part)."
+	/dup "Duplicate the inserted values."
+		count [integer!]
+][
+	value: reduce :value
+	res: append/:dup/:only series value count
+]
+```
+
+## Generate
+
+Programmatic call construction. Call a func with dynamic arguments/refinements
+known from some data. 
+
+
+## Other Thoughts
+
+Should we also consider indirection of dynamic elements. e.g., rather than
+writing the paths or propagating refinements from the spec, could you do this
+(as a mezz):
+
+```
+apply-ex: func [fn [word!] refs [path! block!] args [block!]][
+	; Do some AOP tricky stuff
+	fn: to path! head insert copy refs fn
+	res: apply fn args
+	; AOP post processing
+]
+apply-ex 'append [/dup/only] [series value count]
+```
+
+This only adds a different syntax compared to NR§2.1/c*.
+
+Does this fall under /tracing?
+
+
 # Models
 
 This is where we document and name each interface option. e.g.
