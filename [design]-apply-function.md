@@ -167,6 +167,82 @@ repend': func [
 ]
 ```
 
+## EX-4
+
+More refinements here, many of which propagate, and one of which propagates through two different apply calls. No refinement args.
+
+```
+alter': function [
+	"Alternate a value (append/remove), returning the toggled state (on/off)"
+	input [series! bitset!] "If value is found, remove it; otherwise, append it (modified)"
+	value     "Must be an integer, char, or string if input is a bitset"
+	/only     "Treat block and typeset values as single values."
+	/case     "Perform a case-sensitive match; ignored for bitset inputs."
+	/same     "Use same? as comparator."
+	/last     "Find the last occurrence of value, from the tail."
+	/reverse  "Find the last occurrence of value, from the current index."
+	/match    "Match at current index only."
+][
+	; a.1
+	pos: find/:only/:case/:same/:last/:reverse/:match input value
+	  ; body body body body
+		append/:only input value
+	  ; body body body body
+
+	; a.2
+	pos: apply 'find/:only/:case/:same/:last/:reverse/:match [input value]
+	  ; body body body body
+		apply 'append/:only [input value]
+	  ; body body body body
+
+	;!! NOTE: get-word args in the following examples can be plain words.
+	
+	; b NR§1
+	; series value /part length /only /case /same /any /with wild /skip size /last /reverse /tail /match]
+	pos: apply/all :find [input value false none :only :case :same false false none false none :last :reverse false :match]
+	;pos: apply/all :find [input value false none only case same false false none false none last reverse false match]
+	; Nobody wants to write this, or read it, but generated calls using this
+	; model will look like this when debugging.
+	;pos: apply/all :find [input value false none true true true false false none false none true true false true]
+	  ; body body body body
+		; series value /part length /only /dup count
+		apply/all :append [input value :only]
+		;apply/all :append [input value only]
+	  ; body body body body
+
+	; c.1
+	; series value /part length /only /case /same /any /with wild /skip size /last /reverse /tail /match]
+	apply 'find/:only/:case/:same/:last/:reverse/:match [input value :only :case :same :last :reverse :match]
+	  ; body body body body
+		; series value /part length /only /dup count
+		apply/all :append/:only [input value :only]
+	  ; body body body body
+
+	; c.2 (same as c.1 since all args are single values)
+	; series value /part length /only /case /same /any /with wild /skip size /last /reverse /tail /match]
+	apply/safer 'find/:only/:case/:same/:last/:reverse/:match [input value :only :case :same :last :reverse :match]
+	  ; body body body body
+		; series value /part length /only /dup count
+		apply/safer :append/:only [input value :only]
+	  ; body body body body
+
+	; NR§2.1	This doesn't make fixed refinements distinct
+	apply :find [input value /only /case /same /last /reverse /match]
+	  ; body body body body
+		apply :append [input value /only]
+	  ; body body body body
+
+	; BB4.2) BM§op-ref-2)
+	apply 'find [input value /only :only /case :case /same :same /last :last /reverse :reverse /match :match]
+	  ; body body body body
+		; series value /part length /only /dup count
+		apply 'append [input value /only :only]
+	  ; body body body body
+
+]
+toggle: :alter'
+```
+
 # Comments and voting
 
 Lots of subjectivity here, so we need a way to cast votes as data, not prose and commentary.
