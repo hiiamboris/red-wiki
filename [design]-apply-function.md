@@ -153,18 +153,24 @@ emit: func [value][
 	; b) NR§1)
 	apply/all 'append [output value false none block? value]
 
-	; c.1)
-	apply 'append/:only [output value block? value]
+;	; c.1) (OLD)
+;	apply 'append/:only [output value block? value]
+;	; c.2) (OLD)
+;	apply/safer 'append/:only [output value (block? value)]
 
-	; c.2)
+	; c.1) (NEW)
+	apply 'append/:only [output value block? value]
 	apply/safer 'append/:only [output value (block? value)]
+	; c.2) (NEW)
+	apply/some :append [output value /only block? value]
+	apply/some/safer :append [output value /only (block? value)]
 
 	; NR§2.1	This doesn't make fixed refinements distinct
 	only: block? value
-	apply :append [series value /only]
+	apply :append [output value /only]
 
 	; BB4.2) BM§op-ref-2)
-	apply 'append [series value /only block? value]
+	apply 'append [output value /only block? value]
 ]
 
 ; Variant where /dup is also applied used if arg is a block.
@@ -215,13 +221,19 @@ dup: function [
 	; The following c* question being, if a refinement is fixed, not dynamic, does its arg(s)
 	; have to fall in the same order as refinements in the path.
 
-	; c.1
-	apply 'append/dup/:only [series value block? value count] ; Are both of these legal?
-	apply 'append/dup/:only [series value count block? value]
+;	; c.1 (OLD)
+;	apply 'append/dup/:only [series value block? value count] ; Are both of these legal?
+;	apply 'append/dup/:only [series value count block? value]
+;	; c.2 (OLD)
+;	apply/safer 'append/dup/:only [series value (block? value) count] ; Are both of these legal?
+;	apply/safer 'append/dup/:only [series value count (block? value)]
 
-	; c.2
-	apply/safer 'append/dup/:only [series value (block? value) count] ; Are both of these legal?
-	apply/safer 'append/dup/:only [series value count (block? value)]
+	; c.1) (NEW)
+	apply 'append/:only/dup [series value block? value count]  ; fixed /dup not in arg block?
+	apply/safer 'append/:only/dup [series value (block? value) count]
+	; c.2) (NEW)
+	apply/some :append [output value /only block? value /dup true count]
+	apply/some/safer :append [output value /only (block? value) /dup true count]
 
 	; NR§2.1	This doesn't make fixed refinements distinct
 	dup: true
