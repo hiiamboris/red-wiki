@@ -108,7 +108,7 @@ append/dup/:only series value count ; /dup is fixed, /only is dynamic
 <syntax>
 ```
 
-## semi-sweet (dynamic indirect, dynamic fixed arity)
+## semi-sweet (dynamic indirect, dynamic fixed arity) (a.2?)
 
 Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
 
