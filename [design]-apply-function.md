@@ -465,7 +465,7 @@ BB4.2) BM§op-ref-2)
 	]
 ```
 
-## EX-6
+## EX-7
 
 Function is unknown, defined in the object by the user, and may or may not support used refinements, and declares them in any order.
 
