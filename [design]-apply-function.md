@@ -88,17 +88,17 @@ Does this fall under /tracing?
 
 This is where we document and name each interface option. e.g.
 
-## raw
+## raw (stack frame block) (b?)
 
 All args are required, but trailing false/none can be omitted.
 
 ```
-apply function! block
+apply function! block!
 apply :foo [<arg1> <arg2> ...]
 <syntax>
 ```
 
-## straight-sugar
+## straight-sugar (dynamic direct, dynamic context) (a?)
 
 Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
 
@@ -108,7 +108,7 @@ append/dup/:only series value count ; /dup is fixed, /only is dynamic
 <syntax>
 ```
 
-## semi-sweet
+## semi-sweet (dynamic indirect, dynamic fixed arity)
 
 Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
 
@@ -117,6 +117,30 @@ apply [lit-word! lit-path!] block!
 apply 'append/dup/:only [series value count]
 <syntax>
 ```
+
+
+## semi-processed (dynamic indirect no context)  (c.1?)
+
+Fixed arity. Refinements go in the path. Values (on/off) for dynamic refinements go in block. Args, required or optional, go in the block.
+
+```
+apply [lit-word! lit-path!] block!
+apply 'append/dup/:only [series value count true]
+<syntax>
+```
+
+## processed (dynamic direct no context, dialected) (c.2?)
+
+Fixed arity. Function, not word/path. Everything goes in the block.
+
+Requires `/some` refinement.
+
+```
+apply/some function! block!
+apply/some :append [series value /dup true count block? value]
+<syntax>
+```
+
 
 As we can't seem to build consensus on any set of models, perhaps we can start with which models do have consensus (e.g. raw and straight-sugar). From there we decide what use cases those *don't* fit, and look for the next best model that fills those gaps. We also need to prioritize the case cases.
 
