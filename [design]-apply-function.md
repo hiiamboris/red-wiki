@@ -90,7 +90,7 @@ This is where we document and name each interface option. e.g.
 
 ## straight-sugar (dynamic direct, dynamic context, dyna-path) (a?)
 
-Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy. Supported internally by semi-sweet.
+Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy. Their values come from the environment/context. Supported internally by semi-sweet.
 
 ```
 path! <args> ; free ranging
@@ -110,7 +110,7 @@ apply :foo [<arg1> <arg2> ...]
 
 ## semi-sweet (dynamic indirect, dynamic fixed arity, dyna-path) (a.2(old) or c.1(new)?)
 
-Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
+Fixed arity version of straight sugar. Refinements go in the path. Their values come from the environment/context. Args, required or optional, go in the block.
 
 ```
 apply [lit-word! lit-path!] block!
