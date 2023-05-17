@@ -88,19 +88,9 @@ Does this fall under /tracing?
 
 This is where we document and name each interface option. e.g.
 
-## raw (stack frame block) (b?)
-
-All args are required, but trailing false/none can be omitted.
-
-```
-apply function! block!
-apply :foo [<arg1> <arg2> ...]
-<syntax>
-```
-
 ## straight-sugar (dynamic direct, dynamic context, dyna-path) (a?)
 
-Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
+Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy. Supported internally by semi-sweet.
 
 ```
 path! <args> ; free ranging
@@ -108,7 +98,17 @@ append/dup/:only series value count ; /dup is fixed, /only is dynamic
 <syntax>
 ```
 
-## semi-sweet (dynamic indirect, dynamic fixed arity, dyna-path) (a.2?)
+## raw (stack frame block) (b?)
+
+All args are required, in correct slots by spec order, but trailing false/none can be omitted.
+
+```
+apply function! block!
+apply :foo [<arg1> <arg2> ...]
+<syntax>
+```
+
+## semi-sweet (dynamic indirect, dynamic fixed arity, dyna-path) (a.2(old) or c.1(new)?)
 
 Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
 
@@ -134,7 +134,7 @@ apply 'append/dup/:only [series value count true]
 
 ## processed (partial no context, no context, partial path args, dialected) (c.2?)
 
-Fixed arity. Function, not word/path. Everything goes in the block.
+Fixed arity.  Word, not path. Everything goes in the block.
 
 Requires `/some` refinement.
 
