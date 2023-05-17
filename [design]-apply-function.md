@@ -98,7 +98,7 @@ apply :foo [<arg1> <arg2> ...]
 <syntax>
 ```
 
-## straight-sugar (dynamic direct, dynamic context) (a?)
+## straight-sugar (dynamic direct, dynamic context, dyna-path) (a?)
 
 Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy.
 
@@ -108,7 +108,7 @@ append/dup/:only series value count ; /dup is fixed, /only is dynamic
 <syntax>
 ```
 
-## semi-sweet (dynamic indirect, dynamic fixed arity) (a.2?)
+## semi-sweet (dynamic indirect, dynamic fixed arity, dyna-path) (a.2?)
 
 Fixed arity version of straight sugar. Refinements go in the path. Args, required or optional, go in the block.
 
@@ -117,9 +117,12 @@ apply [lit-word! lit-path!] block!
 apply 'append/dup/:only [series value count]
 <syntax>
 ```
+Can we call the first two both dyna-path, because they are effectively the same except for the second being fixed arity?
+
+Or maybe we don't name these at all, because they are the default.
 
 
-## semi-processed (dynamic indirect no context)  (c.1?)
+## semi-processed (dynamic indirect no context, no context, path args)  (c.1?)
 
 Fixed arity. Refinements go in the path. Values (on/off) for dynamic refinements go in block. Args, required or optional, go in the block.
 
@@ -129,15 +132,15 @@ apply 'append/dup/:only [series value count true]
 <syntax>
 ```
 
-## processed (dynamic direct no context, dialected) (c.2?)
+## processed (partial no context, no context, partial path args, dialected) (c.2?)
 
 Fixed arity. Function, not word/path. Everything goes in the block.
 
 Requires `/some` refinement.
 
 ```
-apply/some function! block!
-apply/some :append [series value /dup true count block? value]
+apply/some [lit-word! lit-path!] block!
+apply/some 'append [series value /dup true count block? value]
 <syntax>
 ```
 
