@@ -354,8 +354,8 @@ alter': function [
 	;pos: apply/all :find [input value false none true true true false false none false none true true false true]
 	  ; body body body body
 		; series value /part length /only /dup count
-		apply/all :append [input value :only]
-		;apply/all :append [input value only]
+		apply/all :append [input value false none :only]
+		;apply/all :append [input value false none only]
 	  ; body body body body
 
 	; c.1
