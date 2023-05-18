@@ -88,7 +88,15 @@ Does this fall under /tracing?
 
 This is where we document and name each interface option. e.g.
 
-## straight-sugar (dynamic direct, dynamic context, dyna-path) (a?)
+## Dynamic refinements (straight-sugar, dynamic direct, dynamic context, dyna-path) (a?)
+
+### Design
+
+Get-word refinements are evaluated. If true, eventual optional arguments will be fetched.
+
+`foo/:ref1/:ref2/ref3/... <arg1> <arg2> ...`
+
+### Notes
 
 Looks like a regular func call, but refinements can be get-words (like in a regular path) and are evaluated rather than being treated as literal/fixed/truthy. Their values come from the environment/context. Supported internally by semi-sweet.
 
