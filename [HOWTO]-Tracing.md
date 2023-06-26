@@ -82,8 +82,8 @@ Other lines are expressions and their results.
 [`???` macro](https://codeberg.org/hiiamboris/red-common/src/show-trace.red) can be used instead of wrapping code into `trace [..]`. It's easy to insert anywhere. Example (using the same `my-func` definition):
 ```
 do [
-	op: make op! func [:x :y][:y]
-	do op 1 + 2
+	f: func [:x :y][:y]
+	f a b
 	if 1 + 1 < add 2 + 3 4 [add 5 6]
 	b: [x y z]
 	j: 1 + 1
