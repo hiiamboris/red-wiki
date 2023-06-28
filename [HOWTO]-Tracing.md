@@ -191,7 +191,7 @@ print from my-func
 ### Tracing sub-expressions with `trace/all`
 
 Typical scenarios:
-- `#assert` test fails, but contains at what point exactly is not known
+- `#assert` test fails, but at what point exactly is not known
 - code contains a complex expression which fails as a whole, but will take some time to find out
 
 Example: a convoluted Caesar's cipher function that contains a non-obvious bug: 
