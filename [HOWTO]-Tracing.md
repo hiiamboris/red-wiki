@@ -217,6 +217,7 @@ Trying it in console shows that it doesn't always work:
 >> buggy-caesar "a" -25
 *** Math Error: math or number overflow
 *** Where: +
+*** Near : s/1: (x: s/1 % 32) + k + 25 % 26 + 1 + ()
 *** Stack: buggy-caesar  
 ```
 The error doesn't tell us much. There are multiple `+` operators. To find the bug you would normally have to insert `probe` before each intermediate result, adding parens as necessary, leading to something like:
@@ -235,19 +236,21 @@ buggy-caesar: function [s k] [
 ```
 Outputs:
 ```
-      a                             => make bitset! #{00000000000000007...  
-        s                           => "a"                                  
-      find a s/1                    => true                                 
-            s                       => "a"                                  
-          x: % s/1 32               => #"^A"                                
-        k                           => -25                                  
-        + (x: s/1 % 32) k           => make error! [code: 401 type: 'm...]  
+>> buggy-caesar "a" -25
+        a                            => make bitset! #{00000000000000007...}  
+          s                          => "a"                                   
+        find make bitset! #{00000000 => true                                  
+              s                      => "a"                                   
+            #"a" % 32                => #"^A"                                 
+          k                          => -25                                   
+          #"^A" + -25                => make error! [code: 401 type: 'ma...]  
 *** Math Error: math or number overflow
 *** Where: +
-*** Stack: 
+*** Near : s/1: (x: s/1 % 32) + k + 25 % 26 + 1 + ()
+*** Stack: guided-trace do-handler  
 ```
 
-Now we can see that `x: % s/1 32` is `#"^A"` (which is integer 1), and we're adding `k` to it, which is `-25`, and `-24` is just out of the allowed range for `char!` type. We can easily fix it by swapping `+ k` and `+ 25`:
+Now we can see that we're subtracting 25 from a char whose codepoint is `#"^A"` (i.e. integer 1), triggering `char!` type overflow (because -24 cannot be converted into `char!`). We can easily fix it by swapping `+ k` and `+ 25`:
 ```
 caesar: function [s k] [
     a: charset [#"a" - #"z" #"A" - #"Z"]
