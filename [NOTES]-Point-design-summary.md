@@ -95,12 +95,11 @@ My (hiiamboris') proposal is to make comma an operator that can:
 
 This will allow one to write expressions like `(x, y, z)` which will be lexed as `paren!` with 5 `word!`s: `(x , y , z)`, comma being a `word!` that lexer must unstick from other tokens (`x,y` not a single word but three). Parentheses are not required of course: `point: x,y,z` would work the same, but in more complex expressions, like `s + (x,y,z) / 2` they still make sense and add readability.
 
-Points against it are:
-- comma doesn't look like something that *evaluates*, so it may make the code confusing to the reader
-- `point!` syntax already collides with `paren!` syntax, and `(x,y,z)` expression vs `(1,2,3)` literal value only adds to it
-
-
 Consider: `compose [offset: (0,0,0) size: (x,y,z)]`. `(0,0,0)` is lexed as a `point3D!` literal value, but `(x,y,z)` as a a paren which gets evaluated by `compose` itself.
 
 Another usage for comma would be dialects, maybe to separate items in lists e.g. `[1 2, 3 4, 5 6]` or words in sentences `lorem ipsum, dolor, sit amet`. 
+
+Points against it are:
+- comma doesn't look like something that *evaluates*, so it may make the code confusing to the reader
+- `point!` syntax already collides with `paren!` syntax, and `(x,y,z)` expression vs `(1,2,3)` literal value only adds to it
 
