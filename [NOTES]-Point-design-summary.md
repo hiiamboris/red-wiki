@@ -84,22 +84,6 @@ We could leave `2x4` syntax and let it be converted by lexer into `(2,4)`. Has s
 2x2
 ```
 
-### Problem 7: runtime construction syntax. Can comma serve as an operator?
+### Task: would it be possible to also use expressions in point syntax on top of literal numbers, as in the original geometry notation?
 
-Currently point can only be constructed as `make point2D! reduce [x y]` or `as-point2D x y` (similarly for 3D). This sometimes becomes quite verbose, turning reader's attention on the means rather than on the goal (syntactic noise problem).
-
-My (hiiamboris') proposal is to make comma an operator that can:
-- accept two numbers and produce a `point2D!`
-- accept `pair!` or `point2D!` and a number and produce a `point3D!`
-- accept `triple!` or `point3D!` and a number and produce a `point4D!` (4D is reserved for the future for now as we don't have enough space in the cell for it in our 32-bit runtime)
-
-This will allow one to write expressions like `(x, y, z)` which will be lexed as `paren!` with 5 `word!`s: `(x , y , z)`, comma being a `word!` that lexer must unstick from other tokens (`x,y` not a single word but three). Parentheses are not required of course: `point: x,y,z` would work the same, but in more complex expressions, like `s + (x,y,z) / 2` they still make sense and add readability.
-
-Consider: `compose [offset: (0,0,0) size: (x,y,z)]`. `(0,0,0)` is lexed as a `point3D!` literal value, but `(x,y,z)` as a a paren which gets evaluated by `compose` itself.
-
-Another usage for comma would be dialects, maybe to separate items in lists e.g. `[1 2, 3 4, 5 6]` or words in sentences `lorem ipsum, dolor, sit amet`. 
-
-Points against it are:
-- comma doesn't look like something that *evaluates*, so it may make the code confusing to the reader
-- `point!` syntax already collides with `paren!` syntax, and `(x,y,z)` expression vs `(1,2,3)` literal value only adds to it
-
+https://github.com/red/REP/issues/149 explores this
