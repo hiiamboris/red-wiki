@@ -76,6 +76,9 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: Why loops do not make their words local to loop body, but rely on `function` to do that?
 - https://github.com/red/red/issues/972#issuecomment-851476989
 
+#### Core: How it came to such `(1, 2, 3)` point syntax?
+- https://github.com/red/red/wiki/%5BNOTES%5D-Point-design-summary
+
 #### Command line argument parsing rules
 - [PR #3870 and references from there](https://github.com/red/red/pull/3870)
 
@@ -85,15 +88,15 @@ It is preferable to keep these lists sorted by the impact of the question (from 
 #### Core: :get-word function argument evaluation semantics: R2- or R3-like? (final?)
 - [Calling a function passed as get argument inside another function does not work #1850](https://github.com/red/red/issues/1850)
 
-#### Core: how to allow maps to have `none` values?
+#### Core: How to allow maps to have `none` values?
 - [Design notes on removing keys from MAP! values](https://github.com/red/red/wiki/[NOTES]-Design-notes-on-removing-keys-from-MAP!-values)
 - [Gitter discussion](https://gitter.im/red/red?at=5ce6ae55b313d7231416163d) after `remove/key` PR was merged.
 
-#### Core: how money datatype equality and comparison rules should work?
+#### Core: How money datatype equality and comparison rules should work?
 - [PR that summarizes the issue](https://github.com/red/red/pull/4455)
 - [Gitter discussion, a few days long](https://gitter.im/red/red?at=5e8ee18c38198d56a18ed4b7)
 
-#### Core: what should empty `any []` and `all []` return?
+#### Core: What should empty `any []` and `all []` return?
 - [Discussion in issue #4469](https://github.com/red/red/issues/4469#issuecomment-635450881)
 
 # See also
