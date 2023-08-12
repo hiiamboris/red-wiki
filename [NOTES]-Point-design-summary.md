@@ -86,7 +86,7 @@ We could leave `2x4` syntax and let it be converted by lexer into `(2,4)`. Has s
 
 ### Problem 7: runtime construction syntax. Can comma serve as an operator?
 
-Currently point can only be constructed as `make point2D! reduce [x y]` or `as-point2D x y` (similarly for 3D).
+Currently point can only be constructed as `make point2D! reduce [x y]` or `as-point2D x y` (similarly for 3D). This sometimes becomes quite verbose, turning reader's attention on the means rather than on the goal (syntactic noise problem).
 
 My (hiiamboris') proposal is to make comma an operator that can:
 - accept two numbers and produce a `point2D!`
