@@ -3,7 +3,7 @@
 This page is to add info to the [Subpixel GUI blog post announcement](https://www.red-lang.org/2023/08/subpixel-gui.html).
 Decisions tend to be forgotten even by the authors, so it's best to write the reasoning down.
 
-### Problem 1: pairs are integer-only, which limits their use, introduces UI glitches (see examples in the blog post), requires ulgy workarounds (like adhoc scaling of Draw commands to achieve subpixel precision). There's a big enough demand for subpixel accuracy.
+### Problem 1: pairs are integer-only, which limits their use, introduces UI glitches (see examples in the blog post), requires ugly workarounds (like adhoc scaling of Draw commands to achieve subpixel precision). There's a big enough demand for subpixel accuracy.
 
 One example is inability to draw a 1px wide box: `line-width 1 box 0x0 10x10` will paint the area between box `(-0.5, -0.5) .. (10.5, 10.5)` and `(0.5, 0.5) .. (9.5, 9.5)`, which of course will blur the line, and if draw is clipped within `0x0 .. 10x10`, then it will also appear as if it had `line-width 0.5`. To work around this one requires to write `scale 0.5 0.5 [line-width 2 box 1x1 19x19]` which is boring, and what if box is drawn with a bitmap pen? Then the pen needs separate unscaling as well, making it a workaround for a workaround :)
 
