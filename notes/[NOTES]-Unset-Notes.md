@@ -76,4 +76,19 @@ There's no "solving it" as long as we have unset!, and I don't see that going aw
 > *** Stack: get make word! "no-context"
 > ```
 
+## Reduce and Compose
+
+It might seem like these two funcs would treat unset results the same. Both evaluate, but `compose` evaluates only parens. `Compose` is special in this regard, by design. While `reduce` leaves unset values in place, `compose` makes them disappear.
+
+```
+>> type? first probe reduce [()]
+[unset]
+== unset!
+>> type? first probe compose [()]
+[]
+== none!
+>> type? first probe compose/only [()]
+[]
+== none!
+```
 
