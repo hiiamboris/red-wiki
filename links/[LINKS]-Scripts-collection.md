@@ -693,6 +693,11 @@ This is a collection of links to Red and Red/System scripts. It is intended as a
 	* [try_red](https://github.com/ipmsteven/try_red) - 
 
 		tags: 
+* isoux -
+	* [Red assembler](https://github.com/isoux/Red-assembler) - Assembler for Red/System based exclusively on the Red programming language
+
+		tags: 
+
 ## J
 * jackalcooper - 
 	* [counter.red](https://gist.github.com/jackalcooper/6f007d07f1ed4b3b46b51c2109ded6c2) - Elm's counter replicated in Red
