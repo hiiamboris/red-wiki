@@ -33,6 +33,7 @@
 1. [`all`](#all)
 1. [`panel`](#vid-panel)
 1. [`system/options/boot`](#systemoptionsboot-is-string-not-a-file)
+1. [`compress and decompress`](#compress-decompress)
 
 ## `copy` on `object!`
 
@@ -502,3 +503,28 @@ view main
 Yes. For now. %environment/functions.red@extract-boot-args simply breaks up the args from the OS but doesn't convert them to Red values. Red follows R2 here, with the exception that it keeps options/boot consistent with the rest of them, by not changing it. Options/path, OTOH, is changed by change-dir, so it is a Red file.
 
 That said, it's something we may revisit. R2's design here confused people more than once. It's true that system/script/args is just the raw string, which you can load, but the naming doesn't make it clear for a feature that should be used quite heavily. Since they current options don't limit you, the way we'll probably deal with this is to hide them behind a CLI dialect.
+
+# compress and decompress
+
+Data compressed in R2 cannot be decompressed in Red.
+
+rgchris' explanation:
+
+R2 Rebol's COMPRESS is Deflate compressed data with a non-standard wrapper:
+
+```
+| 2 byte header | payload | 4 byte checksum | 4 byte size |
+```
+
+If you skip the header and run decompress next next your-file-content 'deflate, Red will ignore the final eight bytes so long as the payload is in valid Deflate format.
+
+See the discussion here (https://matrix.to/#/!wUTlqkqOhNGtfQzIsO:matrix.org/$169685816231IlJgS:gitter.im?via=gitter.im&via=matrix.org&via=tchncs.de)
+
+R2's `COMPRESS` produces a ZLIB envelope with the additional 4-byte uncompressed size value tacked on (hence non-standard). If you remove the size value then you can `DECOMPRESS` using 'zlib.
+
+```red
+decompress head clear skip tail your-file-content -4 'zlib
+
+decompress read/part/binary file-name -4 + size? file-name 'zlib
+```
+
