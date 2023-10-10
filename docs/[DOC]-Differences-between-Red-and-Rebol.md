@@ -33,7 +33,7 @@
 1. [`all`](#all)
 1. [`panel`](#vid-panel)
 1. [`system/options/boot`](#systemoptionsboot-is-string-not-a-file)
-1. [`compress and decompress`](#compress-decompress)
+1. [`compress and decompress`](#compress-and-decompress)
 
 ## `copy` on `object!`
 
