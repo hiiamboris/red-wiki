@@ -20,15 +20,19 @@ This page is a place where we can collect links to interesting Gitter posts, cha
 - [May 13, 2020 3:41 AM](https://gitter.im/red/red?at=5ebb422c7c04b92f535d21c6) @ALANVF [Red.js - A web runtime for Red](https://github.com/ALANVF/Red.js)
 
 # Developer tools
-- [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://gitlab.com/hiiamboris/red-codex)
+- [January 21, 2019 4:44 PM](https://gitter.im/red/bugs?at=5c45ccc5f780a1521f463913) @hiiamboris [Red Source Code Explorer](https://codeberg.org/hiiamboris/red-codex)
 - [March 20, 2022 6:58 AM](https://gitter.im/red/red/gui-branch?at=6236a662f43b6d783f0d40ca) @mikeyaunish [Direct Code (GUI builder)](https://github.com/mikeyaunish/direct-code) [(preview)](https://user-content.gitter-static.net/0823b0c8c6e946daf695320e4dcd61df40f4a6df/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f32393331363532352f3135393134373231312d66353865383238322d353863382d343030332d393464302d3663303566313139373739362e676966) [(video)](https://www.youtube.com/watch?v=hd1QUSH04iw)
+- [June 19, 2022](https://matrix.to/#/%23red_red%3Agitter.im/%24wi6dy2uD_I1HMEWwI15SzhXnqu89bLcYYweYAYYssbU?via=tchncs.de&via=gitter.im&via=matrix.org) @hiiamboris [Red Inspector - A GUI tool to browse current interpreter's state](https://codeberg.org/hiiamboris/red-spaces/src/branch/master/programs/#red-inspector-red-inspector-red)
+- [Ocrober 21, 2023](https://matrix.to/#/%23red_red%3Agitter.im/%24Es52MhXNN3mpi31YL1STmWMpYplYt4c4ByRfiw-5_uM?via=tchncs.de&via=gitter.im&via=matrix.org) @hiiamboris [ParSEE - Parsing flow visual analysis tool](https://codeberg.org/hiiamboris/red-spaces/src/branch/master/programs/README.md#parsee-parsing-flow-visual-analysis-tool-parsee-tool-red)
+
+
 
 # Libraries
 - @rebolek [Parsers and HTTP tools](https://github.com/rebolek/red-tools)
-- [January 1, 2020](https://www.red-lang.org/2020/01/happy-new-year.html#more) @hiiamboris [Command line interface support](https://gitlab.com/hiiamboris/red-cli)
+- [January 1, 2020](https://www.red-lang.org/2020/01/happy-new-year.html#more) @hiiamboris [Command line interface support](https://codeberg.org/hiiamboris/red-cli)
 - [March 28, 2020 10:56 PM](https://gitter.im/red/red/gui-branch?at=5e7fabfa59057617f04a56a7) @hiiamboris [Automatic window resize handling](https://gitlab.com/hiiamboris/red-elastic-ui)
 - [May 2, 2020 7:31 PM](https://gitter.im/red/red?at=5eada04797338850a2e28d2d) @hiiamboris [A collection of mezzanines and macros](https://codeberg.org/hiiamboris/red-common)
-- [May 14, 2021 4:21 PM](https://gitter.im/red/red?at=609e79745ca66330b0419ebc) @hiiamboris [Draw-based widgets \(Spaces\)](https://codeberg.org/hiiamboris/red-spaces)
+- [May 14, 2021 4:21 PM](https://gitter.im/red/red?at=609e79745ca66330b0419ebc) @hiiamboris [Draw-based widgets \(Red Spaces\)](https://codeberg.org/hiiamboris/red-spaces)
 
 # VID examples & experiments
 - [January 31, 2018 3:41 PM](https://gitter.im/red/red/gui-branch?at=5a71c79f475054191749c292) @toomasv [Matrix demo](https://gist.github.com/toomasv/e77df7ac18beee352f343b0729fb0a7a)
