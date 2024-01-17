@@ -53,7 +53,7 @@ Reflectors may return a copy, or newly built result, for a value. Others return 
 |*object!*|copied|n/a|copied|n/a|copied|copied
 |*map!*|copied|n/a|copied|n/a|copied|copied
 |*function!*|not copied|n/a|n/a|not copied|n/a|not copied
-
+|===
 
 # Accessors
 
