@@ -42,6 +42,19 @@ These use `reflect` internally, simply wrapping the field (value) to select in f
      words-of        function!     Returns the list of words of a value that supports reflection.
 ```
 
+### Copied results or not
+
+Reflectors may return a copy, or newly built result, for a value. Others return a reference, whose modifications may affect the value.
+
+[width="50%", options="header"]
+|===
+
+|Type -> Reflector |body-of|class-of|keys-of|spec-of|values-of|words-of
+|*object!*|copied|n/a|copied|n/a|copied|copied
+|*map!*|copied|n/a|copied|n/a|copied|copied
+|*function!*|not copied|n/a|n/a|not copied|n/a|not copied
+
+
 # Accessors
 
 `system/catalog/accessors`
