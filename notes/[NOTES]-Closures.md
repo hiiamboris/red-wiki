@@ -6,7 +6,9 @@ sum: function [n [integer!] return: [function!]] [
 add-5: sum 5
 print add-5 10    ;this generates error: "context for n is not available"
 ```
-It's because the `add-5` function is executed outside `sum` function's context, where a value for word `n` was stored. You have to create closures by yourself. There are multitude of approaches to that. We have to give it a fresh context with required values:
+It's because the `add-5` function is executed outside `sum` function's context, where a value for word `n` was stored.
+
+You have to create closures by yourself. There are multitude of approaches to that. You can give it a fresh context with required values:
 ```red
 sum: function [nn [integer!] return: [function!]] [
 	context [
