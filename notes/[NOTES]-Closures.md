@@ -57,7 +57,7 @@ closed-fn 2
 ?? closed-fn
 ```
 
-And one, that supports recursive closures, by @hiiamboris:
+And one, that supports **recursive** closures, by @hiiamboris:
 ```red
 closure: func [vars spec body] [
 	context compose/deep [(vars) return this: func spec [(body)]]
