@@ -38,10 +38,10 @@ in `load-csv`:
 
 ```
 [
-	#(Name: "Mercury" Mass: 0.055 Orbit: 0.4)
-	#(Name: "Venus" Mass: 0.815 Orbit: 0.7)
-	#(Name: "Earth" Mass: 1.0 Orbit: 1.0)
-	#(Name: "Mars" Mass: 0.107 Orbit: 1.5)
+	#[Name: "Mercury" Mass: 0.055 Orbit: 0.4]
+	#[Name: "Venus" Mass: 0.815 Orbit: 0.7]
+	#[Name: "Earth" Mass: 1.0 Orbit: 1.0]
+	#[Name: "Mars" Mass: 0.107 Orbit: 1.5]
 ]
 ```
 
@@ -50,11 +50,11 @@ Which brings us to last solution, `map!` (again, or `object!`) of columns,
 called `as-columns` in `load-csv`:
 
 ```
-#(
+#[
 	Name: ["Mercury" "Venus" "Earth" "Mars"]
 	Mass: [0.055 0.815 1.0 0.107]
 	Orbit: [0.4 0.7 1.0 1.5]
-)
+]
 ```
 
 The redundancy here is much lower but at the cost that you need to write

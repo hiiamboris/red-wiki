@@ -30,10 +30,10 @@ compose [box (xy1 - \-1.0 2.0 -3.0\) \10.031879104 20.0 30.1703710821\]
 compose [box (xy1 - `-1.0 2.0 -3.0`) `10.031879104 20.0 30.1703710821`]							;) backtick has much better uses than this
 compose [box (xy1 - make point! [-1.0 2.0 -3.0]) make point! [10.031879104 20.0 30.1703710821]]	;) runtime construction only, no lexical form
 compose [box (xy1 - (-1.0 , 2.0 , -3.0)) make point! [10.031879104 20.0 30.1703710821]]			;) ditto, comma as a dimension-adding operator
-compose [box (xy1 - make point! [-1.0 2.0 -3.0]) #[point! 10.031879104 20.0 30.1703710821]]		;) with construction syntax
-compose [box (xy1 - (-1.0 , 2.0 , -3.0)) #[point! 10.031879104 20.0 30.1703710821]]				;) ditto
-compose [box (xy1 - (-1.0x + 2.0y - 3.0z)) #[point! 10.031879104 20.0 30.1703710821]]			;) orderless construction using unit! for axis
-compose [box (xy1 + 1.0x - 2.0y + 3.0z)) #[point! 10.031879104 20.0 30.1703710821]]				;) ditto
+compose [box (xy1 - make point! [-1.0 2.0 -3.0]) #(point! 10.031879104 20.0 30.1703710821)]		;) with construction syntax
+compose [box (xy1 - (-1.0 , 2.0 , -3.0)) #(point! 10.031879104 20.0 30.1703710821)]				;) ditto
+compose [box (xy1 - (-1.0x + 2.0y - 3.0z)) #(point! 10.031879104 20.0 30.1703710821)]			;) orderless construction using unit! for axis
+compose [box (xy1 + 1.0x - 2.0y + 3.0z)) #(point! 10.031879104 20.0 30.1703710821)]				;) ditto
 ```
 The `(-1.0, 2.0, -3.0)` syntax was chosen for good readability and for being standard point notation in geometry.
 Drawback is it visually collides with `paren!` syntax, however in practice I (hiiamboris) have found it to be not such a big issue.

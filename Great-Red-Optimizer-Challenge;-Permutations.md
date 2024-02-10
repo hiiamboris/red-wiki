@@ -194,7 +194,7 @@ turning The Great Red Optimizer (that's you all) loose
 @greggirwin using the above function, the rest of the code will be:
 
 ```
-fac: function [n][m: #(0 1) any [m/:n m/:n: n * fac n - 1]]
+fac: function [n][m: #[0 1] any [m/:n m/:n: n * fac n - 1]]
 all-perms: function [a] [
     also r: make [] n: fac length? a
     repeat i n [append/only r ith-perm a i - 1]

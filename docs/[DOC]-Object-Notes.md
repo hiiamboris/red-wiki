@@ -157,7 +157,7 @@ Should we be able to convert objects and maps into each other using to or make (
 *** Where: make
 *** Stack:  
 
->> object #(a: 1)
+>> object #[a: 1]
 *** Script Error: object does not allow map! for its spec argument
 *** Where: object
 *** Stack: object
