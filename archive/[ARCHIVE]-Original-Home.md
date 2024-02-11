@@ -106,7 +106,7 @@ The following proposals were developed before the Red Enhancement Proposal proce
 
 
 ### Mezzanines:
-* [Mezz contributions](https://github.com/red/red/wiki/mezzanines)
+* [Mezz contributions](https://github.com/red/red/wiki/mezzanines) 
 
 _____
 *Note: only the Red team is allowed to make changes to this page, all direct changes by third-parties will be rolled-back.*
