@@ -116,12 +116,12 @@ The length of a `map!` value is the number of its keys:
 == [
     "January" "February" "March" "April" "May" "June" 
     "July" "August" "Septem...
->> freq: #()
-== #()
+>> freq: #[]
+== #[]
 >> foreach c form m [freq/:c: 1 + any [freq/:c 0]]
 == 9
 >> probe freq
-#(
+#[
     #"J" 3
     #"a" 5
     #"n" 2
@@ -149,7 +149,7 @@ The length of a `map!` value is the number of its keys:
     #"N" 1
     #"v" 1
     #"D" 1
-)
+]
 >> length? freq
 == 27
 ---- 
@@ -644,11 +644,11 @@ _Red_
 `to-block` conversion does similar job for some datatypes – it is convenient to use with `map!` and `path!` values:
 
 ---- 
->> user: #(name: "Peter" id: 43152)
-== #(
+>> user: #[name: "Peter" id: 43152]
+== #[
     name: "Peter"
     id: 43152
-)
+]
 >> to-block user
 == [
     name: "Peter" 
@@ -690,7 +690,7 @@ Let’s do some tests with compound and scalar datatypes:
 ---- 
 foreach value compose [
     [Red functions for Python programmers]
-    #(name: "Peter" id: 43152)
+    #[name: "Peter" id: 43152]
     'system/locale/months
     "Hello world"
     (to-binary 123456)
@@ -710,10 +710,10 @@ foreach value compose [
 block 
 [Red functions for Python programmers] 
 
-#(
+#[
     name: "Peter"
     id: 43152
-) 
+] 
 map 
 [
     name: "Peter" 
@@ -841,7 +841,7 @@ _Python_
 
 _Red_
 
-Red uses `map!` datatype to represent associative arrays of key/value pairs. Except using literal syntax `#(<key> <value>...)`, a `map!` value can be created from a block, with `to-map` conversion, resembling Python’s `dict()` used with a set of keyword arguments:
+Red uses `map!` datatype to represent associative arrays of key/value pairs. Except using literal syntax `#[<key> <value>...]`, a `map!` value can be created from a block, with `to-map` conversion, resembling Python’s `dict()` used with a set of keyword arguments:
 
 ---- 
 abook: [
@@ -854,13 +854,13 @@ genre  "Science fiction"
 >> type? abook
 == block!
 >> mbook: to-map abook
-== #(
+== #[
     title: "Creatures of Light and Darkness"
     author: "Roger Zelazny"
     year...
 >> type? mbook
 == map!
-]
+)
 ---- 
 
 
@@ -1307,7 +1307,7 @@ zip: function [
         series [block!]
     /list 
 ][
-    buf: #()
+    buf: #[]
     pass: [collect [foreach item buf/:id [keep any [take item []]]]]
     either init [
         buf/:id: series
@@ -1353,7 +1353,7 @@ Here are some tests:
 == [[3 "blue" skies]]
 ----
 
-The above `zip`  function has one argument when called without any refinement, `id`, which must be of ` word!` type. It will be used as a reference, as well as for a key in the function’s internal map that stores the data for the different calls. Note that it is initialized simply by `buf: #()`. Since there is no `copy` in from of `#()`, the contents of the map will persist between the function calls.
+The above `zip`  function has one argument when called without any refinement, `id`, which must be of ` word!` type. It will be used as a reference, as well as for a key in the function’s internal map that stores the data for the different calls. Note that it is initialized simply by `buf: #[]`. Since there is no `copy` in from of `#[]`, the contents of the map will persist between the function calls.
 
 When called with the `/init` refinement, the function expects in addition to the `id` argument a block of blocks that are to be zipped. If you need to zip two blocks – let’s say `names` and `addresses`, you need to supply them to `zip` as follows: `zip/init 'person reduce [names addresses]`. This will add a new `person` key to the `zip`’s internal map, with value – a block containing the `names` and `addresses` blocks. The map can’t be accessed from outside the function.
 
@@ -1712,7 +1712,7 @@ gen-list: func [
     /init
         spec [block!]
 ][
-    list-map: #()
+    list-map: #[]
     either init [
         _vars:  copy []
         _lists: copy []

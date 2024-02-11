@@ -244,21 +244,21 @@ We can read the file contents and apply `load-json` to the string:
     address: #(
         streetAddress: ...
 >> probe sample
-#(
+#[
     firstName: "Joe"
     lastName: "Jackson"
     gender: "male"
     age: 28
-    address: #(
+    address: #[
         streetAddress: "101"
         city: "San Diego"
         state: "CA"
-    )
-    phoneNumbers: [#(
+    ]
+    phoneNumbers: [#[
         type: "home"
         number: "7349282382"
-    )]
-)
+    ]]
+]
 ---- 
 
 As you see, the result is a map, populated by key-value pairs of data from the .json file
@@ -269,29 +269,29 @@ As you see, the result is a map, populated by key-value pairs of data from the .
 
 ---- 
 >> data: load  %example_1.json
-== #(
+== #[
     fruit: "Apple"
     size: "Large"
     color: "Red"
-)
+]
 ---- 
 
 If the file had an extension different than `.json` - for example `.txt` - we can load it using `load/as` and argument for the refinement `'json`: 
 
 ---- 
 >> data: load/as %example_1.txt 'json
-== #(
+== #[
     fruit: "Apple"
     size: "Large"
     color: "Red"
-)
+]
 ---- 
 
 === to-json
 `to-json` converts Red data to a JSON string. Let’s convert the following Red data:
 
 ---- 
-car: #(
+car: #[
     make: "Porsche"
 	model: 959
 	engine-type: "boxer 6"
@@ -299,7 +299,7 @@ car: #(
 power: 450
 	torque: 500
     top-speed: 322
-)
+]
 ---- 
 
 to JSON string:
@@ -421,12 +421,12 @@ D -> ["2019 estimate" "8,336,817" "3,979,576" "2,693,976" "2,320,268" "1,680,992
 
 ---- 
 >> cities: load-csv/as-records read %us_cities.csv
-== [#(
+== [#[
     "A" "2019 rank"
     "B" "City"
     "C" "State"
     "D" "2019 estimate"
-) #(
+] #(
     "A" "1"
     "B" "New York"
     "C" "New...
@@ -438,22 +438,22 @@ Most detailed result is obtained by using `load-csv` with `/header/as-records` r
 
 ---- 
 >> cities: load-csv/header/as-records read %us_cities.csv 
-== [#(
+== [#[
     "2019 rank" "1"
     "City" "New York"
     "State" "New York"
     "2019 estimate" "8,336,817"
-) #(
+] #(
     "2019 rank" "2"
  ...
 
 >> last cities
-== #(
+== #[
     "2019 rank" "10"
     "City" "San Jose"
     "State" "California"
     "2019 estimate" "1,021,795"
-)
+]
 ---- 
 
 If you don’t need the data to be grouped, you can use the `/flat` refinement. In such case `load-csv` returns a flat block with length rows*columns:

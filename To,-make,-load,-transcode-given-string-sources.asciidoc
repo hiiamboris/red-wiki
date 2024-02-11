@@ -13,7 +13,7 @@ https://github.com/red/red/issues/4863[PARSE binary includes spaces into datatyp
 |type   |to      |make    |load    |transcode/one|Notes
 |*unset!*|any|any|N/A|N/A|Can't produce unset with load/transcode
 |*none!*|any|any|" #[none] "|" #[none] "|Leading and trailing whitespace allowed
-|*logic!*|see note|see note|true|true|Only *#[true]/#[false]*, not on/off or yes/no; leading and trailing whitespace allowed. For to/make see [this](https://github.com/red/red/wiki/%5BDOC%5D-%60to%60-vs-%60make%60)
+|*logic!*|see note|see note|true|true|Only *#(true)/#(false)*, not on/off or yes/no; leading and trailing whitespace allowed. For to/make see [this](https://github.com/red/red/wiki/%5BDOC%5D-%60to%60-vs-%60make%60)
 |*char!*|*#"a"*|a|a|#"a"|to/make use the first char of the string only; leading and trailing whitespace allowed for load/transcode
 |*integer!*|*123*|123|123.45|123.45|Given "123.45" to/make don't allow leading whitespace; trailing whitespace is OK. Load/transcode load floats as floats.
 |*float!*|*123.45*|123.45|123.45|123.45|Given "123.45" to/make don't allow leading or trailing whitespace.
@@ -58,15 +58,15 @@ https://github.com/red/red/issues/4863[PARSE binary includes spaces into datatyp
 |*binary!*|*#{313233}*|123|#{313233}|#{313233}|#{313233}
 |*bitset!*|*charset "abc"*|make bitset! ...|make bitset! ...|make bitset! ...|make bitset! ...
 
-|*map!*|*#(a: 1 b: 2)*|a: 1
+|*map!*|*#[a: 1 b: 2]*|a: 1
 b: 2|a: 1
-b: 2|#(
+b: 2|#[
     a: 1
     b: 2
-)|#(
+]|#[
     a: 1
     b: 2
-)
+]
 |*object!*|*object [a: 1 b: 2]*|a: 1
 b: 2|a: 1
 b: 2|make object! ...|make object! ...

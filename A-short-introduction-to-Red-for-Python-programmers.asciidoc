@@ -1207,15 +1207,15 @@ You can see that only the first five words have been sorted and the remaining bl
 An interesting feature of `sort` is that it can treat the series as a set of fixed size records. Let’s illustrate this concept with the following example. Let’s assume we have the following `map` 
 
 ---- 
->> id-name-map: #(3 "John" 5 "Johan" 1 "Ivan" 2 "Jean" 4 "Giovanni" 6 "Juan")
-== #(
+>> id-name-map: #[3 "John" 5 "Johan" 1 "Ivan" 2 "Jean" 4 "Giovanni" 6 "Juan"]
+== #[
     3 "John"
     5 "Johan"
     1 "Ivan"
     2 "Jean"
     4 "Giovanni"
     6 "Juan"
-)
+]
 >> id-name-map/3
 == "John"
 >> id-name-block: to block! id-name-map
@@ -1587,18 +1587,18 @@ Note how `repend` reduces the values before appending them, in contrast to `appe
 ---- 
 >> mold a
 == {["red" "orange" "yellow"]}
->> m: #(a 10 b[3 1 2])
-== #(
+>> m: #[a 10 b[3 1 2]]
+== #[
     a: 10
     b: [3 1 2]
-)
+]
 >> mold m
 == {#(^/    a: 10^/    b: [3 1 2]^/)}
 >> print mold m
-#(
+#[
     a: 10
     b: [3 1 2]
-)
+]
 ---- 
 
 `mold` is similar to Python’s `repr()` function.
@@ -1823,7 +1823,7 @@ Be carefull when you try to apply some patterns you may have adopted with Python
 == true
 >> to logic! ""
 == true
->> to logic! #()
+>> to logic! #[]
 == true
 >> to logic! 0
 == true

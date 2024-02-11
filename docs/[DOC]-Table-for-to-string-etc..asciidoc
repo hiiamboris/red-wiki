@@ -6,8 +6,8 @@
 
 |type |expression|to-string|form|mold|mold/all
 |*unset!*|*( )*|_error_|_empty string_|unset|unset
-|*none!*|*#[none]*|_error_|none|none|#[none]
-|*logic!*|*#[true]*|true|true|true|#[true]
+|*none!*|*#(none)*|_error_|none|none|#(none)
+|*logic!*|*#(true)*|true|true|true|#(true)
 |*char!*|*#"a"*|a|a|#"a"|#"a"
 |*integer!*|*123*|123|123|123|123
 |*float!*|*123.456*|123.456|123.456|123.456|123.456
@@ -38,15 +38,15 @@
 |*image!*|*make image! 2x2*|make image! ...|make image! ...|make image! ...|make image! ...
 |*binary!*|*#{313233}*|123|#{313233}|#{313233}|#{313233}
 |*bitset!*|*charset "abc"*|make bitset! ...|make bitset! ...|make bitset! ...|make bitset! ...
-|*map!*|*#(a: 1 b: 2)*|a: 1
+|*map!*|*#[a: 1 b: 2]*|a: 1
 b: 2|a: 1
-b: 2|#(
+b: 2|#[
     a: 1
     b: 2
-)|#(
+]|#[
     a: 1
     b: 2
-)
+]
 |*object!*|*object [a: 1 b: 2]*|a: 1
 b: 2|a: 1
 b: 2|make object! ...|make object! ...

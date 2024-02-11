@@ -342,9 +342,9 @@ An idea is to allow series' offset (`index?`) take **any integer** value.
 
 R2 could internally work with pre-head and past-tail offsets but it was inconsistent about it:
 ```
->> index? #[block! [a] -2]		;) can construct a pre-head block
+>> index? #(block! [a] -2)		;) can construct a pre-head block
 == -2					;) `index?` doesn't lie that offset is negative
->> index? b: #[block! [a] 10]
+>> index? b: #(block! [a] 10)
 == 2
 >> append b [1 2 3]
 == [a 1 2 3]

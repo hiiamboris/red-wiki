@@ -45,7 +45,7 @@ both UDTs are using the similar syntax (after `#` both UDTs use: 3 numbers, sepa
 
 
 Type provider (programmer that implements a type) will parse only his/her types. For example `HSV#360,1.0,1.0`:
-1) the Red split it into `m: #(type-name: "HSV" value: "360,1.0,1.0")`
+1) the Red split it into `m: #[type-name: "HSV" value: "360,1.0,1.0"]`
 2) the Red will call `parser: parsers(m/type-name) background-color: parser/parse(m/value)`
 3) `background-color` will be an object:
 
@@ -63,7 +63,7 @@ construct [
 Types has functions called methods (from the OOP terminology). So you can do `background-color/darker` to make it darker, `background-color/hue 42` to change the hue, `background-color + background-color` to add 2 colors (it might be just a syntactic sugar for `HSV/add background-color background-color` or `background-color/add background-color`).
 
 As for examples of type-b (with spaces), lets take the old Ruby's hash (map in the Red):
-`#("a" 42)` in the Ruby will be `{"a" => 42}`
+`#["a" 42]` in the Ruby will be `{"a" => 42}`
 1) The type provider split on spaces (`result: [{"a"} "=>" "42"]`)
 2) The type provider will parse it (s/he check if `"a"` is valid key, s/he checks if next "symbol" is `=>`, s/he check if `42` is valid as value; it will store key - value pairs).  
 
