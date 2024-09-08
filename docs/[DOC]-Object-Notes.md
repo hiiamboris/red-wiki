@@ -119,7 +119,7 @@ Above, the `f` function body retains it's binding to the global (system/words) c
 
 As of Red v0.6.3 however composition is unreliable yet when it comes to bindings. More info for documenting it here later once it's resolved can be found at: https://redd.it/8g7oce . See related github issues for update on the progress: https://github.com/red/red/issues/3406 https://github.com/red/red/issues/3365
 
-More valuable observations in Gitter: [March 31, 2019 11:25 PM](https://gitter.im/red/red?at=5ca12229f851ee043d3cc415)
+More valuable observations in Gitter: [March 31, 2019 11:25 PM](https://rebol.tech/gitter.im/red/red/2019/#msg5ca12229f851ee043d3cc415)
 
 
 # `Return` in spec blocks

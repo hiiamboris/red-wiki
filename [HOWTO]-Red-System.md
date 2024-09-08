@@ -13,7 +13,7 @@ Red [
     Date: 3-Aug-2020
     Note: "Compile in release mode."
     Author: "Vladimir Vasilyev @9214"
-    Link: https://gitter.im/red/red?at=5f276914a2be9049908a06bd
+    Link: https://rebol.tech/gitter.im/red/red/2020/#msg5f276914a2be9049908a06bd
 ]
 
 name?: routine [/local frame name body?][
@@ -38,7 +38,7 @@ probe name?
 ; == My name is foo
 ```
 
-[Here](https://gitter.im/red/red?at=5f271d5cb9bc40357bb25be8) you can find another version.
+[Here](https://rebol.tech/gitter.im/red/red/2020/#msg5f271d5cb9bc40357bb25be8) you can find another version.
 
 ## How to convert `c-string!` to `red-string!`
 

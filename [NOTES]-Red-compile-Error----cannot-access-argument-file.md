@@ -46,7 +46,7 @@ but this doesn't seem to work with my programs even if I move them into the sour
 ****
 
 #### latest reference 
-[17th of Feb 2018](https://gitter.im/red/red?at=5a887e746fba1a703a64e8ec) on win10 and win7 or win8 
+[17th of Feb 2018](https://rebol.tech/gitter.im/red/red/2018/#msg5a887e746fba1a703a64e8ec) on win10 and win7 or win8 
 
 #### archlinux packages, linked from the download page, comments mentions arg file error:
 + also: explains the details of building red with rebol needing SDK.

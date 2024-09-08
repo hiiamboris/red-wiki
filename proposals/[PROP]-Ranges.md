@@ -1,6 +1,6 @@
 ## This came up when discussing [[REP 0101 - For loop function]]
 
-Original: [September 30, 2016 5:14 PM](https://gitter.im/red/red?at=57ee5729d38f186520b3434a)
+Original: [September 30, 2016 5:14 PM](https://rebol.tech/gitter.im/red/red/2016/#msg57ee5729d38f186520b3434a)
 
 After writing all this, I realized this may be a design for a range construct? (mentioned in http://curecode.org/rebol3/ticket.rsp?id=1993)
 The REP at the time seemed to have (from my viewpoint) 2 goals:

@@ -210,7 +210,7 @@ where
 ```
 
 The definition of `skip` above is applicable to free index model only (see below).
-What we currently have is (see https://gitter.im/red/red?at=5da8508ef88b526fb95455ef):
+What we currently have is (see https://rebol.tech/gitter.im/red/red/2019/#msg5da8508ef88b526fb95455ef):
 ```
 (skip m j) =
 	m₁
@@ -372,7 +372,7 @@ R2 could internally work with pre-head and past-tail offsets but it was inconsis
 In Red this is a different mess:
 - **no** way to construct a **pre-head** block (except via R/S - but that will crash it for certain)
 - when offset is past-tail, **`index? c` doesn't lie** about it - it will always report 11 in the previous snippet
-- various functions deal with past-tail differently: https://gitter.im/red/red?at=5da8508ef88b526fb95455ef , `index? skip m 1` (positive skip) can be less than `index? m`, which is confusing.
+- various functions deal with past-tail differently: https://rebol.tech/gitter.im/red/red/2019/#msg5da8508ef88b526fb95455ef , `index? skip m 1` (positive skip) can be less than `index? m`, which is confusing.
 
 But what if we didn't have any offset restriction? E.g. if m is at head, `skip m -1` would go ahead of it, and `index? m` would be -1, and so on. We would have:
 - a lot **simpler** invariants (see the next section), that would not depend on data, and

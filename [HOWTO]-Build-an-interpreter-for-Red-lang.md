@@ -1,4 +1,4 @@
-_Asked by greenmughal on [gitter](https://gitter.im/red/red?at=5cfbaa57bf4cbd167c4fa040)_
+_Asked by greenmughal on [gitter](https://rebol.tech/gitter.im/red/red/2019/#msg5cfbaa57bf4cbd167c4fa040)_
 
 > How to build an interpreter for Red lang, for learning purpose, where I can start?
 

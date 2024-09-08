@@ -3,13 +3,13 @@
 Development of Linux backend for [Red's Graphical User Interface](https://doc.red-lang.org/en/gui.html), using version 3 of [Gtk+ library](https://en.wikipedia.org/wiki/GTK%2B).
 
 * Sources: https://github.com/red/red/tree/GTK (official Red repo, GTK branch)
-* Gitter channel (chat, help): [red/GTK](https://gitter.im/red/GTK)
+* Gitter channel (chat, help): [red/GTK](https://rebol.tech/gitter.im/red/GTK)
 * Precompiled binaries:
   * https://static.red-lang.org/dl/branch/GTK/linux/red-latest – official dev builds for x86 architecture
   * https://rebolek.com/builds/ – community nightly builds by @rebolek, x86 and ARM (Raspberry Pi)
   * `red-gtk` binary (equivalent of `red` binary but for rcqls/GTK-dev branch, may be outdated) provided [here](https://cqls.dyndoc.fr/users/RCqls/Red/red-gtk).
 
-[Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://gitter.im/red/GTK?at=5d4e965690bba62a124e933b).
+[Official repo's GTK branch](https://github.com/red/red/tree/GTK) is now a default development branch for GTK implementation. It moved from @rcqls' development branches, which [are no longer a reference point](https://rebol.tech/gitter.im/red/GTK/2019/#msg5d4e965690bba62a124e933b).
 
 ## Compilation (32-bit Linux)
 
@@ -25,7 +25,7 @@ Development of Linux backend for [Red's Graphical User Interface](https://doc.re
 
 ## Developer notes
 
-For GTK, use official GTK docs. Instead of using GTK3's recommended CSS-like API, [we try to use](https://gitter.im/red/GTK?at=5c32ba4c26d86e4d5638d894) deprecated low-level API, used also by [SWT library](https://www.eclipse.org/swt/)
+For GTK, use official GTK docs. Instead of using GTK3's recommended CSS-like API, [we try to use](https://rebol.tech/gitter.im/red/GTK/2019/#msg5c32ba4c26d86e4d5638d894) deprecated low-level API, used also by [SWT library](https://www.eclipse.org/swt/)
 
 There is not much documentation available. You must rely on [official View documentation](https://doc.red-lang.org/en/view.html#) and `View` code – `modules/view` folder in Red's sources. GTK implementation sits in `modules/view/backends/gtk3`, with most important files: `gui.reds`, `gtk.reds`, `events.reds` and `handlers.reds`.
 
@@ -74,6 +74,6 @@ which launchs a camera viewer. Normally if this test passes camera is supposed t
 
 ## Known problems
 
-* Some floating point arithmetic [give strange results](https://gitter.im/red/GTK?at=5c41de8df780a1521f2de084) on GTK branch and a specific LOCALE. For example `load "0.00000152"` returns `0.0` or `5 / 2.0` returns `2,5.0`.
+* Some floating point arithmetic [give strange results](https://rebol.tech/gitter.im/red/GTK/2019/#msg5c41de8df780a1521f2de084) on GTK branch and a specific LOCALE. For example `load "0.00000152"` returns `0.0` or `5 / 2.0` returns `2,5.0`.
 
 There is a workaround for LOCALE bug. Just use "C" locale, like this: `LC_ALL=C path/to/console-view`

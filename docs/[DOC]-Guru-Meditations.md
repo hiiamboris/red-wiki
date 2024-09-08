@@ -644,7 +644,7 @@ In such case, wrap your whole code in a `do`, so that the interpreter takes over
 ```Red
 sources: [
   https://github.com/red/red/issues/2511#issuecomment-290033663
-  https://gitter.im/red/bugs?at=591899bd331deef464691306
+  https://rebol.tech/gitter.im/red/bugs/2017/#msg591899bd331deef464691306
 ]
 ```
 # Are args passed by reference or by value?
@@ -858,7 +858,7 @@ The purpose of the `--no-runtime` option is to allow the production of "OS free"
 Just prepend `Needs: View` to `%environment/console/CLI/console.red` script header.
 
 # Using `load` with `/next` and `/trap`
-(@toomasv [February 26, 2019 10:16 AM](https://gitter.im/red/bugs?at=5c74f5e15015f21e19601bf5))
+(@toomasv [February 26, 2019 10:16 AM](https://rebol.tech/gitter.im/red/bugs/2019/#msg5c74f5e15015f21e19601bf5))
 
 `/trap` can be made to work with `/next`, but it seems mostly to be useful without it, as it overrides `/next` refinement's usual semantics. I don't think it was meant to be used with `/next`. To trap errors with `/next` without overriding its semantics something like this can be used:
 

@@ -256,7 +256,7 @@ parse data rule: [
 ]
 ```
 
-See this [discussion](https://gitter.im/red/help?at=5f0c99923e4a827d19c35da8) for more on that subject.
+See this [discussion](https://rebol.tech/gitter.im/red/help/2020/#msg5f0c99923e4a827d19c35da8) for more on that subject.
 
 ***
 # Links to pages about `parse`

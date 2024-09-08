@@ -9,4 +9,4 @@ Docs: https://github.com/red/docs/blob/master/en/view.adoc#11-events
 
 # Chats
 
-[Filtering keys in fields](https://gitter.im/red/red/welcome?at=609fa7199f2c352db10eed6c)
+[Filtering keys in fields](https://rebol.tech/gitter.im/red/red/welcome/2021/#msg609fa7199f2c352db10eed6c)

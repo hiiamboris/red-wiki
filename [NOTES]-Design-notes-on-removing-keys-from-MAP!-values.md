@@ -67,7 +67,7 @@ The new refinement could also be used for series values, replacing the `remove-k
 
 ## P.S. `remove find map key`
 
-Chat is here: :point_up: [January 21, 2021 10:02 PM](https://gitter.im/red/red?at=6009cfc836db01248a9265bb)<br>
+Chat is here: :point_up: [January 21, 2021 10:02 PM](https://rebol.tech/gitter.im/red/red/2021/#msg6009cfc836db01248a9265bb)<br>
 General idea is: each key in the map does have an index, even if it is internal. What happens inside `remove/key` is that it finds that index, and removes the key. We could just pack that index (chosen key) with the map cell, and `remove find map key` becomes reality.<br>
 Another idea is: maps do have order (`foreach .. map` is just one proof). Even if this order is not guaranteed (in some future implementation) to persist between map modifications, we still can use key as the index and use half of the series functions to work with maps.<br>
 Another idea (by Gabriele) is: let maps have order, implement it as a linked list. And all series functions will work on maps (I imagine only keys array would be exposed to series functions, while values remain a domain of put and select). 

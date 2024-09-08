@@ -422,9 +422,9 @@ view [
 Here I am using `probe`, `to-string` and `random` functions.
 
 # Source, links etc
-https://gitter.im/red/help?at=5f033e92fa0c9221fc816712  
+https://rebol.tech/gitter.im/red/help/2020/#msg5f033e92fa0c9221fc816712  
 https://www.red-lang.org/2017/07/063-macos-gui-backend.html  
 https://www.red-lang.org/2019/02/january-2019-update.html  
-https://gitter.im/red/help?at=5ef826d0fa0c9221fc6543af  
-https://gitter.im/red/red/gui-branch?at=5ef9beae47fdfd21edf08cc0  
-https://gitter.im/red/help?at=5f035196405be935cde4f71d
+https://rebol.tech/gitter.im/red/help/2020/#msg5ef826d0fa0c9221fc6543af  
+https://rebol.tech/gitter.im/red/red/gui-branch/2020/#msg5ef9beae47fdfd21edf08cc0  
+https://rebol.tech/gitter.im/red/help/2020/#msg5f035196405be935cde4f71d

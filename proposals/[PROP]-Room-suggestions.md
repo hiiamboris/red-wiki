@@ -8,8 +8,8 @@ There had been discussions about gitter rooms. Gitter naturally organizes rooms 
 5. No enforceability of rules (how can you do this anyway?)
 
 # Possible Solutions
-1. [Gitter Topics](https://gitter.im/gitterHQ/home) was supposed to alleviate this, but:
-   1. it's still in [beta](https://gitter.im/gitterHQ/topics/topic/58cac9e6f7f7d4810423d98f/when-will-topics-be-added-to-gitter-communities)
+1. [Gitter Topics](https://rebol.tech/gitter.im/gitterHQ/home) was supposed to alleviate this, but:
+   1. it's still in [beta](https://rebol.tech/gitter.im/gitterHQ/topics/topic/58cac9e6f7f7d4810423d98f/when-will-topics-be-added-to-gitter-communities)
    2. not like threads in other chat software as you'd expect
 2. Most other programming languages have a single room
 3. Use another chat service(again? :p )
@@ -66,4 +66,4 @@ Maybe a bot that responds differently according to room it's in.
 - When does a room outgrow the Red organization?
 Maybe when it needs it's own repo or is it's own standard library
 
-Based on gitter chat [May 11, 2017 7:18 PM](https://gitter.im/red/red/welcome?at=591472988a05641b1170bfde)
+Based on gitter chat [May 11, 2017 7:18 PM](https://rebol.tech/gitter.im/red/red/welcome/2017/#msg591472988a05641b1170bfde)

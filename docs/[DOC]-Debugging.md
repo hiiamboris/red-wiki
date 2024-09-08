@@ -42,7 +42,7 @@ Remember that Red's toolchain is minimal, building from source is fast and easy,
 
 # strace (Linux only)
 
-([source](https://gitter.im/red/bugs?at=5e41255c3716b919ba0bd53d))
+([source](https://rebol.tech/gitter.im/red/bugs/2020/#msg5e41255c3716b919ba0bd53d))
 
 When despite compiling with `-d` option, you get no debug info:
 

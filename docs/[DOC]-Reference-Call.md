@@ -347,4 +347,4 @@ Note that any references to system/port, e.g., in the R3 SO notes, won't work, a
 
 # Related Chats
 
-https://gitter.im/red/red?at=61b0ed16a9c8eb44c41d6810
+https://rebol.tech/gitter.im/red/red/2021/#msg61b0ed16a9c8eb44c41d6810

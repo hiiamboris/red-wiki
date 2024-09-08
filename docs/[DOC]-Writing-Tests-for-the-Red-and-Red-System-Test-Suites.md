@@ -92,4 +92,4 @@ Example of standard tests:
 ```
 
 ## Questions?
-Please ask any questions in the [Red Gitter Tests Room](https://gitter.im/red/tests).
+Please ask any questions in the [Red Gitter Tests Room](https://rebol.tech/gitter.im/red/tests).

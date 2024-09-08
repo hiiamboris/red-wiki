@@ -18,8 +18,8 @@ Type `help` in the Red console to learn how to access the built-in documentation
 
 7. Search "redlang + your-question" in your favorite web search engine - As the Red community grows, so does Red presence online!
 
-8. [Ask us](https://gitter.im/red/help), we are here to help! 
-When everything else fails, the Red community is here for you. Also, make sure to say "hi" in our [Welcome chat room](https://gitter.im/red/red/welcome).
+8. [Ask us](https://rebol.tech/gitter.im/red/help), we are here to help! 
+When everything else fails, the Red community is here for you. Also, make sure to say "hi" in our [Welcome chat room](https://rebol.tech/gitter.im/red/red/welcome).
 
 # Q. A command is not working as expected, what should I do?
 The issue may have been fixed in one of the [latest automated builds](https://www.red-lang.org/p/download.html), give it a try.

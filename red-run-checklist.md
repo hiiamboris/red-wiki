@@ -46,7 +46,7 @@
 	* see: [red/issues/GUI console doesn't start #5073](https://github.com/red/red/issues/5073)
 
 
-[gitter red/welcome](https://gitter.im/red/red/welcome) or help chat for more assistance
+[gitter red/welcome](https://rebol.tech/gitter.im/red/red/welcome) or help chat for more assistance
 ```
 	the game of 20 questions is really no fun for anyone.
 	* what is your OS?

@@ -135,7 +135,7 @@ In R2, `random` on series shuffles its copy, but in R3 and Red series is modifie
 
 ## `do`
 
-The values that get special treatment by `do` are: `[block! path! string! url! file! error!]`. Everything else is evaluated passively. This is by design, to eliminate variable arity (see [here](https://gitter.im/red/help?at=5ab285275f188ccc15df954b)).
+The values that get special treatment by `do` are: `[block! path! string! url! file! error!]`. Everything else is evaluated passively. This is by design, to eliminate variable arity (see [here](https://rebol.tech/gitter.im/red/help/2018/#msg5ab285275f188ccc15df954b)).
 
 ## `if`
 
